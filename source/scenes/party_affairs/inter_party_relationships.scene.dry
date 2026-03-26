@@ -27,15 +27,15 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1
-go-to: uspd_1 if left_strength > reformist_strength; uspd_2 if reformist_strength > if left_strength
+go-to: uspd_1 if left_strength > reformist_strength else uspd_2
 
 @uspd_1
-on-arrival: dvp_relation -= 3; uspd_relation += 8; kpd_relation += 3; left_dissent -2
+on-arrival: dvp_relation -= 3; uspd_relation += 8; kpd_relation += 3; left_dissent -= 2
 
 We have repaired some contacts with the <span style="color: #AA0000;">USPD</span> and even the <span style="color: #700000;">KPD</span>.
 
 @uspd_2
-on-arrival: dvp_relation -= 1; uspd_relation += 2; kpd_relation += 1; old_middle_spd - 1
+on-arrival: dvp_relation -= 1; uspd_relation += 2; kpd_relation += 1; old_middle_spd -= 1
 
 The influence of the reformist faction has hindered our efforts...
 
