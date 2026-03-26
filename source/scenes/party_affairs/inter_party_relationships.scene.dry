@@ -27,7 +27,7 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; left_dissent - 1
-go-to: uspd_1 if left_strength > reformist_strength; uspd_2 if reformist_strength > if left_strength; 
+go-to: uspd_1 if left_strength > reformist_strength; uspd_2 if reformist_strength > if left_strength
 
 @uspd_1
 on-arrival: dvp_relation -= 3; uspd_relation += 8; kpd_relation += 3; left_dissent -2
@@ -43,7 +43,7 @@ The influence of the reformist faction has hindered our efforts...
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; kpd_inter_party_seen += 1;
+on-arrival: resources -= 1; kpd_inter_party_seen += 1
 go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectifed_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectified_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
 
 @kpd_1
