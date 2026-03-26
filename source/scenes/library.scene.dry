@@ -293,6 +293,9 @@ go-to: menu
 
 [? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_votes +]% ?]
 
+# 1928: 0, 1930: 0, 1932: 0
+<span style="color: #AA0000;">**USPD**</span>: [+ uspd_votes +]%
+
 # 1928: 15, 1930: 15, 1932: 
 <span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span>: [+ z_votes +]%
 
@@ -518,6 +521,10 @@ Current relations: [+ z_relation : relationships +]
 
 Current relations: [+ kpd_relation : relationships +]
 
+<span style="color: #AA0000;">**USPD**</span> - *Unabhänige Sozialdemokratische Partei Deutschlands* (Independent Social Democratic Party) - a radical left-wing offshoot of the <span style="color: #c00000;">**SPD**</span> that emerged in the aftermath of the German Revolution of 1918, they follow the path of Moscow, opposing parliamentary democracy in favor of a <span style="color: #750e0e;">Soviet</span>-style revolution.
+
+Current relations: [+ uspd_relation : relationships +]
+
 [? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span> - <i>Sozialistische Arbeiterpartei Deutschlands</i> (Socialist Worker's Party of Germany) - a party recently formed in a split from the <span style="color: #c00000;">**SPD**</span>, the <span style="color: #9B0000;">**SAPD**</span> is essentially an agglomeration of various left-wing splinter groups between the <span style="color: #c00000;">**SPD**</span> and <span style="color: #700000;">**KPD**</span>. ?]
 
 <span style="color: #7A3C00;">**NSDAP**</span> - *Nationalsozialistische Deutsche Arbeiterpartei* - (National Socialist German Worker's Party, or <span style="color: #7A3C00;">Nazis</span>) - a far-right nationalist and antisemitic party. Led by Adolf Hitler, they attempted a coup in 1923, and were banned for it, but have since been legalized.
@@ -644,6 +651,15 @@ if (Q.kpd_r) {
         "legend": "KPD",
         "name": "KPD",
         "seats": Math.round(Q.kpd_r * Q.reichstag_size),
+    });
+}
+
+if (Q.uspd_r) {
+    data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Math.round(Q.uspd_r * Q.reichstag_size),
     });
 }
 
@@ -922,8 +938,8 @@ if (d3 && window) {
 
     var lines = d3.linegraph(false, false,
             Q.parties_graph,
-            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP'});
+            {'spd': '#E3000F', 'uspd': '#AA0000', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF'},
+            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     if (Q.election_records.length > 0) {
@@ -935,8 +951,8 @@ if (d3 && window) {
     if (Q.game_over || (!Q.historical_mode && !Q.rubicon)) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties_graph,
-            {'spd': '#E3000F', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF'},
-            {'spd': 'SPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP'});
+            {'spd': '#E3000F', 'uspd': '#AA0000', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF'},
+            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
