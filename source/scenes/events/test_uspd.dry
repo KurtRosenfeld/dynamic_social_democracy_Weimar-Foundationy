@@ -1,11 +1,9 @@
 title: USPD
 subtitle: ÖÖÖÖ
 view-if: year = 1922 and month = 9
-on-arrival: all_quiet_seen = 1
 max-visits: 1
 tags: event
 new-page: true
-face-image: img/portaits/CrispenArthur.jpg
 
 = USPD
 
