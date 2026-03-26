@@ -26,7 +26,7 @@ The <span style="color: #c00000;">**SPD**</span> cannot govern by itself yet. Be
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; left_dissent - 1
+on-arrival: resources -= 1
 go-to: uspd_1 if left_strength > reformist_strength; uspd_2 if reformist_strength > if left_strength
 
 @uspd_1
