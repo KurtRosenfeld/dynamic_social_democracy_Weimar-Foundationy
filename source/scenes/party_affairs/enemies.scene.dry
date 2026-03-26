@@ -42,7 +42,7 @@ on-arrival: enemies = "KPD"; reformist_strength += 5; left_dissent += 8; reformi
 Attacking the <span style="color: #700000;">**KPD**</span> is supported by all but the most left-wing <span style="color: #c00000;">socialists</span>, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the <span style="color: #700000;">**KPD**</span>, this may not be the best choice.
 
 @left_wing
-on-arrival: enemies = "left"; reformist_strength += 5; left_dissent += 10; reformist_dissent -= 5; kpd_relation -= 15; uspd_relation -= 10; dvp_relation += 5; ddp_relation += 3; z_relation += 5; lvp_relation += 5; workers_kpd -= 3; unemployed_kpd -= 4; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1; workers_uspd +5; workers_süd -3*(dissent); unemployed_spd -1
+on-arrival: enemies = "left"; reformist_strength += 5; left_dissent += 10; reformist_dissent -= 5; kpd_relation -= 15; uspd_relation -= 10; dvp_relation += 5; ddp_relation += 3; z_relation += 5; lvp_relation += 5; workers_kpd -= 3; unemployed_kpd -= 4; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1; workers_uspd += 5; workers_spd -= 3*(dissent); unemployed_spd -= 1
 
 Attacking the <span style="color: #AA0000;">**Left**</span> is supported by the bourgeois parties. However, If we are to reconcile with the <span style="color: #AA0000;">**USPD**</span> and<span style="color: #700000;">**KPD**</span>, this is a poor choice. Some among our base disapprove.
 
