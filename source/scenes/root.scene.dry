@@ -715,7 +715,7 @@ Q.spd_no_confidence = 0;
 Q.no_confidence_against_spd = 0;
 
 // Advisors/Leaders
-Q.n_advisors = 3;
+Q.n_advisors = 4;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
@@ -1057,7 +1057,7 @@ Q.severing_advisor = 0; // Carl Severing
 Q.braun_advisor = 0; // Otto Braun
 Q.juchacz_advisor = 0; // Marie Juchacz
 Q.baade_advisor = 0; // Fritz Baade
-Q.ebert_advisor = 0; // Friedrich Ebert
+Q.ebert_advisor = 1; // Friedrich Ebert
 
 // Labor advisors
 Q.leipart_advisor = 0; // Theodor Leipart
