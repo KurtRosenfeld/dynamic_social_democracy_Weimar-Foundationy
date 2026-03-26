@@ -458,7 +458,7 @@ title: Rudolf Breitscheid
 subtitle: Rudolf Breitscheid comes from a well-educated background and is one of our foreign policy leaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/BreitscheidRudolf.jpg
-view-if: breitscheid_advisor = 0 and n_advisors < 3
+view-if: breitscheid_advisor = 0 and uspd_joined = 1 and n_advisors < 3
 on-arrival: breitscheid_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 tags: center_advisor
@@ -549,7 +549,7 @@ title: Toni Sender
 subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Center Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/SenderToni.jpg
-view-if: sender_advisor = 0 and n_advisors < 3
+view-if: sender_advisor = 0 and uspd_joined = 1  and n_advisors < 3
 on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
 go-to: advisor_menu
 tags: left_advisor
@@ -561,7 +561,7 @@ title: Kurt Rosenfeld
 subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the <span style="color: #700000;">**KPD**</span>, Against Toleration ?]
 is-card: true
 card-image: img/portraits/RosenfeldKurt.jpg
-view-if: rosenfeld_advisor = 0 and n_advisors < 3 and left_split = 0
+view-if: rosenfeld_advisor = 0 and uspd_joined = 1 and n_advisors < 3 and left_split = 0
 on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
 go-to: advisor_menu
 tags: left_advisor
