@@ -19,7 +19,7 @@ on-arrival: uspd_joined = 1
 based
 
 @dont
-on-arrival reformist_strength += 1
+on-arrival: reformist_strength += 1
 
 ok
 
