@@ -1,0 +1,31 @@
+title: USPD
+subtitle: ÖÖÖÖ
+view-if: year = 1922 and month = 9
+on-arrival: all_quiet_seen = 1
+max-visits: 1
+tags: event
+new-page: true
+face-image: img/portaits/CrispenArthur.jpg
+
+= USPD
+
+Hey
+  
+- @join: The <span style="color: #AA0000;">USPD</span> joins.
+- @dont: no.
+- @hyper: <span style="color: #fr45z1;">HYPER</span>
+
+@join
+on-arrival: uspd_joined = 1
+
+based
+
+@dont
+on-arrival reformist_strength = 1
+
+ok
+
+@hyper
+on-arrival: uspd_joined = 2
+
+lol
