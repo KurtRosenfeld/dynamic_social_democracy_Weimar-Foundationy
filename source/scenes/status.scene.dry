@@ -198,7 +198,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [? if kpd_leader = "Conciliators": United Front Marxism-Leninism?][? if kpd_leader = "Thälmann": Third Period Marxism-Leninism?] ([+ kpd_leader +])?]
 
-[? if not uspd_joined = 2: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [? if uspd_joined = 0: Orthodox Marxism ([+ uspd_leader +)?][? if uspd_joined = 1: Spartacism (Ledebour)?] ?]
+[? if not uspd_joined = 2: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [? if uspd_joined = 0: Orthodox Marxism ([+ uspd_leader +])?][? if uspd_joined = 1: Spartacism (Ledebour)?] ?]
 
 [? if kvp_formed and not dnvp_dvp_formed: <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [? if not kvp_dnef: Christian Conservatism?][? if kvp_dnef: National Conservatism?] ([+ kvp_leader +])?]
 
