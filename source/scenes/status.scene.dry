@@ -166,6 +166,8 @@ Economic growth: [+ economic_growth_2 +]%
 
 <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_relation : relationships +]
 
+<span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [+ uspd_relation : relationships +]
+
 [? if kvp_formed and not dnvp_dvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_relation : relationships +] ?]
 
 [? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: [+ fkp_relation : relationships +]?]
@@ -329,6 +331,8 @@ Q.socialism_disp = Math.floor(Q.socialism);
 [? if dnef_formed: <span style="color: #BFC8CC;">**DNEF**</span>: [+ dnef_votes +]% ?]
 
 <span style="color: #c00000;">**SPD**</span>: [+ spd_votes +]%
+
+<span style="color: #AA0000;">**USPD**</span>: [+ uspd_votes +]%
 
 [? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_votes +]% ?]
 
