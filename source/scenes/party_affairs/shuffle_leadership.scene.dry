@@ -109,6 +109,14 @@ go-to: rm_main_menu
 
 Müller has been removed as an advisor. The Centrist faction disapproves.
 
+@remove_scheidemann
+title: Remove Scheidemann
+view-if: scheidemann_advisor = 1
+on-arrival: scheidemann_advisor = 0; center_dissent += 10; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main_menu
+
+Scheidemann has been removed as an advisor. The Centrist faction disapproves.
 
 @remove_breitscheid
 title: Remove Breitscheid
@@ -121,6 +129,14 @@ Breitscheid has been removed as an advisor. The Centrist faction disapproves.
 
 # reformists
 
+@remove_ebert
+title: Remove Ebert
+view-if: ebert_advisor = 1
+tags: remove_advisor
+on-arrival: ebert_advisor = 0; reformist_dissent += 10; n_advisors -= 1
+go-to: rm_main_menu
+
+Ebert has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_severing
 title: Remove Severing
@@ -425,6 +441,18 @@ go-to: advisor_menu
 
 Hermann Müller is now an advisor.
 
+@add_scheidemann
+title: Philipp Scheidemann
+subtitle: tobeadded. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+is-card: true
+card-image: img/portraits/ScheidemannPhilipp.jpg
+view-if: scheidemann_advisor = 0 and n_advisors < 3
+on-arrival: scheidemann_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
+go-to: advisor_menu
+tags: center_advisor
+
+Philipp Scheidemann is now an advisor.
+
 @add_breitscheid
 title: Rudolf Breitscheid
 subtitle: Rudolf Breitscheid comes from a well-educated background and is one of our foreign policy leaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
@@ -439,6 +467,18 @@ Rudolf Breitscheid is now an advisor.
 
 # reformist
 
+
+@add_ebert
+title: Friedrich Ebert
+subtitle: Ebert is the President of the Reich, and one of the most recognizable and well-known <span style="color: #c00000;">Social Democratic</span> leaders. {!<br><br>!}[? if difficulty < 0 : Actions - Prussian Bulwark, Negotiating with the Coalition ?]
+is-card: true
+card-image: img/portraits/EbertFriedrich.jpg
+tags: reformist_advisor
+view-if: ebert_advisor = 0 and n_advisors < 3
+on-arrival: ebert_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
+go-to: advisor_menu
+
+Friedrich Ebert is now an advisor.
 
 @add_severing
 title: Carl Severing
