@@ -63,14 +63,14 @@ Q.dissent_percent = 5;
 // factions
 Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist', 'social_patriot'];
 // should this be normalized to 100%?
-Q.left_strength = 15;
+Q.left_strength = 10;
 Q.left_dissent = 20;
 Q.center_strength = 30;
 Q.center_dissent = 0;
 Q.labor_strength = 25;
 Q.labor_dissent = 5;
-Q.reformist_strength = 25;
-Q.reformist_dissent = 5;
+Q.reformist_strength = 30;
+Q.reformist_dissent = 0;
 Q.neorevisionist_strength = 5;
 Q.neorevisionist_dissent = 10;
 Q.social_patriot_strength = 0
@@ -121,10 +121,10 @@ Q.moderate_plan_adopted = 0;
 // organizations
 
 // inter-party relations
-Q.z_relation = 50;
-Q.kpd_relation = 25;
-Q.ddp_relation = 60;
-Q.dvp_relation = 35;
+Q.z_relation = 655;
+Q.kpd_relation = 20;
+Q.ddp_relation = 80;
+Q.dvp_relation = 45;
 // DNVP and NSDAP are invariably hostile
 Q.dnvp_relation = 5;
 Q.nsdap_relation = 0;
@@ -190,7 +190,7 @@ Q.nationalism = 60;
 // socialism vs capitalism
 Q.socialism = 40;
 // pro-republic vs anti-republic
-Q.pro_republic = 59;
+Q.pro_republic = 69;
 
 Q.emergency_rule = 0;
 
@@ -248,8 +248,8 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
-Q.parties_graph = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.parties = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.parties_graph = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
 
 Q.sapd_formed = 0;
 Q.dnf_formed = 0;
@@ -261,6 +261,7 @@ Q.cvp_formed = 0;
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_spd = 55;
+Q.workers_uspd = 0;
 Q.workers_kpd = 22;
 Q.workers_z = 5;
 Q.workers_ddp = 2;
@@ -270,6 +271,7 @@ Q.workers_nsdap = 0;
 Q.workers_other = 10;
 
 Q.new_middle_spd = 8;
+Q.new_middle_uspd = 0;
 Q.new_middle_kpd = 1;
 Q.new_middle_z = 10;
 Q.new_middle_ddp = 23;
@@ -279,6 +281,7 @@ Q.new_middle_nsdap = 4;
 Q.new_middle_other = 22;
 
 Q.old_middle_spd = 4;
+Q.old_middle_uspd = 0;
 Q.old_middle_kpd = 0;
 Q.old_middle_z = 6;
 Q.old_middle_ddp = 10;
@@ -288,6 +291,7 @@ Q.old_middle_nsdap = 9;
 Q.old_middle_other = 20;
 
 Q.rural_spd = 9;
+Q.rural_uspd = 0;
 Q.rural_kpd = 0;
 Q.rural_z = 5;
 Q.rural_ddp = 4;
@@ -297,6 +301,7 @@ Q.rural_nsdap = 3;
 Q.rural_other = 16;
 
 Q.unemployed_spd = 21;
+Q.unemployed_uspd = 0;
 Q.unemployed_kpd = 50;
 Q.unemployed_z = 1;
 Q.unemployed_ddp = 0;
@@ -306,6 +311,7 @@ Q.unemployed_nsdap = 13;
 Q.unemployed_other = 7;
 
 Q.catholics_spd = 21;
+Q.catholics_uspd = 0;
 Q.catholics_kpd = 2;
 Q.catholics_z = 49;
 Q.catholics_ddp = 0;
@@ -328,6 +334,7 @@ Q.catholics_spd_old = 20;
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
 Q.spd_r = 26.5;
+Q.uspd_r = 0;
 Q.kpd_r = 9.1;
 Q.z_r = 17.8;
 Q.ddp_r = 6.5;
@@ -344,6 +351,7 @@ Q.landtag_size = 4.5;
 
 // diff from prev
 Q.old_spd_r = 26.5;
+Q.old_uspd_r = 0;
 Q.old_kpd_r = 9.1;
 Q.old_z_r = 13.9;
 Q.old_ddp_r = 6.5;
@@ -355,6 +363,7 @@ Q.old_bvp_r = 3.9;
 
 // old election votes
 Q.previous_spd_last_election_votes = 26;
+Q.previous_uspd_last_election_votes = 0;
 Q.previous_kpd_last_election_votes = 9;
 Q.previous_z_last_election_votes = 17.3;
 Q.previous_ddp_last_election_votes = 6.3;
@@ -384,6 +393,7 @@ Q.previous_schleicher_dnef_last_election_votes_prussia = 0.0;
 
 // prussian gov right now
 Q.spd_r_prussia = 25.3;
+Q.uspd_r_prussia = 0;
 Q.kpd_r_prussia = 9.8;
 Q.z_r_prussia = 18.0;
 Q.ddp_r_prussia = 6.0;
@@ -394,6 +404,7 @@ Q.other_r_prussia = 4.2;
 
 // diff from prev PRUSSIA
 Q.old_spd_r_prussia = 25.3;
+Q.old_uspd_r_prussia = 0;
 Q.old_kpd_r_prussia = 9.8;
 Q.old_z_r_prussia = 18.0;
 Q.old_ddp_r_prussia = 6.0;
@@ -404,6 +415,7 @@ Q.old_other_r_prussia = 4.2;
 
 // old election votes PRUSSIA
 Q.previous_spd_last_election_votes_prussia = 24.9;
+Q.previous_uspd_last_election_votes_prussia = 0;
 Q.previous_kpd_last_election_votes_prussia = 9.6;
 Q.previous_z_last_election_votes_prussia = 17.6;
 Q.previous_ddp_last_election_votes_prussia = 5.9;
@@ -413,6 +425,7 @@ Q.previous_nsdap_last_election_votes_prussia = 2.5;
 Q.previous_other_last_election_votes_prussia = 6.0;
 
 Q.spd_votes = 27.9;
+Q.uspd_votes = 0;
 Q.kpd_votes = 11.4;
 Q.z_votes = 15.1;
 Q.ddp_votes = 4.7;
@@ -471,6 +484,7 @@ Q.cvp_right = 0;
 Q.cvp_left = 0;
 
 Q.adjustmentFactors_spd = 1.0;
+Q.adjustmentFactors_uspd = 1.0;
 Q.adjustmentFactors_sapd = 1.0;
 Q.adjustmentFactors_kpd = 1.0;
 Q.adjustmentFactors_z = 1.0;
@@ -485,6 +499,7 @@ Q.adjustmentFactors_kvp = 1.0;
 Q.adjustmentFactors_other = 0.75;
 
 Q.adjustmentFactors_votes_spd = 1.0;
+Q.adjustmentFactors_votes_uspd = 1.0;
 Q.adjustmentFactors_votes_sapd = 1.0;
 Q.adjustmentFactors_votes_kpd = 1.0;
 Q.adjustmentFactors_votes_z = 1.0;
@@ -499,6 +514,7 @@ Q.adjustmentFactors_votes_kvp = 1.0;
 Q.adjustmentFactors_votes_other = 1.0;
 
 Q.adjustmentFactors_spd_prussia = 1.0;
+Q.adjustmentFactors_uspd_prussia = 1.0;
 Q.adjustmentFactors_sapd_prussia = 1.0;
 Q.adjustmentFactors_kpd_prussia = 1.0;
 Q.adjustmentFactors_z_prussia = 1.0;
