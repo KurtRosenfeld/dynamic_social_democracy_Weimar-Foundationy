@@ -125,7 +125,14 @@ tags: remove_advisor
 on-arrival: breitscheid_advisor = 0; center_dissent += 10; n_advisors -= 1
 go-to: rm_main_menu
 
-Breitscheid has been removed as an advisor. The Centrist faction disapproves.
+@remove_crispen
+title: Remove Crispen
+view-if: crispen_advisor = 1
+tags: remove_advisor
+on-arrival: crispen_advisor = 0; center_dissent += 10; n_advisors -= 1
+go-to: rm_main_menu
+
+Crispen has been removed as an advisor. The Centrist faction disapproves.
 
 # reformists
 
@@ -464,6 +471,18 @@ go-to: advisor_menu
 tags: center_advisor
 
 Rudolf Breitscheid is now an advisor.
+
+@add_crispen
+title: Arthur Crispen
+subtitle: Crispen comes from the USPD. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+is-card: true
+card-image: img/portraits/CrispenArthur.jpg
+view-if: crispen_advisor = 0 and uspd_joined = 1 and n_advisors < 3
+on-arrival: crispen_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
+go-to: advisor_menu
+tags: center_advisor
+
+Arthur Crispen is now an advisor.
 
 # reformist
 
