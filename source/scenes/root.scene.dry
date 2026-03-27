@@ -124,7 +124,7 @@ Q.uspd_joined = 0;
 // inter-party relations
 Q.z_relation = 65;
 Q.kpd_relation = 15;
-Q.uspd_relation = 45;
+Q.uspd_relation = 60;
 Q.ddp_relation = 80;
 Q.dvp_relation = 45;
 // DNVP and NSDAP are invariably hostile
@@ -133,7 +133,7 @@ Q.nsdap_relation = 0;
 Q.lvp_relation = 0;
 
 Q.kpd_leader = "Thälmann";
-Q.uspd_leader = "Crispen";
+Q.uspd_leader = "Crispien";
 Q.z_leader = "Marx";
 Q.z_ideology = "Right";
 Q.cvp_ideology = "Moderate";
