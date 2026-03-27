@@ -166,7 +166,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_relation : relationships +]
 
-<span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [+ uspd_relation : relationships +]
+[? if not uspd_joined >= 3: <span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [+ uspd_relation : relationships +] ?]
 
 [? if kvp_formed and not dnvp_dvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_relation : relationships +] ?]
 
@@ -198,7 +198,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [? if kpd_leader = "Conciliators": United Front Marxism-Leninism?][? if kpd_leader = "Thälmann": Third Period Marxism-Leninism?] ([+ kpd_leader +])?]
 
-[? if not uspd_joined = 2: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [? if uspd_joined = 0: Orthodox Marxism ([+ uspd_leader +])?][? if uspd_joined = 1: Spartacism (Ledebour)?] ?]
+[? if not uspd_joined >= 3: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [? if uspd_joined = 0: Orthodox Marxism ([+ uspd_leader +])?][? if uspd_joined = 1: Spartacism (Ledebour)?] ?]
 
 [? if kvp_formed and not dnvp_dvp_formed: <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [? if not kvp_dnef: Christian Conservatism?][? if kvp_dnef: National Conservatism?] ([+ kvp_leader +])?]
 
@@ -334,7 +334,7 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
 <span style="color: #c00000;">**SPD**</span>: [+ spd_votes +]%
 
-<span style="color: #AA0000;">**USPD**</span>: [+ uspd_votes +]%
+[? if not uspd_joined >= 3: <span style="color: #AA0000;">**USPD**</span>: [+ uspd_votes +]% ?]
 
 [? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_votes +]% ?]
 
