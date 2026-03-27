@@ -12,6 +12,7 @@ Hey
 - @join: The <span style="color: #AA0000;">USPD</span> joins.
 - @dont: no.
 - @hyper: <span style="color: #fr45z1;">HYPER</span>
+- @super_hyper: <span style="color: #Ar3211;">SUPERHYPER</span>
 
 @join
 on-arrival: uspd_joined = 1
@@ -27,3 +28,8 @@ ok
 on-arrival: uspd_joined = 2
 
 lol
+
+@super_hyper
+on-arrival: uspd_joined = 3
+
+fire.
