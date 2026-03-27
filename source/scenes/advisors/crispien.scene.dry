@@ -1,0 +1,50 @@
+title: Arthur Crispien
+is-pinned-card: true 
+tags: advisor, centrist
+card-image: img/portraits/CrispienArthur.jpg
+new-page: true
+view-if: crispien_advisor = 1
+
+= Arthur Crispien
+
+Crispien used to be leader of the anti-war <span style="color: #AA0000;">**USPD**</span>.
+- @crispien_international
+- @campaign_cris
+- @uspd_discipline
+- @contact_uspd
+- @root: Return to main
+
+@breitscheid_international
+title: International Party Relations
+subtitle: Crispien is one of our contacts with international <span style="color: #c00000;">socialist</span> parties.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0
+on-arrival: advisor_action_timer = 6; international_relations_timer -= 12; last_advisor_action = 1
+go-to: international_relations
+
+@campaign_cris
+title: Campaign among workers
+subtitle: Crispien is experienced with electoral campaigning.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; workers_spd += 3; unemployed_spd += 2; new_middle_spd += 1
+
+
+@uspd_discipline
+title: Party Discipline
+subtitle: Reduce dissent across former USPD members.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; left_dissent -= 12; labor_dissent -= 7; center_dissent -= 12
+
+We have enforced party discipline to reduce dissent among former members of the <span style="color: #AA0000;">USPD</span>.
+
+
+@contact_uspd
+title: Contact former <span style="color: #AA0000;">USPD</span> members.
+subtitle: Crispien used to be head of the <span style="color: #AA0000;">USPD</span>, he can try to leverage his contacts.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0
+on-arrival: advisor_action_timer = 6
+
+tobeadded
