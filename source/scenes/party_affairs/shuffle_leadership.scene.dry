@@ -125,14 +125,14 @@ tags: remove_advisor
 on-arrival: breitscheid_advisor = 0; center_dissent += 10; n_advisors -= 1
 go-to: rm_main_menu
 
-@remove_crispen
-title: Remove Crispen
-view-if: crispen_advisor = 1
+@remove_crispien
+title: Remove Crispien
+view-if: crispien_advisor = 1
 tags: remove_advisor
-on-arrival: crispen_advisor = 0; center_dissent += 10; n_advisors -= 1
+on-arrival: crispien_advisor = 0; center_dissent += 10; n_advisors -= 1
 go-to: rm_main_menu
 
-Crispen has been removed as an advisor. The Centrist faction disapproves.
+Crispien has been removed as an advisor. The Centrist faction disapproves.
 
 # reformists
 
@@ -267,6 +267,25 @@ on-arrival: siemsen_advisor = 0; left_dissent += 7; n_advisors -= 1
 go-to: rm_main_menu
 
 Siemsen has been removed as an advisor. The Leftist faction disapproves.
+
+
+@remove_ledebour
+title: Remove Ledebour
+view-if: ledebour_advisor = 1
+tags: remove_advisor
+on-arrival: ledebour_advisor = 0; left_dissent += 7; n_advisors -= 1
+go-to: rm_main_menu
+
+Ledebour has been removed as an advisor. The Leftist faction disapproves.
+
+@remove_liebknecht
+title: Remove Liebknecht
+view-if: liebknecht_advisor = 1
+tags: remove_advisor
+on-arrival: liebknecht_advisor = 0; left_dissent += 7; n_advisors -= 1
+go-to: rm_main_menu
+
+Liebknecht has been removed as an advisor. The Leftist faction disapproves.
 
 
 
@@ -465,24 +484,24 @@ title: Rudolf Breitscheid
 subtitle: Rudolf Breitscheid comes from a well-educated background and is one of our foreign policy leaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/BreitscheidRudolf.jpg
-view-if: breitscheid_advisor = 0 and uspd_joined = 1 and n_advisors < 4
+view-if: breitscheid_advisor = 0 and uspd_joined >= 1 and n_advisors < 4
 on-arrival: breitscheid_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 tags: center_advisor
 
 Rudolf Breitscheid is now an advisor.
 
-@add_crispen
-title: Arthur Crispen
-subtitle: Crispen comes from the USPD. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
+@add_crispien
+title: Arthur Crispien
+subtitle: Crispien comes from the USPD. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
-card-image: img/portraits/CrispenArthur.jpg
-view-if: crispen_advisor = 0 and uspd_joined = 1 and n_advisors < 4
-on-arrival: crispen_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
+card-image: img/portraits/CrispienArthur.jpg
+view-if: crispien_advisor = 0 and uspd_joined >= 1 and n_advisors < 4
+on-arrival: crispien_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 tags: center_advisor
 
-Arthur Crispen is now an advisor.
+Arthur Crispien is now an advisor.
 
 # reformist
 
@@ -556,7 +575,7 @@ title: Paul Levi
 subtitle: Paul Levi is a former <span style="color: #700000;">**KPD**</span> leader who was purged for criticizing <span style="color: #700000;">**Communist**</span> policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the <span style="color: #700000;">**KPD**</span> ?]
 is-card: true
 card-image: img/portraits/LeviPaul.jpg
-view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 4 and left_split = 0
+view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 4 and left_split = 0 and uspd_joined >= 2
 on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 7
 go-to: advisor_menu
 tags: left_advisor
@@ -568,7 +587,7 @@ title: Toni Sender
 subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Center Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/SenderToni.jpg
-view-if: sender_advisor = 0 and uspd_joined = 1  and n_advisors < 4
+view-if: sender_advisor = 0 and uspd_joined >= 1  and n_advisors < 4
 on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
 go-to: advisor_menu
 tags: left_advisor
@@ -580,7 +599,7 @@ title: Kurt Rosenfeld
 subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the <span style="color: #700000;">**KPD**</span>, Against Toleration ?]
 is-card: true
 card-image: img/portraits/RosenfeldKurt.jpg
-view-if: rosenfeld_advisor = 0 and uspd_joined = 1 and n_advisors < 4 and left_split = 0
+view-if: rosenfeld_advisor = 0 and uspd_joined >= 2 and n_advisors < 4 and left_split = 0
 on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
 go-to: advisor_menu
 tags: left_advisor
@@ -604,12 +623,36 @@ title: Anna Siemsen
 subtitle: Anna Siemsen is an and educational reform advocate and pacifist, who was one of the few German women to receive a PhD in the pre-war period. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
 is-card: true
 card-image: img/portraits/SiemsenAnna.jpg
-view-if: siemsen_advisor = 0 and n_advisors < 4 and left_split = 0
+view-if: siemsen_advisor = 0 and n_advisors < 4 and left_split = 0 and uspd_joined >= 1 
 on-arrival: siemsen_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
 go-to: advisor_menu
 tags: left_advisor
 
 Anna Siemsen is now an advisor.
+
+@add_ledebour
+title: Georg Ledebour
+subtitle: Georg Ledebour is tobeadded. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the <span style="color: #700000;">**KPD**</span>, Against Toleration ?]
+is-card: true
+card-image: img/portraits/LedebourGeorg.jpg
+view-if: ledebour_advisor = 0 and uspd_joined >= 3 and n_advisors < 4 and left_split = 0
+on-arrival: ledebour_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
+go-to: advisor_menu
+tags: left_advisor
+
+Georg Ledebour is now an advisor.
+
+@add_liebknecht
+title: Theodor Liebknecht
+subtitle: Theodor Liebknecht is to be added {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the <span style="color: #700000;">**KPD**</span>, Against Toleration ?]
+is-card: true
+card-image: img/portraits/LiebknechtTheodor.jpg
+view-if: liebknecht_advisor = 0 and uspd_joined >= 3 and n_advisors < 4 and left_split = 0
+on-arrival: liebknecht_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
+go-to: advisor_menu
+tags: left_advisor
+
+Theodor Liebknecht is now an advisor.
 
 
 
@@ -633,7 +676,7 @@ subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar t
 is-card: true
 card-image: img/portraits/AufhäuserSiegfried.jpg
 tags: labor_advisor
-view-if: aufhauser_advisor = 0 and n_advisors < 4
+view-if: aufhauser_advisor = 0 and uspd_joined >= 1 and n_advisors < 4
 on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 8
 go-to: advisor_menu
 
