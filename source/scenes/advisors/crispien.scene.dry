@@ -14,7 +14,7 @@ Crispien used to be leader of the anti-war <span style="color: #AA0000;">**USPD*
 - @contact_uspd
 - @root: Return to main
 
-@breitscheid_international
+@crispien_international
 title: International Party Relations
 subtitle: Crispien is one of our contacts with international <span style="color: #c00000;">socialist</span> parties.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
