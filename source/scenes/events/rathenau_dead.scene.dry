@@ -4,8 +4,7 @@ new-page: true
 on-arrival: rathenau_dead = 1
 tags: event
 view-if: year = 1922 and month = 6
-max-visits: 1
-on-display: {!  
+max-visits: 1 
 priority: 1
 
 = Rathenau dead
