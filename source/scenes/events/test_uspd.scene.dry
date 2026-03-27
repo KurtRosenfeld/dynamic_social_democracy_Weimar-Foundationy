@@ -1,6 +1,6 @@
 title: USPD
 subtitle: growwwwww
-view-if: year == 1922 and month == 5
+view-if: year == 1922 and month == 6
 max-visits: 1
 tags: event
 new-page: true
