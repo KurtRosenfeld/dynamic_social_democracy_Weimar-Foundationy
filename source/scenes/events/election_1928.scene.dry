@@ -1388,7 +1388,7 @@ if (Q.kpd_r) {
     });
 }
 
-if (Q.uspd_r && !Q.uspd_jopined = 3) {
+if (Q.uspd_r && !Q.uspd_joined = 3) {
     data.push({
         "id": "uspd",
         "legend": "USPD",
