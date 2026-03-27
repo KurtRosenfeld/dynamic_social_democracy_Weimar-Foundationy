@@ -614,7 +614,7 @@ data = [{
     "seats": Math.round(Q.kpd_r_prussia * Q.landtag_size),
 }];
 
-if (!Q.uspd_joined = 3 && Q.uspd_r_prussia) {
+if (Q.uspd_r_prussia && Q.uspd_joined !== 3) {
     data.push({
         "id": "uspd",
         "legend": "USPD",
