@@ -19,4 +19,4 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent); workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2; dvp_relation -= 3; dvp_right += 1; lvp_relation -= 3; lvp_right += 1
 
-Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress
+Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class.
