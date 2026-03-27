@@ -1,0 +1,22 @@
+title: Theodor Liebknecht
+is-pinned-card: true
+tags: advisor, left
+card-image: img/portraits/LiebknechtTheodor.jpg
+view-if: liebknecht_advisor = 1
+new-page: true 
+
+= Theodor Liebknecht
+
+Liebknecht is a former <span style="color: #AA0000;">**USPD**</span> leader and one of our most <span style="color: #700000;">**far-left**</span> members and brother of Karl Liebknecht.
+
+- @class_struggle
+- @root: Return to main
+
+@class_struggle
+title: Rally for class struggle
+subtitle: The core of <span style="color: #c00000;">socialism</span> should be the struggle of the proletariat against the bourgeoisie.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer = 0
+on-arrival: advisor_action_timer = 6; workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent); workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2; dvp_relation -= 3; dvp_right += 1; lvp_relation -= 3; lvp_right += 1
+
+Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class.
