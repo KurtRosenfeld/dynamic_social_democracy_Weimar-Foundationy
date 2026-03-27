@@ -1,0 +1,27 @@
+title: Rathenau Dead
+subtitle: Foreign Minister Walther (DDP) Rathanau has been shot by nationalists...
+new-page: true
+on-arrival: rathenau_dead = 1
+tags: event
+view-if: year = 1922 and month = 6
+max-visits: 1
+on-display: {!  
+priority: 1
+
+= Rathenau dead
+
+The Foreign Minister who the right considers an "Erfüllungspolitiker" has been shot. This is another installment in a series of political assasinations following Karl Gareis and Matthias Erzberger in 1921.
+
+
+- @defend_repub: Defend Republicanism
+- @decrease_presence: Decrease public pressence
+
+@defend_repub
+on-arrival: ddp_relation += 3; z_relation += 3
+
+We show that we stand firmly behind the republic.
+
+@decrease_presence
+on-arrival: new_middle_spd -= 2; workers_dnvp += 1; new_middle_dnvp += 1
+
+We don't want to be the next victims...
