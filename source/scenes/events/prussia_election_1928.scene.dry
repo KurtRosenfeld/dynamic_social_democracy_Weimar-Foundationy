@@ -48,6 +48,7 @@ for (var c of Q.classes) {
 if (Q.year == 1928) {
     var adjustment_factors = {
         spd: 0.98,
+        uspd: 0.98,
         sapd: 0.6,
         kpd: 1.1,
         ddp: 0.95,
@@ -63,6 +64,7 @@ if (Q.year == 1928) {
 } else if (Q.year == 1929) {
     var adjustment_factors = {
         spd: 0.97,
+        uspd: 0.97,
         sapd: 0.8,
         kpd: 1.08,
         ddp: 0.95,
@@ -78,6 +80,7 @@ if (Q.year == 1928) {
 } else if (Q.year == 1930 && Q.kvp_formed == 1) {
     var adjustment_factors = {
         spd: 0.95,
+        uspd: 0.95,
         sapd: 1.0,
         kpd: 1.05,
         ddp: 0.95,
@@ -93,6 +96,7 @@ if (Q.year == 1928) {
 } else if (Q.year == 1930 && Q.kvp_formed == 0) {
     var adjustment_factors = {
         spd: 0.95,
+        uspd: 0.95,
         sapd: 1.0,
         kpd: 1.05,
         ddp: 0.95,
@@ -108,6 +112,7 @@ if (Q.year == 1928) {
 } else if (Q.year == 1931) {
     var adjustment_factors = {
         spd: 0.95,
+        uspd: 0.95,
         sapd: 1.3,
         kpd: 1.0,
         ddp: 0.95,
@@ -123,6 +128,7 @@ if (Q.year == 1928) {
 } else if (Q.year >= 1932) {
     var adjustment_factors = {
         spd: 0.95,
+        uspd: 0.95,
         sapd: 1.5,
         kpd: 1.0,
         ddp: 0.95,
@@ -608,6 +614,15 @@ data = [{
     "seats": Math.round(Q.kpd_r_prussia * Q.landtag_size),
 }];
 
+if (!Q.uspd_joined = 3 && Q.uspd_r_prussia) {
+    data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Math.round(Q.uspd_r_prussia * Q.landtag_size),
+    });
+}
+
 if (Q.sapd_formed && Q.sapd_r_prussia) {
     data.push({
         "id": "sapd",
@@ -798,6 +813,8 @@ go-to: coalition_menu
 [? if dnef_formed: <tr><td colspan="5" style="text-align: center;"><hr id="read-marker"></td></tr> ?]
 
 [? if dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F;'> </div> !} SPD: {!</td><td>!} [+ spd_votes_prussia +]% {!</td><td>!} [+ str_votes_change_spd_prussia +] {!</td><td>!} [+ spd_r_prussia +]% {!</td><td>!} [+ str_change_spd_prussia +] {!</td></tr>!} ?]
+
+[? if not uspd_joined = 3 : {!<tr><td><div class="box" style='background-color:#AA0000'> </div> !}USPD: {!</td><td>!} [+ uspd_votes_prussia +]% {!</td><td>!} [+ str_votes_change_uspd_prussia +] {!</td><td>!} [+ uspd_r_prussia +]% {!</td><td>!} [+ str_change_uspd_prussia +] {!</td></tr>!} ?]
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_votes_prussia +]% {!</td><td>!} [+ str_votes_change_sapd_prussia +] {!</td><td>!} [+ sapd_r_prussia +]% {!</td><td>!} [+ str_change_sapd_prussia +] {!</td></tr>!} ?]
 
