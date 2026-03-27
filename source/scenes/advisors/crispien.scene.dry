@@ -29,6 +29,7 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1; workers_spd += 3; unemployed_spd += 2; new_middle_spd += 1
 
+goooo
 
 @uspd_discipline
 title: Party Discipline
@@ -47,4 +48,4 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6
 
-tobeadded
+to be added
