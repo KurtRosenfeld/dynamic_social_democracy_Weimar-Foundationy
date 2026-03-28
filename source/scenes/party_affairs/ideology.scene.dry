@@ -22,6 +22,7 @@ The <span style="color: #c00000;">**SPD**</span> is torn between many different 
 - @easy_discard
 
 @class_struggle
+view-if: uspd_joined >= 1
 on-arrival: {!
 if (Q.ideology && Q.ideology != "left") {
     Q.changed = 1;
