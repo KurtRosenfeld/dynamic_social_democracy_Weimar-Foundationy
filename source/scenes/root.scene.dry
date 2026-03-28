@@ -336,7 +336,7 @@ Q.catholics_spd_old = 16;
 Q.spd_r = 21.9;
 Q.uspd_r = 13.3;
 Q.kpd_r = 8.5;
-Q.z_r = 13.6;
+Q.z_r = 17.8;
 Q.ddp_r = 8.3;
 Q.dvp_r = 13.9;
 Q.dnvp_r = 15.1;
@@ -351,7 +351,7 @@ Q.landtag_size = 4.5;
 
 // diff from prev
 Q.old_spd_r = 21.9;
-Q.old_uspd_r = 13.3;
+Q.old_uspd_r = 17.8;
 Q.old_kpd_r = 8.5;
 Q.old_z_r = 13.6;
 Q.old_ddp_r = 8.3;
@@ -365,7 +365,7 @@ Q.old_bvp_r = 4.1;
 Q.previous_spd_last_election_votes = 21.9;
 Q.previous_uspd_last_election_votes = 17.6;
 Q.previous_kpd_last_election_votes = 2.1;
-Q.previous_z_last_election_votes = 17.7;
+Q.previous_z_last_election_votes = 17.8;
 Q.previous_ddp_last_election_votes = 8.3;
 Q.previous_dvp_last_election_votes = 13.9;
 Q.previous_dnvp_last_election_votes = 25.1;
