@@ -799,10 +799,10 @@ Q.prussian_reichsexekution_timer = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
 Q.in_election_prussia = 1;
-Q.next_election_time_prussia = 5;
-Q.next_election_year_prussia = 1928;
+Q.next_election_time_prussia = 12;
+Q.next_election_year_prussia = 1924;
 Q.next_election_month_prussia = 5;
-Q.next_election_year = 1928;
+Q.next_election_year = 1924;
 Q.next_election_month = 12;
 Q.next_election_time = 12;
 // government affairs timers
