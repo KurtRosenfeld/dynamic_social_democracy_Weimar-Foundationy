@@ -437,7 +437,7 @@ subtitle: Rudolf Hilferding is an economist and one of our chief Marxist theoret
 is-card: true
 card-image: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
-view-if: hilferding_advisor = 0 and n_advisors < 4 and centrists_resign = 0
+view-if: hilferding_advisor = 0 and n_advisors < 4 and centrists_resign = 0  and uspd_joined >= 1
 on-arrival: hilferding_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 
