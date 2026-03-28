@@ -1,7 +1,7 @@
 title: The USPD is in decline
 subtitle: The USPD can't see a future for itself
 new-page: true
-on-arrival: workers_uspd -= 3; unemployed_uspd -= 2; unemployed_kpd += 2; workers_spd += 1; uspd_decline_timer += 5
+on-arrival: workers_uspd -= 3; unemployed_uspd -= 2; unemployed_kpd += 2; workers_spd += 1; uspd_decline_timer = 5
 tags: event
 view-if: uspd_joined < 3 and uspd_decline_timer = 0
 max-visits: 3
