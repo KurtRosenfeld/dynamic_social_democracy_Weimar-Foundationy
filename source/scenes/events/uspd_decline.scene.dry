@@ -3,7 +3,7 @@ subtitle: The USPD can't see a future for itself
 new-page: true
 on-arrival: workers_uspd -= 3; unemployed_uspd -= 2; unemployed_kpd += 2; workers_spd += 1
 tags: event
-view-if: uspd_joined < 3
+view-if: uspd_joined < 3 and uspd_decline = 0
 max-visits: 3
 priority: 1
 
