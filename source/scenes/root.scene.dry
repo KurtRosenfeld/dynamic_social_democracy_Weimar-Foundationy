@@ -263,35 +263,35 @@ Q.cvp_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 55;
-Q.workers_uspd = 0;
-Q.workers_kpd = 22;
+Q.workers_spd = 45;
+Q.workers_uspd = 14;
+Q.workers_kpd = 18;
 Q.workers_z = 5;
-Q.workers_ddp = 2;
-Q.workers_dvp = 0;
+Q.workers_ddp = 1;
+Q.workers_dvp = 1;
 Q.workers_dnvp = 6;
 Q.workers_nsdap = 0;
-Q.workers_other = 10;
+Q.workers_other = 2;
 
-Q.new_middle_spd = 8;
-Q.new_middle_uspd = 0;
-Q.new_middle_kpd = 1;
-Q.new_middle_z = 10;
-Q.new_middle_ddp = 23;
-Q.new_middle_dvp = 22;
-Q.new_middle_dnvp = 10;
-Q.new_middle_nsdap = 4;
-Q.new_middle_other = 22;
+Q.new_middle_spd = 9;
+Q.new_middle_uspd = 1;
+Q.new_middle_kpd = 0;
+Q.new_middle_z = 11;
+Q.new_middle_ddp = 25;
+Q.new_middle_dvp = 36;
+Q.new_middle_dnvp = 12;
+Q.new_middle_nsdap = 0;
+Q.new_middle_other = 3;
 
-Q.old_middle_spd = 4;
+Q.old_middle_spd = 5;
 Q.old_middle_uspd = 0;
 Q.old_middle_kpd = 0;
-Q.old_middle_z = 6;
-Q.old_middle_ddp = 10;
-Q.old_middle_dvp = 27;
+Q.old_middle_z = 7;
+Q.old_middle_ddp = 11;
+Q.old_middle_dvp = 36;
 Q.old_middle_dnvp = 24;
-Q.old_middle_nsdap = 9;
-Q.old_middle_other = 20;
+Q.old_middle_nsdap = 0;
+Q.old_middle_other = 3;
 
 Q.rural_spd = 9;
 Q.rural_uspd = 0;
@@ -299,82 +299,79 @@ Q.rural_kpd = 0;
 Q.rural_z = 5;
 Q.rural_ddp = 4;
 Q.rural_dvp = 15;
-Q.rural_dnvp = 46;
+Q.rural_dnvp = 56;
 Q.rural_nsdap = 3;
-Q.rural_other = 16;
+Q.rural_other = 6;
 
-Q.unemployed_spd = 21;
-Q.unemployed_uspd = 0;
-Q.unemployed_kpd = 50;
-Q.unemployed_z = 1;
-Q.unemployed_ddp = 0;
+Q.unemployed_spd = 18;
+Q.unemployed_uspd = 30;
+Q.unemployed_kpd = 30;
+Q.unemployed_z = 2;
+Q.unemployed_ddp = 1;
 Q.unemployed_dvp = 0;
 Q.unemployed_dnvp = 4;
-Q.unemployed_nsdap = 13;
-Q.unemployed_other = 7;
+Q.unemployed_nsdap = 0;
+Q.unemployed_other = 6;
 
-Q.catholics_spd = 21;
-Q.catholics_uspd = 0;
-Q.catholics_kpd = 2;
+Q.catholics_spd = 17;
+Q.catholics_uspd = 7;
+Q.catholics_kpd = 1;
 Q.catholics_z = 49;
 Q.catholics_ddp = 0;
-Q.catholics_dvp = 5;
+Q.catholics_dvp = 7;
 Q.catholics_dnvp = 5;
 Q.catholics_nsdap = 0;
-Q.catholics_other = 16;
+Q.catholics_other = 7;
 
-Q.workers_spd_old = 60;
+Q.workers_spd_old = 43;
 Q.new_middle_spd_old = 8;
-Q.old_middle_spd_old = 4;
+Q.old_middle_spd_old = 5;
 Q.rural_spd_old = 8;
-Q.unemployed_spd_old = 25;
-Q.catholics_spd_old = 20;
+Q.unemployed_spd_old = 15;
+Q.catholics_spd_old = 16;
 
 // Current Reichstag composition
-// % of Reichstag in Jan 1928
+// % of Reichstag in April 1922
 // source: wikipedia
-// note: the Z figures also include the BVP (Bavarian people's party)
-// since they were ideologically similar, but they were separate parties.
-// They did not have a CDU/CSU-style relationship.
-Q.spd_r = 26.5;
-Q.uspd_r = 0;
-Q.kpd_r = 9.1;
-Q.z_r = 17.8;
-Q.ddp_r = 6.5;
-Q.dvp_r = 10.3;
-Q.dnvp_r = 20.9;
-Q.nsdap_r = 3;
-Q.other_r = 5.9;
-Q.bvp_r = 3.9;
-Q.wp_r = 2.4;
-Q.cnblp_r = 1.7;
-Q.true_other_r = 1.8;
+Q.spd_r = 21.9;
+Q.uspd_r = 13.3;
+Q.kpd_r = 8.5;
+Q.z_r = 13.6;
+Q.ddp_r = 8.3;
+Q.dvp_r = 13.9;
+Q.dnvp_r = 15.1;
+Q.nsdap_r = 0;
+Q.other_r = 3.3;
+Q.bvp_r = 4.1;
+Q.wp_r = 0;
+Q.cnblp_r = 0;
+Q.true_other_r = 3.3;
 Q.reichstag_size = 4.93;
 Q.landtag_size = 4.5;
 
 // diff from prev
-Q.old_spd_r = 26.5;
-Q.old_uspd_r = 0;
-Q.old_kpd_r = 9.1;
-Q.old_z_r = 13.9;
-Q.old_ddp_r = 6.5;
-Q.old_dvp_r = 10.3;
-Q.old_dnvp_r = 20.9;
-Q.old_nsdap_r = 3;
-Q.old_other_r = 5.9;
-Q.old_bvp_r = 3.9;
+Q.old_spd_r = 21.9;
+Q.old_uspd_r = 13.3;
+Q.old_kpd_r = 8.5;
+Q.old_z_r = 13.6;
+Q.old_ddp_r = 8.3;
+Q.old_dvp_r = 13.9;
+Q.old_dnvp_r = 15.1;
+Q.old_nsdap_r = 0;
+Q.old_other_r = 3.3;
+Q.old_bvp_r = 4.1;
 
 // old election votes
-Q.previous_spd_last_election_votes = 26;
-Q.previous_uspd_last_election_votes = 0;
-Q.previous_kpd_last_election_votes = 9;
-Q.previous_z_last_election_votes = 17.3;
-Q.previous_ddp_last_election_votes = 6.3;
-Q.previous_dvp_last_election_votes = 10.1;
-Q.previous_dnvp_last_election_votes = 20.5;
-Q.previous_nsdap_last_election_votes = 3;
-Q.previous_other_last_election_votes = 7.8;
-Q.previous_bvp_last_election_votes = 3.7;
+Q.previous_spd_last_election_votes = 21.9;
+Q.previous_uspd_last_election_votes = 17.6;
+Q.previous_kpd_last_election_votes = 2.1;
+Q.previous_z_last_election_votes = 13.6;
+Q.previous_ddp_last_election_votes = 8.3;
+Q.previous_dvp_last_election_votes = 13.9;
+Q.previous_dnvp_last_election_votes = 25.1;
+Q.previous_nsdap_last_election_votes = 0;
+Q.previous_other_last_election_votes = 3.3;
+Q.previous_bvp_last_election_votes = 4.1;
 
 Q.old_dsu_r = 0;
 Q.old_nsdap_hitler_r = 0;
@@ -395,37 +392,37 @@ Q.previous_nvf_last_election_votes_prussia = 0.0;
 Q.previous_schleicher_dnef_last_election_votes_prussia = 0.0;
 
 // prussian gov right now
-Q.spd_r_prussia = 25.3;
-Q.uspd_r_prussia = 0;
-Q.kpd_r_prussia = 9.8;
-Q.z_r_prussia = 18.0;
-Q.ddp_r_prussia = 6.0;
-Q.dvp_r_prussia = 10.0;
-Q.dnvp_r_prussia = 24.2;
-Q.nsdap_r_prussia = 2.5;
-Q.other_r_prussia = 4.2;
+Q.spd_r_prussia = 26.3;
+Q.uspd_r_prussia = 5.0;
+Q.kpd_r_prussia = 9.0;
+Q.z_r_prussia = 17.2;
+Q.ddp_r_prussia = 6.2;
+Q.dvp_r_prussia = 14.2;
+Q.dnvp_r_prussia = 18.1;
+Q.nsdap_r_prussia = 0;
+Q.other_r_prussia = 4.0;
 
 // diff from prev PRUSSIA
-Q.old_spd_r_prussia = 25.3;
-Q.old_uspd_r_prussia = 0;
-Q.old_kpd_r_prussia = 9.8;
-Q.old_z_r_prussia = 18.0;
-Q.old_ddp_r_prussia = 6.0;
-Q.old_dvp_r_prussia = 10.0;
-Q.old_dnvp_r_prussia = 24.2;
-Q.old_nsdap_r_prussia = 2.5;
-Q.old_other_r_prussia = 4.2;
+Q.old_spd_r_prussia = 26.3;
+Q.old_uspd_r_prussia = 5.0;
+Q.old_kpd_r_prussia = 9.0;
+Q.old_z_r_prussia = 17.2;
+Q.old_ddp_r_prussia = 6.2;
+Q.old_dvp_r_prussia = 14.2;
+Q.old_dnvp_r_prussia = 18.1;
+Q.old_nsdap_r_prussia = 0;
+Q.old_other_r_prussia = 4.0;
 
 // old election votes PRUSSIA
-Q.previous_spd_last_election_votes_prussia = 24.9;
-Q.previous_uspd_last_election_votes_prussia = 0;
-Q.previous_kpd_last_election_votes_prussia = 9.6;
-Q.previous_z_last_election_votes_prussia = 17.6;
-Q.previous_ddp_last_election_votes_prussia = 5.9;
-Q.previous_dvp_last_election_votes_prussia = 9.8;
-Q.previous_dnvp_last_election_votes_prussia = 23.7;
-Q.previous_nsdap_last_election_votes_prussia = 2.5;
-Q.previous_other_last_election_votes_prussia = 6.0;
+Q.previous_spd_last_election_votes_prussia = 26.3;
+Q.previous_uspd_last_election_votes_prussia = 6.6;
+Q.previous_kpd_last_election_votes_prussia = 7.4;
+Q.previous_z_last_election_votes_prussia = 17.2;
+Q.previous_ddp_last_election_votes_prussia = 6.2;
+Q.previous_dvp_last_election_votes_prussia = 14.2;
+Q.previous_dnvp_last_election_votes_prussia = 18.1;
+Q.previous_nsdap_last_election_votes_prussia = 0;
+Q.previous_other_last_election_votes_prussia = 4.0;
 
 Q.spd_votes = 27.9;
 Q.uspd_votes = 0;
