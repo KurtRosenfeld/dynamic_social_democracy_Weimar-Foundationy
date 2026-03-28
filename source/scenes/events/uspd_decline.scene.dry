@@ -1,0 +1,46 @@
+title: The USPD is in decline
+subtitle: The USPD can't see a future for itself
+new-page: true
+on-arrival: workers_uspd -= 3; unemployed_uspd -= 2; unemployed_kpd += 2; workers_spd += 1
+tags: event
+view-if: uspd_joined < 3
+max-visits: 3
+priority: 1
+
+= The USPD is in decline
+
+After losing their left wing to KPD the party is unable to find it's position between the radical KPD and the moderate SPD. Their finacial situation is grim and internal dissent is growing as members of Parliament fear they won't be reelected...
+
+
+- @uspd_relation: Use this occasion to improve our relations.
+- @celebrate_uspd: Celebrate their decline hoping to gain some of their vote share.
+- @form_par_union: Offer to merge our parliamentary factions.
+- @uspd_concession: Make concessions to the former USPD members in our party
+- @ignore: Ignore...
+
+@uspd_relation
+on-arrival: uspd_relation += 3; left_dissent -= 3; center_dissent -= 3; labor_dissent -= 2
+
+We show respect to our comrades.
+
+@celebrate_uspd
+on-arrival: workers_uspd -= 1; workers_spd += 1*(1-dissent); uspd_relation -= 8; kpd_relation -= 1; reformist_strength += 3; left_dissent += 2
+
+The USPD is not pleased about our behaviour.
+
+@form_par_union
+view-if: rathenau_dead == 1 and vspd_parliament == 0
+on-arrival: vspd_parliament = 1; uspd_relation += 4
+
+The murder of Rathenau shows how we need to stick together.
+
+@uspd_concession
+view-if: uspd_joined >= 1
+on-arrival: unemployed_spd += 1; left_dissent -= 4; center_dissent -= 3; labor_dissent -= 2; reformist_dissent += 3; left_strength += 2; center_strength += 2
+
+We make some concession to the former USPD members in our party to prevent workers from enterring the KPD.
+
+@ignore
+on-arrival: reformist_dissent -= 1
+
+We don't care too much...
