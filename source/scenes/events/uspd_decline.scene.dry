@@ -35,7 +35,7 @@ We show respect to our comrades. Due to left-turn of the party since our reunifi
 
 @bruderhand
 subtitle: We offer finacial aid to the USPD as they occupy an important position in the landscape of German parties. (-1 resource)
-view-if: uspd_joined == 0
+view-if: uspd_joined == 0 and vspd_parliament == 1
 choose-if: resources >= 1 and uspd_relation >= 50
 unavailable-subtitle: [? if resources == 0: Not enough resources.?][? if uspd_relation < 50: Our party doesn't see any use in that.?]
 on-arrival: resources -= 1; uspd_relation += 10; workers_uspd += 4; unemployed_uspd += 3; unemployed_kpd -= 1; workers_spd -= 1; uspd_decline_timer += 8
