@@ -174,7 +174,7 @@ We hope for the best
 
 @kpd_without_moscow
 view-if: second_kpd_essentially == 1
-coalition_dissent += 5; unemployed_spd += 5; new_middle_spd -= 3; old_middle_spd -= 3; left_dissent -= 55; reformist_dissent += 45; kpd_relation += 25 if left_strength >= 45; left_strength += 25; new_party_programm += 1; center_relation -= 20; ddp_relation -= 15; dvp_relation -= 45; uspd_joined = 3; Q.workers_spd = (Q.workers_spd + Q.workers_uspd); Q.workers_uspd = 0;  Q.unemployed_spd = (Q.unemployed_spd + Q.unemployed_uspd); Q.unemployed_uspd = 0; Q.catholics_spd = (Q.catholics_spd + Q.catholics_uspd); Q.catholics_uspd = 0 
+on-arrival: coalition_dissent += 5; unemployed_spd += 5; new_middle_spd -= 3; old_middle_spd -= 3; left_dissent -= 55; reformist_dissent += 45; kpd_relation += 25 if left_strength >= 45; left_strength += 25; new_party_programm += 1; center_relation -= 20; ddp_relation -= 15; dvp_relation -= 45; uspd_joined = 3; Q.workers_spd = (Q.workers_spd + Q.workers_uspd); Q.workers_uspd = 0;  Q.unemployed_spd = (Q.unemployed_spd + Q.unemployed_uspd); Q.unemployed_uspd = 0; Q.catholics_spd = (Q.catholics_spd + Q.catholics_uspd); Q.catholics_uspd = 0 
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Somehow it seems more left-wing than the initial <span style="color: #AA0000;">**USPD**</span>. This turns the <span style="color: #c00000;">**SPD**</span> into a big tent party again.
 
