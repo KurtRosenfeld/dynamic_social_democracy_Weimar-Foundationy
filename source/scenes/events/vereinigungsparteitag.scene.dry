@@ -164,7 +164,7 @@ The promise of adopting a new programm eventually helps a lot with reconciliatio
 
 @high_vspd
 view-if: good_uspd_vspd_deal == 1
-on-arrival: coalition_dissent += 1; unemployed_spd += 2; left_dissent -= 15; reformist_dissent += 25; kpd_relation += 10; left_strength += 20; new_party_programm += 1; center_relation -= 8; ddp_relation -= 5; dvp_relation -= 15; uspd_joined = 2;  Q.workers_spd = Q.workers_spd + Q.workers_uspd; Q.workers_uspd = 0;  Q.unemployed_spd = Q.unemployed_spd + Q.unemployed_uspd; Q.unemployed_uspd = 0; Q.catholics_spd = Q.catholics_spd + Q.catholics_uspd; Q.catholics_uspd = 0
+on-arrival: coalition_dissent += 1; unemployed_spd += 2; left_dissent -= 15; reformist_dissent += 25; kpd_relation += 10; left_strength += 20; new_party_programm += 1; center_relation -= 8; ddp_relation -= 5; dvp_relation -= 15; uspd_joined = 2
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. It seems it is more of a continuation of the <span style="color: #AA0000;">**USPD**</span> than the <span style="color: #c00000;">**MSPD**</span>. Let's hope it will survive longer than the last one.
 
@@ -174,7 +174,7 @@ We hope for the best
 
 @kpd_without_moscow
 view-if: second_kpd_essentially == 1
-on-arrival: coalition_dissent += 5; unemployed_spd += 5; new_middle_spd -= 3; old_middle_spd -= 3; left_dissent -= 55; reformist_dissent += 45; kpd_relation += 25; left_strength += 25; new_party_programm += 1; center_relation -= 20; ddp_relation -= 15; dvp_relation -= 45; uspd_joined = 3; Q.workers_spd = Q.workers_spd + Q.workers_uspd; Q.workers_uspd = 0;  Q.unemployed_spd = Q.unemployed_spd + Q.unemployed_uspd; Q.unemployed_uspd = 0; Q.catholics_spd = Q.catholics_spd + Q.catholics_uspd; Q.catholics_uspd = 0 
+on-arrival: coalition_dissent += 5; unemployed_spd += 5; new_middle_spd -= 3; old_middle_spd -= 3; left_dissent -= 55; reformist_dissent += 45; kpd_relation += 25; left_strength += 25; new_party_programm += 1; center_relation -= 20; ddp_relation -= 15; dvp_relation -= 45; uspd_joined = 3
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Somehow it seems more left-wing than the initial <span style="color: #AA0000;">**USPD**</span>. This turns the <span style="color: #c00000;">**SPD**</span> into a big tent party again.
 
