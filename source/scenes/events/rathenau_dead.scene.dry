@@ -6,21 +6,26 @@ tags: event
 view-if: year = 1922 and month = 6
 max-visits: 1 
 priority: 1
+face-image: img/Vorwärts_Rathenau.jpg
 
 = Rathenau dead
 
 The Foreign Minister who the right considers an "Erfüllungspolitiker" has been shot. This is another installment in a series of political assasinations following Karl Gareis and Matthias Erzberger in 1921.
 
 
-- @defend_repub: Defend Republicanism
+- @defend_repub_1: Defend Republicanism
+- @defend_repub_2: Defend Republicanism and the government
 - @decrease_presence: Decrease public pressence
 
-@defend_repub
+@defend_repub_1
 on-arrival: ddp_relation += 3; z_relation += 3
 
-We show that we stand firmly behind the republic.
+@defend_repub_2
+on-arrival: ddp_relation += 9; z_relation += 9; kpd_relation -= 4; uspd_relation -= 1
+
+We show that we stand firmly behind the republic and the Wirth course.
 
 @decrease_presence
-on-arrival: new_middle_spd -= 2; workers_dnvp += 1; new_middle_dnvp += 1
+on-arrival: new_middle_spd -= 2; workers_dnvp += 1; new_middle_dnvp += 1; rb_strength -= 50
 
 We don't want to be the next victims...
