@@ -1,10 +1,10 @@
 title: Nürmberger Vereinigungsparteitag
 subtitle: The formal unification of the USPD with our SPD
 new-page: true
-view-if: spd_r < 50
+view-if: year == 1922 and month == 9
 tags: event
 
-= Cabinet Reshuffled
+= To be added
 
 @menu
 
@@ -13,6 +13,7 @@ Chancellor [+ chancellor +] has announced his intentions to President [+ preside
 - @try_assuage: Try to assuage our partners.
 - @right_coalition: The <span style="color: #3E88B3;">**DNVP**</span> replaces us in government.
 - @center_right_coalition: The <span style="color: #3E88B3;">**DNVP**</span> replaces us in government.
+- @skip_vspd: Skip...
 
 @try_assuage
 
@@ -70,3 +71,9 @@ choose-if: not (year = 1929 and month >= 7)
 on-arrival: center_dissent += 5; reformist_dissent += 5; spd_in_government = 0; grand_coalition_collapsed = 1 if in_grand_coalition; in_grand_coalition = 0; in_weimar_coalition = 0; coalition_dissent = 0
 unavailable-subtitle: The <span style="color: #3E88B3;">DNVP</span> isn't willing to enter government.
 go-to: election_1928.center_right_coalition_2
+
+@skip_vspd
+on-arrival: labor_dissent -= 1
+
+lol
+
