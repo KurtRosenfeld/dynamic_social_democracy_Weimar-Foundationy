@@ -1,5 +1,5 @@
 title: USPD Unification
-view-if: vspd_parliament == 1 uspd_relation >= 65
+view-if: vspd_parliament == 1 and uspd_relation >= 65
 max-visits: 1
 tags: event
 new-page: true
