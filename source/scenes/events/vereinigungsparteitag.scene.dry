@@ -2,7 +2,7 @@ title: Nürmberger Vereinigungsparteitag
 subtitle: The formal unification of the USPD with our SPD
 new-page: true
 max-visits: 1
-view-if: uspd_joining_proces == 1 and uspd_relations >= 60
+view-if: uspd_joining_proces == 1
 tags: event
 
 = Nürmberger Vereinigungsparteitag
