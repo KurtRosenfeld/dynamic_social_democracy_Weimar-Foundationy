@@ -27,7 +27,7 @@ What will we offer them
 
 Former <span style="color: #AA0000;">**USPD**</span> leader Arthur Crispien will become our third chairman alongside Hermann Müller and Otto Wels.
 
-- drop an advisor to be replaced with Crispien (this does not increase dissent and you can change them again eventually) -
+<span style="color: #AFAFAF;">**Drop an advisor to be replaced with Crispien (this does not increase dissent and you can change them again eventually)**</span>
 
 - @drop_ebert: Drop Ebert (reformist)
 - @drop_scheidemann: Drop Scheidemann (centrist)
@@ -99,7 +99,7 @@ The <span style="color: #700000;">**KPD**</span> profits a lot.
 
 @ new_swap
 
-- you can swap another advisor for Rudolf Breitscheid -
+<span style="color: #AFAFAF;">**you can swap another advisor for Rudolf Breitscheid**</span>
 
 - @drop_ebert_2: Drop Ebert (reformist)
 - @drop_scheidemann_2: Drop Scheidemann (centrist)
