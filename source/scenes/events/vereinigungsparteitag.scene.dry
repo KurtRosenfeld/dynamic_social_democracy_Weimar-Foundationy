@@ -57,7 +57,7 @@ Müller is more useful as a chancelor...
 
 @middle_uspd
 on-arrival: left_strength += 5; center_strength += 5; labor_strength += 5; new_party_programm += 1; uspd_joined = 2
-got-to: lowest_uspd
+go-to: lowest_uspd
 
 A new party programm is surely logical.
 
