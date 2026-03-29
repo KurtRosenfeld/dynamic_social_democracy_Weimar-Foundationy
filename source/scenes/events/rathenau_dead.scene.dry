@@ -15,17 +15,39 @@ The Foreign Minister who the right considers an "Erfüllungspolitiker" has been 
 
 - @defend_repub_1: Defend Republicanism
 - @defend_repub_2: Defend Republicanism and the government
+- @improve_left: Improve our relations with the left
 - @decrease_presence: Decrease public pressence
 
 @defend_repub_1
-on-arrival: ddp_relation += 3; z_relation += 3
+on-arrival: ddp_relation += 3; z_relation += 3; pro_republic += 1
 
 @defend_repub_2
-on-arrival: ddp_relation += 9; z_relation += 9; kpd_relation -= 4; uspd_relation -= 1
+on-arrival: ddp_relation += 9; z_relation += 9; kpd_relation -= 4; uspd_relation -= 1; pro_republic += 1
 
 We show that we stand firmly behind the republic and the Wirth course.
 
+@improve left
+
+- @contact_uspd: Contact the USPD
+- @contact_kpd: Contact the KPD
+- @contact_both: Contact both
+
+@contact_uspd
+on-arrival: uspd_relation += 5; left_dissent -= 2; left_strength += 2
+
+The USPD is laregly open towards cooperation with us.
+
+@contact_kpd
+on-arrival: kpd_relation += 1; left_dissent -= 2; left_strength += 4; reformist_dissent += 3
+
+The KPD is reluctant to cooperate with us.
+
+@contact_both
+on-arrival: uspd_relation += 5; kpd_relation += 1; left_dissent -= 2; left_strength += 3; reformist_dissent += 3
+
+The USPD is laregly open towards cooperation with us, the KPD is more reluctant.
+
 @decrease_presence
-on-arrival: new_middle_spd -= 2; workers_dnvp += 1; new_middle_dnvp += 1; rb_strength -= 50
+on-arrival: new_middle_spd -= 2; workers_dnvp += 1; new_middle_dnvp += 1; rb_strength -= 50; pro_republic -= 2
 
 We don't want to be the next victims...
