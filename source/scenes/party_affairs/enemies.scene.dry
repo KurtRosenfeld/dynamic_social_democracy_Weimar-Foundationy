@@ -37,12 +37,12 @@ on-arrival: enemies = "NSDAP"; neorevisionist_strength += 5; nazi_urgency += 1; 
 [? if nazi_urgency == 0 or nsdap_votes < 10: The <span style="color: #7A3C00;">**NSDAP**</span> is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. [? if nsdap_votes < 8: Worst still, giving them too much attention might only end up helping them. ?] ?][? if nazi_urgency > 0 and nsdap_votes >= 10 : The <span style="color: #7A3C00;">Nazis</span> are the most urgent problem for us to deal with. ?]
 
 @kpd
-on-arrival: enemies = "KPD"; reformist_strength += 5; left_dissent += 8; reformist_dissent -= 5; kpd_relation -= 15; dvp_relation += 5; ddp_relation += 3; z_relation += 5; lvp_relation += 5; workers_kpd -= 3; unemployed_kpd -= 4; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1
+on-arrival: enemies = "KPD"; reformist_strength += 5; left_dissent += 8; reformist_dissent -= 5; kpd_relation -= 15; dvp_relation += 5; ddp_relation += 3; z_relation += 5; lvp_relation += 5; workers_kpd -= 3*(1-dissent); unemployed_kpd -= 4*(1-dissent); dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1
 
 Attacking the <span style="color: #700000;">**KPD**</span> is supported by all but the most left-wing <span style="color: #c00000;">socialists</span>, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the <span style="color: #700000;">**KPD**</span>, this may not be the best choice.
 
 @left_wing
-on-arrival: enemies = "left"; reformist_strength += 5; left_dissent += 10; reformist_dissent -= 5; kpd_relation -= 15; uspd_relation -= 10; dvp_relation += 5; ddp_relation += 3; z_relation += 5; lvp_relation += 5; workers_kpd -= 3; unemployed_kpd -= 4; dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1; workers_uspd += 5; workers_spd -= 3*(dissent); unemployed_spd -= 1
+on-arrival: enemies = "left"; reformist_strength += 5; left_dissent += 10; reformist_dissent -= 5; kpd_relation -= 15; uspd_relation -= 10; dvp_relation += 5; ddp_relation += 3; z_relation += 5; lvp_relation += 5; workers_kpd -= 3*(1-dissent); unemployed_kpd -= 3*(1-dissent); dvp_left += 1; ddp_left += 0.5; ddp_cohesion += 0.5; lvp_left += 1; workers_uspd -= 4; workers_spd -= 3*(1-dissent); unemployed_spd -= 1
 
 Attacking the <span style="color: #AA0000;">**Left**</span> is supported by the bourgeois parties. However, If we are to reconcile with the [? if not uspd_joined = 3: <span style="color: #AA0000;">**USPD**</span>?] and <span style="color: #700000;">**KPD**</span>, this is a poor choice. Some among our base disapprove.
 
