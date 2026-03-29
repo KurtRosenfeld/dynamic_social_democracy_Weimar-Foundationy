@@ -1,6 +1,7 @@
 title: Nürmberger Vereinigungsparteitag
 subtitle: The formal unification of the USPD with our SPD
 new-page: true
+max-visits: 1
 view-if: year == 1922 and month == 9
 tags: event
 
