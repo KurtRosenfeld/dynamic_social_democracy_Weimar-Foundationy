@@ -26,7 +26,7 @@ on-arrival: ddp_relation += 9; z_relation += 9; kpd_relation -= 4; uspd_relation
 
 We show that we stand firmly behind the republic and the Wirth course.
 
-@improve left
+@improve_left
 
 - @contact_uspd: Contact the USPD
 - @contact_kpd: Contact the KPD
