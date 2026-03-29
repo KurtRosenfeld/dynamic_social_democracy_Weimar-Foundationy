@@ -1,0 +1,33 @@
+title: USPD Unification
+view-if: vspd_parliament == 1 uspd_relation >= 65
+max-visits: 1
+tags: event
+new-page: true
+
+= The USPD would like to return to our party
+
+Their poor performance, poor dinacial situation, the political turmoil and our previous cooperation in the parliament have driven most of the <span style="color: #AA0000;">USPD</span> members left to ask to join our party.
+  
+- @join: The <span style="color: #AA0000;">USPD</span> can join of course.
+- @dont: We would like to keep our parties seperate.
+- @hyper: We will form a united party of all workers.
+
+@join
+on-arrival: uspd_joining_proces = 1
+
+We will welcome them.
+
+@dont
+on-arrival: reformist_strength += 5; left_dissent += 2
+
+We will not unite with a party that brings <span style="color: #AA0000;">Spartacists</span> into our ranks
+
+@hyper
+view-if: uspd_relation >= 75 and kpd_relation >= 40
+choose-if: kpd_relation >= 99 and uspd_relation > 99
+on-arrival: workers_spd += 100; unemployed_spd += 100; uspd_joining_proces = 1
+unavailable-subtitle: You don't think you can do this, do you?
+
+Wow, this is amazing!!!
+
+
