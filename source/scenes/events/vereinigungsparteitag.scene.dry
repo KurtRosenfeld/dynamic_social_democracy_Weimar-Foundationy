@@ -4,9 +4,7 @@ new-page: true
 view-if: year == 1922 and month == 9
 tags: event
 
-= To be added
-
-@menu
+= Nürmberger Vereinigungsparteitag
 
 Otto Wels wants this to go smoothly, it is largely symbolically...
 
@@ -93,4 +91,3 @@ on-arrival: reformist_strength += 10; left_dissent += 15; uspd_joined = 1; unemp
 on-arrival: labor_dissent -= 1
 
 lol
-
