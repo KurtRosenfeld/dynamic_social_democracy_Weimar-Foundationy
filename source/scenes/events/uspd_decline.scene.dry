@@ -12,19 +12,27 @@ priority: 1
 After losing their left wing to KPD the party is unable to find it's position between the radical KPD and the moderate SPD. Their finacial situation is grim and internal dissent is growing as members of Parliament fear they won't be reelected...
 
 
-- @uspd_relation: Use this occasion to improve our relations.
+- @uspd_relation_1: Use this occasion to improve our relations.
+- @uspd_relation_2: Use this occasion to improve our relations.
 - @celebrate_uspd: Celebrate their decline hoping to gain some of their vote share.
 - @form_par_union: Offer to merge our parliamentary factions.
 - @uspd_concession: Make concessions to the former USPD members in our party
 - @ignore: Ignore...
 
-@uspd_relation
+@uspd_relation_1
+view-if: uspd_joined == 0
 on-arrival: uspd_relation += 3; left_dissent -= 3; center_dissent -= 3; labor_dissent -= 2
 
 We show respect to our comrades.
 
+@uspd_relation_2
+view-if: uspd_joined >= 1 and not uspd_joined == 3
+on-arrival: uspd_relation += 3; left_dissent -= 9; center_dissent -= 1; labor_dissent -= 1; left_strength += 3; reformist_dissent += 3
+
+We show respect to our comrades. Due to left-turn of the party since our reunification with their "right" the reformist faction dissaproves.
+
 @celebrate_uspd
-on-arrival: workers_uspd -= 1; workers_spd += 1*(1-dissent); uspd_relation -= 8; kpd_relation -= 1; reformist_strength += 3; left_dissent += 2; uspd_decline_timer -= 1
+on-arrival: workers_uspd -= 3; workers_spd += 2*(1-dissent); uspd_relation -= 12; kpd_relation -= 1; reformist_strength += 3; left_dissent += 2; uspd_decline_timer -= 1; unemployed_kpd += 2; unemployed_uspd -= 3; workers_kpd += 1; workers_nsdap += 1
 
 The USPD is not pleased about our behaviour.
 
