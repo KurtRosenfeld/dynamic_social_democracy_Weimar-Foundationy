@@ -1,0 +1,23 @@
+title: USPD
+subtitle: growwwwww
+view-if: year == 1922 and month == 5
+max-visits: 1
+tags: event
+new-page: true
+
+= USPD
+
+Hey
+  
+- @joiin: The <span style="color: #AA0000;">USPD</span> joins.
+- @zooo: Loopop
+- @dont: no.
+
+@joiin
+on-arrival: left_strength += 60
+
+@zooo
+on-arrival: left_strength += 30
+  
+@dont
+on-arrival: z_relation += 1
