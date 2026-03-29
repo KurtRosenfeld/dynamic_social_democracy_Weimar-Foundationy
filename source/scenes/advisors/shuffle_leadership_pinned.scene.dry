@@ -1,5 +1,5 @@
 title: Shuffle Leadership
-view-if: started and shuffle_leadership_timer <= 0 and year >= 1922
+view-if: started and shuffle_leadership_timer <= 0 and year >= 1923
 new-page: true
 is-card: true
 is-pinned-card: true
