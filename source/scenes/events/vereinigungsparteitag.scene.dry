@@ -109,28 +109,28 @@ The <span style="color: #700000;">**KPD**</span> profits a lot.
 
 @drop_ebert_2
 view-if: ebert_advisor == 1
-on-arrival: ebert_advisor = 0; crispien_advisor = 1; reformist_strength -= 5; center_strength_ += 5; left_dissent -= 10
+on-arrival: ebert_advisor = 0; breitscheid_advisor = 1; reformist_strength -= 5; center_strength_ += 5; left_dissent -= 10
 go-to: sign_vspd
 
 Ebert doesn't care too much about party affaires anyway...
 
 @drop_scheidemann_2
 view-if: scheidemann_advisor == 1
-on-arrival: scheidemann_advisor = 0; crispien_advisor = 1; center_dissent -= 2
+on-arrival: scheidemann_advisor = 0; breitscheid_advisor = 1; center_dissent -= 2
 go-to: sign_vspd
 
 Scheidemann is old anyway...
 
 @drop_wels_2
 view-if: wels_advisor == 1
-on-arrival: wels_advisor = 0; crispien_advisor = 1; center_dissent -= 2
+on-arrival: wels_advisor = 0; breitscheid_advisor = 1; center_dissent -= 2
 go-to: sign_vspd
 
 Wels doesn't judge...
 
 @drop_muller_2
 view-if: muller_advisor == 1
-on-arrival: muller_advisor = 0; crispien_advisor = 1; center_dissent -= 2
+on-arrival: muller_advisor = 0; breitscheid_advisor = 1; center_dissent -= 2
 go-to: sign_vspd
 
 Müller is more useful as a chancelor...
@@ -147,6 +147,7 @@ go-to: sign_vspd
 
 @low_vspd
 view-if: new_party_programm == 0 and good_uspd_vspd_deal == 0 and second_kpd_essentially == 0
+on-arrival: uspd_relations -= 30
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #AA0000;">**USPD**</span> but most can arrannge themselves with the state of how things are.
 
@@ -154,7 +155,7 @@ Many <span style="color: #AA0000;">**USPD**</span> members are reluctant to join
 
 @middle_vspd
 view-if: new_party_programm == 1 and good_uspd_vspd_deal == 0 and second_kpd_essentially == 0
-on-arrival: left_strength += 5; center_strength += 5; labor_strength += 5; uspd_joined = 2
+on-arrival: left_strength += 5; center_strength += 5; labor_strength += 5; uspd_joined = 2; uspd_relations -= 20
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #AA0000;">**USPD**</span> but most can arrannge themselves with the state of how things are.
 
@@ -164,7 +165,7 @@ The promise of adopting a new programm eventually helps a lot with reconciliatio
 
 @high_vspd
 view-if: good_uspd_vspd_deal == 1
-on-arrival: coalition_dissent += 1; unemployed_spd += 2; left_dissent -= 15; reformist_dissent += 25; kpd_relation += 10; left_strength += 20; new_party_programm += 1; center_relation -= 8; ddp_relation -= 5; dvp_relation -= 15; uspd_joined = 2
+on-arrival: coalition_dissent += 1; unemployed_spd += 2; left_dissent -= 15; reformist_dissent += 25; kpd_relation += 10; left_strength += 20; new_party_programm += 1; center_relation -= 8; ddp_relation -= 5; dvp_relation -= 15; uspd_joined = 2; uspd_relations += 5
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. It seems it is more of a continuation of the <span style="color: #AA0000;">**USPD**</span> than the <span style="color: #c00000;">**MSPD**</span>. Let's hope it will survive longer than the last one.
 
