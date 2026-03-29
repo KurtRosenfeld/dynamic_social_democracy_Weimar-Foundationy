@@ -2,7 +2,7 @@ title: Nürmberger Vereinigungsparteitag
 subtitle: The formal unification of the USPD with our SPD
 new-page: true
 max-visits: 1
-view-if: year == 1922 and month == 9
+view-if: uspd_joining_proces == 1 and uspd_relations >= 60
 tags: event
 
 = Nürmberger Vereinigungsparteitag
@@ -147,7 +147,7 @@ go-to: sign_vspd
 
 @low_vspd
 view-if: new_party_programm == 0 and good_uspd_vspd_deal == 0 and second_kpd_essentially == 0
-on-arrival: uspd_relations -= 30; unemployed_uspd -= 10; unemployed_kpd += 9; workers_spd += 2; workers_uspd -= 2
+on-arrival: uspd_relations -= 45; unemployed_uspd -= 10; unemployed_kpd += 9; workers_spd += 2; workers_uspd -= 2
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #AA0000;">**USPD**</span> but most can arrannge themselves with the state of how things are.
 
@@ -155,7 +155,7 @@ Many <span style="color: #AA0000;">**USPD**</span> members are reluctant to join
 
 @middle_vspd
 view-if: new_party_programm == 1 and good_uspd_vspd_deal == 0 and second_kpd_essentially == 0
-on-arrival: left_strength += 5; center_strength += 5; labor_strength += 5; uspd_joined = 2; uspd_relations -= 20;  unemployed_uspd -= 9; unemployed_kpd += 11; workers_spd += 4; workers_uspd -= 2
+on-arrival: left_strength += 5; center_strength += 5; labor_strength += 5; uspd_joined = 2; uspd_relations -= 30;  unemployed_uspd -= 9; unemployed_kpd += 11; workers_spd += 4; workers_uspd -= 2
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #AA0000;">**USPD**</span> but most can arrannge themselves with the state of how things are.
 
@@ -182,6 +182,6 @@ Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. 
 We have yet to see; whether we can sustain that this time...
 
 @skip_vspd
-on-arrival: reformist_dissent -= 3; uspd_relation -= 20; unemployed_kpd += 10; unemployed_uspd -= 5; left_dissent += 5; kpd_relation -= 10
+on-arrival: reformist_dissent -= 3; uspd_relation -= 55; unemployed_kpd += 10; unemployed_uspd -= 5; left_dissent += 5; kpd_relation -= 10
 
 We have angered the <span style="color: #AA0000;">**USPD**</span>...
