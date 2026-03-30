@@ -132,7 +132,8 @@ Q.dnvp_relation = 5;
 Q.nsdap_relation = 0;
 Q.lvp_relation = 0;
 
-Q.kpd_leader = "Thälmann";
+Q.kpd_leader = "Brandler";
+Q.kpd_ideology = "Luxemburgism";
 Q.uspd_leader = "Crispien";
 Q.z_leader = "Marx";
 Q.z_ideology = "Right";
