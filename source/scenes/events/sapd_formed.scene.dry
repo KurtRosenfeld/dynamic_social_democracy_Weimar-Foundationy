@@ -12,6 +12,8 @@ Q.rural_sapd = 0;
 Q.unemployed_sapd = 2;
 Q.catholics_sapd = 0;
 
+Q.spd_r = spd_r*0.96
+
 Q.workers_other -= 5;
 
 if (Q.unions_independent) {
@@ -27,8 +29,8 @@ Q.old_unemployed_sapd_display = 0
 Q.old_catholics_sapd_display = 0
 
 // update all records
-Q.sapd_r = 0;
-Q.old_sapd_r = 0;
+Q.sapd_r = spd_r*0.04;
+Q.old_sapd_r = spd_r*0.04;
 for (var record of Q.election_records) {
     record['sapd'] = 0;
 }
