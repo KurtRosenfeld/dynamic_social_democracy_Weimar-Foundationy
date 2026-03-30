@@ -147,7 +147,7 @@ go-to: sign_vspd
 
 @low_vspd
 view-if: new_party_programm == 0 and good_uspd_vspd_deal == 0 and second_kpd_essentially == 0
-on-arrival: uspd_relations -= 45; unemployed_uspd -= 10; unemployed_kpd += 9; workers_spd += 2; workers_uspd -= 2; Q.spd_r = (Q.old_spd_r + Q.uspd_r)
+on-arrival: uspd_relations -= 45; unemployed_uspd -= 10; unemployed_kpd += 9; workers_spd += 2; workers_uspd -= 2; spd_r = old_spd_r + uspd_r*0.9
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #AA0000;">**USPD**</span> but most can arrannge themselves with the state of how things are.
 
