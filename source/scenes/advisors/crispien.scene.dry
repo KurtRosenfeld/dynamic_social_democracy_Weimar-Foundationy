@@ -9,11 +9,20 @@ view-if: crispien_advisor = 1
 
 Crispien used to be leader of the anti-war <span style="color: #AA0000;">**USPD**</span>.
 
+- @international
 - @campaign_cris
 - @uspd_discipline
 - @contact_uspd
 - @root: Return to main
 
+
+@international
+title: International Party Relations
+subtitle: Crispien is one of our contacts with international <span style="color: #c00000;">socialist</span> parties.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+choose-if: advisor_action_timer == 0
+on-arrival: advisor_action_timer = 6; international_relations_timer -= 12; last_advisor_action = 1
+go-to: international_relations
 
 @campaign_cris
 title: Campaign among workers
@@ -41,4 +50,15 @@ unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +
 choose-if: advisor_action_timer == 0
 on-arrival: advisor_action_timer = 6
 
-to be added
+Who should be contacted?
+
+- @rosenfeld: Contact Kurt Rosenfeld of the [? if left_split = 1: <span style="color: #AA0000;">SAPD</span>?] [? if left_split = 0 and if uspd_joined = 1: <span style="color: #AA0000;">USPD</span>?]
+- @ledebour: Contact Georg Ledebour of the [? if left_split = 1 and uspd_joined = 3: <span style="color: #AA0000;">SAPD</span>?] [? if not uspd_joined = 3: <span style="color: #AA0000;">USPD</span>?]
+- @root: Return to main
+
+@rosenfeld
+view-if: uspd_joined <= 2 or left_split == 1
+
+@ledebour
+view-if: uspd_joined <= 3 or left_split == 1
+
