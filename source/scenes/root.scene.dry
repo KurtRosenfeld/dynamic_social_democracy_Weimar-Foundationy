@@ -485,7 +485,7 @@ Q.cvp_right = 0;
 Q.cvp_left = 0;
 
 Q.adjustmentFactors_spd = 1.0;
-Q.adjustmentFactors_uspd = 1.0;
+Q.adjustmentFactors_uspd = 0.8;
 Q.adjustmentFactors_sapd = 1.0;
 Q.adjustmentFactors_kpd = 1.0;
 Q.adjustmentFactors_z = 1.0;
@@ -500,7 +500,7 @@ Q.adjustmentFactors_kvp = 1.0;
 Q.adjustmentFactors_other = 0.75;
 
 Q.adjustmentFactors_votes_spd = 1.0;
-Q.adjustmentFactors_votes_uspd = 1.0;
+Q.adjustmentFactors_votes_uspd = 0.8;
 Q.adjustmentFactors_votes_sapd = 1.0;
 Q.adjustmentFactors_votes_kpd = 1.0;
 Q.adjustmentFactors_votes_z = 1.0;
@@ -515,7 +515,7 @@ Q.adjustmentFactors_votes_kvp = 1.0;
 Q.adjustmentFactors_votes_other = 1.0;
 
 Q.adjustmentFactors_spd_prussia = 1.0;
-Q.adjustmentFactors_uspd_prussia = 1.0;
+Q.adjustmentFactors_uspd_prussia = 0.83;
 Q.adjustmentFactors_sapd_prussia = 1.0;
 Q.adjustmentFactors_kpd_prussia = 1.0;
 Q.adjustmentFactors_z_prussia = 1.0;
