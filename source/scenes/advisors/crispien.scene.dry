@@ -52,7 +52,7 @@ on-arrival: advisor_action_timer = 6
 
 Who should be contacted?
 
-- @rosenfeld: Contact Kurt Rosenfeld of the [? if left_split == 1: <span style="color: #AA0000;">SAPD</span>?] [? if left_split == 0 and if uspd_joined == 1: <span style="color: #AA0000;">USPD</span>?]
+- @rosenfeld: Contact Kurt Rosenfeld of the [? if left_split == 1: <span style="color: #AA0000;">SAPD</span>?] [? if left_split == 0 and uspd_joined == 1: <span style="color: #AA0000;">USPD</span>?]
 - @ledebour: Contact Georg Ledebour of the [? if left_split == 1 and uspd_joined == 3: <span style="color: #AA0000;">SAPD</span>?] [? if not uspd_joined == 3: <span style="color: #AA0000;">USPD</span>?]
 - @root: Return to main
 
