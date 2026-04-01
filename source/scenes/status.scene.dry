@@ -197,7 +197,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if not lvp_formed and dvp_exist and ddp_name != 0 and dvp_dnef: <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: National Liberalism ([+ dvp_leader +])?]
 
-[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [? if kpd_leader = "Conciliators": United Front Marxism-Leninism?][? if kpd_leader = "Thälmann": Third Period Marxism-Leninism?] ([+ kpd_leader +])?][? if kpd_leader = "Brandler": [+ kpd_ideology +]?]
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [? if kpd_leader = "Conciliators": United Front Marxism-Leninism?][? if kpd_leader = "Brandler": [+ kpd_ideology +]?][? if kpd_leader = "Thälmann": Third Period Marxism-Leninism?] ([+ kpd_leader +])?]
 
 [? if not uspd_joined = 3: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [? if uspd_joined = 0: Orthodox Marxism ([+ uspd_leader +])?][? if uspd_joined >= 1: Spartacism (Ledebour)?]?]
 
