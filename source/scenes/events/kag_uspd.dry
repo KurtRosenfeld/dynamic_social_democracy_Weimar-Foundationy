@@ -5,7 +5,6 @@ on-arrival: uspd_r = uspd_r + kag_r; kag_r = 0
 max-visits: 1
 tags: event
 new-page: true
-face-image: img/All_Quiet.jpg
 
 The KAG joins the USPD
 
