@@ -244,6 +244,36 @@ Agriculture:
 [? if agriculture_minister_party == "I": [+ agriculture_minister_party +] ?]
 [? if agriculture_minister_party == "BB": <span style="color: #226510;">[+ agriculture_minister_party +]</span> ?]
 
+Transport: 
+[? if transport_minister_party == "SPD": <span style="color: #c00000;">[+ transport_minister_party +]</span> ?]
+[? if transport_minister_party == "KPD": <span style="color: #700000;">[+ transport_minister_party +]</span> ?]
+[? if transport_minister_party == ddp_name: <span style="color: #D3C24D;">[+ transport_minister_party +]</span> ?]
+[? if transport_minister_party == "LVP": <span style="color: #FFCC00;">[+ transport_minister_party +]</span> ?]
+[? if transport_minister_party == "Z": <span style="color: #000000;">[+ z_party_name +]</span> ?]
+[? if transport_minister_party == "BVP": <span style="color: #A2D8E0;">[+ transport_minister_party +]</span> ?]
+[? if transport_minister_party == "DVP": <span style="color: #C0A054;">[+ transport_minister_party +]</span> ?]
+[? if transport_minister_party == "Others": <span style="color: #c00000;">[+ transport_minister_party +]</span> ?]
+[? if transport_minister_party == "KVP": <span style="color: #0087DC;">[+ transport_minister_party +]</span> ?]
+[? if transport_minister_party == "DNVP": <span style="color: #3E88B3;">[+ transport_minister_party +]</span> ?]
+[? if transport_minister_party == "DNF": <span style="color: #003755;">[+ transport_minister_party +]</span> ?]
+[? if transport_minister_party == "NSDAP": <span style="color: #7A3C00;">[+ transport_minister_party +]</span> ?]
+[? if transport_minister_party == "I": [+ transport_minister_party +] ?]
+
+Postal: 
+[? if postal_minister_party == "SPD": <span style="color: #c00000;">[+ postal_minister_party +]</span> ?]
+[? if postal_minister_party == "KPD": <span style="color: #700000;">[+ postal_minister_party +]</span> ?]
+[? if postal_minister_party == ddp_name: <span style="color: #D3C24D;">[+ postal_minister_party +]</span> ?]
+[? if postal_minister_party == "LVP": <span style="color: #FFCC00;">[+ postal_minister_party +]</span> ?]
+[? if postal_minister_party == "Z": <span style="color: #000000;">[+ z_party_name +]</span> ?]
+[? if postal_minister_party == "BVP": <span style="color: #A2D8E0;">[+ postal_minister_party +]</span> ?]
+[? if postal_minister_party == "DVP": <span style="color: #C0A054;">[+ postal_minister_party +]</span> ?]
+[? if postal_minister_party == "Others": <span style="color: #c00000;">[+ postal_minister_party +]</span> ?]
+[? if postal_minister_party == "KVP": <span style="color: #0087DC;">[+ postal_minister_party +]</span> ?]
+[? if postal_minister_party == "DNVP": <span style="color: #3E88B3;">[+ postal_minister_party +]</span> ?]
+[? if postal_minister_party == "DNF": <span style="color: #003755;">[+ postal_minister_party +]</span> ?]
+[? if postal_minister_party == "NSDAP": <span style="color: #7A3C00;">[+ postal_minister_party +]</span> ?]
+[? if postal_minister_party == "I": [+ postal_minister_party +] ?]
+
 
 @demographics
 go-to: menu
