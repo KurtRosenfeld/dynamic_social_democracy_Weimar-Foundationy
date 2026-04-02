@@ -77,6 +77,7 @@ view-if: left_strength >= 20
 choose-if: left_strength >= 40 and left_strength > reformist_strength
 unavailable-subtitle: The party would not accept this.
 on-arrival: second_kpd_essentially = 1
+go-to: lowest_uspd
 
 The SPD will dedicate itself to the proletarian revolution!
 
