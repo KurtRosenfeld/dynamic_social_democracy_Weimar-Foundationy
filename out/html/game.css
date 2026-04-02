@@ -699,6 +699,10 @@ th {
   fill: #700000;
 }
 
+.seat.kga {
+  fill: #81125B;
+}
+
 .seat.uspd {
   fill: #AA0000;
 }
