@@ -1,6 +1,6 @@
 title: The KAG joins the USPD
 subtitle: Leftist infighting
-view-if: year = 1922 and month = 4
+view-if: year == 1922 and month == 4
 on-arrival: uspd_r = uspd_r + kag_r; kag_r = 0
 max-visits: 1
 tags: event
