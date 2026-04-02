@@ -77,6 +77,7 @@ Reichstag composition:
 
 [? if dnef_formed: <span class="tooltip-text" title="German National Unity Front" style="color: #BFC8CC;">**DNEF**</span>: [+ dnef_r +]% ?]
 <span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #c00000;">**SPD**</span>: [+ spd_r +]%
+[? if uspd_joined <= 2 and uspd_r > 0: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [+ uspd_r +]% ?]
 [? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Socialist Workers' Party of Germany" style="color: #9B0000;">**SAPD**</span>: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
 [? if z_party_name != "CVP": <span class="tooltip-text" title="Center Party + Bavarian People's Party"><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>?][? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party + Bavarian People's Party"><span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #A2D8E0;">**BVP**</span></span>?]: [+ z_r +]%
@@ -241,6 +242,7 @@ Agriculture:
 [? if agriculture_minister_party == "DNF": <span style="color: #003755;">[+ agriculture_minister_party +]</span> ?]
 [? if agriculture_minister_party == "NSDAP": <span style="color: #7A3C00;">[+ agriculture_minister_party +]</span> ?]
 [? if agriculture_minister_party == "I": [+ agriculture_minister_party +] ?]
+[? if agriculture_minister_party == "BB": <span style="color: #226510;">[+ agriculture_minister_party +]</span> ?]
 
 
 @demographics
