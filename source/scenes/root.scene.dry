@@ -335,8 +335,9 @@ Q.catholics_spd_old = 16;
 // % of Reichstag in April 1922
 // source: wikipedia
 Q.spd_r = 21.9;
-Q.uspd_r = 13.3;
-Q.kpd_r = 8.5;
+Q.uspd_r = 12.6;
+Q.kpd_r = 3.3;
+Q.kag_r = 2.4;
 Q.z_r = 17.8;
 Q.ddp_r = 8.3;
 Q.dvp_r = 13.9;
@@ -347,7 +348,7 @@ Q.bvp_r = 4.1;
 Q.wp_r = 0;
 Q.cnblp_r = 0;
 Q.true_other_r = 3.3;
-Q.reichstag_size = 4.93;
+Q.reichstag_size = 4.59;
 Q.landtag_size = 4.5;
 
 // diff from prev
