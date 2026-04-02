@@ -1,0 +1,17 @@
+title: The treaty of Rappallo
+subtitle: Diplomacy
+view-if: year = 1922 and month = 4
+max-visits: 1
+tags: event
+new-page: true
+face-image: img/All_Quiet.jpg
+
+The Treaty of Rappallo
+
+USST
+
+- @ok: Sure...
+
+@ok
+
+sure...
