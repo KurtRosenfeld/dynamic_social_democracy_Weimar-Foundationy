@@ -651,6 +651,8 @@ Q.agriculture_minister = 'Fehr';
 Q.agriculture_minister_party = 'BB';
 Q.transport_minister = 'Groener';
 Q.transport_minister_party = 'I';
+Q.postal_miniter = 'Giesberts';
+Q.postal_minister_party = 'Z';
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
