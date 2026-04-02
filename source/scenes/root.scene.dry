@@ -541,16 +541,16 @@ Q.economic_records = [];
 Q.president = "Hindenburg";
 Q.president_ideology = "Hindenburg";
 // starting chancellor: Wilhelm Marx
-Q.chancellor = "Marx";
+Q.chancellor = "Wirth";
 Q.chancellor_party = 'Z';
-Q.spd_in_government = 0;
+Q.spd_in_government = 1;
 Q.spd_in_government_time = 0;
 Q.spd_in_government_total_time = 0;
 Q.spd_in_foreign_time = 0;
 Q.z_in_government = 1;
-Q.ddp_in_government = 0;
-Q.dvp_in_government = 1;
-Q.dnvp_in_government = 1;
+Q.ddp_in_government = 1;
+Q.dvp_in_government = 0;
+Q.dnvp_in_government = 0;
 Q.kpd_in_government = 0;
 Q.nsdap_in_government = 0;
 
@@ -633,22 +633,24 @@ Q.minority_government = 0;
 // ministries - which parties control the ministries?
 // starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
 // is the agricultural ministry useful at all?
-Q.foreign_minister = 'Stresemann';
-Q.foreign_minister_party = 'DVP';
-Q.interior_minister = 'von Keudell';
-Q.interior_minister_party = 'DNVP';
-Q.justice_minister = 'Hergt';
-Q.justice_minister_party = 'DNVP';
+Q.foreign_minister = 'Rathenau';
+Q.foreign_minister_party = 'DDP';
+Q.interior_minister = 'Köster';
+Q.interior_minister_party = 'SPD';
+Q.justice_minister = 'Radbruch';
+Q.justice_minister_party = 'SPD';
 Q.labor_minister = 'Brauns';
 Q.labor_minister_party = 'Z';
-Q.reichswehr_minister = 'Groener';
-Q.reichswehr_minister_party = 'I';
-Q.economic_minister = 'Curtius';
-Q.economic_minister_party = 'DVP';
-Q.finance_minister = 'Köhler';
+Q.reichswehr_minister = 'Geßler';
+Q.reichswehr_minister_party = 'DDP';
+Q.economic_minister = 'Schmidt';
+Q.economic_minister_party = 'SPD';
+Q.finance_minister = 'Hermes';
 Q.finance_minister_party = 'Z';
-Q.agriculture_minister = 'Schiele';
-Q.agriculture_minister_party = 'DNVP';
+Q.agriculture_minister = 'Fehr';
+Q.agriculture_minister_party = 'BB';
+Q.transport_minister = 'Groener';
+Q.transport_minister_party = 'I';
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
