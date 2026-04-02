@@ -686,6 +686,15 @@ if (Q.kpd_r) {
     });
 }
 
+if (Q.kag_r) {
+    data.push({
+        "id": "kag",
+        "legend": "KAG",
+        "name": "KAG",
+        "seats": Math.round(Q.kag_r * Q.reichstag_size),
+    });
+}
+
 if (Q.uspd_r) {
     data.push({
         "id": "uspd",
@@ -1036,6 +1045,8 @@ if (d3 && window) {
 [? if not uspd_joined = 3: {!<tr><td><div class="box" style='background-color:#AA0000'> </div></td><td>!} USPD: {!</td><td>!} [+ uspd_r +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#700000'> </div></td><td>!} KPD: {!</td><td>!} [+ kpd_r +]% {!</td></tr>!}
+
+[? if kag_r > 0: {!<tr><td><div class="box" style='background-color:#81125B'> </div></td><td>!} KAG: {!</td><td>!} [+ kag_r +]% {!</td></tr>!} ?]
 
 [? if not lvp_formed and not dstp_dnef: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div></td><td>!} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td></tr>!} ?]
 
