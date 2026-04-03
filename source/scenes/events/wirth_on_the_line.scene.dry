@@ -33,24 +33,22 @@ The Center has already given up the Foreign ministry. We have to give them one o
 - @drop_justice
 - @drop_interior
 
-@drop_interior
-unavailable-subtitle: This won't happen.
-choose-if: dvp_relation >= 1919
+@drop_economic
+on-arrival: economic_minister_party = "DVP"; economic_minister = "Becker"
 
-You have pulled a cheat to press a button that literally does nothing
-
-- @drop_economic
-- @drop_justice
+The DVP joins our government. This is something new entirely...
 
 @drop_justice
 on-arrival: justice_minister_party = "DVP"; justice_minister = "Heinze"
 
 The DVP joins our government. This is something new entirely...
 
-@drop_economic
-on-arrival: economic_minister_party = "DVP"; economic_minister = "Becker"
+@drop_interior
+unavailable-subtitle: This won't happen.
+choose-if: dvp_relation >= 1919
+go-to: allow_dvp_into_wirth
 
-The DVP joins our government. This is something new entirely...
+You have pulled a cheat to press a button that literally does nothing
 
 @no_options_for_wirth
 subtitle: We can't work with the DVP, we can't sustain our current coalition.
