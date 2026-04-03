@@ -13,19 +13,19 @@ There are a few options...
   
 - @discipline_left: Put strict faction discipline on our left wing.
 - @allow_dvp_into_wirth: Agree to working together with the DVP.
-- @austerity: Chancellor [+ chancellor +]'s response is, as always, more austerity.
+- @no_options_for_wirth: There is nothing we can do.
 
 @discipline_left
 view-if: uspd_joined >= 1
-choose-if: left_strength <= 20; reformist_strength >= 70; 
+choose-if: left_strength <= 20; reformist_strength >= 70; uspd_concession >= 5
 on-arrival: left_dissent += 10; center_dissent += 2; labor_dissent += 2
 
-We can sustain a Weimar majority as long as our faction can dedicate itself to that
+We can sustain a Weimar majority as long as our faction can dedicate itself to that.
 
 @allow_dvp_into_wirth
 subtitle: Wirth tries to form a Grand Coalition
 choose-if: dvp_relation >= 50; reformist_strength >= left_strength + labor_strength; early_dvp_cooperation >= 3
-on-arrival: kpd_relation -= 20; uspd_relation -= 15; workers_spd -= 3; unemployed_spd -= 3; in_grand_coalition = 1; dvp_in_government = 1; foreign_minister_party = "DVP"; foreign_minister = "Stresemann"
+on-arrival: kpd_relation -= 20; uspd_relation -= 15; workers_spd -= 3; unemployed_spd -= 3; in_grand_coalition = 1; dvp_in_government = 1; foreign_minister_party = "DVP"; foreign_minister = "Stresemann"; left_dissent += 10; center_dissent += 2; labor_dissent += 2
 
 The Center has already given up the Foreign ministry. We have to give them one of our ministries now.
 
@@ -45,5 +45,16 @@ You have pulled a cheat to press a button that literally does nothing
 @drop_justice
 on-arrival: justice_minister_party = "DVP"; justice_minister = "Heinze"
 
+The DVP joins our government. This is something new entirely...
+
 @drop_economic
 on-arrival: economic_minister_party = "DVP"; economic_minister = "Becker"
+
+The DVP joins our government. This is something new entirely...
+
+@no_options_for_wirth
+subtitle: We can't work with the DVP, we can't sustain our current coalition.
+on-arrival: wirth_failed = 1; old_middle_spd -= 1; new_middle_z -= 2; workers_kpd += 1; rural_dnvp += 2; old_middle_dnvp += 2; new_middle_dvp += 1
+
+Wirth needs to resign. Ebert will choose a new chancelor...
+
