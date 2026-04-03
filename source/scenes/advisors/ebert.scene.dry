@@ -70,8 +70,8 @@ on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 
 @snap_election
 title: Snap Election
-choose-if: advisor_action_timer <= 0 and not chancelor == "Cuno"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. [? if chancelor = "Cuno": Ebert wants to maintain Cuno as Chancelor?]
+choose-if: advisor_action_timer <= 0 and not chancellor == "Cuno"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. [? if chancelor = "Cuno": Ebert wants to maintain Cuno as Chancellor - so no new elections for now?]
 subtitle: Call a snap election.
 on-arrival: advisor_action_timer = 6; next_election_time = time + 3 if next_election_time > time+3; next_election_month = month + 3 if next_election_time >= time+3; next_election_year = year if next_election_time >= time+3; next_election_year += 1 if next_election_month > 12; next_election_month -= 12 if next_election_month > 12; 
 
