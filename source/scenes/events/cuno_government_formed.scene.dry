@@ -4,7 +4,7 @@ view-if: year == 1922 and month == 11 and wirth_2_failed == 1
 max-visits: 1 
 tags: event 
 new-page: true 
-on-arrival: chancellor = 'Cuno'; chancellor_party = 'I'
+on-arrival: chancellor = 'Cuno'; chancellor_party = 'I'; in_weimar_coalition = 0
 face-image: img/portraits/CunoWilhelm.jpg 
   
 = Cuno to be Chancellor
@@ -185,11 +185,11 @@ on-arrival: leverage -= 10; transport_minister_party = "SPD"; transport_minister
 
 
 @tolerate_cuno
-on-arrival: foreign_minister = 'Rosenberg'; foreign_minister_party = 'I'; interior_minister = 'Oeser'; interior_minister_party = 'DDP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Becker'; economic_minister_party = 'DVP'; finance_minister = 'Hermes'; finance_minister_party = 'Z'; agriculture_minister = 'Luther'; agriculture_minister_party = 'I'; transport_minister = 'Groener'; transport_minister_party = 'I'; postal_miniter = 'Stingl'; postal_minister_party = 'BVP'
+on-arrival: foreign_minister = 'Rosenberg'; foreign_minister_party = 'I'; interior_minister = 'Oeser'; interior_minister_party = 'DDP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Becker'; economic_minister_party = 'DVP'; finance_minister = 'Hermes'; finance_minister_party = 'Z'; agriculture_minister = 'Luther'; agriculture_minister_party = 'I'; transport_minister = 'Groener'; transport_minister_party = 'I'; postal_miniter = 'Stingl'; postal_minister_party = 'BVP'; spd_toleration = 1
 
 We will tolerate the government.
 
 @oppose_cuno
-on-arrival: foreign_minister = 'Rosenberg'; foreign_minister_party = 'I'; interior_minister = 'Oeser'; interior_minister_party = 'DDP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Becker'; economic_minister_party = 'DVP'; finance_minister = 'Hermes'; finance_minister_party = 'Z'; agriculture_minister = 'Luther'; agriculture_minister_party = 'I'; transport_minister = 'Groener'; transport_minister_party = 'I'; postal_miniter = 'Stingl'; postal_minister_party = 'BVP'
+on-arrival: foreign_minister = 'Rosenberg'; foreign_minister_party = 'I'; interior_minister = 'Oeser'; interior_minister_party = 'DDP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Becker'; economic_minister_party = 'DVP'; finance_minister = 'Hermes'; finance_minister_party = 'Z'; agriculture_minister = 'Luther'; agriculture_minister_party = 'I'; transport_minister = 'Groener'; transport_minister_party = 'I'; postal_miniter = 'Stingl'; postal_minister_party = 'BVP'; spd_toleration = 1
 
 We will not tolerate the government.
