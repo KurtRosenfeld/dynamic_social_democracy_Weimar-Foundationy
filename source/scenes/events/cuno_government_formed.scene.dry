@@ -1,6 +1,6 @@
 title: Cuno new chancellor
 subtitle: Ebert calls the former DVP member, now independent, buisnessman Wilhelm Cuno to be Chancelor. 
-view-if: year = 1922 and month = 11 and wirth_2_failed = 1
+view-if: year == 1922 and month == 11 and wirth_2_failed == 1
 max-visits: 1 
 tags: event 
 new-page: true 
