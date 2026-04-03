@@ -29,9 +29,9 @@ on-arrival: kpd_relation -= 20; uspd_relation -= 15; workers_spd -= 3; unemploye
 
 The Center has already given up the Foreign ministry. We have to give them one of our ministries now.
 
-- @drop_economic
-- @drop_justice
-- @drop_interior
+- @drop_economic: Drop the Economic ministry
+- @drop_justice: Drop the Justice ministry
+- @drop_interior: Drop the Interior ministry
 
 @drop_economic
 on-arrival: economic_minister_party = "DVP"; economic_minister = "Becker"
@@ -49,6 +49,9 @@ choose-if: dvp_relation >= 1919
 go-to: allow_dvp_into_wirth
 
 You have pulled a cheat to press a button that literally does nothing
+
+- @drop_economic: Drop the Economic ministry
+- @drop_justice: Drop the Justice ministry
 
 @no_options_for_wirth
 subtitle: We can't work with the DVP, we can't sustain our current coalition.
