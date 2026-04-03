@@ -4,13 +4,13 @@ view-if: year == 1922 and month == 4
 max-visits: 1
 tags: event
 new-page: true
-face-image: img/All_Quiet.jpg
+face-image: img/TreatyRappallo.jpg
 
-The Treaty of Rappallo
+= The Treaty of Rappallo
 
-USST
+The German Reich and the Russian Socialist Federal Soviet Republic have agreed not to demand reparations of each other. Diplomatic and trade relations are also to be had again.
 
-- @ok: Sure...
+- @ok: Continue...
 
 @ok
 
