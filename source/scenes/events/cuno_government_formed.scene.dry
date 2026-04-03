@@ -180,5 +180,5 @@ on-arrival: chancelor = 'Cuno'; foreign_minister = 'Rosenberg'; foreign_minister
 
 We will tolerate the government.
 
-oppose_cuno
+@oppose_cuno
 on-arrival: chancelor = 'Cuno'; foreign_minister = 'Rosenberg'; foreign_minister_party = 'I'; interior_minister = 'Oeser'; interior_minister_party = 'DDP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Becker'; economic_minister_party = 'DVP'; finance_minister = 'Hermes'; finance_minister_party = 'Z'; agriculture_minister = 'Luther'; agriculture_minister_party = 'I'; transport_minister = 'Groener'; transport_minister_party = 'I'; postal_miniter = 'Stingl'; postal_minister_party = 'BVP'
