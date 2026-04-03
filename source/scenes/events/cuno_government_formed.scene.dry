@@ -12,9 +12,9 @@ Ebert calls the former DVP member, now independent, buisnessman Wilhelm Cuno to 
 
 He offers the SPD to join his government of experienced buisnessmen and pragmatic politicians in a broad coalition.
 
-@join_cuno: The SPD joins the Cuno government.
-@tolerate_cuno: The SPD tolerates Cuno and his bourgeois cabinet.
-@oppose_cuno: The SPD will not work with this government despite the wish of the President.
+- @join_cuno: The SPD joins the Cuno government.
+- @tolerate_cuno: The SPD tolerates Cuno and his bourgeois cabinet.
+- @oppose_cuno: The SPD will not work with this government despite the wish of the President.
   
 @join_cuno
 on-arrival: spd_in_government = 1; in_grand_coalition = 1; leverage = 25; foreign_minister = 'Rosenberg'; foreign_minister_party = 'I'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; transport_minister = 'Groener'; transport_minister_party = 'I'; postal_miniter = 'Stingl'; postal_minister_party = 'BVP'
