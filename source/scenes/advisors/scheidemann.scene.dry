@@ -47,7 +47,7 @@ We are making process to working together with the DVP despite the opposition in
 @dvp_cooperation_2
 title: Sway the party towards working with the nationalist DVP
 subtitle: Their support will be inevitable in the future
-view-if: uspd_joined >= 1 and reformist_strength < 75 and not left_strength + labor_strength >= reformist_strength
+view-if: uspd_joined >= 1 and reformist_strength < 55 and not left_strength + labor_strength >= reformist_strength
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_dissent += 2; reformist_strength += 1; labor_dissent += 2; z_relation += 2; dvp_relation += 1; ddp_relation += 2
@@ -56,7 +56,7 @@ The party is staunchly opposed to this.
 
 @dvp_cooperation_3
 title: Sway the party towards working with the nationalist DVP
-view-if: reformist_strength >= 75 and left_strength + labor_strength >= reformist_strength
+view-if: reformist_strength >= 55 and left_strength + labor_strength >= reformist_strength
 subtitle: Their support will be inevitable in the future
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
