@@ -55,7 +55,7 @@ You have pulled a cheat to press a button that literally does nothing
 
 @no_options_for_wirth
 subtitle: We can't work with the DVP, we can't sustain our current coalition.
-on-arrival: wirth_failed = 1; old_middle_spd -= 1; new_middle_z -= 2; workers_kpd += 1; rural_dnvp += 2; old_middle_dnvp += 2; new_middle_dvp += 1
+on-arrival: wirth_2_failed = 1; old_middle_spd -= 1; new_middle_z -= 2; workers_kpd += 1; rural_dnvp += 2; old_middle_dnvp += 2; new_middle_dvp += 1
 
 Wirth needs to resign. Ebert will choose a new chancelor...
 
