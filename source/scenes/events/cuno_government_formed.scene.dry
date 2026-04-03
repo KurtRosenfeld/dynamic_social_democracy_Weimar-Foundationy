@@ -18,8 +18,8 @@ He offers the SPD to join his government of experienced buisnessmen and pragmati
 - @oppose_cuno: The SPD will not work with this government despite the wish of the President.
   
 @join_cuno
-on-arrival: spd_in_government = 1; in_grand_coalition = 1; leverage = 25; foreign_minister = 'Rosenberg'; foreign_minister_party = 'I'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; transport_minister = 'Groener'; transport_minister_party = 'I'; postal_miniter = 'Stingl'; postal_minister_party = 'BVP'
-choose-if: left_strength <= 20 and reformist_strength >= 60 and early_dvp_cooperation >= 2
+on-arrival: spd_in_government = 1; in_grand_coalition = 1; leverage = 25; foreign_minister = 'Rosenberg'; foreign_minister_party = 'I'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; transport_minister = 'Groener'; transport_minister_party = 'I'; postal_miniter = 'Stingl'; postal_minister_party = 'BVP'; workers_spd -= 2
+choose-if: left_strength <= 20 and reformist_strength >= 50 and early_dvp_cooperation >= 2
 
 We can choose a few ministries. Controlling a ministry allows us to directly effect policy in that area.
 
@@ -191,3 +191,5 @@ We will tolerate the government.
 
 @oppose_cuno
 on-arrival: foreign_minister = 'Rosenberg'; foreign_minister_party = 'I'; interior_minister = 'Oeser'; interior_minister_party = 'DDP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Becker'; economic_minister_party = 'DVP'; finance_minister = 'Hermes'; finance_minister_party = 'Z'; agriculture_minister = 'Luther'; agriculture_minister_party = 'I'; transport_minister = 'Groener'; transport_minister_party = 'I'; postal_miniter = 'Stingl'; postal_minister_party = 'BVP'
+
+We will not tolerate the government.
