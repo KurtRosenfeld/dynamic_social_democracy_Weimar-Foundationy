@@ -1,0 +1,184 @@
+title: Cuno new chancellor
+subtitle: Ebert calls the former DVP member, now independent, buisnessman Wilhelm Cuno to be Chancelor. 
+view-if: year = 1922 and month = 11 and wirth_2_failed = 1
+max-visits: 1 
+tags: event 
+new-page: true 
+face-image: img/portraits/CunoWilhelm.jpg 
+  
+= Cuno to be Chancelor
+
+Ebert calls the former DVP member, now independent, buisnessman Wilhelm Cuno to be Chancelor.
+
+He offers the SPD to join his government of experienced buisnessmen and pragmatic politicians in a broad coalition.
+
+@join_cuno: The SPD joins the Cuno government.
+@tolerate_cuno: The SPD tolerates Cuno and his bourgeois cabinet.
+@oppose_cuno: The SPD will not work with this government despite the wish of the President.
+  
+@join_cuno
+on-arrival: spd_in_government = 1; in_grand_coalition = 1; leverage = 25; foreign_minister = 'Rosenberg'; foreign_minister_party = 'I'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; transport_minister = 'Groener'; transport_minister_party = 'I'; postal_miniter = 'Stingl'; postal_minister_party = 'BVP'
+
+@ministries
+
+We can a few ministries. Controlling a ministry allows us to directly effect policy in that area.
+
+  
+@labor
+title: Labor Ministry
+subtitle: Taking the Labor Ministry is expected of us.
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1928
+choose-if: leverage >= 5
+view-if: labor_minister_party != "SPD"
+on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
+go-to: ministries
+
+Rudolf Wissell of the <span style="color: #c00000;">**SPD**</span> has been appointed labor minister.
+
+@interior_main
+title: Interior Ministry
+subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry controls domestic security.
+unavailable-subtitle: We do not have enough leverage.
+choose-if: leverage >= 5
+view-if: interior_minister_party != "SPD"
+tags: mins_1928
+
+- @appoint_severing
+- @appoint_sollmann
+- @cancel_interior
+
+@appoint_severing
+title: Carl Severing
+subtitle: (reformist).
+choose-if: leverage >= 5
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: interior_minister = "Severing"; leverage -= 5; interior_minister_party = "SPD"
+go-to: ministries
+
+Carl Severing has been appointed Interior Minister.
+
+@appoint_sollmann
+title: Ernst ThÃ¤lmann
+subtitle: (non-factional).
+choose-if: leverage >= 5
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 20; interior_minister = "Sollmann"; interior_minister_party = "SPD"
+go-to: ministries
+
+Wilhelm Sollmann has been appointed Interior Minister.
+
+@cancel_interior
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: interior_minister_party = "DDP"; interior_minister = "Oeser"
+go-to: ministries
+
+@finance
+title: Finance Ministry
+subtitle: The Finance Ministry controls the government budget and taxes.
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1928
+choose-if: leverage >= 10 
+view-if: finance_minister_party != "SPD"
+on-arrival: leverage -= 10; finance_minister_party = "SPD"; finance_minister = "Hilferding"
+go-to: ministries
+
+Rudolf Hilferding of the <span style="color: #c00000;">**SPD**</span> has been appointed Finance Minister.
+
+@economic
+title: Economic Ministry
+subtitle: The Economic Ministry controls broader economic policy.
+unavailable-subtitle: We do not have enough leverage.
+tags: mins_1928
+choose-if: leverage >= 10 
+view-if: economic_minister_party != "SPD"
+on-arrival: leverage -= 10; economic_minister_party = "SPD"; economic_minister = "Schmidt"
+go-to: ministries
+
+Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+
+@justice
+title: Justice Ministry
+subtitle: The Justice Ministry controls the courts.
+unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Justice Ministry. ?]
+tags: mins_1928
+choose-if: leverage >= 10 and not cvp_ministers_accepted
+view-if: justice_minister_party != "SPD"
+on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
+go-to: ministries
+
+Gustav Radbruch of the <span style="color: #c00000;">**SPD**</span> has been appointed Justice Minister.
+
+@foreign
+title: Foreign Ministry
+unavailable-subtitle: We can't take this ministry
+tags: mins_1928
+choose-if: leverage >= 90
+on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
+go-to: ministries
+
+Rudolf Breitscheid of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
+
+
+@agriculture
+title: Agricultural Ministry
+subtitle: This is not our usual domain.
+unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Agricultural Ministry. ?]
+choose-if: leverage >= 10 and not cvp_ministers_accepted
+view-if: agriculture_minister_party != "SPD"
+tags: mins_1928
+
+- @appoint_baade
+- @appoint_braun_ag
+- @cancel_agriculture
+
+@appoint_baade
+title: Fritz Baade
+subtitle: Baade is one of our few experts in the field.
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: agriculture_minister = "Baade"; leverage -= 10; agriculture_minister_party = "SPD"
+go-to: ministries
+
+Fritz Baade of the <span style="color: #c00000;">**SPD**</span> has been appointed Agriculture Minister.
+
+@appoint_braun_ag
+title: Otto Braun
+subtitle: Braun is a pationate hunter who used to occupy the Agriculture Ministry in Prussia.
+choose-if: leverage >= 15
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: agriculture_minister = "Braun"; leverage -= 10; agriculture_minister_party = "SPD"
+go-to: ministries
+
+Otto Braun of the <span style="color: #c00000;">**SPD**</span> has been appointed Agriculture Minister.
+
+@cancel_agriculture
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: agriculture_minister_party = "Z";
+go-to: ministries
+
+@reichswehr
+title: Reichswehr Ministry
+unavailable-subtitle: We can't take this ministry
+tags: mins_1928
+choose-if: leverage >= 90
+
+@transport
+title: Transport Ministry
+subtitle: The Ministry for Transport
+unavailable-subtitle: We can't take this ministry
+choose-if: leverage >= 90
+on-arrival: leverage -= 10; transport_minister_party = "SPD"; transport_minister = "Leber"
+
+
+@tolerate_cuno
+on-arrival: chancelor = 'Cuno'; foreign_minister = 'Rosenberg'; foreign_minister_party = 'I'; interior_minister = 'Oeser'; interior_minister_party = 'DDP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Becker'; economic_minister_party = 'DVP'; finance_minister = 'Hermes'; finance_minister_party = 'Z'; agriculture_minister = 'Luther'; agriculture_minister_party = 'I'; transport_minister = 'Groener'; transport_minister_party = 'I'; postal_miniter = 'Stingl'; postal_minister_party = 'BVP'
+
+We will tolerate the government.
+
+oppose_cuno
+on-arrival: chancelor = 'Cuno'; foreign_minister = 'Rosenberg'; foreign_minister_party = 'I'; interior_minister = 'Oeser'; interior_minister_party = 'DDP'; justice_minister = 'Heinze'; justice_minister_party = 'DVP'; labor_minister = 'Brauns'; labor_minister_party = 'Z'; reichswehr_minister = 'Geßler'; reichswehr_minister_party = 'DDP'; economic_minister = 'Becker'; economic_minister_party = 'DVP'; finance_minister = 'Hermes'; finance_minister_party = 'Z'; agriculture_minister = 'Luther'; agriculture_minister_party = 'I'; transport_minister = 'Groener'; transport_minister_party = 'I'; postal_miniter = 'Stingl'; postal_minister_party = 'BVP'
