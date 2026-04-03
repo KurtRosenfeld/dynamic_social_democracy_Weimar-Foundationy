@@ -1,0 +1,22 @@
+title: Wilhelm Sollmann
+is-pinned-card: true
+tags: advisor, non-factional
+card-image: img/portraits/SollmannWilhelm.jpg
+view-if: sollmann_advisor = 1
+new-page: true 
+
+= Wilhelm Sollmann
+
+Sollmann is a pragmatic politican.
+
+- @police_affairs
+- @root: Return to main
+
+
+@police_affairs
+title: Police affairs 
+subtitle: We can set our police policy. 
+choose-if: advisor_action_timer == 0 and spd_in_government and interior_minister == "Sollmann"
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: #c00000;">SPD</span> is not in government. ?][? if interior_minister != "Sollmann": Sollmann is not the Interior minister. ?]
+on-arrival: advisor_action_timer = 6; police_timer -= 6; last_advisor_action = 1
+go-to: police
