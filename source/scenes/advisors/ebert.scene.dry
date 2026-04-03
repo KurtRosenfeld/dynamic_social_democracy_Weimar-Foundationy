@@ -45,21 +45,25 @@ unavailable_subtitle: Ebert doesn't see the point in that
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 
 @execute_saxony
+title: Saxony
 choose-if: nsdap_bavaria == 1
 unavailable_subtitle: Ebert doesn't see the point in that
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 
 @execute_thuringia
+title: Thuringia
 choose-if: nsdap_bavaria == 1
 unavailable_subtitle: Ebert doesn't see the point in that
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 
 @execute_prussia
+title: Prussia
 choose-if: nsdap_bavaria == 1
 unavailable_subtitle: Ebert doesn't see the point in that
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 
 @execute_wurtemberg
+title: Würtemberg
 choose-if: nsdap_bavaria == 1
 unavailable_subtitle: Ebert doesn't see the point in that
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
