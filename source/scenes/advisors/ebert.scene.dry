@@ -9,39 +9,60 @@ new-page: true
 
 Braun [? if prussia_leader = "Braun": is ?][? if prussia_leader != "Braun" : was ?] the Minister-President of Prussia, the largest state in Germany. He is a reformist leader who seeks to work with the bourgeois parties.
 
-- @coalition
 - @coalition_president
-- @prussian_bulwark
+- @reichsexekution
 - @snap_election
 - @root: Return to main
 
-@coalition
-title: Negotiating with the Coalition
-subtitle: Braun can improve our relationships with our centrist and center-right coalition partners in Prussia as well as in the Reichstag.
-view-if: president != "Braun"
-choose-if: advisor_action_timer <= 0 and (spd_prussia or in_weimar_coalition or in_grand_coalition or in_popular_front or prussia_leader == "Braun")
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if not spd_prussia : The <span style="color: #c00000;">SPD</span> does not control the Prussian government. ?]
-on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 4; ddp_relation += 4; dvp_relation += 2; lvp_relation += 4; dvp_relation += 2 if in_grand_coalition; dvp_relation += 2 if in_grand_coalition_prussia; dvp_left += 1 if in_grand_coalition_prussia; z_relation += 2 if prussia_leader = "Braun"; ddp_relation += 2 if prussia_leader = "Braun"; lvp_relation += 2 if prussia_leader = "Braun"; lvp_left += 0.5; ddp_left += 0.25;
-
-We have improved our relations with the [? if in_grand_coalition : [? if z_party_name != "CVP": <span style="color: #000000;">Center</span> (<span style="color: #000000;">**Zentrum**</span>)?][? if z_party_name == "CVP": <span style="color: #000000;">**Christian People's**</span> (<span style="color: #000000;">**CVP**</span>)?] Party[? if not lvp_formed:, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:&nbsp;and <span style="color: #FFCC00;">**LVP**</span>?], ?][? if not in_grand_coalition and not in_grand_coalition_prussia: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span> (<span style="color: #000000;">**Zentrum**</span>)?][? if z_party_name == "CVP": <span style="color: #000000;">**Christian People's**</span> (<span style="color: #000000;">**CVP**</span>)?] Party[? if not lvp_formed:&nbsp;and <span style="color: #D3C24D;">**[+ ddp_name +]**</span>,?][? if lvp_formed:&nbsp;and <span style="color: #FFCC00;">**LVP**</span>,?]?][? if not in_grand_coalition and in_grand_coalition_prussia: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span> (<span style="color: #000000;">**Zentrum**</span>)?][? if z_party_name == "CVP": <span style="color: #000000;">**Christian People's**</span> (<span style="color: #000000;">**CVP**</span>)?] Party[? if not lvp_formed:, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:&nbsp;and <span style="color: #FFCC00;">**LVP**</span>?] ?] and reduced tensions with the coalition. [? if spd_prussia and not prussia_leader = "Braun": Braun's resignation from the head of the Prussian government has hindered this ability. ?]
 
 @coalition_president
 title: Negotiating with the Coalition
-subtitle: Braun can improve our relationships with our centrist and center-right coalition partners in the Reichstag as President.
-view-if: president == "Braun"
+subtitle: Ebert can improve our relationships with our centrist and center-right coalition partners in the Reichstag as President.
+view-if: president == "Ebert"
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
 on-arrival: advisor_action_timer = 6; coalition_dissent -= 1 if spd_in_government = 1 and coalition_dissent > 0; z_relation += 6; ddp_relation += 6; dvp_relation += 4; lvp_relation += 6; dvp_relation += 2 if in_grand_coalition; dvp_relation += 2 if in_grand_coalition_prussia; dvp_left += 1 if in_grand_coalition_prussia; z_relation += 2 if prussia_leader = "Braun"; ddp_relation += 2 if prussia_leader = "Braun"; lvp_relation += 2 if prussia_leader = "Braun"; lvp_left += 0.5; ddp_left += 0.25;
 
 We have improved our relations with the [? if in_grand_coalition : [? if z_party_name != "CVP": <span style="color: #000000;">Center</span> (<span style="color: #000000;">**Zentrum**</span>)?][? if z_party_name == "CVP": <span style="color: #000000;">**Christian People's**</span> (<span style="color: #000000;">**CVP**</span>)?] Party[? if not lvp_formed:, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:&nbsp;and <span style="color: #FFCC00;">**LVP**</span>?], ?][? if not in_grand_coalition and not in_grand_coalition_prussia: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span> (<span style="color: #000000;">**Zentrum**</span>)?][? if z_party_name == "CVP": <span style="color: #000000;">**Christian People's**</span> (<span style="color: #000000;">**CVP**</span>)?] Party[? if not lvp_formed:&nbsp;and <span style="color: #D3C24D;">**[+ ddp_name +]**</span>,?][? if lvp_formed:&nbsp;and <span style="color: #FFCC00;">**LVP**</span>,?]?][? if not in_grand_coalition and in_grand_coalition_prussia: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span> (<span style="color: #000000;">**Zentrum**</span>)?][? if z_party_name == "CVP": <span style="color: #000000;">**Christian People's**</span> (<span style="color: #000000;">**CVP**</span>)?] Party[? if not lvp_formed:, <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed:&nbsp;and <span style="color: #FFCC00;">**LVP**</span>?] ?] and reduced tensions with the coalition. [? if spd_prussia and not prussia_leader = "Braun": Braun's resignation from the head of the Prussian government has hindered this ability. ?]
 
-@prussian_bulwark
-title: The Prussian Bulwark
-subtitle: As the Minister-President of Prussia, Braun has power over the Prussian bureaucracy and security services.
-choose-if: advisor_action_timer <= 0 and prussia_leader = "Braun"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if prussia_leader != "Braun": Braun doesn't control Prussia anymore. ?]
-on-arrival: advisor_action_timer = 6; prussian_affairs_timer -= 6; last_advisor_action = 1
-go-to: prussian_affairs if not in_grand_coalition_prussia and not in_spd_majority_prussia; prussian_affairs_majority if in_spd_majority_prussia; prussian_affairs_dvp if in_grand_coalition_prussia
+@reichsexekution
+title: Reichsexekution
+subtitle: As the President of the Reich, Ebert has the power to topple any local government.
+choose-if: advisor_action_timer <= 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+
+- @execute_bavaria
+- @execute_saxony
+- @execute_thuringia
+- @execute_prussia
+- @execute_wurtemberg
+- @root: Return to main
+
+@execute_bavaria
+title: Bavaria
+choose-if: nsdap_bavaria == 1
+unavailable_subtitle: Ebert doesn't see the point in that
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+
+@execute_saxony
+choose-if: nsdap_bavaria == 1
+unavailable_subtitle: Ebert doesn't see the point in that
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+
+@execute_thuringia
+choose-if: nsdap_bavaria == 1
+unavailable_subtitle: Ebert doesn't see the point in that
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+
+@execute_prussia
+choose-if: nsdap_bavaria == 1
+unavailable_subtitle: Ebert doesn't see the point in that
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
+
+@execute_wurtemberg
+choose-if: nsdap_bavaria == 1
+unavailable_subtitle: Ebert doesn't see the point in that
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 
 @snap_election
 title: Snap Election
