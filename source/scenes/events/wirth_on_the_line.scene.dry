@@ -17,14 +17,15 @@ There are a few options...
 
 @discipline_left
 view-if: uspd_joined >= 1
-choose-if: left_strength <= 20 and reformist_strength >= 70 and uspd_concession >= 5
+choose-if: left_strength <= 20 and reformist_strength >= 45 and uspd_concession >= 5
 on-arrival: left_dissent += 10; center_dissent += 2; labor_dissent += 2
 
 We can sustain a Weimar majority as long as our faction can dedicate itself to that.
 
 @allow_dvp_into_wirth
 subtitle: Wirth tries to form a Grand Coalition
-choose-if: dvp_relation >= 50 and reformist_strength >= left_strength + labor_strength and early_dvp_cooperation >= 3
+unavailable-subtitle: Our party is opposed to this.
+choose-if: dvp_relation >= 50 and reformist_strength >= (left_strength + labor_strength) and early_dvp_cooperation >= 3
 on-arrival: kpd_relation -= 20; uspd_relation -= 15; workers_spd -= 3; unemployed_spd -= 3; in_grand_coalition = 1; dvp_in_government = 1; foreign_minister_party = "DVP"; foreign_minister = "Stresemann"; left_dissent += 10; center_dissent += 2; labor_dissent += 2
 
 The Center has already given up the Foreign ministry. We have to give them one of our ministries now.
