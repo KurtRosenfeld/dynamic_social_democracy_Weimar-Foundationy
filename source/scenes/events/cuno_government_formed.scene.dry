@@ -4,7 +4,7 @@ view-if: year == 1922 and month == 11 and wirth_2_failed == 1
 max-visits: 1 
 tags: event 
 new-page: true 
-on-arrival: chancellor = 'Cuno'
+on-arrival: chancellor = 'Cuno'; chancellor_party = 'I'
 face-image: img/portraits/CunoWilhelm.jpg 
   
 = Cuno to be Chancellor
