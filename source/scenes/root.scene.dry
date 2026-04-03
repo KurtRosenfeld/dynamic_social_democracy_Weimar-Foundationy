@@ -559,7 +559,7 @@ Q.spd_prussia_time = 0;
 
 Q.in_right_coalition = 0;
 // Weimar coalition = SPD + Z + DDP
-Q.in_weimar_coalition = 0;
+Q.in_weimar_coalition = 1;
 // Grand coalition = SPD + Z + BVP + DDP + DVP
 // also includes the "new grand coalition" of SPD + Z + BVP + DDP + DVP + Others
 Q.in_grand_coalition = 0;
