@@ -23,6 +23,15 @@ choose-if: left_strength <= 20 and reformist_strength >= 70
 
 We can a few ministries. Controlling a ministry allows us to directly effect policy in that area.
 
+- @labor
+- @interior_main
+- @finacne
+- @economic
+- @justice
+- @foreign
+- @agriculture
+- @reichswehr
+- @transport
   
 @labor
 title: Labor Ministry
