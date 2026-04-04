@@ -23,7 +23,10 @@ choose-if: left_strength <= 20 and reformist_strength >= 50 and early_dvp_cooper
 
 The SPD agress to join the Cuno government.
 
-- @selection_of_ministries: Select our ministries
+- @selection_of_ministries
+
+@selection_of_ministries
+title: Select our ministries
 
 We can choose a few ministries. Controlling a ministry allows us to directly effect policy in that area.
 
