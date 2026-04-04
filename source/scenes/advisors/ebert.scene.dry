@@ -7,7 +7,7 @@ new-page: true
 
 = Friedrich Ebert
 
-Braun [? if prussia_leader = "Braun": is ?][? if prussia_leader != "Braun" : was ?] the Minister-President of Prussia, the largest state in Germany. He is a reformist leader who seeks to work with the bourgeois parties.
+Ebert is the President of Germany. He holds a lot of power but he doesn't consider himself a partisan of his party, more a president of all the people...
 
 - @coalition_president
 - @reichsexekution
@@ -30,6 +30,8 @@ title: Reichsexekution
 subtitle: As the President of the Reich, Ebert has the power to topple any local government.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+
+We can remove any local government (in theory).
 
 - @execute_bavaria
 - @execute_saxony
