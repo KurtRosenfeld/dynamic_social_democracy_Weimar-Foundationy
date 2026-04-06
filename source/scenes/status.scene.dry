@@ -387,6 +387,8 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 = Maps
 
+Choose a map [to be added]
+
 - @provinces_regular: Map of the Republic
 - @provinces_political: Map of governments
 - @europe: Map of Europe
