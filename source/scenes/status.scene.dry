@@ -389,21 +389,25 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 Choose a map [to be added]
 
-- @provinces_regular: Map of the Republic
-- @provinces_political: Map of governments
-- @europe: Map of Europe
-- @stop_maps: Hide map
+- @provinces_regular
+- @provinces_political
+- @europe
+- @stop_maps
 
 @provinces_regular
+title: Map of the Republic
 on-arrival: republic_map_shown = 1; political_map_shown = 0; europe_map_shown = 0
 
 @provinces_political
+title: Map of governments
 on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 0
 
 @europe
+title: Map of Europe
 on-arrival: republic_map_shown = 0; political_map_shown = 0; europe_map_shown = 1
 
 @stop_maps
+title: Hide map
 on-arrival: republic_map_shown = 0; political_map_shown = 0; europe_map_shown = 0
 
 
