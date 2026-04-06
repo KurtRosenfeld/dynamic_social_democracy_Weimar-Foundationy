@@ -1,6 +1,6 @@
 title: Map of the Republic
 is-pinned-card: true
-view-if: republic_map_shown == 1; year >= 1922
+view-if: republic_map_shown == 1 and year >= 1922
 new-page: true
 
 = Map of the Republic
