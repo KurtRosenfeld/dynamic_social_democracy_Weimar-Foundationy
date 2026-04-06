@@ -1,0 +1,6 @@
+title: Map of the Republic
+is-pinned-card: true
+view-if: republic_map_shown = 1
+new-page: true
+
+= Map of the Republic
