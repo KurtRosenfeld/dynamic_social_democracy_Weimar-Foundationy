@@ -386,3 +386,24 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 @maps
 
 = Maps
+
+- @provinces_regular: Map of the Republic
+- @provinces_political: Map of governments
+- @europe: Map of Europe
+- @stop_maps: Hide map
+
+@provinces_regular
+on-arrival: republic_map_shown = 1; political_map_shown = 0; europe_map_shown = 0
+
+@provinces_political
+on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 0
+
+@europe
+on-arrival: republic_map_shown = 0; political_map_shown = 0; europe_map_shown = 1
+
+@stop_maps
+on-arrival: republic_map_shown = 0; political_map_shown = 0; europe_map_shown = 0
+
+
+
+
