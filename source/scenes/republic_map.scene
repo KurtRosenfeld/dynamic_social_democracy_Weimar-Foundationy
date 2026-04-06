@@ -4,3 +4,7 @@ view-if: republic_map_shown = 1
 new-page: true
 
 = Map of the Republic
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "out/html/WeimarProvinces.svg";  
