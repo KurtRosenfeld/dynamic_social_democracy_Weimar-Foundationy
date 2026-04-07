@@ -39,7 +39,7 @@ Q.week_checked = 0;
 // how many actions have been taken this month?
 Q.month_actions = 0;
 
-Q.republic_map_shown = 1;
+Q.republic_map_shown = 0;
 
 // 0 = normal difficulty, 1 = hard mode, 2 = hard mode no saves
 Q.difficulty = 0;
