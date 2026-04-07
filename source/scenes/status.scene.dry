@@ -410,6 +410,21 @@ on-arrival: republic_map_shown = 0; political_map_shown = 0; europe_map_shown = 
 title: Hide map
 on-arrival: republic_map_shown = 0; political_map_shown = 0; europe_map_shown = 0
 
+@.buttons
+button: "Map of the Republic"
+    target: @provinces_regular
+    replace: true
 
+button: "Map of governments"
+    target: @provinces_political
+    replace: true
+
+button: "Map of Europe"
+    target: @europe
+    replace: true
+
+button: "Hide map"
+    target: @stop_maps
+    replace: true
 
 
