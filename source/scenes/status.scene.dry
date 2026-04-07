@@ -384,47 +384,11 @@ Unemployed: [? if dnef_formed: DNEF: [+ unemployed_dnef_display +]%, ?]SPD: [+ u
 Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ catholics_spd_display +]%, [+ z_party_name +]: [+ catholics_z_display +]%, [? if not uspd_joined = 3: USPD: [+ catholic_uspd_display +]%, ?]KPD: [+ catholics_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ catholics_ddp_display +]%, [? if dvp_exist: DVP: [+ catholics_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ catholics_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ catholics_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ catholics_dnf_display +]%  ?][? if kvp_formed: KVP: [+ catholics_kvp_display +]%  ?]NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]%
 
 @maps
+on-arrival: republic_map_shown = 1
 
-= Maps
+= Map of the Republic
 
-Choose a map [to be added]
+this should activate the Map of the Republic
 
-- @provinces_regular
-- @provinces_political
-- @europe
-- @stop_maps
-
-@provinces_regular
-title: Map of the Republic
-on-arrival: republic_map_shown = 1; political_map_shown = 0; europe_map_shown = 0
-
-@provinces_political
-title: Map of governments
-on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 0
-
-@europe
-title: Map of Europe
-on-arrival: republic_map_shown = 0; political_map_shown = 0; europe_map_shown = 1
-
-@stop_maps
-title: Hide map
-on-arrival: republic_map_shown = 0; political_map_shown = 0; europe_map_shown = 0
-
-@.buttons
-button: "Map of the Republic"
-    target: @provinces_regular
-    replace: true
-
-button: "Map of governments"
-    target: @provinces_political
-    replace: true
-
-button: "Map of Europe"
-    target: @europe
-    replace: true
-
-button: "Hide map"
-    target: @stop_maps
-    replace: true
 
 
