@@ -33,7 +33,7 @@
   };
 
 window.showMap = function() {
-   if (window.dendryUI.dendryEngine.state.sceneId.mapsWith('maps')) {
+   if (window.dendryUI.dendryEngine.state.sceneId.startsWith('maps')) {
         window.dendryUI.dendryEngine.goToScene('backSpecialScene');
     } else {
         window.dendryUI.dendryEngine.goToScene('maps');
