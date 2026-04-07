@@ -1,0 +1,35 @@
+title: maps
+new-page: true
+is-special: true
+go-to: map_menu
+
+= Menu of the maps
+
+Herein contains relevant information about the government and politics of the German republic.
+  
+@map_menu
+
+= Maps 
+
+This is were maps will appear eventually
+
+- @provinces_regular: Map of the Republic 
+- @provinces_political: Map of governments 
+- @europe: Map of Europe 
+- @stop_maps: Hide map   
+- @return_special_scene: Exit Maps...
+
+@provinces_regular 
+on-arrival: republic_map_shown = 1; political_map_shown = 0; europe_map_shown = 0 
+
+
+@provinces_political 
+on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 0 
+
+
+@europe 
+on-arrival: republic_map_shown = 0; political_map_shown = 0; europe_map_shown = 1 
+
+
+@stop_maps 
+on-arrival: republic_map_shown = 0; political_map_shown = 0; europe_map_shown = 0 
