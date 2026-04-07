@@ -66,7 +66,7 @@ The current territorial state of the German Reich (Weimar Republic)
        style="display:inline"
        transform="matrix(1.6311004,0,0,1.5178468,-44.309242,3.8214879)">
        <title
-         id="title4"><span class="tooltip-text" title="Free State of Prussia" style="color: #c8c4b7;">**Prussia**</span></title>
+         id="title1"><span class="tooltip-text" title="Free State of Prussia" style="color: #c8c4b7;">**Prussia**</span></title>
       <path
          style="display:inline;fill:#c8c4b7;fill-opacity:1;stroke-width:20.0315"
          d="m 79.370629,35.402098 -0.961538,1.748252 -0.437063,1.048951 -0.699301,1.048951 -0.08741,2.010489 -0.786714,0.786714 -0.524475,1.311188 0.174825,1.398602 1.573427,0.34965 0.34965,-1.223776 v -1.748252 -1.660839 l 1.223776,0.437063 -0.08741,0.611888 h 1.048951 l 0.961538,-0.08741 -0.174825,-1.398601 -1.573427,-0.874126 -0.6993,-0.524475 v -0.437063 l 1.136363,-0.349651 0.524476,-0.961538 z"
@@ -272,7 +272,7 @@ The current territorial state of the German Reich (Weimar Republic)
          d="m 88.285903,93.845136 0.860358,0.595632 v 0.794176 l 0.198544,0.794176 -0.595632,0.463269 -0.794176,0.330907 -0.198544,-0.860358 v -1.257445 z"
          id="path51" />
        <title
-         id="title4">I call this one Bavaria</title>
+         id="title77">I call this one not Bavaria</title>
     </g>
     <g
        id="g8"
