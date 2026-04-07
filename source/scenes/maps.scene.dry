@@ -17,7 +17,7 @@ This is were maps will appear eventually
 - @provinces_political: Map of governments 
 - @europe: Map of Europe 
 - @stop_maps: Hide map   
-- @return_special_scene: Exit Maps...
+- @backSpecialScene: Exit Maps...
 
 @provinces_regular 
 on-arrival: republic_map_shown = 1; political_map_shown = 0; europe_map_shown = 0 
