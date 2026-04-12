@@ -1,12 +1,11 @@
 title: The KAG joins the USPD
-subtitle: Leftist infighting
 view-if: year == 1922 and month == 4
 on-arrival: uspd_r = uspd_r + kag_r; kag_r = 0
 max-visits: 1
 tags: event
 new-page: true
 
-The KAG joins the USPD
+= The KAG joins the USPD
 
 The opposition group around Paul Levi and Ernst Däumig (both former leaders of the KPD) just rejoined the USPD.
 
@@ -14,4 +13,6 @@ The opposition group around Paul Levi and Ernst Däumig (both former leaders of 
 
 @ok
 
-The KPD will always remain a splinter group...
+The USPD will never be saved and the KPD will always remain a splinter group...
+
+
