@@ -178,6 +178,8 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if dnf_formed : <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: [+ dnf_relation : relationships +] ?]
 
+<span class="tooltip-text" title="German Völkisch Freedom Party" style="color: #3D3D3D;">**DVFP**</span>
+
 <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>[? if nsdap_split: (and its splinters)?]: [+ nsdap_relation : relationships +]
 
 = Party Leadership
@@ -213,6 +215,8 @@ Economic growth: [+ economic_growth_2 +]%
 [? if ddp_name != 0 and not cvp_formed and dnvp_dnef: <span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [? if dnvp_leader == "Lambach": Christian Corporatism?][? if dnvp_leader == "Treviranus": National Conservatism?] ([+ dnvp_leader +])?]
 
 [? if dnf_formed : <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: Authoritarian Conservatism (Hugenberg) ?]
+
+<span class="tooltip-text" title="German Völkisch Freedom Party" style="color: #3D3D3D;">**DVFP**</span>: Völkisch Nationalism (Ludendorff)
 
 [? if dsu_exist: <span class="tooltip-text" title="German Social Union" style="color: #6A1E1E;">**DSU**</span>: [? if not dsu_alt: Strasserism?][? if dsu_alt: Center Nazism?] ([+ dsu_leader +])?]
 
@@ -359,6 +363,8 @@ Q.socialism_disp = Math.floor(Q.socialism);
 [? if not cvp_formed and not dnvp_defunct: <span style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_votes +]%?]
 
 [? if dnf_formed: <span style="color: #003755;">**DNF**</span>: [+ dnf_votes +]% ?]
+
+<span style="color: #3D3D3D;">**DVFP**</span>: [+ dvfb_votes +]%
 
 [? if dsu_exist: <span style="color: #6A1E1E;">**DSU**</span>: [+ dsu_votes +]% ?]
 
