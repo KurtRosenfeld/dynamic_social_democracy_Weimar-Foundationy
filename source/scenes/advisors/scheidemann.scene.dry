@@ -12,7 +12,6 @@ Scheidmann used to be chancelor.
 - @against_right_and_left
 - @republican
 - @dvp_cooperation_1
-- @dvp_cooperation_1_2
 - @dvp_cooperation_2
 - @dvp_cooperation_3
 - @root: Return to main
@@ -36,17 +35,7 @@ on-arrival: advisor_action_timer = 6; left_dissent -= 5; neorevisionist_dissent 
 We have reduced dissent and won the sympathy of the centrist parties.
 
 @dvp_cooperation_1
-title: Sway the party towards working with the nationalist DVP (this is 1)
-subtitle: Their support will be inevitable in the future
-view-if: uspd_joined == 0 and reformist_strength < 40 and (left_strength + labor_strength) > reformist_strength
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-choose-if: advisor_action_timer = 0
-on-arrival: advisor_action_timer = 6; left_dissent += 3; reformist_strength += 5; labor_dissent += 2; dvp_relation += 2; early_dvp_cooperation += 1
-
-We are making process to working together with the DVP despite the opposition in our party.
-
-@dvp_cooperation_1_2
-title: Sway the party towards working with the nationalist DVP (this is 1.2)
+title: Sway the party towards working with the nationalist DVP
 subtitle: Their support will be inevitable in the future
 view-if: uspd_joined == 0 and reformist_strength < 40
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
@@ -56,9 +45,9 @@ on-arrival: advisor_action_timer = 6; left_dissent += 3; reformist_strength += 5
 We are making process to working together with the DVP despite the opposition in our party.
 
 @dvp_cooperation_2
-title: Sway the party towards working with the nationalist DVP (this is 2)
+title: Sway the party towards working with the nationalist DVP
 subtitle: Their support will be inevitable in the future
-view-if: uspd_joined >= 1 and reformist_strength < 40 and (left_strength + labor_strength) > reformist_strength
+view-if: uspd_joined >= 1 and reformist_strength < 40
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_dissent += 2; reformist_strength += 1; labor_dissent += 2; dvp_relation += 1
@@ -66,8 +55,8 @@ on-arrival: advisor_action_timer = 6; left_dissent += 2; reformist_strength += 1
 The party is staunchly opposed to this.
 
 @dvp_cooperation_3
-title: Sway the party towards working with the nationalist DVP (this is 3)
-view-if: reformist_strength >= 40 and (left_strength + labor_strength) < reformist_strength
+title: Sway the party towards working with the nationalist DVP
+view-if: reformist_strength >= 40
 subtitle: Their support will be inevitable in the future
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
