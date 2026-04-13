@@ -345,35 +345,35 @@ Q.catholics_spd_old = 16;
 // Current Reichstag composition
 // % of Reichstag in April 1922
 // source: wikipedia
-Q.spd_r = 21.9;
+Q.spd_r = 22.4;
 Q.uspd_r = 12.6;
 Q.kpd_r = 3.3;
 Q.kag_r = 2.4;
-Q.z_r = 17.8;
-Q.ddp_r = 8.3;
-Q.dvp_r = 13.9;
-Q.dnvp_r = 15.1;
+Q.z_r = 18.3;
+Q.ddp_r = 8.5;
+Q.dvp_r = 14.2;
+Q.dnvp_r = 15.2;
 Q.dvfp_r = 0;
 Q.nsdap_r = 0;
-Q.other_r = 3.3;
-Q.bvp_r = 4.1;
+Q.other_r = 2.6;
+Q.bvp_r = 4.3;
 Q.wp_r = 0;
 Q.cnblp_r = 0;
-Q.true_other_r = 3.3;
+Q.true_other_r = 2.6;
 Q.reichstag_size = 4.59;
 Q.landtag_size = 4.5;
 
 // diff from prev
-Q.old_spd_r = 21.9;
-Q.old_uspd_r = 17.8;
-Q.old_kpd_r = 8.5;
-Q.old_z_r = 17.8;
-Q.old_ddp_r = 8.3;
-Q.old_dvp_r = 13.9;
-Q.old_dnvp_r = 15.1;
+Q.old_spd_r = 22.4;
+Q.old_uspd_r = 12.6;
+Q.old_kpd_r = 3.3;
+Q.old_z_r = 18.3;
+Q.old_ddp_r = 8.5;
+Q.old_dvp_r = 14.2;
+Q.old_dnvp_r = 15.2;
 Q.old_nsdap_r = 0;
-Q.old_other_r = 3.3;
-Q.old_bvp_r = 4.1;
+Q.old_other_r = 2.6;
+Q.old_bvp_r = 4.3;
 
 // old election votes
 Q.previous_spd_last_election_votes = 21.9;
