@@ -434,7 +434,7 @@ view-if: neorevisionism > 0 and n_advisors < 4
 
 @nonfactional
 subtitle: Generally disinterested in internal struggles. Reduces faction loyalty decay by 10% for each advisor appointed.
-view-if: n_advisors < 3
+view-if: n_advisors < 4
 
 - #nonfactional_advisor
 
