@@ -125,12 +125,13 @@ Q.uspd_joined = 0;
 
 // inter-party relations
 Q.z_relation = 65;
-Q.kpd_relation = 15;
+Q.kpd_relation = 20;
 Q.uspd_relation = 60;
 Q.ddp_relation = 80;
 Q.dvp_relation = 45;
 // DNVP and NSDAP are invariably hostile
 Q.dnvp_relation = 5;
+Q.dvfb_relation = 0;
 Q.nsdap_relation = 0;
 Q.lvp_relation = 0;
 
@@ -143,6 +144,7 @@ Q.cvp_ideology = "Moderate";
 Q.stegerwald_path = 0;
 Q.nsdap_leader = "Hitler";
 Q.nsdap_chancellor = "Hitler";
+Q.dvfb_leader = "Ludendorff";
 Q.ideology = "reformist";
 
 // hmm... maybe we can play nice with Hindenburg???
@@ -275,6 +277,7 @@ Q.workers_ddp = 1;
 Q.workers_dvp = 1;
 Q.workers_dnvp = 10;
 Q.workers_nsdap = 5;
+Q.workers_dvfb = 0;
 Q.workers_other = 2;
 
 Q.new_middle_spd = 9;
@@ -285,6 +288,7 @@ Q.new_middle_ddp = 28;
 Q.new_middle_dvp = 29;
 Q.new_middle_dnvp = 9;
 Q.new_middle_nsdap = 2;
+Q.new_middle_dvfb = 0;
 Q.new_middle_other = 8;
 
 Q.old_middle_spd = 5;
@@ -295,6 +299,7 @@ Q.old_middle_ddp = 22;
 Q.old_middle_dvp = 31;
 Q.old_middle_dnvp = 17;
 Q.old_middle_nsdap = 3;
+Q.old_middle_dvfb = 0;
 Q.old_middle_other = 8;
 
 Q.rural_spd = 7;
@@ -305,6 +310,7 @@ Q.rural_ddp = 4;
 Q.rural_dvp = 21;
 Q.rural_dnvp = 56;
 Q.rural_nsdap = 4;
+Q.rural_dvfb = 0;
 Q.rural_other = 9;
 
 Q.unemployed_spd = 18;
@@ -315,6 +321,7 @@ Q.unemployed_ddp = 1;
 Q.unemployed_dvp = 0;
 Q.unemployed_dnvp = 5;
 Q.unemployed_nsdap = 4;
+Q.unemployed_dvfb = 0;
 Q.unemployed_other = 7;
 
 Q.catholics_spd = 17;
@@ -325,6 +332,7 @@ Q.catholics_ddp = 0;
 Q.catholics_dvp = 8;
 Q.catholics_dnvp = 5;
 Q.catholics_nsdap = 3;
+Q.catholics_dvfb = 0;
 Q.catholics_other = 7;
 
 Q.workers_spd_old = 39;
@@ -345,6 +353,7 @@ Q.z_r = 17.8;
 Q.ddp_r = 8.3;
 Q.dvp_r = 13.9;
 Q.dnvp_r = 15.1;
+Q.dvfb_r = 0;
 Q.nsdap_r = 0;
 Q.other_r = 3.3;
 Q.bvp_r = 4.1;
@@ -374,6 +383,7 @@ Q.previous_z_last_election_votes = 17.8;
 Q.previous_ddp_last_election_votes = 8.3;
 Q.previous_dvp_last_election_votes = 13.9;
 Q.previous_dnvp_last_election_votes = 25.1;
+Q.previous_dvfb_last_election_votes = 0;
 Q.previous_nsdap_last_election_votes = 0;
 Q.previous_other_last_election_votes = 3.3;
 Q.previous_bvp_last_election_votes = 4.1;
@@ -497,6 +507,7 @@ Q.adjustmentFactors_ddp = 1.0;
 Q.adjustmentFactors_dvp = 1.0;
 Q.adjustmentFactors_lvp = 1.0;
 Q.adjustmentFactors_dnvp = 1.0;
+Q.adjustmentFactors_dvfb = 1.0;
 Q.adjustmentFactors_nsdap = 1.0;
 Q.adjustmentFactors_dnf = 1.0;
 Q.adjustmentFactors_dnef = 1.0;
@@ -512,6 +523,7 @@ Q.adjustmentFactors_votes_ddp = 1.0;
 Q.adjustmentFactors_votes_dvp = 1.0;
 Q.adjustmentFactors_votes_lvp = 1.0;
 Q.adjustmentFactors_votes_dnvp = 1.0;
+Q.adjustmentFactors_votes_dvfb = 1.0;
 Q.adjustmentFactors_votes_nsdap = 1.0;
 Q.adjustmentFactors_votes_dnf = 1.0;
 Q.adjustmentFactors_votes_dnef = 1.0;
@@ -527,6 +539,7 @@ Q.adjustmentFactors_ddp_prussia = 1.0;
 Q.adjustmentFactors_dvp_prussia = 1.0;
 Q.adjustmentFactors_lvp_prussia = 1.0;
 Q.adjustmentFactors_dnvp_prussia = 1.0;
+Q.adjustmentFactors_dvfb_prussia = 0.4;
 Q.adjustmentFactors_nsdap_prussia = 1.0;
 Q.adjustmentFactors_dnf_prussia = 1.0;
 Q.adjustmentFactors_dnef_prussia = 1.0;
@@ -543,7 +556,7 @@ Q.economic_records = [];
 
 // State of the government
 Q.president = "Ebert";
-Q.president_ideology = "Hindenburg";
+Q.president_ideology = "Moderate";
 // starting chancellor: Wilhelm Marx
 Q.chancellor = "Wirth";
 Q.chancellor_party = 'Z';
