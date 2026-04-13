@@ -178,7 +178,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if dnf_formed : <span class="tooltip-text" title="German National Front" style="color: #003755;">**DNF**</span>: [+ dnf_relation : relationships +] ?]
 
-<span class="tooltip-text" title="German Völkisch Freedom Party" style="color: #3D3D3D;">**DVFP**</span>
+<span class="tooltip-text" title="German Völkisch Freedom Party" style="color: #3D3D3D;">**DVFP**</span>: [+ dvfp_relation : relationships +]
 
 <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #7A3C00;">**NSDAP**</span>[? if nsdap_split: (and its splinters)?]: [+ nsdap_relation : relationships +]
 
