@@ -23,9 +23,9 @@ choose-if: left_strength <= 20 and reformist_strength >= 50 and early_dvp_cooper
 
 The SPD agress to join the Cuno government.
 
-- @selection_of_ministries
+- @selection_of_ministries_cuno
 
-@selection_of_ministries
+@selection_of_ministries_cuno
 title: Select our ministries
 
 We can choose a few ministries. Controlling a ministry allows us to directly effect policy in that area.
@@ -49,7 +49,7 @@ tags: mins_1928
 choose-if: leverage >= 5
 view-if: labor_minister_party != "SPD"
 on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
-go-to: selection_of_ministries
+go-to: selection_of_ministries_cuno
 
 Rudolf Wissell of the <span style="color: #c00000;">**SPD**</span> has been appointed labor minister.
 
@@ -71,7 +71,7 @@ subtitle: (reformist).
 choose-if: leverage >= 5
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: interior_minister = "Severing"; leverage -= 5; interior_minister_party = "SPD"
-go-to: selection_of_ministries
+go-to: selection_of_ministries_cuno
 
 Carl Severing has been appointed Interior Minister.
 
@@ -81,7 +81,7 @@ subtitle: (non-factional).
 choose-if: leverage >= 5
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: leverage -= 20; interior_minister = "Sollmann"; interior_minister_party = "SPD"
-go-to: selection_of_ministries
+go-to: selection_of_ministries_cuno
 
 Wilhelm Sollmann has been appointed Interior Minister.
 
@@ -90,7 +90,7 @@ title: Cancel & Go Back
 subtitle: Return without appointing
 choose-if: true
 on-arrival: interior_minister_party = "DDP"; interior_minister = "Oeser"
-go-to: selection_of_ministries
+go-to: selection_of_ministries_cuno
 
 @finance
 title: Finance Ministry
@@ -100,7 +100,7 @@ tags: mins_1928
 choose-if: leverage >= 15 
 view-if: finance_minister_party != "SPD"
 on-arrival: leverage -= 15; finance_minister_party = "SPD"; finance_minister = "Hilferding"
-go-to: selection_of_ministries
+go-to: selection_of_ministries_cuno
 
 Rudolf Hilferding of the <span style="color: #c00000;">**SPD**</span> has been appointed Finance Minister.
 
@@ -112,7 +112,7 @@ tags: mins_1928
 choose-if: leverage >= 15 
 view-if: economic_minister_party != "SPD"
 on-arrival: leverage -= 15; economic_minister_party = "SPD"; economic_minister = "Schmidt"
-go-to: selection_of_ministries
+go-to: selection_of_ministries_cuno
 
 Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
 
@@ -124,7 +124,7 @@ tags: mins_1928
 choose-if: leverage >= 10 and not cvp_ministers_accepted
 view-if: justice_minister_party != "SPD"
 on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
-go-to: selection_of_ministries
+go-to: selection_of_ministries_cuno
 
 Gustav Radbruch of the <span style="color: #c00000;">**SPD**</span> has been appointed Justice Minister.
 
@@ -134,7 +134,7 @@ unavailable-subtitle: We can't take this ministry
 tags: mins_1928
 choose-if: leverage >= 90
 on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
-go-to: selection_of_ministries
+go-to: selection_of_ministries_cuno
 
 Rudolf Breitscheid of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
 
@@ -157,7 +157,7 @@ subtitle: Baade is one of our few experts in the field.
 choose-if: leverage >= 10
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: agriculture_minister = "Baade"; leverage -= 10; agriculture_minister_party = "SPD"
-go-to: selection_of_ministries
+go-to: selection_of_ministries_cuno
 
 Fritz Baade of the <span style="color: #c00000;">**SPD**</span> has been appointed Agriculture Minister.
 
@@ -167,7 +167,7 @@ subtitle: Braun is a pationate hunter who used to occupy the Agriculture Ministr
 choose-if: leverage >= 10
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: agriculture_minister = "Braun"; leverage -= 10; agriculture_minister_party = "SPD"
-go-to: selection_of_ministries
+go-to: selection_of_ministries_cuno
 
 Otto Braun of the <span style="color: #c00000;">**SPD**</span> has been appointed Agriculture Minister.
 
@@ -176,7 +176,7 @@ title: Cancel & Go Back
 subtitle: Return without appointing
 choose-if: true
 on-arrival: agriculture_minister_party = "Z";
-go-to: selection_of_ministries
+go-to: selection_of_ministries_cuno
 
 @reichswehr
 title: Reichswehr Ministry
