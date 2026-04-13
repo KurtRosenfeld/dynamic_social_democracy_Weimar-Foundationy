@@ -10,6 +10,7 @@ new-page: true
 Sollmann is a pragmatic politican.
 
 - @police_affairs
+- @cologne_campaign
 - @root: Return to main
 
 
@@ -20,3 +21,12 @@ choose-if: advisor_action_timer == 0 and spd_in_government and interior_minister
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: #c00000;">SPD</span> is not in government. ?][? if interior_minister != "Sollmann": Sollmann is not the Interior minister. ?]
 on-arrival: advisor_action_timer = 6; police_timer -= 6; last_advisor_action = 1
 go-to: police
+
+@cologne_campaign
+title: Campaign in the Rhineland
+subtitle: Sollmann is the editor of a newspaper in Cologne. He can sway some local support to our party.
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: catholics_spd += 2*(1-dissent); new_middle_spd += 1*(1-dissent); workers_spd += 1*(1-dissent)
+
+Some readers may have made up there mind about us.
