@@ -45,7 +45,6 @@ We can choose a few ministries. Controlling a ministry allows us to directly eff
 title: Labor Ministry
 subtitle: Taking the Labor Ministry is expected of us.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
 choose-if: leverage >= 5
 view-if: labor_minister_party != "SPD"
 on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
@@ -59,7 +58,6 @@ subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry 
 unavailable-subtitle: We do not have enough leverage.
 choose-if: leverage >= 5
 view-if: interior_minister_party != "SPD"
-tags: mins_1928
 
 - @appoint_severing
 - @appoint_sollmann
@@ -96,7 +94,6 @@ go-to: selection_of_ministries_cuno
 title: Finance Ministry
 subtitle: The Finance Ministry controls the government budget and taxes.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
 choose-if: leverage >= 15 
 view-if: finance_minister_party != "SPD"
 on-arrival: leverage -= 15; finance_minister_party = "SPD"; finance_minister = "Hilferding"
@@ -108,7 +105,6 @@ Rudolf Hilferding of the <span style="color: #c00000;">**SPD**</span> has been a
 title: Economic Ministry
 subtitle: The Economic Ministry controls broader economic policy.
 unavailable-subtitle: We do not have enough leverage.
-tags: mins_1928
 choose-if: leverage >= 15 
 view-if: economic_minister_party != "SPD"
 on-arrival: leverage -= 15; economic_minister_party = "SPD"; economic_minister = "Schmidt"
@@ -120,7 +116,6 @@ Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appo
 title: Justice Ministry
 subtitle: The Justice Ministry controls the courts.
 unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Justice Ministry. ?]
-tags: mins_1928
 choose-if: leverage >= 10 and not cvp_ministers_accepted
 view-if: justice_minister_party != "SPD"
 on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
@@ -131,7 +126,6 @@ Gustav Radbruch of the <span style="color: #c00000;">**SPD**</span> has been app
 @foreign
 title: Foreign Ministry
 unavailable-subtitle: We can't take this ministry
-tags: mins_1928
 choose-if: leverage >= 90
 on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
 go-to: selection_of_ministries_cuno
@@ -181,7 +175,6 @@ go-to: selection_of_ministries_cuno
 @reichswehr
 title: Reichswehr Ministry
 unavailable-subtitle: We can't take this ministry
-tags: mins_1928
 choose-if: leverage >= 90
 
 @transport
