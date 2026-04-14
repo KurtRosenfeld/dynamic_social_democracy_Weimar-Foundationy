@@ -2043,12 +2043,12 @@ on-arrival: leverage += 25; in_social_democratic_coalition = 1; spd_in_governmen
 
 We must choose a chancelor now.
 
-- @socdem_chancellor_müller
+- @socdem_chancellor_muller
 - @socdem_chancellor_breitscheid
 - @socdem_chancellor_braun
 - @socdem_chancellor_levi
 
-@socdem_chancellor_müller
+@socdem_chancellor_muller
 title: Hermann Müller for Chancellor
 view-if: muller_dead = 0
 subtitle: Müller is popular within the party and overall experienced.
