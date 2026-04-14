@@ -1135,7 +1135,9 @@ if (Q.dvp_leader == "Dingeldey" && Q.dvp_ideology == "Right" && Q.dvp_right - Q.
     Q.far_right_coalition = parseFloat((Q.far_right_coalition + Q.dvp_r).toFixed(1));
 }
 
-Q.left_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.sapd_r).toFixed(1));
+Q.left_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.sapd_r + Q.uspd_r).toFixed(1));
+
+Q.social_democratic_coalition = parseFloat((Q.spd_r + Q.sapd_r + Q.uspd_r).toFixed(1));
 
 if (Q.lvp_formed) {
     Q.popular_front_coalition = parseFloat((Q.spd_r + Q.kpd_r + Q.z_r - Q.bvp_r + Q.sapd_r).toFixed(1));
@@ -1221,6 +1223,7 @@ Q.in_wholesome_coalition = 0;
 Q.in_social_catholic_coalition = 0;
 Q.in_social_catholic_coalition = 0;
 Q.in_left_front = 0;
+Q.in_social_democratic_coalition = 0;
 Q.in_popular_front = 0;
 Q.in_emergency_government = 0;
 Q.in_minority_government = 0;
@@ -1943,7 +1946,9 @@ go-to: achievement_check_e
 
 **Potential coalitions:**
 
-[? if kpd_relation >= 40 and left_coalition >= 45: United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition +]% ?]
+[? if kpd_relation >= 40 and left_coalition >= 45: United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?][? if not uspd_joined = 3:  + <span style="color: #A10000;">**USPD**</span>?]): [+ left_coalition +]% ?]
+
+[? if not uspd_joined = 3 and uspd_relation >= 50: Social Democratic Coalition (<span style ="color: #c00000;">**SPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?][? if not uspd_joined = 3:  + <span style="color: #A10000;">**USPD**</span>?]): [+ social_democratic_coalition +]% ?]
 
 [? if kpd_relation > 35 and z_relation > 35 and not cvp_formed: Popular Front Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span>[? if (liberal_parliament == 0 and bourgeois_parliament_ddp == 0) and not lvp_formed:&nbsp;+ <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ popular_front_coalition +]% ?]
 
@@ -2022,10 +2027,236 @@ go-to: coalition_menu
 - @no_majority_right
 - @brauns_dilemma
 - @left_coalition
+- @social_democratic_coalition
 - @popular_front_coalition
 - @right_coalition
 - @center_right_coalition
 - @bourgeois_coalition
+
+
+@social_democratic_coalition
+title: We form a coalition among social democratic parties.
+subtitle: <span style ="color: #c00000;">**SPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?][? if not uspd_joined = 3:  + <span style="color: #A10000;">**USPD**</span>?]
+view-if: social_democratic_coalition >= 50
+choose-if: uspd_relation >= 40
+on-arrival: leverage += 25; in_social_democratic_coalition = 1; spd_in_government = 1; uspd_in government = 1; interior_minister_party = "USPD"; economic_minister_party = "USPD"; foreign_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD"; reichswehr_minister_party = "USPD"; labor_minister_party = "USPD" if not aspd_formed; labor_minister_party = "ASPD" if aspd_formed; justice_minister_party = "USPD"; transport_minister_party = "USPD"; postal_minister_party = "USPD"
+
+We must choose a chancelor now.
+
+- @socdem_chancellor_müller
+- @socdem_chancellor_breitscheid
+- @socdem_chancellor_braun
+- @socdem_chancellor_levi
+
+@socdem_chancellor_müller
+title: Hermann Müller for Chancellor
+view-if: muller_dead = 0
+subtitle: Müller is popular within the party and overall experienced.
+choose-if: not uspd_leader = "Ledebour"
+unavailable-subtitle: The USPD disaproves
+on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "SPD"
+go-to: socdem_ministries
+
+Müller's appointment as chancellor is approved by all our potential allies.
+
+@socdem_chancellor_braun
+title: Otto Braun for Chancellor
+view-if: reformist_split = 0
+subtitle: Braun is one of our most popular leaders.
+choose-if: not uspd_leader = "Ledebour"
+unavailable-subtitle: The USPD disaproves
+on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = "SPD"; leverage -= 5
+go-to: socdem_ministries
+
+Brauns appointment as chancellor is approved by all our potential allies.
+
+@socdem_chancellor_breitscheid
+title: Rudolf Breitscheid for Chancellor
+subtitle: Breitscheid is just generally based.
+on-arrival: spd_in_government = 1; chancellor = "Breitscheid"; chancellor_party = "SPD" if uspd_joined >= 1; chancellor_party = "USPD" if uspd_joined == 0; leverage += 10
+go-to: socdem_ministries
+
+Our allies are quite happy about this choice.
+
+@socdem_chancellor_levi
+title: Rudolf Breitscheid for Chancellor
+subtitle: Levi is further to the left than all other possibilities
+on-arrival: spd_in_government = 1; chancellor = "Levi"; chancellor_party = "SPD" if uspd_joined >= 1; chancellor_party = "USPD" if uspd_joined == 0; leverage += 5
+go-to: socdem_ministries
+
+Our allies approve of this choice.
+
+@socdem_ministries
+
+We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the <span style="color: #700000;">**KPD**</span>. ?] [? if in_left_front and reichswehr_minister_party == "KPD" : If the <span style="color: #700000;">**KPD**</span> controls the Reichswehr Ministry, the army will most likely revolt. ?]
+
+@labor
+title: Labor Ministry
+subtitle: Taking the Labor Ministry is expected of us.
+unavailable-subtitle: We do not have enough leverage.
+tags: socdem_ministries
+choose-if: leverage >= 5
+view-if: labor_minister_party != "SPD"
+on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
+go-to: socdem_ministries
+
+Rudolf Wissell of the <span style="color: #c00000;">**SPD**</span> has been appointed labor minister.
+
+@interior
+title: Interior Ministry
+subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry controls domestic security.
+unavailable-subtitle: We do not have enough leverage.
+tags: socdem_ministries
+choose-if: leverage >= 5
+view-if: interior_minister_party != "SPD"
+
+- @appoint_severing
+- @appoint_sollmann
+- @cancel_interior
+
+@appoint_severing
+title: Carl Severing
+subtitle: (reformist).
+choose-if: leverage >= 5
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: interior_minister = "Severing"; leverage -= 5; interior_minister_party = "SPD"
+go-to: socdem_ministries
+
+Carl Severing of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
+
+@appoint_sollmann
+title: Wilhelm Sollmann
+subtitle: (non-factional).
+choose-if: leverage >= 5
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 5; interior_minister = "Sollmann"; interior_minister_party = "SPD"
+go-to: socdem_ministries
+
+Wilhelm Sollmann of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
+
+@cancel_interior
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: interior_minister_party = "USPD" if not uspd_joined = 3 and not sapd_formed; interior_minister = "Dittmann" if not uspd_joined = 3 and not sapd_formed; interior_minister_party = "SAPD" if sapd_formed; interior_minister = "Seydewitz" if sapd_formed
+go-to: socdem_ministries
+
+@finance
+title: Finance Ministry
+subtitle: The Finance Ministry controls the government budget and taxes.
+unavailable-subtitle: We do not have enough leverage.
+tags: socdem_ministries
+choose-if: leverage >= 10 
+view-if: finance_minister_party != "SPD"
+on-arrival: leverage -= 10; finance_minister_party = "SPD"; finance_minister = "Hilferding"
+go-to: socdem_ministries
+
+Rudolf Hilferding of the <span style="color: #c00000;">**SPD**</span> has been appointed Finance Minister.
+
+@economic
+title: Economic Ministry
+subtitle: The Economic Ministry controls broader economic policy.
+unavailable-subtitle: We do not have enough leverage.
+tags: socdem_ministries
+choose-if: leverage >= 10 
+view-if: economic_minister_party != "SPD"
+
+- @appoint_schmidt
+- @appoint_hilfdering
+- @appoint_sender
+- @cancel_economic
+
+@appoint_schmidt
+title: Schmidt
+subtitle: (non-factional).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: economic_minister = "Schmidt"; leverage -= 5; economic_minister_party = "SPD"
+go-to: socdem_ministries
+
+Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+
+@appoint_hilfdering
+title: Rudolf Hilfdering
+subtitle: (centrist).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 10; economic_minister = "Hilfdering"; economic_minister_party = "SPD"
+go-to: socdem_ministries
+
+Rudolf Hildering of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+
+@appoint_sender
+title: Tony Sender
+subtitle: (left).
+choose-if: leverage >= 15 if not in_left_coalition; leverage >= 5 if not in_left_coalition
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 15 if not in_left_coalition; leverage -= 5 if in_left_coalition; economic_minister = "Sender"; economic_minister_party = "SPD"
+go-to: socdem_ministries
+
+Tony Sender of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+
+@cancel_economic
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: economic_minister_party = "USPD"; economic_minister = "Hilfdering"
+go-to: socdem_ministries
+
+@justice
+title: Justice Ministry
+subtitle: The Justice Ministry controls the courts.
+unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Justice Ministry. ?]
+tags: socdem_ministries
+choose-if: leverage >= 10 and not cvp_ministers_accepted
+view-if: justice_minister_party != "SPD"
+on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
+go-to: socdem_ministries
+
+Gustav Radbruch of the <span style="color: #c00000;">**SPD**</span> has been appointed Justice Minister.
+
+@foreign
+title: Foreign Ministry
+subtitle: Foreign policy.
+unavailable-subtitle: We do not have enough leverage.
+tags: socdem_ministries
+choose-if: leverage >= 10 
+view-if: foreign_minister_party != "SPD"
+on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
+go-to: socdem_ministries
+
+Rudolf Breitscheid of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
+
+
+@agriculture
+title: Agricultural Ministry
+subtitle: This is not our usual domain.
+unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Agricultural Ministry. ?]
+choose-if: leverage >= 10
+view-if: agriculture_minister_party != "SPD"
+on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"
+go-to: ministries
+tags: socdem_ministries
+
+Fritz Baade of the <span style="color: #c00000;">**SPD**</span> has been appointed Agriculture Minister.
+
+@reichswehr
+title: Reichswehr Ministry
+subtitle: The Ministry responsible for the armed forces is not typically our domain; General Groener and the bourgeois-conservatives will be displeased[? if president = "Hindenburg" or president_ideology != "Left":&nbsp;along with President [+ president +]?].
+unavailable-subtitle: [? if leverage < 15: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Reichswehr Ministry. ?]
+tags: socdem_ministries
+choose-if: leverage >= 10
+view-if: reichswehr_minister_party != "SPD"
+on-arrival: leverage -= 10; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"; hindenburg_angry += 10
+go-to: socdem_ministries
+
+Julius Leber of the <span style="color: #c00000;">**SPD**</span> has been appointed Reichswehr Minister.
+
+
+@no_more
+title: No more ministries.
+
+We are done.
 
 @wholesome_coalition
 title: A "wholesome" coalition is formed.
@@ -2273,8 +2504,8 @@ Alternatively, [+ president +] could use the emergency powers of the presidency.
 
 @left_coalition
 title: Is a United Left coalition possible?
-subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> [? if sapd_formed: + <span style="color: #9B0000;">**SAPD**</span> ?] ([+ left_coalition +]%)
-unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] ([+ left_coalition +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?] [? if rubicon: - Why the hell would Hindenburg allow this? ?] [? if president_ideology != "Left" and president != "Hindenburg": - President [+ president +] is fiercely opposed to <span style="color: #9B0000;">socialist</span> governance. ?]
+subtitle: <span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> [? if sapd_formed: + <span style="color: #9B0000;">**SAPD**</span> ?] [? if not uspd_joined = 3: + <span style="color: #A10000;">**USPD**</span> ?] ([+ left_coalition +]%)
+unavailable-subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #700000;">KPD</span> [? if sapd_formed: + <span style="color: #9B0000;">SAPD</span> ?] [? if not uspd_joined = 3: + <span style="color: #A10000;">**USPD**</span> ?] ([+ left_coalition +]%). [? if kpd_relation < 50 : We do not have adequate relations with the <span style="color: #700000;">KPD</span>. ?][? if communist_coalition < 3 : The <span style="color: #700000;">Communists</span> are too committed to their radical ways to partake in government. ?] [? if rubicon: - Why the hell would Hindenburg allow this? ?] [? if president_ideology != "Left" and president != "Hindenburg": - President [+ president +] is fiercely opposed to <span style="color: #9B0000;">socialist</span> governance. ?]
 view-if: left_coalition >= 50
 choose-if: (kpd_relation >= 50 or (kpd_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3 and not rubicon and president_ideology == "Left" or president == "Hindenburg"
 
