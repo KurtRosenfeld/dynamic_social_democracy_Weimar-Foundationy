@@ -2039,7 +2039,7 @@ title: We form a coalition among social democratic parties.
 subtitle: <span style ="color: #c00000;">**SPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?][? if not uspd_joined = 3:  + <span style="color: #A10000;">**USPD**</span>?]
 view-if: social_democratic_coalition >= 50
 choose-if: uspd_relation >= 40
-on-arrival: leverage += 25; in_social_democratic_coalition = 1; spd_in_government = 1; uspd_in government = 1; interior_minister_party = "USPD"; economic_minister_party = "USPD"; foreign_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD"; reichswehr_minister_party = "USPD"; labor_minister_party = "USPD" if not aspd_formed; labor_minister_party = "ASPD" if aspd_formed; justice_minister_party = "USPD"; transport_minister_party = "USPD"; postal_minister_party = "USPD"
+on-arrival: leverage += 20; in_social_democratic_coalition = 1; spd_in_government = 1; interior_minister_party = "USPD"; economic_minister_party = "USPD"; foreign_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD"; reichswehr_minister_party = "USPD"; labor_minister_party = "USPD" if not sapd_formed; labor_minister_party = "SAPD" if sapd_formed; justice_minister_party = "USPD"; transport_minister_party = "USPD"; postal_minister_party = "USPD"
 
 We must choose a chancelor now.
 
