@@ -4251,9 +4251,9 @@ Rudolf Hildering of the <span style="color: #c00000;">**SPD**</span> has been ap
 @appoint_sender
 title: Tony Sender
 subtitle: (left).
-choose-if: leverage >= 15 if not in_left_coalition; leverage >= 5 if not in_left_coalition
+choose-if: leverage >= 15 if not in_left_coalition
 unavailable-subtitle: We do not have enough leverage.
-on-arrival: leverage -= 15 if not in_left_coalition; leverage -= 5 if in_left_coalition; economic_minister = "Sender"; economic_minister_party = "SPD"
+on-arrival: leverage -= 15 if not in_left_coalition; economic_minister = "Sender"; economic_minister_party = "SPD"
 go-to: ministries
 
 Tony Sender of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
