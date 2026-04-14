@@ -3940,10 +3940,37 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 5
 view-if: interior_minister_party != "SPD"
-on-arrival: leverage -= 5; interior_minister_party = "SPD"; interior_minister = "Severing"
+
+- @appoint_severing
+- @appoint_sollmann
+- @cancel_interior
+
+@appoint_severing
+title: Carl Severing
+subtitle: (reformist).
+choose-if: leverage >= 5
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: interior_minister = "Severing"; leverage -= 5; interior_minister_party = "SPD"
 go-to: ministries
 
 Carl Severing of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
+
+@appoint_sollmann
+title: Wilhelm Sollmann
+subtitle: (non-factional).
+choose-if: leverage >= 5
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 5; interior_minister = "Sollmann"; interior_minister_party = "SPD"
+go-to: ministries
+
+Wilhelm Sollmann of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
+
+@cancel_interior
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: interior_minister_party = "DDP"; interior_minister = "Oeser"
+go-to: ministries
 
 @finance
 title: Finance Ministry
@@ -3964,10 +3991,48 @@ unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
 choose-if: leverage >= 10 
 view-if: economic_minister_party != "SPD"
-on-arrival: leverage -= 10; economic_minister_party = "SPD"; economic_minister = "Schmidt"
+
+- @appoint_schmidt
+- @appoint_hilfdering
+- @appoint_sender
+- @cancel_economic
+
+@appoint_schmidt
+title: Schmidt
+subtitle: (non-factional).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: economic_minister = "Schmidt"; leverage -= 5; economic_minister_party = "SPD"
 go-to: ministries
 
 Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+
+@appoint_hilfdering
+title: Rudolf Hilfdering
+subtitle: (centrist).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 10; economic_minister = "Hilfdering"; economic_minister_party = "SPD"
+go-to: ministries
+
+Rudolf Hildering of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+
+@appoint_sender
+title: Tony Sender
+subtitle: (left).
+choose-if: leverage >= 15 if not in_left_coalition; leverage >= 5 if not in_left_coalition
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 15 if not in_left_coalition; leverage -= 5 if in_left_coalition; economic_minister = "Sender"; economic_minister_party = "SPD"
+go-to: ministries
+
+Tony Sender of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
+
+@cancel_economic
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: economic_minister_party = "DVP"; economic_minister_party = "LVP" if lvp_formed; economic_minister = "Curtius"; economic_minister_party = ddp_name if in_weimar_coalition or in_popular_front; economic_minister = "Dietrich" if in_weimar_coalition or in_popular_front
+go-to: ministries
 
 @justice
 title: Justice Ministry
