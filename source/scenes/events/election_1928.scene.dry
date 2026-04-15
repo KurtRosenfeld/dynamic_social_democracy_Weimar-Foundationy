@@ -2247,7 +2247,7 @@ unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [?
 choose-if: leverage >= 10
 view-if: agriculture_minister_party != "SPD"
 on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"
-go-to: socem_ministries
+go-to: socdem_ministries
 tags: socdem_ministries
 
 Fritz Baade of the <span style="color: #c00000;">**SPD**</span> has been appointed Agriculture Minister.
