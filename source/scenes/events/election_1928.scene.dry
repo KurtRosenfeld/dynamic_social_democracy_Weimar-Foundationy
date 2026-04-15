@@ -2036,10 +2036,10 @@ go-to: coalition_menu
 
 @social_democratic_coalition
 title: We form a coalition among social democratic parties.
-subtitle: <span style ="color: #c00000;">**SPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?][? if not uspd_joined = 3:  + <span style="color: #A10000;">**USPD**</span>?]
+subtitle: <span style ="color: #c00000;">**SPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?][? if not uspd_joined = 3:  + <span style="color: #A10000;">**USPD**</span>?] ([+ social_democratic_coalition +]%)
 view-if: social_democratic_coalition >= 50
 choose-if: uspd_relation >= 40
-on-arrival: leverage += 20; in_social_democratic_coalition = 1; spd_in_government = 1; interior_minister_party = "USPD"; economic_minister_party = "USPD"; foreign_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD"; reichswehr_minister_party = "USPD"; labor_minister_party = "USPD" if not sapd_formed; labor_minister_party = "SAPD" if sapd_formed; justice_minister_party = "USPD"; transport_minister_party = "USPD"; postal_minister_party = "USPD"
+on-arrival: leverage += 10; in_social_democratic_coalition = 1; spd_in_government = 1; interior_minister_party = "USPD"; economic_minister_party = "USPD"; foreign_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD"; reichswehr_minister_party = "USPD"; labor_minister_party = "USPD" if not sapd_formed; labor_minister_party = "SAPD" if sapd_formed; justice_minister_party = "USPD"; transport_minister_party = "USPD"; postal_minister_party = "USPD"
 
 We must choose a chancelor now.
 
@@ -2079,7 +2079,8 @@ go-to: socdem_ministries
 Our allies are quite happy about this choice.
 
 @socdem_chancellor_levi
-title: Rudolf Breitscheid for Chancellor
+title: Paul Levi for Chancellor
+view-if: levi_dead = 0
 subtitle: Levi is further to the left than all other possibilities
 on-arrival: spd_in_government = 1; chancellor = "Levi"; chancellor_party = "SPD" if uspd_joined >= 1; chancellor_party = "USPD" if uspd_joined == 0; leverage += 5
 go-to: socdem_ministries
@@ -2246,7 +2247,7 @@ unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [?
 choose-if: leverage >= 10
 view-if: agriculture_minister_party != "SPD"
 on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"
-go-to: ministries
+go-to: socem_ministries
 tags: socdem_ministries
 
 Fritz Baade of the <span style="color: #c00000;">**SPD**</span> has been appointed Agriculture Minister.
