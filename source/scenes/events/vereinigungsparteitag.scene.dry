@@ -24,6 +24,7 @@ What will we offer them
 - @no_uspd: Ok, we won't make concessions.
 
 @lowest_uspd
+on-arrival: spd_party_leader = "Wels, Müller, Crispien"
 
 Former <span style="color: #AA0000;">**USPD**</span> leader Arthur Crispien will become our third chairman alongside Hermann Müller and Otto Wels.
 
@@ -177,6 +178,8 @@ We hope for the best
 @kpd_without_moscow
 view-if: second_kpd_essentially == 1
 on-arrival: coalition_dissent += 5; unemployed_spd += 5; new_middle_spd -= 3*(1-dissent); old_middle_spd -= 5; left_dissent -= 55; reformist_dissent += 45; kpd_relation += 25; left_strength += 25; new_party_programm += 1; center_relation -= 20; ddp_relation -= 15; dvp_relation -= 45; uspd_joined = 3; spd_r = old_spd_r + uspd_r; uspd_r = 0; unemployed_spd = unemployed_spd + unemployed_uspd; unemployed_uspd = 0; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; new_middle_spd = new_middle_spd + new_middle_uspd
+
+Even the most radical members like Georg Ledebour have agreed to the merger!
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Somehow it seems more left-wing than the initial <span style="color: #AA0000;">**USPD**</span>. This turns the <span style="color: #c00000;">**SPD**</span> into a big tent party again.
 
