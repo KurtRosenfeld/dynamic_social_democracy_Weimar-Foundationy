@@ -184,7 +184,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Party Leadership
 
-<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #c10000;">**SPD**</span>: Programm of Görlitz, [+ ideology +]-oriertation (Wels, Müller[? if uspd_joined >= 1: , Crispien?])
+<span class="tooltip-text" title="Social Democratic Party of Germany" style="color: #c10000;">**SPD**</span>: Programm of Görlitz, [+ ideology +]-oriertation ([+ spd_party_leader +])
 
 [? if dnef_formed: <span class="tooltip-text" title="German National Unity Front" style="color: #BFC8CC;">**DNEF**</span>: [? if dnef_ideology == "Left": Syncretic?][? if dnef_ideology == "Moderate": Syncretic?][? if dnef_ideology == "Right": Syncretic?] ([+ dnef_leader +])?]
 
