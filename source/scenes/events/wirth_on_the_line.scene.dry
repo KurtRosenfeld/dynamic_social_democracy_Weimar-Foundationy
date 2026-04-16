@@ -2,25 +2,29 @@ title: Wirth government on the line
 subtitle: The large opposition to the government from all sides faces Wirth with a challange...
 new-page: true
 tags: event
-view-if: year == 1922 and month == 11 and spd_in_government = 1
+view-if: year == 1922 and month == 11 and spd_in_government = 1 and chancellor == "Wirth"
 max-visits: 1
 priority: 1
 face-image: img/portraits/wirth.jpg
 
 = Wirth government on the line
 
+Our current coalition lead by chancellor Joseph Wirth has been set increasingly under pressure for its "Erfüllungspolitik" (policy of fulfillment regarding the Versailles Treaty obligations).
+
+Wirth is trying to get the DVP into government, as he views them as an essential partner for diplomatic affairs.
+
 There are a few options...
   
-- @discipline_left: Put strict faction discipline on our left wing.
+- @compromise: Hold up the Weimar arrangment.
 - @allow_dvp_into_wirth: Agree to working together with the DVP.
 - @no_options_for_wirth: There is nothing we can do.
 
-@discipline_left
+@compromise
 view-if: uspd_joined >= 1
-choose-if: left_strength <= 20 and reformist_strength >= 45 and uspd_concession >= 5
-on-arrival: left_dissent += 12; center_dissent += 2; labor_dissent += 2
+choose-if: reformist_strength >= 45 and uspd_concession >= 5 wirth_concession >= 2
+on-arrival: z_relation -= 5; ddp_relation -= 3; center_dissent -= 3
 
-We can sustain a Weimar majority as long as our faction can dedicate itself to that.
+We can sustain a Weimar majority as long as we find a compromise among our parties.
 
 @allow_dvp_into_wirth
 subtitle: Wirth tries to form a Grand Coalition
