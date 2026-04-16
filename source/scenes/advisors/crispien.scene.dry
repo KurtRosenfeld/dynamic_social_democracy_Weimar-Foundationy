@@ -29,22 +29,23 @@ title: Campaign among workers
 subtitle: Crispien is experienced with electoral campaigning.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0
-on-arrival: advisor_action_timer = 6; last_advisor_action = 1; workers_spd += 3; unemployed_spd += 2; new_middle_spd += 1
+on-arrival: advisor_action_timer = 6; last_advisor_action = 1; workers_spd += 3*(1-dissent); unemployed_spd += 2*(1-dissent); new_middle_spd += 1*(1-dissent)
 
-goooo
+Crispien has campaigned as well as he could.
 
 @uspd_discipline
 title: Party Discipline
 subtitle: Reduce dissent across former USPD members.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
-on-arrival: advisor_action_timer = 6; left_dissent -= 12; labor_dissent -= 7; center_dissent -= 12
+on-arrival: advisor_action_timer = 6; left_dissent -= 12; labor_dissent -= 6; center_dissent -= 12
 
 We have enforced party discipline to reduce dissent among former members of the <span style="color: #AA0000;">USPD</span>.
 
 
 @contact_uspd
 title: Contact former <span style="color: #AA0000;">USPD</span> members.
+view-if: uspd_joined < 3
 subtitle: Crispien used to be head of the <span style="color: #AA0000;">USPD</span>, he can try to leverage his contacts.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0
@@ -60,5 +61,5 @@ Who should be contacted?
 view-if: uspd_joined <= 2 or left_split == 1
 
 @ledebour
-view-if: uspd_joined <= 3 or left_split == 1
+view-if: uspd_joined < 3 or left_split == 1
 
