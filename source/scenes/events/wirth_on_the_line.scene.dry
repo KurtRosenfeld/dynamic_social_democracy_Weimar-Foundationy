@@ -21,7 +21,7 @@ There are a few options...
 
 @compromise
 view-if: uspd_joined >= 1
-choose-if: reformist_strength >= 45 and uspd_concession >= 5 wirth_concession >= 2
+choose-if: reformist_strength >= 45 and uspd_concession >= 5 and wirth_concession >= 2
 on-arrival: z_relation -= 5; ddp_relation -= 3; center_dissent -= 3
 
 We can sustain a Weimar majority as long as we find a compromise among our parties.
