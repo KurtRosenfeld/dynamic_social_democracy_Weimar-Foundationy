@@ -1,0 +1,25 @@
+title: SAPD-USPD Unification
+new-page: true 
+subtitle: The two parties decided to unite.
+tags: event
+view-if: sapd_formed and not uspd_joined == 3 and year >= 1923 and nsdap_votes >= 5
+on-arrival: {!
+
+if (Q.sapd_votes < uspd_votes) {
+    Q.sapd_r = 0;
+    Q.uspd_r = Q.uspd_r + Q.sapd_r; 
+} else {
+    Q.sapd_r = Q.sapd_r + Q.uspd_r;
+    Q.uspd_r = 0;
+    Q.uspd_votes = 0;
+    Q.workers_sapd = Q.workers_sapd + Q.workers_uspd
+}
+
+!}
+max-visits: 1
+
+= SAPD-USPD Unification
+
+Our policy choices have greatly offended the Centrist faction. Many of our most experienced leaders have resigned.
+
+[? if left_split = 1 : Many former <span style="color: #c00000;">Centrist Marxists</span>
