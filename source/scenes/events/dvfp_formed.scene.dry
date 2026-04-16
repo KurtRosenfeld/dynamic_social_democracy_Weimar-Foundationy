@@ -1,7 +1,7 @@
 title: DNVP split
 subtitle: The right of the party splits
 new-page: true
-on-arrival: workers_dnvp -= 3; unemployed_dnvp -= 1; workers_dvfp += 2; new_middle_dvfp += 2; old_middle_dfvp += 2; rural_dvfp += 1; dvfp_formed = 1
+on-arrival: workers_dnvp -= 3; unemployed_dnvp -= 1; workers_dvfp += 2; new_middle_dvfp += 2; old_middle_dvfp += 2; rural_dvfp += 1; dvfp_formed = 1
 tags: event
 view-if: year == 1922 and month == 12
 max-visits: 1
