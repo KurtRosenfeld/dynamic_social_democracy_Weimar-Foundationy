@@ -138,6 +138,7 @@ if (Q.labor_strength < 10) {
     Q.workers_nsdap += 8;
     Q.rb_strength -= 800;
 }
+}
 
 Q.workers_nsdap -= 3;
 Q.workers_kpd -= 3;
