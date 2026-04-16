@@ -1948,7 +1948,7 @@ go-to: achievement_check_e
 
 [? if kpd_relation >= 40 and left_coalition >= 45: United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?][? if not uspd_joined = 3:  + <span style="color: #A10000;">**USPD**</span>?]): [+ left_coalition +]% ?]
 
-[? if not uspd_joined = 3 and uspd_relation >= 50: Social Democratic Coalition (<span style ="color: #c00000;">**SPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?][? if not uspd_joined = 3:  + <span style="color: #A10000;">**USPD**</span>?]): [+ social_democratic_coalition +]% ?]
+[? if not uspd_joined = 3 or sapd_formed: Social Democratic Coalition (<span style ="color: #c00000;">**SPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?][? if not uspd_joined = 3:  + <span style="color: #A10000;">**USPD**</span>?]): [+ social_democratic_coalition +]% ?]
 
 [? if kpd_relation > 35 and z_relation > 35 and not cvp_formed: Popular Front Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span> + <span style="color: #000000;">**[+ z_party_name +]**</span>[? if (liberal_parliament == 0 and bourgeois_parliament_ddp == 0) and not lvp_formed:&nbsp;+ <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ popular_front_coalition +]% ?]
 
@@ -2039,6 +2039,7 @@ title: We form a coalition among social democratic parties.
 subtitle: <span style ="color: #c00000;">**SPD**</span>[? if sapd_formed:  + <span style="color: #9B0000;">**SAPD**</span>?][? if not uspd_joined = 3:  + <span style="color: #A10000;">**USPD**</span>?] ([+ social_democratic_coalition +]%)
 view-if: social_democratic_coalition >= 50
 choose-if: uspd_relation >= 40
+unavailable-subtitle: We have lost the trust of our former ideological sister parties.
 on-arrival: leverage += 10; in_social_democratic_coalition = 1; spd_in_government = 1; interior_minister_party = "USPD"; economic_minister_party = "USPD"; foreign_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD"; reichswehr_minister_party = "USPD"; labor_minister_party = "USPD" if not sapd_formed; labor_minister_party = "SAPD" if sapd_formed; justice_minister_party = "USPD"; transport_minister_party = "USPD"; postal_minister_party = "USPD"
 
 We must choose a chancelor now.
