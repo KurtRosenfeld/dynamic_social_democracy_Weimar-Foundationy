@@ -6,6 +6,77 @@ view-if: labor_dissent >= 60 and dnvp_leader != "Lambach" and not unions_indepen
 on-arrival: {!
 Q.unions_independent = 1; 
 
+if (Q.uspd_votes > 3) {
+
+if (Q.labor_strength < 10) {
+    Q.workers_spd -= 16;
+    Q.unemployed_spd -= 8;
+    if (Q.sapd_formed) {
+        Q.workers_sapd += 8;
+        Q.unemployed_sapd += 4;
+    } else {
+        Q.workers_uspd += 4;
+    }
+    Q.workers_uspd += 4;
+    Q.workers_kpd += 3;
+    Q.workers_nsdap += 1;
+    Q.rb_strength -= 400;
+} else if (Q.labor_strength < 25) {
+    Q.workers_spd -= 20;
+    Q.unemployed_spd -= 10;
+    if (Q.sapd_formed) {
+        Q.workers_sapd += 10;
+        Q.unemployed_sapd += 6;
+    } else {
+        Q.workers_uspd += 5;
+    }
+    Q.workers_uspd += 5;
+    Q.workers_kpd += 3;
+    Q.workers_nsdap += 2;
+    Q.rb_strength -= 500;
+} else if (Q.labor_strength < 40) {
+    Q.workers_spd -= 22;
+    Q.unemployed_spd -= 12;
+    if (Q.sapd_formed) {
+        Q.workers_sapd += 12;
+        Q.unemployed_sapd += 8;
+    } else {
+        Q.workers_uspd += 6;
+    }
+    Q.workers_uspd += 6;
+    Q.workers_kpd += 4;
+    Q.workers_nsdap += 2;
+    Q.rb_strength -= 600;
+} else if (Q.labor_strength < 60) {
+    Q.workers_spd -= 24;
+    Q.unemployed_spd -= 14;
+    if (Q.sapd_formed) {
+        Q.workers_sapd += 15;
+        Q.unemployed_sapd += 10;
+    } else {
+        Q.workers_uspd += 7;
+    }
+    Q.workers_uspd += 7;
+    Q.workers_kpd += 4;
+    Q.workers_nsdap += 3;
+    Q.rb_strength -= 700;
+} else {
+    Q.workers_spd -= 26;
+    Q.unemployed_spd -= 16;
+    if (Q.sapd_formed) {
+        Q.workers_sapd += 18;
+        Q.unemployed_sapd += 12;
+    } else {
+        Q.workers_uspd += 8;
+    }
+    Q.workers_uspd += 8;
+    Q.workers_kpd += 5;
+    Q.workers_nsdap += 3;
+    Q.rb_strength -= 800;
+}
+
+} else {
+
 if (Q.labor_strength < 10) {
     Q.workers_spd -= 16;
     Q.unemployed_spd -= 8;
