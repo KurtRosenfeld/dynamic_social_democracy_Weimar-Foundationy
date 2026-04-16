@@ -259,7 +259,7 @@ Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
 Q.parties = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'dvfp', 'nsdap', 'other'];
-Q.parties_graph = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'dvfb', 'nsdap', 'other'];
+Q.parties_graph = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'dvfp', 'nsdap', 'other'];
 
 Q.sapd_formed = 0;
 Q.dnf_formed = 0;
@@ -384,7 +384,7 @@ Q.previous_z_last_election_votes = 17.8;
 Q.previous_ddp_last_election_votes = 8.3;
 Q.previous_dvp_last_election_votes = 13.9;
 Q.previous_dnvp_last_election_votes = 25.1;
-Q.previous_dvfb_last_election_votes = 0;
+Q.previous_dvfp_last_election_votes = 0;
 Q.previous_nsdap_last_election_votes = 0;
 Q.previous_other_last_election_votes = 3.3;
 Q.previous_bvp_last_election_votes = 4.1;
@@ -427,7 +427,7 @@ Q.old_z_r_prussia = 17.2;
 Q.old_ddp_r_prussia = 6.2;
 Q.old_dvp_r_prussia = 14.2;
 Q.old_dnvp_r_prussia = 18.1;
-Q.old_dvfb_r_prussia = 0;
+Q.old_dvfp_r_prussia = 0;
 Q.old_nsdap_r_prussia = 0;
 Q.old_other_r_prussia = 4.0;
 
