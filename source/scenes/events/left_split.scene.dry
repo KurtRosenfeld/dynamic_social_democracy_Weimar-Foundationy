@@ -6,7 +6,7 @@ view-if: left_dissent >= 60
 on-arrival: {!
 Q.left_split = 1; 
 
-if (Q.uspd_r > 1 and Q.uspd_votes > 2) {
+if (Q.uspd_r > 1 and if Q.uspd_votes > 2) {
     if (Q.left_strength < 10) {
         Q.workers_spd -= 3; 
         Q.unemployed_spd -= 3; 
@@ -114,8 +114,8 @@ max-visits: 1
 
 = Left-wing members split
 
-[? if uspd_r < 1 and uspd_votes < 2: Our policy choices have greatly offended the left, and many of their leaders have split to form a new party, the <span style="color: #9B0000;">**SAPD**</span>, or <span style="color: #9B0000;">Socialist Worker's Party</span>. They do not count a huge section of our membership, so this should be survivable. ?]
+[? if uspd_r < 1 and if uspd_votes < 2: Our policy choices have greatly offended the left, and many of their leaders have split to form a new party, the <span style="color: #9B0000;">**SAPD**</span>, or <span style="color: #9B0000;">Socialist Worker's Party</span>. They do not count a huge section of our membership, so this should be survivable. ?]
 
-[? if uspd_r < 1 and uspd_votes < 2: [? if centrists_resign = 1 : Many former <span style="color: #c00000;">Centrist Marxists</span> have joined with the <span style="color: #9B0000;">**SAPD**</span>, the party formed by dissident leftists. They have brought their support base and organization skills to the party, leading to its growth as a nascent rival to the <span style="color: #c00000;">**SPD**</span> for the support of the working class. ?] ?]
+[? if uspd_r < 1 and if uspd_votes < 2: [? if centrists_resign = 1 : Many former <span style="color: #c00000;">Centrist Marxists</span> have joined with the <span style="color: #9B0000;">**SAPD**</span>, the party formed by dissident leftists. They have brought their support base and organization skills to the party, leading to its growth as a nascent rival to the <span style="color: #c00000;">**SPD**</span> for the support of the working class. ?] ?]
 
-[? if uspd_r > 1 and uspd_votes > 2: The left has flocked to the <span style="color: #A10000;">USPD</span> improving their chance to remain relevant in the long run. ?]
+[? if uspd_r > 1 and if uspd_votes > 2: The left has flocked to the <span style="color: #A10000;">USPD</span> improving their chance to remain relevant in the long run. ?]
