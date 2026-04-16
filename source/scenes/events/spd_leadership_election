@@ -1,0 +1,92 @@
+title: SPD Leadership Election
+new-page: true 
+subtitle: The two parties decided to unite.
+tags: event
+view-if: spd_party_leadership == "ambigious"
+on-arrival:
+max-visits: 1
+
+= SPD Leadership Election
+
+Historically it has been almost impossible for a chairman of the SPD to be ousted via a vote. Only scandals or voluntary stepping down could open a realistic new election.
+
+- @left_dominance: Let's begin...
+- @centrist_dominance: Let's begin...
+- @labor_dominance: Let's begin...
+- @reformist_dominance: Let's begin...
+
+@left_dominance
+view-if: left_strength >= 50
+
+It appears the congress is dominated by the left wing of our party.
+
+- @ledebour
+- @liebknecht
+- @levi
+- @rosenfeld
+- @sender
+- @breitscheid
+
+@centrist_dominance
+view-if: centrist_strength >= 50
+
+It appears the congress is dominated by the centrists in our party.
+
+- @breitscheid
+- @wels
+- @hilfdering
+- @crispien
+- @scheidemann
+
+@labor_dominance
+view-if: labor_strength >= 50
+
+It appears the congress is dominated by the unions.
+
+- @breitscheid
+- @crispien
+- @hilfdering
+- @aufhäuser
+- @baade
+
+@reformist_dominance
+view-if: reformist_strength >= 50
+
+- @wels
+- @scheidemann
+- @braun
+- @baade
+- @juchaz
+- @ebert
+
+@ledebour
+jee
+
+@liebknecht
+jo
+
+@levi
+
+@rosenfeld
+
+@sender
+
+@breitscheid
+
+@wels
+
+@hilfdering
+
+@crispien
+
+@scheidemann
+
+@aufhäuser
+
+@baade
+
+@braun
+
+@juchaz
+
+@ebert
