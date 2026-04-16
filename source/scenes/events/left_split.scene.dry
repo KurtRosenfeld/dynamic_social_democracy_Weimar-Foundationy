@@ -6,7 +6,7 @@ view-if: left_dissent >= 60
 on-arrival: {!
 Q.left_split = 1; 
 
-if (Q.uspd_r > 1) and if (Q.uspd_votes > 2) {
+if (Q.uspd_r > 1) and (Q.uspd_votes > 2) {
     if (Q.left_strength < 10) {
         Q.workers_spd -= 3; 
         Q.unemployed_spd -= 3; 
