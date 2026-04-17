@@ -1613,6 +1613,15 @@ if (Q.dnvp_r && !Q.dnvp_wholesome) {
     });
 }
 
+if (Q.dvfp_formed && Q.dvfp_r) {
+    data.push({
+        "id": "dvfp",
+        "legend": "DVFP",
+        "name": "DVFP",
+        "seats": Math.round(Q.dvfp_r * Q.reichstag_size),
+    });
+}
+
 if (Q.dnf_formed && Q.dnf_r) {
     data.push({
         "id": "dnf",
@@ -1637,6 +1646,15 @@ if (Q.nsdap_split && Q.nsdap_hitler_r) {
         "legend": "NSDAP",
         "name": "NSDAP",
         "seats": Math.round(Q.nsdap_hitler_r * Q.reichstag_size),
+    });
+}
+
+if (Q.nsfb_r) {
+    data.push({
+        "id": "nsdfb",
+        "legend": "NSFB",
+        "name": "NSFB",
+        "seats": Math.round(Q.nsfb_r * Q.reichstag_size),
     });
 }
 
@@ -1675,8 +1693,8 @@ if (window && d3) {
 
     var lines = d3.linegraph(false, false,
             Q.parties_graph,
-            {'spd': '#E3000F', 'uspd': '#AA0000', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF'},
-            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP'});
+            {'spd': '#E3000F', 'uspd': '#AA0000', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF', 'dvfp': '#3D3D3D', 'nsfb': '#7A3C00'},
+            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP', 'dvfp': 'DVFP', 'nsdap': 'NSFB'});
     lines.width(width).height(400);
     //var svg = lines(Q.election_records);
     d3.select("#election_history").datum(Q.election_records).call(lines);
@@ -1686,8 +1704,8 @@ if (window && d3) {
     if (!Q.historical_mode) {
         var lines_2 = d3.linegraph(true, true,
             Q.parties_graph,
-            {'spd': '#E3000F', 'uspd': '#AA0000', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF'},
-            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP'});
+            {'spd': '#E3000F', 'uspd': '#AA0000', 'kpd': '#700000', 'ddp': '#D3C24D', 'z': '#000', 'dvp': '#D5AC27', 'dnvp': '#3E88B3', 'nsdap': '#7A3C00', 'other': '#a0a0a0', 'sapd': '#9B0000', 'dnf': '#003755', 'kvp': '#0087DC', 'lvp': '#FFCC00', 'dnef': '#BFC8CC', 'fkp': '#00C0FF', 'dvfp': '#3D3D3D', 'nsfb': '#7A3C00'},
+            {'spd': 'SPD', 'uspd': 'USPD', 'kpd': 'KPD', 'ddp': Q.ddp_name, 'z': Q.z_party_name + ' + BVP', 'dvp': 'DVP', 'dnvp': 'DNVP', 'nsdap': 'NSDAP', 'other': 'Others', 'sapd': 'SAPD', 'dnf': 'DNF', 'kvp': 'KVP', 'lvp': 'LVP', 'dnef': 'DNEF', 'fkp': 'FKP', 'dvfp': 'DVFP', 'nsdap': 'NSFB'});
         lines_2.width(width).height(400);
         d3.select("#party_support_history").datum(Q.party_support_records).call(lines_2);
     }
@@ -1767,13 +1785,17 @@ go-to: achievement_check_e
 
 [? if not cvp_formed and not dnvp_dnef and not dnvp_defunct and not dnvp_wholesome: {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_votes +]% {!</td><td>!} [+ str_votes_change_dnvp +] {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}?]
 
+[? if dvfp_formed = 1 and nsfb_exists = 0: {!<tr><td><div class="box" style='background-color:#3D3D3D'> </div> !} DVFP: {!</td><td>!} [+ dvfp_votes +]% {!</td><td>!} [+ str_votes_change_dvfp +] {!</td><td>!} [+ dvfp_r +]% {!</td><td>!} [+ str_change_dvfp +] {!</td></tr>!} ?]
+
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_votes +]% {!</td><td>!} [+ str_votes_change_dnf +] {!</td><td>!} [+ dnf_r +]% {!</td><td>!} [+ str_change_dnf +] {!</td></tr>!} ?]
 
 [? if dsu_exist: {!<tr><td><div class="box" style='background-color:#6A1E1E'> </div> !} DSU: {!</td><td>!} [+ dsu_votes +]% {!</td><td>!} [+ str_votes_change_dsu +] {!</td><td>!} [+ dsu_r +]% {!</td><td>!} [+ str_change_dsu +] {!</td></tr>!} ?]
 
-[? if not nsdap_split: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_votes +]% {!</td><td>!} [+ str_votes_change_nsdap +] {!</td><td>!} [+ nsdap_r +]% {!</td><td>!} [+ str_change_nsdap +] {!</td></tr>!} ?]
+[? if not nsdap_split and nsfb_exists = 0: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_votes +]% {!</td><td>!} [+ str_votes_change_nsdap +] {!</td><td>!} [+ nsdap_r +]% {!</td><td>!} [+ str_change_nsdap +] {!</td></tr>!} ?]
 
 [? if nsdap_split: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_hitler_votes +]% {!</td><td>!} [+ str_votes_change_nsdap_hitler +] {!</td><td>!} [+ nsdap_hitler_r +]% {!</td><td>!} [+ str_change_nsdap_hitler +] {!</td></tr>!} ?]
+
+[? if nsfb_exists = 1: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSFB: {!</td><td>!} [+ nsfb_votes +]% {!</td><td>!} [+ str_votes_change_nsfb +] {!</td><td>!} [+ nsfb_r +]% {!</td><td>!} [+ str_change_nsfb +] {!</td></tr>!} ?]
 
 [? if nvf_exist and not nvf_dnef: {!<tr><td><div class="box" style='background-color:#142e20'> </div> !} NVF: {!</td><td>!} [+ nvf_votes +]% {!</td><td>!} [+ str_votes_change_nvf +] {!</td><td>!} [+ nvf_r +]% {!</td><td>!} [+ str_change_nvf +] {!</td></tr>!} ?]
 {!</table>!}
@@ -1902,6 +1924,15 @@ go-to: achievement_check_e
             {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em;">!}[+ unemployed_dnvp_display +]%[? if n_elections != 1 and demo_change_unemployed_dnvp_display != 0 : ([+ demo_change_unemployed_dnvp_display +])?]{!</td>!}
             {!<td style="background-color: rgba(44, 81, 122, 0.2); font-size: 0.85em;">!}[+ catholics_dnvp_display +]%[? if n_elections != 1 and demo_change_catholics_dnvp_display != 0 : ([+ demo_change_catholics_dnvp_display +])?]{!</td>!}
         {!</tr>!} ?]
+        [? if dvfp_formed = 1 and nsfb_exists = 0: {!<tr>!}
+            {!<td><span style="color: #3D3D3D;">!}**DVFP**{!</span></td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_dvfp_display +]%[? if n_elections != 1 and demo_change_workers_dvfp_display != 0 : ([+ demo_change_workers_dvfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_dvfp_display +]%[? if n_elections != 1 and demo_change_new_middle_dvfp_display != 0 : ([+ demo_change_new_middle_dvfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_dvfp_display +]%[? if n_elections != 1 and demo_change_old_middle_dvfp_display != 0 : ([+ demo_change_old_middle_dvfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ rural_nsdap_display +]%[? if n_elections != 1 and demo_change_rural_nsdap_display != 0 : ([+ demo_change_rural_nsdap_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ unemployed_dvfp_display +]%[? if n_elections != 1 and demo_change_unemployed_dvfp_display != 0 : ([+ demo_change_unemployed_dvfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ catholics_dvfp_display +]%[? if n_elections != 1 and demo_change_catholics_dvfp_display != 0 : ([+ demo_change_catholics_dvfp_display +])?]{!</td>!}
+        {!</tr>!} ?]
         [? if dnf_formed: {!<tr>!}
             {!<td><span style="color: #003755;">!}**DNF**{!</span></td>!}
             {!<td style="background-color: rgba(0, 31, 48, 0.2); padding: 10px; font-size: 0.85em;">!}[+ workers_dnf_display +]%[? if n_elections != 1 and       demo_change_workers_dnf_display != 0 : ([+ demo_change_workers_dnf_display +])?]{!</td>!}
@@ -1911,7 +1942,7 @@ go-to: achievement_check_e
             {!<td style="background-color: rgba(0, 31, 48, 0.2); font-size: 0.85em;">!}[+ unemployed_dnf_display +]%[? if n_elections != 1 and demo_change_unemployed_dnf_display != 0 : ([+ demo_change_unemployed_dnf_display +])?]{!</td>!}
             {!<td style="background-color: rgba(0, 31, 48, 0.2); font-size: 0.85em;">!}[+ catholics_dnf_display +]%[? if n_elections != 1 and demo_change_catholics_dnf_display != 0 : ([+ demo_change_catholics_dnf_display +])?]{!</td>!}
         {!</tr>!} ?]
-        [? if not nsdap_split: {!<tr>!}
+        [? if not nsdap_split and nsfb_exists = 0: {!<tr>!}
             {!<td><span style="color: #7A3C00;">!}**NSDAP**{!</span></td>!}
             {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_nsdap_display +]%[? if n_elections != 1 and demo_change_workers_nsdap_display != 0 : ([+ demo_change_workers_nsdap_display +])?]{!</td>!}
             {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_nsdap_display +]%[? if n_elections != 1 and demo_change_new_middle_nsdap_display != 0 : ([+ demo_change_new_middle_nsdap_display +])?]{!</td>!}
@@ -1928,6 +1959,15 @@ go-to: achievement_check_e
             {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ rural_nsdap_display +]%[? if n_elections != 1 and demo_change_rural_nsdap_display != 0 : ([+ demo_change_rural_nsdap_display +])?]{!</td>!}
             {!<td style="background-color: rgba(20, 46, 32, 0.2); font-size: 0.85em;">!}[+ unemployed_nsdap_display +]%[? if n_elections != 1 and demo_change_unemployed_nsdap_display != 0 : ([+ demo_change_unemployed_nsdap_display +])?]{!</td>!}
             {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ catholics_nsdap_display +]%[? if n_elections != 1 and demo_change_catholics_nsdap_display != 0 : ([+ demo_change_catholics_nsdap_display +])?]{!</td>!}
+        {!</tr>!} ?]
+        [? if nsfb_exists = 1: {!<tr>!}
+            {!<td><span style="color: #7A3C00;">!}**NSFB**{!</span></td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_nsfb_display +]%[? if n_elections != 1 and demo_change_workers_nsfb_display != 0 : ([+ demo_change_workers_nsfb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_nsfb_display +]%[? if n_elections != 1 and demo_change_new_middle_nsfb_display != 0 : ([+ demo_change_new_middle_nsfb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_nsdfb_display +]%[? if n_elections != 1 and demo_change_old_middle_nsfb_display != 0 : ([+ demo_change_old_middle_nsfb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ rural_nsfb_display +]%[? if n_elections != 1 and demo_change_rural_nsfb_display != 0 : ([+ demo_change_rural_nsfb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ unemployed_nsfb_display +]%[? if n_elections != 1 and demo_change_unemployed_nsfb_display != 0 : ([+ demo_change_unemployed_nsfb_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ catholics_nsfb_display +]%[? if n_elections != 1 and demo_change_catholics_nsfb_display != 0 : ([+ demo_change_catholics_nsfb_display +])?]{!</td>!}
         {!</tr>!} ?]
         {!<tr>!}
             {!<td><b>Others</b></td>!}
