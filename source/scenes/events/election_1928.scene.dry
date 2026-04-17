@@ -1926,12 +1926,12 @@ go-to: achievement_check_e
         {!</tr>!} ?]
         [? if dvfp_formed = 1 and nsfb_exists = 0: {!<tr>!}
             {!<td><span style="color: #3D3D3D;">!}**DVFP**{!</span></td>!}
-            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_dvfp_display +]%[? if n_elections != 1 and demo_change_workers_dvfp_display != 0 : ([+ demo_change_workers_dvfp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ new_middle_dvfp_display +]%[? if n_elections != 1 and demo_change_new_middle_dvfp_display != 0 : ([+ demo_change_new_middle_dvfp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ old_middle_dvfp_display +]%[? if n_elections != 1 and demo_change_old_middle_dvfp_display != 0 : ([+ demo_change_old_middle_dvfp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ rural_nsdap_display +]%[? if n_elections != 1 and demo_change_rural_nsdap_display != 0 : ([+ demo_change_rural_nsdap_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ unemployed_dvfp_display +]%[? if n_elections != 1 and demo_change_unemployed_dvfp_display != 0 : ([+ demo_change_unemployed_dvfp_display +])?]{!</td>!}
-            {!<td style="background-color: rgba(122, 60, 0, 0.2); font-size: 0.85em;">!}[+ catholics_dvfp_display +]%[? if n_elections != 1 and demo_change_catholics_dvfp_display != 0 : ([+ demo_change_catholics_dvfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(61, 61, 61, 0.2); font-size: 0.85em; padding: 10px">!}[+ workers_dvfp_display +]%[? if n_elections != 1 and demo_change_workers_dvfp_display != 0 : ([+ demo_change_workers_dvfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(61, 61, 61, 0.2); font-size: 0.85em;">!}[+ new_middle_dvfp_display +]%[? if n_elections != 1 and demo_change_new_middle_dvfp_display != 0 : ([+ demo_change_new_middle_dvfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(61, 61, 61, 0.2); font-size: 0.85em;">!}[+ old_middle_dvfp_display +]%[? if n_elections != 1 and demo_change_old_middle_dvfp_display != 0 : ([+ demo_change_old_middle_dvfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(61, 61, 61, 0.2); font-size: 0.85em;">!}[+ rural_nsdap_display +]%[? if n_elections != 1 and demo_change_rural_nsdap_display != 0 : ([+ demo_change_rural_nsdap_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(61, 61, 61, 0.2); font-size: 0.85em;">!}[+ unemployed_dvfp_display +]%[? if n_elections != 1 and demo_change_unemployed_dvfp_display != 0 : ([+ demo_change_unemployed_dvfp_display +])?]{!</td>!}
+            {!<td style="background-color: rgba(61, 61, 61, 0.2); font-size: 0.85em;">!}[+ catholics_dvfp_display +]%[? if n_elections != 1 and demo_change_catholics_dvfp_display != 0 : ([+ demo_change_catholics_dvfp_display +])?]{!</td>!}
         {!</tr>!} ?]
         [? if dnf_formed: {!<tr>!}
             {!<td><span style="color: #003755;">!}**DNF**{!</span></td>!}
