@@ -737,7 +737,15 @@ th {
   fill: #3E88B3;
 }
 
+.seat.dvfp {
+  fill: #3D3D3D;
+}
+
 .seat.nsdap {
+  fill: #7A3C00;
+}
+
+.seat.nsfb {
   fill: #7A3C00;
 }
 
