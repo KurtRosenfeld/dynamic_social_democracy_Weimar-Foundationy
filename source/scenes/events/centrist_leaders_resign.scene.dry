@@ -35,7 +35,7 @@ if (Q.reformists_resign == 1) Q.muller_advisor = 0;
 Q.hilferding_advisor = 0; 
 if (Q.reformists_resign == 1) Q.scheidemann_advisor = 0; 
 if (Q.reformists_resign == 1 and Q.scheidemann_advisor == 1) Q.n_advisors -= 1;
-if (Q.left_split == 1 and Q.scheidemann_advisor == 1) Q.n_advisors -= 1;
+if (Q.left_split == 1 and Q.breitscheid_advisor == 1) Q.n_advisors -= 1;
 if (Q.left_split == 1 and Q.crispien_advisor == 1) Q.n_advisors -= 1;
 if (Q.left_split == 1) Q.breitscheid_advisor = 0; 
 if (Q.left_split == 1) Q.crispien_advisor = 0; 
