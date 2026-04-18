@@ -504,6 +504,7 @@ Right-Wing Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span styl
 
 [? if nsdap_meck_schwe_elections_vote >= 4: The rise of the <span style="color: #7A3C00;">**NSDAP**</span> is quite unexpected, especially given their meager 1.6% of the vote in the last election. ?]
 
+go-to: meck_schwe_coalition_menu
 
 @meck_schwe_coalition_menu
 
