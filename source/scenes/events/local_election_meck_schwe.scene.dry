@@ -242,7 +242,7 @@ Q.wp_r_meck_schwe = Q.other_r_meck_schwe*wp_share;
 Q.true_other_meck_schwe_elections_vote = Q.other_meck_schwe_elections_vote*true_other_share;
 Q.true_other_r_meck_schwe = Q.other_r_meck_schwe*true_other_share;
 
-function allocateSeats(percentages, totalSeats = 96) {
+function allocateSeats(percentages, totalSeats = 62) {
     const exactSeats = {};
     const flooredSeats = {};
     const remainders = [];
