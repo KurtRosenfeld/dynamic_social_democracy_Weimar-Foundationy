@@ -456,7 +456,7 @@ subtitle: Otto Wels is a long-time party organizer and member of the leadership,
 is-card: true
 card-image: img/portraits/WelsRudolf.jpg
 tags: center_advisor
-view-if: wels_advisor = 0 and n_advisors < 4 and centrists_resign = 0
+view-if: wels_advisor = 0 and n_advisors < 4 and not (centrists_resign = 1 and reformsits_resign = 1)
 on-arrival: wels_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 
@@ -468,7 +468,7 @@ subtitle: Hermann Müller is the last <span style="color: #c00000;">Social Democ
 is-card: true
 card-image: img/portraits/MüllerHermann.jpg
 tags: center_advisor
-view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 4 and centrists_resign = 0
+view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 4 and not (centrists_resign = 1 and reformsits_resign = 1)
 on-arrival: muller_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 
@@ -479,7 +479,7 @@ title: Philipp Scheidemann
 subtitle: tobeadded. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/ScheidemannPhilipp.jpg
-view-if: scheidemann_advisor = 0 and n_advisors < 4
+view-if: scheidemann_advisor = 0 and n_advisors < 4 and not (centrists_resign = 1 and reformsits_resign = 1)
 on-arrival: scheidemann_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 tags: center_advisor
@@ -491,7 +491,7 @@ title: Rudolf Breitscheid
 subtitle: Rudolf Breitscheid comes from a well-educated background and is one of our foreign policy leaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/BreitscheidRudolf.jpg
-view-if: breitscheid_advisor = 0 and uspd_joined >= 1 and n_advisors < 4
+view-if: breitscheid_advisor = 0 and uspd_joined >= 1 and n_advisors < 4 and not (centrists_resign = 1 and left_split = 1)
 on-arrival: breitscheid_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 tags: center_advisor
@@ -503,7 +503,7 @@ title: Arthur Crispien
 subtitle: Crispien comes from the USPD. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/CrispienArthur.jpg
-view-if: crispien_advisor = 0 and uspd_joined >= 1 and n_advisors < 4
+view-if: crispien_advisor = 0 and uspd_joined >= 1 and n_advisors < 4 and not (centrists_resign = 1 and left_split = 1)
 on-arrival: crispien_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 tags: center_advisor
@@ -519,7 +519,7 @@ subtitle: Ebert is the President of the Reich, and one of the most recognizable 
 is-card: true
 card-image: img/portraits/EbertFriedrich.jpg
 tags: reformist_advisor
-view-if: ebert_advisor = 0 and n_advisors < 4
+view-if: ebert_advisor = 0 and n_advisors < 4 and ebert_dead = 0
 on-arrival: ebert_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
 go-to: advisor_menu
 
@@ -823,7 +823,7 @@ Friedrich Stampfer is now an advisor.
 
 @add_sollmann
 title: Wilhelm Sollman
-subtitle: Wilhelm Sollmann is a German-American party member.
+subtitle: Wilhelm Sollmann is a German-American party member. !<br><br>!}[? if difficulty < 0 : Actions - Rhineland Campaign, Police Affaires ?]
 is-card: true
 card-image: img/portraits/BaadeFritz.jpg
 view-if: sollmann_advisor = 0 and n_advisors < 4
