@@ -150,6 +150,8 @@ if (Q.woytinsky_advisor == 1) Q.n_advisors -= 1;
 if (Q.leipart_advisor == 1) Q.n_advisors -= 1; 
 Q.woytinsky_advisor = 0; 
 Q.leipart_advisor = 0; 
+if (Q.left_split == 1) Q.aufhauser_advisor = 0;
+if (Q.left_split == 1) Q.n_advisors -= 1;
 if (Q.n_advisors < Q.n_advisors_start) Q.shuffle_leadership_timer = 0;
 !}
 max-visits: 1
