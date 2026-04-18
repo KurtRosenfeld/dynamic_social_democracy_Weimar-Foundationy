@@ -33,7 +33,6 @@ var meck_schwe_adjustment_factors = {
     kpd: 1.2,
     ddp: 0.45,
     lvp: 0.7,
-    z: 0.0,
     dvp: 0.9,
     dnvp: 1.38,
     nsdap: 0.4,
@@ -50,7 +49,6 @@ Q.uspd_r_meck_schwe = 0;
 Q.kpd_r_meck_schwe = 0;
 Q.ddp_r_meck_schwe = 0;
 Q.lvp_r_meck_schwe = 0;
-Q.z_r_meck_schwe = 0;
 Q.dvp_r_meck_schwe = 0;
 Q.dnvp_r_meck_schwe = 0;
 Q.nsdap_r_meck_schwe = 0;
@@ -66,7 +64,6 @@ Q.uspd_meck_schwe_elections_vote = 0;
 Q.kpd_meck_schwe_elections_vote = 0;
 Q.ddp_meck_schwe_elections_vote = 0;
 Q.lvp_meck_schwe_elections_vote = 0;
-Q.z_meck_schwe_elections_vote = 0;
 Q.dvp_meck_schwe_elections_vote = 0;
 Q.dnvp_meck_schwe_elections_vote = 0;
 Q.nsdap_meck_schwe_elections_vote = 0;
@@ -85,7 +82,6 @@ Q.kpd_meck_schwe_elections_vote = Q.kpd_votes*meck_schwe_adjustment_factors.kpd;
 if (Q.stolper_program_adopted) meck_schwe_adjustment_factors.ddp += 0.2;
 Q.ddp_meck_schwe_elections_vote = Q.ddp_votes*meck_schwe_adjustment_factors.ddp;
 Q.lvp_meck_schwe_elections_vote = Q.lvp_votes*meck_schwe_adjustment_factors.lvp;
-Q.z_meck_schwe_elections_vote = Q.z_votes*meck_schwe_adjustment_factors.z;
 Q.dvp_meck_schwe_elections_vote = Q.dvp_votes*meck_schwe_adjustment_factors.dvp;
 if (Q.dnvp_ideology == "Moderate") meck_schwe_adjustment_factors.dnvp -= 0.1;
 Q.dnvp_meck_schwe_elections_vote = Q.dnvp_votes*meck_schwe_adjustment_factors.dnvp;
@@ -97,7 +93,7 @@ Q.other_meck_schwe_elections_vote = Q.other_votes*meck_schwe_adjustment_factors.
 Q.kvp_meck_schwe_elections_vote = Q.kvp_votes*meck_schwe_adjustment_factors.kvp;
 Q.dnf_meck_schwe_elections_vote = Q.dnf_votes*meck_schwe_adjustment_factors.dnf;
 
-Q.total_votes_meck_schwe = Q.spd_meck_schwe_elections_vote + Q.sapd_meck_schwe_elections_vote + Q.kpd_meck_schwe_elections_vote + Q.ddp_meck_schwe_elections_vote + Q.lvp_meck_schwe_elections_vote + Q.z_meck_schwe_elections_vote + Q.dvp_meck_schwe_elections_vote + Q.dnvp_meck_schwe_elections_vote + Q.nsdap_meck_schwe_elections_vote + Q.other_meck_schwe_elections_vote + Q.kvp_meck_schwe_elections_vote + Q.dnf_meck_schwe_elections_vote + Q.uspd_meck_schwe_elections_vote + Q.dvfp_meck_schwe_elections_vote + Q.nsfb_meck_schwe_elections_vote;
+Q.total_votes_meck_schwe = Q.spd_meck_schwe_elections_vote + Q.sapd_meck_schwe_elections_vote + Q.kpd_meck_schwe_elections_vote + Q.ddp_meck_schwe_elections_vote + Q.lvp_meck_schwe_elections_vote + Q.dvp_meck_schwe_elections_vote + Q.dnvp_meck_schwe_elections_vote + Q.nsdap_meck_schwe_elections_vote + Q.other_meck_schwe_elections_vote + Q.kvp_meck_schwe_elections_vote + Q.dnf_meck_schwe_elections_vote + Q.uspd_meck_schwe_elections_vote + Q.dvfp_meck_schwe_elections_vote + Q.nsfb_meck_schwe_elections_vote;
 
 if (Q.total_votes_meck_schwe > 0) {
     Q.spd_meck_schwe_elections_vote = (Q.spd_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
@@ -106,7 +102,6 @@ if (Q.total_votes_meck_schwe > 0) {
     Q.kpd_meck_schwe_elections_vote = (Q.kpd_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.ddp_meck_schwe_elections_vote = (Q.ddp_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.lvp_meck_schwe_elections_vote = (Q.lvp_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
-    Q.z_meck_schwe_elections_vote = (Q.z_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.dvp_meck_schwe_elections_vote = (Q.dvp_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.dnvp_meck_schwe_elections_vote = (Q.dnvp_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.nsdap_meck_schwe_elections_vote = (Q.nsdap_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
@@ -117,14 +112,13 @@ if (Q.total_votes_meck_schwe > 0) {
     Q.nsfb_meck_schwe_elections_vote = (Q.nsfb_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     let target = 34;
     Q.spd_meck_schwe_elections_vote = Math.round((Q.spd_meck_schwe_elections_vote + (target - Q.spd_meck_schwe_elections_vote) * 0.35) * 10) / 10;
-    Q.total_votes_meck_schwe = Q.spd_meck_schwe_elections_vote + Q.sapd_meck_schwe_elections_vote + Q.kpd_meck_schwe_elections_vote + Q.ddp_meck_schwe_elections_vote + Q.lvp_meck_schwe_elections_vote + Q.z_meck_schwe_elections_vote + Q.dvp_meck_schwe_elections_vote + Q.dnvp_meck_schwe_elections_vote + Q.nsdap_meck_schwe_elections_vote + Q.other_meck_schwe_elections_vote + Q.kvp_meck_schwe_elections_vote + Q.dnf_meck_schwe_elections_vote + Q.uspd_meck_schwe_elections_vote + Q.dvfp_meck_schwe_elections_vote + Q.nsfb_meck_schwe_elections_vote;
+    Q.total_votes_meck_schwe = Q.spd_meck_schwe_elections_vote + Q.sapd_meck_schwe_elections_vote + Q.kpd_meck_schwe_elections_vote + Q.ddp_meck_schwe_elections_vote + Q.lvp_meck_schwe_elections_vote + Q.dvp_meck_schwe_elections_vote + Q.dnvp_meck_schwe_elections_vote + Q.nsdap_meck_schwe_elections_vote + Q.other_meck_schwe_elections_vote + Q.kvp_meck_schwe_elections_vote + Q.dnf_meck_schwe_elections_vote + Q.uspd_meck_schwe_elections_vote + Q.dvfp_meck_schwe_elections_vote + Q.nsfb_meck_schwe_elections_vote;
     Q.spd_meck_schwe_elections_vote = (Q.spd_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.sapd_meck_schwe_elections_vote = (Q.sapd_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.uspd_meck_schwe_elections_vote = (Q.uspd_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.kpd_meck_schwe_elections_vote = (Q.kpd_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.ddp_meck_schwe_elections_vote = (Q.ddp_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.lvp_meck_schwe_elections_vote = (Q.lvp_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
-    Q.z_meck_schwe_elections_vote = (Q.z_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.dvp_meck_schwe_elections_vote = (Q.dvp_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.dnvp_meck_schwe_elections_vote = (Q.dnvp_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.nsdap_meck_schwe_elections_vote = (Q.nsdap_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
@@ -141,7 +135,6 @@ Q.uspd_meck_schwe_elections_vote = (Q.uspd_meck_schwe_elections_vote != undefine
 Q.kpd_meck_schwe_elections_vote = (Q.kpd_meck_schwe_elections_vote != undefined ? parseFloat(Q.kpd_meck_schwe_elections_vote.toFixed(1)) : 0);
 Q.ddp_meck_schwe_elections_vote = (Q.ddp_meck_schwe_elections_vote != undefined ? parseFloat(Q.ddp_meck_schwe_elections_vote.toFixed(1)) : 0);
 Q.lvp_meck_schwe_elections_vote = (Q.lvp_meck_schwe_elections_vote != undefined ? parseFloat(Q.lvp_meck_schwe_elections_vote.toFixed(1)) : 0);
-Q.z_meck_schwe_elections_vote = (Q.z_meck_schwe_elections_vote != undefined ? parseFloat(Q.z_meck_schwe_elections_vote.toFixed(1)) : 0);
 Q.dvp_meck_schwe_elections_vote = (Q.dvp_meck_schwe_elections_vote != undefined ? parseFloat(Q.dvp_meck_schwe_elections_vote.toFixed(1)) : 0);
 Q.dnvp_meck_schwe_elections_vote = (Q.dnvp_meck_schwe_elections_vote != undefined ? parseFloat(Q.dnvp_meck_schwe_elections_vote.toFixed(1)) : 0);
 Q.nsdap_meck_schwe_elections_vote = (Q.nsdap_meck_schwe_elections_vote != undefined ? parseFloat(Q.nsdap_meck_schwe_elections_vote.toFixed(1)) : 0);
@@ -157,7 +150,6 @@ if (Q.uspd_meck_schwe_elections_vote >= 1.4) Q.uspd_r_meck_schwe = Q.uspd_meck_s
 if (Q.kpd_meck_schwe_elections_vote >= 1.4) Q.kpd_r_meck_schwe = Q.kpd_meck_schwe_elections_vote;
 if (Q.ddp_meck_schwe_elections_vote >= 1.4) Q.ddp_r_meck_schwe = Q.ddp_meck_schwe_elections_vote;
 if (Q.lvp_meck_schwe_elections_vote >= 1.4) Q.lvp_r_meck_schwe = Q.lvp_meck_schwe_elections_vote;
-if (Q.z_meck_schwe_elections_vote >= 1.4) Q.z_r_meck_schwe = Q.z_meck_schwe_elections_vote;
 if (Q.dvp_meck_schwe_elections_vote >= 1.4) Q.dvp_r_meck_schwe = Q.dvp_meck_schwe_elections_vote;
 if (Q.dnvp_meck_schwe_elections_vote >= 1.4) Q.dnvp_r_meck_schwe = Q.dnvp_meck_schwe_elections_vote;
 if (Q.nsdap_meck_schwe_elections_vote >= 1.4) Q.nsdap_r_meck_schwe = Q.nsdap_meck_schwe_elections_vote;
@@ -174,7 +166,6 @@ var meck_schwe_adjustment_r_factors = {
     kpd: 0.98,
     ddp: 0.96,
     lvp: 1.0,
-    z: 0.0,
     dvp: 1.0,
     dnvp: 1.0,
     nsdap: 1.0,
@@ -192,7 +183,6 @@ Q.kpd_r_meck_schwe = Q.kpd_r_meck_schwe*meck_schwe_adjustment_r_factors.kpd;
 if (Q.stolper_program_adopted) meck_schwe_adjustment_r_factors.ddp += 0.04;
 Q.ddp_r_meck_schwe = Q.ddp_r_meck_schwe*meck_schwe_adjustment_r_factors.ddp;
 Q.lvp_r_meck_schwe = Q.lvp_r_meck_schwe*meck_schwe_adjustment_r_factors.lvp;
-Q.z_r_meck_schwe = Q.z_r_meck_schwe*meck_schwe_adjustment_r_factors.z;
 Q.dvp_r_meck_schwe = Q.dvp_r_meck_schwe*meck_schwe_adjustment_r_factors.dvp;
 Q.dnvp_r_meck_schwe = Q.dnvp_r_meck_schwe*meck_schwe_adjustment_r_factors.dnvp;
 Q.nsdap_r_meck_schwe = Q.nsdap_r_meck_schwe*meck_schwe_adjustment_r_factors.nsdap;
@@ -210,7 +200,6 @@ if (Q.uspd_r_meck_schwe) Q.total_r_meck_schwe += Q.uspd_r_meck_schwe;
 if (Q.kpd_r_meck_schwe) Q.total_r_meck_schwe += Q.kpd_r_meck_schwe;
 if (Q.ddp_r_meck_schwe) Q.total_r_meck_schwe += Q.ddp_r_meck_schwe;
 if (Q.lvp_r_meck_schwe) Q.total_r_meck_schwe += Q.lvp_r_meck_schwe;
-if (Q.z_r_meck_schwe) Q.total_r_meck_schwe += Q.z_r_meck_schwe;
 if (Q.dvp_r_meck_schwe) Q.total_r_meck_schwe += Q.dvp_r_meck_schwe;
 if (Q.dnvp_r_meck_schwe) Q.total_r_meck_schwe += Q.dnvp_r_meck_schwe;
 if (Q.nsdap_r_meck_schwe) Q.total_r_meck_schwe += Q.nsdap_r_meck_schwe;
@@ -227,7 +216,6 @@ if (Q.total_r_meck_schwe > 0) {
     Q.kpd_r_meck_schwe = (Q.kpd_r_meck_schwe / Q.total_r_meck_schwe) * 100;
     Q.ddp_r_meck_schwe = (Q.ddp_r_meck_schwe / Q.total_r_meck_schwe) * 100;
     Q.lvp_r_meck_schwe = (Q.lvp_r_meck_schwe / Q.total_r_meck_schwe) * 100;
-    Q.z_r_meck_schwe = (Q.z_r_meck_schwe / Q.total_r_meck_schwe) * 100;
     Q.dvp_r_meck_schwe = (Q.dvp_r_meck_schwe / Q.total_r_meck_schwe) * 100;
     Q.dnvp_r_meck_schwe = (Q.dnvp_r_meck_schwe / Q.total_r_meck_schwe) * 100;
     Q.nsdap_r_meck_schwe = (Q.nsdap_r_meck_schwe / Q.total_r_meck_schwe) * 100;
@@ -289,7 +277,6 @@ const inputPercentages = {
     kpd_r_meck_schwe: Q.kpd_r_meck_schwe,
     ddp_r_meck_schwe: Q.ddp_r_meck_schwe,
     lvp_r_meck_schwe: Q.lvp_r_meck_schwe,
-    z_r_meck_schwe: Q.z_r_meck_schwe,
     dvp_r_meck_schwe: Q.dvp_r_meck_schwe,
     dnvp_r_meck_schwe: Q.dnvp_r_meck_schwe,
     nsdap_r_meck_schwe: Q.nsdap_r_meck_schwe,
@@ -308,7 +295,7 @@ for (const party in allocatedSeats) {
 Q.other_r_meck_schwe = Q.wp_r_meck_schwe + Q.true_other_r_meck_schwe;
 
 Q.left_coalition_meck_schwe = parseFloat((Q.spd_r_meck_schwe + Q.kpd_r_meck_schwe + Q.sapd_r_meck_schwe + Q.uspd_r_meck_schwe).toFixed(1));
-Q.bourgeois_coalition_meck_schwe = parseFloat((Q.z_r_meck_schwe + Q.ddp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.kvp_r_meck_schwe + Q.other_r_meck_schwe + Q.dnvp_r_meck_schwe + Q.nsdap_r_meck_schwe).toFixed(1));
+Q.bourgeois_coalition_meck_schwe = parseFloat((Q.z_r_meck_schwe + Q.ddp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.kvp_r_meck_schwe + Q.other_r_meck_schwe + Q.dnvp_r_meck_schwe).toFixed(1));
 Q.right_coalition_meck_schwe = parseFloat((Q.dnvp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.dvfp_r_meck_schwe).toFixed(1));
 Q.true_bourgeois_coalition_meck_schwe = parseFloat((Q.z_r_meck_schwe + Q.ddp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.kvp_r_meck_schwe + Q.other_r_meck_schwe + Q.dnvp_r_meck_schwe).toFixed(1));
 Q.spd_coalition_meck_schwe = parseFloat((Q.spd_r_meck_schwe + Q.ddp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.dvp_r_meck_schwe).toFixed(1));
@@ -381,7 +368,7 @@ if (Q.wp_r_meck_schwe) {
 
 if (Q.true_other_r_meck_schwe) {
     data.push({
-        "id": "true_other",
+        "id": "other",
         "legend": "Other",
         "name": "Others",
         "seats": Math.round(Q.true_other_r_meck_schwe * 0.96),
@@ -509,7 +496,7 @@ United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span styl
 
 Grand Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if not lvp_formed:&nbsp;+&nbsp;<span style="color: #C0A054;">**DVP**</span>?]): [+ spd_coalition_meck_schwe +]% 
 
-Bourgeois Coalition ([? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #b8996f;">**WP**</span> + [? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span>): [+ true_bourgeois_coalition_meck_schwe +]%
+Bourgeois Coalition ([? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #b8996f;">**WP**</span> + <span style="color: #AFAFAF;">**Others**</span> + [? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span>): [+ true_bourgeois_coalition_meck_schwe +]%
 
 Right-Wing Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3D3D3D;">**DVFP**</span>): [+ right_coalition_meck_schwe +]%
 
