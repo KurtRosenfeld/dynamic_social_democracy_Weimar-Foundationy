@@ -1,5 +1,5 @@
 title: Mecklenburg-Schwerin Landtag Election
-view-if: (year == 1924 and month == 2 and not saxony_election_seen) or (meck_schwe_election_2_trigger_time == time and meck_schwe_election_seen_time != time)
+view-if: (year == 1924 and month == 2 and not meck_schwe_election_seen) or (meck_schwe_election_2_trigger_time == time and meck_schwe_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: meck_schwe_election_seen += 1 if meck_schwe_election_seen; meck_schwe_election_seen = 1 if not meck_schwe_election_seen; meck_schwe_election_seen_time = time
