@@ -26,7 +26,7 @@ The Mecklenburg_schwerin state elections are to be held now.
 @meck_sche
 on-arrival: {!
 
-var saxony_adjustment_factors = {
+var meck_schwe_adjustment_factors = {
     spd: 1.05,
     sapd: 0.4,
     uspd: 0.4,
@@ -46,7 +46,7 @@ var saxony_adjustment_factors = {
 
 Q.spd_r_meck_schwe = 0;
 Q.sapd_r_meck_schwe = 0;
-Q.uspd_r-meck_sche = 0;
+Q.uspd_r_meck_sche = 0;
 Q.kpd_r_meck_schwe = 0;
 Q.ddp_r_meck_schwe = 0;
 Q.lvp_r_meck_schwe = 0;
@@ -236,9 +236,7 @@ if (Q.total_r_meck_schwe > 0) {
     Q.dnf_r_meck_schwe = (Q.dnf_r_meck_schwe / Q.total_r_meck_schwe) * 100;
     Q.dvfp_r_meck_schwe = (Q.dvfp_r_meck_schwe / Q.total_r_meck_schwe) * 100;
     Q.nsfb_r_meck_schwe = (Q.nsfb_r_meck_schwe / Q.total_r_meck_schwe) * 100;
-
-
-Q.spd_r_meck_schwe = Q.spd_r_meck_schwe*spd_share;
+}
 
 let farm_share = 0.27;
 if (Q.dnvp_ideology == "Moderate") farm_share -= 0.1;
