@@ -27,21 +27,21 @@ The Mecklenburg_schwerin state elections are to be held now.
 on-arrival: {!
 
 var meck_schwe_adjustment_factors = {
-    spd: 1.05,
+    spd: 1.15,
     sapd: 0.4,
     uspd: 0.4,
     kpd: 1.2,
-    ddp: 0.5,
+    ddp: 0.45,
     lvp: 0.7,
     z: 0.0,
-    dvp: 0.8,
-    dnvp: 1.9,
+    dvp: 0.9,
+    dnvp: 1.38,
     nsdap: 0.1,
-    dvfp: 3.0,
+    dvfp: 4.0,
     nsfb: 2.6,
     other: 1.3,
     kvp: 1.0,
-    dnf: 0.4
+    dnf: 0.45
 };
 
 Q.spd_r_meck_schwe = 0;
