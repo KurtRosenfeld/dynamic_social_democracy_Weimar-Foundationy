@@ -683,7 +683,7 @@ subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar t
 is-card: true
 card-image: img/portraits/AufhäuserSiegfried.jpg
 tags: labor_advisor
-view-if: aufhauser_advisor = 0 and uspd_joined >= 1 and n_advisors < 4
+view-if: aufhauser_advisor = 0 and uspd_joined >= 1 and n_advisors < 4 and not (unions_independent = 1 and left_split = 1)
 on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 8
 go-to: advisor_menu
 
