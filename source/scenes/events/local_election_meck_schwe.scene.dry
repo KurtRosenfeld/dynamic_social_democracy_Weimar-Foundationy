@@ -283,7 +283,9 @@ const inputPercentages = {
     wp_r_meck_schwe: Q.wp_r_meck_schwe,
     true_other_r_meck_schwe: Q.true_other_r_meck_schwe,
     kvp_r_meck_schwe: Q.kvp_r_meck_schwe,
-    dnf_r_meck_schwe: Q.dnf_r_meck_schwe
+    dnf_r_meck_schwe: Q.dnf_r_meck_schwe,
+    dvfp_r_meck_schwe: Q.dvfp_r_meck_schwe,
+    nsfb_r_meck_schwe: Q.nsfb_r_meck_schwe
 };
 
 const allocatedSeats = allocateSeats(inputPercentages);
@@ -473,7 +475,7 @@ if (window && d3) {
 
 {!<tr><td><div class="box" style='background-color:#AFAFAF'> </div> !} Others: {!</td><td!} [+ true_other_meck_schwe_elections_vote +]% {!</td><td!} [+ true_other_r_meck_schwe +]%  {!</td></tr>!}
 
-[? if nsfb_esists = 1: {!<tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} [+ nsfb_meck_schwe_elections_vote +]% {!</td><td!} [+ nsfb_r_meck_schwe +]%  {!</td></tr>!} ?]
+[? if nsfb_exsists = 1: {!<tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} [+ nsfb_meck_schwe_elections_vote +]% {!</td><td!} [+ nsfb_r_meck_schwe +]%  {!</td></tr>!} ?]
 
 [? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td!} [+ kvp_meck_schwe_elections_vote +]% {!</td><td!} [+ kvp_r_meck_schwe +]%  {!</td></tr>!} ?]
 
