@@ -450,6 +450,7 @@ data = data.concat([{
     "name": "DNVP",
     "seats": Math.round(Q.dnvp_r_meck_schwe * 0.96),
 }]);
+
 if (Q.dnf_formed && Q.dnf_r_meck_schwe) {
     data.push({
         "id": "dnf",
@@ -457,28 +458,30 @@ if (Q.dnf_formed && Q.dnf_r_meck_schwe) {
         "name": "DNF",
         "seats": Math.round(Q.dnf_r_meck_schwe * 0.96),
     });
+}
 
+data.push({
     "id": "dvfp",
     "legend": "DVFP",
     "name": "DVFP",
     "seats": Math.round(Q.dvfp_r_meck_schwe * 0.96),
     "color": "#3D3D3D"
-}, 
-{
+});
+
+data.push({
     "id": "nsfb",
     "legend": "NSFB",
     "name": "NSFB",
     "seats": Math.round(Q.nsfb_r_meck_schwe * 0.96),
     "color": "#59250F"
-}]);
+});
 
-}
 data = data.concat([{
     "id": "nsdap",
     "legend": "NSDAP",
     "name": "NSDAP",
     "seats": Math.round(Q.nsdap_r_meck_schwe * 0.96),
-}, ]);
+}]);
 
 if (window && d3) {
     var width = 500;
