@@ -44,6 +44,15 @@ if (Q.severing_advisor == 1) Q.n_advisors -= 1;
 Q.braun_advisor = 0; 
 Q.severing_advisor = 0; 
 Q.reformists_resign = 1; 
+if (Q.centris_resign == 1) {
+    if (Q.wels_advisor == 1) Q.n_advisors -= 1;
+    if (Q.muller_advisor == 1) Q.n_advisors -= 1;
+    if (Q.scheidemann_advisor == 1) Q.n_advisors -= 1;
+
+    Q.wels_advisor = 0;
+    Q.muller_advisor = 0;
+    Q.scheidemann_advisor = 0;
+}
 if (Q.n_advisors < Q.n_advisors_start) Q.shuffle_leadership_timer = 0;
 !}
 max-visits: 1
@@ -51,3 +60,5 @@ max-visits: 1
 = Reformist leaders resign
 
 Our policy choices have greatly offended the reformist faction. Many of our most experienced leaders have resigned. 
+
+[? if centris_resign = 1: For more conservative centrist leaders like Ottow Wels this has been the last straw. They have decided to resign alongside the reformists... ?]
