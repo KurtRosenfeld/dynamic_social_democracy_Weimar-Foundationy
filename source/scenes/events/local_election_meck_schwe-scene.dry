@@ -1,4 +1,4 @@
-title: Saxony Landtag Election
+title: Mecklenburg-Schwerin Landtag Election
 view-if: year == 1923 and month == 2
 new-page: true
 tags: event
@@ -19,9 +19,7 @@ on-display: {!
 
 = Elections, [+ month : month +] [+ year +]
 
-The Saxon state elections are to be held now.
-
-# 1932 ref to dissolve saxony
+The Mecklenburg_schwerin state elections are to be held now.
 
 - @meck_schwe: May we do our best...
 
