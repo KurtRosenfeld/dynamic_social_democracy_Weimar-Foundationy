@@ -499,57 +499,61 @@ if (window && d3) {
 }
 !}
 
-**Saxony results:**
+**Mecklenburg-Schwerin results:**
 
-{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="meck_schwe_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
-{!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_saxony_elections_vote +]%** {!</td><td>!} [+ spd_r_saxony +]% {!</td></tr>!}
+{!<tr><td>Party</th><th>Vote share</th><th>Landtag Seats</th></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td!} **[+ spd_meck_schwe_elections_vote +]%** {!</td><td!} [+ spd_r_meck_schwe +]% {!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_saxony_elections_vote +]% {!</td><td>!} [+ sapd_r_saxony +]% {!</td></tr>!} ?]
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td!} [+ sapd_meck_schwe_elections_vote +]% {!</td><td!} [+ sapd_r_meck_schwe +]% {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td>!} [+ aspd_saxony_elections_vote +]% {!</td><td>!} [+ uspd_r_saxony +]% {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td!} [+ uspd_meck_schwe_elections_vote +]% {!</td><td!} [+ uspd_r_meck_schwe +]% {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_saxony_elections_vote +]% {!</td><td>!} [+ kpd_r_saxony +]%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td!} [+ kpd_meck_schwe_elections_vote +]% {!</td><td!} [+ kpd_r_meck_schwe +]%  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#C43988'> </div> !}KPO: {!</td><td>!} [+ kpo_saxony_elections_vote +]% {!</td><td>!} 0%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#C43988'> </div> !}KPO: {!</td><td!} [+ kpo_meck_schwe_elections_vote +]% {!</td><td!} 0%  {!</td></tr>!}
 
-[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_saxony_elections_vote +]% {!</td><td>!} [+ ddp_r_saxony +]%  {!</td></tr>!} ?]
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td!} [+ ddp_meck_schwe_elections_vote +]% {!</td><td!} [+ ddp_r_meck_schwe +]%  {!</td></tr>!} ?]
 
-[? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_saxony_elections_vote +]% {!</td><td>!} [+ lvp_r_saxony +]%  {!</td></tr>!} ?]
+[? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td!} [+ lvp_meck_schwe_elections_vote +]% {!</td><td!} [+ lvp_r_meck_schwe +]%  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_saxony_elections_vote +]% {!</td><td>!} [+ z_r_saxony +]%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td!} [+ z_meck_schwe_elections_vote +]% {!</td><td!} [+ z_r_meck_schwe +]%  {!</td></tr>!}
 
-[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_saxony_elections_vote +]% {!</td><td>!} [+ dvp_r_saxony +]%  {!</td></tr>!} ?]
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td!} [+ dvp_meck_schwe_elections_vote +]% {!</td><td!} [+ dvp_r_meck_schwe +]%  {!</td></tr>!} ?]
  
-{!<tr><td><div class="box" style='background-color:#11DD11'> </div> !} SLV: {!</td><td>!} [+ farm_saxony_elections_vote +]% {!</td><td>!} [+ farm_r_saxony +]%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#11DD11'> </div> !} SLV: {!</td><td!} [+ farm_meck_schwe_elections_vote +]% {!</td><td!} [+ farm_r_meck_schwe +]%  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td>!} [+ wp_saxony_elections_vote +]% {!</td><td>!} [+ wp_r_saxony +]%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td!} [+ wp_meck_schwe_elections_vote +]% {!</td><td!} [+ wp_r_meck_schwe +]%  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0075EB'> </div> !} VRP: {!</td><td>!} [+ vrp_saxony_elections_vote +]% {!</td><td>!} [+ vrp_r_saxony +]%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0075EB'> </div> !} VRP: {!</td><td!} [+ vrp_meck_schwe_elections_vote +]% {!</td><td!} [+ vrp_r_meck_schwe +]%  {!</td></tr>!}
 
-[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_saxony_elections_vote +]% {!</td><td>!} [+ kvp_r_saxony +]%  {!</td></tr>!} ?]
+{!<tr><td><div class="box" style='background-color:#3D3D3D'> </div> !} DVFP: {!</td><td!} [+ dvfp_meck_schwe_elections_vote +]% {!</td><td!} [+ dvfp_r_meck_schwe +]%  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_saxony_elections_vote +]% {!</td><td>!} [+ dnvp_r_saxony +]%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} [+ nsfb_meck_schwe_elections_vote +]% {!</td><td!} [+ nsfb_r_meck_schwe +]%  {!</td></tr>!}
 
-[? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_saxony_elections_vote +]% {!</td><td>!} [+ dnf_r_saxony +]%  {!</td></tr>!} ?]
+[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td!} [+ kvp_meck_schwe_elections_vote +]% {!</td><td!} [+ kvp_r_meck_schwe +]%  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_saxony_elections_vote +]% {!</td><td>!} [+ nsdap_r_saxony +]%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td!} [+ dnvp_meck_schwe_elections_vote +]% {!</td><td!} [+ dnvp_r_meck_schwe +]%  {!</td></tr>!}
+
+[? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td!} [+ dnf_meck_schwe_elections_vote +]% {!</td><td!} [+ dnf_r_meck_schwe +]%  {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td!} [+ nsdap_meck_schwe_elections_vote +]% {!</td><td!} [+ nsdap_r_meck_schwe +]%  {!</td></tr>!}
 {!</table>!}
 <hr id="read-marker">
-Saxony is currently governed by the <span style="color: #fe9e00;">Old Social Democratic Party</span> (<span style="color: #fe9e00;">**ASPD**</span>) under Max Heldt (formerly of the <span style="color: #c00000;">**SPD**</span>), leading a majority coalition that includes all parties positioned between the <span style="color: #c00000;">**SPD**</span> and the <span style="color: #7A3C00;">**NSDAP**</span>, including the <span style="color: #3E88B3;">**DNVP**</span> and various <span style="color: #b8996f;">special</span> <span style="color: #11DD11;">interest</span> parties.
+Mecklenburg-Schwerin is currently governed by the <span style="color: #fe9e00;">Old Social Democratic Party</span> (<span style="color: #fe9e00;">**ASPD**</span>) under Max Heldt (formerly of the <span style="color: #c00000;">**SPD**</span>), leading a majority coalition that includes all parties positioned between the <span style="color: #c00000;">**SPD**</span> and the <span style="color: #7A3C00;">**NSDAP**</span>, including the <span style="color: #3E88B3;">**DNVP**</span> and various <span style="color: #b8996f;">special</span> <span style="color: #11DD11;">interest</span> parties.
 
-The Saxon Dispute arose when the Saxon branch of the <span style="color: #c00000;">**SPD**</span> clashed with the party’s parliamentary delegation, demanding that Heldt dissolve the Grand Coalition and negotiate with the <span style="color: #700000;">**KPD**</span>—even after the Reichsexekution. This conflict led to the party’s reformists breaking away and forming the <span style="color: #fe9e00;">**ASPD**</span>, which has since evolved into a left-wing nationalist offshoot of the <span style="color: #c00000;">**SPD**</span>. Despite initially securing a majority of the Landtag delegation following the dispute, the <span style="color: #fe9e00;">**ASPD**</span> has struggled to achieve electoral success and now appears destined for irrelevance.
+The Mecklenburg-Schwerin Dispute arose when the Mecklenburg-Schwerin branch of the <span style="color: #c00000;">**SPD**</span> clashed with the party's parliamentary delegation, demanding that Heldt dissolve the Grand Coalition and negotiate with the <span style="color: #700000;">**KPD**</span>—even after the Reichsexekution. This conflict led to the party's reformists breaking away and forming the <span style="color: #fe9e00;">**ASPD**</span>, which has since evolved into a left-wing nationalist offshoot of the <span style="color: #c00000;">**SPD**</span>. Despite initially securing a majority of the Landtag delegation following the dispute, the <span style="color: #fe9e00;">**ASPD**</span> has struggled to achieve electoral success and now appears destined for irrelevance.
 
 Notable members of the <span style="color: #fe9e00;">**ASPD**</span> include Max Heldt, August Winnig (a supporter of the Kapp Putsch), Ernst Niekisch (a "<span style="color: #7A3C00;">national</span> <span style="color: #700000;">bolshevik</span>"), and its party leader, former Minister-President Wilhelm Buck. The party was labeled "<span style="color: #c00000;">social</span> <span style="color: #7A3C00;">fascist</span>" by the <span style="color: #700000;">**Communists**</span>, marking the <span class="tooltip-text" title="that's me! the modman!">origin</span> of the term.
 <hr id="read-marker">
-United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #C43988;">**KPO**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_saxony +]% 
+United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #C43988;">**KPO**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_meck_schwe +]% 
 
-Grand Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #fe9e00;">**ASPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if z_r_saxony:&nbsp;+&nbsp;<span style="color: #000000;">**[+ z_party_name +]**</span> ?][? if not lvp_formed:&nbsp;+&nbsp;<span style="color: #C0A054;">**DVP**</span>?]): [+ spd_coalition_saxony +]% 
+Grand Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if z_r_meck_schwe:&nbsp;+&nbsp;<span style="color: #000000;">**[+ z_party_name +]**</span> ?][? if not lvp_formed:&nbsp;+&nbsp;<span style="color: #C0A054;">**DVP**</span>?]): [+ spd_coalition_meck_schwe +]% 
 
-Bourgeois Coalition ([? if aspd_r_saxony: <span style="color: #fe9e00;">**ASPD**</span> + ?][? if z_r_saxony: <span style="color: #000000;">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #11DD11;">**SLV**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #0075EB;">**VRP**</span>[? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span>): [+ true_bourgeois_coalition_saxony +]%
+Bourgeois Coalition ([? if aspd_r_meck_schwe: <span style="color: #fe9e00;">**ASPD**</span> + ?][? if z_r_meck_schwe: <span style="color: #000000;">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #11DD11;">**SLV**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #0075EB;">**VRP**</span>[? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span>): [+ true_bourgeois_coalition_meck_schwe +]%
 
-Right-Wing Coalition ([? if aspd_r_saxony: <span style="color: #fe9e00;">**ASPD**</span> + ?][? if z_r_saxony: <span style="color: #000000;">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #11DD11;">**SLV**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #0075EB;">**VRP**</span>[? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ bourgeois_coalition_saxony +]%
+Right-Wing Coalition (DVFP + DNVP + DVP): [+ bourgeois_coalition_meck_schwe +]%
 
-[? if nsdap_saxony_elections_vote >= 4: The rise of the <span style="color: #7A3C00;">**NSDAP**</span> is quite unexpected, especially given their meager 1.6% of the vote in the last election. ?]
+[? if nsdap_meck_schwe_elections_vote >= 4: The rise of the <span style="color: #7A3C00;">**NSDAP**</span> is quite unexpected, especially given their meager 1.6% of the vote in the last election. ?]
