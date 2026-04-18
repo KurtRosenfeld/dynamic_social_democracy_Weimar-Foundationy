@@ -512,6 +512,6 @@ Grand Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_fo
 
 Bourgeois Coalition ([? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #b8996f;">**WP**</span> + [? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span>): [+ true_bourgeois_coalition_meck_schwe +]%
 
-Right-Wing Coalition (<span style="color: #3E883B;">**DNVP**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3D3D3D;">**DVFP**</span>): [+ right_coalition_meck_schwe +]%
+Right-Wing Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3D3D3D;">**DVFP**</span>): [+ right_coalition_meck_schwe +]%
 
 [? if nsdap_meck_schwe_elections_vote >= 4: The rise of the <span style="color: #7A3C00;">**NSDAP**</span> is quite unexpected, especially given their meager 1.6% of the vote in the last election. ?]
