@@ -1,8 +1,8 @@
 title: Mecklenburg-Schwerin Landtag Election
-view-if: year == 1924 and month == 2
+view-if: (year == 1924 and month == 2 and not saxony_election_seen) or (meck_schwe_election_2_trigger_time == time and meck_schwe_election_seen_time != time)
 new-page: true
 tags: event
-on-arrival: meck_schwe_election_seen += 1
+on-arrival: meck_schwe_election_seen += 1 if meck_schwe_election_seen; meck_schwe_election_seen = 1 if not meck_schwe_election_seen; meck_schwe_election_seen_time = time
 priority: 2
 on-display: {!  
     var cardEl = document.createElement('div');  
@@ -19,7 +19,7 @@ on-display: {!
 
 = Elections, [+ month : month +] [+ year +]
 
-The Mecklenburg_schwerin state elections are to be held now.
+The Mecklenburg-Schwerin state elections are to be held now.
 
 - @meck_schwe: May we do our best...
 
