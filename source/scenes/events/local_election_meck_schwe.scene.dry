@@ -295,9 +295,9 @@ for (const party in allocatedSeats) {
 Q.other_r_meck_schwe = Q.wp_r_meck_schwe + Q.true_other_r_meck_schwe;
 
 Q.left_coalition_meck_schwe = parseFloat((Q.spd_r_meck_schwe + Q.kpd_r_meck_schwe + Q.sapd_r_meck_schwe + Q.uspd_r_meck_schwe).toFixed(1));
-Q.bourgeois_coalition_meck_schwe = parseFloat((Q.z_r_meck_schwe + Q.ddp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.kvp_r_meck_schwe + Q.other_r_meck_schwe + Q.dnvp_r_meck_schwe).toFixed(1));
+Q.bourgeois_coalition_meck_schwe = parseFloat((Q.ddp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.kvp_r_meck_schwe + Q.other_r_meck_schwe + Q.dnvp_r_meck_schwe).toFixed(1));
 Q.right_coalition_meck_schwe = parseFloat((Q.dnvp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.dvfp_r_meck_schwe).toFixed(1));
-Q.true_bourgeois_coalition_meck_schwe = parseFloat((Q.z_r_meck_schwe + Q.ddp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.kvp_r_meck_schwe + Q.other_r_meck_schwe + Q.dnvp_r_meck_schwe).toFixed(1));
+Q.true_bourgeois_coalition_meck_schwe = parseFloat((Q.ddp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.kvp_r_meck_schwe + Q.other_r_meck_schwe + Q.dnvp_r_meck_schwe).toFixed(1));
 Q.spd_coalition_meck_schwe = parseFloat((Q.spd_r_meck_schwe + Q.ddp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.dvp_r_meck_schwe).toFixed(1));
 
 Q.wp_meck_schwe_elections_vote = (Q.wp_meck_schwe_elections_vote != undefined ? parseFloat(Q.wp_meck_schwe_elections_vote.toFixed(1)) : 0);
