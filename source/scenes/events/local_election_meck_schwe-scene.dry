@@ -1,5 +1,5 @@
 title: Saxony Landtag Election
-view-if: (year == 1924 and month == 2
+view-if: year == 1923 and month == 2
 new-page: true
 tags: event
 on-arrival: meck_schwe_election_seen += 1
@@ -115,9 +115,11 @@ if (Q.total_votes_meck_schwe > 0) {
     Q.other_meck_schwe_elections_vote = (Q.other_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.kvp_meck_schwe_elections_vote = (Q.kvp_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.dnf_meck_schwe_elections_vote = (Q.dnf_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
+    Q.dvfp_meck_schwe_elections_vote = (Q.dvfp_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
+    Q.nsfb_meck_schwe_elections_vote = (Q.nsfb_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     let target = 34;
     Q.spd_meck_schwe_elections_vote = Math.round((Q.spd_meck_schwe_elections_vote + (target - Q.spd_meck_schwe_elections_vote) * 0.35) * 10) / 10;
-    Q.total_votes_meck_schwe = Q.spd_meck_schwe_elections_vote + Q.sapd_meck_schwe_elections_vote + Q.kpd_meck_schwe_elections_vote + Q.ddp_meck_schwe_elections_vote + Q.lvp_meck_schwe_elections_vote + Q.z_meck_schwe_elections_vote + Q.dvp_meck_schwe_elections_vote + Q.dnvp_meck_schwe_elections_vote + Q.nsdap_meck_schwe_elections_vote + Q.other_meck_schwe_elections_vote + Q.kvp_meck_schwe_elections_vote + Q.dnf_meck_schwe_elections_vote;
+    Q.total_votes_meck_schwe = Q.spd_meck_schwe_elections_vote + Q.sapd_meck_schwe_elections_vote + Q.kpd_meck_schwe_elections_vote + Q.ddp_meck_schwe_elections_vote + Q.lvp_meck_schwe_elections_vote + Q.z_meck_schwe_elections_vote + Q.dvp_meck_schwe_elections_vote + Q.dnvp_meck_schwe_elections_vote + Q.nsdap_meck_schwe_elections_vote + Q.other_meck_schwe_elections_vote + Q.kvp_meck_schwe_elections_vote + Q.dnf_meck_schwe_elections_vote + Q.uspd_meck_schwe_elections_vote + Q.dvfp_meck_schwe_elections_vote + Q.nsfb_meck_schwe_elections_vote;
     Q.spd_meck_schwe_elections_vote = (Q.spd_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.sapd_meck_schwe_elections_vote = (Q.sapd_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.uspd_meck_schwe_elections_vote = (Q.uspd_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
@@ -131,6 +133,8 @@ if (Q.total_votes_meck_schwe > 0) {
     Q.other_meck_schwe_elections_vote = (Q.other_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.kvp_meck_schwe_elections_vote = (Q.kvp_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
     Q.dnf_meck_schwe_elections_vote = (Q.dnf_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
+    Q.dvfp_meck_schwe_elections_vote = (Q.dvfp_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
+    Q.nsfb_meck_schwe_elections_vote = (Q.nsfb_meck_schwe_elections_vote / Q.total_votes_meck_schwe) * 100;
 }
 
 Q.spd_meck_schwe_elections_vote = (Q.spd_meck_schwe_elections_vote != undefined ? parseFloat(Q.spd_meck_schwe_elections_vote.toFixed(1)) : 0);
@@ -146,9 +150,12 @@ Q.nsdap_meck_schwe_elections_vote = (Q.nsdap_meck_schwe_elections_vote != undefi
 Q.other_meck_schwe_elections_vote = (Q.other_meck_schwe_elections_vote != undefined ? parseFloat(Q.other_meck_schwe_elections_vote.toFixed(1)) : 0);
 Q.kvp_meck_schwe_elections_vote = (Q.kvp_meck_schwe_elections_vote != undefined ? parseFloat(Q.kvp_meck_schwe_elections_vote.toFixed(1)) : 0);
 Q.dnf_meck_schwe_elections_vote = (Q.dnf_meck_schwe_elections_vote != undefined ? parseFloat(Q.dnf_meck_schwe_elections_vote.toFixed(1)) : 0);
+Q.dvfp_meck_schwe_elections_vote = (Q.dvfp_meck_schwe_elections_vote != undefined ? parseFloat(Q.dvfp_meck_schwe_elections_vote.toFixed(1)) : 0);
+Q.nsfb_meck_schwe_elections_vote = (Q.nsfb_meck_schwe_elections_vote != undefined ? parseFloat(Q.nsfb_meck_schwe_elections_vote.toFixed(1)) : 0);
 
 if (Q.spd_meck_schwe_elections_vote >= 1.4) Q.spd_r_meck_schwe = Q.spd_meck_schwe_elections_vote;
-if (Q.sapd_meck_schwe_elections_vote >= 1.4) Q.uspd_r_meck_schwe = Q.sapd_meck_schwe_elections_vote;
+if (Q.sapd_meck_schwe_elections_vote >= 1.4) Q.sapd_r_meck_schwe = Q.sapd_meck_schwe_elections_vote;
+if (Q.uspd_meck_schwe_elections_vote >= 1.4) Q.uspd_r_meck_schwe = Q.uspd_meck_schwe_elections_vote;
 if (Q.kpd_meck_schwe_elections_vote >= 1.4) Q.kpd_r_meck_schwe = Q.kpd_meck_schwe_elections_vote;
 if (Q.ddp_meck_schwe_elections_vote >= 1.4) Q.ddp_r_meck_schwe = Q.ddp_meck_schwe_elections_vote;
 if (Q.lvp_meck_schwe_elections_vote >= 1.4) Q.lvp_r_meck_schwe = Q.lvp_meck_schwe_elections_vote;
@@ -159,10 +166,13 @@ if (Q.nsdap_meck_schwe_elections_vote >= 1.4) Q.nsdap_r_meck_schwe = Q.nsdap_mec
 if (Q.other_meck_schwe_elections_vote >= 1.4) Q.other_r_meck_schwe = Q.other_meck_schwe_elections_vote;
 if (Q.kvp_meck_schwe_elections_vote >= 1.4) Q.kvp_r_meck_schwe = Q.kvp_meck_schwe_elections_vote;
 if (Q.dnf_meck_schwe_elections_vote >= 1.4) Q.dnf_r_meck_schwe = Q.dnf_meck_schwe_elections_vote;
+if (Q.dvfp_meck_schwe_elections_vote >= 1.4) Q.dvfp_r_meck_schwe = Q.dvfp_meck_schwe_elections_vote;
+if (Q.nsfb_meck_schwe_elections_vote >= 1.4) Q.nsfb_r_meck_schwe = Q.nsfb_meck_schwe_elections_vote;
 
 var meck_schwe_adjustment_r_factors = {
     spd: 1.0,
     sapd: 1.0,
+    uspd: 1.0,
     kpd: 0.98,
     ddp: 0.96,
     lvp: 1.0,
@@ -172,7 +182,9 @@ var meck_schwe_adjustment_r_factors = {
     nsdap: 1.0,
     other: 1.0,
     kvp: 0.9,
-    dnf: 0.3
+    dnf: 0.3,
+    dvfp: 1.0,
+    nsfb: 1.0
 };
 
 Q.spd_r_meck_schwe = Q.spd_r_meck_schwe*meck_schwe_adjustment_r_factors.spd;
@@ -189,6 +201,8 @@ Q.nsdap_r_meck_schwe = Q.nsdap_r_meck_schwe*meck_schwe_adjustment_r_factors.nsda
 Q.other_r_meck_schwe = Q.other_r_meck_schwe*meck_schwe_adjustment_r_factors.other;
 Q.kvp_r_meck_schwe = Q.kvp_r_meck_schwe*meck_schwe_adjustment_r_factors.kvp;
 Q.dnf_r_meck_schwe = Q.dnf_r_meck_schwe*meck_schwe_adjustment_r_factors.dnf;
+Q.dvfp_r_meck_schwe = Q.dvfp_r_meck_schwe*meck_schwe_adjustment_r_factors.dvfp;
+Q.nsfb_r_meck_schwe = Q.nsfb_r_meck_schwe*meck_schwe_adjustment_r_factors.nsfb;
 
 Q.total_r_meck_schwe = 0;
 
@@ -205,6 +219,8 @@ if (Q.nsdap_r_meck_schwe) Q.total_r_meck_schwe += Q.nsdap_r_meck_schwe;
 if (Q.other_r_meck_schwe) Q.total_r_meck_schwe += Q.other_r_meck_schwe;
 if (Q.kvp_r_meck_schwe) Q.total_r_meck_schwe += Q.kvp_r_meck_schwe;
 if (Q.dnf_r_meck_schwe) Q.total_r_meck_schwe += Q.dnf_r_meck_schwe;
+if (Q.dvfp_r_meck_schwe) Q.total_r_meck_schwe += Q.dvfp_r_meck_schwe;
+if (Q.nsfb_r_meck_schwe) Q.total_r_meck_schwe += Q.nsfb_r_meck_schwe;
 
 if (Q.total_r_meck_schwe > 0) {
     Q.spd_r_meck_schwe = (Q.spd_r_meck_schwe / Q.total_r_meck_schwe) * 100;
@@ -220,7 +236,8 @@ if (Q.total_r_meck_schwe > 0) {
     Q.other_r_meck_schwe = (Q.other_r_meck_schwe / Q.total_r_meck_schwe) * 100;
     Q.kvp_r_meck_schwe = (Q.kvp_r_meck_schwe / Q.total_r_meck_schwe) * 100;
     Q.dnf_r_meck_schwe = (Q.dnf_r_meck_schwe / Q.total_r_meck_schwe) * 100;
-}
+    Q.dvfp_r_meck_schwe = (Q.dvfp_r_meck_schwe / Q.total_r_meck_schwe) * 100;
+    Q.nsfb_r_meck_schwe = (Q.nsfb_r_meck_schwe / Q.total_r_meck_schwe) * 100;
 
 
 Q.spd_r_meck_schwe = Q.spd_r_meck_schwe*spd_share;
@@ -442,6 +459,21 @@ if (Q.dnf_formed && Q.dnf_r_meck_schwe) {
         "name": "DNF",
         "seats": Math.round(Q.dnf_r_meck_schwe * 0.96),
     });
+
+    "id": "dvfp",
+    "legend": "DVFP",
+    "name": "DVFP",
+    "seats": Math.round(Q.dvfp_r_meck_schwe * 0.96),
+    "color": "#3D3D3D"
+}, 
+{
+    "id": "nsfb",
+    "legend": "NSFB",
+    "name": "NSFB",
+    "seats": Math.round(Q.nsfb_r_meck_schwe * 0.96),
+    "color": "#59250F"
+}]);
+
 }
 data = data.concat([{
     "id": "nsdap",
