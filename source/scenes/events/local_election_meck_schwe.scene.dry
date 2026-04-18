@@ -1,5 +1,5 @@
 title: Mecklenburg-Schwerin Landtag Election
-view-if: year == 1923 and month == 2
+view-if: year == 1922 and month == 7
 new-page: true
 tags: event
 on-arrival: meck_schwe_election_seen += 1
@@ -36,7 +36,7 @@ var meck_schwe_adjustment_factors = {
     z: 0.0,
     dvp: 0.9,
     dnvp: 1.38,
-    nsdap: 0.1,
+    nsdap: 0.4,
     dvfp: 4.0,
     nsfb: 2.6,
     other: 1.3,
