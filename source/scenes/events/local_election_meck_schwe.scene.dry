@@ -300,7 +300,7 @@ Q.left_coalition_meck_schwe = parseFloat((Q.spd_r_meck_schwe + Q.kpd_r_meck_schw
 Q.bourgeois_coalition_meck_schwe = parseFloat((Q.ddp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.kvp_r_meck_schwe + Q.other_r_meck_schwe + Q.dnvp_r_meck_schwe).toFixed(1));
 Q.right_coalition_meck_schwe = parseFloat((Q.dnvp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.dvfp_r_meck_schwe).toFixed(1));
 Q.true_bourgeois_coalition_meck_schwe = parseFloat((Q.ddp_r_meck_schwe + Q.dvp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.kvp_r_meck_schwe + Q.other_r_meck_schwe + Q.dnvp_r_meck_schwe).toFixed(1));
-Q.spd_coalition_meck_schwe = parseFloat((Q.spd_r_meck_schwe + Q.ddp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.dvp_r_meck_schwe).toFixed(1));
+Q.social_liberal_coalition_meck_schwe = parseFloat((Q.spd_r_meck_schwe + Q.ddp_r_meck_schwe + Q.lvp_r_meck_schwe + Q.dvp_r_meck_schwe).toFixed(1));
 
 Q.wp_meck_schwe_elections_vote = (Q.wp_meck_schwe_elections_vote != undefined ? parseFloat(Q.wp_meck_schwe_elections_vote.toFixed(1)) : 0);
 Q.true_other_meck_schwe_elections_vote = (Q.true_other_meck_schwe_elections_vote != undefined ? parseFloat(Q.true_other_meck_schwe_elections_vote.toFixed(1)) : 0);
@@ -496,10 +496,37 @@ Notable members of the <span style="color: #fe9e00;">**ASPD**</span> include Max
 <hr id="read-marker">
 United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #A10000;">**USPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_meck_schwe +]% 
 
-Grand Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if not lvp_formed:&nbsp;+&nbsp;<span style="color: #C0A054;">**DVP**</span>?]): [+ spd_coalition_meck_schwe +]% 
+Social-Liberal Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if not lvp_formed:&nbsp;+&nbsp;<span style="color: #C0A054;">**DVP**</span>?]): [+ social_liberal_coalition_meck_schwe +]% 
 
 Bourgeois Coalition ([? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #b8996f;">**WP**</span> + <span style="color: #AFAFAF;">**Others**</span> + [? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?] + <span style="color: #3E88B3;">**DNVP**</span>): [+ true_bourgeois_coalition_meck_schwe +]%
 
 Right-Wing Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #3D3D3D;">**DVFP**</span>): [+ right_coalition_meck_schwe +]%
 
 [? if nsdap_meck_schwe_elections_vote >= 4: The rise of the <span style="color: #7A3C00;">**NSDAP**</span> is quite unexpected, especially given their meager 1.6% of the vote in the last election. ?]
+
+
+@meck_schwe_coalition_menu
+
+- @social_liberal_coalition_meck_schwe
+- @bourgeois_coalition_meck_schwe
+- @left_coalition_meck_schwe
+- @right_wing_coalition_meck_schwe
+
+@social_liberal_coalition_meck_schwe
+title: A Social-Liberal Coalition will be formed
+choose-if: social_liberal_coalition_meck_schwe > 50
+
+@bourgeois_coalition_meck_schwe
+title: A bourgeois coalition must be formed
+choose-if: true_bourgeois_coalition_meck_schwe > 50
+view-if: social_liberal_coalition_meck_schwe < 50 and right_coalition_meck_schwe < 50
+
+@left_coalition_meck_schwe
+title: We will work alongside the KPD
+choose-if: left_coalition_meck_schwe > 50 and kpd_relation >= 40
+
+@right_wing_coalition_meck_schwe
+choose-if: right_coalition_meck_schwe > 50
+view-if: right_coalition_meck_schwe > 50
+
+
