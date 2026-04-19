@@ -1,0 +1,26 @@
+title: Leadership Collapse
+subtitle: The large opposition to the government from all sides faces Wirth with a challange...
+new-page: true
+tags: event
+view-if: muller_dead == 1 and uspd_joined == 0 or reformists_resign == 1 and centrists_resign == 1 or left_split == 1 and centrists_resign == 1 and muller_dead == 1 and uspd_joined 
+max-visits: 1
+on-arrival: spd_party_leadership = "ambigious"
+priority: 1
+face-image: img/portraits/WelsOtto.jpg
+
+
+= Leadership Collapse
+
+[? if reformists_resign = 1 and centrists_resign = 1 and muller_dead = 0 and uspd_joined = 0: Due to discontent over the direction of the party both Otto Wels and Hermann Müller have resigned. This leaves our party entirely without leadership. We will elect new chairmen (or chairwomen, but likely men) soon... ?]
+
+[? if reformists_resign = 1 and centrists_resign = 1 and muller_dead = 1 and uspd_joined = 0: Due to discontent over the direction of the party Otto Wels has resigned. Since Müller has already died this leaves our party entirely without leadership. We will elect new chairmen (or chairwomen, but likely men) soon... ?]
+
+[? if reformists_resign = 1 and centrists_resign = 1 and muller_dead = 0 and uspd_joined >= 1: Due to discontent over the direction of the party both Otto Wels and Hermann Müller have resigned. This leaves Crispien as the sole leadership for now. We will elect new chairmen (or chairwomen, but likely men) soon... ?]
+
+[? if reformists_resign = 1 and centrists_resign = 1 and muller_dead = 0 and uspd_joined >= 1: Due to discontent over the direction of the party Otto Wels has resigned. Since Müller has already died this leaves Crispien as the sole leadership for now. We will elect new chairmen (or chairwomen, but likely men) soon... ?]
+
+[? if left_split = 1 and centrists_resign = 1 and muller_dead = 1 and uspd_joined >= 1: The recent departure of Arthur Crispien and the death of Hermann Müller leave Otto Wels as the only chairman left.  We will elect new chairmen (or chairwomen, but likely men) soon... ?]
+
+- @ok: Sure...
+
+@ok
