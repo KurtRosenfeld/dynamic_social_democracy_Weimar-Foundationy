@@ -28,8 +28,8 @@ on-arrival: {!
 
 var meck_schwe_adjustment_factors = {
     spd: 1.15,
-    sapd: 0.4,
-    uspd: 0.4,
+    sapd: 0.2,
+    uspd: 0.2,
     kpd: 1.2,
     ddp: 0.45,
     lvp: 0.7,
@@ -515,7 +515,7 @@ Right-Wing Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span styl
 
 @social_liberal_coalition_meck_schwe
 title: A Social-Liberal Coalition will be formed
-choose-if: social_liberal_coalition_meck_schwe > 50
+choose-if: social_liberal_coalition_meck_schwe > 50 and dvp_relation >= 25
 
 @bourgeois_coalition_meck_schwe
 title: A bourgeois coalition must be formed
@@ -523,12 +523,16 @@ choose-if: true_bourgeois_coalition_meck_schwe > 50
 view-if: social_liberal_coalition_meck_schwe < 50 and right_coalition_meck_schwe < 50
 
 @left_coalition_meck_schwe
-title: We will work alongside the KPD
+title: A Coalition of the Left will be formed
+subtitle: We will work alongside the KPD
 choose-if: left_coalition_meck_schwe > 50 and kpd_relation >= 40
 
 @right_wing_coalition_meck_schwe
-title: WTF!!!!!!!!!!!!!!!!!!
+title: The DNVP and DVP are tolerated by the DVFP? This can't end well...
+subtitle: WTF!!!!!!!!!!!!!!!!!!
 choose-if: right_coalition_meck_schwe > 50
 view-if: right_coalition_meck_schwe > 50
+
+
 
 
