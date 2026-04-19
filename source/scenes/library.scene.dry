@@ -554,7 +554,7 @@ Current relations: [+ z_relation : relationships +]
 
 Current relations: [+ kpd_relation : relationships +]
 
-<span style="color: #AA0000;">**USPD**</span> - *Unabhänige Sozialdemokratische Partei Deutschlands* (Independent Social Democratic Party) - an anti-war offshoot of the <span style="color: #c00000;">**SPD**</span> that emerged after some members were expelled from our party due to their rejection of party dicipline.
+<span style="color: #A10000;">**USPD**</span> - *Unabhänige Sozialdemokratische Partei Deutschlands* (Independent Social Democratic Party) - an anti-war offshoot of the <span style="color: #c00000;">**SPD**</span> that emerged after some members were expelled from our party due to their rejection of party dicipline.
 
 Current relations: [+ uspd_relation : relationships +]
 
@@ -564,7 +564,11 @@ Current relations: [+ uspd_relation : relationships +]
 
 Current relations: [+ nsdap_relation : relationships +]
 
-**Other parties** - there is a multitude of small, mostly conservative parties, such as the Economic Party of the German Middle Class, the Farmer's Party, the Agricultural League, and others. [? if dnvp_split == 1: They also consist of splinter parties from the <span style="color: #3E88B3;">**DNVP**</span>, as a result of Hugenberg's radical right policies as chairman. ?]Their political position usually lies between the [? if (dvp_exist and not lvp_formed) or not started: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if not dvp_exist and started: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?] and the [? if not cvp_formed: <span style="color: #3E88B3;">**DNVP**</span>?][? if cvp_formed: <span style="color: #003755;">**DNF**</span>?].
+[? if year >= 1925: **Other parties** - there is a multitude of small, mostly conservative parties, such as the Economic Party of the German Middle Class, the Farmer's Party, the Agricultural League, and others. [? if dnvp_split == 1: They also consist of splinter parties from the <span style="color: #3E88B3;">**DNVP**</span>, as a result of Hugenberg's radical right policies as chairman. ?]Their political position usually lies between the [? if (dvp_exist and not lvp_formed) or not started: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if not dvp_exist and started: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?] and the [? if not cvp_formed: <span style="color: #3E88B3;">**DNVP**</span>?][? if cvp_formed: <span style="color: #003755;">**DNF**</span>?]. ?]
+
+[? if year <= 1924: **Other parties** - there is a multitude of small, mostly moderate parties just as the German Hanovarian Party or the Bavarian Peasant's League. They often align with the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: #000000;">**[+ z_party_name +]**</span>. ?]
+
+Current relations: [? if year >= 1925: diverse ?][if year <= 1924: neutral ?]
 
 @paramilitaries
 on-arrival: {!
