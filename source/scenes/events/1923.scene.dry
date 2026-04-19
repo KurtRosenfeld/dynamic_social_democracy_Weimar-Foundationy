@@ -3,7 +3,7 @@ subtitle: A new year
 on-arrival: {!
 // see post_event.scene.dry for changes.
 Q.inflation += 3;
-if (Q.chancellor == "Cuno") Q.rhuhr_occupation_imminent = 1;
+if (Q.chancellor == "Cuno") Q.ruhr_occupation_imminent = 1;
 !}
 tags: event
 view-if: year = 1923 and month = 1
