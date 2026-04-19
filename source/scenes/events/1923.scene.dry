@@ -1,0 +1,13 @@
+title: 1923
+subtitle: A new year
+on-arrival: {!
+// see post_event.scene.dry for changes.
+Q.inflation += 3;
+if chancellor == "Cuno" (Q.rhuhr_occupation_imminent = 1);
+!}
+tags: event
+view-if: year = 1923 and month = 1
+priority: 2
+max-visits: 1
+
+A new year begins. Inflation just keeps rising, let's hope nothing worse will happen...
