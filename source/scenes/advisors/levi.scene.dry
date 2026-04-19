@@ -37,12 +37,12 @@ Levi attempts to reach out to his former colleagues to dissuade the <span style=
 
 @levi_journey
 view-if: levi_journey == 0
-on-arrival: levi journey = 1
+on-arrival: levi_journey = 1
 
 Have a good one!
 
 @come_back
 view-if: levi_journey == 1
-on-arrival: levi journey = 0
+on-arrival: levi_journey = 0
 
 Welcome back champ.
