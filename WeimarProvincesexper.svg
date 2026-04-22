@@ -20,7 +20,7 @@
     </pattern>
     
     <mask id="ruhrMask">
-        <use href="#path27" fill="white" />
+        <use href="path27" fill="white" />
     </mask>
 </defs>
   <sodipodi:namedview
