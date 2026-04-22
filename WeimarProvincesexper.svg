@@ -373,11 +373,10 @@
        <title
          id="title28">Memel-Territory (LON)</title>
   </g>
-<g id="occupationOverlay" style="display: block; pointer-events: none;">
-    <g transform="matrix(1.6311004,0,0,1.5178468,-44.309242,3.8214879)">
-        <use href="#path27" fill="url(#ruhrHatch)" fill-opacity="0.7" style="mix-blend-mode: multiply;" />
-        <use href="#path29" fill="url(#ruhrHatch)" fill-opacity="0.7" style="mix-blend-mode: multiply;" />
-        <use href="#path36" fill="url(#ruhrHatch)" fill-opacity="0.7" style="mix-blend-mode: multiply;" />
+    <g id="occupationOverlay" style="display: block; pointer-events: none;" transform="matrix(1.6311004,0,0,1.5178468,-44.309242,3.8214879)">
+        <use href="#path27" fill="url(#ruhrHatch)" fill-opacity="0.7" />
+        <use href="#path29" fill="url(#ruhrHatch)" fill-opacity="0.7" />
+        <use href="#path36" fill="url(#ruhrHatch)" fill-opacity="0.7" />
     </g>
 </g>
 </svg>
