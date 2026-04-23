@@ -1,10 +1,10 @@
 title: Joke
-max-visits: 1
-view-if: year == 1922 and month == 7
+view-if: year == 1922 and month == 5
 tags: event
 new-page: true
+max-visits: 1
 
-= JOKES
+= Joke
 
 - @weimar_coalition_joke: We can form a minority <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition. Thanks to the toleration of the <span style="color: #63C489;">German-Hanoverian Party</span>.
 - @socdem_joke: We can form a coalition among Social Democrats.
