@@ -2,6 +2,7 @@ title: Joke
 max-visits: 1
 view-if: year == 1922 and month == 7
 tags: event
+new-page: true
 
 = JOKES
 
