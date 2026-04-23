@@ -4,26 +4,26 @@ view-if: year == 1922 and month == 7
 
 = JOKES
 
-- @weimar_coalition_joke
-- @socdem_joke
-- @marxism_joke
-- @betrayel_joke
-- @left_coalition_joke
+- @weimar_coalition_joke: We can form a minority <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition. Thanks to the toleration of the <span style="color: #63C489;">German-Hanoverian Party</span>.
+- @socdem_joke: We can form a coalition among Social Democrats.
+- @marxism_joke: We can form a coalition among all Marxist parties.
+- @betrayel_joke: We beg the USPD to tolerate a Coalition of Betrayel.
+- @left_coalition_joke: We refuse to form a government so Rosenfeld can lead a revolutionary coalition.
   
-@weimar_coalition_joke: We can form a minority <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition. Thanks to the toleration of the <span style="color: #63C489;">German-Hanoverian Party</span>.
+@weimar_coalition_joke
 subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #000000;">Z</span> + <span style="color: #E5EA24;">DDP</span> (17,3%)
 
-@socdem_joke: We can form a coalition among Social Democrats.
+@socdem_joke
 subtitle: <span style="color: #c00000;">SPD</span> + <span style="color: #8E0202;">SAPD</span> + <span style="color: #BF2323;">USPD</span> (53,6%)
 
 
-@marxism_joke: We can form a coalition among all Marxist parties.
+@marxism_joke
 subtitle: <span style="color: #c00000;">SPD</span> +  <span style="color: #5E0000;">KPD</span> + <span style="color: #91134B;">KPO</span> + <span style="color: #8E0202;">SAPD</span> + <span style="color: #BF2323;">USPD</span> (72,8%)
 
-@betrayel_joke: We beg the USPD to tolerate a Coalition of Betrayel.
+@betrayel_joke
 subtitle: <span style="color: #c00000;">SPD</span> + all of the <span style="color: #DEEA8B;">Bourgeios</span> parties (49,1%)
   
-@left_coalition_joke: We refuse to form a government so Rosenfeld can lead a revolutionary coalition.
+@left_coalition_joke
 subtitle: <span style="color: #5E0000;">KPD</span> + <span style="color: #91134B;">KPO</span> + <span style="color: #8E0202;">SAPD</span> + <span style="color: #BF2323;">USPD</span> (50,9%)
 
 
