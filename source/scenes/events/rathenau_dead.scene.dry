@@ -1,7 +1,7 @@
 title: Rathenau Dead
 subtitle: Foreign Minister Walther (DDP) Rathanau has been shot by nationalists...
 new-page: true
-on-arrival: rathenau_dead = 1; foreign_minister = "Wirth"; foreign_minister_party = "Z"
+on-arrival: rathenau_dead = 1; foreign_minister = "Wirth"; foreign_minister_party = "Z"; inflation += 40
 tags: event
 view-if: year = 1922 and month = 6
 max-visits: 1 
