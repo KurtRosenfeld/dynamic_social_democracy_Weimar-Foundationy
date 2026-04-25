@@ -4,15 +4,16 @@ view-if: year == 1923 and month == 1 and ruhr_occupation_imminent == 1
 max-visits: 1 
 tags: event 
 new-page: true 
-on-arrival: ruhr_occupied = 1; nationalism += 2; pacifism -= 1; old_middle_dvfp += 2; new_middle_nsdap += 1
+on-arrival: ruhr_occupied = 1; nationalism += 2; pacifism -= 1; old_middle_dvfp += 2; new_middle_nsdap += 1; inflation += 20
 face-image: img/portraits/CunoWilhelm.jpg 
   
 = France occupies the Ruhr
 
-After months of mutual financial crisies in France and Germany and the stopping of reperation payments the Government of France has decided to march into the Rhineland trying to extract material by force.
+After months of mutual financial crisies in France and Germany and the stopping of reperation payments the Government of France (assisted by Belgium) has decided to march into the Rhineland trying to extract material by force.
 The US and UK denounce this assault on the Republic. Chancellor [+ chancellor +] has declared Germany to be inable to resist with military means but has called on passive resitance, a sentiment that has become fairly popular accross Germany seemingly disregarding class and political affiliation.
 
 The mayor of Essen Hans Luther (I) has refused to welcome the occupying officers for hours turning him into a national icon.
+The politican Karl Jarres (DVP) refused to leave the area and was brought before a Belgian court of war.
 
 The passive resistance strategy is in already common place. Workers begin striking upon seeing French troops. Who knows how long this strategy will be possibly sustained...
 
