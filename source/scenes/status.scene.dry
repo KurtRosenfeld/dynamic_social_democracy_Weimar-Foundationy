@@ -398,7 +398,7 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 = Foreign Relations
 
-Western Powers:
+Western Powers: [+ west_relation +]
 
 USA:
 
@@ -406,12 +406,14 @@ France:
 
 UK:
 
-Eastern Neighbours:
+Eastern Neighbours: [+ east_relation +]
 
 Poland:
 
 Czechoslovakia:
 
-USSR:
+USSR: [+ soviet_relation +]
+
+Italy: 
 
 
