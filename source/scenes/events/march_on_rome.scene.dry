@@ -3,7 +3,7 @@ subtitle: Italy has fallen
 view-if: year == 1922 and month == 10
 new-page: true
 max-visits: 1
-on-arrival: new_middle_nsdap += 1
+on-arrival: new_middle_nsdap += 2; inflation += 5; old_middle_nsdap += 1
 face-image: img/March_on_Rome.jpg
 tags: event
 
