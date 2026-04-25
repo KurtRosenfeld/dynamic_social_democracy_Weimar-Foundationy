@@ -6,7 +6,7 @@ tags: event
 view-if: year == 1922 and month == 12
 max-visits: 1
 priority: 1
-face-image: img/USPD.jpg
+face-image: img/dfvp.jpg
 
 = DNVP split
 
