@@ -4,7 +4,7 @@ view-if: year == 1922 and month == 10
 new-page: true
 max-visits: 1
 on-arrival: new_middle_nsdap += 1
-event-image: img/March_on_Rome.jpg
+face-image: img/March_on_Rome.jpg
 tags: event
 
 = March on Rome
