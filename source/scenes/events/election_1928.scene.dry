@@ -2273,13 +2273,40 @@ title: Foreign Ministry
 subtitle: Foreign policy.
 unavailable-subtitle: We do not have enough leverage.
 tags: socdem_ministries
-choose-if: leverage >= 10 
+choose-if: leverage >= 10
 view-if: foreign_minister_party != "SPD"
-on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
-go-to: socdem_ministries
 
-Rudolf Breitscheid of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
+- @socdem_appoint_muller
+- @socdem_appoint_breitscheid
+- @socdem_cancel_foreign
 
+@socdem_appoint_muller
+title: Hermann Müller
+subtitle: (centrist).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: foreign_minister = "Müller"; leverage -= 10; foreign_minister_party = "SPD"
+go-to: ministries
+
+Hermann Müller of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
+
+@socdem_appoint_breitscheid
+title: Rudolf Breitscheid
+subtitle: (centrist).
+choose-if: leverage >= 10
+view-if: uspd_joined >= 1
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 10; foreign_minister = "Breitscheid"; foreign_minister_party = "SPD"
+go-to: ministries
+
+Wilhelm Sollmann of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
+
+@socdem_cancel_foreign
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: foreign_minister_party = "USPD"; foreign_minister = "Breitscheid";
+go-to: ministries
 
 @socdem_agriculture
 title: Agricultural Ministry
@@ -4335,13 +4362,40 @@ title: Foreign Ministry
 subtitle: [? if stresemann_dead = 0: This is usually the domain of Gustav Stresemann of the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]?][? if stresemann_dead = 1: This is usually the domain of the [? if not lvp_formed and dvp_exist: <span style="color: #C0A054;">**DVP**</span>?][? if not lvp_formed and not dvp_exist: former <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] ?].
 unavailable-subtitle: We do not have enough leverage.
 tags: mins_1928
-choose-if: leverage >= 10 
+choose-if: leverage >= 10
 view-if: foreign_minister_party != "SPD"
-on-arrival: leverage -= 10; foreign_minister_party = "SPD"; foreign_minister = "Breitscheid"
+
+- @appoint_muller
+- @appoint_breitscheid
+- @cancel_foreign
+
+@appoint_muller
+title: Hermann Müller
+subtitle: (centrist).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: foreign_minister = "Müller"; leverage -= 10; foreign_minister_party = "SPD"
 go-to: ministries
 
-Rudolf Breitscheid of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
+Hermann Müller of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
 
+@appoint_breitscheid
+title: Rudolf Breitscheid
+subtitle: (centrist).
+choose-if: leverage >= 10
+view-if: uspd_joined >= 1
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: leverage -= 10; foreign_minister = "Breitscheid"; foreign_minister_party = "SPD"
+go-to: ministries
+
+Wilhelm Sollmann of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
+
+@cancel_foreign
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; foreign_minister = "Stresemann"; foreign_minister = "Curtius" if streseman_dead; foreign_minister_party = "Z" if in_weimar_coalition or in_popular_front; foreign_minister = "Wirth" if in_weimar_coalition or in_popular_front;
+go-to: ministries
 
 @agriculture
 title: Agricultural Ministry
