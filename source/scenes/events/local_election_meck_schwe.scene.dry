@@ -520,7 +520,7 @@ Right-Wing Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span styl
 @social_liberal_coalition_meck_schwe
 title: A Social-Liberal Coalition will be formed
 choose-if: social_liberal_coalition_meck_schwe > 50 and dvp_relation >= 25
-on-arrival: meck_schwe_election_2_trigger_time = time + 48
+on-arrival: meck_schwe_election_2_trigger_time = time + 48; dvp_relation += 2; ddp_relation += 3
 
 @bourgeois_coalition_meck_schwe
 title: A bourgeois coalition must be formed
@@ -540,11 +540,13 @@ view-if: spd_r_meck_schwe > 32
 on-arrival: meck_schwe_election_2_trigger_time = time + 48; workers_spd += 1; workers_dnvp -= 2; rural_spd += 1; rural_dnvp -= 1
 
 @right_wing_coalition_meck_schwe
-title: The DNVP and DVP are tolerated by the DVFP? This can't end well...
+title: The DNVP and DVP are tolerated by the DVFP?
 subtitle: WTF!!!!!!!!!!!!!!!!!!
 choose-if: right_coalition_meck_schwe > 50
 view-if: right_coalition_meck_schwe > 50
-on-arrival: meck_schwe_election_2_trigger_time = time + 48; rural_nsdap += 1
+on-arrival: meck_schwe_election_2_trigger_time = time + 48; rural_nsdap += 1; dvp_relation -= 3
+
+This can't end well...
 
 @no_coalition_meck_schwe
 title: There is no possible government arrangement
