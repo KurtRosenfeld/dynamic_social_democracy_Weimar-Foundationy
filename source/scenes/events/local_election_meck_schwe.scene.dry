@@ -531,7 +531,7 @@ on-arrival: meck_schwe_election_2_trigger_time = time + 48
 title: A Coalition of the Left will be formed
 subtitle: We will work alongside the KPD
 choose-if: left_coalition_meck_schwe > 50 and kpd_relation >= 40
-on-arrival: meck_schwe_election_2_trigger_time = time + 48
+on-arrival: meck_schwe_election_2_trigger_time = time + 48; workers_kpd += 2; rural_ddp -= 2; workers_dnvp -= 1
 
 @right_wing_coalition_meck_schwe
 title: The DNVP and DVP are tolerated by the DVFP? This can't end well...
