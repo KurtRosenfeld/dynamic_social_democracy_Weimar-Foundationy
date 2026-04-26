@@ -1,0 +1,13 @@
+title: YOOO
+subtitle: So based
+new-page: true
+on-arrival: inflation = 3
+tags: event
+view-if: year == 1924 and month == 12
+max-visits: 1
+priority: 1
+face-image: img/portraits/HilfderingRudolf.jpg
+
+= YOOO
+
+This is good
