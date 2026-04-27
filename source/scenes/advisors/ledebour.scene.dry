@@ -27,7 +27,7 @@ Our message of class struggle appeals to the left wing of the working class, whi
 title: Fund the Workers International Relief.
 subtitle: -2 resources
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources < 2: We do not have enough resources. ?]
-choose-if: advisor_action_timer = 0; resources > 1
+choose-if: advisor_action_timer = 0 and resources > 1
 on-arrival: advisor_action_timer = 6; resources -= 2; workers_spd += 2; unemployed_spd += 3; soviet_relation += 1; kpd_relation += 5; rb_strength += 100*(1-dissent)
 
 @snap_election
