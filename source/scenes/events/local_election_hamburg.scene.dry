@@ -231,7 +231,7 @@ if (Q.total_r_hamburg > 0) {
 let wp_share = 0.7;
 if (Q.stolper_program_adopted) wp_share -= 0.1;
 if (Q.dvp_reform) wp_share -= 0.3;
-if (Q.chancellor_party = "DVP") wp_share -= 0.2
+if (Q.chancellor_party = "DVP") wp_share -= 0.2;
 let vrp_share = 0.2;
 if (Q.stolper_program_adopted) vrp_share -= 0.08;
 let true_other_share = 0.1;
@@ -305,11 +305,11 @@ for (const party in allocatedSeats) {
     Q[party] = parseFloat(((allocatedSeats[party] * 100) / 160).toFixed(1));
 }
 
-Q.other_r_hamburg = Q.wp_r_hamburg + Q.true_other_r_hamburg + Q.farm_r_hamburg + Q.vrp_r_hamburg;
+Q.other_r_hamburg = Q.wp_r_hamburg + Q.true_other_r_hamburg + Q.vrp_r_hamburg;
 
 Q.left_coalition_hamburg = parseFloat((Q.spd_r_hamburg + Q.kpd_r_hamburg + Q.sapd_r_hamburg + Q.uspd_r_hamburg).toFixed(1));
 Q.grand_coalition_hamburg = parseFloat((Q.ddp_r_hamburg + Q.dvp_r_hamburg + Q.lvp_r_hamburg + Q.spd_r_hamburg + Q.true_other_r_hamburg + Q.z_r_hamburg).toFixed(1));
-Q.right_coalition_hamburg = parseFloat((Q.dnvp_r_hamburg + Q.nsdap_r_hamburg + Q.wp_other_r_hamburg + Q.dvp_r_hamburg + Q.vrp_r_hamburg).toFixed(1));
+Q.right_coalition_hamburg = parseFloat((Q.dnvp_r_hamburg + Q.nsdap_r_hamburg + Q.wp_r_hamburg + Q.dvp_r_hamburg + Q.vrp_r_hamburg).toFixed(1));
 Q.true_bourgeois_coalition_hamburg = parseFloat((Q.ddp_r_hamburg + Q.dvp_r_hamburg + Q.lvp_r_hamburg + Q.kvp_r_hamburg + Q.true_other_r_hamburg + Q.z_r_hamburg + Q.wp_r_hamburg + Q.vrp_r_hamburg).toFixed(1));
 Q.weimar_coalition_hamburg = parseFloat((Q.spd_r_hamburg + Q.ddp_r_hamburg + Q.lvp_r_hamburg + Q.z_r_hamburg).toFixed(1));
 
@@ -513,11 +513,11 @@ go-to: hamburg_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td!} **[+ nsdap_hamburg_elections_vote +]%** {!</td><td!} **[+ nsdap_r_hamburg +]%**  {!</td></tr>!}
 
-[? if nsfb_exsists = 1: {!<tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} **[+ nsfb_hamburg_elections_vote +]%** {!</td><td!} **[+ nsfb_r_hamburg +]%**  {!</td></tr>!} ?]
+[? if nsfb_exists = 1: {!<tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} **[+ nsfb_hamburg_elections_vote +]%** {!</td><td!} **[+ nsfb_r_hamburg +]%**  {!</td></tr>!} ?]
 {!].!}
 <hr id="read-marker">
 
-United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #A10000;">**USPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?] + <span style="color: #C43988;">**KPO**</span>): [+ left_coalition_hamburg +]% 
+United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #A10000;">**USPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_hamburg +]% 
 
 Weimar Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span>): [+ weimar_coalition_hamburg +]% 
 
