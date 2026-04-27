@@ -30,7 +30,7 @@ var meck_schwe_adjustment_factors = {
     spd: 1.27,
     sapd: 1.2,
     uspd: 1.06,
-    kpd: 0.8,
+    kpd: 0.82,
     z: 1.18,
     ddp: 1.2,
     lvp: 1.14,
@@ -255,7 +255,7 @@ Q.vrp_r_hesse = Q.other_r_hesse*vrp_share;
 
 Q.true_other_r_hesse = Q.other_r_hesse*true_other_share;
 
-Q.kpo_saxony_elections_vote = Q.kpd_saxony_elections_vote*0.1.8
+Q.kpo_saxony_elections_vote = Q.kpd_saxony_elections_vote*0.18
 Q.kpd_saxony_elections_vote -= Q.kpo_saxony_elections_vote;
 
 function allocateSeats(percentages, totalSeats = 70) {
@@ -291,6 +291,7 @@ const inputPercentages = {
     uspd_r_hesse: Q.uspd_r_hesse,
     sapd_r_hesse: Q.sapd_r_hesse,
     kpd_r_hesse: Q.kpd_r_hesse,
+    kpo_r_hesse: Q.kpo_r_hesse,
     ddp_r_hesse: Q.ddp_r_hesse,
     lvp_r_hesse: Q.lvp_r_hesse,
     dvp_r_hesse: Q.dvp_r_hesse,
@@ -312,7 +313,7 @@ for (const party in allocatedSeats) {
     Q[party] = parseFloat(((allocatedSeats[party] * 100) / 62).toFixed(1));
 }
 
-Q.other_r_hesse = Q.wp_r_hesse + Q.true_other_r_hesse;
+Q.other_r_hesse = Q.wp_r_hesse + Q.true_other_r_hesse + Q.farm_r_hesse + Q.vrp_hesse;
 
 Q.left_coalition_hesse = parseFloat((Q.spd_r_hesse + Q.kpd_r_hesse + Q.sapd_r_hesse + Q.uspd_r_hesse).toFixed(1));
 Q.bourgeois_coalition_hesse = parseFloat((Q.ddp_r_hesse + Q.dvp_r_hesse + Q.lvp_r_hesse + Q.kvp_r_hesse + Q.other_r_hesse + Q.dnvp_r_hesse).toFixed(1));
@@ -324,11 +325,14 @@ Q.wp_hesse_elections_vote = (Q.wp_hesse_elections_vote != undefined ? parseFloat
 Q.true_other_hesse_elections_vote = (Q.true_other_hesse_elections_vote != undefined ? parseFloat(Q.true_other_hesse_elections_vote.toFixed(1)) : 0);
 Q.vrp_hesse_elections_vote = (Q.vrp_hesse_elections_vote != undefined ? parseFloat(Q.vrp_hesse_elections_vote.toFixed(1)) : 0);
 Q.farm_hesse_elections_vote = (Q.farm_hesse_elections_vote != undefined ? parseFloat(Q.farm_hesse_elections_vote.toFixed(1)) : 0);
+Q.kpo_hesse_elections_vote = (Q.kpo_hesse_elections_vote != undefined ? parseFloat(Q.kpo_hesse_elections_vote.toFixed(1)) : 0);
+Q.kpd_hesse_elections_vote = (Q.kpd_hesse_elections_vote != undefined ? parseFloat(Q.kpd_hesse_elections_vote.toFixed(1)) : 0);
 Q.wp_r_hesse = (Q.wp_r_hesse != undefined ? parseFloat(Q.wp_r_hesse.toFixed(1)) : 0);
 Q.true_other_r_hesse = (Q.true_other_r_hesse != undefined ? parseFloat(Q.true_other_r_hesse.toFixed(1)) : 0);
 Q.vrp_r_hesse = (Q.vrp_r_hesse != undefined ? parseFloat(Q.vrp_r_hesse.toFixed(1)) : 0);
 Q.farm_r_hesse = (Q.wp_r_hesse != undefined ? parseFloat(Q.farm_r_hesse.toFixed(1)) : 0);
-
+Q.kpo_r_hesse = (Q.kpo_r_hesse != undefined ? parseFloat(Q.kpo_r_hesse.toFixed(1)) : 0);
+Q.kpd_r_hesse = (Q.kpd_r_hesse != undefined ? parseFloat(Q.kpd_r_hesse.toFixed(1)) : 0);
 
 !}
 on-display: {!
@@ -338,6 +342,14 @@ data = [{
     "name": "KPD",
     "seats": Math.round(Q.kpd_r_hesse * 0.7),
 }];
+
+    data.push({
+        "id": "kag",
+        "legend": "KPO",
+        "name": "KPO",
+        "seats": Math.round(Q.kpo_r_hesse * 0.7),
+    });
+}
 
 if (Q.sapd_formed && Q.sapd_r_hesse) {
     data.push({
@@ -506,6 +518,8 @@ go-to: hesse_coalition_menu
 [? if uspd_joined < 3: {!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td!} **[+ uspd_hesse_elections_vote +]%** {!</td><td!} **[+ uspd_r_hesse +]%** {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td!} **[+ kpd_hesse_elections_vote +]%** {!</td><td!} **[+ kpd_r_hesse +]%**  {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#C43988'> </div> !}KPO: {!</td><td>!} [+ kpo_saxony_elections_vote +]% {!</td><td>!} **[+ kpo_r_hesse +]%**  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#3D3D3D'> </div> !} Z: {!</td><td!} **[+ z_hesse_elections_vote +]%** {!</td><td!} **[+ z_r_hesse +]%**  {!</td></tr>!}
 
