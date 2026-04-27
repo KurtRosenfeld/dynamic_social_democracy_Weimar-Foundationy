@@ -255,8 +255,8 @@ Q.vrp_r_hesse = Q.other_r_hesse*vrp_share;
 
 Q.true_other_r_hesse = Q.other_r_hesse*true_other_share;
 
-Q.kpo_saxony_elections_vote = Q.kpd_saxony_elections_vote*0.18
-Q.kpd_saxony_elections_vote -= Q.kpo_saxony_elections_vote;
+Q.kpo_hesse_elections_vote = Q.kpd_hesse_elections_vote*0.18
+Q.kpd_hesse_elections_vote -= Q.kpo_hesse_elections_vote;
 
 function allocateSeats(percentages, totalSeats = 70) {
     const exactSeats = {};
@@ -310,16 +310,16 @@ const inputPercentages = {
 const allocatedSeats = allocateSeats(inputPercentages);
 
 for (const party in allocatedSeats) {
-    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 62).toFixed(1));
+    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 70).toFixed(1));
 }
 
 Q.other_r_hesse = Q.wp_r_hesse + Q.true_other_r_hesse + Q.farm_r_hesse + Q.vrp_hesse;
 
-Q.left_coalition_hesse = parseFloat((Q.spd_r_hesse + Q.kpd_r_hesse + Q.sapd_r_hesse + Q.uspd_r_hesse).toFixed(1));
-Q.bourgeois_coalition_hesse = parseFloat((Q.ddp_r_hesse + Q.dvp_r_hesse + Q.lvp_r_hesse + Q.kvp_r_hesse + Q.other_r_hesse + Q.dnvp_r_hesse).toFixed(1));
-Q.right_coalition_hesse = parseFloat((Q.dnvp_r_hesse + Q.dvp_r_hesse + Q.z_r_hesse).toFixed(1));
+Q.left_coalition_hesse = parseFloat((Q.spd_r_hesse + Q.kpd_r_hesse + Q.kpo_r_hesse + Q.sapd_r_hesse + Q.uspd_r_hesse).toFixed(1));
+Q.bourgeois_coalition_hesse = parseFloat((Q.ddp_r_hesse + Q.dvp_r_hesse + Q.lvp_r_hesse + Q.kvp_r_hesse + Q.true_other_r_hesse + Q.dnvp_r_hesse + Q.z_r_hesse + Q.wp_r_hesse + Q.vrp_r_hesse).toFixed(1));
+Q.right_coalition_hesse = parseFloat((Q.dnvp_r_hesse + Q.nsdap_r_hesse + Q.farm_r_hesse).toFixed(1));
 Q.true_bourgeois_coalition_hesse = parseFloat((Q.ddp_r_hesse + Q.dvp_r_hesse + Q.lvp_r_hesse + Q.kvp_r_hesse + Q.other_r_hesse + Q.dnvp_r_hesse).toFixed(1));
-Q.social_liberal_coalition_hesse = parseFloat((Q.spd_r_hesse + Q.ddp_r_hesse + Q.lvp_r_hesse + Q.dvp_r_hesse).toFixed(1));
+Q.weimar_coalition_hesse = parseFloat((Q.spd_r_hesse + Q.ddp_r_hesse + Q.lvp_r_hesse + Q.z_r_hesse).toFixed(1));
 
 Q.wp_hesse_elections_vote = (Q.wp_hesse_elections_vote != undefined ? parseFloat(Q.wp_hesse_elections_vote.toFixed(1)) : 0);
 Q.true_other_hesse_elections_vote = (Q.true_other_hesse_elections_vote != undefined ? parseFloat(Q.true_other_hesse_elections_vote.toFixed(1)) : 0);
@@ -330,7 +330,7 @@ Q.kpd_hesse_elections_vote = (Q.kpd_hesse_elections_vote != undefined ? parseFlo
 Q.wp_r_hesse = (Q.wp_r_hesse != undefined ? parseFloat(Q.wp_r_hesse.toFixed(1)) : 0);
 Q.true_other_r_hesse = (Q.true_other_r_hesse != undefined ? parseFloat(Q.true_other_r_hesse.toFixed(1)) : 0);
 Q.vrp_r_hesse = (Q.vrp_r_hesse != undefined ? parseFloat(Q.vrp_r_hesse.toFixed(1)) : 0);
-Q.farm_r_hesse = (Q.wp_r_hesse != undefined ? parseFloat(Q.farm_r_hesse.toFixed(1)) : 0);
+Q.farm_r_hesse = (Q.farm_r_hesse != undefined ? parseFloat(Q.farm_r_hesse.toFixed(1)) : 0);
 Q.kpo_r_hesse = (Q.kpo_r_hesse != undefined ? parseFloat(Q.kpo_r_hesse.toFixed(1)) : 0);
 Q.kpd_r_hesse = (Q.kpd_r_hesse != undefined ? parseFloat(Q.kpd_r_hesse.toFixed(1)) : 0);
 
@@ -343,6 +343,7 @@ data = [{
     "seats": Math.round(Q.kpd_r_hesse * 0.7),
 }];
 
+if (Q.kpo_r_hesse) {
     data.push({
         "id": "kag",
         "legend": "KPO",
@@ -416,7 +417,7 @@ if (Q.wp_r_hesse) {
         "id": "wp",
         "legend": "WP",
         "name": "WP",
-        "seats": Math.round(Q.wp_r_saxony * 0.7),
+        "seats": Math.round(Q.wp_r_hesse * 0.7),
     });
 }
 
@@ -425,7 +426,7 @@ if (Q.vrp_r_hesse) {
         "id": "vrp",
         "legend": "VRP",
         "name": "VRP",
-        "seats": Math.round(Q.vrp_r_saxony * 0.7),
+        "seats": Math.round(Q.vrp_r_hesse * 0.7),
     });
 }
 
@@ -537,7 +538,7 @@ go-to: hesse_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#AFAFAF'> </div> !} Others: {!</td><td!} **[+ true_other_hesse_elections_vote +]%** {!</td><td!} **[+ true_other_r_hesse +]%**  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#16681D'> </div> !} HBB: {!</td><td!} **[+ farm_hesee_elections_vote +]%** {!</td><td!} **[+ farm_r_hesse +]%**  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#16681D'> </div> !} HBB: {!</td><td!} **[+ farm_hesse_elections_vote +]%** {!</td><td!} **[+ farm_r_hesse +]%**  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td!} **[+ dnvp_hesse_elections_vote +]%** {!</td><td!} **[+ dnvp_r_hesse +]%**  {!</td></tr>!}
 
@@ -550,3 +551,49 @@ go-to: hesse_coalition_menu
 
 
 @hesse_coalition_menu
+
+
+- @weimar_coalition_hesse
+- @bourgeois_coalition_hesse
+- @left_coalition_hesse
+- @spd_majority_hesse
+- @right_wing_coalition_hesse
+- @no_coalition_hesse
+
+@weimar_coalition_hesse
+title: A Weimar Coalition will be formed
+choose-if: weimar_coalition_hesse > 50 and dvp_relation >= 25
+on-arrival: hesse_election_2_trigger_time = time + 48; dvp_relation += 2; ddp_relation += 3
+
+@bourgeois_coalition_hesse
+title: A bourgeois coalition must be formed
+choose-if: true_bourgeois_coalition_hesse > 50
+view-if: weaimar_coalition_hesse < 50 and right_coalition_hesse < 50
+on-arrival: hesse_election_2_trigger_time = time + 48
+
+@left_coalition_hesse
+title: A Coalition of the Left will be formed
+subtitle: We will work alongside the KPD
+choose-if: left_coalition_hesse > 50 and kpd_relation >= 40
+on-arrival: hesse_election_2_trigger_time = time + 48; workers_kpd += 2; rural_ddp -= 2; workers_dnvp -= 1; rural_spd += 1
+
+@spd_majority_hesse
+title: We don't need any coalition partners
+view-if: spd_r_hesse > 32
+on-arrival: hesse_election_2_trigger_time = time + 48; workers_spd += 1; workers_dnvp -= 2; rural_spd += 1; rural_dnvp -= 1
+
+@right_wing_coalition_hesse
+title: The DNVP and DVP are tolerated by the DVFP?
+subtitle: WTF!!!!!!!!!!!!!!!!!!
+choose-if: right_coalition_hesse > 50
+view-if: right_coalition_hesse > 50
+on-arrival: hesse_election_2_trigger_time = time + 48; rural_nsdap += 1; dvp_relation -= 3
+
+This can't end well...
+
+@no_coalition_hesse
+title: There is no possible government arrangement
+subtitle: New elections will be called...
+on-arrival: hesse_election_2_trigger_time = time + 3; new_middle_dnvp += 1
+view-if: weimar_coalition_hesse < 50 and right_coalition_hesse < 50
+
