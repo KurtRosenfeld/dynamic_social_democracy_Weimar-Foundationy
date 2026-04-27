@@ -1,0 +1,581 @@
+title: Hamburg Landtag Election
+view-if: (year == 1924 and month == 12 and not hamburg_election_seen) or (hamburg_election_2_trigger_time == time and hamburg_election_seen_time != time)
+new-page: true
+tags: event
+on-arrival: hamburg_election_seen += 1 if hamburg_election_seen; hamburg_election_seen = 1 if not hamburg_election_seen; hamburg_election_seen_time = time
+priority: 2
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/states.png";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
+
+= Elections, [+ month : month +] [+ year +]
+
+The Hamburg state elections are to be held now.
+
+- @hamburg: May we do our best...
+
+@hamburg
+on-arrival: {!
+
+var hamburg_adjustment_factors = {
+    spd: 1.25,
+    sapd: 0.98,
+    uspd: 0.86,
+    kpd: 1.61,
+    z: 0.1,
+    ddp: 1.8,
+    lvp: 1.62,
+    dvp: 1.4,
+    dnvp: 0.8,
+    nsdap: 0.97,
+    nsfb: 0.8,
+    other: 0.53,
+    kvp: 0.8,
+    dnf: 0.5
+};
+
+Q.spd_r_hamburg = 0;
+Q.sapd_r_hamburg = 0;
+Q.uspd_r_hamburg = 0;
+Q.kpd_r_hamburg = 0;
+Q.ddp_r_hamburg = 0;
+Q.lvp_r_hamburg = 0;
+Q.dvp_r_hamburg = 0;
+Q.dnvp_r_hamburg = 0;
+Q.nsdap_r_hamburg = 0;
+Q.z_r_hamburg = 0;
+Q.nsfb_r_hamburg = 0;
+Q.other_r_hamburg = 0;
+Q.kvp_r_hamburg = 0;
+Q.dnf_r_hamburg = 0;
+
+Q.spd_hamburg_elections_vote = 0;
+Q.sapd_hamburg_elections_vote = 0;
+Q.uspd_hamburg_elections_vote = 0;
+Q.kpd_hamburg_elections_vote = 0;
+Q.ddp_hamburg_elections_vote = 0;
+Q.lvp_hamburg_elections_vote = 0;
+Q.dvp_hamburg_elections_vote = 0;
+Q.dnvp_hamburg_elections_vote = 0;
+Q.nsdap_hamburg_elections_vote = 0;
+Q.z_hamburg_elections_vote = 0;
+Q.nsfb_hamburg_elections_vote = 0;
+Q.other_hamburg_elections_vote = 0;
+Q.kvp_hamburg_elections_vote = 0;
+Q.dnf_hamburg_elections_vote = 0;
+
+if (Q.new_middle_spd_normalized + Q.old_middle_spd_normalized >= 30) hamburg_adjustment_factors.spd += 0.1;
+if (Q.spd_r < 100) hamburg_adjustment_factors.uspd += 0.3;
+if (Q.spd_r < 70) hamburg_adjustment_factors.kpd += 0.1;
+if (Q.workers_spd_normalized >= 70) hamburg_adjustment_factors.spd += 0.1;
+Q.spd_hamburg_elections_vote = Q.spd_votes*hamburg_adjustment_factors.spd;
+Q.sapd_hamburg_elections_vote = Q.sapd_votes*hamburg_adjustment_factors.sapd;
+Q.uspd_hamburg_elections_vote = Q.uspd_votes*hamburg_adjustment_factors.uspd;
+Q.kpd_hamburg_elections_vote = Q.kpd_votes*hamburg_adjustment_factors.kpd;
+if (Q.stolper_program_adopted) hamburg_adjustment_factors.ddp += 0.2;
+Q.ddp_hamburg_elections_vote = Q.ddp_votes*hamburg_adjustment_factors.ddp;
+Q.lvp_hamburg_elections_vote = Q.lvp_votes*hamburg_adjustment_factors.lvp;
+Q.dvp_hamburg_elections_vote = Q.dvp_votes*hamburg_adjustment_factors.dvp;
+if (Q.dnvp_ideology == "Moderate") hamburg_adjustment_factors.dnvp -= 0.1;
+Q.dnvp_hamburg_elections_vote = Q.dnvp_votes*hamburg_adjustment_factors.dnvp;
+Q.nsdap_hamburg_elections_vote = Q.nsdap_votes*hamburg_adjustment_factors.nsdap;
+Q.z_hamburg_elections_vote = Q.z_votes*hamburg_adjustment_factors.z;
+Q.nsfb_hamburg_elections_vote = Q.nsfb_votes*hamburg_adjustment_factors.nsfb;
+if (Q.stolper_program_adopted) hamburg_adjustment_factors.other -= 0.1;
+Q.other_hamburg_elections_vote = Q.other_votes*hamburg_adjustment_factors.other;
+Q.kvp_hamburg_elections_vote = Q.kvp_votes*hamburg_adjustment_factors.kvp;
+Q.dnf_hamburg_elections_vote = Q.dnf_votes*hamburg_adjustment_factors.dnf;
+
+Q.total_votes_hamburg = Q.spd_hamburg_elections_vote + Q.sapd_hamburg_elections_vote + Q.kpd_hamburg_elections_vote + Q.ddp_hamburg_elections_vote + Q.lvp_hamburg_elections_vote + Q.dvp_hamburg_elections_vote + Q.dnvp_hamburg_elections_vote + Q.nsdap_hamburg_elections_vote + Q.other_hamburg_elections_vote + Q.kvp_hamburg_elections_vote + Q.dnf_hamburg_elections_vote + Q.uspd_hamburg_elections_vote + Q.z_hamburg_elections_vote + Q.nsfb_hamburg_elections_vote;
+
+if (Q.total_votes_hamburg > 0) {
+    Q.spd_hamburg_elections_vote = (Q.spd_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.sapd_hamburg_elections_vote = (Q.sapd_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.uspd_hamburg_elections_vote = (Q.uspd_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.kpd_hamburg_elections_vote = (Q.kpd_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.ddp_hamburg_elections_vote = (Q.ddp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.lvp_hamburg_elections_vote = (Q.lvp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.dvp_hamburg_elections_vote = (Q.dvp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.dnvp_hamburg_elections_vote = (Q.dnvp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.nsdap_hamburg_elections_vote = (Q.nsdap_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.other_hamburg_elections_vote = (Q.other_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.kvp_hamburg_elections_vote = (Q.kvp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.dnf_hamburg_elections_vote = (Q.dnf_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.z_hamburg_elections_vote = (Q.z_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.nsfb_hamburg_elections_vote = (Q.nsfb_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    let target = 34;
+    Q.spd_hamburg_elections_vote = Math.round((Q.spd_hamburg_elections_vote + (target - Q.spd_hamburg_elections_vote) * 0.35) * 10) / 10;
+    Q.total_votes_hamburg = Q.spd_hamburg_elections_vote + Q.sapd_hamburg_elections_vote + Q.kpd_hamburg_elections_vote + Q.ddp_hamburg_elections_vote + Q.lvp_hamburg_elections_vote + Q.dvp_hamburg_elections_vote + Q.dnvp_hamburg_elections_vote + Q.nsdap_hamburg_elections_vote + Q.other_hamburg_elections_vote + Q.kvp_hamburg_elections_vote + Q.dnf_hamburg_elections_vote + Q.uspd_hamburg_elections_vote + Q.z_hamburg_elections_vote + Q.nsfb_hamburg_elections_vote;
+    Q.spd_hamburg_elections_vote = (Q.spd_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.sapd_hamburg_elections_vote = (Q.sapd_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.uspd_hamburg_elections_vote = (Q.uspd_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.kpd_hamburg_elections_vote = (Q.kpd_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.ddp_hamburg_elections_vote = (Q.ddp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.lvp_hamburg_elections_vote = (Q.lvp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.dvp_hamburg_elections_vote = (Q.dvp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.dnvp_hamburg_elections_vote = (Q.dnvp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.nsdap_hamburg_elections_vote = (Q.nsdap_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.other_hamburg_elections_vote = (Q.other_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.kvp_hamburg_elections_vote = (Q.kvp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.dnf_hamburg_elections_vote = (Q.dnf_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.z_hamburg_elections_vote = (Q.z_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+    Q.nsfb_hamburg_elections_vote = (Q.nsfb_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
+}
+
+Q.spd_hamburg_elections_vote = (Q.spd_hamburg_elections_vote != undefined ? parseFloat(Q.spd_hamburg_elections_vote.toFixed(1)) : 0);
+Q.sapd_hamburg_elections_vote = (Q.sapd_hamburg_elections_vote != undefined ? parseFloat(Q.sapd_hamburg_elections_vote.toFixed(1)) : 0);
+Q.uspd_hamburg_elections_vote = (Q.uspd_hamburg_elections_vote != undefined ? parseFloat(Q.uspd_hamburg_elections_vote.toFixed(1)) : 0);
+Q.kpd_hamburg_elections_vote = (Q.kpd_hamburg_elections_vote != undefined ? parseFloat(Q.kpd_hamburg_elections_vote.toFixed(1)) : 0);
+Q.ddp_hamburg_elections_vote = (Q.ddp_hamburg_elections_vote != undefined ? parseFloat(Q.ddp_hamburg_elections_vote.toFixed(1)) : 0);
+Q.lvp_hamburg_elections_vote = (Q.lvp_hamburg_elections_vote != undefined ? parseFloat(Q.lvp_hamburg_elections_vote.toFixed(1)) : 0);
+Q.dvp_hamburg_elections_vote = (Q.dvp_hamburg_elections_vote != undefined ? parseFloat(Q.dvp_hamburg_elections_vote.toFixed(1)) : 0);
+Q.dnvp_hamburg_elections_vote = (Q.dnvp_hamburg_elections_vote != undefined ? parseFloat(Q.dnvp_hamburg_elections_vote.toFixed(1)) : 0);
+Q.nsdap_hamburg_elections_vote = (Q.nsdap_hamburg_elections_vote != undefined ? parseFloat(Q.nsdap_hamburg_elections_vote.toFixed(1)) : 0);
+Q.other_hamburg_elections_vote = (Q.other_hamburg_elections_vote != undefined ? parseFloat(Q.other_hamburg_elections_vote.toFixed(1)) : 0);
+Q.kvp_hamburg_elections_vote = (Q.kvp_hamburg_elections_vote != undefined ? parseFloat(Q.kvp_hamburg_elections_vote.toFixed(1)) : 0);
+Q.dnf_hamburg_elections_vote = (Q.dnf_hamburg_elections_vote != undefined ? parseFloat(Q.dnf_hamburg_elections_vote.toFixed(1)) : 0);
+Q.z_hamburg_elections_vote = (Q.z_hamburg_elections_vote != undefined ? parseFloat(Q.z_hamburg_elections_vote.toFixed(1)) : 0);
+Q.nsfb_hamburg_elections_vote = (Q.nsfb_hamburg_elections_vote != undefined ? parseFloat(Q.nsfb_hamburg_elections_vote.toFixed(1)) : 0);
+
+if (Q.spd_hamburg_elections_vote >= 1.4) Q.spd_r_hamburg = Q.spd_hamburg_elections_vote;
+if (Q.sapd_hamburg_elections_vote >= 1.4) Q.sapd_r_hamburg = Q.sapd_hamburg_elections_vote;
+if (Q.uspd_hamburg_elections_vote >= 1.4) Q.uspd_r_hamburg = Q.uspd_hamburg_elections_vote;
+if (Q.kpd_hamburg_elections_vote >= 1.4) Q.kpd_r_hamburg = Q.kpd_hamburg_elections_vote;
+if (Q.ddp_hamburg_elections_vote >= 1.4) Q.ddp_r_hamburg = Q.ddp_hamburg_elections_vote;
+if (Q.lvp_hamburg_elections_vote >= 1.4) Q.lvp_r_hamburg = Q.lvp_hamburg_elections_vote;
+if (Q.dvp_hamburg_elections_vote >= 1.4) Q.dvp_r_hamburg = Q.dvp_hamburg_elections_vote;
+if (Q.dnvp_hamburg_elections_vote >= 1.4) Q.dnvp_r_hamburg = Q.dnvp_hamburg_elections_vote;
+if (Q.nsdap_hamburg_elections_vote >= 1.4) Q.nsdap_r_hamburg = Q.nsdap_hamburg_elections_vote;
+if (Q.other_hamburg_elections_vote >= 1.4) Q.other_r_hamburg = Q.other_hamburg_elections_vote;
+if (Q.kvp_hamburg_elections_vote >= 1.4) Q.kvp_r_hamburg = Q.kvp_hamburg_elections_vote;
+if (Q.dnf_hamburg_elections_vote >= 1.4) Q.dnf_r_hamburg = Q.dnf_hamburg_elections_vote;
+if (Q.z_hamburg_elections_vote >= 1.4) Q.z_r_hamburg = Q.z_hamburg_elections_vote;
+if (Q.nsfb_hamburg_elections_vote >= 1.4) Q.nsfb_r_hamburg = Q.nsfb_hamburg_elections_vote;
+
+var hamburg_adjustment_r_factors = {
+    spd: 1.0,
+    sapd: 1.0,
+    uspd: 1.0,
+    kpd: 1.02,
+    ddp: 0.97,
+    lvp: 1.0,
+    dvp: 1.0,
+    dnvp: 0.99,
+    nsdap: 1.0,
+    other: 1.0,
+    kvp: 0.8,
+    dnf: 0.3,
+    z: 1.01,
+    nsfb: 1.0
+};
+
+Q.spd_r_hamburg = Q.spd_r_hamburg*hamburg_adjustment_r_factors.spd;
+Q.sapd_r_hamburg = Q.sapd_r_hamburg*hamburg_adjustment_r_factors.sapd;
+Q.uspd_r_hamburg = Q.uspd_r_hamburg*hamburg_adjustment_r_factors.uspd;
+Q.kpd_r_hamburg = Q.kpd_r_hamburg*hamburg_adjustment_r_factors.kpd;
+if (Q.stolper_program_adopted) hamburg_adjustment_r_factors.ddp += 0.04;
+Q.ddp_r_hamburg = Q.ddp_r_hamburg*hamburg_adjustment_r_factors.ddp;
+Q.lvp_r_hamburg = Q.lvp_r_hamburg*hamburg_adjustment_r_factors.lvp;
+Q.dvp_r_hamburg = Q.dvp_r_hamburg*hamburg_adjustment_r_factors.dvp;
+Q.dnvp_r_hamburg = Q.dnvp_r_hamburg*hamburg_adjustment_r_factors.dnvp;
+Q.nsdap_r_hamburg = Q.nsdap_r_hamburg*hamburg_adjustment_r_factors.nsdap;
+Q.other_r_hamburg = Q.other_r_hamburg*hamburg_adjustment_r_factors.other;
+Q.kvp_r_hamburg = Q.kvp_r_hamburg*hamburg_adjustment_r_factors.kvp;
+Q.dnf_r_hamburg = Q.dnf_r_hamburg*hamburg_adjustment_r_factors.dnf;
+Q.z_r_hamburg = Q.z_r_hamburg*hamburg_adjustment_r_factors.z;
+Q.nsfb_r_hamburg = Q.nsfb_r_hamburg*hamburg_adjustment_r_factors.nsfb;
+
+Q.total_r_hamburg = 0;
+
+if (Q.spd_r_hamburg) Q.total_r_hamburg += Q.spd_r_hamburg;
+if (Q.sapd_r_hamburg) Q.total_r_hamburg += Q.sapd_r_hamburg;
+if (Q.uspd_r_hamburg) Q.total_r_hamburg += Q.uspd_r_hamburg;
+if (Q.kpd_r_hamburg) Q.total_r_hamburg += Q.kpd_r_hamburg;
+if (Q.ddp_r_hamburg) Q.total_r_hamburg += Q.ddp_r_hamburg;
+if (Q.lvp_r_hamburg) Q.total_r_hamburg += Q.lvp_r_hamburg;
+if (Q.dvp_r_hamburg) Q.total_r_hamburg += Q.dvp_r_hamburg;
+if (Q.dnvp_r_hamburg) Q.total_r_hamburg += Q.dnvp_r_hamburg;
+if (Q.nsdap_r_hamburg) Q.total_r_hamburg += Q.nsdap_r_hamburg;
+if (Q.other_r_hamburg) Q.total_r_hamburg += Q.other_r_hamburg;
+if (Q.kvp_r_hamburg) Q.total_r_hamburg += Q.kvp_r_hamburg;
+if (Q.dnf_r_hamburg) Q.total_r_hamburg += Q.dnf_r_hamburg;
+if (Q.z_r_hamburg) Q.total_r_hamburg += Q.z_r_hamburg;
+if (Q.nsfb_r_hamburg) Q.total_r_hamburg += Q.nsfb_r_hamburg;
+
+if (Q.total_r_hamburg > 0) {
+    Q.spd_r_hamburg = (Q.spd_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.sapd_r_hamburg = (Q.sapd_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.uspd_r_hamburg = (Q.uspd_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.kpd_r_hamburg = (Q.kpd_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.ddp_r_hamburg = (Q.ddp_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.lvp_r_hamburg = (Q.lvp_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.dvp_r_hamburg = (Q.dvp_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.dnvp_r_hamburg = (Q.dnvp_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.nsdap_r_hamburg = (Q.nsdap_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.other_r_hamburg = (Q.other_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.kvp_r_hamburg = (Q.kvp_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.dnf_r_hamburg = (Q.dnf_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.z_r_hamburg = (Q.z_r_hamburg / Q.total_r_hamburg) * 100;
+    Q.nsfb_r_hamburg = (Q.nsfb_r_hamburg / Q.total_r_hamburg) * 100;
+}
+
+let wp_share = 0.7;
+if (Q.stolper_program_adopted) wp_share -= 0.1;
+if (Q.dvp_reform) wp_share -= 0.3;
+if (Q.chancellor_party = "DVP") wp_share -= 0.2
+let vrp_share = 0.2;
+if (Q.stolper_program_adopted) vrp_share -= 0.08;
+let true_other_share = 0.1;
+if (Q.chancellor_party = "DVP") true_other_share += 0.2
+
+let total_share = wp_share + vrp_share + true_other_share;
+
+wp_share = (wp_share / total_share);
+vrp_share = (vrp_share / total_share);
+true_other_share = (true_other_share / total_share);
+
+
+Q.wp_hamburg_elections_vote = Q.other_hamburg_elections_vote*wp_share;
+Q.wp_r_hamburg = Q.other_r_hamburg*wp_share;
+
+Q.vrp_hamburg_elections_vote = Q.other_hamburg_elections_vote*vrp_share;
+Q.vrp_r_hamburg = Q.other_r_hamburg*vrp_share;
+
+Q.true_other_r_hamburg = Q.other_r_hamburg*true_other_share;
+
+function allocateSeats(percentages, totalSeats = 70) {
+    const exactSeats = {};
+    const flooredSeats = {};
+    const remainders = [];
+
+    let totalFlooredSeats = 0;
+    for (const party in percentages) {
+        const exact = (percentages[party] * totalSeats) / 100;
+        const floored = Math.floor(exact);
+        const remainder = exact - floored;
+
+        exactSeats[party] = exact;
+        flooredSeats[party] = floored;
+        totalFlooredSeats += floored;
+
+        remainders.push({ party, remainder });
+    }
+
+    const seatsToDistribute = totalSeats - totalFlooredSeats;
+    remainders.sort((a, b) => b.remainder - a.remainder);
+
+    for (let i = 0; i < seatsToDistribute; i++) {
+        flooredSeats[remainders[i].party]++;
+    }
+
+    return flooredSeats;
+}
+
+const inputPercentages = {
+    spd_r_hamburg: Q.spd_r_hamburg,
+    uspd_r_hamburg: Q.uspd_r_hamburg,
+    sapd_r_hamburg: Q.sapd_r_hamburg,
+    kpd_r_hamburg: Q.kpd_r_hamburg,
+    ddp_r_hamburg: Q.ddp_r_hamburg,
+    lvp_r_hamburg: Q.lvp_r_hamburg,
+    dvp_r_hamburg: Q.dvp_r_hamburg,
+    dnvp_r_hamburg: Q.dnvp_r_hamburg,
+    nsdap_r_hamburg: Q.nsdap_r_hamburg,
+    vrp_r_hamburg: Q.vrp_r_hamburg,
+    wp_r_hamburg: Q.wp_r_hamburg,
+    true_other_r_hamburg: Q.true_other_r_hamburg,
+    kvp_r_hamburg: Q.kvp_r_hamburg,
+    dnf_r_hamburg: Q.dnf_r_hamburg,
+    z_r_hamburg: Q.z_r_hamburg,
+    nsfb_r_hamburg: Q.nsfb_r_hamburg
+};
+
+const allocatedSeats = allocateSeats(inputPercentages);
+
+for (const party in allocatedSeats) {
+    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 160).toFixed(1));
+}
+
+Q.other_r_hamburg = Q.wp_r_hamburg + Q.true_other_r_hamburg + Q.farm_r_hamburg + Q.vrp_r_hamburg;
+
+Q.left_coalition_hamburg = parseFloat((Q.spd_r_hamburg + Q.kpd_r_hamburg + Q.sapd_r_hamburg + Q.uspd_r_hamburg).toFixed(1));
+Q.grand_coalition_hamburg = parseFloat((Q.ddp_r_hamburg + Q.dvp_r_hamburg + Q.lvp_r_hamburg + Q.spd_r_hamburg + Q.true_other_r_hamburg + Q.z_r_hamburg).toFixed(1));
+Q.right_coalition_hamburg = parseFloat((Q.dnvp_r_hamburg + Q.nsdap_r_hamburg + Q.wp_other_r_hamburg + Q.dvp_r_hamburg + Q.vrp_r_hamburg).toFixed(1));
+Q.true_bourgeois_coalition_hamburg = parseFloat((Q.ddp_r_hamburg + Q.dvp_r_hamburg + Q.lvp_r_hamburg + Q.kvp_r_hamburg + Q.true_other_r_hamburg + Q.z_r_hamburg + Q.wp_r_hamburg + Q.vrp_r_hamburg).toFixed(1));
+Q.weimar_coalition_hamburg = parseFloat((Q.spd_r_hamburg + Q.ddp_r_hamburg + Q.lvp_r_hamburg + Q.z_r_hamburg).toFixed(1));
+
+Q.wp_hamburg_elections_vote = (Q.wp_hamburg_elections_vote != undefined ? parseFloat(Q.wp_hamburg_elections_vote.toFixed(1)) : 0);
+Q.true_other_hamburg_elections_vote = (Q.true_other_hamburg_elections_vote != undefined ? parseFloat(Q.true_other_hamburg_elections_vote.toFixed(1)) : 0);
+Q.vrp_hamburg_elections_vote = (Q.vrp_hamburg_elections_vote != undefined ? parseFloat(Q.vrp_hamburg_elections_vote.toFixed(1)) : 0);
+Q.wp_r_hamburg = (Q.wp_r_hamburg != undefined ? parseFloat(Q.wp_r_hamburg.toFixed(1)) : 0);
+Q.true_other_r_hamburg = (Q.true_other_r_hamburg != undefined ? parseFloat(Q.true_other_r_hamburg.toFixed(1)) : 0);
+Q.vrp_r_hamburg = (Q.vrp_r_hamburg != undefined ? parseFloat(Q.vrp_r_hamburg.toFixed(1)) : 0);
+
+!}
+on-display: {!
+data = [{
+    "id": "kpd",
+    "legend": "KPD",
+    "name": "KPD",
+    "seats": Math.round(Q.kpd_r_hamburg * 1.6),
+}];
+
+if (Q.sapd_formed && Q.sapd_r_hamburg) {
+    data.push({
+        "id": "sapd",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Math.round(Q.sapd_r_hamburg * 1.6),
+    });
+}
+
+if (Q.uspd_r_hamburg) {
+    data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Math.round(Q.uspd_r_hamburg * 1.6),
+    });
+}
+             
+data = data.concat([{
+    "id": "spd",
+    "legend": "SPD",
+    "name": "SPD",
+    "seats": Math.round(Q.spd_r_hamburg * 1.6),
+}]);
+
+if (Q.ddp_r_hamburg && !Q.lvp_formed) {
+    data.push({
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_r_hamburg * 1.6),
+    });
+}
+
+if (Q.lvp_r_hamburg && Q.lvp_formed) {
+    data.push({
+        "id": "lvp",
+        "legend": "LVP",
+        "name": "LVP",
+        "seats": Math.round(Q.lvp_r_hamburg * 1.6),
+    });
+}
+
+
+if (Q.true_other_r_hamburg) {
+    data.push({
+        "id": "other",
+        "legend": "Other",
+        "name": "Others",
+        "seats": Math.round(Q.true_other_r_hamburg * 1.6),
+    });
+}
+
+data.push({
+    "id": "z",
+    "legend": "Z",
+    "name": "Z",
+    "seats": Math.round(Q.z_r_hamburg * 1.6),
+    "color": "#3D3D3D"
+});
+
+
+if (Q.wp_r_hamburg) {
+    data.push({
+        "id": "wp",
+        "legend": "WP",
+        "name": "WP",
+        "seats": Math.round(Q.wp_r_hamburg * 1.6),
+    });
+}
+
+if (Q.dvp_r_hamburg && !Q.lvp_formed && Q.dvp_exist) {
+    data.push({
+        "id": "dvp",
+        "legend": "DVP",
+        "name": "DVP",
+        "seats": Math.round(Q.dvp_r_hamburg * 1.6),
+    });
+}
+
+if (Q.kvp_formed && Q.kvp_r_hamburg) {
+    data.push({
+        "id": "kvp",
+        "legend": "KVP",
+        "name": "KVP",
+        "seats": Math.round(Q.kvp_r_hamburg * 1.6),
+    });
+}
+
+data = data.concat([{
+    "id": "dnvp",
+    "legend": "DNVP",
+    "name": "DNVP",
+    "seats": Math.round(Q.dnvp_r_hamburg * 1.6),
+}]);
+
+
+if (Q.vrp_r_hamburg) {
+    data.push({
+        "id": "vrp",
+        "legend": "VRP",
+        "name": "VRP",
+        "seats": Math.round(Q.vrp_r_hamburg * 1.6),
+    });
+}
+
+if (Q.dnf_formed && Q.dnf_r_hamburg) {
+    data.push({
+        "id": "dnf",
+        "legend": "DNF",
+        "name": "DNF",
+        "seats": Math.round(Q.dnf_r_hamburg * 1.6),
+    });
+}
+
+data.push({
+    "id": "nsfb",
+    "legend": "NSFB",
+    "name": "NSFB",
+    "seats": Math.round(Q.nsfb_r_hamburg * 1.6),
+    "color": "#59250F"
+});
+
+data = data.concat([{
+    "id": "nsdap",
+    "legend": "NSDAP",
+    "name": "NSDAP",
+    "seats": Math.round(Q.nsdap_r_hamburg * 1.6),
+}]);
+
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("hamburg_landtag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#hamburg_landtag").datum(data).call(parliament);
+}
+!}
+go-to: hamburg_coalition_menu
+
+**Hamburg results:**
+
+{!<svg id="hamburg_landtag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!</table>!} 
+{!<tr><th>Party</th><th>Vote share</th><th>Landtag Seats</th></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td!} **[+ spd_hamburg_elections_vote +]%** {!</td><td!} **[+ spd_r_hamburg +]%** {!</td></tr>!}
+
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td!} **[+ sapd_hamburg_elections_vote +]%** {!</td><td!} **[+ sapd_r_hamburg +]%** {!</td></tr>!} ?]
+
+[? if uspd_joined < 3: {!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td!} **[+ uspd_hamburg_elections_vote +]%** {!</td><td!} **[+ uspd_r_hamburg +]%** {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td!} **[+ kpd_hamburg_elections_vote +]%** {!</td><td!} **[+ kpd_r_hamburg +]%**  {!</td></tr>!}
+
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td!} **[+ ddp_hamburg_elections_vote +]%** {!</td><td!} **[+ ddp_r_hamburg +]%**  {!</td></tr>!} ?]
+
+[? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td!} **[+ lvp_hamburg_elections_vote +]%** {!</td><td!} **[+ lvp_r_hamburg +]%**  {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#AFAFAF'> </div> !} Others: {!</td><td!} **[+ true_other_hamburg_elections_vote +]%** {!</td><td!} **[+ true_other_r_hamburg +]%**  {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td!} **[+ z_hamburg_elections_vote +]%** {!</td><td!} **[+ z_r_hamburg +]%**  {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td!} **[+ wp_hamburg_elections_vote +]%** {!</td><td!} **[+ wp_r_hamburg +]%**  {!</td></tr>!}
+
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td!} **[+ dvp_hamburg_elections_vote +]%** {!</td><td!} **[+ dvp_r_hamburg +]%**  {!</td></tr>!} ?]
+
+[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td!} **[+ kvp_hamburg_elections_vote +]%** {!</td><td!} **[+ kvp_r_hamburg +]%**  {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td!} **[+ dnvp_hamburg_elections_vote +]%** {!</td><td!} **[+ dnvp_r_hamburg +]%**  {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#DD8728'> </div> !} VRP: {!</td><td!} **[+ vrp_hamburg_elections_vote +]%** {!</td><td!} **[+ vrp_r_hamburg +]%**  {!</td></tr>!}
+
+[? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td!} **[+ dnf_hamburg_elections_vote +]%** {!</td><td!} **[+ dnf_r_hamburg +]%**  {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td!} **[+ nsdap_hamburg_elections_vote +]%** {!</td><td!} **[+ nsdap_r_hamburg +]%**  {!</td></tr>!}
+
+[? if nsfb_exsists = 1: {!<tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} **[+ nsfb_hamburg_elections_vote +]%** {!</td><td!} **[+ nsfb_r_hamburg +]%**  {!</td></tr>!} ?]
+{!].!}
+<hr id="read-marker">
+
+United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #A10000;">**USPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?] + <span style="color: #C43988;">**KPO**</span>): [+ left_coalition_hamburg +]% 
+
+Weimar Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span>): [+ weimar_coalition_hamburg +]% 
+
+Grand Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span> + <span style="color: #AFAFAF;">**Others**</span>): [+ grand_coalition_hamburg +]%
+
+Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] [? if kvp_formed :+ <span style="color: #0087DC;">**KVP**</span> ?]+ <span style="color: #0087DC;">**VRP**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #AFAFAF;">**Others**</span> + [? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?]): [+ true_bourgeois_coalition_hamburg +]%
+
+Right-Wing Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #b8996f;">**WP**</span>): [+ right_coalition_hamburg +]%
+
+@hamburg_coalition_menu
+
+
+- @weimar_coalition_hamburg
+- @grand_coalition_hamburg
+- @bourgeois_coalition_hamburg
+- @left_coalition_hamburg
+- @spd_majority_hamburg
+- @right_wing_coalition_hamburg
+- @no_coalition_hamburg
+
+@weimar_coalition_hamburg
+title: A Weimar Coalition will be formed
+choose-if: weimar_coalition_hamburg > 50 and z_relation >= 25
+on-arrival: hamburg_election_2_trigger_time = time + 48; z_relation += 2; ddp_relation += 3
+
+@grand_coalition_hamburg
+title: A Grand Coalition will be formed
+choose-if: grand_coalition_hamburg > 50 and z_relation >= 25 and dvp_relation 35
+on-arrival: hamburg_election_2_trigger_time = time + 48; z_relation += 2; dvp_relation += 3
+
+@bourgeois_coalition_hamburg
+title: A bourgeois coalition must be formed
+choose-if: true_bourgeois_coalition_hamburg > 50
+view-if: weimar_coalition_hamburg < 50 and right_coalition_hamburg < 50
+on-arrival: hamburg_election_2_trigger_time = time + 48
+
+@left_coalition_hamburg
+title: A Coalition of the Left will be formed
+subtitle: We will work alongside the KPD
+choose-if: left_coalition_hamburg > 50 and kpd_relation >= 40
+on-arrival: hamburg_election_2_trigger_time = time + 48; unemployed_kpd += 3; new_middle_others -= 2; new_middle_dvp -= 1; new_middle_spd += 1
+
+@spd_majority_hamburg
+title: We don't need any coalition partners
+view-if: spd_r_hamburg > 80
+on-arrival: hamburg_election_2_trigger_time = time + 48; workers_spd += 1; workers_dnvp -= 2; new_middle_spd += 1; new_middle_others -= 1
+
+@right_wing_coalition_hamburg
+title: The DNVP and DVP will work alongside the NSDAP
+subtitle: This should not have happened
+choose-if: right_coalition_hamburg > 50
+view-if: right_coalition_hamburg > 50
+on-arrival: hamburg_election_2_trigger_time = time + 48; rural_nsdap += 2; dvp_relation -= 2
+
+This can't end well...
+
+@no_coalition_hamburg
+title: There is no possible government arrangement
+subtitle: New elections will be called...
+on-arrival: hamburg_election_2_trigger_time = time + 3; new_middle_dnvp += 1
+view-if: weimar_coalition_hamburg < 50 and right_coalition_hamburg < 50
