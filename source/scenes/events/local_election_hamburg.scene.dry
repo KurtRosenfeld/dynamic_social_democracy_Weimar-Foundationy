@@ -514,7 +514,7 @@ go-to: hamburg_coalition_menu
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td!} **[+ nsdap_hamburg_elections_vote +]%** {!</td><td!} **[+ nsdap_r_hamburg +]%**  {!</td></tr>!}
 
 [? if nsfb_exists = 1: {!<tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} **[+ nsfb_hamburg_elections_vote +]%** {!</td><td!} **[+ nsfb_r_hamburg +]%**  {!</td></tr>!} ?]
-{!].!}
+{!</table>!}
 <hr id="read-marker">
 
 United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #A10000;">**USPD**</span> + <span style="color: #700000;">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_hamburg +]% 
