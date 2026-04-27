@@ -1,5 +1,5 @@
 title: Hamburg Landtag Election
-view-if: (year == 1922 and month == 9 and not hamburg_election_seen) or (hamburg_election_2_trigger_time == time and hamburg_election_seen_time != time)
+view-if: (year == 1924 and month == 10 and not hamburg_election_seen) or (hamburg_election_2_trigger_time == time and hamburg_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: hamburg_election_seen += 1 if hamburg_election_seen; hamburg_election_seen = 1 if not hamburg_election_seen; hamburg_election_seen_time = time
