@@ -38,7 +38,7 @@ var meck_schwe_adjustment_factors = {
     dnvp: 0.26,
     nsdap: 1.1,
     nsfb: 0.6,
-    other: 1.7,
+    other: 3.7,
     kvp: 0.6,
     dnf: 0.33
 };
@@ -228,23 +228,37 @@ if (Q.total_r_hesse > 0) {
     Q.nsfb_r_hesse = (Q.nsfb_r_hesse / Q.total_r_hesse) * 100;
 }
 
-let wp_share = 0.8;
-if (Q.stolper_program_adopted) wp_share -= 0.1;
-if (Q.dvp_reform) wp_share -= 0.1;
-let true_other_share = 0.2;
+let farm_share = 0.75;
+if (Q.dnvp_ideology == "Moderate") farm_share -= 0.1;
+let wp_share = 0.02;
+if (Q.stolper_program_adopted) wp_share -= 0.01;
+if (Q.dvp_reform) wp_share -= 0.01;
+let vrp_share = 0.16;
+if (Q.stolper_program_adopted) vrp_share -= 0.07;
+let true_other_share = 0.07
 
-let total_share = wp_share + true_other_share;
+let total_share = wp_share + farm_share + vrp_share + true_other_share;
 
+farm_share = (farm_share / total_share);
 wp_share = (wp_share / total_share);
+vrp_share = (vrp_share / total_share);
 true_other_share = (true_other_share / total_share);
+
+Q.farm_hesse_elections_vote = Q.other_hesse_elections_vote*farm_share;
+Q.farm_r_hesse = Q.other_r_hesse*farm_share;
 
 Q.wp_hesse_elections_vote = Q.other_hesse_elections_vote*wp_share;
 Q.wp_r_hesse = Q.other_r_hesse*wp_share;
 
-Q.true_other_hesse_elections_vote = Q.other_hesse_elections_vote*true_other_share;
+Q.vrp_hesse_elections_vote = Q.other_hesse_elections_vote*vrp_share;
+Q.vrp_r_hesse = Q.other_r_hesse*vrp_share;
+
 Q.true_other_r_hesse = Q.other_r_hesse*true_other_share;
 
-function allocateSeats(percentages, totalSeats = 62) {
+Q.kpo_saxony_elections_vote = Q.kpd_saxony_elections_vote*0.1.8
+Q.kpd_saxony_elections_vote -= Q.kpo_saxony_elections_vote;
+
+function allocateSeats(percentages, totalSeats = 70) {
     const exactSeats = {};
     const flooredSeats = {};
     const remainders = [];
@@ -282,6 +296,8 @@ const inputPercentages = {
     dvp_r_hesse: Q.dvp_r_hesse,
     dnvp_r_hesse: Q.dnvp_r_hesse,
     nsdap_r_hesse: Q.nsdap_r_hesse,
+    farm_r_hesse: Q.farm_r_hesse,
+    vrp_r_hesse: Q.vrp_r_hesse,
     wp_r_hesse: Q.wp_r_hesse,
     true_other_r_hesse: Q.true_other_r_hesse,
     kvp_r_hesse: Q.kvp_r_hesse,
@@ -476,16 +492,24 @@ go-to: hesse_coalition_menu
 
 [? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td!} **[+ dvp_hesse_elections_vote +]%** {!</td><td!} **[+ dvp_r_hesse +]%**  {!</td></tr>!} ?]
 
+{!<tr><td><div class="box" style='background-color:#DD8728'> </div> !} VRP: {!</td><td!} **[+ vrp_hesse_elections_vote +]%** {!</td><td!} **[+ vrp_r_hesse +]%**  {!</td></tr>!}
+
 {!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td!} **[+ wp_hesse_elections_vote +]%** {!</td><td!} **[+ wp_r_hesse +]%**  {!</td></tr>!}
+
+[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td!} **[+ kvp_hesse_elections_vote +]%** {!</td><td!} **[+ kvp_r_hesse +]%**  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#AFAFAF'> </div> !} Others: {!</td><td!} **[+ true_other_hesse_elections_vote +]%** {!</td><td!} **[+ true_other_r_hesse +]%**  {!</td></tr>!}
 
-[? if nsfb_exsists = 1: {!<tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} **[+ nsfb_hesse_elections_vote +]%** {!</td><td!} **[+ nsfb_r_hesse +]%**  {!</td></tr>!} ?]
-
-[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td!} **[+ kvp_hesse_elections_vote +]%** {!</td><td!} **[+ kvp_r_hesse +]%**  {!</td></tr>!} ?]
+{!<tr><td><div class="box" style='background-color:#16681D'> </div> !} HBB: {!</td><td!} **[+ farm_hesee_elections_vote +]%** {!</td><td!} **[+ farm_r_hesse +]%**  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td!} **[+ dnvp_hesse_elections_vote +]%** {!</td><td!} **[+ dnvp_r_hesse +]%**  {!</td></tr>!}
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td!} **[+ dnf_hesse_elections_vote +]%** {!</td><td!} **[+ dnf_r_hesse +]%**  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td!} **[+ nsdap_hesse_elections_vote +]%** {!</td></tr>!}<td> **[+ nsdap_r_hesse +]%**  {!</td></tr>!}
+
+[? if nsfb_exsists = 1: {!<tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} **[+ nsfb_hesse_elections_vote +]%** {!</td><td!} **[+ nsfb_r_hesse +]%**  {!</td></tr>!} ?]
+
+
+
+@hesse_coalition_menu
