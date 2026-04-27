@@ -26,7 +26,7 @@ The Hesse state elections are to be held now.
 @hesse
 on-arrival: {!
 
-var meck_schwe_adjustment_factors = {
+var hesse_adjustment_factors = {
     spd: 1.27,
     sapd: 1.2,
     uspd: 1.06,
@@ -522,7 +522,7 @@ go-to: hesse_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#C43988'> </div> !}KPO: {!</td><td>!} [+ kpo_saxony_elections_vote +]% {!</td><td>!} **[+ kpo_r_hesse +]%**  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#3D3D3D'> </div> !} Z: {!</td><td!} **[+ z_hesse_elections_vote +]%** {!</td><td!} **[+ z_r_hesse +]%**  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td!} **[+ z_hesse_elections_vote +]%** {!</td><td!} **[+ z_r_hesse +]%**  {!</td></tr>!}
 
 [? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td!} **[+ ddp_hesse_elections_vote +]%** {!</td><td!} **[+ ddp_r_hesse +]%**  {!</td></tr>!} ?]
 
