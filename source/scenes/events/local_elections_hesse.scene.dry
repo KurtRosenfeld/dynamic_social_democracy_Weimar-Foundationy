@@ -322,8 +322,13 @@ Q.social_liberal_coalition_hesse = parseFloat((Q.spd_r_hesse + Q.ddp_r_hesse + Q
 
 Q.wp_hesse_elections_vote = (Q.wp_hesse_elections_vote != undefined ? parseFloat(Q.wp_hesse_elections_vote.toFixed(1)) : 0);
 Q.true_other_hesse_elections_vote = (Q.true_other_hesse_elections_vote != undefined ? parseFloat(Q.true_other_hesse_elections_vote.toFixed(1)) : 0);
+Q.vrp_hesse_elections_vote = (Q.vrp_hesse_elections_vote != undefined ? parseFloat(Q.vrp_hesse_elections_vote.toFixed(1)) : 0);
+Q.farm_hesse_elections_vote = (Q.farm_hesse_elections_vote != undefined ? parseFloat(Q.farm_hesse_elections_vote.toFixed(1)) : 0);
 Q.wp_r_hesse = (Q.wp_r_hesse != undefined ? parseFloat(Q.wp_r_hesse.toFixed(1)) : 0);
 Q.true_other_r_hesse = (Q.true_other_r_hesse != undefined ? parseFloat(Q.true_other_r_hesse.toFixed(1)) : 0);
+Q.vrp_r_hesse = (Q.vrp_r_hesse != undefined ? parseFloat(Q.vrp_r_hesse.toFixed(1)) : 0);
+Q.farm_r_hesse = (Q.wp_r_hesse != undefined ? parseFloat(Q.farm_r_hesse.toFixed(1)) : 0);
+
 
 !}
 on-display: {!
