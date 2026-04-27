@@ -27,18 +27,18 @@ The Hesse state elections are to be held now.
 on-arrival: {!
 
 var hesse_adjustment_factors = {
-    spd: 1.27,
-    sapd: 1.2,
-    uspd: 1.11,
+    spd: 1.23,
+    sapd: 1.13,
+    uspd: 1.02,
     kpd: 0.82,
-    z: 1.13,
-    ddp: 1.1,
+    z: 1.07,
+    ddp: 1.09,
     lvp: 1.03,
     dvp: 1.01,
     dnvp: 0.28,
     nsdap: 1.1,
     nsfb: 0.6,
-    other: 3.7,
+    other: 3.8,
     kvp: 0.5,
     dnf: 0.33
 };
@@ -228,14 +228,14 @@ if (Q.total_r_hesse > 0) {
     Q.nsfb_r_hesse = (Q.nsfb_r_hesse / Q.total_r_hesse) * 100;
 }
 
-let farm_share = 0.8;
+let farm_share = 0.82;
 if (Q.dnvp_ideology == "Moderate") farm_share -= 0.1;
 let wp_share = 0.02;
 if (Q.stolper_program_adopted) wp_share -= 0.01;
 if (Q.dvp_reform) wp_share -= 0.01;
-let vrp_share = 0.11;
+let vrp_share = 0.1;
 if (Q.stolper_program_adopted) vrp_share -= 0.07;
-let true_other_share = 0.07
+let true_other_share = 0.06
 
 let total_share = wp_share + farm_share + vrp_share + true_other_share;
 
@@ -568,7 +568,7 @@ United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span styl
 
 Weimar Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span>): [+ weimar_coalition_hesse +]% 
 
-Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] <span style="color: #0087DC;">**KVP**</span> + <span style="color: #0087DC;">**VRP**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #AFAFAF;">**Others**</span> + [? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?]): [+ true_bourgeois_coalition_hesse +]%
+Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #0087DC;">**KVP**</span> + <span style="color: #0087DC;">**VRP**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #AFAFAF;">**Others**</span> + [? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?]): [+ true_bourgeois_coalition_hesse +]%
 
 Right-Wing Coalition (<span style="color: #006400;">**HBB**</span> + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span> + <span style="color: #AFAFAF;">**Others**</span>): [+ right_coalition_hesse +]%
 
