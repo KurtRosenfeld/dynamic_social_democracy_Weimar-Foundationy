@@ -570,7 +570,7 @@ Weimar Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_f
 
 Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] [? if kvp_formed :+ <span style="color: #0087DC;">**KVP**</span> ?]+ <span style="color: #0087DC;">**VRP**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #AFAFAF;">**Others**</span> + [? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?]): [+ true_bourgeois_coalition_hesse +]%
 
-Right-Wing Coalition (<span style="color: #006400;">**HBB**</span> + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span> + <span style="color: #C0A054;">**DVP**</span>?] + <span style="color: #AFAFAF;">**Others**</span>): [+ right_coalition_hesse +]%
+Right-Wing Coalition (<span style="color: #006400;">**HBB**</span> + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span> + <span style="color: #C0A054;">**DVP**</span> + <span style="color: #AFAFAF;">**Others**</span>): [+ right_coalition_hesse +]%
 
 @hesse_coalition_menu
 
