@@ -545,7 +545,7 @@ on-arrival: hamburg_election_2_trigger_time = time + 48; z_relation += 2; ddp_re
 
 @grand_coalition_hamburg
 title: A Grand Coalition will be formed
-choose-if: grand_coalition_hamburg > 50 and z_relation >= 25 and dvp_relation 35
+choose-if: grand_coalition_hamburg > 50 and z_relation >= 25 and dvp_relation >= 35
 on-arrival: hamburg_election_2_trigger_time = time + 48; z_relation += 2; dvp_relation += 3
 
 @bourgeois_coalition_hamburg
