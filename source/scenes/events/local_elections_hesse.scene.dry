@@ -331,8 +331,8 @@ Q.other_r_hesse = Q.wp_r_hesse + Q.true_other_r_hesse + Q.farm_r_hesse + Q.vrp_r
 
 Q.left_coalition_hesse = parseFloat((Q.spd_r_hesse + Q.kpd_r_hesse + Q.kpo_r_hesse + Q.sapd_r_hesse + Q.uspd_r_hesse).toFixed(1));
 Q.bourgeois_coalition_hesse = parseFloat((Q.ddp_r_hesse + Q.dvp_r_hesse + Q.lvp_r_hesse + Q.kvp_r_hesse + Q.true_other_r_hesse + Q.dnvp_r_hesse + Q.z_r_hesse + Q.wp_r_hesse + Q.vrp_r_hesse).toFixed(1));
-Q.right_coalition_hesse = parseFloat((Q.dnvp_r_hesse + Q.nsdap_r_hesse + Q.farm_r_hesse + Q.true_others_r_hesse).toFixed(1));
-Q.true_bourgeois_coalition_hesse = parseFloat((Q.ddp_r_hesse + Q.dvp_r_hesse + Q.lvp_r_hesse + Q.kvp_r_hesse + Q.other_r_hesse + Q.z_r_hesse + Q.wp_r_hesse + Q.vrp_r_hesse).toFixed(1));
+Q.right_coalition_hesse = parseFloat((Q.dnvp_r_hesse + Q.nsdap_r_hesse + Q.farm_r_hesse + Q.true_other_r_hesse).toFixed(1));
+Q.true_bourgeois_coalition_hesse = parseFloat((Q.ddp_r_hesse + Q.dvp_r_hesse + Q.lvp_r_hesse + Q.kvp_r_hesse + Q.true_other_r_hesse + Q.z_r_hesse + Q.wp_r_hesse + Q.vrp_r_hesse).toFixed(1));
 Q.weimar_coalition_hesse = parseFloat((Q.spd_r_hesse + Q.ddp_r_hesse + Q.lvp_r_hesse + Q.z_r_hesse).toFixed(1));
 
 Q.wp_hesse_elections_vote = (Q.wp_hesse_elections_vote != undefined ? parseFloat(Q.wp_hesse_elections_vote.toFixed(1)) : 0);
@@ -568,9 +568,9 @@ United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span styl
 
 Weimar Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span>): [+ weimar_coalition_hesse +]% 
 
-Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #0087DC;">**KVP**</span> + <span style="color: #0087DC;">**VRP**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #AFAFAF;">**Others**</span> + [? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?]): [+ true_bourgeois_coalition_hesse +]%
+Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] [? if kvp_formed :+ <span style="color: #0087DC;">**KVP**</span> ?]+ <span style="color: #0087DC;">**VRP**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #AFAFAF;">**Others**</span> + [? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?]): [+ true_bourgeois_coalition_hesse +]%
 
-Right-Wing Coalition (<span style="color: #006400;">**HBB**</span> + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span> + <span style="color: #AFAFAF;">**Others**</span>): [+ right_coalition_hesse +]%
+Right-Wing Coalition (<span style="color: #006400;">**HBB**</span> + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span> + <span style="color: #C0A054;">**DVP**</span>?] + <span style="color: #AFAFAF;">**Others**</span>): [+ right_coalition_hesse +]%
 
 @hesse_coalition_menu
 
@@ -605,11 +605,11 @@ view-if: spd_r_hesse > 36
 on-arrival: hesse_election_2_trigger_time = time + 48; workers_spd += 1; workers_z -= 1; new_middle_spd += 1; rural_others -= 1
 
 @right_wing_coalition_hesse
-title: The HBB will work alongside the NSDAP
+title: The HBB and DVP will work alongside the NSDAP
 subtitle: This should not have happened
 choose-if: right_coalition_hesse > 50
 view-if: right_coalition_hesse > 50
-on-arrival: hesse_election_2_trigger_time = time + 48; rural_nsdap += 2; dvp_relation -= 1
+on-arrival: hesse_election_2_trigger_time = time + 48; rural_nsdap += 2; dvp_relation -= 2
 
 This can't end well...
 
