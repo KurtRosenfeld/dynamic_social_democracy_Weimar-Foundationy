@@ -384,13 +384,31 @@ data.push({
     "seats": Math.round(Q.z_r_hesse * 0.7),
     "color": "#3D3D3D"
 });
-             
+
+if (Q.dvp_r_hesse && !Q.lvp_formed && Q.dvp_exist) {
+    data.push({
+        "id": "dvp",
+        "legend": "DVP",
+        "name": "DVP",
+        "seats": Math.round(Q.dvp_r_hesse * 0.7),
+    });
+}
+
 if (Q.wp_r_hesse) {
     data.push({
         "id": "wp",
         "legend": "WP",
         "name": "WP",
-        "seats": Math.round(Q.wp_r_hesse * 0.7),
+        "seats": Math.round(Q.wp_r_saxony * 0.7),
+    });
+}
+
+if (Q.vrp_r_hesse) {
+    data.push({
+        "id": "vrp",
+        "legend": "VRP",
+        "name": "VRP",
+        "seats": Math.round(Q.vrp_r_saxony * 0.7),
     });
 }
 
@@ -403,21 +421,21 @@ if (Q.true_other_r_hesse) {
     });
 }
 
-if (Q.dvp_r_hesse && !Q.lvp_formed && Q.dvp_exist) {
-    data.push({
-        "id": "dvp",
-        "legend": "DVP",
-        "name": "DVP",
-        "seats": Math.round(Q.dvp_r_hesse * 0.7),
-    });
-}
-
 if (Q.kvp_formed && Q.kvp_r_hesse) {
     data.push({
         "id": "kvp",
         "legend": "KVP",
         "name": "KVP",
         "seats": Math.round(Q.kvp_r_hesse * 0.7),
+    });
+}
+
+if (Q.farm_r_hesse) {
+    data.push({
+        "id": "farm2",
+        "legend": "Farm",
+        "name": "Farm",
+        "seats": Math.round(Q.farm_r_saxony * 0.7),
     });
 }
 
