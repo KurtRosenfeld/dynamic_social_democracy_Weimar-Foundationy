@@ -536,7 +536,7 @@ on-arrival: meck_schwe_election_2_trigger_time = time + 48; workers_kpd += 2; ru
 
 @spd_majority_meck_schwe
 title: We don't need any coalition partners
-view-if: spd_r_meck_schwe > 32
+view-if: spd_r_meck_schwe > 50
 on-arrival: meck_schwe_election_2_trigger_time = time + 48; workers_spd += 1; workers_dnvp -= 2; rural_spd += 1; rural_dnvp -= 1
 
 @right_wing_coalition_meck_schwe
