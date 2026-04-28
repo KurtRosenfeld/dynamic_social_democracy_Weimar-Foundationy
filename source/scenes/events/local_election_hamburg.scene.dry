@@ -562,7 +562,7 @@ on-arrival: hamburg_election_2_trigger_time = time + 48; unemployed_kpd += 3; ne
 
 @spd_majority_hamburg
 title: We don't need any coalition partners
-view-if: spd_r_hamburg > 80
+view-if: spd_r_hamburg > 50
 on-arrival: hamburg_election_2_trigger_time = time + 48; workers_spd += 1; workers_dnvp -= 2; new_middle_spd += 1; new_middle_others -= 1
 
 @right_wing_coalition_hamburg
