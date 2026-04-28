@@ -601,7 +601,7 @@ on-arrival: hesse_election_2_trigger_time = time + 48; workers_kpd += 1; rural_o
 
 @spd_majority_hesse
 title: We don't need any coalition partners
-view-if: spd_r_hesse > 36
+view-if: spd_r_hesse > 50
 on-arrival: hesse_election_2_trigger_time = time + 48; workers_spd += 1; workers_z -= 1; new_middle_spd += 1; rural_others -= 1
 
 @right_wing_coalition_hesse
