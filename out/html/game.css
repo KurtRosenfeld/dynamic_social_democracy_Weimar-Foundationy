@@ -822,6 +822,10 @@ th {
   fill: #b8996f;
 }
 
+.seat.hb {
+  fill: #CEDD8A;
+}
+
 .seat.vrp {
   fill: #0075EB;
 }
