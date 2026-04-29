@@ -45,7 +45,7 @@ Q.braun_advisor = 0;
 Q.ebert_advisor = 0;
 Q.severing_advisor = 0; 
 Q.reformists_resign = 1; 
-if (Q.centris_resign == 1) {
+if (Q.centrists_resign == 1) {
     if (Q.wels_advisor == 1) Q.n_advisors -= 1;
     if (Q.muller_advisor == 1) Q.n_advisors -= 1;
     if (Q.scheidemann_advisor == 1) Q.n_advisors -= 1;
