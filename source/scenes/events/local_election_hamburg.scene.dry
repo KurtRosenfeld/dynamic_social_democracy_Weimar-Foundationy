@@ -561,7 +561,8 @@ choose-if: left_coalition_hamburg > 50 and kpd_relation >= 40
 on-arrival: hamburg_election_2_trigger_time = time + 48; unemployed_kpd += 3; new_middle_others -= 2; new_middle_dvp -= 1; new_middle_spd += 1
 
 @spd_majority_hamburg
-title: We don't need any coalition partners
+title: SPD majority
+subtitle: We don't need any coalition partners
 view-if: spd_r_hamburg > 50
 on-arrival: hamburg_election_2_trigger_time = time + 48; workers_spd += 1; workers_dnvp -= 2; new_middle_spd += 1; new_middle_others -= 1
 
