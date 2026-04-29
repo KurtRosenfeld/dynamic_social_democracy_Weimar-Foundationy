@@ -306,7 +306,7 @@ for (const party in allocatedSeats) {
 Q.other_r_bremen = Q.wp_r_bremen + Q.true_other_r_bremen + Q.hb_r_bremen;
 
 Q.left_coalition_bremen = parseFloat((Q.spd_r_bremen + Q.kpd_r_bremen + Q.sapd_r_bremen + Q.uspd_r_bremen).toFixed(1));
-Q.grand_coalition_bremen = parseFloat((Q.ddp_r_bremen + Q.dvp_r_bremen + Q.lvp_r_bremen + Q.spd_r_bremen + Q.hb_other_r_bremen + Q.z_r_bremen).toFixed(1));
+Q.grand_coalition_bremen = parseFloat((Q.ddp_r_bremen + Q.dvp_r_bremen + Q.lvp_r_bremen + Q.spd_r_bremen + Q.hb_r_bremen + Q.z_r_bremen).toFixed(1));
 Q.right_coalition_bremen = parseFloat((Q.dnvp_r_bremen + Q.nsdap_r_bremen + Q.wp_r_bremen + Q.dvp_r_bremen + Q.true_other_r_bremen).toFixed(1));
 Q.true_bourgeois_coalition_bremen = parseFloat((Q.ddp_r_bremen + Q.dvp_r_bremen + Q.lvp_r_bremen + Q.kvp_r_bremen + Q.true_other_r_bremen + Q.z_r_bremen + Q.wp_r_bremen + Q.hb_r_bremen).toFixed(1));
 Q.weimar_coalition_bremen = parseFloat((Q.spd_r_bremen + Q.ddp_r_bremen + Q.lvp_r_bremen + Q.z_r_bremen).toFixed(1));
