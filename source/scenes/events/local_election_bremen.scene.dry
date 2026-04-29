@@ -27,7 +27,7 @@ The Bremen state elections are to be held now.
 on-arrival: {!
 
 var bremen_adjustment_factors = {
-    spd: 1.28,
+    spd: 1.27,
     sapd: 1,
     uspd: 0.82,
     kpd: 1.2,
@@ -165,11 +165,11 @@ var bremen_adjustment_r_factors = {
     spd: 1.02,
     sapd: 1.0,
     uspd: 1.0,
-    kpd: 0.98,
+    kpd: 0.94,
     ddp: 1.01,
     lvp: 1.01,
     dvp: 1.0,
-    dnvp: 0.97,
+    dnvp: 0.96,
     nsdap: 0.99,
     other: 1.02,
     kvp: 0.7,
@@ -227,6 +227,8 @@ if (Q.total_r_bremen > 0) {
     Q.z_r_bremen = (Q.z_r_bremen / Q.total_r_bremen) * 100;
     Q.nsfb_r_bremen = (Q.nsfb_r_bremen / Q.total_r_bremen) * 100;
 }
+
+if (Q.in_toleration) spd_bremen_adjustment_factor -= 0.1
 
 let hb_share = 0.71;
 if (Q.president.party = "I") hb_share += 0.1
