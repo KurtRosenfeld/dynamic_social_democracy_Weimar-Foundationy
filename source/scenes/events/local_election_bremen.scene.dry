@@ -288,7 +288,7 @@ const inputPercentages = {
     dvp_r_bremen: Q.dvp_r_bremen,
     dnvp_r_bremen: Q.dnvp_r_bremen,
     nsdap_r_bremen: Q.nsdap_r_bremen,
-    hb_r_bremen: Q.vrp_r_bremen,
+    hb_r_bremen: Q.hb_r_bremen,
     wp_r_bremen: Q.wp_r_bremen,
     true_other_r_bremen: Q.true_other_r_bremen,
     kvp_r_bremen: Q.kvp_r_bremen,
