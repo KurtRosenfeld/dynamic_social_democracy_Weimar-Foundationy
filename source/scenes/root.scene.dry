@@ -144,8 +144,11 @@ Q.cvp_ideology = "Moderate";
 Q.stegerwald_path = 0;
 Q.nsdap_leader = "Hitler";
 Q.nsdap_chancellor = "Hitler";
-Q.dvfp_leader = "Ludendorff";
-Q.spd_party_leader = "Wels, Müller"
+Q.dvfp_leader = "Graefe";
+Q.spd_party_leader_1 = "Wels"
+Q.spd_party_leader_2 = "Müller"
+Q.spd_party_leader_3 = "vacant"
+Q.spd_party_leader_n = 2
 Q.ideology = "reformist";
 
 // hmm... maybe we can play nice with Hindenburg???
