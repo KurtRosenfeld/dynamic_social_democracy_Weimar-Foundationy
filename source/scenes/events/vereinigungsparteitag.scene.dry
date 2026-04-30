@@ -19,12 +19,13 @@ What will we offer them
 
 - @lowest_uspd: Let at least one former <span style="color: #AA0000;">**USPD**</span> member into each important section of the executive commity.
 - @middle_uspd: The above and a new programm (eventually...).
+- @good_uspd: The above and a new party leadership
 - @high_uspd: The above and no coalitions with the bourgeois parties.
 - @highest_uspd: Dedicate ourselves to the revolutionary effort.
 - @no_uspd: Ok, we won't make concessions.
 
 @lowest_uspd
-on-arrival: spd_party_leader = "Wels, Müller, Crispien"
+on-arrival: spd_party_leader_3 = "Crispien"; spd_party_leader_n += 1
 
 Former <span style="color: #AA0000;">**USPD**</span> leader Arthur Crispien will become our third chairman alongside Hermann Müller and Otto Wels.
 
@@ -64,6 +65,13 @@ on-arrival: new_party_programm += 1
 go-to: lowest_uspd
 
 A new party programm is surely logical.
+
+@good_uspd
+choose-if: left_strength >= 10
+on-arrival: idk = 5
+go-to: lowest_uspd
+
+New leadership altogether, why not?
 
 @high_uspd
 view-if: left_strength >= 10
