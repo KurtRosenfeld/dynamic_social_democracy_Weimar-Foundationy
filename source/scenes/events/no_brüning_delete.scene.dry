@@ -1,0 +1,23 @@
+title: Brüning should not be chancellor
+subtitle: wtf
+view-if: chacellor == "Brüning" and year <= 1927
+new-page: true
+max-visits: 1
+on-arrival: inflation -= 1
+face-image: img/portraits/BrüningHeinrich.jpg
+tags: event
+
+= Brüning should not be chancellor
+
+- @wirth: Wirth
+- @cuno: Cuno
+- @muller: Müller
+
+@wirth
+on-arrival: chancellor = "Wirth"; chancellor_party = "Z"
+
+@cuno
+on-arrival: chancellor = "Cuno"; chancellor_party = "I"
+
+@muller
+on-arrival: chancellor = "Müller"; chancellor_party = "SPD"
