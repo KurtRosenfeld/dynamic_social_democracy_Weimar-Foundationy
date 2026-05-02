@@ -231,11 +231,11 @@ if (Q.total_r_bremen > 0) {
 if (Q.in_toleration) spd_bremen_adjustment_factor -= 0.1
 
 let hb_share = 0.71;
-if (Q.president.party = "I") hb_share += 0.1
+if (Q.president.party == "I") hb_share += 0.1
 let wp_share = 0.0;
-if (Q.chancellor = "Brüning") wp_share += 0.2;
+if (Q.chancellor == "Brüning") wp_share += 0.2;
 let true_other_share = 0.25;
-if (Q.chancellor_party = "Z") true_other_share -= 0.1
+if (Q.chancellor_party == "Z") true_other_share -= 0.1
 
 let total_share = wp_share + hb_share + true_other_share;
 
