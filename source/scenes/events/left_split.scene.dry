@@ -101,6 +101,16 @@ if (Q.levi_advisor == 1) Q.n_advisors -= 1;
 Q.levi_advisor = 0; 
 Q.kpd_relation -= 8; 
 
+if (Q.centrists_resign == 1) {
+    if (Q.breitscheid_advisor == 1) Q.n_advisors -= 1;
+    if (Q.crispien_advisor == 1) Q.n_advisors -= 1;
+    if (Q.sender_advisor == 1) Q.n_advisors -= 1;
+
+    Q.breitscheid_advisor = 0;
+    Q.crispien_advisor = 0;
+    Q.sender_advisor = 0;
+}
+
 if (Q.seydewitz_advisor == 1) Q.n_advisors -= 1; 
 Q.seydewitz_advisor = 0; 
 if (Q.rosenfeld_advisor == 1) Q.n_advisors -= 1; 
