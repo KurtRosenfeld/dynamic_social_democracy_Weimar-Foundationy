@@ -482,7 +482,7 @@ go-to: hamburg_coalition_menu
 {!<svg id="hamburg_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td>Party</th><th>Vote share</th><th>Landtag Seats</th></tr>!}
+{!<tr><th>Party</th><th>Vote share</th><th>Landtag Seats</th></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td!} **[+ spd_hamburg_elections_vote +]%** {!</td><td!} **[+ spd_r_hamburg +]%** {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td!} **[+ sapd_hamburg_elections_vote +]%** {!</td><td!} **[+ sapd_r_hamburg +]%** {!</td></tr>!} ?]
