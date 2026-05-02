@@ -481,7 +481,7 @@ go-to: bremen_coalition_menu
 
 {!<table>!}
 {!<tr><td>Party</th><th>Vote share</th><th>Landtag Seats</th></tr>!}
-{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!<td><td!} **[+ spd_bremen_elections_vote +]%** {!<td><td!} **[+ spd_r_bremen +]%** {!/<tr></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!<td><td!} **[+ spd_bremen_elections_vote +]%** {!<td><td!} **[+ spd_r_bremen +]%** {!/<td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td!} **[+ sapd_bremen_elections_vote +]%** {!</td><td!} **[+ sapd_r_bremen +]%** {!</td></tr>!} ?]
 
@@ -509,7 +509,7 @@ go-to: bremen_coalition_menu
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td!} **[+ dnf_bremen_elections_vote +]%** {!</td><td!} **[+ dnf_r_bremen +]%**  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td!} **[+ nsdap_bremen_elections_vote +]%** {!</td><td!} **[+ nsdap_r_bremen +]%**  {!/<tr></tr>!}
+{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td!} **[+ nsdap_bremen_elections_vote +]%** {!</td><td!} **[+ nsdap_r_bremen +]%**  {!/<td></tr>!}
 
 [? if nsfb_exists = 1: {!<tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} **[+ nsfb_bremen_elections_vote +]%** {!</td><td!} **[+ nsfb_r_bremen +]%**  {!</td></tr>!} ?]
 {!</tr>!}
