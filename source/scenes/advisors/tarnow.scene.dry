@@ -1,0 +1,26 @@
+title: Fritz Tarnow
+is-pinned-card: true
+tags: advisor, labor
+card-image: img/portraits/TarnowFritz.jpg
+view-if: tarnow_advisor = 1
+new-page: true
+#face-image: img/portraits/TarnowFritz.jpg
+
+= Fritz Tarnow
+
+Tarnow is a unionist and economist.
+
+- @economic_democracy_
+- @economic_program
+- @root: Return to main
+
+@economic_democracy_
+title: Economic Democracy
+subtitle: Enact policies to build a more democratic economy.
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : <span style="color: #c00000;">SPD</span> not in government: ?] [? if labor_minister_party != "SPD" or (finance_minister_party != "SPD" and economic_minister_party != "SPD") : We do not have the necessary government ministers. ?] [? if cvp_economy_accepted : Our coalition agreement stipulates against socialization. ?]
+choose-if: advisor_action_timer == 0 and spd_in_government == 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and (labor_minister_party == "SPD")
+on-arrival: advisor_action_timer = 6; economic_democracy_timer -= 10; last_advisor_action = 1
+go-to: economic_democracy
+
+@economic_program
+title: econ
