@@ -4536,6 +4536,8 @@ if (!Q.dvp_exist) {
     if (Q.finance_minister_party == "DVP") Q.finance_minister_party = "DNVP";
 }
 
+if (Q.postal_minister_party !== "SPD" && in_grand_coalition) Q.postal_minister_party = "BVP"; Q.postal_minister = "Schätzel"};
+
 const ministries = [
     "foreign_minister_party",
     "interior_minister_party",
