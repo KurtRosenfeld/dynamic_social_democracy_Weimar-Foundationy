@@ -4527,7 +4527,7 @@ if (Q.agriculture_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q
 
 if (Q.reichswehr_minister_party !== "SPD") {Q.reichswehr_minister_party = "I"; Q.reichswehr_minister = "Groener"};
 
-if (Q.postal_minister_party !== "SPD" && in_grand_coalition) Q.postal_minister_party = "BVP"; Q.postal_minister = "Schätzel"};
+if (Q.postal_minister_party !== "SPD" && Q.in_grand_coalition) Q.postal_minister_party = "BVP"; Q.postal_minister = "Schätzel"};
 
 if (!Q.dvp_exist) {
     if (Q.foreign_minister_party == "DVP") { 
@@ -4547,7 +4547,6 @@ const ministries = [
     "economic_minister_party",
     "finance_minister_party",
     "agriculture_minister_party"
-    "postal_minister_party"
 ];
 
 ministries.forEach(ministry => {
