@@ -40,7 +40,6 @@ subtitle: Schmidt is the Postal Minister.
 choose-if: advisor_action_timer <= 0 and spd_in_government and postal_minister == "Schmidt"
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: #c00000;">SPD</span> is not in government. ?][? if postal_minister != "Schmidt": Schmidt is not the Postal Minister. ?]
 on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
-go-to: postal_policy
 
 @transport
 title: Transport Policy
@@ -48,7 +47,6 @@ subtitle: Schmidt is the Minister of Transport.
 choose-if: advisor_action_timer <= 0 and spd_in_government and transport_minister == "Schmidt"
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: #c00000;">SPD</span> is not in government. ?][? if transport_minister != "Schmidt": Schmidt is not the Transport Minister. ?]
 on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
-go-to: transport_policy
 
 @finance_ministry_
 title: Fiscal Policy
