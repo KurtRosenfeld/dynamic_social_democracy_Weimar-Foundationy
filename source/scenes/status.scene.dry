@@ -18,6 +18,8 @@ if (Q.economic_growth) {
 
 [+ month : month +] [+ year +][? if rubicon:, Week [+ week +]?]
 
+Interior Minister: [+ interior_minister +] ([+ interior_minister_party +])
+
 Resources available: [+ resources +]
 
 <span style="color: #c00000;">**SPD**</span> position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
