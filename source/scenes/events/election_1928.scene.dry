@@ -4425,7 +4425,7 @@ Julius Leber of the <span style="color: #c00000;">**SPD**</span> has been appoin
 @no_more
 title: No more ministries.
 on-arrival: {!
-if (Q.labor_minister_party !== "SPD") Q.labor_minister_party = "Z" and Q.labor_minister = "Stegerwald";
+if (Q.labor_minister_party !== "SPD") Q.labor_minister_party = "Z"; Q.labor_minister = "Stegerwald";
 
 if (Q.labor_minister_party !== "SPD" && Q.in_social_liberal_coalition) Q.labor_minister_party = Q.ddp_name;
 if (Q.labor_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q.lvp_formed) Q.labor_minister_party = "LVP";
