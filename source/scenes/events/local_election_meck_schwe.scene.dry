@@ -542,7 +542,7 @@ on-arrival: meck_schwe_election_2_trigger_time = time + 48; workers_spd += 1; wo
 @right_wing_coalition_meck_schwe
 title: The DNVP and DVP are tolerated by the DVFP?
 subtitle: WTF!!!!!!!!!!!!!!!!!!
-choose-if: right_coalition_meck_schwe > 50 or if (social_liberal_coalition_meck_schwe < 50 and right_coalition_meck_schwe < 50 and right_coalition_meck_schwe < 50) (right_coalition_meck_schwe + wp_r_meck_schwe) > 50
+choose-if: right_coalition_meck_schwe > 50
 view-if: right_coalition_meck_schwe > 50
 on-arrival: meck_schwe_election_2_trigger_time = time + 48; rural_nsdap += 1; dvp_relation -= 3
 
