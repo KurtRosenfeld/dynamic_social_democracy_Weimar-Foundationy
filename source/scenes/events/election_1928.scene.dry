@@ -4517,8 +4517,6 @@ const ministries = [
     "economic_minister_party",
     "finance_minister_party",
     "agriculture_minister_party"
-    "postal_minister_party"
-    "transport_minister_party"
 ];
 
 ministries.forEach(ministry => {
