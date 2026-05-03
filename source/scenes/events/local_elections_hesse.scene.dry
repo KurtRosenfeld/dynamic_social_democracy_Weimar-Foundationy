@@ -558,7 +558,7 @@ go-to: hesse_coalition_menu
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td!} **[+ dnf_hesse_elections_vote +]%** {!</td><td!} **[+ dnf_r_hesse +]%**  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td!} **[+ nsdap_hesse_elections_vote +]%** {!</td></tr>!} **[+ nsdap_r_hesse +]%**  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td!} **[+ nsdap_hesse_elections_vote +]%** {!</td></td>!} **[+ nsdap_r_hesse +]%**  {!</td></tr>!}
 
 [? if nsfb_exsists = 1: {!<tr><td><div class="box" style='background-color:#59250F'> </div> !} NSFB: {!</td><td!} **[+ nsfb_hesse_elections_vote +]%** {!</td><td!} **[+ nsfb_r_hesse +]%**  {!</td></tr>!} ?]
 {!</table>!}
