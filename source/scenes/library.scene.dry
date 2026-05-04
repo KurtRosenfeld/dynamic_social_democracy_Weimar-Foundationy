@@ -126,6 +126,7 @@ Current cabinet:
 
 Labor: 
 [? if labor_minister_party == "SPD": <span style="color: #c00000;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
+[? if labor_minister_party == "USPD": <span style="color: #AA0000;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
 [? if labor_minister_party == "KPD": <span style="color: #700000;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
 [? if labor_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
 [? if labor_minister_party == "LVP": <span style="color: #FFCC00;"> [+ labor_minister +] ([+ labor_minister_party +])</span> ?]
@@ -141,6 +142,7 @@ Labor:
 
 Interior: 
 [? if interior_minister_party == "SPD": <span style="color: #c00000;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
+[? if interior_minister_party == "USPD": <span style="color: #AA0000;"> [+ interior_minister +] (USPD)</span> ?]
 [? if interior_minister_party == "KPD": <span style="color: #700000;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
 [? if interior_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
 [? if interior_minister_party == "LVP": <span style="color: #FFCC00;"> [+ interior_minister +] ([+ interior_minister_party +])</span> ?]
@@ -156,6 +158,7 @@ Interior:
 
 Finance: 
 [? if finance_minister_party == "SPD": <span style="color: #c00000;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
+[? if finance_minister_party == "USPD": <span style="color: #AA0000;"> [+ finance_minister +] (USPD)</span> ?]
 [? if finance_minister_party == "KPD": <span style="color: #700000;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
 [? if finance_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
 [? if finance_minister_party == "LVP": <span style="color: #FFCC00;"> [+ finance_minister +] ([+ finance_minister_party +])</span> ?]
@@ -171,6 +174,7 @@ Finance:
 
 Economic: 
 [? if economic_minister_party == "SPD": <span style="color: #c00000;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
+[? if economic_minister_party == "USPD": <span style="color: #AA0000;"> [+ economic_minister +] (USPD)</span> ?]
 [? if economic_minister_party == "KPD": <span style="color: #700000;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
 [? if economic_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
 [? if economic_minister_party == "LVP": <span style="color: #FFCC00;"> [+ economic_minister +] ([+ economic_minister_party +])</span> ?]
@@ -186,6 +190,7 @@ Economic:
 
 Justice: 
 [? if justice_minister_party == "SPD": <span style="color: #c00000;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
+[? if justice_minister_party == "USPD": <span style="color: #AA0000;"> [+ justice_minister +] (USPD)</span> ?]
 [? if justice_minister_party == "KPD": <span style="color: #700000;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
 [? if justice_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
 [? if justice_minister_party == "LVP": <span style="color: #FFCC00;"> [+ justice_minister +] ([+ justice_minister_party +])</span> ?]
@@ -201,6 +206,7 @@ Justice:
 
 Foreign: 
 [? if foreign_minister_party == "SPD": <span style="color: #c00000;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
+[? if foreign_minister_party == "USPD": <span style="color: #AA0000;"> [+ foreign_minister +] (USPD)</span> ?]
 [? if foreign_minister_party == "KPD": <span style="color: #700000;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
 [? if foreign_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
 [? if foreign_minister_party == "LVP": <span style="color: #FFCC00;"> [+ foreign_minister +] ([+ foreign_minister_party +])</span> ?]
@@ -216,6 +222,7 @@ Foreign:
 
 Reichswehr: 
 [? if reichswehr_minister_party == "SPD": <span style="color: #c00000;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
+[? if reichswehr_minister_party == "USPD": <span style="color: #AA0000;"> [+ reichswehr_minister +] (USPD)</span> ?]
 [? if reichswehr_minister_party == "KPD": <span style="color: #700000;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
 [? if reichswehr_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
 [? if reichswehr_minister_party == "LVP": <span style="color: #FFCC00;"> [+ reichswehr_minister +] ([+ reichswehr_minister_party +])</span> ?]
@@ -231,6 +238,7 @@ Reichswehr:
 
 Agriculture: 
 [? if agriculture_minister_party == "SPD": <span style="color: #c00000;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
+[? if agriculture_minister_party == "USPD": <span style="color: #AA0000;"> [+ agriculture_minister +] (USPD)</span> ?]
 [? if agriculture_minister_party == "KPD": <span style="color: #700000;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
 [? if agriculture_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
 [? if agriculture_minister_party == "LVP": <span style="color: #FFCC00;"> [+ agriculture_minister +] ([+ agriculture_minister_party +])</span> ?]
@@ -247,6 +255,7 @@ Agriculture:
 
 Transport: 
 [? if transport_minister_party == "SPD": <span style="color: #c00000;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
+[? if transport_minister_party == "USPD": <span style="color: #AA0000;"> [+ transport_minister +] (USPD)</span> ?]
 [? if transport_minister_party == "KPD": <span style="color: #700000;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
 [? if transport_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
 [? if transport_minister_party == "LVP": <span style="color: #FFCC00;"> [+ transport_minister +] ([+ transport_minister_party +])</span> ?]
@@ -262,6 +271,7 @@ Transport:
 
 Postal: 
 [? if postal_minister_party == "SPD": <span style="color: #c00000;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
+[? if postal_minister_party == "USPD": <span style="color: #AA0000;"> [+ postal_minister +] (USPD)</span> ?]
 [? if postal_minister_party == "KPD": <span style="color: #700000;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
 [? if postal_minister_party == ddp_name: <span style="color: #D3C24D;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
 [? if postal_minister_party == "LVP": <span style="color: #FFCC00;"> [+ postal_minister +] ([+ postal_minister_party +])</span> ?]
