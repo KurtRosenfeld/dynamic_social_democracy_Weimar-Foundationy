@@ -2080,7 +2080,7 @@ subtitle: <span style ="color: #c00000;">**SPD**</span>[? if sapd_formed:  + <sp
 view-if: social_democratic_coalition >= 50
 choose-if: uspd_relation >= 40
 unavailable-subtitle: We have lost the trust of our former ideological sister parties.
-on-arrival: leverage += 10; in_social_democratic_coalition = 1; spd_in_government = 1; interior_minister_party = "USPD"; economic_minister_party = "USPD"; foreign_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD"; reichswehr_minister_party = "USPD"; labor_minister_party = "USPD" if not sapd_formed; labor_minister_party = "SAPD" if sapd_formed; justice_minister_party = "USPD"; transport_minister_party = "USPD"; postal_minister_party = "USPD"
+on-arrival: leverage += 10; in_social_democratic_coalition = 1; spd_in_government = 1; interior_minister_party = "USPD"; economic_minister_party = "USPD"; foreign_minister_party = "USPD"; finance_minister_party = "USPD"; agriculture_minister_party = "USPD"; reichswehr_minister_party = "USPD"; labor_minister_party = "USPD" if not sapd_formed; labor_minister_party = "SAPD" if sapd_formed; justice_minister_party = "USPD"; transport_minister_party = "USPD"; postal_minister_party = "USPD"; in_grand_coalition = 0; in_weimar_coalition = 0
 
 We must choose a chancelor now.
 
@@ -2096,7 +2096,7 @@ subtitle: Müller is popular within the party and overall experienced.
 choose-if: not uspd_leader = "Ledebour"
 unavailable-subtitle: The USPD disaproves
 on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "SPD"
-go-to: socdem_ministries
+go-to: ministries
 
 Müller's appointment as chancellor is approved by all our potential allies.
 
@@ -2107,7 +2107,7 @@ subtitle: Braun is one of our most popular leaders.
 choose-if: not uspd_leader = "Ledebour"
 unavailable-subtitle: The USPD disaproves
 on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = "SPD"; leverage -= 5
-go-to: socdem_ministries
+go-to: ministries
 
 Brauns appointment as chancellor is approved by all our potential allies.
 
@@ -2115,7 +2115,7 @@ Brauns appointment as chancellor is approved by all our potential allies.
 title: Rudolf Breitscheid for Chancellor
 subtitle: Breitscheid is just generally based.
 on-arrival: spd_in_government = 1; chancellor = "Breitscheid"; chancellor_party = "SPD" if uspd_joined >= 1; chancellor_party = "USPD" if uspd_joined == 0; leverage += 10
-go-to: socdem_ministries
+go-to: ministries
 
 Our allies are quite happy about this choice.
 
@@ -2124,233 +2124,10 @@ title: Paul Levi for Chancellor
 view-if: levi_dead = 0
 subtitle: Levi is further to the left than all other possibilities
 on-arrival: spd_in_government = 1; chancellor = "Levi"; chancellor_party = "SPD" if uspd_joined >= 1; chancellor_party = "USPD" if uspd_joined == 0; leverage += 5
-go-to: socdem_ministries
+go-to: ministries
 
 Our allies approve of this choice.
 
-@socdem_ministries
-
-We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the <span style="color: #700000;">**KPD**</span>. ?] [? if in_left_front and reichswehr_minister_party == "KPD" : If the <span style="color: #700000;">**KPD**</span> controls the Reichswehr Ministry, the army will most likely revolt. ?]
-
-- @socdem_labor
-- @socdem_interior
-- @socdem_finance
-- @socdem_economic
-- @socdem_foreign
-- @socdem_justice
-- @socdem_reichswehr
-- @socdem_agriculture
-- @socdem_no_more
-
-
-@socdem_labor
-title: Labor Ministry
-subtitle: Taking the Labor Ministry is expected of us.
-unavailable-subtitle: We do not have enough leverage.
-tags: socdem_ministries
-choose-if: leverage >= 5
-view-if: labor_minister_party != "SPD"
-on-arrival: leverage -= 5; labor_minister_party = "SPD"; labor_minister = "Wissell"
-go-to: socdem_ministries
-
-Rudolf Wissell of the <span style="color: #c00000;">**SPD**</span> has been appointed labor minister.
-
-@socdem_interior
-title: Interior Ministry
-subtitle: Taking the Interior Ministry is expected of us. The Interior Ministry controls domestic security.
-unavailable-subtitle: We do not have enough leverage.
-tags: socdem_ministries
-choose-if: leverage >= 5
-view-if: interior_minister_party != "SPD"
-
-- @socdem_appoint_severing
-- @socdem_appoint_sollmann
-- @socdem_cancel_interior
-
-@socdem_appoint_severing
-title: Carl Severing
-subtitle: (reformist).
-choose-if: leverage >= 5
-unavailable-subtitle: We do not have enough leverage.
-on-arrival: interior_minister = "Severing"; leverage -= 5; interior_minister_party = "SPD"
-go-to: socdem_ministries
-
-Carl Severing of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
-
-@socdem_appoint_sollmann
-title: Wilhelm Sollmann
-subtitle: (non-factional).
-choose-if: leverage >= 5
-unavailable-subtitle: We do not have enough leverage.
-on-arrival: leverage -= 5; interior_minister = "Sollmann"; interior_minister_party = "SPD"
-go-to: socdem_ministries
-
-Wilhelm Sollmann of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
-
-@socdem_cancel_interior
-title: Cancel & Go Back
-subtitle: Return without appointing
-choose-if: true
-on-arrival: interior_minister_party = "USPD" if not uspd_joined = 3 and not sapd_formed; interior_minister = "Dittmann" if not uspd_joined = 3 and not sapd_formed; interior_minister_party = "SAPD" if sapd_formed; interior_minister = "Seydewitz" if sapd_formed
-go-to: socdem_ministries
-
-@socdem_finance
-title: Finance Ministry
-subtitle: The Finance Ministry controls the government budget and taxes.
-unavailable-subtitle: We do not have enough leverage.
-tags: socdem_ministries
-choose-if: leverage >= 10 
-view-if: finance_minister_party != "SPD"
-on-arrival: leverage -= 10; finance_minister_party = "SPD"; finance_minister = "Hilferding"
-go-to: socdem_ministries
-
-Rudolf Hilferding of the <span style="color: #c00000;">**SPD**</span> has been appointed Finance Minister.
-
-@socdem_economic
-title: Economic Ministry
-subtitle: The Economic Ministry controls broader economic policy.
-unavailable-subtitle: We do not have enough leverage.
-tags: socdem_ministries
-choose-if: leverage >= 10 
-view-if: economic_minister_party != "SPD"
-
-- @socdem_appoint_schmidt
-- @socdem_appoint_hilfdering
-- @socdem_appoint_tarnow
-- @socdem_appoint_sender
-- @socdem_cancel_economic
-
-@socdem_appoint_schmidt
-title: Robert Schmidt
-subtitle: (non-factional).
-choose-if: leverage >= 10
-unavailable-subtitle: We do not have enough leverage.
-on-arrival: economic_minister = "Schmidt"; leverage -= 5; economic_minister_party = "SPD"
-go-to: socdem_ministries
-
-Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
-
-@socdem_appoint_hilfdering
-title: Rudolf Hilferding
-subtitle: (centrist).
-choose-if: leverage >= 10
-view-if: uspd_joined > 0 and centrists_regin == 0
-unavailable-subtitle: We do not have enough leverage.
-on-arrival: leverage -= 10; economic_minister = "Hilferding"; economic_minister_party = "SPD"
-go-to: socdem_ministries
-
-Rudolf Hilferding of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
-
-@socdem_appoint_tarnow
-title: Fritz Tarnow
-subtitle: (labor).
-choose-if: leverage >= 10
-unavailable-subtitle: We do not have enough leverage.
-view-if: unions_independent == 0
-on-arrival: leverage -= 10; economic_minister = "Tarnow"; economic_minister_party = "SPD"
-go-to: socdem_ministries
-
-Fritz Tarnow of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
-
-@socdem_appoint_sender
-title: Tony Sender
-subtitle: (left).
-choose-if: leverage >= 5
-view-if: uspd_joined > 0 and left_split == 0
-unavailable-subtitle: We do not have enough leverage.
-on-arrival: leverage -= 5; economic_minister = "Sender"; economic_minister_party = "SPD"
-go-to: socdem_ministries
-
-Tony Sender of the <span style="color: #c00000;">**SPD**</span> has been appointed Economic Minister.
-
-@socdem_cancel_economic
-title: Cancel & Go Back
-subtitle: Return without appointing
-choose-if: true
-on-arrival: economic_minister_party = "USPD"; economic_minister = "Hilferding"
-go-to: socdem_ministries
-
-@socdem_justice
-title: Justice Ministry
-subtitle: The Justice Ministry controls the courts.
-unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Justice Ministry. ?]
-tags: socdem_ministries
-choose-if: leverage >= 10 and not cvp_ministers_accepted
-view-if: justice_minister_party != "SPD"
-on-arrival: leverage -= 10; justice_minister_party = "SPD"; justice_minister = "Radbruch"
-go-to: socdem_ministries
-
-Gustav Radbruch of the <span style="color: #c00000;">**SPD**</span> has been appointed Justice Minister.
-
-@socdem_foreign
-title: Foreign Ministry
-subtitle: Foreign policy.
-unavailable-subtitle: We do not have enough leverage.
-tags: socdem_ministries
-choose-if: leverage >= 10
-view-if: foreign_minister_party != "SPD"
-
-- @socdem_appoint_muller
-- @socdem_appoint_breitscheid
-- @socdem_cancel_foreign
-
-@socdem_appoint_muller
-title: Hermann Müller
-subtitle: (centrist).
-choose-if: leverage >= 10
-unavailable-subtitle: We do not have enough leverage.
-on-arrival: foreign_minister = "Müller"; leverage -= 10; foreign_minister_party = "SPD"
-go-to: ministries
-
-Hermann Müller of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
-
-@socdem_appoint_breitscheid
-title: Rudolf Breitscheid
-subtitle: (centrist).
-choose-if: leverage >= 10
-view-if: uspd_joined >= 1
-unavailable-subtitle: We do not have enough leverage.
-on-arrival: leverage -= 10; foreign_minister = "Breitscheid"; foreign_minister_party = "SPD"
-go-to: ministries
-
-Wilhelm Sollmann of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
-
-@socdem_cancel_foreign
-title: Cancel & Go Back
-subtitle: Return without appointing
-choose-if: true
-on-arrival: foreign_minister_party = "USPD"; foreign_minister = "Breitscheid";
-go-to: ministries
-
-@socdem_agriculture
-title: Agricultural Ministry
-subtitle: This is not our usual domain.
-unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Agricultural Ministry. ?]
-choose-if: leverage >= 10
-view-if: agriculture_minister_party != "SPD"
-on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"
-go-to: socdem_ministries
-tags: socdem_ministries
-
-Fritz Baade of the <span style="color: #c00000;">**SPD**</span> has been appointed Agriculture Minister.
-
-@socdem_reichswehr
-title: Reichswehr Ministry
-subtitle: The Ministry responsible for the armed forces is not typically our domain; General Groener and the bourgeois-conservatives will be displeased[? if president = "Hindenburg" or president_ideology != "Left":&nbsp;along with President [+ president +]?].
-unavailable-subtitle: [? if leverage < 15: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Reichswehr Ministry. ?]
-tags: socdem_ministries
-choose-if: leverage >= 5
-view-if: reichswehr_minister_party != "SPD"
-on-arrival: leverage -= 5; reichswehr_minister_party = "SPD"; reichswehr_minister = "Leber"; hindenburg_angry += 10
-go-to: socdem_ministries
-
-Julius Leber of the <span style="color: #c00000;">**SPD**</span> has been appointed Reichswehr Minister.
-
-
-@socdem_no_more
-title: No more ministries.
-
-We are done.
 
 @wholesome_coalition
 title: A "wholesome" coalition is formed.
@@ -4554,8 +4331,25 @@ if (Q.reichswehr_minister_party !== "SPD") {Q.reichswehr_minister_party = "I"; Q
 if (Q.transport_minister_party !== "SPD") {Q.postal_minister_party = "DDP"; Q.postal_minister = "Oeser"};
 
 if (Q.postal_minister_party !== "SPD" && Q.in_grand_coalition) {Q.postal_minister_party = "BVP"; Q.postal_minister = "Schätzel"};
-
 if (Q.postal_minister_party !== "SPD" && !Q.in_grand_coalition) {Q.postal_minister_party = "Z"; Q.postal_minister = "Höfle"};
+
+if (Q.labor_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.labor_minister_party = "USPD"; Q.labor_minister = "Aufhäuser"};
+
+if (Q.finance_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.finance_minister_party = "USPD"; Q.finance_minister = "Hilferding"};
+
+if (Q.economic_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.economic_minister_party = "USPD"; Q.economic_minister = "Hilferding"};
+
+if (Q.justice_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.justice_minister_party = "USPD"; Q.justice_minister = "KautskyÖÖÖ";}
+
+if (Q.foreign_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.foreign_minister_party = "USPD"; Q.foreign_minister = "Breitscheid"};
+
+if (Q.agriculture_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.agriculture_minister_party = "USPD"; Q.agriculture_minister = "Liebknecht"};
+
+if (Q.reichswehr_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.reichswehr_minister_party = "USPD"; Q.reichswehr_minister = "Ledebour"};
+
+if (Q.transport_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.postal_minister_party = "USPD"; Q.postal_minister = "Kautsky"};
+
+if (Q.postal_minister_party !== "SPD" && Q.in_social_democratic_coalition) {Q.postal_minister_party = "USPD"; Q.postal_minister = "Hilferding"};
 
 if (!Q.dvp_exist) {
     if (Q.foreign_minister_party == "DVP") { 
