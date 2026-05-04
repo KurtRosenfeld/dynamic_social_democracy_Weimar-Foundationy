@@ -4449,6 +4449,30 @@ go-to: ministries
 
 Julius Leber of the <span style="color: #c00000;">**SPD**</span> has been appointed Reichswehr Minister.
 
+@transport
+title: Transport Ministry
+subtitle: Who knows...?
+unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?]
+tags: mins_1928
+choose-if: leverage >= 10
+view-if: transport_minister_party != "SPD"
+on-arrival: leverage -= 10; transport_minister_party = "SPD"; transport_minister = "Schmidt"
+go-to: ministries
+
+Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Transport Minister.
+
+@postal
+title: Postal Ministry
+subtitle: 
+unavailable-subtitle: [? if leverage < 5: We do not have enough leverage. ?] [? if in_grand_coalition: The BVP needs to get a ministry and this is to only one we can afford to give to them. ?]
+tags: mins_1928
+choose-if: leverage >= 5 and not in_grand_coalition
+view-if: postal_minister_party != "SPD"
+on-arrival: leverage -= 5; postal_minister_party = "SPD"; postal_minister = "Schmidt"
+go-to: ministries
+
+Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Postal Minister.
+
 
 @no_more
 title: No more ministries.
@@ -4527,7 +4551,11 @@ if (Q.agriculture_minister_party !== "SPD" && Q.in_social_liberal_coalition && Q
 
 if (Q.reichswehr_minister_party !== "SPD") {Q.reichswehr_minister_party = "I"; Q.reichswehr_minister = "Groener"};
 
+if (Q.transport_minister_party !== "SPD") {Q.postal_minister_party = "DDP"; Q.postal_minister = "Oeser"};
+
 if (Q.postal_minister_party !== "SPD" && Q.in_grand_coalition) {Q.postal_minister_party = "BVP"; Q.postal_minister = "Schätzel"};
+
+if (Q.postal_minister_party !== "SPD" && !Q.in_grand_coalition) {Q.postal_minister_party = "Z"; Q.postal_minister = "Höfle"};
 
 if (!Q.dvp_exist) {
     if (Q.foreign_minister_party == "DVP") { 
