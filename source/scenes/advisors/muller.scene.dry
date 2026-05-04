@@ -56,4 +56,4 @@ We have called for new elections, set for [+ next_election_month : month +] [+ n
 @bufff
 title: Little Cheat
 subtitle: It has gotten so hard to test this stuff
-on-arrival: rural_spd += 10; catholic_spd += 9; new_middle_spd += 2
+on-arrival: rural_spd += 10; catholics_spd += 9; new_middle_spd += 2
