@@ -4193,7 +4193,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: leverage -= 10; foreign_minister = "Breitscheid"; foreign_minister_party = "SPD"
 go-to: ministries
 
-Wilhelm Sollmann of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
+Rudolf Breitscheid of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
 
 @cancel_foreign
 title: Cancel & Go Back
@@ -4208,11 +4208,49 @@ subtitle: This is not our usual domain.
 unavailable-subtitle: [? if leverage < 10: We do not have enough leverage. ?] [? if cvp_ministers_accepted: Our coalition agreement stipulates that we must forfeit the Agricultural Ministry. ?]
 choose-if: leverage >= 10 and not cvp_ministers_accepted
 view-if: agriculture_minister_party != "SPD"
-on-arrival: leverage -= 10; agriculture_minister_party = "SPD"; agriculture_minister = "Baade"
-go-to: ministries
 tags: mins_1928
 
-Fritz Baade of the <span style="color: #c00000;">**SPD**</span> has been appointed Agriculture Minister.
+- @appoint_baade
+- @appoint_schmidt_agr
+- @appoint_braun
+- @cancel_agriculture
+
+@appoint_baade
+title: Fritz Baade
+subtitle: (non-factional).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: agriculture_minister = "Baade"; leverage -= 10; agriculture_minister_party = "SPD"
+go-to: ministries
+
+Fritz Baade of the <span style="color: #c00000;">**SPD**</span> has been appointed Agricultural Minister.
+
+@appoint_schmidt_agr
+title: Robert Schmidt
+subtitle: (non-factional).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: agriculture_minister = "Schmidt"; leverage -= 10; agriculture_minister_party = "SPD"
+go-to: ministries
+
+Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appointed Agricultural Minister.
+
+@appoint_braun
+title: Otto Braun
+subtitle: (reformist).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: agriculture_minister = "Braun"; leverage -= 10; agriculture_minister_party = "SPD"
+go-to: ministries
+
+Otto Braun of the <span style="color: #c00000;">**SPD**</span> has been appointed Agricultural Minister.
+
+@cancel_agriculture
+title: Cancel & Go Back
+subtitle: Return without appointing
+choose-if: true
+on-arrival: agriculture_minister_party = "DVP"; agriculture_minister_party = "LVP" if lvp_formed; agriculture_minister = "Stresemann";
+go-to: ministries
 
 @reichswehr
 title: Reichswehr Ministry
