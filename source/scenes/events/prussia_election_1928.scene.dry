@@ -857,6 +857,7 @@ go-to: coalition_menu
 
 @coalition_menu
 
+- @new_election_jjj
 - @schleicher_majority_coalition_prussia
 - @schleicher_left_coalition_prussia
 - @schleicher_right_coalition_prussia
@@ -878,6 +879,10 @@ go-to: coalition_menu
 - @bourgeois_coalition_kvp_prussia
 - @call_new_elections: No majority is able to be found.
 - @call_new_elections_rubicon: No majority is able to be found.
+
+@new_election_jjj
+title: Why does the first one never work?!?
+on-arrival: Q.next_election_time_prussia = Q.time + 1;
 
 @schleicher_majority_coalition_prussia
 title: Schleicher forms a majority government with only the <span style="color: #BFC8CC;">**DNEF**</span>.
