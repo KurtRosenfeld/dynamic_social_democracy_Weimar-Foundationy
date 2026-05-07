@@ -253,6 +253,7 @@ Q.wp_r_hesse = Q.other_r_hesse*wp_share;
 Q.vrp_hesse_elections_vote = Q.other_hesse_elections_vote*vrp_share;
 Q.vrp_r_hesse = Q.other_r_hesse*vrp_share;
 
+Q.true_other_elections_hesse = Q.other_hesse_elections_vote*true_other_share;
 Q.true_other_r_hesse = Q.other_r_hesse*true_other_share;
 
 let kpd_share = 0.96;
