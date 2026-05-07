@@ -1,3 +1,28 @@
+title: Bavvaria Landtag Election
+view-if: (year == 1924 and month == 5 and not bavaria_election_seen) or (bavaria_election_2_trigger_time == time and bavaria_election_seen_time != time)
+new-page: true
+tags: event
+on-arrival: bavaria_election_seen += 1 if bavaria_election_seen; bavaria_election_seen = 1 if not bavaria_election_seen; bavaria_election_seen_time = time
+priority: 2
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/states.png";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
+
+= Elections, [+ month : month +] [+ year +]
+
+The Bremen state elections are to be held now.
+
+- @bremen: May we do our best...
+
 @bavaria
 title: <span style="color: #00CCFF;">Bavaria</span>'s Landtag Election
 subtitle: Perhaps the <span style="color: #A2D8E0;">**BVP**</span> will finally be unseated?
@@ -8,9 +33,10 @@ Q.bavaria_seen = 1;
 
 var bavaria_adjustment_factors = {
     spd: 0.75,
-    sapd: 0.0,
+    uspd: 0.01,
+    sapd: 0.01,
     kpd: 0.4,
-    ddp: 0.0,
+    ddp: 0.06,
     lvp: 0.4,
     z: 2.2,
     dvp: 0.4,
@@ -30,6 +56,7 @@ if (Q.dvp_in_cvp) {
 }
 
 Q.spd_r_bavaria = 0;
+Q.uspd_r_bavaria = 0;
 Q.sapd_r_bavaria = 0;
 Q.kpd_r_bavaria = 0;
 Q.ddp_r_bavaria = 0;
@@ -43,6 +70,7 @@ Q.kvp_r_bavaria = 0;
 Q.dnf_r_bavaria = 0;
 
 Q.spd_bavaria_elections_vote = 0;
+Q.uspd_bavaria_elections_vote = 0;
 Q.sapd_bavaria_elections_vote = 0;
 Q.kpd_bavaria_elections_vote = 0;
 Q.ddp_bavaria_elections_vote = 0;
@@ -74,10 +102,11 @@ Q.kvp_bavaria_elections_vote = Q.kvp_local_elections_vote*bavaria_adjustment_fac
 if (Q.cvp_formed) bavaria_adjustment_factors.dnf += 0.6;
 Q.dnf_bavaria_elections_vote = Q.dnf_local_elections_vote*bavaria_adjustment_factors.dnf;
 
-Q.total_votes_bavaria = Q.spd_bavaria_elections_vote + Q.sapd_bavaria_elections_vote + Q.kpd_bavaria_elections_vote + Q.ddp_bavaria_elections_vote + Q.lvp_bavaria_elections_vote + Q.z_bavaria_elections_vote + Q.dvp_bavaria_elections_vote + Q.dnvp_bavaria_elections_vote + Q.nsdap_bavaria_elections_vote + Q.other_bavaria_elections_vote + Q.kvp_bavaria_elections_vote + Q.dnf_bavaria_elections_vote;
+Q.total_votes_bavaria = Q.spd_bavaria_elections_vote + Q.sapd_bavaria_elections_vote + Q.kpd_bavaria_elections_vote + Q.ddp_bavaria_elections_vote + Q.lvp_bavaria_elections_vote + Q.z_bavaria_elections_vote + Q.dvp_bavaria_elections_vote + Q.dnvp_bavaria_elections_vote + Q.nsdap_bavaria_elections_vote + Q.other_bavaria_elections_vote + Q.kvp_bavaria_elections_vote + Q.dnf_bavaria_elections_vote + Q.uspd_bavaria_elections_vote;
 
 if (Q.total_votes_bavaria > 0) {
     Q.spd_bavaria_elections_vote = (Q.spd_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
+    Q.uspd_bavaria_elections_vote = (Q.uspd_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
     Q.sapd_bavaria_elections_vote = (Q.sapd_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
     Q.kpd_bavaria_elections_vote = (Q.kpd_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
     Q.ddp_bavaria_elections_vote = (Q.ddp_bavaria_elections_vote / Q.total_votes_bavaria) * 100;
@@ -92,6 +121,7 @@ if (Q.total_votes_bavaria > 0) {
 }
 
 Q.spd_bavaria_elections_vote = (Q.spd_bavaria_elections_vote != undefined ? parseFloat(Q.spd_bavaria_elections_vote.toFixed(1)) : 0);
+Q.uspd_bavaria_elections_vote = (Q.uspd_bavaria_elections_vote != undefined ? parseFloat(Q.uspd_bavaria_elections_vote.toFixed(1)) : 0);
 Q.sapd_bavaria_elections_vote = (Q.sapd_bavaria_elections_vote != undefined ? parseFloat(Q.sapd_bavaria_elections_vote.toFixed(1)) : 0);
 Q.kpd_bavaria_elections_vote = (Q.kpd_bavaria_elections_vote != undefined ? parseFloat(Q.kpd_bavaria_elections_vote.toFixed(1)) : 0);
 Q.ddp_bavaria_elections_vote = (Q.ddp_bavaria_elections_vote != undefined ? parseFloat(Q.ddp_bavaria_elections_vote.toFixed(1)) : 0);
@@ -105,6 +135,7 @@ Q.kvp_bavaria_elections_vote = (Q.kvp_bavaria_elections_vote != undefined ? pars
 Q.dnf_bavaria_elections_vote = (Q.dnf_bavaria_elections_vote != undefined ? parseFloat(Q.dnf_bavaria_elections_vote.toFixed(1)) : 0);
 
 if (Q.spd_bavaria_elections_vote >= 3.3) Q.spd_r_bavaria = Q.spd_bavaria_elections_vote;
+if (Q.uspd_bavaria_elections_vote >= 3.3) Q.uspd_r_bavaria = Q.uspd_bavaria_elections_vote;
 if (Q.sapd_bavaria_elections_vote >= 3.3) Q.sapd_r_bavaria = Q.sapd_bavaria_elections_vote;
 if (Q.kpd_bavaria_elections_vote >= 3.3) Q.kpd_r_bavaria = Q.kpd_bavaria_elections_vote;
 if (Q.ddp_bavaria_elections_vote >= 3.3) Q.ddp_r_bavaria = Q.ddp_bavaria_elections_vote;
@@ -120,6 +151,7 @@ if (Q.dnf_bavaria_elections_vote >= 3.3) Q.dnf_r_bavaria = Q.dnf_bavaria_electio
 Q.total_r_bavaria = 0;
 
 if (Q.spd_r_bavaria) Q.total_r_bavaria += Q.spd_r_bavaria;
+if (Q.uspd_r_bavaria) Q.total_r_bavaria += Q.uspd_r_bavaria;
 if (Q.sapd_r_bavaria) Q.total_r_bavaria += Q.sapd_r_bavaria;
 if (Q.kpd_r_bavaria) Q.total_r_bavaria += Q.kpd_r_bavaria;
 if (Q.ddp_r_bavaria) Q.total_r_bavaria += Q.ddp_r_bavaria;
@@ -134,6 +166,7 @@ if (Q.dnf_r_bavaria) Q.total_r_bavaria += Q.dnf_r_bavaria;
 
 if (Q.total_r_bavaria > 0) {
     Q.spd_r_bavaria = (Q.spd_r_bavaria / Q.total_r_bavaria) * 100;
+    Q.uspd_r_bavaria = (Q.uspd_r_bavaria / Q.total_r_bavaria) * 100;
     Q.sapd_r_bavaria = (Q.sapd_r_bavaria / Q.total_r_bavaria) * 100;
     Q.kpd_r_bavaria = (Q.kpd_r_bavaria / Q.total_r_bavaria) * 100;
     Q.ddp_r_bavaria = (Q.ddp_r_bavaria / Q.total_r_bavaria) * 100;
@@ -183,6 +216,7 @@ function allocateSeats(percentages, totalSeats = 128) {
 
 const inputPercentages = {
     spd_r_bavaria: Q.spd_r_bavaria,
+    uspd_r_bavaria: Q.uspd_r_bavaria,
     sapd_r_bavaria: Q.sapd_r_bavaria,
     kpd_r_bavaria: Q.kpd_r_bavaria,
     ddp_r_bavaria: Q.ddp_r_bavaria,
@@ -205,10 +239,11 @@ for (const party in allocatedSeats) {
 
 Q.other_r_bavaria = Q.farm_r_bavaria + Q.non_farm_r_bavaria;
 
-Q.left_coalition_bavaria = parseFloat((Q.spd_r_bavaria + Q.kpd_r_bavaria + Q.sapd_r_bavaria).toFixed(1));
+Q.left_coalition_bavaria = parseFloat((Q.spd_r_bavaria + Q.kpd_r_bavaria + Q.sapd_r_bavaria + Q.uspd_r_bavaria).toFixed(1));
 Q.bourgeois_coalition_bavaria = parseFloat((Q.z_r_bavaria + Q.dvp_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.other_r_bavaria + Q.dnvp_r_bavaria).toFixed(1));
 if (Q.dnvp_ideology == "Radical" && Q.kvp_formed) Q.bourgeois_coalition_bavaria = parseFloat((Q.z_r_bavaria + Q.dvp_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.kvp_r_bavaria + Q.other_r_bavaria).toFixed(1));
-Q.spd_coalition_bavaria = parseFloat((Q.spd_r_bavaria + (Q.other_r_bavaria * 0.8) + Q.ddp_r_bavaria + Q.lvp_r_bavaria).toFixed(1));
+Q.traffic_coalition_bavaria = parseFloat((Q.spd_r_bavaria + Q.farm_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria).toFixed(1));
+Q.broad_coalition_bavaria = parseFloat((Q.spd_r_bavaria + Q.farm_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.true_z_r_bavaria + Q.csp_r_bavaria + Q.uspd_r_bavaria).toFixed(1));
 
 Q.farm_bavaria_elections_vote = (Q.farm_bavaria_elections_vote != undefined ? parseFloat(Q.farm_bavaria_elections_vote.toFixed(1)) : 0);
 Q.non_farm_bavaria_elections_vote = (Q.non_farm_bavaria_elections_vote != undefined ? parseFloat(Q.non_farm_bavaria_elections_vote.toFixed(1)) : 0);
@@ -228,6 +263,15 @@ if (Q.sapd_formed && Q.sapd_r_bavaria) {
         "legend": "SAPD",
         "name": "SAPD",
         "seats": Math.round(Q.sapd_r_bavaria * 1.28),
+    });
+}
+
+if (Q.uspd_joined !== 3 && Q.uspd_r_bavaria) {
+ data.push({
+        "id": "uspd",
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Math.round(Q.uspd_r_bavaria * 1.28),
     });
 }
 
@@ -256,6 +300,21 @@ if (Q.lvp_r_bavaria && Q.lvp_formed) {
     });
 }
 
+if (Q.farm_r_bavaria) {
+        data.push({
+            "id": "farm",
+            "legend": "Farm",
+            "name": "Farm",
+            "seats": Math.round(Q.farm_r_bavaria * 1.28),
+        });
+
+if (Q.non_farm_r_bavaria) {
+        data.push({
+            "id": "other",
+            "legend": "Other",
+            "name": "Other",
+            "seats": Math.round(Q.non_farm_r_bavaria * 1.28),
+
 data = data.concat([{
         "id": "bvp",
         "legend": "BVP",
@@ -273,25 +332,7 @@ if (Q.dvp_r_bavaria && !Q.lvp_formed && Q.dvp_exist) {
     });
 }
 
-if (Q.other_r_bavaria) {
-    let total = Q.farm_r_bavaria + Q.non_farm_r_bavaria; 
-    if (total > 0) {
-        let farmShare = (Q.farm_r_bavaria / total) * 1.28;
-        let otherShare = (Q.non_farm_r_bavaria / total) * 1.28;
-        data.push({
-            "id": "other",
-            "legend": "Other",
-            "name": "Other",
-            "seats": Math.round(Q.other_r_bavaria * otherShare),
-        });
-        data.push({
-            "id": "farm",
-            "legend": "Farm",
-            "name": "Farm",
-            "seats": Math.round(Q.other_r_bavaria * farmShare),
-        });
-    }
-}
+
 if (Q.kvp_formed && Q.kvp_r_bavaria) {
     data.push({
         "id": "kvp",
@@ -349,6 +390,8 @@ go-to: bavaria_coalition_menu
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_bavaria_elections_vote +]%** {!</td><td>!} [+ spd_r_bavaria +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#AA0000'> </div> !}USPD: {!</td><td>!} [+ uspd_bavaria_elections_vote +]% {!</td><td>!} [+ uspd_r_bavaria +]%  {!</td></tr>!}
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td>!} [+ sapd_bavaria_elections_vote +]% {!</td><td>!} [+ sapd_r_bavaria +]% {!</td></tr>!} ?]
 
@@ -453,7 +496,7 @@ We have somehow managed to capture a majority in the Landtag, and have put our M
 title: The <span style="color: #c00000;">**SPD**</span> will form a coalition government with the bourgeois parties.
 subtitle: The <span style="color: #38C538;">Bavarian Peasants’ League</span> had a falling out right? Let's utilize our contacts with their left wing. -1 resource
 unavailable-subtitle: [? if spd_coalition_bavaria < 50: <span style="color: #c00000;">SPD</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span> ([+ spd_coalition_bavaria +]%)  ?][? if resources < 1: - Not enough resources (need 1). ?]
-choose-if: spd_coalition_bavaria >= 50 and resources >= 1
+choose-if: traffic_coalition_bavaria >= 50 and resources >= 1
 on-arrival: resources -= 1; bavaria_spd = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 3; old_middle_spd += 3; rural_spd += 1; rural_other += 3; catholics_z -= 4; catholics_spd += 4; z_relation -= 5; pro_republic += 3; prussian_police_loyalty += 0.05; sa_strength -= 50; sa_strength -= 50 if sa_nationwide_ban;
 go-to: election_menu
 achievement: ampelkoalition
