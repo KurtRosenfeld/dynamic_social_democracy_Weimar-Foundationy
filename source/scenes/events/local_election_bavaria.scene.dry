@@ -1,5 +1,5 @@
 title: Bavvaria Landtag Election
-view-if: (year == 1924 and month == 5 and not bavaria_election_seen) or (bavaria_election_2_trigger_time == time and bavaria_election_seen_time != time)
+view-if: (year == 1922 and month == 5 and not bavaria_election_seen) or (bavaria_election_2_trigger_time == time and bavaria_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: bavaria_election_seen += 1 if bavaria_election_seen; bavaria_election_seen = 1 if not bavaria_election_seen; bavaria_election_seen_time = time
@@ -21,15 +21,11 @@ on-display: {!
 
 The Bremen state elections are to be held now.
 
-- @bremen: May we do our best...
+- @bavaria: May we do our best...
 
 @bavaria
-title: <span style="color: #00CCFF;">Bavaria</span>'s Landtag Election
-subtitle: Perhaps the <span style="color: #A2D8E0;">**BVP**</span> will finally be unseated?
-view-if: not bavaria_seen
 on-arrival: {!
 
-Q.bavaria_seen = 1;
 
 var bavaria_adjustment_factors = {
     spd: 0.75,
@@ -84,23 +80,15 @@ Q.kvp_bavaria_elections_vote = 0;
 Q.dnf_bavaria_elections_vote = 0;
 
 if (Q.catholics_spd_normalized >= 30) bavaria_adjustment_factors.spd += 0.2;
+if (Q.uspd_votes >= 5) bavaria_adjustment_factors.uspd += 0.7;
+if (Q.uspd_leader = "Crispien") bavaria_adjustment_factors.uspd += 0.1;
+if (Q.sapd_votes >= 5) bavaria_adjustment_factors.sapd += 0.48;
 if (Q.rural_spd_normalized >= 30) bavaria_adjustment_factors.spd += 0.2;
-Q.spd_bavaria_elections_vote = Q.spd_local_elections_vote*bavaria_adjustment_factors.spd;
-Q.sapd_bavaria_elections_vote = Q.sapd_local_elections_vote*bavaria_adjustment_factors.sapd;
-Q.kpd_bavaria_elections_vote = Q.kpd_local_elections_vote*bavaria_adjustment_factors.kpd;
 if (Q.ddp_votes >= 3) bavaria_adjustment_factors.ddp = 0.4;
-Q.ddp_bavaria_elections_vote = Q.ddp_local_elections_vote*bavaria_adjustment_factors.ddp;
-Q.lvp_bavaria_elections_vote = Q.lvp_local_elections_vote*bavaria_adjustment_factors.lvp;
 if (!Q.stegerwald_path) Q.z_bavaria_elections_vote = Q.z_local_elections_vote*bavaria_adjustment_factors.z;
 if (Q.stegerwald_path) Q.z_bavaria_elections_vote = Q.z_local_elections_vote * 1.5;
 if (Q.cvp_formed) Q.z_bavaria_elections_vote = Q.z_local_elections_vote * 1.2;
-Q.dvp_bavaria_elections_vote = Q.dvp_local_elections_vote*bavaria_adjustment_factors.dvp;
-Q.dnvp_bavaria_elections_vote = Q.dnvp_local_elections_vote*bavaria_adjustment_factors.dnvp;
-Q.nsdap_bavaria_elections_vote = Q.nsdap_local_elections_vote*bavaria_adjustment_factors.nsdap;
-Q.other_bavaria_elections_vote = Q.other_local_elections_vote*bavaria_adjustment_factors.other;
-Q.kvp_bavaria_elections_vote = Q.kvp_local_elections_vote*bavaria_adjustment_factors.kvp;
 if (Q.cvp_formed) bavaria_adjustment_factors.dnf += 0.6;
-Q.dnf_bavaria_elections_vote = Q.dnf_local_elections_vote*bavaria_adjustment_factors.dnf;
 
 Q.total_votes_bavaria = Q.spd_bavaria_elections_vote + Q.sapd_bavaria_elections_vote + Q.kpd_bavaria_elections_vote + Q.ddp_bavaria_elections_vote + Q.lvp_bavaria_elections_vote + Q.z_bavaria_elections_vote + Q.dvp_bavaria_elections_vote + Q.dnvp_bavaria_elections_vote + Q.nsdap_bavaria_elections_vote + Q.other_bavaria_elections_vote + Q.kvp_bavaria_elections_vote + Q.dnf_bavaria_elections_vote + Q.uspd_bavaria_elections_vote;
 
@@ -274,6 +262,14 @@ Q.broad_coalition_bavaria = parseFloat((Q.spd_r_bavaria + Q.farm_r_bavaria + Q.d
 
 Q.farm_bavaria_elections_vote = (Q.farm_bavaria_elections_vote != undefined ? parseFloat(Q.farm_bavaria_elections_vote.toFixed(1)) : 0);
 Q.non_farm_bavaria_elections_vote = (Q.non_farm_bavaria_elections_vote != undefined ? parseFloat(Q.non_farm_bavaria_elections_vote.toFixed(1)) : 0);
+Q.bvp_bavaria_elections_vote = (Q.bvp_bavaria_elections_vote != undefined ? parseFloat(Q.bvp_bavaria_elections_vote.toFixed(1)) : 0);
+Q.z_bavaria_elections_vote = (Q.z_bavaria_elections_vote != undefined ? parseFloat(Q.z_bavaria_elections_vote.toFixed(1)) : 0);
+Q.csp_bavaria_elections_vote = (Q.csp_bavaria_elections_vote != undefined ? parseFloat(Q.csp_bavaria_elections_vote.toFixed(1)) : 0);
+Q.farm_r_bavria = (Q.farm_r_bavria != undefined ? parseFloat(Q.farm_r_bavaria.toFixed(1)) : 0);
+Q.non_farm_r_bavria = (Q.non_farm_r_bavria != undefined ? parseFloat(Q.non_farm_r_bavaria.toFixed(1)) : 0);
+Q.bvp_r_bavaria = (Q.bvp_r_bavaria != undefined ? parseFloat(Q.bvp_r_bavaria.toFixed(1)) : 0);
+Q.z_r_bavaria = (Q.z_r_bavaria != undefined ? parseFloat(Q.z_r_bavaria.toFixed(1)) : 0);
+Q.csp_r_bavria = (Q.csp_r_bavria != undefined ? parseFloat(Q.csp_r_bavaria.toFixed(1)) : 0);
 
 !}
 on-display: {!
@@ -440,19 +436,21 @@ go-to: bavaria_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_bavaria_elections_vote +]% {!</td><td>!} [+ kpd_r_bavaria +]%  {!</td></tr>!}
 
+{!<tr><td><div class="box" style='background-color:#79209D'> </div> !} CSP: {!</td><td>!} [+ csp_bavaria_elections_vote +]% {!</td><td>!} [+ csp_r_bavaria +]%  {!</td></tr>!}
+
 [? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_bavaria_elections_vote +]% {!</td><td>!} [+ ddp_r_bavaria +]%  {!</td></tr>!} ?]
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_bavaria_elections_vote +]% {!</td><td>!} [+ lvp_r_bavaria +]%  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_bavaria_elections_vote +]% {!</td><td>!} [+ z_r_bavaria +]%  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#A2D8E0'> </div> !} BVP: {!</td><td>!} [+ bvp_bavaria_elections_vote +]% {!</td><td>!} [+ bvp_r_bavaria +]%  {!</td></tr>!}
-
-[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_bavaria_elections_vote +]% {!</td><td>!} [+ dvp_r_bavaria +]%  {!</td></tr>!} ?]
-
 {!<tr><td><div class="box" style='background-color:#38C538'> </div> !} Peasants: {!</td><td>!} [+ farm_bavaria_elections_vote +]% {!</td><td>!} [+ farm_r_bavaria +]%  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ non_farm_bavaria_elections_vote +]% {!</td><td>!} [+ non_farm_r_bavaria +]%  {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#A2D8E0'> </div> !} BVP: {!</td><td>!} [+ bvp_bavaria_elections_vote +]% {!</td><td>!} [+ bvp_r_bavaria +]%  {!</td></tr>!}
+
+[? if not lvp_formed and dvp_exist: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_bavaria_elections_vote +]% {!</td><td>!} [+ dvp_r_bavaria +]%  {!</td></tr>!} ?]
 
 [? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_bavaria_elections_vote +]% {!</td><td>!} [+ kvp_r_bavaria +]%  {!</td></tr>!} ?]
 
