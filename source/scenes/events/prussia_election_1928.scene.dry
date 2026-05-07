@@ -879,8 +879,8 @@ go-to: coalition_menu
 
 @new_election_jjj
 title: Why does the first one never work?!?
-subtitle: Not even this option works
-on-arrival: next_election_time_prussia = time + 1; next_election_year_prussia = next_election_year_prussia; next_election_month_prussia + 1;
+subtitle: Not even this button works
+on-arrival: next_election_time_prussia = time + 1; next_election_year_prussia = next_election_year_prussia - 4; next_election_month_prussia = next_election_month_prussia + 1; 
 
 @schleicher_majority_coalition_prussia
 title: Schleicher forms a majority government with only the <span style="color: #BFC8CC;">**DNEF**</span>.
