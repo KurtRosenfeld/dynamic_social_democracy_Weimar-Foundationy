@@ -208,25 +208,25 @@ Q.non_farm_r_bavaria = Q.other_r_bavaria*non_farm_share;
 
 
 let bvp_share = 0.95;
-let z_share = 0.3;
+let true_z_share = 0.3;
 let csp_share = 0.2;
 
 if (Q.president == "Hindenburg") bvp_share += 0.03;
-if (Q.z_leader == "Stegerwald") z_share += 0.1;
+if (Q.z_leader == "Stegerwald") true_z_share += 0.1;
 if (Q.nsdap >= 25){
-z_share = 0; 
+true_z_share = 0; 
 csp_share = 1;
 bvp_share = 99;
 }
 
-let total_z_share = bvp_share + z_share + csp_share;
+let total_z_share = bvp_share + true_z_share + csp_share;
 
-z_share = (z_share / total_z_share);
+true_z_share = (true_z_share / total_z_share);
 bvp_share = (bvp_share / total_z_share);
 csp_share = (csp_share / total_z_share);
 
-Q.z_bavaria_elections_vote = Q.z_bavaria_elections_vote*z_share;
-Q.z_r_bavaria = Q.z_r_bavaria*z_share;
+Q.true_z_bavaria_elections_vote = Q.z_bavaria_elections_vote*true_z_share;
+Q.true_z_r_bavaria = Q.z_r_bavaria*true_z_share;
 
 Q.bvp_bavaria_elections_vote = Q.z_bavaria_elections_vote*bvp_share;
 Q.bvp_r_bavaria = Q.z_r_bavaria*bvp_share;
@@ -269,7 +269,7 @@ const inputPercentages = {
     kpd_r_bavaria: Q.kpd_r_bavaria,
     ddp_r_bavaria: Q.ddp_r_bavaria,
     lvp_r_bavaria: Q.lvp_r_bavaria,
-    z_r_bavaria: Q.z_r_bavaria,
+    true_z_r_bavaria: Q.z_r_bavaria,
     bvp_r_bavaria: Q.bvp_r_bavaria,
     csp_r_bavaria: Q.csp_r_bavaria,
     dvp_r_bavaria: Q.dvp_r_bavaria,
@@ -292,19 +292,19 @@ Q.other_r_bavaria = Q.farm_r_bavaria + Q.non_farm_r_bavaria;
 
 Q.left_coalition_bavaria = parseFloat((Q.spd_r_bavaria + Q.kpd_r_bavaria + Q.sapd_r_bavaria + Q.uspd_r_bavaria).toFixed(1));
 Q.bourgeois_coalition_bavaria = parseFloat((Q.z_r_bavaria + Q.dvp_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.other_r_bavaria + Q.dnvp_r_bavaria).toFixed(1));
-if (Q.dnvp_ideology == "Radical" && Q.kvp_formed) Q.bourgeois_coalition_bavaria = parseFloat((Q.z_r_bavaria + Q.dvp_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.kvp_r_bavaria + Q.other_r_bavaria).toFixed(1));
+if (Q.dnvp_ideology == "Radical" && Q.kvp_formed) Q.bourgeois_coalition_bavaria = parseFloat((Q.bvp_r_bavaria + Q.dvp_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.kvp_r_bavaria + Q.other_r_bavaria).toFixed(1));
 Q.traffic_coalition_bavaria = parseFloat((Q.spd_r_bavaria + Q.farm_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria).toFixed(1));
-Q.broad_coalition_bavaria = parseFloat((Q.spd_r_bavaria + Q.farm_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.z_r_bavaria + Q.csp_r_bavaria + Q.uspd_r_bavaria + Q.non_farm_r_bavaria).toFixed(1));
+Q.broad_coalition_bavaria = parseFloat((Q.spd_r_bavaria + Q.farm_r_bavaria + Q.ddp_r_bavaria + Q.lvp_r_bavaria + Q.true_z_r_bavaria + Q.csp_r_bavaria + Q.uspd_r_bavaria + Q.non_farm_r_bavaria).toFixed(1));
 
 Q.farm_bavaria_elections_vote = (Q.farm_bavaria_elections_vote != undefined ? parseFloat(Q.farm_bavaria_elections_vote.toFixed(1)) : 0);
 Q.non_farm_bavaria_elections_vote = (Q.non_farm_bavaria_elections_vote != undefined ? parseFloat(Q.non_farm_bavaria_elections_vote.toFixed(1)) : 0);
 Q.bvp_bavaria_elections_vote = (Q.bvp_bavaria_elections_vote != undefined ? parseFloat(Q.bvp_bavaria_elections_vote.toFixed(1)) : 0);
-Q.z_bavaria_elections_vote = (Q.z_bavaria_elections_vote != undefined ? parseFloat(Q.z_bavaria_elections_vote.toFixed(1)) : 0);
+Q.true_z_bavaria_elections_vote = (Q.true_z_bavaria_elections_vote != undefined ? parseFloat(Q.true_z_bavaria_elections_vote.toFixed(1)) : 0);
 Q.csp_bavaria_elections_vote = (Q.csp_bavaria_elections_vote != undefined ? parseFloat(Q.csp_bavaria_elections_vote.toFixed(1)) : 0);
 Q.farm_r_bavaria = (Q.farm_r_bavaria != undefined ? parseFloat(Q.farm_r_bavaria.toFixed(1)) : 0);
 Q.non_farm_r_bavaria = (Q.non_farm_r_bavaria != undefined ? parseFloat(Q.non_farm_r_bavaria.toFixed(1)) : 0);
 Q.bvp_r_bavaria = (Q.bvp_r_bavaria != undefined ? parseFloat(Q.bvp_r_bavaria.toFixed(1)) : 0);
-Q.z_r_bavaria = (Q.z_r_bavaria != undefined ? parseFloat(Q.z_r_bavaria.toFixed(1)) : 0);
+Q.true_z_r_bavaria = (Q.true_z_r_bavaria != undefined ? parseFloat(Q.true_z_r_bavaria.toFixed(1)) : 0);
 Q.csp_r_bavaria = (Q.csp_r_bavaria != undefined ? parseFloat(Q.csp_r_bavaria.toFixed(1)) : 0);
 
 !}
@@ -368,12 +368,12 @@ if (Q.lvp_r_bavaria && Q.lvp_formed) {
     });
 }
 
-if (Q.z_r_bavaria) {
+if (Q.true_z_r_bavaria) {
     data.push({
         "id": "z",
         "legend": "Z",
         "name": "Z",
-        "seats": Math.round(Q.z_r_bavaria * 1.28),
+        "seats": Math.round(Q.true_z_r_bavaria * 1.28),
     });
 }
 
@@ -493,7 +493,7 @@ go-to: bavaria_coalition_menu
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_bavaria_elections_vote +]% {!</td><td>!} [+ lvp_r_bavaria +]%  {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_bavaria_elections_vote +]% {!</td><td>!} [+ z_r_bavaria +]%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ true_z_bavaria_elections_vote +]% {!</td><td>!} [+ true_z_r_bavaria +]%  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#38C538'> </div> !} Peasants: {!</td><td>!} [+ farm_bavaria_elections_vote +]% {!</td><td>!} [+ farm_r_bavaria +]%  {!</td></tr>!}
 
@@ -551,7 +551,7 @@ Heinrich Held, the incumbent Minister-President and a pro-democratic member of t
 @bvp_majority
 title: The <span style="color: #A2D8E0;">**BVP**</span> has captured another majority.
 subtitle: As expected?
-view-if: z_r_bavaria >= 50
+view-if: bvp_r_bavaria >= 50
 on-arrival: bavaria_bvp = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; catholics_nsdap -= 2; new_middle_z += 2; old_middle_z += 2; catholics_other += 2; rural_z += 2; pro_republic += 1
 
 The <span style="color: #A2D8E0;">**BVP**</span> has surprisingly won an outright majority, and no longer needs the support of the bourgeois parties. This has cemented Bavaria as one of the most stable state governments, maybe not "democratic" though.
