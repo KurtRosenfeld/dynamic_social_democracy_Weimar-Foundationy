@@ -1,5 +1,5 @@
 title: Bavaria Landtag Election
-view-if: (year == 1922 and month == 5 and not bavaria_election_seen) or (bavaria_election_2_trigger_time == time and bavaria_election_seen_time != time)
+view-if: (year == 1924 and month == 5 and not bavaria_election_seen) or (bavaria_election_2_trigger_time == time and bavaria_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: bavaria_election_seen += 1 if bavaria_election_seen; bavaria_election_seen = 1 if not bavaria_election_seen; bavaria_election_seen_time = time
@@ -145,8 +145,8 @@ if (Q.spd_bavaria_elections_vote >= 3.3) Q.spd_r_bavaria = Q.spd_bavaria_electio
 if (Q.uspd_bavaria_elections_vote >= 3.5) Q.uspd_r_bavaria = Q.uspd_bavaria_elections_vote;
 if (Q.sapd_bavaria_elections_vote >= 3.3) Q.sapd_r_bavaria = Q.sapd_bavaria_elections_vote;
 if (Q.kpd_bavaria_elections_vote >= 3.3) Q.kpd_r_bavaria = Q.kpd_bavaria_elections_vote;
-if (Q.ddp_bavaria_elections_vote >= 3.3 and Q.nsdap_votes > 3) Q.ddp_r_bavaria = Q.ddp_bavaria_elections_vote;
-if (Q.ddp_bavaria_elections_vote >= 1.3 and Q.nsdap_votes <= 3) Q.ddp_r_bavaria = Q.ddp_bavaria_elections_vote;
+if (Q.ddp_bavaria_elections_vote >= 3.3 && Q.nsdap_votes > 3) Q.ddp_r_bavaria = Q.ddp_bavaria_elections_vote;
+if (Q.ddp_bavaria_elections_vote >= 2.6 && Q.nsdap_votes <= 3) Q.ddp_r_bavaria = Q.ddp_bavaria_elections_vote;
 if (Q.lvp_bavaria_elections_vote >= 3.3) Q.lvp_r_bavaria = Q.lvp_bavaria_elections_vote;
 if (Q.z_bavaria_elections_vote >= 1) Q.z_r_bavaria = Q.z_bavaria_elections_vote;
 if (Q.dvp_bavaria_elections_vote >= 3.3) Q.dvp_r_bavaria = Q.dvp_bavaria_elections_vote;
