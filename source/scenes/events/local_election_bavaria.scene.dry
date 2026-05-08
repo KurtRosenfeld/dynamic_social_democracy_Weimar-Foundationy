@@ -90,6 +90,18 @@ if (Q.stegerwald_path) Q.z_bavaria_elections_vote = Q.z_local_elections_vote * 1
 if (Q.cvp_formed) Q.z_bavaria_elections_vote = Q.z_local_elections_vote * 1.2;
 if (Q.cvp_formed) bavaria_adjustment_factors.dnf += 0.6;
 
+Q.spd_bavaria_elections_vote = Q.spd_votes*bavaria_adjustment_factors.spd;
+Q.sapd_bavaria_elections_vote = Q.sapd_votes*bavaria_adjustment_factors.sapd;
+Q.kpd_bavaria_elections_vote = Q.kpd_votes*bavaria_adjustment_factors.kpd;
+Q.ddp_bavaria_elections_vote = Q.ddp_votes*bavaria_adjustment_factors.ddp;
+Q.lvp_bavaria_elections_vote = Q.lvp_votes*bavaria_adjustment_factors.lvp;
+Q.dvp_bavaria_elections_vote = Q.dvp_votes*bavaria_adjustment_factors.dvp;
+Q.dnvp_bavaria_elections_vote = Q.dnvp_votes*bavaria_adjustment_factors.dnvp;
+Q.nsdap_bavaria_elections_vote = Q.nsdap_votes*bavaria_adjustment_factors.nsdap;
+Q.other_bavaria_elections_vote = Q.other_votes*bavaria_adjustment_factors.other;
+Q.kvp_bavaria_elections_vote = Q.kvp_votes*bavaria_adjustment_factors.kvp;
+Q.dnf_bavaria_elections_vote = Q.dnf_votes*bavaria_adjustment_factors.dnf;
+
 Q.total_votes_bavaria = Q.spd_bavaria_elections_vote + Q.sapd_bavaria_elections_vote + Q.kpd_bavaria_elections_vote + Q.ddp_bavaria_elections_vote + Q.lvp_bavaria_elections_vote + Q.z_bavaria_elections_vote + Q.dvp_bavaria_elections_vote + Q.dnvp_bavaria_elections_vote + Q.nsdap_bavaria_elections_vote + Q.other_bavaria_elections_vote + Q.kvp_bavaria_elections_vote + Q.dnf_bavaria_elections_vote + Q.uspd_bavaria_elections_vote;
 
 if (Q.total_votes_bavaria > 0) {
