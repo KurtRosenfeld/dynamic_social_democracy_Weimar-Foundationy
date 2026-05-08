@@ -234,6 +234,9 @@ Q.bvp_r_bavaria = Q.z_r_bavaria*bvp_share;
 Q.csp_bavaria_elections_vote = Q.z_bavaria_elections_vote*csp_share;
 Q.csp_r_bavaria = Q.z_r_bavaria*csp_share;
 
+Q.z_r_bavaria = 0;
+Q.z_bavaria_elections_vote = 0;
+
 function allocateSeats(percentages, totalSeats = 128) {
     const exactSeats = {};
     const flooredSeats = {};
@@ -306,6 +309,8 @@ Q.non_farm_r_bavaria = (Q.non_farm_r_bavaria != undefined ? parseFloat(Q.non_far
 Q.bvp_r_bavaria = (Q.bvp_r_bavaria != undefined ? parseFloat(Q.bvp_r_bavaria.toFixed(1)) : 0);
 Q.true_z_r_bavaria = (Q.true_z_r_bavaria != undefined ? parseFloat(Q.true_z_r_bavaria.toFixed(1)) : 0);
 Q.csp_r_bavaria = (Q.csp_r_bavaria != undefined ? parseFloat(Q.csp_r_bavaria.toFixed(1)) : 0);
+
+Q.z_bavaria_elections_vote = 0; 
 
 !}
 on-display: {!
