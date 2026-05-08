@@ -168,16 +168,21 @@ if (Q.total_r_bavaria > 0) {
     Q.dnf_r_bavaria = (Q.dnf_r_bavaria / Q.total_r_bavaria) * 100;
 }
 
-Q.farm_bavaria_elections_vote = Q.other_bavaria_elections_vote*0.8
-Q.farm_r_bavaria = Q.other_r_bavaria*0.8
-
-Q.non_farm_bavaria_elections_vote = Q.other_bavaria_elections_vote*0.2
-Q.non_farm_r_bavaria = Q.other_r_bavaria*0.2
+let farm_share = 0.8;
+if (Q.dnvp_ideology == "Moderate") farm_share -= 0.02;
+let non_farm_share = 0.2;
+if (Q.dnvp_leader == "Westrap") farm_share -= 0.02;
 
 let other_share = farm_share + non_farm_share;
 
 farm_share = (farm_share / other_share);
 non_farm_share = (non_farm_share / other_share);
+
+Q.farm_bavaria_elections_vote = Q.other_bavaria_elections_vote*farm_share;
+Q.farm_r_bavaria = Q.other_r_bavaria*farm_share;
+
+Q.non_farm_bavaria_elections_vote = Q.other_bavaria_elections_vote*non_farm_share;
+Q.non_farm_r_bavaria = Q.other_r_bavaria*non_farm_share;
 
 
 let bvp_share = 0.95;
