@@ -228,10 +228,10 @@ csp_share = (csp_share / total_z_share);
 Q.z_bavaria_elections_vote = Q.z_bavaria_elections_vote*z_share;
 Q.z_r_bavaria = Q.z_r_bavaria*z_share;
 
-Q.bvp_bavaria_elections_vote = Q.z_bavaria_elections_vote*z_share;
+Q.bvp_bavaria_elections_vote = Q.z_bavaria_elections_vote*bvp_share;
 Q.bvp_r_bavaria = Q.z_r_bavaria*bvp_share;
 
-Q.csp_bavaria_elections_vote = Q.z_bavaria_elections_vote*z_share;
+Q.csp_bavaria_elections_vote = Q.z_bavaria_elections_vote*csp_share;
 Q.csp_r_bavaria = Q.z_r_bavaria*csp_share;
 
 function allocateSeats(percentages, totalSeats = 128) {
