@@ -88,9 +88,9 @@ if (Q.uspd_leader == "Crispien") bavaria_adjustment_factors.uspd += 0.1;
 if (Q.sapd_votes >= 5) bavaria_adjustment_factors.sapd += 0.48;
 if (Q.rural_spd_normalized >= 30) bavaria_adjustment_factors.spd += 0.2;
 if (Q.ddp_votes >= 3) bavaria_adjustment_factors.ddp = 0.4;
-if (!Q.stegerwald_path) Q.z_bavaria_elections_vote = Q.z_local_elections_vote*bavaria_adjustment_factors.z;
-if (Q.stegerwald_path) Q.z_bavaria_elections_vote = Q.z_local_elections_vote * 1.5;
-if (Q.cvp_formed) Q.z_bavaria_elections_vote = Q.z_local_elections_vote * 1.2;
+if (!Q.stegerwald_path) Q.z_bavaria_elections_vote = Q.z_votes*bavaria_adjustment_factors.z;
+if (Q.stegerwald_path) Q.z_bavaria_elections_vote = Q.z_votes * 1.5;
+if (Q.cvp_formed) Q.z_bavaria_elections_vote = Q.z_votes * 1.2;
 if (Q.cvp_formed) bavaria_adjustment_factors.dnf += 0.6;
 
 Q.spd_bavaria_elections_vote = Q.spd_votes*bavaria_adjustment_factors.spd;
