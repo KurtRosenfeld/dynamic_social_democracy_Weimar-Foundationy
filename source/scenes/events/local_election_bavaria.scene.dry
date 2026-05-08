@@ -91,6 +91,7 @@ if (Q.cvp_formed) Q.z_bavaria_elections_vote = Q.z_local_elections_vote * 1.2;
 if (Q.cvp_formed) bavaria_adjustment_factors.dnf += 0.6;
 
 Q.spd_bavaria_elections_vote = Q.spd_votes*bavaria_adjustment_factors.spd;
+Q.uspd_bavaria_elections_vote = Q.uspd_votes*bavaria_adjustment_factors.uspd;
 Q.sapd_bavaria_elections_vote = Q.sapd_votes*bavaria_adjustment_factors.sapd;
 Q.kpd_bavaria_elections_vote = Q.kpd_votes*bavaria_adjustment_factors.kpd;
 Q.ddp_bavaria_elections_vote = Q.ddp_votes*bavaria_adjustment_factors.ddp;
