@@ -1,5 +1,5 @@
 title: Local Elections
-view-if: year == 1932 and month == 4
+view-if: nsdap_relation >= 5000
 new-page: true
 tags: event
 on-arrival: local_elections_seen = 1;
