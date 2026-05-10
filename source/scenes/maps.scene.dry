@@ -665,7 +665,6 @@ on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 
     </g>
     <g
        id="g4"
-       style="display:inline"
 [? if baden_gov == "Bourgeois": style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?][? if baden_gov == "Weimar": style="display:inline;fill:#FC6D6D;fill-opacity:1;stroke-width:20.0315" ?][? if baden_gov == "SPD": style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?]
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
