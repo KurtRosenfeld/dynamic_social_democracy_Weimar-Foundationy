@@ -548,16 +548,17 @@ The current territorial state of the German Reich (Weimar Republic)
 go-to: map_menu
 on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 0 
 
-<div class="box" style='background-color:#8E0000'> </div> Left-Coalition
+[? if kpd_relation >= 25: <div class="box" style='background-color:#8E0000'> </div> Left-Coalition ?]
 <div class="box" style='background-color:#A10000'> </div> Social-Democratic-Coalition
 <div class="box" style='background-color:#c10000'> </div> SPD-majority
 <div class="box" style='background-color:#FC6D6D'> </div> Weimar-Coalition
+[? if bavaria_gov == "Anti-BVP" or bavaria_gov == "Traffic": <div class="box" style='background-color:#DD6F9C'> </div> Bavaria Coaliation including the SPD ?]
 <div class="box" style='background-color:#DD8D1B'> </div> Social-Liberal-Coalition
 <div class="box" style='background-color:#A2B725'> </div> Grand-Coalition
 <div class="box" style='background-color:#818181'> </div> Bourgeois-Coalition
-<div class="box" style='background-color:#11EDEA'> </div> BVP-majority
+[? if bavaria_gov == "BVP": <div class="box" style='background-color:#11EDEA'> </div> BVP-majority ?]
 <div class="box" style='background-color:#0F4989'> </div> Right-Coalition
-<div class="box" style='background-color:#563129'> </div> NSDAP-majority
+[? if nsdap_votes >= 25: <div class="box" style='background-color:#563129'> </div> NSDAP-majority ?]
 
 <svg
    version="1.1"
@@ -665,7 +666,7 @@ on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 
     </g>
     <g
        id="g4"
-[? if baden_gov == "Bourgeois": style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?][? if baden_gov == "Weimar": style="display:inline;fill:#FC6D6D;fill-opacity:1;stroke-width:20.0315" ?][? if baden_gov == "SPD": style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?]
+[? if baden_gov == "Bourgeois": style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?][? if baden_gov == "Weimar": style="display:inline;fill:#FC6D6D;fill-opacity:1;stroke-width:20.0315" ?][? if baden_gov == "SPD": style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?][? if baden_gov == "Social-Liberal": style="display:inline;fill:#DD8D1B;fill-opacity:1;stroke-width:20.0315" ?]
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          d="m 83.866382,198.86283 0.14729,1.00532 0.717963,0.62936 0.708646,1.04343 1.340099,0.0937 1.086683,0.19055 -0.781805,-1.07639 -0.944537,-1.03313 0.284293,-0.78181 1.279317,-0.63966 0.781806,0.49752 0.923951,-0.14215 0.781806,-1.20825 0.852878,0.56859 0.781805,0.42644 1.066098,-0.21322 0.852879,-0.35537 0.21322,-1.13717 0.639658,-0.7818 1.421464,-1.13717 1.208245,-1.20825 0.568586,-1.0661 -0.07107,-1.13717 -1.137171,-0.71073 0.355366,-1.49254 -0.923952,-0.56858 -0.995024,0.56858 -0.21322,0.56859 -0.710732,-0.71073 -0.639659,-0.85288 -0.710732,-0.35537 -0.923952,-0.0711 -0.923951,-0.56859 -1.208245,-0.14214 -1.208244,0.35536 v 0.56859 0.49751 l 0.923951,0.49751 0.497513,0.42644 -0.21322,0.85288 -0.995025,0.49751 -0.426439,0.56859 -1.208244,0.35536 -1.279318,0.14215 -1.77683,0.14215 v 0.92395 l -0.21322,0.21322 -0.852878,0.49751 -0.142147,0.63966 0.142147,1.49254 0.639659,0.63966 0.07107,1.06609 z"
@@ -706,7 +707,7 @@ on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 
     </g>
     <g
        id="g5"
-[? if hamburg_gov == "Bourgeois": style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?][? if hamburg_gov == "Weimar": style="display:inline;fill:#FC6D6D;fill-opacity:1;stroke-width:20.0315" ?][? if hamburg_gov == "SPD": style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?][? if hamburg_gov == "Left": style="display:inline;fill:#8E0000;fill-opacity:1;stroke-width:20.0315" ?]
+[? if hamburg_gov == "Bourgeois": style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?][? if hamburg_gov == "Weimar": style="display:inline;fill:#FC6D6D;fill-opacity:1;stroke-width:20.0315" ?][? if hamburg_gov == "SPD": style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?][? if hamburg_gov == "Left": style="display:inline;fill:#8E0000;fill-opacity:1;stroke-width:20.0315" ?][? if hamburg_gov == "Social-Liberal": style="display:inline;fill:#DD8D1B;fill-opacity:1;stroke-width:20.0315" ?]
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          d="m 104.95392,74.769585 1.15207,1.267281 0.80645,1.728111 0.57604,1.267281 1.84332,1.267281 0.80645,1.382489 v 1.036866 h -2.64977 l -0.69124,-1.612903 h -1.26729 l -1.03686,-0.576037 -1.61291,-0.345622 -0.34562,-1.152074 1.03687,-0.345622 0.34562,-1.612903 0.92166,-0.921659 z"
