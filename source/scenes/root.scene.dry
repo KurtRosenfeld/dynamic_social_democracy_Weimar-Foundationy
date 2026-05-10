@@ -1060,6 +1060,25 @@ for (let i = 0; i <= 100; i++) {
     Q[`flavour_${i}_trigger_time`] = 0;
 }
 
+// local governments
+Q.bavaria_gov = 'Bourgeois';
+Q.saxony_gov = 'Social-Democratic';
+Q.thuringia_gov = 'Social-Democratic';
+Q.baden_gov = 'Weimar';
+Q.wurttemberg_gov = 'Weimar';
+Q.hesse_gov = 'Weimar';
+Q.meck_schwe_gov = 'Social-Liberal';
+Q.meck_stre_gov = 'Social-Liberal';
+Q.hamburg_gov = 'Social-Liberal';
+Q.bremen_gov = 'Bourgeois';
+Q.luebeck_gov = 'Social-Liberal';
+Q.oldenburg_gov = 'Weimar';
+Q.anhalt_gov = 'Social-Liberal';
+Q.brunswick_gov = 'Social-Liberal';
+Q.schaum_lippe_gov = 'Social-Liberal';
+Q.lippe_gov = 'Social-Liberal';
+Q.waldeck_gov = 'Right';
+
 // membership
 Q.wels_in = 'SPD';
 Q.muller_in = 'SPD';
