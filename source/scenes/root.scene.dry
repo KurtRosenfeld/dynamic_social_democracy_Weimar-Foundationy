@@ -363,7 +363,9 @@ Q.other_r = 2.6;
 Q.bvp_r = 4.3;
 Q.wp_r = 0;
 Q.cnblp_r = 0;
-Q.true_other_r = 2.6;
+Q.dhp_r = 1.6;
+Q.dbp_r = 1;
+Q.true_other_r = 0;
 Q.reichstag_size = 4.59;
 Q.landtag_size = 4.5;
 
