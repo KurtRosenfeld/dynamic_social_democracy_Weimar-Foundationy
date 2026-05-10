@@ -773,7 +773,7 @@ if (Q.ddp_r && !Q.lvp_formed) {
 
 if (Q.dbp_r) {
     data.push({
-        "id": "fram2",
+        "id": "farm2",
         "legend": "DBP",
         "name": "DBP",
         "seats": Math.round(Q.dbp_r * Q.reichstag_size),
