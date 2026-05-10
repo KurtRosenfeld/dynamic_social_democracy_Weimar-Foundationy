@@ -1060,6 +1060,34 @@ for (let i = 0; i <= 100; i++) {
     Q[`flavour_${i}_trigger_time`] = 0;
 }
 
+// membership
+Q.wels_in = "SPD";
+Q.muller_in = "SPD";
+Q.scheidemann_in = "SPD";
+Q.crispien_in = "USPD";
+Q.breitscheid_in = "USPD";
+Q.hilferding_in = "USPD";
+
+Q.ebert_in = "SPD";
+Q.braun_in = "SPD";
+Q.severing_in = "SPD";
+Q.pfulf_in = "SPD";
+Q.juchaz_in "SPD";
+
+Q.seydewitz_in = "SPD";
+Q.rosenfeld_in = "USPD";
+Q.levi_in = "USPD";
+Q.sender_in = "USPD";
+Q.siemsen_in = "USPD";
+Q.liebknecht_in = "USPD";
+Q.ledebour_in = "USPD";
+
+Q.woytinsky_in = "SPD";
+Q.tarnow_in = "SPD";
+Q.leipart_in = "SPD";
+Q.aufhauser_in = "USPD";
+Q.wissel_in = "SPD";
+
 // all the initial advisors are centrists.
 Q.wels_advisor = 1; // Otto Wels
 Q.muller_advisor = 1; // Hermann Müller
