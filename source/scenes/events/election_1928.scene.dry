@@ -559,11 +559,15 @@ Q.cnblp_r = 0;
 Q.wp_r = 0;
 Q.csvd_r = 0;
 Q.aspd_r = 0;
+Q.dbp_r = 0;
+Q.dhp_r = 0;
 
 if (Q.cnblp_votes) Q.cnblp_r = Math.round(Q.cnblp_votes * Q.adjustmentFactors_other * 10) / 10;
 if (Q.wp_votes) Q.wp_r = Math.round(Q.wp_votes * Q.adjustmentFactors_other * 10) / 10;
 if (Q.csvd_votes) Q.csvd_r = Math.round(Q.csvd_votes * Q.adjustmentFactors_other * 10) / 10;
 if (Q.aspd_votes) Q.aspd_r = Math.round(Q.aspd_votes * Q.adjustmentFactors_other * 10) / 10;
+if (Q.dbp_votes) Q.dbp_r = Math.round(Q.dbp_votes * Q.adjustmentFactors_other * 10) / 10;
+if (Q.dhp_votes) Q.dhp_r = Math.round(Q.dhp_votes * Q.adjustmentFactors_other * 10) / 10;
 
 if (Q.dnef_formed) {
     Q.cnblp_r = 0;
@@ -575,7 +579,7 @@ if (Q.electoral_threshold > 1) {
     Q.wp_r = 0;
     Q.csvd_r = 0;
 }
-Q.true_other_r = Q.other_r - Q.cnblp_r - Q.wp_r - Q.csvd_r - Q.aspd_r;
+Q.true_other_r = Q.other_r - Q.cnblp_r - Q.wp_r - Q.csvd_r - Q.aspd_r - Q.dbp_r - Q.dhp_r;
 if (!Q.csvd_formed && !Q.aspd_other) Q.true_other_r += Q.csvd_r;
 if (!Q.aspd_other) Q.true_other_r += Q.aspd_r;
 
@@ -1461,6 +1465,14 @@ if (Q.lvp_r && Q.lvp_formed) {
     });
 }
 
+if (Q.dbp_r) {
+ data.push({
+        "id": "farm2",
+        "legend": "DBP",
+        "name": "DBP",
+        "seats": Math.round(Q.dbp_r * Q.reichstag_size),
+    });
+}
 
 if (Q.z_minus_bvp_r) {
     data.push({
@@ -1477,6 +1489,15 @@ if (Q.bvp_r) {
         "legend": "BVP",
         "name": "BVP",
         "seats": Math.round(Q.bvp_r * Q.reichstag_size),
+    });
+}
+
+if (Q.dhp_r) {
+ data.push({
+        "id": "vrp",
+        "legend": "DHP",
+        "name": "DHP",
+        "seats": Math.round(Q.dhp_r * Q.reichstag_size),
     });
 }
 
