@@ -542,44 +542,44 @@ Right-Wing Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span styl
 @weimar_coalition_hamburg
 title: A Weimar Coalition will be formed
 choose-if: weimar_coalition_hamburg > 50 and z_relation >= 25
-on-arrival: hamburg_election_2_trigger_time = time + 48; z_relation += 2; ddp_relation += 3
+on-arrival: hamburg_election_2_trigger_time = time + 48; z_relation += 2; ddp_relation += 3; hamburg_gov = "Weimar"
 
 @grand_coalition_hamburg
 title: A Grand Coalition will be formed
 choose-if: grand_coalition_hamburg > 50 and z_relation >= 25 and dvp_relation >= 35
-on-arrival: hamburg_election_2_trigger_time = time + 48; z_relation += 2; dvp_relation += 3
+on-arrival: hamburg_election_2_trigger_time = time + 48; z_relation += 2; dvp_relation += 3; hamburg_gov = "Grand"
 
 @bourgeois_coalition_hamburg
 title: A bourgeois coalition must be formed
 choose-if: true_bourgeois_coalition_hamburg > 50
 view-if: weimar_coalition_hamburg < 50 and right_coalition_hamburg < 50
-on-arrival: hamburg_election_2_trigger_time = time + 48
+on-arrival: hamburg_election_2_trigger_time = time + 48; hamburg_gov = "Bourgeois"
 
 @left_coalition_hamburg
 title: A Coalition of the Left will be formed
 subtitle: We will work alongside the KPD
 choose-if: left_coalition_hamburg > 50 and kpd_relation >= 40
-on-arrival: hamburg_election_2_trigger_time = time + 48; unemployed_kpd += 3; new_middle_others -= 2; new_middle_dvp -= 1; new_middle_spd += 1
+on-arrival: hamburg_election_2_trigger_time = time + 48; unemployed_kpd += 3; new_middle_others -= 2; new_middle_dvp -= 1; new_middle_spd += 1; hamburg_gov = "Left"
 
 @kpd_majority_hamburg
 title: KPD majority
 subtitle: The KPD will form a local revolutionary stronghold
 view-if: kpd_r_hamburg > 40
 choose-if: kpd_r_hamburg > 50
-on-arrival: hamburg_election_2_trigger_time = time + 48; workers_kpd += 3; new_middle_spd -= 2; 
+on-arrival: hamburg_election_2_trigger_time = time + 48; workers_kpd += 3; new_middle_spd -= 2; hamburg_gov = "Left"
 
 @spd_majority_hamburg
 title: SPD majority
 subtitle: We don't need any coalition partners
 view-if: spd_r_hamburg > 50
-on-arrival: hamburg_election_2_trigger_time = time + 48; workers_spd += 1; workers_dnvp -= 2; new_middle_spd += 1; new_middle_others -= 1
+on-arrival: hamburg_election_2_trigger_time = time + 48; workers_spd += 1; workers_dnvp -= 2; new_middle_spd += 1; new_middle_others -= 1; hamburg_gov = "SPD"
 
 @right_wing_coalition_hamburg
 title: The DNVP and DVP will work alongside the NSDAP
 subtitle: This should not have happened
 choose-if: right_coalition_hamburg > 50
 view-if: right_coalition_hamburg > 50
-on-arrival: hamburg_election_2_trigger_time = time + 48; rural_nsdap += 2; dvp_relation -= 2
+on-arrival: hamburg_election_2_trigger_time = time + 48; rural_nsdap += 2; dvp_relation -= 2; hamburg_gov = "Right"
 
 This can't end well...
 
