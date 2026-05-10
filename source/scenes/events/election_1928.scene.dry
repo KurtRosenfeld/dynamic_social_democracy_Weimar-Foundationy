@@ -2155,7 +2155,7 @@ title: Another minority Weimar-Coalition
 view-if: weimar_coalition < 50 and year <= 1923
 subtitle: This is the most sensible option.
 on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; in_weimar_coalition = 1; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; spd_in_goverment = 1
-go-to: ministries if vspd_parliament
+go-to: ministries if vspd_parliament else begging_toleration
 
 Wirth is the only chancellor acceptable. We need to secure some majority
 
