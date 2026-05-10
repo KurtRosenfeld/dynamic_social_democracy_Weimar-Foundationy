@@ -2171,6 +2171,7 @@ Wirth is the only chancellor acceptable. We need to secure some majority
 - @dhp_toleration
 - @uspd_toleration
 - @dvp_toleration
+- @bvp_toleration
 
 @bb_ministry
 title: Give the Ministry of Agriculture to the BB.
@@ -2200,6 +2201,11 @@ choose-if: (weimar_coalition + uspd_r) > 50 and dvp_relation >= 40
 unavailable-subtitle: We do not have adequate relations.
 on-arrival: ressources -= 2
 go-to: ministries
+
+@bvp_toleration
+title: Get the BVP to tolerate us.
+choose-if: bvp_r >= 99
+unavailable-subtitle: This won't happen.
 
 @wholesome_coalition
 title: A "wholesome" coalition is formed.
