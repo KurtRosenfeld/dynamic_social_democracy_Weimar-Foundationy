@@ -2071,6 +2071,7 @@ go-to: coalition_menu
 
 - @spd_majority
 - @weimar_coalition
+- @early_weimar_minority
 - @weimar_coalition_liberal_parliament
 - @wholesome_coalition
 - @schleicher_majority_coalition
@@ -2149,6 +2150,52 @@ go-to: ministries
 
 Our allies approve of this choice.
 
+@early_weimar_minority
+title: Another minority Weimar-Coalition
+view-if: weimar_coalition < 50 and year <= 1923
+subtitle: This is the most sensible option.
+on-arrival: chancellor = "Wirth"; chancellor_party = "Z"; in_weimar_coalition = 1; foreign_minister_party = "DVP"; foreign_minister_party = "LVP" if lvp_formed; interior_minister_party = "Z"; justice_minister_party = "I"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; economic_minister_party = "LVP" if lvp_formed; finance_minister_party = "DVP"; finance_minister_party = "LVP" if lvp_formed; finance_minister_party = "LVP" if lvp_formed; agriculture_minister_party = "Z"; spd_in_goverment = 1
+go-to: ministries if vspd_parliament
+
+Wirth is the only chancellor acceptable. We need to secure some majority
+
+[? if vspd_parliament: Our parliamentary_union with the USPD gives us the necessary majority ?]
+
+@begging_toleration
+
+- @bb_ministry
+- @dhp_toleration
+- @uspd_toleration
+- @dvp_toleration
+
+@bb_ministry
+title: Give the Ministry of Agriculture to the BB.
+choose-if: (weimar_coalition + dbp_r) > 50
+unavailable-subtitle: They don't have enough seats to back us.
+on-arrival: agriculture_minister_party = "BB"; agriculture_minister = "Fehr"
+go-to: ministries
+
+@dhp_toleration
+title: Get the DHP to tolerate us.
+subtitle: -1 ressource
+unavailable-subtitle: They don't have enough seats to back us.
+choose-if: (weimar_coalition + dhp_r) > 50
+on-arrival: ressources -= 1
+go-to: ministries
+
+@uspd_toleration
+title: Get the USPD to tolerate us.
+choose-if: (weimar_coalition + uspd_r) > 50 and uspd_relation >= 65
+unavailable-subtitle: They don't have enough seats to back us.
+go-to: ministries
+
+@dvp_toleration
+title: Get the DVP to tolerate us.
+subtitle: -2 ressources
+choose-if: (weimar_coalition + uspd_r) > 50 and dvp_relation >= 50
+unavailable-subtitle: They don't have enough seats to back us.
+on-arrival: ressources -= 2
+go-to: ministries
 
 @wholesome_coalition
 title: A "wholesome" coalition is formed.
