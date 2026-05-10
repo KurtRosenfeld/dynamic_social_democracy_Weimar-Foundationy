@@ -539,7 +539,7 @@ on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 
      style="display:inline">
     <g
        id="g3"
-       style="display:inline"
+       [? if in grand_coalition_prussia: style="display:inline;fill:#A2B725" ?][? if in_spd_majority_prussia: style="display:inline;fill:#C00000" ?][? if in bourgeois_coalition_prussia: style="display:inline;fill:#818181" ?]
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          style="display:inline;fill:#c8c4b7;fill-opacity:1;stroke-width:20.0315"
