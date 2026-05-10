@@ -545,7 +545,7 @@ United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span styl
 title: The <span style="color: #A2D8E0;">**BVP**</span> has fallen short of a majority, but continue to rule in caretaker capacity.
 subtitle: Electing a new Minister-President—or dissolving the Landtag—requires an absolute majority. Deep antagonism between the opposition parties has made clearing that hurdle all but impossible.
 view-if: bourgeois_coalition_bavaria < 50
-on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_minority_bvp = 1; pro_republic -= 2; catholics_nsdap -= 2
+on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "Bourgeois"; pro_republic -= 2; catholics_nsdap -= 2
 
 Despite the <span style="color: #A2D8E0;">**BVP**</span> falling short of a majority, even with the inclusion of other bourgeois parties, they continue to rule in as a caretaker government. [? if nsdap_bavaria_elections_vote >= 15: Negotiations with the <span style="color: #7A3C00;">**NSDAP**</span> has collapsed, due to their disdain for Catholics. ?]
 
@@ -555,7 +555,7 @@ Heinrich Held, the incumbent Minister-President and a pro-democratic member of t
 title: The <span style="color: #A2D8E0;">**BVP**</span> has captured another majority.
 subtitle: As expected?
 view-if: bvp_r_bavaria >= 50
-on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_bvp = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; catholics_nsdap -= 2; new_middle_z += 2; old_middle_z += 2; catholics_other += 2; rural_z += 2; pro_republic += 1
+on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "BVP"; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; catholics_nsdap -= 2; new_middle_z += 2; old_middle_z += 2; catholics_other += 2; rural_z += 2; pro_republic += 1
 
 The <span style="color: #A2D8E0;">**BVP**</span> has surprisingly won an outright majority, and no longer needs the support of the bourgeois parties. This has cemented Bavaria as one of the most stable state governments, maybe not "democratic" though.
 
@@ -565,7 +565,7 @@ Heinrich Held, the incumbent Minister-President and a pro-democratic member of t
 title: The <span style="color: #7A3C00;">**NSDAP**</span> wins a majority?
 subtitle: How did it come to this...?
 view-if: (nsdap_r_bavaria + dnf_r_bavaria >= 50 and dnvp_ideology == "Moderate") or (nsdap_r_bavaria + dnvp_r_bavaria >= 50 and dnvp_ideology == "Radical")
-on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_nsdap = 1; new_middle_nsdap += 6; old_middle_nsdap += 6; rural_nsdap += 6; new_middle_z -= 4; old_middle_z -= 4; rural_z -= 4; pro_republic -= 10
+on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "NSDAP"; new_middle_nsdap += 6; old_middle_nsdap += 6; rural_nsdap += 6; new_middle_z -= 4; old_middle_z -= 4; rural_z -= 4; pro_republic -= 10
 
 How the hell.
 
@@ -573,7 +573,7 @@ How the hell.
 title: The <span style="color: #A2D8E0;">**BVP**</span> coalitions with the <span style="color: #38C538;">Bavarian Peasants’ League</span> and various bourgeois parties.
 subtitle: The <span style="color: #A2D8E0;">BVP</span> will make amends with the <span style="color: #38C538;">farmers</span>.
 view-if: bourgeois_coalition_bavaria >= 50
-on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_bvp = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; catholics_nsdap -= 2; rural_nsdap -= 3; rural_other += 3; pro_republic += 3
+on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "Bourgeois"; new_middle_nsdap -= 2; old_middle_nsdap -= 2; catholics_nsdap -= 2; rural_nsdap -= 3; rural_other += 3; pro_republic += 3
 
 The former incumbent coalition consisting of the <span style="color: #A2D8E0;">**BVP**</span>, <span style="color: #38C538;">Bavarian Peasants’ League</span>, and the various smaller bourgeois parties has continued. This show of stability will weaken the <span style="color: #7A3C00;">Nazis</span>.
 
@@ -583,7 +583,7 @@ Heinrich Held, the incumbent Minister-President and a pro-democratic member of t
 title: The <span style="color: #c00000;">**SPD**</span> forms a majority government.
 subtitle: Congratulations.
 view-if: spd_r_bavaria >= 50
-on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_spd = 1; new_middle_nsdap -= 3; old_middle_nsdap -= 3; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 5; old_middle_spd += 6; rural_spd += 4; catholics_z -= 6; catholics_spd += 6; pro_republic += 5; prussian_police_loyalty += 0.1; sa_strength -= 100; sa_strength -= 50 if sa_nationwide_ban;
+on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "SPD"; new_middle_nsdap -= 3; old_middle_nsdap -= 3; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 5; old_middle_spd += 6; rural_spd += 4; catholics_z -= 6; catholics_spd += 6; pro_republic += 5; prussian_police_loyalty += 0.1; sa_strength -= 100; sa_strength -= 50 if sa_nationwide_ban;
 achievement: rotes_bayern
 
 We have somehow managed to capture a majority in the Landtag, and have put our Minister-President as the head of the most conservative state in the country. Hopefully this doesn't end badly like last time. Bavaria has been governed by the political right ever since 1921, and the <span style="color: #A2D8E0;">**BVP**</span> has often covered for reactionary political activity. Now, we are able to change that and aggressively counter the <span style="color: #7A3C00;">**SA**</span> thugs roaming the streets [? if sa_nationwide_ban: and more aggressively enforce the national ban of the organization that the conservative Held government had mostly ignored ?].
@@ -593,7 +593,7 @@ title: The <span style="color: #c00000;">**SPD**</span> will form a coalition go
 subtitle: The <span style="color: #38C538;">Bavarian Peasants’ League</span> had a falling out right? Let's utilize our contacts with their left wing. -1 resource
 unavailable-subtitle: [? if traffic_coalition_bavaria < 50: <span style="color: #c00000;">SPD</span> + [? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_name +]</span>?][? if lvp_formed: <span style="color: #FFCC00;">LVP</span>?] + <span style="color: #38C538;">Bavarian Peasants’ League</span> ([+ traffic_coalition_bavaria +]%)  ?][? if resources < 1: - Not enough resources (need 1). ?]
 choose-if: traffic_coalition_bavaria >= 50 and resources >= 1
-on-arrival: bavaria_election_2_trigger_time = time + 48; resources -= 1; bavaria_spd = 1; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 3; old_middle_spd += 3; rural_spd += 1; rural_other += 3; catholics_z -= 4; catholics_spd += 4; z_relation -= 5; pro_republic += 3; prussian_police_loyalty += 0.05; sa_strength -= 50; sa_strength -= 50 if sa_nationwide_ban;
+on-arrival: bavaria_election_2_trigger_time = time + 48; resources -= 1; bavaria_gov = "Traffic"; new_middle_nsdap -= 2; old_middle_nsdap -= 2; rural_nsdap -= 2; new_middle_z -= 2; old_middle_z -= 2; rural_z -= 2; new_middle_spd += 3; old_middle_spd += 3; rural_spd += 1; rural_other += 3; catholics_z -= 4; catholics_spd += 4; z_relation -= 5; pro_republic += 3; prussian_police_loyalty += 0.05; sa_strength -= 50; sa_strength -= 50 if sa_nationwide_ban;
 achievement: ampelkoalition
 
 Somehow, we have brought the [? if not lvp_formed and ddp_r_bavaria: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and?][? if lvp_formed and lvp_r_bavaria: <span style="color: #FFCC00;">**LVP**</span> and?] <span style="color: #38C538;">Bavarian Peasants’ League</span> to the negotiating table, despite their preference for working with the <span style="color: #A2D8E0;">**BVP**</span>. Through connections with the left-wing and liberal factions within the <span style="color: #38C538;">Bavarian Peasants’ League</span>, we have overcome their reluctance—and now, we are in government! Bavaria has been governed by the political right ever since 1921, and the <span style="color: #A2D8E0;">**BVP**</span> has often covered for reactionary political activity. Now, we are able to change that and counter the <span style="color: #7A3C00;">**SA**</span> thugs roaming the streets [? if sa_nationwide_ban: and more aggressively enforce the national ban of the organization that the conservative Held government had mostly ignored ?].
@@ -603,7 +603,7 @@ Somehow, we have brought the [? if not lvp_formed and ddp_r_bavaria: <span style
 title: The <span style="color: #c00000;">**SPD**</span> will form a coalition government with the <span style="color: #700000;">**KPD**</span>?
 subtitle: History will repeat itself.
 view-if: left_coalition_bavaria >= 50 and (kpd_relation >= 60 and kpd_leader == "Conciliators") or (kpd_relation >= 80 and kpd_leader != "Conciliators")
-on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_spd = 1; bavaria_kpd = 1; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5; coup_progress += 10
+on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_spd = 1; bavaria_gov = "Left"; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5; lvp_relation -= 5; coup_progress += 10
 
 The conservative stronghold of the republic, home to the largest concentration of Catholics and general forces of <span style="color: #808080;">reaction</span> has finally fallen to the forces of the <span style="color: #700000;">Left</span>. Few could have expected the seeds of <span style="color: #c00000;">socialism</span>, much less <span style="color: #700000;">communism</span> to once again take root in Bavaria, but the election results showed have made this impossibility into a living nightmare for the right. <span style="color: #3E88B3;">**Stahlhelm**</span> brigands, along with the <span style="color: #7A3C00;">Nazi</span> <span style="color: #7A3C00;">**SA**</span> are already rushing to prepare a coup against what they see as a <span style="color: #700000;">communist</span> takeover in progress, and we may soon have a civil war on our hands.
 The legacy of the Bavarian Worker’s Republic has been avenged, but at what cost?
