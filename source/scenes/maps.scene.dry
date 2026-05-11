@@ -548,16 +548,16 @@ The current territorial state of the German Reich (Weimar Republic)
 go-to: map_menu
 on-arrival: republic_map_shown = 0; political_map_shown = 1; europe_map_shown = 0 
 
-[? if kpd_relation >= 25: <div class="box" style='background-color:#8E0000'> </div> Left-Coalition ?]
-<div class="box" style='background-color:#A10000'> </div> Social-Democratic-Coalition
+[? if kpd_relation >= 25: <div class="box" style='background-color:#8E0000'> </div> Left Coalition ?]
+<div class="box" style='background-color:#A10000'> </div> Social-Democratic Coalition
 <div class="box" style='background-color:#c10000'> </div> SPD-majority
-<div class="box" style='background-color:#FC6D6D'> </div> Weimar-Coalition
+<div class="box" style='background-color:#FC6D6D'> </div> Weimar Coalition
 [? if bavaria_gov == "Anti-BVP" or bavaria_gov == "Traffic": <div class="box" style='background-color:#DD6F9C'> </div> Bavaria Coaliation including the SPD ?]
-<div class="box" style='background-color:#DD8D1B'> </div> Social-Liberal-Coalition
-<div class="box" style='background-color:#A2B725'> </div> Grand-Coalition
-<div class="box" style='background-color:#818181'> </div> Bourgeois-Coalition
+<div class="box" style='background-color:#DD8D1B'> </div> Social-Liberal Coalition
+<div class="box" style='background-color:#A2B725'> </div> Grand Coalition
+<div class="box" style='background-color:#818181'> </div> Bourgeois Coalition
 [? if bavaria_gov == "BVP": <div class="box" style='background-color:#11EDEA'> </div> BVP-majority ?]
-<div class="box" style='background-color:#0F4989'> </div> Right-Coalition
+<div class="box" style='background-color:#0F4989'> can I write here? </div> Right Coalition
 [? if nsdap_votes >= 25: <div class="box" style='background-color:#563129'> </div> NSDAP-majority ?]
 
 <svg
