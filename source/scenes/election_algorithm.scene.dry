@@ -35,9 +35,11 @@ for (var party of Q.parties) {
     Q[party + '_support'] = party_support;
     total_support += party_support;
     if (party == "other") {
-        Q.cnblp_normalized = Q.rural_other_normalized*Q.rural;
-        Q.wp_normalized = (Q.new_middle_other_normalized*Q.new_middle) + (Q.old_middle_other_normalized*Q.old_middle);
+        Q.cnblp_normalized = Q.rural_other_normalized*Q.rural*0.5;
+        Q.wp_normalized = (Q.new_middle_other_normalized*Q.new_middle)*0.5 + (Q.old_middle_other_normalized*Q.old_middle);
         if (Q.csvd_formed && !Q.aspd_other) Q.csvd_normalized = Q.workers_other_normalized*Q.workers;
+        Q.dbp_normalized = Q.rural_other_normalized*Q.rural*0.5;
+        Q.dhp_normalized = (Q.new_middle_other_normalized*Q.new_middle)*0.5;
         if (Q.aspd_other) Q.aspd_normalized = (Q.workers_other_normalized*Q.workers) + (Q.unemployed_other_normalized*Q.unemployed);
         if (Q.aspd_kvp) Q.aspd_normalized = (Q.workers_kvp_normalized*Q.workers) + (Q.unemployed_kvp_normalized*Q.unemployed);
         if (Q.right_dnef) Q.right_dnef_normalized = ((Q.new_middle_dnef_normalized / 2)*Q.new_middle) + (Q.old_middle_dnef_normalized*Q.old_middle) + (Q.rural_dnef_normalized*Q.rural) + ((Q.catholics_dnef_normalized / 2)*Q.catholics);
