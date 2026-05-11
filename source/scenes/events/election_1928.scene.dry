@@ -562,12 +562,12 @@ Q.aspd_r = 0;
 Q.dbp_r = 0;
 Q.dhp_r = 0;
 
-if (Q.cnblp_votes) Q.cnblp_r = Math.round(Q.cnblp_votes * Q.adjustmentFactors_other * 5) / 5;
-if (Q.wp_votes) Q.wp_r = Math.round(Q.wp_votes * Q.adjustmentFactors_other * 5) / 5;
-if (Q.csvd_votes) Q.csvd_r = Math.round(Q.csvd_votes * Q.adjustmentFactors_other * 5) / 5;
-if (Q.aspd_votes) Q.aspd_r = Math.round(Q.aspd_votes * Q.adjustmentFactors_other * 5) / 5;
-if (Q.dbp_votes) Q.dbp_r = Math.round(Q.dbp_votes * Q.adjustmentFactors_other * 5) / 5;
-if (Q.dhp_votes) Q.dhp_r = Math.round(Q.dhp_votes * Q.adjustmentFactors_other * 5) / 5;
+if (Q.cnblp_votes) Q.cnblp_r = Math.round(Q.cnblp_votes * Q.adjustmentFactors_other * 10) / 10;
+if (Q.wp_votes) Q.wp_r = Math.round(Q.wp_votes * Q.adjustmentFactors_other * 10) / 10;
+if (Q.csvd_votes) Q.csvd_r = Math.round(Q.csvd_votes * Q.adjustmentFactors_other * 10) / 10;
+if (Q.aspd_votes) Q.aspd_r = Math.round(Q.aspd_votes * Q.adjustmentFactors_other * 10) / 10;
+if (Q.dbp_votes) Q.dbp_r = Math.round(Q.dbp_votes * Q.adjustmentFactors_other * 10) / 10;
+if (Q.dhp_votes) Q.dhp_r = Math.round(Q.dhp_votes * Q.adjustmentFactors_other * 10) / 10;
 
 if (Q.dnef_formed) {
     Q.cnblp_r = 0;
