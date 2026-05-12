@@ -297,9 +297,9 @@ data = [{
 if (Q.uspd_r_saxony) {
     data.push({
         "id": "uspd",
-        "legend": "SAPD",
-        "name": "SAPD",
-        "seats": Math.round(Q.sapd_r_saxony * 0.96),
+        "legend": "USPD",
+        "name": "USPD",
+        "seats": Math.round(Q.uspd_r_saxony * 0.96),
     });
 }
 
