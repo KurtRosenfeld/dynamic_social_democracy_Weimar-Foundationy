@@ -456,17 +456,17 @@ on-arrival: saxony_gov = "SPD"; workers_spd += 2; kpd_relation += 1
 title: A Social-Liberal Coalition???
 subtitle: It wouldn't be the first time...
 choose-if: spd_ddp_coalition_saxony >= 50 and ddp_relation >= 65 and (left_coalition_saxony <= 49 or (kpd_relation < 30 and uspd_relation < 45))
-on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 5; ddp_realtion += 10; dvp_relation += 2; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; wirth_concession += 1
+on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 5; ddp_realtion += 10; dvp_relation += 2; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; workers_uspd += 3; wirth_concession += 1
 
 @weimar_coalition_saxony
 title: A Social-Liberal Coalition???
 subtitle: Wirth would surely like this
 choose-if: weimar_coalition_saxony >= 50 and ddp_relation >= 60 and (left_coalition_saxony <= 49 or (kpd_relation < 30 and uspd_relation < 45)) and z_relation >= 40
-on-arrival: saxony_gov = "Weimar"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 7; ddp_realtion += 10; dvp_relation += 2; z_relation += 6; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; workers_z += 2; wirth_concession += 1
+on-arrival: saxony_gov = "Weimar"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 7; ddp_realtion += 10; dvp_relation += 2; z_relation += 6; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; workers_z += 2; workers_uspd += 3; wirth_concession += 1
 
 @bourgeois_coalition_saxony
 title: A Bourgeois Coalition
 subtitle: This is unprecedented!
 choose-if: bourgeois_coalition_saxony >= 50
-on-arrival: saxony_gov = "Bourgeois"; workers_spd -= 3; rural_dvp += 2; unemployed_kpd += 4; kpd_relation += 5; uspd_relation += 10; new_middle_ddp += 3; old_middle_dnvp += 2; workers_other += 4
+on-arrival: saxony_gov = "Bourgeois"; workers_spd -= 3; rural_dvp += 2; unemployed_kpd += 4; kpd_relation += 5; uspd_relation += 10; new_middle_ddp += 3; old_middle_dnvp += 2; workers_other += 4; workers_uspd += 1
           
