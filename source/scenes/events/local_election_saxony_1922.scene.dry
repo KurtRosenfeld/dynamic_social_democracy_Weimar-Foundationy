@@ -339,22 +339,21 @@ if (Q.z_r_saxony) {
     });
 }
 
-if (Q.dvp_r_saxony && !Q.lvp_formed && Q.dvp_exist) {
-    data.push({
-        "id": "dvp",
-        "legend": "DVP",
-        "name": "DVP",
-        "seats": Math.round(Q.dvp_r_saxony * 0.96),
-    });
-}
-
-
 if (Q.wp_r_saxony) {
     data.push({
         "id": "wp",
         "legend": "WP",
         "name": "WP",
         "seats": Math.round(Q.wp_r_saxony * 0.96),
+    });
+}
+
+if (Q.dvp_r_saxony && !Q.lvp_formed && Q.dvp_exist) {
+    data.push({
+        "id": "dvp",
+        "legend": "DVP",
+        "name": "DVP",
+        "seats": Math.round(Q.dvp_r_saxony * 0.96),
     });
 }
 
@@ -424,7 +423,7 @@ Social-Liberal Coalition (<span style="color: #D3C24D;">**[+ ddp_name +]**</span
 
 Bourgeois Coalition ([? if z_r_saxony: <span style="color: #000000;">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if wp_r_saxony: + <span style="color: #b8996f;">**WP**</span>?]+ <span style="color: #3E88B3;">**DNVP**</span>): [+ bourgeois_coalition_saxony +]%
 
-Right Coalition (<span style="color: #C0A054;">**DVP**</span>[? if wp_r_saxony: + <span style="color: #b8996f;">**WP**</span> ?]+ <span style="color: #3E88B3;">**DNVP**</span>): [+ bourgeois_coalition_saxony +]%
+Right Coalition (<span style="color: #C0A054;">**DVP**</span>[? if wp_r_saxony: + <span style="color: #b8996f;">**WP**</span> ?]+ <span style="color: #3E88B3;">**DNVP**</span>): [+ right_coalition_saxony +]%
           
 @saxony_coalition_menu
 
