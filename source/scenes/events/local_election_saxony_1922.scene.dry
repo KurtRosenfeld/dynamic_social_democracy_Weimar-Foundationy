@@ -36,7 +36,7 @@ var saxony_adjustment_factors = {
     dvp: 1.3,
     dnvp: 1.07,
     nsdap: 0.0,
-    other: 0.13,
+    other: 0.1,
 };
 
 Q.spd_r_saxony = 0;
@@ -118,7 +118,7 @@ if (Q.uspd_saxony_elections_vote >= 1.4) Q.uspd_r_saxony = Q.uspd_saxony_electio
 if (Q.kpd_saxony_elections_vote >= 1.4) Q.kpd_r_saxony = Q.kpd_saxony_elections_vote;
 if (Q.ddp_saxony_elections_vote >= 1.4) Q.ddp_r_saxony = Q.ddp_saxony_elections_vote;
 if (Q.lvp_saxony_elections_vote >= 1.4) Q.lvp_r_saxony = Q.lvp_saxony_elections_vote;
-if (Q.z_saxony_elections_vote >= 0.8) Q.z_r_saxony = Q.z_saxony_elections_vote;
+if (Q.z_saxony_elections_vote >= 0.9) Q.z_r_saxony = Q.z_saxony_elections_vote;
 if (Q.dvp_saxony_elections_vote >= 1.4) Q.dvp_r_saxony = Q.dvp_saxony_elections_vote;
 if (Q.dnvp_saxony_elections_vote >= 1.4) Q.dnvp_r_saxony = Q.dnvp_saxony_elections_vote;
 if (Q.nsdap_saxony_elections_vote >= 1.4) Q.nsdap_r_saxony = Q.nsdap_saxony_elections_vote;
@@ -455,13 +455,13 @@ on-arrival: saxony_gov = "SPD"; workers_spd += 2; kpd_relation += 1
 @spd_ddp_coalition_saxony
 title: A Social-Liberal Coalition???
 subtitle: It wouldn't be the first time...
-choose-if: spd_ddp_coalition_saxony >= 50 and ddp_relation >= 65 and kpd_relation < 20
+choose-if: spd_ddp_coalition_saxony >= 50 and ddp_relation >= 65 and (left_coalition_saxony <= 49 or (kpd_relation < 30 and uspd_relation < 45))
 on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 5; ddp_realtion += 10; dvp_relation += 2; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; wirth_concession += 1
 
 @weimar_coalition_saxony
 title: A Social-Liberal Coalition???
 subtitle: Wirth would surely like this
-choose-if: weimar_coalition_saxony >= 50 and ddp_relation >= 60 and kpd_relation < 20 and z_relation >= 40
+choose-if: weimar_coalition_saxony >= 50 and ddp_relation >= 60 and (left_coalition_saxony <= 49 or (kpd_relation < 30 and uspd_relation < 45)) and z_relation >= 40
 on-arrival: saxony_gov = "Weimar"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 7; ddp_realtion += 10; dvp_relation += 2; z_relation += 6; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; workers_z += 2; wirth_concession += 1
 
 @bourgeois_coalition_saxony
