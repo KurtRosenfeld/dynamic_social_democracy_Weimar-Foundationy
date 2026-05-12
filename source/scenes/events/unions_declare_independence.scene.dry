@@ -148,11 +148,21 @@ Q.labor_strength = Q.labor_strength / 2;
 Q.n_advisors_start = Q.n_advisors; 
 if (Q.woytinsky_advisor == 1) Q.n_advisors -= 1; 
 if (Q.leipart_advisor == 1) Q.n_advisors -= 1; 
+if (Q.tarnow_advisor == 1) Q.n_advisors -= 1; 
 Q.woytinsky_advisor = 0; 
 Q.leipart_advisor = 0; 
+Q.tarnow_advisor = 0;
+Q.woytinsky_in = "I";
+Q.leipart_in = "I";
+Q.tarnow_in = "I";
+
+if (Q.centrists_resign == 1) {
+    if (Q.wissel_advisor == 1) Q.n_advisors -= 1;
+Q.wissel_advisor = 0; Q.wissel_in = "I";
+}
 if (Q.left_split == 1){
 if (Q.auhauser_advisor == 1) Q.n_advisors -= 1;
-Q.auhauser_advisor = 0;
+Q.auhauser_advisor = 0; Q.aufhauser_in = "SAPD";
 }
 if (Q.n_advisors < Q.n_advisors_start) Q.shuffle_leadership_timer = 0;
 !}
