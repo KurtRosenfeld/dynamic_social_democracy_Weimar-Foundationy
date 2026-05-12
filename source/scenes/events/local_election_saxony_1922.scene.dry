@@ -1,0 +1,477 @@
+title: Saxony Landtag Election
+view-if: year == 1922 and month == 11 
+new-page: true
+tags: event
+priority: 2
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/states.png";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #mid_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
+
+= Elections, [+ month : month +] [+ year +]
+
+The Saxon state elections are to be held now.
+
+- @saxony: May we do our best...
+
+@saxony
+on-arrival: {!
+
+var saxony_adjustment_factors = {
+    spd: 1.53,
+    uspd: 0.1,
+    kpd: 1.2,
+    ddp: 1.2,
+    lvp: 1.27,
+    z: 0.03,
+    dvp: 1.3,
+    dnvp: 1.07,
+    nsdap: 0.0,
+    other: 0.4,
+};
+
+Q.spd_r_saxony = 0;
+Q.uspd_r_saxony = 0;
+Q.kpd_r_saxony = 0;
+Q.ddp_r_saxony = 0;
+Q.lvp_r_saxony = 0;
+Q.z_r_saxony = 0;
+Q.dvp_r_saxony = 0;
+Q.dnvp_r_saxony = 0;
+Q.nsdap_r_saxony = 0;
+Q.other_r_saxony = 0;
+
+Q.spd_saxony_elections_vote = 0;
+Q.uspd_saxony_elections_vote = 0;
+Q.kpd_saxony_elections_vote = 0;
+Q.ddp_saxony_elections_vote = 0;
+Q.lvp_saxony_elections_vote = 0;
+Q.z_saxony_elections_vote = 0;
+Q.dvp_saxony_elections_vote = 0;
+Q.dnvp_saxony_elections_vote = 0;
+Q.nsdap_saxony_elections_vote = 0;
+Q.other_saxony_elections_vote = 0;
+
+if (Q.new_middle_spd_normalized + Q.old_middle_spd_normalized >= 30) saxony_adjustment_factors.spd += 0.1;
+if (Q.uspd_leader == "Crispien") saxony_adjustment_factors.uspd += 0.5;
+if (Q.uspd_leader == "Crispien") saxony_adjustment_factors.spd -= 0.2;
+Q.spd_saxony_elections_vote = Q.spd_votes*saxony_adjustment_factors.spd;
+Q.uspd_saxony_elections_vote = Q.uspd_votes*saxony_adjustment_factors.uspd;
+Q.kpd_saxony_elections_vote = Q.kpd_votes*saxony_adjustment_factors.kpd;
+Q.ddp_saxony_elections_vote = Q.ddp_votes*saxony_adjustment_factors.ddp;
+Q.lvp_saxony_elections_vote = Q.lvp_votes*saxony_adjustment_factors.lvp;
+Q.dvp_saxony_elections_vote = Q.dvp_votes*saxony_adjustment_factors.dvp;
+Q.dnvp_saxony_elections_vote = Q.dnvp_votes*saxony_adjustment_factors.dnvp;
+Q.nsdap_saxony_elections_vote = Q.nsdap_votes*saxony_adjustment_factors.nsdap;
+Q.other_saxony_elections_vote = Q.other_votes*saxony_adjustment_factors.other;
+
+Q.total_votes_saxony = Q.spd_saxony_elections_vote + Q.uspd_saxony_elections_vote + Q.kpd_saxony_elections_vote + Q.ddp_saxony_elections_vote + Q.lvp_saxony_elections_vote + Q.z_saxony_elections_vote + Q.dvp_saxony_elections_vote + Q.dnvp_saxony_elections_vote + Q.nsdap_saxony_elections_vote + Q.other_saxony_elections_vote;
+
+if (Q.total_votes_saxony > 0) {
+    Q.spd_saxony_elections_vote = (Q.spd_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.uspd_saxony_elections_vote = (Q.uspd_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.kpd_saxony_elections_vote = (Q.kpd_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.ddp_saxony_elections_vote = (Q.ddp_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.lvp_saxony_elections_vote = (Q.lvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.z_saxony_elections_vote = (Q.z_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.dvp_saxony_elections_vote = (Q.dvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.dnvp_saxony_elections_vote = (Q.dnvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.nsdap_saxony_elections_vote = (Q.nsdap_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.other_saxony_elections_vote = (Q.other_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    let target = 33.37;
+    Q.spd_saxony_elections_vote = Math.round((Q.spd_saxony_elections_vote + (target - Q.spd_saxony_elections_vote) * 0.35) * 10) / 10;
+    Q.total_votes_saxony = Q.spd_saxony_elections_vote + Q.sapd_saxony_elections_vote + Q.kpd_saxony_elections_vote + Q.ddp_saxony_elections_vote + Q.lvp_saxony_elections_vote + Q.z_saxony_elections_vote + Q.dvp_saxony_elections_vote + Q.dnvp_saxony_elections_vote + Q.nsdap_saxony_elections_vote + Q.other_saxony_elections_vote;
+    Q.spd_saxony_elections_vote = (Q.spd_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.uspd_saxony_elections_vote = (Q.uspd_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.kpd_saxony_elections_vote = (Q.kpd_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.ddp_saxony_elections_vote = (Q.ddp_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.lvp_saxony_elections_vote = (Q.lvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.z_saxony_elections_vote = (Q.z_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.dvp_saxony_elections_vote = (Q.dvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.dnvp_saxony_elections_vote = (Q.dnvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.nsdap_saxony_elections_vote = (Q.nsdap_saxony_elections_vote / Q.total_votes_saxony) * 100;
+    Q.other_saxony_elections_vote = (Q.other_saxony_elections_vote / Q.total_votes_saxony) * 100;
+}
+
+Q.spd_saxony_elections_vote = (Q.spd_saxony_elections_vote != undefined ? parseFloat(Q.spd_saxony_elections_vote.toFixed(1)) : 0);
+Q.uspd_saxony_elections_vote = (Q.uspd_saxony_elections_vote != undefined ? parseFloat(Q.uspd_saxony_elections_vote.toFixed(1)) : 0);
+Q.kpd_saxony_elections_vote = (Q.kpd_saxony_elections_vote != undefined ? parseFloat(Q.kpd_saxony_elections_vote.toFixed(1)) : 0);
+Q.ddp_saxony_elections_vote = (Q.ddp_saxony_elections_vote != undefined ? parseFloat(Q.ddp_saxony_elections_vote.toFixed(1)) : 0);
+Q.lvp_saxony_elections_vote = (Q.lvp_saxony_elections_vote != undefined ? parseFloat(Q.lvp_saxony_elections_vote.toFixed(1)) : 0);
+Q.z_saxony_elections_vote = (Q.z_saxony_elections_vote != undefined ? parseFloat(Q.z_saxony_elections_vote.toFixed(1)) : 0);
+Q.dvp_saxony_elections_vote = (Q.dvp_saxony_elections_vote != undefined ? parseFloat(Q.dvp_saxony_elections_vote.toFixed(1)) : 0);
+Q.dnvp_saxony_elections_vote = (Q.dnvp_saxony_elections_vote != undefined ? parseFloat(Q.dnvp_saxony_elections_vote.toFixed(1)) : 0);
+Q.nsdap_saxony_elections_vote = (Q.nsdap_saxony_elections_vote != undefined ? parseFloat(Q.nsdap_saxony_elections_vote.toFixed(1)) : 0);
+Q.other_saxony_elections_vote = (Q.other_saxony_elections_vote != undefined ? parseFloat(Q.other_saxony_elections_vote.toFixed(1)) : 0);
+
+if (Q.spd_saxony_elections_vote >= 1.4) Q.spd_r_saxony = Q.spd_saxony_elections_vote;
+if (Q.uspd_saxony_elections_vote >= 1.4) Q.uspd_r_saxony = Q.uspd_saxony_elections_vote;
+if (Q.kpd_saxony_elections_vote >= 1.4) Q.kpd_r_saxony = Q.kpd_saxony_elections_vote;
+if (Q.ddp_saxony_elections_vote >= 1.4) Q.ddp_r_saxony = Q.ddp_saxony_elections_vote;
+if (Q.lvp_saxony_elections_vote >= 1.4) Q.lvp_r_saxony = Q.lvp_saxony_elections_vote;
+if (Q.z_saxony_elections_vote >= 0.8) Q.z_r_saxony = Q.z_saxony_elections_vote;
+if (Q.dvp_saxony_elections_vote >= 1.4) Q.dvp_r_saxony = Q.dvp_saxony_elections_vote;
+if (Q.dnvp_saxony_elections_vote >= 1.4) Q.dnvp_r_saxony = Q.dnvp_saxony_elections_vote;
+if (Q.nsdap_saxony_elections_vote >= 1.4) Q.nsdap_r_saxony = Q.nsdap_saxony_elections_vote;
+if (Q.other_saxony_elections_vote >= 1.4) Q.other_r_saxony = Q.other_saxony_elections_vote;
+
+var saxony_adjustment_r_factors = {
+    spd: 1.06,
+    uspd: 0.9,
+    kpd: 0.98,
+    ddp: 0.96,
+    lvp: 1.0,
+    z: 0.8,
+    dvp: 1.0,
+    dnvp: 1.0,
+    nsdap: 0.0,
+    other: 1.0,
+};
+
+Q.spd_r_saxony = Q.spd_r_saxony*saxony_adjustment_r_factors.spd;
+Q.uspd_r_saxony = Q.uspd_r_saxony*saxony_adjustment_r_factors.uspd;
+Q.kpd_r_saxony = Q.kpd_r_saxony*saxony_adjustment_r_factors.kpd;
+if (Q.stolper_program_adopted) saxony_adjustment_r_factors.ddp += 0.04;
+Q.ddp_r_saxony = Q.ddp_r_saxony*saxony_adjustment_r_factors.ddp;
+Q.lvp_r_saxony = Q.lvp_r_saxony*saxony_adjustment_r_factors.lvp;
+if (!Q.stegerwald_path) Q.z_r_saxony = Q.z_r_saxony*saxony_adjustment_r_factors.z;
+if (Q.stegerwald_path) Q.z_r_saxony = Q.z_r_saxony;
+Q.dvp_r_saxony = Q.dvp_r_saxony*saxony_adjustment_r_factors.dvp;
+Q.dnvp_r_saxony = Q.dnvp_r_saxony*saxony_adjustment_r_factors.dnvp;
+Q.nsdap_r_saxony = Q.nsdap_r_saxony*saxony_adjustment_r_factors.nsdap;
+Q.other_r_saxony = Q.other_r_saxony*saxony_adjustment_r_factors.other;
+
+Q.total_r_saxony = 0;
+
+if (Q.spd_r_saxony) Q.total_r_saxony += Q.spd_r_saxony;
+if (Q.uspd_r_saxony) Q.total_r_saxony += Q.uspd_r_saxony;
+if (Q.kpd_r_saxony) Q.total_r_saxony += Q.kpd_r_saxony;
+if (Q.ddp_r_saxony) Q.total_r_saxony += Q.ddp_r_saxony;
+if (Q.lvp_r_saxony) Q.total_r_saxony += Q.lvp_r_saxony;
+if (Q.z_r_saxony) Q.total_r_saxony += Q.z_r_saxony;
+if (Q.dvp_r_saxony) Q.total_r_saxony += Q.dvp_r_saxony;
+if (Q.dnvp_r_saxony) Q.total_r_saxony += Q.dnvp_r_saxony;
+if (Q.nsdap_r_saxony) Q.total_r_saxony += Q.nsdap_r_saxony;
+if (Q.other_r_saxony) Q.total_r_saxony += Q.other_r_saxony;
+
+if (Q.total_r_saxony > 0) {
+    Q.spd_r_saxony = (Q.spd_r_saxony / Q.total_r_saxony) * 100;
+    Q.uspd_r_saxony = (Q.uspd_r_saxony / Q.total_r_saxony) * 100;
+    Q.kpd_r_saxony = (Q.kpd_r_saxony / Q.total_r_saxony) * 100;
+    Q.ddp_r_saxony = (Q.ddp_r_saxony / Q.total_r_saxony) * 100;
+    Q.lvp_r_saxony = (Q.lvp_r_saxony / Q.total_r_saxony) * 100;
+    Q.z_r_saxony = (Q.z_r_saxony / Q.total_r_saxony) * 100;
+    Q.dvp_r_saxony = (Q.dvp_r_saxony / Q.total_r_saxony) * 100;
+    Q.dnvp_r_saxony = (Q.dnvp_r_saxony / Q.total_r_saxony) * 100;
+    Q.nsdap_r_saxony = (Q.nsdap_r_saxony / Q.total_r_saxony) * 100;
+    Q.other_r_saxony = (Q.other_r_saxony / Q.total_r_saxony) * 100;
+}
+
+Q.spd_r_saxony = (Q.spd_r_saxony != undefined ? parseFloat(Q.spd_r_saxony.toFixed(1)) : 0);
+Q.uspd_r_saxony = (Q.uspd_r_saxony != undefined ? parseFloat(Q.uspd_r_saxony.toFixed(1)) : 0);
+Q.kpd_r_saxony = (Q.kpd_r_saxony != undefined ? parseFloat(Q.kpd_r_saxony.toFixed(1)) : 0);
+Q.ddp_r_saxony = (Q.ddp_r_saxony != undefined ? parseFloat(Q.ddp_r_saxony.toFixed(1)) : 0);
+Q.lvp_r_saxony = (Q.lvp_r_saxony != undefined ? parseFloat(Q.lvp_r_saxony.toFixed(1)) : 0);
+Q.z_r_saxony = (Q.z_r_saxony != undefined ? parseFloat(Q.z_r_saxony.toFixed(1)) : 0);
+Q.dvp_r_saxony = (Q.dvp_r_saxony != undefined ? parseFloat(Q.dvp_r_saxony.toFixed(1)) : 0);
+Q.dnvp_r_saxony = (Q.dnvp_r_saxony != undefined ? parseFloat(Q.dnvp_r_saxony.toFixed(1)) : 0);
+Q.nsdap_r_saxony = (Q.nsdap_r_saxony != undefined ? parseFloat(Q.nsdap_r_saxony.toFixed(1)) : 0);
+Q.other_r_saxony = (Q.other_r_saxony != undefined ? parseFloat(Q.other_r_saxony.toFixed(1)) : 0);
+
+Q.wp_saxony_elections_vote = Q.other_saxony_elections_vote;
+Q.wp_r_saxony = Q.other_r_saxony;
+
+Q.total_r_saxony = 0;
+
+if (Q.spd_r_saxony) Q.total_r_saxony += Q.spd_r_saxony;
+if (Q.uspd_r_saxony) Q.total_r_saxony += Q.uspd_r_saxony;
+if (Q.kpd_r_saxony) Q.total_r_saxony += Q.kpd_r_saxony;
+if (Q.ddp_r_saxony) Q.total_r_saxony += Q.ddp_r_saxony;
+if (Q.lvp_r_saxony) Q.total_r_saxony += Q.lvp_r_saxony;
+if (Q.z_r_saxony) Q.total_r_saxony += Q.z_r_saxony;
+if (Q.dvp_r_saxony) Q.total_r_saxony += Q.dvp_r_saxony;
+if (Q.dnvp_r_saxony) Q.total_r_saxony += Q.dnvp_r_saxony;
+if (Q.nsdap_r_saxony) Q.total_r_saxony += Q.nsdap_r_saxony;
+if (Q.other_r_saxony) Q.total_r_saxony += Q.other_r_saxony;
+
+if (Q.total_r_saxony > 0) {
+    Q.spd_r_saxony = (Q.spd_r_saxony / Q.total_r_saxony) * 100;
+    Q.uspd_r_saxony = (Q.uspd_r_saxony / Q.total_r_saxony) * 100;
+    Q.kpd_r_saxony = (Q.kpd_r_saxony / Q.total_r_saxony) * 100;
+    Q.ddp_r_saxony = (Q.ddp_r_saxony / Q.total_r_saxony) * 100;
+    Q.lvp_r_saxony = (Q.lvp_r_saxony / Q.total_r_saxony) * 100;
+    Q.z_r_saxony = (Q.z_r_saxony / Q.total_r_saxony) * 100;
+    Q.dvp_r_saxony = (Q.dvp_r_saxony / Q.total_r_saxony) * 100;
+    Q.dnvp_r_saxony = (Q.dnvp_r_saxony / Q.total_r_saxony) * 100;
+    Q.nsdap_r_saxony = (Q.nsdap_r_saxony / Q.total_r_saxony) * 100;
+    Q.other_r_saxony = (Q.other_r_saxony / Q.total_r_saxony) * 100;
+}
+
+function allocateSeats(percentages, totalSeats = 96) {
+    const exactSeats = {};
+    const flooredSeats = {};
+    const remainders = [];
+
+    let totalFlooredSeats = 0;
+    for (const party in percentages) {
+        const exact = (percentages[party] * totalSeats) / 100;
+        const floored = Math.floor(exact);
+        const remainder = exact - floored;
+
+        exactSeats[party] = exact;
+        flooredSeats[party] = floored;
+        totalFlooredSeats += floored;
+
+        remainders.push({ party, remainder });
+    }
+
+    const seatsToDistribute = totalSeats - totalFlooredSeats;
+    remainders.sort((a, b) => b.remainder - a.remainder);
+
+    for (let i = 0; i < seatsToDistribute; i++) {
+        flooredSeats[remainders[i].party]++;
+    }
+
+    return flooredSeats;
+}
+
+const inputPercentages = {
+    spd_r_saxony: Q.spd_r_saxony,
+    uspd_r_saxony: Q.uspd_r_saxony,
+    kpd_r_saxony: Q.kpd_r_saxony,
+    ddp_r_saxony: Q.ddp_r_saxony,
+    lvp_r_saxony: Q.lvp_r_saxony,
+    z_r_saxony: Q.z_r_saxony,
+    dvp_r_saxony: Q.dvp_r_saxony,
+    dnvp_r_saxony: Q.dnvp_r_saxony,
+    nsdap_r_saxony: Q.nsdap_r_saxony,
+    wp_r_saxony: Q.wp_r_saxony,
+};
+
+const allocatedSeats = allocateSeats(inputPercentages);
+
+for (const party in allocatedSeats) {
+    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 96).toFixed(1));
+}
+
+Q.other_r_saxony = Q.wp_r_saxony;
+
+Q.spd_r_saxony = (Q.spd_r_saxony != undefined ? parseFloat(Q.spd_r_saxony.toFixed(1)) : 0);
+Q.uspd_r_saxony = (Q.uspd_r_saxony != undefined ? parseFloat(Q.uspd_r_saxony.toFixed(1)) : 0);
+Q.kpd_r_saxony = (Q.kpd_r_saxony != undefined ? parseFloat(Q.kpd_r_saxony.toFixed(1)) : 0);
+Q.ddp_r_saxony = (Q.ddp_r_saxony != undefined ? parseFloat(Q.ddp_r_saxony.toFixed(1)) : 0);
+Q.lvp_r_saxony = (Q.lvp_r_saxony != undefined ? parseFloat(Q.lvp_r_saxony.toFixed(1)) : 0);
+Q.z_r_saxony = (Q.z_r_saxony != undefined ? parseFloat(Q.z_r_saxony.toFixed(1)) : 0);
+Q.dvp_r_saxony = (Q.dvp_r_saxony != undefined ? parseFloat(Q.dvp_r_saxony.toFixed(1)) : 0);
+Q.dnvp_r_saxony = (Q.dnvp_r_saxony != undefined ? parseFloat(Q.dnvp_r_saxony.toFixed(1)) : 0);
+Q.nsdap_r_saxony = (Q.nsdap_r_saxony != undefined ? parseFloat(Q.nsdap_r_saxony.toFixed(1)) : 0);
+Q.other_r_saxony = (Q.other_r_saxony != undefined ? parseFloat(Q.other_r_saxony.toFixed(1)) : 0);
+
+Q.wp_saxony_elections_vote = (Q.wp_saxony_elections_vote != undefined ? parseFloat(Q.wp_saxony_elections_vote.toFixed(1)) : 0);
+Q.wp_r_saxony = (Q.wp_r_saxony != undefined ? parseFloat(Q.wp_r_saxony.toFixed(1)) : 0);
+        
+Q.left_coalition_saxony = parseFloat((Q.spd_r_saxony + Q.kpd_r_saxony + Q.uspd_r_saxony).toFixed(1));
+Q.social_democratic_coalition_saxony = parseFloat((Q.spd_r_saxony + Q.uspd_r_saxony).toFixed(1));
+Q.spd_ddp_coalition_saxony = parseFloat((Q.ddp_r_saxony + Q.spd_r_saxony).toFixed(1));
+Q.weimar_coalition_saxony = parseFloat((Q.ddp_r_saxony + Q.spd_r_saxony + Q.z_r_saxony).toFixed(1));
+Q.bourgeois_coalition_saxony = parseFloat((Q.z_r_saxony + Q.ddp_r_saxony + Q.dvp_r_saxony + Q.lvp_r_saxony + Q.other_r_saxony + Q.dnvp_r_saxony).toFixed(1));
+Q.right_coalition_saxony = parseFloat((Q.dvp_r_saxony + Q.lvp_r_saxony + Q.other_r_saxony + Q.dnvp_r_saxony).toFixed(1));
+
+if (Q.vnr_r_saxony >= 1.4) Q.vnr_cool = 1;
+!}
+on-display: {!
+data = [{
+    "id": "kpd",
+    "legend": "KPD",
+    "name": "KPD",
+    "seats": Math.round(Q.kpd_r_saxony * 0.96),
+}];
+
+if (Q.uspd_r_saxony) {
+    data.push({
+        "id": "uspd",
+        "legend": "SAPD",
+        "name": "SAPD",
+        "seats": Math.round(Q.sapd_r_saxony * 0.96),
+    });
+}
+
+data = data.concat([{
+    "id": "spd",
+    "legend": "SPD",
+    "name": "SPD",
+    "seats": Math.round(Q.spd_r_saxony * 0.96),
+}]);
+
+
+if (Q.ddp_r_saxony && !Q.lvp_formed) {
+    data.push({
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_r_saxony * 0.96),
+    });
+}
+
+if (Q.lvp_r_saxony && Q.lvp_formed) {
+    data.push({
+        "id": "lvp",
+        "legend": "LVP",
+        "name": "LVP",
+        "seats": Math.round(Q.lvp_r_saxony * 0.96),
+    });
+}
+
+if (Q.z_r_saxony) {
+    data.push({
+        "id": "z",
+        "legend": "Center",
+        "name": "Center",
+        "seats": Math.round(Q.z_r_saxony * 0.96),
+    });
+}
+
+if (Q.dvp_r_saxony && !Q.lvp_formed && Q.dvp_exist) {
+    data.push({
+        "id": "dvp",
+        "legend": "DVP",
+        "name": "DVP",
+        "seats": Math.round(Q.dvp_r_saxony * 0.96),
+    });
+}
+
+
+if (Q.wp_r_saxony) {
+    data.push({
+        "id": "wp",
+        "legend": "WP",
+        "name": "WP",
+        "seats": Math.round(Q.wp_r_saxony * 0.96),
+    });
+}
+
+if (Q.kvp_formed && Q.kvp_r_saxony) {
+    data.push({
+        "id": "kvp",
+        "legend": "KVP",
+        "name": "KVP",
+        "seats": Math.round(Q.kvp_r_saxony * 0.96),
+    });
+}
+
+data = data.concat([{
+    "id": "dnvp",
+    "legend": "DNVP",
+    "name": "DNVP",
+    "seats": Math.round(Q.dnvp_r_saxony * 0.96),
+}]);
+
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#saxony_landtag").datum(data).call(parliament);
+}
+!}
+go-to: saxony_coalition_menu
+
+
+**Saxony results:**
+
+{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td>!} **[+ spd_saxony_elections_vote +]%** {!</td><td>!} [+ spd_r_saxony +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td>!} [+ uspd_saxony_elections_vote +]% {!</td><td>!} [+ uspd_r_saxony +]% {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_saxony_elections_vote +]% {!</td><td>!} [+ kpd_r_saxony +]%  {!</td></tr>!}
+
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_saxony_elections_vote +]% {!</td><td>!} [+ ddp_r_saxony +]%  {!</td></tr>!} ?]
+
+[? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_saxony_elections_vote +]% {!</td><td>!} [+ lvp_r_saxony +]%  {!</td></tr>!} ?]
+
+[? if z_saxony_elections_vote: {!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_saxony_elections_vote +]% {!</td><td>!} [+ z_r_saxony +]%  {!</td></tr>!} ?]
+
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_saxony_elections_vote +]% {!</td><td>!} [+ dvp_r_saxony +]%  {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td>!} [+ wp_saxony_elections_vote +]% {!</td><td>!} [+ wp_r_saxony +]%  {!</td></tr>!}
+
+[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_saxony_elections_vote +]% {!</td><td>!} [+ kvp_r_saxony +]%  {!</td></tr>!} ?]
+
+[? if dnvp_ideology == "Radical": {!<tr><td><div class="box" style='background-color:#11DD11'> </div> !} SLV: {!</td><td>!} [+ farm_saxony_elections_vote +]% {!</td><td>!} [+ farm_r_saxony +]%  {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_saxony_elections_vote +]% {!</td><td>!} [+ dnvp_r_saxony +]%  {!</td></tr>!}
+
+{!</table>!}
+<hr id="read-marker">
+The [+ saxony_leader +] Cabinet has collapsed a few months ago due to a dispute involving the Saxon Reichrat delegation voting for the Young Plan, which has resulted in the loss of confidence from the <span style="color: #3E88B3;">**DNVP**</span>, <span style="color: #11DD11;">**SLV**</span>, and <span style="color: #7A3C00;">**NSDAP**</span>. However, they do elect the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]'s Walther Schieck as Minister-President in a caretaker cabinet of experts, before the <span style="color: #7A3C00;">**NSDAP**</span> ultimately voted for dissolving parliament. The political climate has greatly changed from last year, and the extremist parties are expected to gain. 
+<hr id="read-marker">
+United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if uspd_r: + <span style="color: #A10000;">**USPD**</span>?]): [+ left_coalition_saxony +]% 
+
+Social-Democratic Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #A10000;">**USPD**</span>): [+ social_democratic_coalition_saxony +]% 
+
+Social-Liberal Coalition (<span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #c10000;">**SPD**</span>): [+ spd_ddp_coalition_saxony +]% ?]
+
+[? if z_r_saxony >= 1: Weimar Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #c10000;">**SPD**</span>): [+ weimar_coalition_saxony +]% ?]
+
+Bourgeois Coalition ([? if z_r_saxony: <span style="color: #000000;">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if wp_r_saxony: + <span style="color: #b8996f;">**WP**</span>?]+ <span style="color: #3E88B3;">**DNVP**</span>): [+ bourgeois_coalition_saxony +]% ?]
+
+Right Coalition (<span style="color: #C0A054;">**DVP**</span>[? if wp_r_saxony: + <span style="color: #b8996f;">**WP**</span> ?]+ <span style="color: #3E88B3;">**DNVP**</span>): [+ bourgeois_coalition_saxony +]% ?]
+          
+@saxony_coalition_menu
+
+- @united_left_coalition_saxony
+- @social_democratic_coalition_saxony
+- @spd_alone_saxony
+- @spd_ddp_coaltion_saxony
+- @bourgeois_coalition_saxony
+
+@united_left_coalition_saxony
+title: [? if uspd_r_saxony >= 1: A <span style="color: #c00000;">**Red**</span>-<span style="color: #A10000;">**Red**</span>-<span style="color: #700000;">**Red**</span> Coalition?? ?][? if uspd_r_saxony == 0: A new kind of <span style="color: #c00000;">**Red**</span>-<span style="color: #700000;">**Red**</span> Coalition? ?]
+subtitle: We will work alongside the KPD for the first time ever.
+choose-if: left_coalition_saxony >= 50 and kpd_relation >= 25 and uspd_relation >= 20 and ddp_relation <= 50
+on-arrival: saxony_gov = "Left"; ddp_relation -= 8; z_relation -= 10; dvp_relation -= 12; workers_kpd += 5; workers_spd += 1; kpd_relation += 10; uspd_relation += 5
+
+@social_democratic_coalition_saxony
+title:  Another Social-Democratic Coalition
+subtitle: The KPD will tolerate our coalition.
+choose-if: left_coalition_saxony >= 50 and kpd_relation >= 10 and uspd_relation >= 20
+on-arrival: saxony_gov = "Social-Democratic"; z_relation -= 2; dvp_relation -= 3; workers_uspd += 2; workers_spd += 1; kpd_relation += 1; uspd_relation += 8
+
+@spd_alone_saxony
+title: An SPD only government?
+subtitle: The KPD will tolerate us.
+choose-if: left_coalition_saxony >= 50 and kpd_relation >= 10
+on-arrival: saxony_gov = "SPD"; workers_spd += 2; kpd_relation += 1
+
+@spd_ddp_coalition_saxony
+title: A Social-Liberal Coalition???
+subtitle: It wouldn't be the first time...
+choose-if: spd_ddp_coalition_saxony >= 50 and ddp_relation >= 65 and kpd_relation < 20
+on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 5; ddp_realtion += 10; dvp_relation += 2; new_middle_ddp += 2; old_middle_ddp += 3 unemployed_spd -= 2;
+
+@bourgeois_coalition_saxony
+title: A Bourgeois Coalition
+subtitle: This is unprecedented!
+choose-if: bourgeois_coalition_saxony >= 50
+on-arrival: saxony_gov = "Bourgeois"; workers_spd -= 3; rural_dvp += 2; unemployed_kpd += 4; kpd_relation += 5; uspd_relation += 10; new_middle_ddp += 3; old_middle_dnvp += 2; workers_other += 4
+          
