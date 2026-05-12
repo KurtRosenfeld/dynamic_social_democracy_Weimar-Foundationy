@@ -32,11 +32,11 @@ var saxony_adjustment_factors = {
     kpd: 1.2,
     ddp: 1.2,
     lvp: 1.27,
-    z: 0.03,
+    z: 0.52,
     dvp: 1.3,
     dnvp: 1.07,
     nsdap: 0.0,
-    other: 0.34,
+    other: 0.13,
 };
 
 Q.spd_r_saxony = 0;
@@ -143,8 +143,6 @@ Q.kpd_r_saxony = Q.kpd_r_saxony*saxony_adjustment_r_factors.kpd;
 if (Q.stolper_program_adopted) saxony_adjustment_r_factors.ddp += 0.04;
 Q.ddp_r_saxony = Q.ddp_r_saxony*saxony_adjustment_r_factors.ddp;
 Q.lvp_r_saxony = Q.lvp_r_saxony*saxony_adjustment_r_factors.lvp;
-if (!Q.stegerwald_path) Q.z_r_saxony = Q.z_r_saxony*saxony_adjustment_r_factors.z;
-if (Q.stegerwald_path) Q.z_r_saxony = Q.z_r_saxony;
 Q.dvp_r_saxony = Q.dvp_r_saxony*saxony_adjustment_r_factors.dvp;
 Q.dnvp_r_saxony = Q.dnvp_r_saxony*saxony_adjustment_r_factors.dnvp;
 Q.nsdap_r_saxony = Q.nsdap_r_saxony*saxony_adjustment_r_factors.nsdap;
@@ -399,7 +397,7 @@ go-to: saxony_coalition_menu
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td>!} [+ lvp_saxony_elections_vote +]% {!</td><td>!} [+ lvp_r_saxony +]%  {!</td></tr>!} ?]
 
-[? if z_saxony_elections_vote: {!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_saxony_elections_vote +]% {!</td><td>!} [+ z_r_saxony +]%  {!</td></tr>!} ?]
+{!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_saxony_elections_vote +]% {!</td><td>!} [+ z_r_saxony +]%  {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td>!} [+ wp_saxony_elections_vote +]% {!</td><td>!} [+ wp_r_saxony +]%  {!</td></tr>!}
 
@@ -437,20 +435,20 @@ Right Coalition (<span style="color: #C0A054;">**DVP**</span>[? if wp_r_saxony: 
 @united_left_coalition_saxony
 title: [? if uspd_r_saxony >= 1: A <span style="color: #c00000;">**Red**</span>-<span style="color: #A10000;">**Red**</span>-<span style="color: #700000;">**Red**</span> Coalition?? ?][? if uspd_r_saxony == 0: A new kind of <span style="color: #c00000;">**Red**</span>-<span style="color: #700000;">**Red**</span> Coalition? ?]
 subtitle: We will work alongside the KPD for the first time ever.
-choose-if: left_coalition_saxony >= 50 and kpd_relation >= 25 and uspd_relation >= 20 and ddp_relation <= 50
+choose-if: left_coalition_saxony >= 50 and kpd_relation >= 35 and uspd_relation >= 40 and ddp_relation <= 50
 on-arrival: saxony_gov = "Left"; ddp_relation -= 8; z_relation -= 10; dvp_relation -= 12; workers_kpd += 5; workers_spd += 1; kpd_relation += 10; uspd_relation += 5
 
 @social_democratic_coalition_saxony
 title:  Another Social-Democratic Coalition
 subtitle: The KPD will tolerate our coalition.
-choose-if: left_coalition_saxony >= 50 and kpd_relation >= 10 and uspd_relation >= 20
+choose-if: left_coalition_saxony >= 50 and kpd_relation >= 15 and uspd_relation >= 40
 view-if: uspd_r_saxony > 0
 on-arrival: saxony_gov = "Social-Democratic"; z_relation -= 2; dvp_relation -= 3; workers_uspd += 2; workers_spd += 1; kpd_relation += 1; uspd_relation += 8
 
 @spd_alone_saxony
 title: An SPD only government?
 subtitle: The KPD will tolerate us.
-choose-if: left_coalition_saxony >= 50 and kpd_relation >= 10
+choose-if: left_coalition_saxony >= 50 and kpd_relation >= 15
 view-if: uspd_r_saxony = 0
 on-arrival: saxony_gov = "SPD"; workers_spd += 2; kpd_relation += 1
 
