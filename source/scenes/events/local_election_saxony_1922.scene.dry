@@ -88,7 +88,7 @@ if (Q.total_votes_saxony > 0) {
     Q.other_saxony_elections_vote = (Q.other_saxony_elections_vote / Q.total_votes_saxony) * 100;
     let target = 33.37;
     Q.spd_saxony_elections_vote = Math.round((Q.spd_saxony_elections_vote + (target - Q.spd_saxony_elections_vote) * 0.35) * 10) / 10;
-    Q.total_votes_saxony = Q.spd_saxony_elections_vote + Q.sapd_saxony_elections_vote + Q.kpd_saxony_elections_vote + Q.ddp_saxony_elections_vote + Q.lvp_saxony_elections_vote + Q.z_saxony_elections_vote + Q.dvp_saxony_elections_vote + Q.dnvp_saxony_elections_vote + Q.nsdap_saxony_elections_vote + Q.other_saxony_elections_vote;
+    Q.total_votes_saxony = Q.spd_saxony_elections_vote + Q.uspd_saxony_elections_vote + Q.kpd_saxony_elections_vote + Q.ddp_saxony_elections_vote + Q.lvp_saxony_elections_vote + Q.z_saxony_elections_vote + Q.dvp_saxony_elections_vote + Q.dnvp_saxony_elections_vote + Q.nsdap_saxony_elections_vote + Q.other_saxony_elections_vote;
     Q.spd_saxony_elections_vote = (Q.spd_saxony_elections_vote / Q.total_votes_saxony) * 100;
     Q.uspd_saxony_elections_vote = (Q.uspd_saxony_elections_vote / Q.total_votes_saxony) * 100;
     Q.kpd_saxony_elections_vote = (Q.kpd_saxony_elections_vote / Q.total_votes_saxony) * 100;
@@ -401,19 +401,17 @@ go-to: saxony_coalition_menu
 
 [? if z_saxony_elections_vote: {!<tr><td><div class="box" style='background-color:#000000'> </div> !} Z: {!</td><td>!} [+ z_saxony_elections_vote +]% {!</td><td>!} [+ z_r_saxony +]%  {!</td></tr>!} ?]
 
-[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_saxony_elections_vote +]% {!</td><td>!} [+ dvp_r_saxony +]%  {!</td></tr>!} ?]
-
 {!<tr><td><div class="box" style='background-color:#b8996f'> </div> !} WP: {!</td><td>!} [+ wp_saxony_elections_vote +]% {!</td><td>!} [+ wp_r_saxony +]%  {!</td></tr>!}
 
-[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_saxony_elections_vote +]% {!</td><td>!} [+ kvp_r_saxony +]%  {!</td></tr>!} ?]
+[? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td>!} [+ dvp_saxony_elections_vote +]% {!</td><td>!} [+ dvp_r_saxony +]%  {!</td></tr>!} ?]
 
-[? if dnvp_ideology == "Radical": {!<tr><td><div class="box" style='background-color:#11DD11'> </div> !} SLV: {!</td><td>!} [+ farm_saxony_elections_vote +]% {!</td><td>!} [+ farm_r_saxony +]%  {!</td></tr>!} ?]
+[? if kvp_formed : {!<tr><td><div class="box" style='background-color:#0087DC'> </div> !}KVP: {!</td><td>!} [+ kvp_saxony_elections_vote +]% {!</td><td>!} [+ kvp_r_saxony +]%  {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td>!} [+ dnvp_saxony_elections_vote +]% {!</td><td>!} [+ dnvp_r_saxony +]%  {!</td></tr>!}
 
 {!</table>!}
 <hr id="read-marker">
-The [+ saxony_leader +] Cabinet has collapsed a few months ago due to a dispute involving the Saxon Reichrat delegation voting for the Young Plan, which has resulted in the loss of confidence from the <span style="color: #3E88B3;">**DNVP**</span>, <span style="color: #11DD11;">**SLV**</span>, and <span style="color: #7A3C00;">**NSDAP**</span>. However, they do elect the [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]'s Walther Schieck as Minister-President in a caretaker cabinet of experts, before the <span style="color: #7A3C00;">**NSDAP**</span> ultimately voted for dissolving parliament. The political climate has greatly changed from last year, and the extremist parties are expected to gain. 
+Text to be added
 <hr id="read-marker">
 United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #700000;">**KPD**</span>[? if uspd_r: + <span style="color: #A10000;">**USPD**</span>?]): [+ left_coalition_saxony +]% 
 
