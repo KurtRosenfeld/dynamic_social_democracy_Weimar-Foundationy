@@ -419,13 +419,13 @@ United Left Coalition (<span style="color: #c00000;">**SPD**</span> + <span styl
 
 Social-Democratic Coalition (<span style="color: #c00000;">**SPD**</span> + <span style="color: #A10000;">**USPD**</span>): [+ social_democratic_coalition_saxony +]% 
 
-Social-Liberal Coalition (<span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #c10000;">**SPD**</span>): [+ spd_ddp_coalition_saxony +]% ?]
+Social-Liberal Coalition (<span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #c10000;">**SPD**</span>): [+ spd_ddp_coalition_saxony +]%
 
 [? if z_r_saxony >= 1: Weimar Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #c10000;">**SPD**</span>): [+ weimar_coalition_saxony +]% ?]
 
-Bourgeois Coalition ([? if z_r_saxony: <span style="color: #000000;">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if wp_r_saxony: + <span style="color: #b8996f;">**WP**</span>?]+ <span style="color: #3E88B3;">**DNVP**</span>): [+ bourgeois_coalition_saxony +]% ?]
+Bourgeois Coalition ([? if z_r_saxony: <span style="color: #000000;">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span> + <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?][? if wp_r_saxony: + <span style="color: #b8996f;">**WP**</span>?]+ <span style="color: #3E88B3;">**DNVP**</span>): [+ bourgeois_coalition_saxony +]%
 
-Right Coalition (<span style="color: #C0A054;">**DVP**</span>[? if wp_r_saxony: + <span style="color: #b8996f;">**WP**</span> ?]+ <span style="color: #3E88B3;">**DNVP**</span>): [+ bourgeois_coalition_saxony +]% ?]
+Right Coalition (<span style="color: #C0A054;">**DVP**</span>[? if wp_r_saxony: + <span style="color: #b8996f;">**WP**</span> ?]+ <span style="color: #3E88B3;">**DNVP**</span>): [+ bourgeois_coalition_saxony +]%
           
 @saxony_coalition_menu
 
