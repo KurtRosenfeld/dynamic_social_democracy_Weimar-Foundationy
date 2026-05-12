@@ -32,7 +32,7 @@ var saxony_adjustment_factors = {
     kpd: 1.2,
     ddp: 1.25,
     lvp: 1.28,
-    z: 0.52,
+    z: 0.05,
     dvp: 1.31,
     dnvp: 1.06,
     nsdap: 0.0,
