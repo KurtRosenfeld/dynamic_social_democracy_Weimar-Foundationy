@@ -431,6 +431,7 @@ Right Coalition (<span style="color: #C0A054;">**DVP**</span>[? if wp_r_saxony: 
 - @social_democratic_coalition_saxony
 - @spd_alone_saxony
 - @spd_ddp_coalition_saxony
+- @weimar_coalition_saxony
 - @bourgeois_coalition_saxony
 
 @united_left_coalition_saxony
@@ -457,7 +458,13 @@ on-arrival: saxony_gov = "SPD"; workers_spd += 2; kpd_relation += 1
 title: A Social-Liberal Coalition???
 subtitle: It wouldn't be the first time...
 choose-if: spd_ddp_coalition_saxony >= 50 and ddp_relation >= 65 and kpd_relation < 20
-on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 5; ddp_realtion += 10; dvp_relation += 2; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2;
+on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 5; ddp_realtion += 10; dvp_relation += 2; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; wirth_concession += 1
+
+@weimar_coalition_saxony
+title: A Social-Liberal Coalition???
+subtitle: Wirth would surely like this
+choose-if: weimar_coalition_saxony >= 50 and ddp_relation >= 60 and kpd_relation < 20 and z_relation >= 40
+on-arrival: saxony_gov = "Weimar"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 7; ddp_realtion += 10; dvp_relation += 2; z_relation += 6; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; workers_z += 2; wirth_concession += 1
 
 @bourgeois_coalition_saxony
 title: A Bourgeois Coalition
