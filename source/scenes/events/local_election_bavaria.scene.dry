@@ -573,7 +573,7 @@ How the hell.
 title: The <span style="color: #A2D8E0;">**BVP**</span> coalitions with the <span style="color: #38C538;">Bavarian Peasants’ League</span> and various bourgeois parties.
 subtitle: The <span style="color: #A2D8E0;">BVP</span> will make amends with the <span style="color: #38C538;">farmers</span>.
 view-if: bourgeois_coalition_bavaria >= 50
-on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "Bourgeois"; new_middle_nsdap -= 2; old_middle_nsdap -= 2; catholics_nsdap -= 2; rural_nsdap -= 3; rural_other += 3; pro_republic += 3
+on-arrival: bavaria_election_2_trigger_time = time + 48; bavaria_gov = "Right-Bourgeois"; new_middle_nsdap -= 2; old_middle_nsdap -= 2; catholics_nsdap -= 2; rural_nsdap -= 3; rural_other += 3; pro_republic += 3
 
 The former incumbent coalition consisting of the <span style="color: #A2D8E0;">**BVP**</span>, <span style="color: #38C538;">Bavarian Peasants’ League</span>, and the various smaller bourgeois parties has continued. This show of stability will weaken the <span style="color: #7A3C00;">Nazis</span>.
 
