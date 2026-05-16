@@ -400,15 +400,15 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 Western Powers: [+ west_relation +]
 
-<span style="color: #28CFDD;">USA</span>:
+<span style="color: #28CFDD;">USA</span>: [+ us_relation +]
 
-<span style="color: #650C23;">UK</span>:
+<span style="color: #650C23;">UK</span>: [+ uk_relation +]
 
-<span style="color: #1334A8;">France</span>:
+<span style="color: #1334A8;">France</span>: [+ france_relation +]
 
-<span style="color: #D39E1C;">Belgium</span>:
+<span style="color: #D39E1C;">Belgium</span>: [+ belgium_relation +]
 
-<span style="color: #DD6B22;">Netherlands</span>:
+<span style="color: #DD6B22;">Netherlands</span>: [+ dutch_relation +]
 
 
 Eastern Neighbours: [+ east_relation +]
