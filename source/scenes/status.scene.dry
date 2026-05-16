@@ -398,7 +398,7 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 = Foreign Relations
 
-<span style="color: #002654;">**Western**</span> <span style="color: #D7141A;">**Allies**</span>: [+ west_relation +]
+<span style="color: #002654;">**Western**</span> <span style="color: #D7141A;">**Allies**</span>: [+ west_relation : relationships +]
 
 <span style="color: #28CFDD;">**USA**</span>: [+ us_relation : relationships +]
 
@@ -414,7 +414,7 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 <span style="color: #F7F7F7;">**----------**</span>
 
 
-<span style="color: #11457E;">**Eastern**</span> <span style="color: #D7141A;">**Neighbours**</span>: [+ east_relation +]
+<span style="color: #11457E;">**Eastern**</span> <span style="color: #D7141A;">**Neighbours**</span>: [+ east_relation : relationships +]
 
 <span style="color: #DC143C;">**Pol**</span><span style="color: #FFFFFF;">**and**</span>: [+ poland_relation : relationships +]
 
@@ -428,7 +428,7 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 <span style="color: #F7F7F7;">**---------**</span>
 
 
-<span style="color: #750e0e;">**USSR**</span>: [+ soviet_relation +]
+<span style="color: #750e0e;">**USSR**</span>: [+ soviet_relation : relationships +]
 
 <span style="color: #1C470C;">**Italy**</span>: [+ italy_relation : relationships +]
 
