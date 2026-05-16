@@ -337,7 +337,7 @@ go-to: waldeck_coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td!} **[+ spd_waldeck_elections_vote +]%** {!</td><td!} **[+ spd_r_waldeck +]%** {!</td></tr>!}
 
-[? if uspd_joined < 3: {!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td!} **[+ uspd_waldeck_elections_vote +]%** {!</td><td!} **[+ uspd_r_waldeck +]%** {!</td></tr>!} ?]
+[? if uspd_joined < 3 and uspd_votes_waldeck > 0: {!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td!} **[+ uspd_waldeck_elections_vote +]%** {!</td><td!} **[+ uspd_r_waldeck +]%** {!</td></tr>!} ?]
 
 [? if hb_votes_waldeck > 0: {!<tr><td><div class="box" style='background-color:#CEDD8A'> </div> !} Craftsmen: {!</td><td!} **[+ hb_waldeck_elections_vote +]%** {!</td><td!} **[+ hb_r_waldeck +]%**  {!</td></tr>!} ?]
 
@@ -357,7 +357,7 @@ go-to: waldeck_coalition_menu
 
 Worker Coalition (<span style="color: #c00000;">**SPD**</span>[? if uspd_r_waldeck: + <span style="color: #A10000;">**USPD**</span>?][? if hb_r_waldeck: + <span style="color: #c10000;">**Craftsmen**</span>?]): [+ worker_coalition_waldeck +]% 
 
-Social Liberal Coalition (<span style="color: #c00000;">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]): [+ social_liberal_coalition_waldeck +]%
+Social Liberal Coalition (<span style="color: #c00000;">**SPD**</span>[? if hb_r_waldeck: + <span style="color: #c10000;">**Craftsmen**</span>?] + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]): [+ social_liberal_coalition_waldeck +]%
 
 Right-Wing Coalition (<span style="color: #C0A054;">**LB**</span> + <span style="color: #3E88B3;">**DNVP**</span> + [? if not lvp_formed: <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]): [+ right_coalition_waldeck +]%
 
