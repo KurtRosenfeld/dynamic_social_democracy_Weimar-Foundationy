@@ -27,7 +27,7 @@ We have improved our relations with the [? if in_grand_coalition : [? if z_party
 
 @reichsexekution
 title: Reichsexekution
-subtitle: As the President of the Reich, Ebert has the power to topple any local government if the constitution is endagered (whatever that means...)
+subtitle: As the President of the Reich, Ebert has the power to topple any local government if the constitution is endangered (whatever that means...)
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 
