@@ -247,7 +247,7 @@ Q.west_relation = (Q.us_relation + Q.uk_relation + Q.france_relation + Q.belgium
 
 Q.east_relation = (Q.poland_relation + Q.czech_relation + Q.austria_relation + Q.hungary_relation)/4;
 
-Q.north_relation = (Q.sweden_relation + Q.denmark_realtion + Q.norway_relation + Q.finland_relation + Q.iceland_relation)/5;
+Q.north_relation = (Q.sweden_relation + Q.denmark_relation + Q.norway_relation + Q.finland_relation + Q.iceland_relation)/5;
 
 
 // re-calculate dissent.
