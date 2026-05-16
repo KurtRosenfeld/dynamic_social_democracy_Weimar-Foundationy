@@ -3,6 +3,7 @@ subtitle: Diplomacy
 view-if: year == 1922 and month == 4
 max-visits: 1
 tags: event
+on-arrival: soviet_relation += 5
 new-page: true
 face-image: img/TreatyRappallo.jpg
 
