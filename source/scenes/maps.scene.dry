@@ -595,7 +595,7 @@ go-to: map_menu
      style="display:inline">
     <g
        id="g3"
-       [? if in_grand_coalition_prussia: style="display:inline;fill:#A2B725;fill-opacity:1;stroke-width:20.0315" ?][? if in_spd_majority_prussia: style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?][? if in_center_right_coalition_prussia: style="display:inline;fill:#0F4989;fill-opacity:1;stroke-width:20.0315" ?][? if in_right_coalition_prussia: style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?]
+       [? if in_grand_coalition_prussia: style="display:inline;fill:#A2B725;fill-opacity:1;stroke-width:20.0315" ?][? if in_weimar_coalition_prussia: style="display:inline;fill:#FC6D6D;fill-opacity:1;stroke-width:20.0315" ?][? if in_spd_majority_prussia: style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?][? if in_center_right_coalition_prussia: style="display:inline;fill:#0F4989;fill-opacity:1;stroke-width:20.0315" ?][? if in_right_coalition_prussia: style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?]
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          d="m 79.370629,35.402098 -0.961538,1.748252 -0.437063,1.048951 -0.699301,1.048951 -0.08741,2.010489 -0.786714,0.786714 -0.524475,1.311188 0.174825,1.398602 1.573427,0.34965 0.34965,-1.223776 v -1.748252 -1.660839 l 1.223776,0.437063 -0.08741,0.611888 h 1.048951 l 0.961538,-0.08741 -0.174825,-1.398601 -1.573427,-0.874126 -0.6993,-0.524475 v -0.437063 l 1.136363,-0.349651 0.524476,-0.961538 z"
@@ -735,7 +735,7 @@ style="display:inline;fill:[? if bavaria_gov == "Bourgeois": #818181 ?][? if bav
     </g>
     <g
        id="g12"
-[? if in_grand_coalition_prussia: style="display:inline;fill:#A2B725;fill-opacity:1;stroke-width:20.0315" ?][? if in_spd_majority_prussia: style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?][? if in_center_right_coalition_prussia: style="display:inline;fill:#0F4989;fill-opacity:1;stroke-width:20.0315" ?][? if in_right_coalition_prussia: style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?]       transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
+       [? if in_grand_coalition_prussia: style="display:inline;fill:#A2B725;fill-opacity:1;stroke-width:20.0315" ?][? if in_weimar_coalition_prussia: style="display:inline;fill:#FC6D6D;fill-opacity:1;stroke-width:20.0315" ?][? if in_spd_majority_prussia: style="display:inline;fill:#C00000;fill-opacity:1;stroke-width:20.0315" ?][? if in_center_right_coalition_prussia: style="display:inline;fill:#0F4989;fill-opacity:1;stroke-width:20.0315" ?][? if in_right_coalition_prussia: style="display:inline;fill:#818181;fill-opacity:1;stroke-width:20.0315" ?]
       <path
          d="m 111.74289,159.57973 -1.11248,-1.35971 -0.80346,-0.86526 -0.92707,-0.30902 -0.80346,0.98887 -0.86527,0.43263 -0.0618,0.86527 -0.0618,1.2979 h 0.86527 l 0.80346,1.05068 0.24722,0.98887 0.0618,1.73053 0.30902,0.92707 0.98888,-0.24721 1.17429,-0.67986 0.80346,-0.18541 0.74166,0.67985 -0.12361,1.2979 -0.86527,0.12361 0.43263,0.49444 0.37083,0.61804 0.86527,0.12361 1.11248,0.24722 0.80346,-0.43263 0.61805,-0.92707 0.98888,-1.3597 0.18541,-0.92707 -0.12361,-0.74166 -1.2979,-0.49444 -0.61805,0.18542 -0.86526,-0.49444 -0.49444,0.30902 -0.61805,0.37083 -0.61804,-0.18541 -0.24722,-0.80347 1.54512,-0.74165 -0.98888,-0.30903 -1.05068,-0.24721 -1.11248,-0.61805 0.55624,-0.12361 z"
          id="path14" />
