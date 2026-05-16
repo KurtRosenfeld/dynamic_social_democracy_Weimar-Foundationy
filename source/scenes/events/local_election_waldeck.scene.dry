@@ -282,6 +282,7 @@ if (Q.dnvp_r_waldeck && Q.year == 1925) {
     "name": "DNVP",
     "seats": Math.round(Q.dnvp_r_waldeck * 0.17),
 }]);
+}
 
 if (Q.other_r_waldeck) {
     data.push({
@@ -291,7 +292,6 @@ if (Q.other_r_waldeck) {
         "seats": Math.round(Q.lb_r_other_waldeck * 0.17),
     });
 }
-
 
 
 if (window && d3) {
