@@ -1070,7 +1070,7 @@ Q.france_relation = 25;
 Q.belgium_relation = 35;
 Q.netherlands_relation = 65;
 
-Q.poland_relation = 15;
+Q.poland_relation = 10;
 Q.czech_relation = 25;
 Q.hungary_relation = 45;
 Q.austria_relation = 70;
