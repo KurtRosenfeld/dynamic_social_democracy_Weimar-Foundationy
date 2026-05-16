@@ -2132,7 +2132,7 @@ view-if: reformist_split = 0
 subtitle: Braun is one of our most popular leaders.
 choose-if: not uspd_leader = "Ledebour"
 unavailable-subtitle: The USPD disaproves
-on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = "SPD"; leverage -= 5
+on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = braun_in; leverage -= 5
 go-to: ministries
 
 Brauns appointment as chancellor is approved by all our potential allies.
@@ -2140,7 +2140,7 @@ Brauns appointment as chancellor is approved by all our potential allies.
 @socdem_chancellor_breitscheid
 title: Rudolf Breitscheid for Chancellor
 subtitle: Breitscheid is just generally based.
-on-arrival: spd_in_government = 1; chancellor = "Breitscheid"; chancellor_party = "SPD" if uspd_joined >= 1; chancellor_party = "USPD" if uspd_joined == 0; leverage += 10
+on-arrival: spd_in_government = 1; chancellor = "Breitscheid"; chancellor_party = breitscheid_in if uspd_joined >= 1; chancellor_party = "USPD" if uspd_joined == 0; leverage += 10
 go-to: ministries
 
 Our allies are quite happy about this choice.
@@ -2149,7 +2149,7 @@ Our allies are quite happy about this choice.
 title: Paul Levi for Chancellor
 view-if: levi_dead = 0
 subtitle: Levi is further to the left than all other possibilities
-on-arrival: spd_in_government = 1; chancellor = "Levi"; chancellor_party = "SPD" if uspd_joined >= 1; chancellor_party = "USPD" if uspd_joined == 0; leverage += 5
+on-arrival: spd_in_government = 1; chancellor = "Levi"; chancellor_party = levi_in if uspd_joined >= 1; chancellor_party = "USPD" if uspd_joined == 0; leverage += 5
 go-to: ministries
 
 Our allies approve of this choice.
@@ -3173,19 +3173,19 @@ on-arrival: chancellor = "Braun"
 [? if president != "Braun": Otto Braun has become chancellor of the <span style="color: #c00000;">**SPD**</span> majority. ?]
 
 @breitscheid_majority_chancellor
-on-arrival: chancellor = "Breitscheid"
+on-arrival: chancellor = "Breitscheid"; chancellor_party = breitscheid_in
 
 Rudolf Breitscheid has become chancellor of the <span style="color: #c00000;">**SPD**</span> majority.
 
 @muller_majority_chancellor
 view-if: muller_dead = 0
-on-arrival: chancellor = "Müller"
+on-arrival: chancellor = "Müller"; chancellor_party = muller_in
 
 Hermann Müller has become chancellor of the <span style="color: #c00000;">**SPD**</span> majority.
 
 @wels_majority_chancellor
 view-if: muller_dead = 1
-on-arrival: chancellor = "Wels"
+on-arrival: chancellor = "Wels"; chancellor_party = wels_in
 
 Otto Wels has become chancellor of the <span style="color: #c00000;">**SPD**</span> majority.
 
@@ -3220,7 +3220,7 @@ Yes, an emergency minority government, with the support of the <span style="colo
 @braun_emergency_chancellor
 subtitle: [? if president == "Braun": This is unprecedented. ?][? if president != "Braun": Perhaps more acceptable to the bourgeois parties... ?]
 view-if: not historical_mode
-on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; spd_in_government = 1; pro_republic -= 5; ddp_relation -= 4; dvp_relation -= 4; z_relation -= 4; lvp_relation -= 4; dvp_right += 2; ddp_right += 1.5; ddp_cohesion -= 1; lvp_right += 2; pro_republic += 3 if president != "Braun"; ddp_relation += 4 if president != "Braun"; dvp_relation += 4 if president != "Braun"; z_relation += 4 if president != "Braun"; lvp_relation += 4 if president != "Braun"; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1; bourgeois_cooperation += 3; liberal_cooperation += 3
+on-arrival: chancellor = "Braun"; chancellor_party = braun_in; spd_in_government = 1; pro_republic -= 5; ddp_relation -= 4; dvp_relation -= 4; z_relation -= 4; lvp_relation -= 4; dvp_right += 2; ddp_right += 1.5; ddp_cohesion -= 1; lvp_right += 2; pro_republic += 3 if president != "Braun"; ddp_relation += 4 if president != "Braun"; dvp_relation += 4 if president != "Braun"; z_relation += 4 if president != "Braun"; lvp_relation += 4 if president != "Braun"; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1; bourgeois_cooperation += 3; liberal_cooperation += 3
 
 [? if president == "Braun": Our experts have checked the constitution, and have discovered that there is no specific prohibition against the Chancellor also being the President (the President may not be a member of the Reichstag; there is no law saying that the Chancellor *must* be a member of the Reichstag). ?][? if president != "Braun": Otto Braun, one of our leading reformist politicians and statesmen, has been elevated to the second-highest office in the land. ?]
 
@@ -3231,7 +3231,7 @@ on-arrival: chancellor = "Braun"; chancellor_party = "SPD"; spd_in_government = 
 
 @breitscheid_emergency_chancellor
 subtitle: The <span style="color: #700000;">Communists</span> are warming to him...
-on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD"; spd_in_government = 1; kpd_relation += 5; ddp_relation -= 3; lvp_relation -= 3; dvp_relation -= 3; z_relation -= 3; dvp_right += 2; ddp_right += 1; ddp_cohesion -= 1; lvp_right += 1; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1;
+on-arrival: chancellor = "Breitscheid"; chancellor_party = breitscheid_in; spd_in_government = 1; kpd_relation += 5; ddp_relation -= 3; lvp_relation -= 3; dvp_relation -= 3; z_relation -= 3; dvp_right += 2; ddp_right += 1; ddp_cohesion -= 1; lvp_right += 1; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.1;
 
 We have appointed Rudolf Breitscheid as emergency chancellor. The <span style="color: #700000;">**Communists**</span> consider him less objectionable than the alternatives, although it is unclear whether they will tolerate this government.
 
@@ -3972,7 +3972,7 @@ view-if: muller_dead = 0
 subtitle: Müller is popular within the party, and is the preferred candidate of the [? if not in_social_liberal_coalition: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] and other parties.
 choose-if: not cvp_chancellor_accepted
 unavailable-subtitle: We've promised to forfeit the Chancellorship to the <span style="color: #000000;">[+ z_party_name +]</span>.
-on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
+on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = muller_in; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
 go-to: ministries
 
 Müller's appointment as chancellor is approved by all our potential allies.
@@ -3983,7 +3983,7 @@ view-if: muller_dead = 1
 subtitle: Otto Wels is a party leader, but can he also be chancellor?
 choose-if: not cvp_chancellor_accepted
 unavailable-subtitle: We've promised to forfeit the Chancellorship to the <span style="color: #000000;">[+ z_party_name +]</span>.
-on-arrival: spd_in_government = 1; chancellor = "Wels"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
+on-arrival: spd_in_government = 1; chancellor = "Wels"; chancellor_party = wels_in; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
 go-to: ministries
 
 Otto Wels's appointment as chancellor is approved by our potential allies.
@@ -4008,13 +4008,13 @@ The [? if not in_social_liberal_coalition: [? if z_party_name != "CVP": <span st
 @braun_3
 subtitle: Otto Braun will be Chancellor.
 view-if: not historical_mode
-on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = "SPD"; leverage -= 10; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition); hindenburg_angry += 10
+on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = braun_in; leverage -= 10; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition); hindenburg_angry += 10
 go-to: ministries
 
 We have promised to let the [? if not in_social_liberal_coalition: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] have more influence in the government in response to the appointment of Braun as chancellor.
 
 @braun_4
-on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = "SPD"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
+on-arrival: spd_in_government = 1; chancellor = "Braun"; chancellor_party = braun_in; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
 go-to: ministries
 
 Braun's appointment as chancellor is approved by all our potential allies.
