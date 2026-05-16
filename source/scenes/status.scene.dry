@@ -411,7 +411,10 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 <span style="color: #DD6B22;">**Netherlands**</span>: [+ dutch_relation : relationships +]
 
 
-<span style="color: #DC143C;">**Eastern**</span><span style="color: #D7141A;">**Neighbours**</span>: [+ east_relation +]
+<span style="color: #F7F7F7;">**---------**</span>
+
+
+<span style="color: #11457E;">**Eastern**</span> <span style="color: #D7141A;">**Neighbours**</span>: [+ east_relation +]
 
 <span style="color: #DC143C;">**Pol**</span><span style="color: #FFFFFF;">**and**</span>: [+ poland_relation : relationships +]
 
@@ -422,6 +425,9 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 <span style="color: #DDBAC3;">**Austria**</span>: [+ austria_relation : relationships +]
 
 
+<span style="color: #F7F7F7;">**---------**</span>
+
+
 <span style="color: #750e0e;">**USSR**</span>: [+ soviet_relation +]
 
 <span style="color: #1C470C;">**Italy**</span>: [+ italy_relation : relationships +]
@@ -429,7 +435,10 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 <span style="color: #EAD90C;">**Spain**</span>: [+ spain_relation : relationships +]
 
 
-<span style="color: #0CA0DD;">**Nordic**</span><span style="color: #913232;">**Countries**</span>: [+ north_relation : relationships +]
+<span style="color: #F7F7F7;">**---------**</span>
+
+
+<span style="color: #0CA0DD;">**Nordic**</span> <span style="color: #913232;">**Countries**</span>: [+ north_relation : relationships +]
 
 <span style="color: #FF1F1F;">**Denmark**</span>: [+ denmark_relation : relationships +]
 
