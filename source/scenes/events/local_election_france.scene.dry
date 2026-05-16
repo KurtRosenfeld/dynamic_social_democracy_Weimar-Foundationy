@@ -120,10 +120,10 @@ if (Q.economic_growth >= 6) {
     france_adjustment_factors.rad += 0.01;
 }
 
-if (Q.west_relation >= 3 && Q.spd_in_government) {
-    france_adjustment_factors.sfio += (Q.west_relation / 50);
-    france_adjustment_factors.prs += (Q.west_relation / 100);
-    france_adjustment_factors.rad += (Q.west_relation / 100);
+if (Q.france_relation >= 65 && Q.spd_in_government) {
+    france_adjustment_factors.sfio += (Q.france_relation / 50);
+    france_adjustment_factors.prs += (Q.france_relation / 100);
+    france_adjustment_factors.rad += (Q.france_relation / 100);
     if (Q.kpd_relation >= 50) {
         france_adjustment_factors.pcf += (Q.kpd_relation / 400);
         france_adjustment_factors.pup += (Q.kpd_relation / 400);
@@ -531,7 +531,7 @@ title: The <span style="color: #FF6699;">**PRS**</span> and <span style="color: 
 subtitle: The economically right-wing <span style="color: #E0B0FF;">**PRRRS**</span> and <span style="color: #aa4fff;">**RI**</span> are opposed to the <span style="color: #F0001C;">**SFIO**</span>'s socialistic policies.
 unavailable-subtitle: The <span style="color: #E0B0FF;">**PRRRS**</span> would rather work with their electoral allies.
 choose-if: left_coalition_france < republican_coalition_france
-on-arrival: west_relation += 2; reparations_negotiation += 1
+on-arrival: france_relation += 10; reparations_negotiation += 1
 set-bg: img/map_2.jpg
 
 While not the best outcome, the return of the <span style="color: #E0B0FF;">Radical</span> Édouard Herriot to the Prime Minister position is excellent news for our relations with <span style="color: #002654;">France</span>, as he is much more open to renegotiating Germany's reparation payments compared to the previous government.
@@ -541,7 +541,7 @@ title: The <span style="color: #FFC0C0;">Left-Cartel</span> shall enter governme
 subtitle: The strong electoral results of the <span style="color: #F0001C;">**SFIO**</span> and <span style="color: #FF6699;">**PRS**</span> have pressured the <span style="color: #E0B0FF;">**PRRRS**</span> to enter government with their electoral allies.
 unavailable-subtitle: The <span style="color: #E0B0FF;">**PRRRS**</span> would rather work pursue an agreement with the <span style="color: #FFBF00;">**AD**</span>.
 choose-if: left_coalition_france >= republican_coalition_france
-on-arrival: west_relation += 3; reparations_negotiation += 2; eu_progress += 1; left_cartel_france = 1
+on-arrival: france_relation += 18; reparations_negotiation += 2; eu_progress += 1; left_cartel_france = 1
 achievement: vive_le_cartel
 set-bg: img/map_2.jpg
 
@@ -554,6 +554,6 @@ title: A Right-wing Coalition is somehow formed, without needing the <span style
 subtitle: Cheater.
 unavailable-subtitle: <span style="color: #aa4fff;">**RI**</span> + <span style="color: #00CCCC;">**PDP**</span> + <span style="color: #FFBF00;">**AD**</span> + <span style="color: #005ACA;">**FR**</span> ([+ bourgeois_coalition_france +]%)
 choose-if: bourgeois_coalition_france >= 50
-on-arrival: dataminer_detected = 1
+on-arrival: dataminer_detected = 1; france_relation -= 20
 
 ok.
