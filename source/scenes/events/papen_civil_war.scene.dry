@@ -208,7 +208,7 @@ While we might want to call for foreign assistance, the foreign powers see the "
 - @game_over: Game over.
 
 @west_aid
-choose-if: west_relation >= 2
+choose-if: west_relation >= 60
 unavailable-subtitle: Our relations are not strong enough.
 on-arrival: west_aid += 1
 max-visits: 1
@@ -217,7 +217,7 @@ go-to: long_war_intervention
 We send a call for help to the West, but their governments are divided on whether or not to support us. We have to survive on our own until they make a decision.
 
 @soviet_aid
-choose-if: (soviet_relation >= 1 and kpd_relation >= 50) or (kpd_relation >= 75)
+choose-if: (soviet_relation >= 55 and kpd_relation >= 50) or (kpd_relation >= 75)
 on-arrival: soviet_aid += 1
 unavailable-subtitle: Our relations are not strong enough.
 max-visits: 1
@@ -226,7 +226,7 @@ go-to: long_war_intervention
 We send a call for help to the <span style="color: #750e0e;">Soviet Union</span>. The <span style="color: #700000;">**KPD**</span> receives the bulk of the aid, while the Reichsbanner and our loyal military units are left floundering. If we win, this does not bode well for our future.
 
 @east_aid
-choose-if: east_relation >= 2
+choose-if: east_relation >= 70
 on-arrival: east_aid += 1
 unavailable-subtitle: Our relations are not strong enough.
 max-visits: 1
