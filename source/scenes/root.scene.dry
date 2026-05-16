@@ -1064,23 +1064,23 @@ for (let i = 0; i <= 100; i++) {
 
 
 // foreign relations
-Q.us_relation = 40;
-Q.uk_relation = 40;
+Q.us_relation = 50;
+Q.uk_relation = 45;
 Q.france_relation = 25;
-Q.belgium_relation = 45;
-Q.netherlands_relation = 45;
+Q.belgium_relation = 35;
+Q.netherlands_relation = 65;
 
 Q.poland_relation = 15;
 Q.czech_relation = 25;
 Q.hungary_relation = 45;
-Q.austria_relation = 65;
+Q.austria_relation = 70;
 
 Q.italy_relation = 50;
 Q.soviet_relation = 50;
 Q.spain_relation = 40;
 
 Q.denmark_relation = 45;
-Q.sweden_relation = 55;
+Q.sweden_relation = 60;
 Q.norway_relation = 55;
 Q.iceland_relation = 50;
 Q.finland_relation = 60;
