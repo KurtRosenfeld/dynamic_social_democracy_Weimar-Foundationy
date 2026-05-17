@@ -34,7 +34,7 @@ var waldeck_adjustment_factors = {
     lvp: 0.9,
     dvp: 0.8,
     dnvp: 0.76,
-    other: 4.8,
+    other: 4.6,
 };
 
 
@@ -58,7 +58,7 @@ if (Q.year == 1922) Q.dnvp_waldeck_elections_vote = 0;
 
 if (Q.rural_spd_normalized) waldeck_adjustment_factors.spd += 0.1;
 if (Q.workers_spd_normalized >= 70) waldeck_adjustment_factors.spd += 0.02;
-if (Q.year == 1922) waldeck_adjustment_factors.other += 9.7;
+if (Q.year == 1922) waldeck_adjustment_factors.other += 7.7;
 if (Q.year == 1925) waldeck_adjustment_factors.spd += 0.2;
 Q.spd_waldeck_elections_vote = Q.spd_votes*waldeck_adjustment_factors.spd;
 Q.uspd_waldeck_elections_vote = Q.uspd_votes*waldeck_adjustment_factors.uspd;
