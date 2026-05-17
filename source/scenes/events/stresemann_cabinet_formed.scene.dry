@@ -305,7 +305,8 @@ title: End negotiations
 subtitle: We would surely be denied any ministries.
 choose-if: z_relation >= 60 and dvp_relation >= 40
 unavailable-subtitle: Our partners don't even consider this option.
-on-arrival: if (Q.prussia_leader !== "Braun") { 
+on-arrival:{!
+if (Q.prussia_leader !== "Braun") { 
 Q.chancellor = 'Braun'; 
 Q.chancellor_party = braun_in; 
 } 
@@ -313,6 +314,7 @@ if (Q.prussia_leader == "Braun") {
 Q.chancellor = 'Müller'; 
 Q.chancellor_party = muller_in; 
 }
+!}
 spd_in_government = 1; z_relation -= 5; dvp_relation -= 5
 
 The bourgeois parties agreed to let [+ chancellor +] ([+ chancellor_party +]) be chancellor.
