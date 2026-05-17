@@ -489,7 +489,7 @@ Current primary objective: elections
 
 <span style="color: #D3C24D;">Liberal papers</span>: [+ liberal_media +]%
 
-<h4> <span style="color: #7A3C00;">Far</span> <span style="color: #3E88B3;">Rright</span>: [+ far_right_media +]%
+<h4> <span style="color: #000000;">Far</span> <span style="color: #D3D3D3;">Rri</span><span style="color: #A00000;">ght</span>: [+ far_right_media +]%
 
 <span style="color: #3E88B3;">Monarchist papers</span>: [+ monarchist_media +]%
 
@@ -520,9 +520,9 @@ influence: marginal
 
 influence: marginal
 
-[? if sb_formed: <span style="color: #B4143D;">**SB**</span>: [+ sb_relation : relationships +]
+[? if sb_formed: <span style="color: #B4143D;">**SB**</span>: [+ sb_relation : relationships +] ?]
 
-influence: marginal ?]
+[? if sb_formed: influence: marginal ?]
 
 
 
