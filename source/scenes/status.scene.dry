@@ -507,15 +507,19 @@ Current primary objective: elections
 = Splinters
 
 <span style="color: #C43988;">**KPO**</span>: [+ kpo_relation : relationships +]
+
 influence: marginal
 
 <span style="color: #D00B0B;">**Leninbund**</span>: [+ leninbund_relation : relationships +]
+
 influence: marginal
 
 <span style="color: #3A0000;">**KAPD**</span>: [+ kapd_relation : relationships +]
+
 influence: marginal
 
 [? if sb_formed: <span style="color: #B4143D;">**SB**</span>: [+ sb_relation : relationships +]
+
 influence: marginal ?]
 
 
