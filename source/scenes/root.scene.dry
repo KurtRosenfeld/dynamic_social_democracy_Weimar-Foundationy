@@ -152,7 +152,7 @@ Q.spd_party_leader_n = 2
 Q.ideology = "reformist";
 Q.editorial_line = "center";
 Q.factional_representation = 2;
-Q.enemies = "divers";
+Q.enemies = "diverse";
 
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
@@ -1067,18 +1067,18 @@ for (let i = 0; i <= 100; i++) {
 
 // media distribution
 
-Q.anarchist_share = 0;
-Q.communist_share = 2;
-Q.socdem_share = 26;
-Q.liberal_share = 28;
-Q.catholic_share = 12;
-Q.monarchist_share = 18;
-Q.volkisch_share = 3;
+Q.anarchist_media = 0;
+Q.communist_media = 2;
+Q.socdem_media = 26;
+Q.liberal_media = 31;
+Q.catholic_media = 12;
+Q.monarchist_media = 23;
+Q.volkisch_media = 4;
 
 
 // foreign relations
 Q.us_relation = 50;
-Q.uk_relation = 45;
+Q.uk_relation = 40;
 Q.france_relation = 25;
 Q.belgium_relation = 35;
 Q.netherlands_relation = 65;
