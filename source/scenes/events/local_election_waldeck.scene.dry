@@ -116,7 +116,7 @@ var waldeck_adjustment_r_factors = {
     lvp: 1.01,
     dvp: 1.0,
     dnvp: 0.96,
-    other: 1.02,
+    other: 1.16,
 };
 
 Q.spd_r_waldeck = Q.spd_r_waldeck*waldeck_adjustment_r_factors.spd;
