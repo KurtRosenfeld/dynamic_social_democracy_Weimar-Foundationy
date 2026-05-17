@@ -152,6 +152,7 @@ Q.spd_party_leader_n = 2
 Q.ideology = "reformist";
 Q.editorial_line = "center";
 Q.factional_representation = 2;
+Q.enemies = "divers";
 
 // hmm... maybe we can play nice with Hindenburg???
 Q.hindenburg_relation = 25;
@@ -1063,6 +1064,16 @@ for (let i = 0; i <= 100; i++) {
     Q[`flavour_${i}_trigger`] = 0;
     Q[`flavour_${i}_trigger_time`] = 0;
 }
+
+// media distribution
+
+Q.anarchist_share = 0;
+Q.communist_share = 2;
+Q.socdem_share = 26;
+Q.liberal_share = 28;
+Q.catholic_share = 12;
+Q.monarchist_share = 18;
+Q.volkisch_share = 3;
 
 
 // foreign relations
