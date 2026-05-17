@@ -324,9 +324,10 @@ The bourgeois parties agreed to let [+ chancellor +] ([+ chancellor_party +]) be
 
 @fuck_monarchism
 choose-if: ddp_relation <= 50
-on-arrival: dnvp_in_government; workers_dnvp -= 5; workers_nsdap += 6; workers_kpd += 4; unemployed_nsdap += 2; rural_nsdap += 5; new_middle_ddp -= 3; pro_republic -= 3; nationalism += 2; interior_minister = 'Schiele'; interior_minister_party = 'DNVP'; agriculture_minister = 'Schiele'; agriculture_minister_party = 'DNVP'
 
 The DNVP just entered a national government...
+
+(the content needs to be added again)
 
 
 
