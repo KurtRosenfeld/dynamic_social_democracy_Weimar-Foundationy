@@ -242,6 +242,13 @@ if (Q.unemployed <= 1) {
     Q.unemployed = 1;
 }
 
+// hyperinflation
+if (year <= 1923) {
+if (Q.rathenau_dead) Q.inflation += 1;
+if (Q.ruhr_occupied) Q.inflation += 1;
+}
+
+
 // foreign relations I guess
 Q.west_relation = (Q.us_relation + Q.uk_relation + Q.france_relation + Q.belgium_relation + Q.netherlands_relation)/5;
 
