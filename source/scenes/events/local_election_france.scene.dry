@@ -120,10 +120,10 @@ if (Q.economic_growth >= 6) {
     france_adjustment_factors.rad += 0.01;
 }
 
-if (Q.france_relation >= 65 && Q.spd_in_government) {
-    france_adjustment_factors.sfio += (Q.france_relation / 50);
-    france_adjustment_factors.prs += (Q.france_relation / 100);
-    france_adjustment_factors.rad += (Q.france_relation / 100);
+if (Q.france_relation >= 50 && Q.spd_in_government) {
+    france_adjustment_factors.sfio += (Q.france_relation / 500);
+    france_adjustment_factors.prs += (Q.france_relation / 1000);
+    france_adjustment_factors.rad += (Q.france_relation / 1000);
     if (Q.kpd_relation >= 50) {
         france_adjustment_factors.pcf += (Q.kpd_relation / 400);
         france_adjustment_factors.pup += (Q.kpd_relation / 400);
