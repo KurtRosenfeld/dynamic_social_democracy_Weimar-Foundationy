@@ -467,13 +467,17 @@ Factional fairness: [+ factional_representation : dissent +]
 
 Left
 
+Anarchist papers
+
 Communist papers
 
 [? if editorial_line == "Left": Social Democratic papers ?]
 
 Republican
 
-[? if editorial_line == "Center" or "Reformists" or "Labor": Social Democratic papers ?]
+[? if editorial_line == "Center": Social Democratic papers ?]
+[? if editorial_line == "Labor": Social Democratic papers ?]
+[? if editorial_line == "Reformists": Social Democratic papers ?]
 
 Liberal papers
 
