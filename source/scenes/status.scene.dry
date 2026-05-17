@@ -491,7 +491,7 @@ Current primary objective: elections
 
 <h4> [? if year >= 1930: <span style="color: #000000;">Far</span> <span style="color: #D3D3D3;">Ri</span><span style="color: #A00000;">ght</span>?][? if year < 1929: <span style="color: #000000;">Ri</span><span style="color: #D3D3D3;">g</span><span style="color: #A00000;">ht</span>?]: [+ far_right_media +]%
 
-<span style="color: #3E88B3;">Conservative media</span>: [+ conservative_media +]%
+<span style="color: #C0A054;">Conservative media</span>: [+ conservative_media +]%
 
 <span style="color: #3E88B3;">Monarchist media</span>: [+ monarchist_media +]%
 
