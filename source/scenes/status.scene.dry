@@ -473,7 +473,7 @@ Factional representation: uneven
 
 [? if not uspd_joined = 3: <span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [+ uspd_relation : relationships +] ?]
 
-[? if aspd_r_saxony: ASPD: cool +]
+[? if aspd_r_saxony: ASPD: cool ?]
 
 = Splinters
 
