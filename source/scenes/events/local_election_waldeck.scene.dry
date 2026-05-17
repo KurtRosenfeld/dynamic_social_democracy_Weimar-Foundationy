@@ -28,8 +28,8 @@ subtitle: May we not do our worst...
 on-arrival: {!
 
 var waldeck_adjustment_factors = {
-    spd: 0.7,
-    uspd: 1.22,
+    spd: 0.67,
+    uspd: 1.26,
     ddp: 0.8,
     lvp: 0.9,
     dvp: 0.8,
@@ -58,8 +58,8 @@ if (Q.year == 1922) Q.dnvp_waldeck_elections_vote = 0;
 
 if (Q.rural_spd_normalized) waldeck_adjustment_factors.spd += 0.1;
 if (Q.workers_spd_normalized >= 70) waldeck_adjustment_factors.spd += 0.02;
-if (Q.year == 1922) waldeck_adjustment_factors.other += 7.7;
-if (Q.year == 1925) waldeck_adjustment_factors.spd += 0.2;
+if (Q.year == 1922) waldeck_adjustment_factors.other += 8.2;
+if (Q.year == 1925) waldeck_adjustment_factors.spd += 0.25;
 Q.spd_waldeck_elections_vote = Q.spd_votes*waldeck_adjustment_factors.spd;
 Q.uspd_waldeck_elections_vote = Q.uspd_votes*waldeck_adjustment_factors.uspd;
 Q.kpd_waldeck_elections_vote = Q.kpd_votes*waldeck_adjustment_factors.kpd;
