@@ -465,6 +465,27 @@ Factional fairness: [+ factional_representation : dissent +]
 
 = Media Landscape
 
+Left
+
+Communist papers
+
+[? if editorial_line == "Left": Social Democratic papers ?]
+
+Republican
+
+[? if editorial_line == "Center" or "Reformists" or "Labor": Social Democratic papers ?]
+
+Liberal papers
+
+Catholic papers
+
+Rigth
+
+Monarchist papers
+
+Völkisch papers
+
+
 @left
 
 = Workers Parties
