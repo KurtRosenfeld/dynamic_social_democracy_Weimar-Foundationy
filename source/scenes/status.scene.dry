@@ -487,7 +487,7 @@ Current primary objective: elections
 [? if editorial_line == "Labor": <span style="color: #c00000;">Socialist media</span>: [+ socdem_media +]% ?]
 [? if editorial_line == "Reformists": <span style="color: #c00000;">Socialist media</span>: [+ socdem_media +]% ?]
 
-<span style="color: #D3C24D;">Liberal papers</span>: [+ liberal_media +]%
+<span style="color: #D3C24D;">Liberal media</span>: [+ liberal_media +]%
 
 <h4> [? if year >= 1930: <span style="color: #000000;">Far</span> <span style="color: #D3D3D3;">Ri</span><span style="color: #A00000;">ght</span>?][? if year < 1929: <span style="color: #000000;">Ri</span><span style="color: #D3D3D3;">g</span><span style="color: #A00000;">ht</span>?]: [+ far_right_media +]%
 
