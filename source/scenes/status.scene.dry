@@ -461,7 +461,7 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 Current Editorial Line: [+ editorial_line +]
 
-Factional representation: uneven
+Factional fairness: [+ factional_representation : dissent +]
 
 = Media Landscape
 
@@ -473,15 +473,15 @@ Factional representation: uneven
 
 [? if not uspd_joined = 3: <span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [+ uspd_relation : relationships +] ?]
 
-[? if aspd_r_saxony: ASPD: cool ?]
+[? if aspd_r_saxony: <span style="color: #fe9e00;">**ASPD**</span>: cool ?]
 
 = Splinters
 
-KPO
+<span style="color: #C43988;">**KPO**</span>
 
-Leninbund
+<span style="color: #D00B0B;">**Leninbund**</span>
 
-KAPD
+<span style="color: #3A0000;">**KAPD**</span>
 
 
 
