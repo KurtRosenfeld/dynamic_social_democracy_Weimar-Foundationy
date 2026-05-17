@@ -69,7 +69,8 @@ choose-if: leverage >= 5
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: interior_minister = "Severing"; leverage -= 5; interior_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
-Carl Severing has been appointed Interior Minister.
+
+Carl Severing of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
 
 @appoint_sollmann
 title: Wilhelm Sollmann
@@ -79,7 +80,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: leverage -= 20; interior_minister = "Sollmann"; interior_minister_party = "SPD"
 go-to: selection_of_ministries_stresemann
 
-Wilhelm Sollmann has been appointed Interior Minister.
+Wilhelm Sollmann of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
 
 @cancel_interior
 title: Cancel & Go Back
