@@ -59,7 +59,7 @@ if (Q.year == 1922) Q.dnvp_waldeck_elections_vote = 0;
 if (Q.rural_spd_normalized) waldeck_adjustment_factors.spd += 0.1;
 if (Q.workers_spd_normalized >= 70) waldeck_adjustment_factors.spd += 0.02;
 if (Q.year == 1922) waldeck_adjustment_factors.other += 8;
-if (Q.year == 1925) waldeck_adjustment_factor.spd += 0.1;
+if (Q.year == 1925) waldeck_adjustment_factors.spd += 0.1;
 Q.spd_waldeck_elections_vote = Q.spd_votes*waldeck_adjustment_factors.spd;
 Q.uspd_waldeck_elections_vote = Q.uspd_votes*waldeck_adjustment_factors.uspd;
 Q.kpd_waldeck_elections_vote = Q.kpd_votes*waldeck_adjustment_factors.kpd;
@@ -336,7 +336,7 @@ go-to: waldeck_coalition_menu
 
 [? if uspd_joined < 3 and uspd_r_waldeck > 0: {!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td!} **[+ uspd_waldeck_elections_vote +]%** {!</td><td!} **[+ uspd_r_waldeck +]%** {!</td></tr>!} ?]
 
-[? if hb_r_waldeck > 0: {!<tr><td><div class="box" style='background-color:#CB7F00'> </div> !} Craftsmen: {!</td><td!} **[+ hb_waldeck_elections_vote +]%** {!</td><td!} **[+ hb_r_waldeck +]%**  {!</td></tr>!} ?]
+[? if year == 1925: {!<tr><td><div class="box" style='background-color:#CB7F00'> </div> !} Craftsmen: {!</td><td!} **[+ hb_waldeck_elections_vote +]%** {!</td><td!} **[+ hb_r_waldeck +]%**  {!</td></tr>!} ?]
 
 [? if not lvp_formed: {!<tr><td><div class="box" style='background-color:#D3C24D'> </div> !} [+ ddp_name +]: {!</td><td!} **[+ ddp_waldeck_elections_vote +]%** {!</td><td!} **[+ ddp_r_waldeck +]%**  {!</td></tr>!} ?]
 
