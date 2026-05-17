@@ -477,15 +477,15 @@ Current primary objective: elections
 
 <span style="color: #700000;">Communist papers</span>: [+ communist_media +]%
 
-[? if editorial_line == "Left": <span style="color: #c00000;">Social Democratic papers</span>: [+ socdem_media +]% ?]
+[? if editorial_line == "Left": <span style="color: #c00000;">Socialist papers</span>: [+ socdem_media +]% ?]
 
 <h4> <span style="color: #000000;">Rep</span><span style="color: #DD0000;">upli</span><span style="color: #FFCC00;">can</span>: [+ republican_media +]%
 
 <span style="color: #000000;">Catholic papers</span>: [+ catholic_media +]%
 
-[? if editorial_line == "Center": <span style="color: #c00000;">Social Democratic papers</span>: [+ socdem_media +]% ?]
-[? if editorial_line == "Labor": <span style="color: #c00000;">Social Democratic papers</span>: [+ socdem_media +]% ?]
-[? if editorial_line == "Reformists": <span style="color: #c00000;">Social Democratic papers</span>: [+ socdem_media +]% ?]
+[? if editorial_line == "Center": <span style="color: #c00000;">Socialist papers</span>: [+ socdem_media +]% ?]
+[? if editorial_line == "Labor": <span style="color: #c00000;">Socialist papers</span>: [+ socdem_media +]% ?]
+[? if editorial_line == "Reformists": <span style="color: #c00000;">Socialist papers</span>: [+ socdem_media +]% ?]
 
 <span style="color: #D3C24D;">Liberal papers</span>: [+ liberal_media +]%
 
