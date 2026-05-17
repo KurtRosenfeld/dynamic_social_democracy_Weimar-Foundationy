@@ -253,8 +253,8 @@ Q.north_relation = (Q.sweden_relation + Q.denmark_relation + Q.norway_relation +
 
 // media stuuuuuff
 
-Q.left_media = (Q.anarchist_media + Q.communist_media + Q.socdem_media if editorial_line == "Left");
-Q.republican_media = (Q.liberal_media + Q.catholic_media + Q.socdem_media if editorial_line !== "Left");
+Q.left_media = (Q.anarchist_media + Q.communist_media + Q.socdem_media if Q.editorial_line == "Left");
+Q.republican_media = (Q.liberal_media + Q.catholic_media + Q.socdem_media if Q.editorial_line !== "Left");
 Q.far_right_media = (Q.volkisch_media + Q.monarchist_media);
 
 
