@@ -57,7 +57,8 @@ if (Q.year == 1924) {
         other: 0.77,
         kvp: 1.1,
         dnf: 0.65,
-        nsfb: 0.83
+        nsfb: 0.83,
+        dvfb: 1
     };
 } else if (Q.year == 1928) {
     var adjustment_factors = {
@@ -73,7 +74,8 @@ if (Q.year == 1924) {
         nsdap: 0.66,
         other: 0.88,
         kvp: 1.2,
-        dnf: 0.65
+        dnf: 0.65,
+        dvfb: 0.7
     };
 } else if (Q.year == 1929) {
     var adjustment_factors = {
@@ -89,7 +91,8 @@ if (Q.year == 1924) {
         nsdap: 1.0,
         other: 0.85,
         kvp: 1.3,
-        dnf: 0.7
+        dnf: 0.7,
+        dvfb: 0.5
     };
 } else if (Q.year == 1930 && Q.kvp_formed == 1) {
     var adjustment_factors = {
@@ -105,7 +108,8 @@ if (Q.year == 1924) {
         nsdap: 1.0,
         other: 0.8,
         kvp: 1.3,
-        dnf: 0.8
+        dnf: 0.8,
+        dvfb: 0.5
     };
 } else if (Q.year == 1930 && Q.kvp_formed == 0) {
     var adjustment_factors = {
@@ -750,6 +754,15 @@ if (Q.dsu_exist && Q.dsu_r_prussia) {
     });
 }
 
+if (Q.dvfp_formed && Q.dvfp_r_prussia && !Q.nsfb_exists) {
+    data.push({
+        "id": "dvfp",
+        "legend": "DVFP",
+        "name": "DVFP",
+        "seats": Math.round(Q.dvfp_r_prussia * Q.reichstag_size),
+    });
+}
+
 if (Q.nsdap_split && Q.nsdap_hitler_r_prussia) {
     data.push({
         "id": "nsdap",
@@ -759,12 +772,21 @@ if (Q.nsdap_split && Q.nsdap_hitler_r_prussia) {
     });
 }
 
-if (!Q.nsdap_split && Q.nsdap_r_prussia) {
+if (!Q.nsdap_split && Q.nsdap_r_prussia && !Q.nsfb_exists) {
     data.push({
         "id": "nsdap",
         "legend": "NSDAP",
         "name": "NSDAP",
         "seats": Math.round(Q.nsdap_r_prussia * Q.landtag_size),
+    });
+}
+
+if (Q.nsfb_r_prussia && Q.nsfb_exists) {
+    data.push({
+        "id": "nsdfb",
+        "legend": "NSFB",
+        "name": "NSFB",
+        "seats": Math.round(Q.nsfb_r_prussia * Q.reichstag_size),
     });
 }
 
@@ -850,9 +872,13 @@ go-to: coalition_menu
 
 [? if dnf_formed : {!<tr><td><div class="box" style='background-color:#003755'> </div> !}DNF: {!</td><td>!} [+ dnf_votes_prussia +]% {!</td><td>!} [+ str_votes_change_dnf_prussia +] {!</td><td>!} [+ dnf_r_prussia +]% {!</td><td>!} [+ str_change_dnf_prussia +] {!</td></tr>!} ?]
 
+[? if not nsdap_split: {!<tr><td><div class="box" style='background-color:#3D3D3D'> </div> !} DVFP: {!</td><td>!} [+ dvfp_votes_prussia +]% {!</td><td>!} [+ str_votes_change_dvfp_prussia +] {!</td><td>!} [+ dvfp_r_prussia +]% {!</td><td>!} [+ str_change_dvfp_prussia +] {!</td></tr>!} ?]
+
 [? if dsu_exist: {!<tr><td><div class="box" style='background-color:#6A1E1E'> </div> !} DSU: {!</td><td>!} [+ dsu_votes_prussia +]% {!</td><td>!} [+ str_votes_change_dsu_prussia +] {!</td><td>!} [+ dsu_r_prussia +]% {!</td><td>!} [+ str_change_dsu_prussia +] {!</td></tr>!} ?]
 
 [? if not nsdap_split: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_votes_prussia +]% {!</td><td>!} [+ str_votes_change_nsdap_prussia +] {!</td><td>!} [+ nsdap_r_prussia +]% {!</td><td>!} [+ str_change_nsdap_prussia +] {!</td></tr>!} ?]
+
+[? if nsfb_exists: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSFB: {!</td><td>!} [+ nsfb_votes_prussia +]% {!</td><td>!} [+ str_votes_change_nsfb_prussia +] {!</td><td>!} [+ nsfb_r_prussia +]% {!</td><td>!} [+ str_change_nsfb_prussia +] {!</td></tr>!} ?]
 
 [? if nsdap_split: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_hitler_votes_prussia +]% {!</td><td>!} [+ str_votes_change_nsdap_hitler_prussia +] {!</td><td>!} [+ nsdap_hitler_r_prussia +]% {!</td><td>!} [+ str_change_nsdap_hitler_prussia +] {!</td></tr>!} ?]
 
