@@ -1070,12 +1070,12 @@ for (let i = 0; i <= 100; i++) {
 
 Q.anarchist_media = 0;
 Q.communist_media = 3;
-Q.socdem_media = 23;
-Q.liberal_media = 27;
-Q.catholic_media = 10;
-Q.conservative_media = 13
-Q.monarchist_media = 20;
-Q.volkisch_media = 4;
+Q.socdem_media = 21;
+Q.liberal_media = 28;
+Q.catholic_media = 4;
+Q.conservative_media = 20
+Q.monarchist_media = 22;
+Q.volkisch_media = 2;
 
 
 // foreign relations
