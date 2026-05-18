@@ -58,7 +58,7 @@ if (Q.year == 1922) Q.dnvp_waldeck_elections_vote = 0;
 
 if (Q.rural_spd_normalized) waldeck_adjustment_factors.spd += 0.1;
 if (Q.rural_spd_normalized >= 40) waldeck_adjustment_factors.spd += 0.2;
-if (Q.year == 1922) waldeck_adjustment_factors.other += 10.6;
+if (Q.year == 1922) waldeck_adjustment_factors.other += 11.1;
 if (Q.year == 1925) waldeck_adjustment_factors.spd += 0.25;
 Q.spd_waldeck_elections_vote = Q.spd_votes*waldeck_adjustment_factors.spd;
 Q.uspd_waldeck_elections_vote = Q.uspd_votes*waldeck_adjustment_factors.uspd;
@@ -406,7 +406,7 @@ choose-if: social_liberal_coalition_waldeck >= 50 and ddp_relation >= 20
 on-arrival: ddp_relation += 3; waldeck_gov = "Social-Liberal"; rural_spd += 1; rural_other -= 2; rural_dnvp -= 1; pro_republic += 1
 
 @right_coalition_waldeck
-title: The right forms a government led by the <span style="color: #006400;">**Rural League**</span>.
+title: The right forms a government led by the <span style="color: #006400;">**Agricultural League**</span>[? if year == 1922:  within a Reich List?].
 subtitle: This came as expected...
 choose-if: right_coalition_waldeck >= 50
 on-arrival: waldeck_gov = "Right"; rural_spd -= 1; rural_other += 2; rural_dnvp -= 1
