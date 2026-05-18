@@ -58,7 +58,7 @@ if (Q.year == 1922) Q.dnvp_waldeck_elections_vote = 0;
 
 if (Q.rural_spd_normalized) waldeck_adjustment_factors.spd += 0.1;
 if (Q.rural_spd_normalized >= 40) waldeck_adjustment_factors.spd += 0.2;
-if (Q.year == 1922) waldeck_adjustment_factors.other += 8.8;
+if (Q.year == 1922) waldeck_adjustment_factors.other += 9.2;
 if (Q.year == 1925) waldeck_adjustment_factors.spd += 0.25;
 Q.spd_waldeck_elections_vote = Q.spd_votes*waldeck_adjustment_factors.spd;
 Q.uspd_waldeck_elections_vote = Q.uspd_votes*waldeck_adjustment_factors.uspd;
@@ -101,16 +101,16 @@ Q.dvp_waldeck_elections_vote = (Q.dvp_waldeck_elections_vote != undefined ? pars
 Q.dnvp_waldeck_elections_vote = (Q.dnvp_waldeck_elections_vote != undefined ? parseFloat(Q.dnvp_waldeck_elections_vote.toFixed(1)) : 0);
 Q.other_waldeck_elections_vote = (Q.other_waldeck_elections_vote != undefined ? parseFloat(Q.other_waldeck_elections_vote.toFixed(1)) : 0);
 
-if (Q.spd_waldeck_elections_vote >= 1.4) Q.spd_r_waldeck = Q.spd_waldeck_elections_vote;
-if (Q.uspd_waldeck_elections_vote >= 1.4) Q.uspd_r_waldeck = Q.uspd_waldeck_elections_vote;
-if (Q.ddp_waldeck_elections_vote >= 1.4) Q.ddp_r_waldeck = Q.ddp_waldeck_elections_vote;
-if (Q.lvp_waldeck_elections_vote >= 1.4) Q.lvp_r_waldeck = Q.lvp_waldeck_elections_vote;
-if (Q.dvp_waldeck_elections_vote >= 1.4) Q.dvp_r_waldeck = Q.dvp_waldeck_elections_vote;
-if (Q.dnvp_waldeck_elections_vote >= 1.4) Q.dnvp_r_waldeck = Q.dnvp_waldeck_elections_vote;
-if (Q.other_waldeck_elections_vote >= 1.4) Q.other_r_waldeck = Q.other_waldeck_elections_vote;
+if (Q.spd_waldeck_elections_vote >= 6.5) Q.spd_r_waldeck = Q.spd_waldeck_elections_vote;
+if (Q.uspd_waldeck_elections_vote >= 6.5) Q.uspd_r_waldeck = Q.uspd_waldeck_elections_vote;
+if (Q.ddp_waldeck_elections_vote >= 6.5) Q.ddp_r_waldeck = Q.ddp_waldeck_elections_vote;
+if (Q.lvp_waldeck_elections_vote >= 6.5) Q.lvp_r_waldeck = Q.lvp_waldeck_elections_vote;
+if (Q.dvp_waldeck_elections_vote >= 6.5) Q.dvp_r_waldeck = Q.dvp_waldeck_elections_vote;
+if (Q.dnvp_waldeck_elections_vote >= 6.5) Q.dnvp_r_waldeck = Q.dnvp_waldeck_elections_vote;
+if (Q.other_waldeck_elections_vote >= 6.5) Q.other_r_waldeck = Q.other_waldeck_elections_vote;
 
 var waldeck_adjustment_r_factors = {
-    spd: 1.02,
+    spd: 1.21,
     uspd: 1.0,
     ddp: 1.01,
     lvp: 1.01,
