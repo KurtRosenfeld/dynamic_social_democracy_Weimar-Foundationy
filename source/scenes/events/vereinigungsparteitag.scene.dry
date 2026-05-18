@@ -158,7 +158,7 @@ go-to: sign_vspd
 
 @low_vspd
 view-if: new_party_programm == 0 and good_uspd_vspd_deal == 0 and second_kpd_essentially == 0
-on-arrival: uspd_relation -= 45; unemployed_uspd -= 13; unemployed_kpd += 11; workers_spd += 2; workers_uspd -= 4; spd_r = old_spd_r + uspd_r*0.9; uspd_r = uspd_r*0.1; uspd_joined = 2; thuringia_gov = "SPD"; saxony_gov = "SPD"
+on-arrival: uspd_relation -= 45; unemployed_uspd -= 13; unemployed_kpd += 11; workers_spd += 2; workers_uspd -= 4; spd_r = old_spd_r + uspd_r*0.9; uspd_r = uspd_r*0.1; uspd_joined = 2; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #AA0000;">**USPD**</span> but most can arrannge themselves with the state of how things are.
 
@@ -166,7 +166,7 @@ Many <span style="color: #AA0000;">**USPD**</span> members are reluctant to join
 
 @middle_vspd
 view-if: new_party_programm == 1 and good_uspd_vspd_deal == 0 and second_kpd_essentially == 0
-on-arrival: left_strength += 5; center_strength += 5; labor_strength += 5; uspd_joined = 2; uspd_relation -= 30;  unemployed_uspd -= 12; unemployed_kpd += 13; workers_spd += 4; workers_uspd -= 5; spd_r = old_spd_r + uspd_r*0.95; uspd_r = uspd_r*0.05; unemployed_kpd = unemployed_kpd + unemployed_uspd*0.7; unemployed_uspd = unemployed_uspd*0.3; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"
+on-arrival: left_strength += 5; center_strength += 5; labor_strength += 5; uspd_joined = 2; uspd_relation -= 30;  unemployed_uspd -= 12; unemployed_kpd += 13; workers_spd += 4; workers_uspd -= 5; spd_r = old_spd_r + uspd_r*0.95; uspd_r = uspd_r*0.05; unemployed_kpd = unemployed_kpd + unemployed_uspd*0.7; unemployed_uspd = unemployed_uspd*0.3; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #AA0000;">**USPD**</span> but most can arrannge themselves with the state of how things are.
 
@@ -176,7 +176,7 @@ The promise of adopting a new programm eventually helps a lot with reconciliatio
 
 @high_vspd
 view-if: good_uspd_vspd_deal == 1
-on-arrival: coalition_dissent += 1; unemployed_spd += 2; old_middle_spd -= 3; new_middle_spd -= 3*(1-dissent); left_dissent -= 15; reformist_dissent += 25; kpd_relation += 10; left_strength += 20; new_party_programm += 1; center_relation -= 8; ddp_relation -= 5; dvp_relation -= 15; uspd_joined = 2; uspd_relation += 5; unemployed_uspd -= 15; unemployed_kpd += 2; unemployed_spd += 14; spd_r = old_spd_r + uspd_r*0.95; uspd_r = uspd_r*0.05; workers_spd = workers_spd + workers_uspd*0.9; workers_uspd = workers_uspd*0.1; unemployed_spd = unemployed_spd + unemployed_uspd*0.9; unemployed_uspd -= 4; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"
+on-arrival: coalition_dissent += 1; unemployed_spd += 2; old_middle_spd -= 3; new_middle_spd -= 3*(1-dissent); left_dissent -= 15; reformist_dissent += 25; kpd_relation += 10; left_strength += 20; new_party_programm += 1; center_relation -= 8; ddp_relation -= 5; dvp_relation -= 15; uspd_joined = 2; uspd_relation += 5; unemployed_uspd -= 15; unemployed_kpd += 2; unemployed_spd += 14; spd_r = old_spd_r + uspd_r*0.95; uspd_r = uspd_r*0.05; workers_spd = workers_spd + workers_uspd*0.9; workers_uspd = workers_uspd*0.1; unemployed_spd = unemployed_spd + unemployed_uspd*0.9; unemployed_uspd -= 4; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. It seems it is more of a continuation of the <span style="color: #AA0000;">**USPD**</span> than the <span style="color: #c00000;">**MSPD**</span>. Let's hope it will survive longer than the last one.
 
