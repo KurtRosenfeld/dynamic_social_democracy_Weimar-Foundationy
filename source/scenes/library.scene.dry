@@ -1084,6 +1084,8 @@ if (d3 && window) {
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div></td><td>!} SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
+[? if indep_left_r: {!<tr><td><div class="box" style='background-color:#B4143D'> </div></td><td>!} SI: {!</td><td>!} [+ indep_left_r +]% {!</td></tr>!} ?]
+
 [? if not uspd_joined = 3: {!<tr><td><div class="box" style='background-color:#AA0000'> </div></td><td>!} USPD: {!</td><td>!} [+ uspd_r +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#700000'> </div></td><td>!} KPD: {!</td><td>!} [+ kpd_r +]% {!</td></tr>!}
