@@ -1,7 +1,7 @@
 title: USPD split
 subtitle: The Ruhr crisis tears the party apart.
 new-page: true
-on-arrival: sb_exists = 1; uspd_leader = "Liebknecht"; uspd_ideology = "Independent Marxism"; unemployed_uspd -= 1 if unemployed_uspd >= 2; sb_relation = 30 if ideology == "left"; sb_relation = 15 if ideology == "centrist"
+on-arrival: sb_exists = 1; uspd_leader = "Liebknecht"; uspd_ideology = "Independent Marxism"; unemployed_uspd -= 1 if unemployed_uspd >= 2; sb_relation = 30 if ideology == "left"; sb_relation = 15 if ideology == "centrist"; uspd_r = uspd_r*0.5; indep_left_r = uspd_r*uspd_r*0.5
 tags: event
 view-if: year == 1923 and month == 11 and ruhr_occupied and not uspd_leader == "Crispien"
 max-visits: 1
