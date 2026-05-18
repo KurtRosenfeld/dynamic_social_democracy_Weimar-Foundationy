@@ -226,6 +226,9 @@ Q.spd_waldeck_elections_vote = (Q.spd_waldeck_elections_vote != undefined ? pars
 Q.hb_r_waldeck = (Q.hb_r_waldeck != undefined ? parseFloat(Q.hb_r_waldeck.toFixed(1)) : 0);
 Q.spd_r_waldeck = (Q.spd_r_waldeck != undefined ? parseFloat(Q.spd_r_waldeck.toFixed(1)) : 0);
 
+Q.wv_r_waldeck = Q.dvp_r_waldeck;
+Q.rl_r_waldeck = Q.lb_r_waldeck;
+
 !}
 on-display: {!
 data = [{
@@ -278,7 +281,7 @@ if (Q.lvp_r_waldeck && Q.lvp_formed) {
     });
 }
 
-if (Q.dvp_r_waldeck && year == 1922) {
+if (Q.wv_r_waldeck && year == 1922) {
     data.push({
         "id": "hb",
         "legend": "WV",
@@ -314,7 +317,7 @@ if (Q.other_r_waldeck && year == 1925) {
     });
 }
 
-if (Q.other_r_waldeck && year == 1922) {
+if (Q.rl_r_waldeck && year == 1922) {
     data.push({
         "id": "rl",
         "legend": "RL",
@@ -364,13 +367,13 @@ go-to: waldeck_coalition_menu
 
 [? if lvp_formed: {!<tr><td><div class="box" style='background-color:#FFCC00'> </div> !} LVP: {!</td><td!} **[+ lvp_waldeck_elections_vote +]%** {!</td><td!} **[+ lvp_r_waldeck +]%**  {!</td></tr>!} ?]
 
-[? if year == 1922: {!<tr><td><div class="box" style='background-color:#CEDD8A'> </div> !} WV: {!</td><td!} **[+ dvp_waldeck_elections_vote +]%** {!</td><td!} **[+ dvp_r_waldeck +]%**  {!</td></tr>!} ?]
+[? if year == 1922: {!<tr><td><div class="box" style='background-color:#CEDD8A'> </div> !} WV: {!</td><td!} **[+ wv_waldeck_elections_vote +]%** {!</td><td!} **[+ dvp_r_waldeck +]%**  {!</td></tr>!} ?]
 
 [? if not lvp_formed and year == 1925: {!<tr><td><div class="box" style='background-color:#D5AC27'> </div> !} DVP: {!</td><td!} **[+ dvp_waldeck_elections_vote +]%** {!</td><td!} **[+ dvp_r_waldeck +]%**  {!</td></tr>!} ?]
 
 [? if year == 1925: {!<tr><td><div class="box" style='background-color:#3E88B3'> </div> !} DNVP: {!</td><td!} **[+ dnvp_waldeck_elections_vote +]%** {!</td><td!} **[+ dnvp_r_waldeck +]%**  {!</td></tr>!} ?]
 
-[? if year == 1922: {!<tr><td><div class="box" style='background-color:#567098'> </div> !} RL: {!</td><td!} **[+ other_waldeck_elections_vote +]%** {!</td><td!} **[+ other_r_waldeck +]%**  {!</td></tr>!} ?]
+[? if year == 1922: {!<tr><td><div class="box" style='background-color:#567098'> </div> !} RL: {!</td><td!} **[+ rl_waldeck_elections_vote +]%** {!</td><td!} **[+ other_r_waldeck +]%**  {!</td></tr>!} ?]
 
 [? if year == 1925: {!<tr><td><div class="box" style='background-color:#006400'> </div> !} LB: {!</td><td!} **[+ other_waldeck_elections_vote +]%** {!</td><td!} **[+ other_r_waldeck +]%**  {!</td></tr>!} ?]
 {!</tr>!}
