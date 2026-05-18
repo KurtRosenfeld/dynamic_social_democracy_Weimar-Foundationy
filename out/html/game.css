@@ -703,6 +703,10 @@ th {
   fill: #81125B;
 }
 
+.seat.indep_left {
+  fill: #B4143D;
+}
+
 .seat.uspd {
   fill: #AA0000;
 }
