@@ -733,6 +733,14 @@ th {
   fill: #D5AC27;
 }
 
+.seat.bl {
+  fill: #0D2AC9;
+}
+
+.seat.rl {
+  fill: #567098;
+}
+
 .seat.other {
   fill: #909090;
 }
