@@ -136,8 +136,9 @@ Q.nsdap_relation = 0;
 Q.lvp_relation = 0;
 
 Q.kpd_leader = "Brandler";
-Q.kpd_ideology = "Luxemburgism";
+Q.kpd_ideology = "Sparticism";
 Q.uspd_leader = "Crispien";
+Q.uspd_ideology = "Orthodox Marxism";
 Q.z_leader = "Marx";
 Q.z_ideology = "Right";
 Q.cvp_ideology = "Moderate";
