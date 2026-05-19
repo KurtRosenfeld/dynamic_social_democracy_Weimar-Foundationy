@@ -17,7 +17,7 @@ go-to: start_menu_2
 
 @start_1
 on-arrival: player_beg = 1 if not achievement_game_completed
-go-to: start if achievement_game_completed; pls_player if not achievement_game_completed
+go-to: start if achievement_game_completed; pls_player if not achievement_game_completed and nsdap_relation == 1933
 
 
 @pls_player
@@ -238,7 +238,7 @@ Q.old_middle = 13; // "old mittelstand"
 // 16.4 trade & commerce, 6.6 public and private services, 4.4 domestic help
 Q.new_middle = 14; // "new mittelstand"
 Q.rural = 25; // agriculture and forestry employment... but many of those are proletarians so...
-// source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3
+// source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 43, table 3.3 // --https://www.historisches-lexikon-bayerns.de/Lexikon/Arbeitslosigkeit_(Weimarer_Republik)--
 Q.unemployed = 2;
 Q.catholics = 30;
 
