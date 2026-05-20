@@ -465,7 +465,7 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 Current Editorial Line: [+ editorial_line +]
 
-Factional fairness: [+ factional_representation : dissent +]
+Factional bias: [+ factional_bias : dissent +]
 
 Targeted enemy: [+ enemies +]
 
