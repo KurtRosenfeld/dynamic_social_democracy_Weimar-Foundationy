@@ -1377,6 +1377,8 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
     if (Q.wels_advisor) Q.center_advisor_n += 1;
     if (Q.muller_advisor) Q.center_advisor_n += 1;
     if (Q.breitscheid_advisor) Q.center_advisor_n += 1;
+    if (Q.scheidemann_advisor) Q.center_advisor_n += 1;
+    if (Q.crispien_advisor) Q.center_advisor_n += 1;
 
     var centrist_advisor_decay_effect = Q.center_advisor_n*0.3;
 
@@ -1404,6 +1406,14 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         Q.non_factional_advisor_n += 1;
         if (Q.judicial_reform >= 2) Q.non_factional_advisor_n += 1;
     }
+    if (Q.sollmann_advisor) {
+        Q.non_factional_advisor_n += 1;
+        if (Q.hitler_deported) Q.non_factional_advisor_n += 1;
+    }
+    if (Q.schmidt_advisor) {
+        Q.non_factional_advisor_n += 1;
+        if (Q.spd_r >= 40) Q.non_factional_advisor_n += 1;
+    }
 
     var non_factional_advisor_decay_effect = Q.non_factional_advisor_n*0.15;
 
@@ -1419,18 +1429,22 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
     if (Q.aufhauser_advisor) Q.labor_advisor_n += 1;
     if (Q.wissell_advisor) Q.labor_advisor_n += 1;
     if (Q.woytinsky_advisor) Q.labor_advisor_n += 1;
+    if (Q.tarnow_advisor) Q.labor_advisor_n += 1;
 
     Q.left_advisor_n = 0;
     if (Q.levi_advisor) Q.left_advisor_n += 1;
     if (Q.sender_advisor) Q.left_advisor_n += 1;
     if (Q.rosenfeld_advisor) Q.left_advisor_n += 1;
     if (Q.seydewitz_advisor) Q.left_advisor_n += 1;
+    if (Q.ledebour_advisor) Q.left_advisor_n += 1;
+    if (Q.liebknecht_advisor) Q.left_advisor_n += 1;
 
     Q.reformist_advisor_n = 0;
     if (Q.severing_advisor) Q.reformist_advisor_n += 1;
     if (Q.braun_advisor) Q.reformist_advisor_n += 1;
     if (Q.juchacz_advisor) Q.reformist_advisor_n += 1;
     if (Q.pfulf_advisor) Q.reformist_advisor_n += 1;
+    if (Q.ebert_advisor) Q.reformist_advisor_n += 1;
 
     if (Q.nsdap_votes >= 20) {
         Q.center_dissent_decay *= 0.6;
