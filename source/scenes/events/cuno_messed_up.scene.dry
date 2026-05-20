@@ -1,7 +1,7 @@
 title: The Inflation Chancellor
 subtitle: Popular discontent with Chancellor [+ chancellor +] rises.
 new-page: true
-view-if: ruhr_occupied and chancellor == "Cuno"
+view-if: ruhr_occupied == 1 and chancellor == "Cuno"
 on-arrival: workers_spd *= 0.9 if chancellor_party == "SPD"; workers_spd *= 0.95 if spd_in_government == 1; workers_nsdap += 2 if spd_in_government; workers_kpd += 3 if spd_in_government; unemployed_nsdap += 3 if spd_in_government; unemployment += 0.3
 tags: event
 max-visits: 2
