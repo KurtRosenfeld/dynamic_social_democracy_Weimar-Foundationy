@@ -1,0 +1,13 @@
+title: KPD central committee election
+subtitle: The leninist left is taking over
+new-page: true
+on-arrival: kpd_leader = 'Fischer'; kpd_ideology = 'Bolshevism'; kpd_relation -= 5; unemployed_kpd += 1
+tags: event
+view-if: year == 1924 and month == 5
+max-visits: 1
+priority: 2
+face-image: img/portraits/FischerRuth.jpg
+
+= KPD central committee election
+
+All to be added
