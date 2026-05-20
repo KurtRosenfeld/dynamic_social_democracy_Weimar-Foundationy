@@ -1,0 +1,13 @@
+title: NSDAP-DVFP electoral alliance
+subtitle: This is a test
+new-page: true
+on-arrival: nsfb_exists; workers_nsfb = workers_nsdap + workers_dvfp; unemployed_nsfb = unemployed_nsdap + unemployed_dvfp; new_middle_nsfb = new_middle_nsdap + new_middle_dvfp; old_middle_nsfb = old_middle_nsdap + old_middle_dvfp; rural_nsfb = rural_nsdap + rural_dvfp; catholic_nsfb = catholic_nsdap + catholic_dvfp; nsfb_r = nsdap_r + dvfp_r; nsdap_r = 0; dvfp_r = 0; workers_ndap = 0; workers_dvfp = 0; new_middle_nsdap = 0; new_middle_dvfp = 0; old_middle_nsdap = 0; old_middle_dvfp = 0; rural_nsdap = 0; rural_dvfp = 0; unemployed_nsdap = 0; unemployed_dvfp = 0; catholic_nsdap = 0; catholic_dvfp = 0
+tags: event
+view-if: year == 1922 and month == 6
+max-visits: 1
+priority: 1
+face-image: img/dfvp.jpg
+
+= NSDAP-DVFP electoral alliance
+
+Wow
