@@ -1,0 +1,51 @@
+title: The Inflation Chancellor
+subtitle: Popular discontent with Chancellor [+ chancellor +] rises.
+new-page: true
+view-if: ruhr_occupied and chancellor == "Cuno"
+on-arrival: workers_spd *= 0.9 if chancellor_party == "SPD"; workers_spd *= 0.95 if spd_in_government == 1; workers_nsdap += 2 if spd_in_government; workers_kpd += 3 if spd_in_government; unemployed_nsdap += 3 if spd_in_government; unemployment += 0.3
+tags: event
+max-visits: 2
+face-image: img/portraits/CunoWilhelm.jpg
+
+= The Inflation Chancellor
+
+Inflation and unemployment keep growing.
+
+[? if spd_toleration == 1 : As we are currently tolerating the [+ chancellor +] government, this could very well reflect badly on us. ?]
+
+- @maintain_toleration: Maintain the current governing arrangement.
+- @break_toleration: Break toleration; vote against this government.
+- @support_cuno: We will vote alongside the government.
+- @slap_cuno: Literally noone wants Cuno
+
+@maintain_toleration
+subtitle: There is no other option but to tolerate Cuno.
+view-if: spd_toleration == 1
+on-arrival: workers_dvfb += 1; workers_kpd += 3; unemployed_nsdap += 2; workers_spd -= 2; pro_republic -= 2; kpd_relation -= 2; unemployed_kpd += 2
+
+Our policy of toleration continues.
+
+
+@break_toleration
+subtitle: This is likely to result in a new government.
+view-if: spd_toleration == 1
+on-arrival:  dvp_relation -= 2; cuno_slapped = 1
+
+We have definitively broken with the [+ chancellor +] government, and have voted against them in a vote of no confidence.
+
+
+@support_cuno
+subtitle: There is no other option but to tolerate Cuno.
+view-if: spd_toleration == 1
+on-arrival: workers_dvfb += 2; workers_kpd += 3; unemployed_nsdap += 2; workers_spd -= 3; pro_republic -= 2; kpd_relation -= 2; unemployed_kpd += 2
+
+
+Our policy of toleration continues.
+
+
+@slap_cuno
+subtitle: This is likely to result in a new government.
+view-if: spd_toleration == 1
+on-arrival:  dvp_relation -= 1; cuno_slapped = 1
+
+We will not support Cuno.
