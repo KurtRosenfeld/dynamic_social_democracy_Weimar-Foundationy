@@ -249,7 +249,7 @@ if (Q.kpd_relation > 60) Q.uspd_relation += 2;
 if (Q.kpd_relation > 60) Q.sapd_relation += 3;
 
 
-//hyperinflation removed because of weird time loops
+// hyperinflation removed because of weird time loops
 
 
 // foreign relations I guess
@@ -288,15 +288,7 @@ Q.far_right_media = (Q.volkisch_media + Q.monarchist_media + Q.conservative_medi
 
 Q.total_media = (Q.anarchist_media + Q.communist_media + Q.liberal_media + Q.catholic_media + Q.socdem_media + Q.volkisch_media + Q.monarchist_media + Q.conservative_media);
 
-Q.anarchist_media = Math.round((Q.anarchist_media/total_media)*100);
-Q.communist_media = Math.round((Q.communist_media/total_media)*100);
-Q.socdem_media = Math.round((Q.sodem_media/total_media)*100);
-Q.liberal_media = Math.round((Q.liberal_media/total_media)*100);
-Q.catholic_media = Math.round((Q.catholic_media/total_media)*100);
-Q.conservative_media = Math.round((Q.conservative_media/total_media)*100);
-Q.monarchist_media = Math.round((Q.monarchist_media/total_media)*100);
-Q.volkisch_media = Math.round((Q.volkisch_media/total_media)*100);
-
+ // placeholder for updating media
 
 // re-calculate dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength;
@@ -1440,7 +1432,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
     }
     if (Q.schmidt_advisor) {
         Q.non_factional_advisor_n += 1;
-        if (Q.spd_r >= 40) Q.non_factional_advisor_n += 1;
+        if (Q.spd_in_government) Q.non_factional_advisor_n += 1;
     }
 
     var non_factional_advisor_decay_effect = Q.non_factional_advisor_n*0.15;
