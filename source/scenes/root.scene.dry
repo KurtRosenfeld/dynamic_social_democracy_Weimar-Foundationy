@@ -10,14 +10,16 @@ go-to: start_menu_2
 
 @start_menu_2
 
-- @start_1: Start game
+- @start: Start game
 - @modinfo: Mod Info - Last Updated 2026/01/25
 - @credits: Credits
 - @game_over.achievements
+- @start_1: currently hidden
 
 @start_1
 on-arrival: player_beg = 1 if not achievement_game_completed
-go-to: start if achievement_game_completed; pls_player if not achievement_game_completed and nsdap_relation == 1933
+go-to: start if achievement_game_completed; pls_player if not achievement_game_completed
+view-if: nsdap_relation == 1933
 
 
 @pls_player
