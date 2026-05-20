@@ -265,6 +265,7 @@ Q.north_relation = (Q.sweden_relation + Q.denmark_relation + Q.norway_relation +
 if (Q.foreign_minister == "Stresemann") {
 Q.france_relation += 3/7;
 Q.poland_relation -= 0.5;
+Q.soviet_relation -= 0.2;
 }
 if (Q.foreign_minister == "Breitscheid") {
 Q.france_relation += 2/7;
