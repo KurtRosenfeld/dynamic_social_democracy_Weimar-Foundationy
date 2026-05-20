@@ -1,0 +1,10 @@
+// For post_event
+
+Q.anarchist_media = Math.round((Q.anarchist_media/total_media)*100);
+Q.communist_media = Math.round((Q.communist_media/total_media)*100);
+Q.socdem_media = Math.round((Q.sodem_media/total_media)*100);
+Q.liberal_media = Math.round((Q.liberal_media/total_media)*100);
+Q.catholic_media = Math.round((Q.catholic_media/total_media)*100);
+Q.conservative_media = Math.round((Q.conservative_media/total_media)*100);
+Q.monarchist_media = Math.round((Q.monarchist_media/total_media)*100);
+Q.volkisch_media = Math.round((Q.volkisch_media/total_media)*100);
