@@ -4,7 +4,7 @@ view-if: year == 1923 and month == 1 and ruhr_occupation_imminent == 1
 max-visits: 1 
 tags: event 
 new-page: true 
-on-arrival: ruhr_occupied = 1; nationalism += 2; pacifism -= 1; old_middle_dvfp += 2; new_middle_nsdap += 1; inflation += 20; france_relation -= 5
+on-arrival: ruhr_occupied = 1; nationalism += 2; pacifism -= 1; old_middle_dvfp += 2; new_middle_nsdap += 1; inflation += 20; france_relation -= 5; cuno_bitching_timer = 2
 face-image: img/portraits/CunoWilhelm.jpg 
   
 = France occupies the Ruhr
