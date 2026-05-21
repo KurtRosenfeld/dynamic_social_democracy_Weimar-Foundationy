@@ -273,6 +273,14 @@ Q.poland_relation += 2/7;
 Q.belgium_relation += 3/7;
 }
 if (Q.chancellor == "Cuno") Q.us_relation += 3/7;
+// little Cold War
+if (Q.us_relation >= 65) Q.soviet_relation -= 0.3;
+if (Q.soviet_relation >= 60) Q.us_relation -= 0.5;
+if (Q.soviet_relation >= 70) {
+Q.italy_relation -= 0.4;
+Q.hungary_relation -= 0.4;
+Q.poland_relation -= 0.4;
+}
 
 
 
