@@ -1349,10 +1349,11 @@ Q.old_dnf_lippe_elections_vote = Q.dnf_votes * lippe_adjustment_factors.dnf;
 
 
 if (Q.year < 1923) {
-Q.reichstag_size = 4.59
+Q.reichstag_size = 4.59;
 } else if (Q.year < 1925) {
  if (Q.month < 6) Q.reichstag_size = 4.72;
-} else Q.reichstag_size = 4.93 {
+} else if (Q.month >= 6) {
+Q.reichstag_size = 4.93;
 } else if (Q.year < 1929) {
     Q.reichstag_size = 4.91;
 } else if (Q.year < 1930) {
@@ -1381,6 +1382,8 @@ Q.reichstag_size = 4.59
     if (Q.unemployed < 25) Q.reichstag_size -= 0.1;
     if (Q.unemployed < 30) Q.reichstag_size -= 0.1;
 }
+
+if (Q.year >= 1936) Q.reichstag_size = 6.67;
 
 var election_result = {'date': new Date(Q.year, Q.month - 1)};
 for (var party of Q.parties_graph) {
