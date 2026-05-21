@@ -1,0 +1,11 @@
+title: Union of Socialist Soviet Republics established
+view-if: year == 1922 and month == 12
+max-visits: 1
+tags: event
+on-arrival: ussr_formed = 1; soviet_relation -= 1; unemployed_kpd += 1
+new-page: true
+face-image: img/TreatyRappallo.jpg
+
+= Union of Socialist Soviet Republics established
+
+Several Soviet Republics on the territory of what used to be the Russian Empire are now united in a new union of states - the "<span style="color: #750e0e;">Soviet Union</span>".
