@@ -204,7 +204,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if not lvp_formed and dvp_exist and ddp_name != 0 and dvp_dnef: <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: National Liberalism ([+ dvp_leader +])?]
 
-[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [? if kpd_leader = "Conciliators": United Front Marxism-Leninism?][? if kpd_leader = "Brandler": [+ kpd_ideology +]?][? if kpd_leader = "Thälmann": Third Period Marxism-Leninism?] ([+ kpd_leader +])?]
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_ideology +] ([+ kpd_leader +])
 
 [? if not uspd_joined = 3: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #AA0000;">**USPD**</span>: [+ uspd_ideology +] ([+ uspd_leader +])?]
 
@@ -534,7 +534,7 @@ Orientation: [+ kpd_ideology +] ([+ kpd_leader +])
 
 [? if aspd_r_saxony and aspd_r == 0: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: #fe9e00;">**ASPD**</span>: cool ?]
 
-[? if aspd_r_saxony and aspd_r == 0: indluence: [+ aspd_saxony_votes +]% in Saxony ?]
+[? if aspd_r_saxony and aspd_r == 0: influence: [+ aspd_saxony_votes +]% in Saxony ?]
 
 [? if aspd_r_saxony and aspd_r == 0: Orientation: National Social Democracy (Heldt) ?]
 
