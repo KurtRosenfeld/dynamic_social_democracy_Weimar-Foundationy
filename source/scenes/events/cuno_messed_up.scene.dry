@@ -29,7 +29,7 @@ Our policy of toleration continues.
 @break_toleration
 subtitle: This is likely to result in a new government.
 view-if: spd_toleration == 1
-on-arrival:  dvp_relation -= 2; cuno_slapped = 1
+on-arrival:  dvp_relation -= 2; cuno_slapped = 1; chancellor = "vacant"
 
 We have definitively broken with the [+ chancellor +] government, and have voted against them in a vote of no confidence.
 
@@ -46,6 +46,6 @@ Our policy of toleration continues.
 @slap_cuno
 subtitle: This is likely to result in a new government.
 view-if: spd_toleration == 0
-on-arrival:  dvp_relation -= 1; cuno_slapped = 1
+on-arrival:  dvp_relation -= 1; cuno_slapped = 1; chancellor = "vacant"
 
 We will not support Cuno.
