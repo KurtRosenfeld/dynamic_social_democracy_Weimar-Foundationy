@@ -1,5 +1,5 @@
 title: Nürnberger Vereinigungsparteitag
-subtitle: The formal unification of the USPD with our SPD
+subtitle: The formal unification of the <span style="color: #AA0000;">**USPD**</span> with our <span style="color: #c00000;">**SPD**</span>
 new-page: true
 max-visits: 1
 view-if: uspd_joining_proces == 1
@@ -10,7 +10,7 @@ tags: event
 
 Otto Wels wants this to go smoothly, it is a largely symbolical congress...
 
-- @make_uspd_concessions: We will make some concessions to the USPD showing that this a unification, not an annexation.
+- @make_uspd_concessions: We will make some concessions to the <span style="color: #AA0000;">**USPD**</span> showing that this a unification, not an annexation.
 - @ignore_concession: They have no choice, so why should we make any concession to traitors.
 - @skip_vspd: We will actually not do this.
 
