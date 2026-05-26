@@ -6,7 +6,7 @@ tags: event
 view-if: uspd_joined < 3 and uspd_decline_timer = 0
 max-visits: 3
 priority: 1
-image: img/USPD (1).jpg
+face-image: img/USPD (1).jpg
 
 = The <span style="color: #D47B9B;">**USPD**</span> in <span style="color: #FF2C2C;">**decline**</span>..
 
@@ -22,6 +22,7 @@ After losing their <span style="color: #8B0000;">**left-wing**</span> to the <sp
 - @ignore: Ignore...
 
 @uspd_relation_1
+subtitle: After their polling began to fall, they are way more grateful for any help than they were before.
 view-if: uspd_joined == 0
 on-arrival: uspd_relation += 3; left_dissent -= 3; center_dissent -= 3; labor_dissent -= 2; left_strength += 1
 
@@ -42,6 +43,7 @@ on-arrival: resources -= 2; uspd_relation += 10; workers_uspd += 4; unemployed_u
 
 
 @celebrate_uspd
+subtitle: Gradually, support from the worker's is returning to us.
 on-arrival: workers_uspd -= 3; workers_spd += 2*(1-dissent); uspd_relation -= 16; kpd_relation -= 1; reformist_strength += 3; left_dissent += 2; uspd_decline_timer -= 1; unemployed_kpd += 2; unemployed_uspd -= 3; workers_kpd += 1; workers_nsdap += 1
 
 The <span style="color: #D47B9B;">**USPD**</span> is not pleased about our behaviour.
