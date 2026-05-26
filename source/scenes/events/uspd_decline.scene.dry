@@ -6,8 +6,7 @@ tags: event
 view-if: uspd_joined < 3 and uspd_decline_timer = 0
 max-visits: 3
 priority: 1
-face-image: const img = new Image();
-img.src = "img/USPD (1).jpg";
+image: img/USPD (1).jpg
 
 = The <span style="color: #D47B9B;">**USPD**</span> in <span style="color: #FF2C2C;">**decline**</span>..
 
