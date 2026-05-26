@@ -385,7 +385,7 @@ go-to: waldeck_coalition_menu
 {!</tr>!}
 <hr id="read-marker">
 
-Worker Coalition (<span style="color: #c00000;">**SPD**</span>[? if uspd_r_waldeck: + <span style="color: #A10000;">**USPD**</span>?][? if hb_r_waldeck: + <span style="color: #CB7F00;">**Craftsmen**</span>?]): [+ worker_coalition_waldeck +]% 
+Worker Coalition (<span style="color: #c00000;">**SPD**</span>[? if uspd_r_waldeck: + <span style="color: #D47B9B;">**USPD**</span>?][? if hb_r_waldeck: + <span style="color: #CB7F00;">**Craftsmen**</span>?]): [+ worker_coalition_waldeck +]% 
 
 Social Liberal Coalition (<span style="color: #c00000;">**SPD**</span>[? if hb_r_waldeck: + <span style="color: #CB7F00;">**Craftsmen**</span>?] + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]): [+ social_liberal_coalition_waldeck +]%
 
