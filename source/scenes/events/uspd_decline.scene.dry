@@ -6,7 +6,7 @@ tags: event
 view-if: uspd_joined < 3 and uspd_decline_timer = 0
 max-visits: 3
 priority: 1
-face-image:/img/USPD.jpg
+face-image: img/portraits/German_School_-_Poster_for_the_Independent_Social_Democratic_Party_of_Germany_(USPD)_-_(MeisterDrucke-1645310).jpg
 
 = The <span style="color: #D47B9B;">**USPD**</span> in <span style="color: #FF2C2C;">**decline**</span>..
 
