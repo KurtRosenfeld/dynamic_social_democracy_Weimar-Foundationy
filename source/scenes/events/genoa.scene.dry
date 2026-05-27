@@ -15,6 +15,6 @@ An international conference has collapsed into deadlock at Genoa, following our 
 
 @mess
 title: What a mess.
-on-arrival:  soviet_relation += 2; uk_relation -= 1; economic_growth -= 0.5; usa_relation -= 1; fra_relation -= 2
+on-arrival:  soviet_relation += 2; economic_growth -= 0.5; east_relation -= 1; west_relation -= 2
 
 We can expect our relations with the <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span> not to get any better soon.
