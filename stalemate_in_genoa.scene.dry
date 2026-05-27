@@ -1,7 +1,7 @@
 title: Stalemate in Genoa
 subtitle: The international economic conference in Genoa has lapsed into a stalemate.
 tags: event
-view-if: year = 1922 and month = 4
+view-if: year = 1922 and month = 5
 priority: 2
 max-visits: 1
 new-page: true
