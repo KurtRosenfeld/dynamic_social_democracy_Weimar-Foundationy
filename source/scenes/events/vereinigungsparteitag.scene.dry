@@ -5,7 +5,7 @@ max-visits: 1
 view-if: uspd_joining_proces == 1
 on-arrival: unemployed_uspd -= 3
 tags: event
-face-image: 
+face-image: img/unnamed (1).jpg
 
 = Nürmberger Vereinigungsparteitag
 
