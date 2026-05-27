@@ -1,16 +1,17 @@
 title: Nürnberger Vereinigungsparteitag
-subtitle: The formal unification of the <span style="color: #AA0000;">**USPD**</span> with our <span style="color: #c00000;">**SPD**</span>
+subtitle: The formal unification of the <span style="color: #D47B9B;">**USPD**</span> with our <span style="color: #c00000;">**SPD**</span>
 new-page: true
 max-visits: 1
 view-if: uspd_joining_proces == 1
 on-arrival: unemployed_uspd -= 3
 tags: event
+face-image: 
 
 = Nürmberger Vereinigungsparteitag
 
 Otto Wels wants this to go smoothly, it is a largely symbolical congress...
 
-- @make_uspd_concessions: We will make some concessions to the <span style="color: #AA0000;">**USPD**</span> showing that this a unification, not an annexation.
+- @make_uspd_concessions: We will make some concessions to the <span style="color: #D47B9B;">**USPD**</span> showing that this a unification, not an annexation.
 - @ignore_concession: They have no choice, so why should we make any concession to traitors.
 - @skip_vspd: We will actually not do this.
 
@@ -18,8 +19,8 @@ Otto Wels wants this to go smoothly, it is a largely symbolical congress...
 
 What will we offer them
 
-- @lowest_uspd: Let at least one former <span style="color: #AA0000;">**USPD**</span> member into each important section of the executive commity.
-- @middle_uspd: The above and a new programm (eventually...).
+- @lowest_uspd: Let at least one former <span style="color: #D47B9B;">**USPD**</span> member into each important section of the executive commitee.
+- @middle_uspd: The above and, eventually, a new party programme.
 - @good_uspd: The above and a new party leadership
 - @high_uspd: The above and no coalitions with the bourgeois parties.
 - @highest_uspd: Dedicate ourselves to the revolutionary effort.
@@ -30,7 +31,7 @@ on-arrival: spd_party_leader_3 = "Crispien"; spd_party_leader_n += 1
 
 Former <span style="color: #AA0000;">**USPD**</span> leader Arthur Crispien will become our third chairman alongside Hermann Müller and Otto Wels.
 
-<span style="color: #AFAFAF;">**Drop an advisor to be replaced with Crispien (this does not increase dissent and you can change them again eventually)**</span>
+<span style="color: #AFAFAF;">**Drop an advisor to be replaced with Crispien.**</span>
 
 - @drop_ebert: Drop Ebert (reformist)
 - @drop_scheidemann: Drop Scheidemann (centrist)
@@ -41,19 +42,19 @@ Former <span style="color: #AA0000;">**USPD**</span> leader Arthur Crispien will
 on-arrival: ebert_advisor = 0; crispien_advisor = 1; reformist_strength -= 5; center_strength_ += 5; left_dissent -= 5
 go-to: new_swap
 
-Ebert doesn't care too much about party affaires anyway...
+Ebert doesnt care much about party affairs. 
 
 @drop_scheidemann
 on-arrival: scheidemann_advisor = 0; crispien_advisor = 1
 go-to: new_swap
 
-Scheidemann is old anyway...
+Scheidemann is old anyways.
 
 @drop_wels
 on-arrival: wels_advisor = 0; crispien_advisor = 1
 go-to: new_swap
 
-Wels doesn't judge...
+Wels doesn't judge.
 
 @drop_muller
 on-arrival: muller_advisor = 0; crispien_advisor = 1
@@ -65,9 +66,10 @@ Müller is more useful as a chancelor...
 on-arrival: new_party_programm += 1
 go-to: lowest_uspd
 
-A new party programm is surely logical.
+A new party programme is surely logical.
 
 @good_uspd
+subtitle: The <span style="color: #D47B9B;">**USPD**</span> will be pleased by this.
 choose-if: left_strength >= 10
 on-arrival: idk = 5
 go-to: lowest_uspd
@@ -75,6 +77,8 @@ go-to: lowest_uspd
 New leadership altogether, why not?
 
 @high_uspd
+unavailable-subtitle: This is political suicide.
+subtitle: Our comrades in the <span style="color: #70000;">**KPD**</span> and <span style="color: #D47B9B;">**USPD**</span> are starting to warm up to us..
 view-if: left_strength >= 10
 choose-if: left_strength > reformist_strength
 on-arrival: good_uspd_vspd_deal = 1
@@ -83,20 +87,21 @@ go-to: lowest_uspd
 We don't know how this will end...
 
 @highest_uspd
+subtitle: The reformists are outraged!
 view-if: left_strength >= 20
 choose-if: left_strength >= 40 and left_strength > reformist_strength
 unavailable-subtitle: The party would not accept this.
-on-arrival: second_kpd_essentially = 1
+on-arrival: second_kpd_essentially = 1; reformist_dissent += 25
 go-to: lowest_uspd
 
-The SPD will dedicate itself to the proletarian revolution!
+The <span style="color: #C00000;">**SPD**</span> will dedicate itself to the proletarian revolution!
 
 @no_uspd
 go-to: ignore_concession
 
 @ignore_concession
 
-The <span style="color: #AA0000;">**USPD**</span> is outraged.
+The <span style="color: #D47B9B;">**USPD**</span> is outraged.
 
 - @make_uspd_concessions: Ok, we will make some concessions...
 - @eat_it_uspd: What are they gonna do?
@@ -104,7 +109,7 @@ The <span style="color: #AA0000;">**USPD**</span> is outraged.
 @eat_it_uspd
 on-arrival: reformist_strength += 10; left_dissent += 15; uspd_joined = 1; unemployed_spd -= 3; z_relation += 2; unemployed_uspd -= 15; unemployed_kpd += 13; workers_uspd -= 4; worker_spd += 1; uspd_relation -= 55; spd_r = old_spd_r + uspd_r*0.81; uspd_r = uspd_r*0.19
 
-The former <span style="color: #AA0000;">**USPD**</span> members in our party are outraged about the treatment they are greated with. Some less convinced members like Kurt Rosenfeld or Georg Ledebour reject joining us as they don't see any future in the <span style="color: #c00000;">**SPD**</span>. Yet despite the treatment they've received many members join our ranks seeing the <span style="color: #c00000;">**SPD**</span> as their only future. 
+The former <span style="color: #D47B9B;">**USPD**</span> members in our party are outraged about the treatment they are greated with. Some less convinced members like <span style="color: #700000;">**Kurt Rosenfeld**</span> or <span style="color: #700000;">**Georg Ledebour**</span> reject joining us as they don't see any future in the <span style="color: #c00000;">**SPD**</span>. Yet despite the treatment they've received many members join our ranks seeing the <span style="color: #c00000;">**SPD**</span> as their only future. 
 
 The <span style="color: #700000;">**KPD**</span> profits a lot.
 
@@ -123,28 +128,28 @@ view-if: ebert_advisor == 1
 on-arrival: ebert_advisor = 0; breitscheid_advisor = 1; reformist_strength -= 5; center_strength_ += 5; left_dissent -= 20
 go-to: sign_vspd
 
-Ebert doesn't care too much about party affaires anyway...
+Ebert doesn't care too much about party affairs anyway.
 
 @drop_scheidemann_2
 view-if: scheidemann_advisor == 1
 on-arrival: scheidemann_advisor = 0; breitscheid_advisor = 1; center_dissent -= 2
 go-to: sign_vspd
 
-Scheidemann is old anyway...
+Scheidemann is old anyways.
 
 @drop_wels_2
 view-if: wels_advisor == 1
 on-arrival: wels_advisor = 0; breitscheid_advisor = 1; center_dissent -= 2
 go-to: sign_vspd
 
-Wels doesn't judge...
+Wels doesn't judge.
 
 @drop_muller_2
 view-if: muller_advisor == 1
 on-arrival: muller_advisor = 0; breitscheid_advisor = 1; center_dissent -= 2
 go-to: sign_vspd
 
-Müller is more useful as a chancelor...
+Müller is more useful as Chancellor..
 
 @drop_none
 go-to: sign_vspd
@@ -162,15 +167,15 @@ on-arrival: uspd_relation -= 45; unemployed_uspd -= 13; unemployed_kpd += 11; wo
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #AA0000;">**USPD**</span> but most can arrannge themselves with the state of how things are.
 
-Many <span style="color: #AA0000;">**USPD**</span> members are reluctant to join but see no other alternatives. A lot join the <span style="color: #700000;">**KPD**</span> instead with only a tiny rest remaining in the "Rest-<span style="color: #AA0000;">**USPD**</span>".
+Many <span style="color: #D47B9B;">**USPD**</span> members are reluctant to join but see no other alternatives. A lot join the <span style="color: #700000;">**KPD**</span> instead with only a tiny rest remaining in the "Rest-<span style="color: #D47B9B;">**USPD**</span>".
 
 @middle_vspd
 view-if: new_party_programm == 1 and good_uspd_vspd_deal == 0 and second_kpd_essentially == 0
 on-arrival: left_strength += 5; center_strength += 5; labor_strength += 5; uspd_joined = 2; uspd_relation -= 30;  unemployed_uspd -= 12; unemployed_kpd += 13; workers_spd += 4; workers_uspd -= 5; spd_r = old_spd_r + uspd_r*0.95; uspd_r = uspd_r*0.05; unemployed_kpd = unemployed_kpd + unemployed_uspd*0.7; unemployed_uspd = unemployed_uspd*0.3; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"; uspd_ideology = "Spartacism"; rosenfeld_in = "SPD"; levi_in = "SPD"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"
 
-Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #AA0000;">**USPD**</span> but most can arrannge themselves with the state of how things are.
+Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #D47B9B;">**USPD**</span> but most can settle themselves with the state of things as they are.
 
-Many <span style="color: #AA0000;">**USPD**</span> members are reluctant to join but see no other alternatives. Many join the <span style="color: #700000;">**KPD**</span> instead with only a tiny rest remaining in the "Rest-<span style="color: #AA0000;">**USPD**</span>".
+Many <span style="color: #D47B9B;">**USPD**</span> members are reluctant to join but see no other alternatives. Many join the <span style="color: #700000;">**KPD**</span> instead with only a tiny rest remaining in the "Rest-<span style="color: #D47B9B;">**USPD**</span>".
 
 The promise of adopting a new programm eventually helps a lot with reconciliation, though we have yet to see how our bourgeois allies will react to that.
 
@@ -178,11 +183,11 @@ The promise of adopting a new programm eventually helps a lot with reconciliatio
 view-if: good_uspd_vspd_deal == 1
 on-arrival: coalition_dissent += 1; unemployed_spd += 2; old_middle_spd -= 3; new_middle_spd -= 3*(1-dissent); left_dissent -= 15; reformist_dissent += 25; kpd_relation += 10; left_strength += 20; new_party_programm += 1; center_relation -= 8; ddp_relation -= 5; dvp_relation -= 15; uspd_joined = 2; uspd_relation += 5; unemployed_uspd -= 15; unemployed_kpd += 2; unemployed_spd += 14; spd_r = old_spd_r + uspd_r*0.95; uspd_r = uspd_r*0.05; workers_spd = workers_spd + workers_uspd*0.9; workers_uspd = workers_uspd*0.1; unemployed_spd = unemployed_spd + unemployed_uspd*0.9; unemployed_uspd -= 4; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"; uspd_ideology = "Spartacism"; rosenfeld_in = "SPD"; levi_in = "SPD"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"
 
-Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. It seems it is more of a continuation of the <span style="color: #AA0000;">**USPD**</span> than the <span style="color: #c00000;">**MSPD**</span>. Let's hope it will survive longer than the last one.
+Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. It seems it is more of a continuation of the <span style="color: #D47B9B;">**USPD**</span> than the <span style="color: #c00000;">**MSPD**</span>. Let's hope it will survive longer than the last one.
 
-Many reformist members are displeased about this change. A few <span style="color: #AA0000;">**USPD**</span> members join the <span style="color: #700000;">**KPD**</span> instead with only a tiny rest remaining in the "Rest-<span style="color: #AA0000;">**USPD**</span>" that won't believe our new course.
+Many reformist members are displeased about this change. A few <span style="color: #D47B9B;">**USPD**</span> members join the <span style="color: #700000;">**KPD**</span> instead with only a tiny rest remaining in the "Rest-<span style="color: #D47B9B;">**USPD**</span>" that won't believe our new course.
 
-We hope for the best
+We hope for the best.
 
 @kpd_without_moscow
 view-if: second_kpd_essentially == 1
@@ -190,13 +195,13 @@ on-arrival: coalition_dissent += 5; unemployed_spd += 5; new_middle_spd -= 3*(1-
 
 Even the most radical members like Georg Ledebour have agreed to the merger!
 
-Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Somehow it seems more left-wing than the initial <span style="color: #AA0000;">**USPD**</span>. This turns the <span style="color: #c00000;">**SPD**</span> into a big tent party again.
+Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Somehow it seems more left-wing than the initial <span style="color: #D47B9B;">**USPD**</span>. This turns the <span style="color: #c00000;">**SPD**</span> into a big tent party again.
 
 We have yet to see; whether we can sustain that this time...
 
 @skip_vspd
 on-arrival: reformist_dissent -= 3; uspd_relation -= 55; unemployed_kpd += 10; unemployed_uspd -= 5; left_dissent += 5; kpd_relation -= 10; spd_r = old_spd_r + uspd_r*0.2; uspd_r = uspd_r*0.8
 
-We have angered the <span style="color: #AA0000;">**USPD**</span>...
+We have angered the <span style="color: #D47B9B;">**USPD**</span>...
 
-Still some of their more centrist Reichstag delegates join us for some reason?
+Still some of their more centrist Reichstag delegates join us for some reason. Mostly because they wanted to jump off the sinking ship.
