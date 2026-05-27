@@ -9,7 +9,7 @@ new-page: true
 
 = Stalemate in Genoa
 
-An international conference has collapsed into deadlock at Genoa, following our agreement with the Soviet Union. The stalemate in Genoa sees negotiations falter amid mutual suspicions between Germany, Soviet Union, and the <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span>, with no reparations relief or economic aid secured, after the <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span> first agreed to a contingency package of financial aid to Russia, but then they couldnt agree what exactly this package would contain, ending up with Germany being expelled and <span style="color: #002654;">France</span> and Belgium pulling from the negotiations. Only the UK signed the draft, and since no other world power signed it, it is bassicly useless.  This leaves us isolated and vulnerable to ongoing financial pressures.
+An international conference has collapsed into deadlock at Genoa, following our agreement with the <span style="color: #750e0e;">**Soviet Union**</span>. The stalemate in Genoa sees negotiations falter amid mutual suspicions between <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span>, the <span style="color: #750e0e;">**Soviet Union**</span>, and the <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span>, with no reparations relief or economic aid secured, after the <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span> first agreed to a contingency package of financial aid to <span style="color: #FFFFFF;">Ru</span><span style="color: #0036A7;">ss</span><span style="color: #D62718;">ia</span>, but then they couldnt agree what exactly this package would contain, ending up with <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span> being expelled and <span style="color: #002654;">France</span> and <span style="color: #FFCD00;">Belgium</span>  pulling from the negotiations. Only the <span style="color: #C8102E;">UK</span> signed the draft, and since no other world power signed it, it is basically useless.  This leaves us isolated and vulnerable to ongoing financial pressures.
 
 - @left
 
@@ -17,4 +17,4 @@ An international conference has collapsed into deadlock at Genoa, following our 
 title: Foreign Minister [+ foreign_minister +] has left to return to Germany.
 on-arrival: soviet_relation += 2; uk_relation -= 3; economic_growth -= 0.5; usa_relation -= 3; fra_relation -= 3
 
-We can expect our relations with the Western Allies not to get any better soon.
+We can expect our relations with the <span style="color: #002654;">Western</span> <span style="color: #D7141A;">Allies</span> not to get any better soon.
