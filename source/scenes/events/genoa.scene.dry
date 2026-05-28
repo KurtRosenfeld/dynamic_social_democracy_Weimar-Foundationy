@@ -3,6 +3,7 @@ subtitle: The international economic conference in Genoa has lapsed into a stale
 view-if: year == 1922 and month == 4
 priority: 3
 max-visits: 1
+tags: event
 new-page: true
 face-image: img/Genoa_conference_1922.jpg
 
