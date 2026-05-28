@@ -1,4 +1,4 @@
-title: The <span style="color: #81125B;">**KAG**</span> joins the <span style="color: #AA0000;">**USPD**</span>
+title: The <span style="color: #81125B;">**KAG**</span> joins the <span style="color: #D47B9B;">**USPD**</span>!
 view-if: year == 1922 and month == 4
 on-arrival: uspd_r = uspd_r + kag_r; kag_r = 0
 max-visits: 1
@@ -8,12 +8,12 @@ face-image: img/portraits/LeviPaul.jpg
 
 = The KAG joins the USPD
 
-The opposition group around Paul Levi and Ernst Däumig (both former leaders of the <span style="color: #700000;">**KPD**</span>) just rejoined the <span style="color: #AA0000;">**USPD**</span>.
+The opposition group around Paul Levi and Ernst Däumig (both former leaders of the <span style="color: #700000;">**KPD**</span>) just rejoined the <span style="color: #D47B9B;">**USPD**</span>.
 
 - @ok: Sure...
 
 @ok
 
-The <span style="color: #AA0000;">**USPD**</span> will never be saved and the <span style="color: #700000;">**KPD**</span> will always remain a splinter group...
+The <span style="color: #D47B9B;">**USPD**</span> will never be saved and the <span style="color: #700000;">**KPD**</span> will always remain a splinter group... or atleast thats what we would like to think.
 
 
