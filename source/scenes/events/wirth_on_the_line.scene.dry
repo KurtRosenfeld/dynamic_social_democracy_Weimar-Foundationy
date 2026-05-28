@@ -1,4 +1,4 @@
-title: <span style="color: #000000;">Wirth</span> Government unstable..
+title: <span style="color: #000000;">**Wirth**</span> Government unstable..
 subtitle: The opposition cannot be ignored any longer..
 new-page: true
 tags: event
@@ -7,16 +7,16 @@ max-visits: 1
 priority: 1
 face-image: img/portraits/wirth.jpg
 
-= <span style="color: #000000;">Wirth</span> Government unstable..
+= <span style="color: #000000;">**Wirth**</span> Government unstable..
 
-Our current coalition lead by Chancellor <span style="color: #000000;">Joseph Wirth</span> has been set increasingly under pressure for its "Erfüllungspolitik" (policy of fulfillment regarding the Versailles Treaty obligations).
+Our current coalition lead by Chancellor <span style="color: #000000;">**Joseph Wirth**</span> has been set increasingly under pressure for its "Erfüllungspolitik" (policy of fulfillment regarding the Versailles Treaty obligations).
 
-<span style="color: #000000;">Wirth</span> is attempting to negotiate with the <span style="color: #C0A054;">DVP</span>, attempting to convince them to join government along with the <span style="color: #c00000;">**SPD**</span>, with our parties <span style="color: #c00000;">**left-wing**</span> deeply opposed to this, as is our <span style="color: #c00000;">**labour-wing**</span>, who sees it as a betrayal of the workers.
+<span style="color: #000000;">**Wirth**</span> is attempting to negotiate with the <span style="color: #C0A054;">**DVP**</span>, attempting to convince them to join government along with the <span style="color: #c00000;">**SPD**</span>, with our parties <span style="color: #c00000;">**left-wing**</span> deeply opposed to this, who sees it as a betrayal of the workers.
 
 There are a few options...
   
 - @compromise: Hold up the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> arrangement.
-- @allow_dvp_into_wirth: Agree to working together with the <span style="color: #C0A054;">DVP</span>.
+- @allow_dvp_into_wirth: Agree to working together with the <span style="color: #C0A054;">**DVP**</span>.
 - @no_options_for_wirth: There is nothing we can do.
 
 @compromise
@@ -25,15 +25,15 @@ view-if: uspd_joined >= 1
 choose-if: reformist_strength >= 45 and uspd_concession >= 5 and wirth_concession >= 2
 on-arrival: z_relation -= 5; ddp_relation -= 3; center_dissent -= 3
 
-We can sustain a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> majority as long as we find a compromise among our parties.
+We can sustain a <span style="color: #000000;">**We**</span><span style="color: #DD0000;">**im**</span><span style="color: #FFCC00;">**ar**</span> majority as long as we find a compromise among our parties.
 
 @allow_dvp_into_wirth
-subtitle: <span style="color: #000000;">Wirth</span> tries to form a Grand Coalition
+subtitle: <span style="color: #000000;">**Wirth**</span> tries to form a Grand Coalition
 unavailable-subtitle: Our party is opposed to this.
 choose-if: dvp_relation >= 50 and reformist_strength >= (left_strength + labor_strength) and early_dvp_cooperation >= 3
 on-arrival: kpd_relation -= 20; uspd_relation -= 15; workers_spd -= 3; unemployed_spd -= 3; in_grand_coalition = 1; in_weimar_coalition = 0; dvp_in_government = 1; foreign_minister_party = "DVP"; foreign_minister = "Stresemann"; left_dissent += 10; center_dissent += 2; labor_dissent += 2
 
-The <span style="color: #000000;">Center</span> has already given up the Foreign ministry. We have to give them one of our ministries now.
+The <span style="color: #000000;">**Center**</span> has already given up the Foreign ministry. We have to give them one of our ministries now.
 
 - @drop_economic: Drop the Economic ministry
 - @drop_justice: Drop the Justice ministry
@@ -42,12 +42,12 @@ The <span style="color: #000000;">Center</span> has already given up the Foreign
 @drop_economic
 on-arrival: economic_minister_party = "DVP"; economic_minister = "Becker"
 
-The <span style="color: #C0A054;">DVP</span> joins our government. This is something new entirely...
+The <span style="color: #C0A054;">**DVP**</span> joins our government. This is something new entirely...
 
 @drop_justice
 on-arrival: justice_minister_party = "DVP"; justice_minister = "Heinze"
 
-The <span style="color: #C0A054;">DVP</span> joins our government. This is something new entirely...
+The <span style="color: #C0A054;">**DVP**</span> joins our government. This is something new entirely...
 
 @drop_interior
 unavailable-subtitle: This won't happen.
@@ -60,7 +60,7 @@ You have pulled a cheat to press a button that literally does nothing. Cheater.
 - @drop_justice: Drop the Justice ministry
 
 @no_options_for_wirth
-subtitle: We can't work with the <span style="color: #C0A054;">DVP</span>, we can't sustain our current coalition, there is no other way out.
+subtitle: We can't work with the <span style="color: #C0A054;">**DVP**</span>, we can't sustain our current coalition, there is no other way out.
 on-arrival: wirth_2_failed = 1; old_middle_spd -= 1; new_middle_z -= 2; workers_kpd += 1; rural_dnvp += 2; old_middle_dnvp += 2; new_middle_dvp += 1
 
 <span style="color: #000000;">Wirth</span> needs to resign. <span style="color: #c00000;">**Ebert**</span> will choose a new chancelor...
