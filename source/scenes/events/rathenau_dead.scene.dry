@@ -1,5 +1,5 @@
-title: <span style="color: #D3C24D;">**Walther Rathenau**<span> shot dead!
-subtitle: Foreign Minister <span style="color: #D3C24D;">**Walther Rathenau**<span> has been shot by terrorists...
+title: <span style="color: #D3C24D;">**Walther Rathenau**</span> shot dead!
+subtitle: Foreign Minister <span style="color: #D3C24D;">**Walther Rathenau**</span> has been shot by terrorists...
 new-page: true
 on-arrival: rathenau_dead = 1; foreign_minister = "Wirth"; foreign_minister_party = "Z"; inflation += 1.6
 tags: event
@@ -8,9 +8,9 @@ max-visits: 1
 priority: 1
 face-image: img/rathenau.jpg
 
-= <span style="color: #D3C24D;">**Walther Rathenau**<span> shot dead!
+= <span style="color: #D3C24D;">**Walther Rathenau**</span> shot dead!
 
-While being chauffeured from his house in Berlin-Grundewald to the foreign office, a group of terrorist's operating under what they call <span style="color: #808080;">**Organisation Consul**</span> conducted a drive by, with one opening fire at close range at <span style="color: #D3C24D;">**Rathenau**<span>, killing him instantly. Another threw a hand granade into the car, destroying it completely, with the chaueffeur also dying. Protests have broken out across the nation because of this, in respect of <span style="color: #D3C24D;">**Rathenau**<span>. A nationwide ban on <span style="color: #808080;">**Organisation Consul**</span> has been enforced by the government, and, Chancellor <span style="color: #000000;">**Joseph Wirth**</span>, during the memorial ceremony, stated: "There is the enemy – and there is no doubt about it: The enemy is on the <span style="color: #3E88B3;">**right**</span>!". Though a valiant speech, this does nothing to help his already weak relations with the supposedly "democratic" <span style="color: #C0A054;">**right**</span>.
+While being chauffeured from his house in Berlin-Grundewald to the foreign office, a group of terrorist's operating under what they call <span style="color: #808080;">**Organisation Consul**</span> conducted a drive by, with one opening fire at close range at <span style="color: #D3C24D;">**Rathenau**</span>, killing him instantly. Another threw a hand granade into the car, destroying it completely, with the chaueffeur also dying. Protests have broken out across the nation because of this, in respect of <span style="color: #D3C24D;">**Rathenau**</span>. A nationwide ban on <span style="color: #808080;">**Organisation Consul**</span> has been enforced by the government, and, Chancellor <span style="color: #000000;">**Joseph Wirth**</span>, during the memorial ceremony, stated: "There is the enemy – and there is no doubt about it: The enemy is on the <span style="color: #3E88B3;">**right**</span>!". Though a valiant speech, this does nothing to help his already weak relations with the supposedly "democratic" <span style="color: #C0A054;">**right**</span>.
 
 
 - @defend_repub_1: Defend <span style="color: #000000;">**Repu**</span><span style="color: #C00000;">**blic**</span><span style="color: #D3C24D;">**anism**</span>.
@@ -19,13 +19,13 @@ While being chauffeured from his house in Berlin-Grundewald to the foreign offic
 - @mourn: There is nothing we can do except mourn his death.
 
 @defend_repub_1
-on-arrival: ddp_relation += 3; z_relation += 3; pro_republic += 1
+on-arrival: ddp_relation += 3; z_relation += 3; pro_republic += 2
 subtitle: We are, after all, the party of the <span style="color: #000000;">**Re**</span><span style="color: #C00000;">**pub**</span><span style="color: #D3C24D;">**lic**</span>.
 
 We show that we are commited to democracy.
 
 @defend_repub_2
-on-arrival: ddp_relation += 9; z_relation += 9; kpd_relation -= 4; dvp_relation -= 1; uspd_relation += 1; pro_republic += 1
+on-arrival: ddp_relation += 9; z_relation += 9; kpd_relation -= 4; dvp_relation -= 2; uspd_relation += 1; pro_republic += 2
 subtitle: The left of our party isnt happy we would side with the bourgeois if we do this.
 
 We show that we stand firmly behind the <span style="color: #000000;">**Re**</span><span style="color: #C00000;">**pub**</span><span style="color: #D3C24D;">**lic**</span> and the coalition.
