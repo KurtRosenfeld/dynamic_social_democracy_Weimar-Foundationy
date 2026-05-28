@@ -408,7 +408,7 @@ on-arrival: waldeck_gov = "Social-Democratic"; rural_spd += 2; rural_other -= 1;
 
 @soc_lib_coalition_waldeck
 title: A Social-Liberal Coalition will be formed.
-unaivailable-subtitle: We do not have enough votes.
+unavailable-subtitle: We do not have enough votes.
 choose-if: social_liberal_coalition_waldeck >= 50 and ddp_relation >= 20
 on-arrival: ddp_relation += 3; waldeck_gov = "Social-Liberal"; rural_spd += 1; rural_other -= 2; rural_dnvp -= 1; pro_republic += 1
 
