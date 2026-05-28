@@ -5,11 +5,12 @@ max-visits: 1
 tags: event 
 new-page: true 
 on-arrival: chancellor = 'Cuno'; chancellor_party = 'I'; in_weimar_coalition = 0
-face-image: img/portraits/CunoWilhelm.jpg 
+face-image: img/ebertcuno.jpg
   
 = <span style="color: #808080;">**Cuno**</span> to become Chancellor!
 
 <span style="color: #c00000;">**Ebert**</span> calls the former <span style="color: #C0A054;">**DVP**</span> member, now <span style="color: #808080;">**independent**</span>, businessman <span style="color: #808080;">**Wilhelm Cuno**</span> to be Chancellor. 
+<span style="color: #c00000;">**Ebert**</span> has been under fire from our parties <span style="color: #c00000;">**left-wing**</span>, and sometimes the <span style="color: #c00000;">**labour-wing**</span>, due to his collaboration with the bourgeois.
 
 He offers the <span style="color: #c00000;">**SPD**</span> to join his government of experienced businessmen and pragmatic politicians in a broad coalition.
 
