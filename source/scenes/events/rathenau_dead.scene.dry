@@ -6,7 +6,7 @@ tags: event
 view-if: year = 1922 and month = 6
 max-visits: 1 
 priority: 1
-face-image: img/Vorwärts_Rathenau.jpg
+face-image: img/rathenau.jpg
 
 = <span style="color: #D3C24D;">**Walther Rathenau**<span> shot dead!
 
