@@ -365,7 +365,7 @@ go-to: waldeck_coalition_menu
 {!<tr><td>Party</td><td>Vote share</td><td>Landtag Seats</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#E3000F; outline: 2px; outline-style: solid;'> </div> !} **SPD:** {!</td><td!} **[+ spd_waldeck_elections_vote +]%** {!</td><td!} **[+ spd_r_waldeck +]%** {!</td></tr>!}
 
-[? if uspd_joined < 3 and uspd_r_waldeck > 0: {!<tr><td><div class="box" style='background-color:#A10000'> </div> !}USPD: {!</td><td!} **[+ uspd_waldeck_elections_vote +]%** {!</td><td!} **[+ uspd_r_waldeck +]%** {!</td></tr>!} ?]
+[? if uspd_joined < 3 and uspd_r_waldeck > 0: {!<tr><td><div class="box" style='background-color:#D47B9B'> </div> !}USPD: {!</td><td!} **[+ uspd_waldeck_elections_vote +]%** {!</td><td!} **[+ uspd_r_waldeck +]%** {!</td></tr>!} ?]
 
 [? if year == 1925: {!<tr><td><div class="box" style='background-color:#CB7F00'> </div> !} Craftsmen: {!</td><td!} **[+ hb_waldeck_elections_vote +]%** {!</td><td!} **[+ hb_r_waldeck +]%**  {!</td></tr>!} ?]
 
@@ -401,28 +401,34 @@ Right-Wing Coalition (<span style="color: #006400;">**LB**</span> + <span style=
 
 @workers_coalition_waldeck
 title: A proletarian coalition in the German outback?
+unavailable-subtitle: We do not have enough votes.
 choose-if: worker_coalition_waldeck >= 50
 view-if: worker_coalition_waldeck >= 40
 on-arrival: waldeck_gov = "Social-Democratic"; rural_spd += 2; rural_other -= 1; rural_dnvp -= 2; dvp_relation -= 5; pro_republic += 1
 
 @soc_lib_coalition_waldeck
 title: A Social-Liberal Coalition will be formed.
+unaivailable-subtitle: We do not have enough votes.
 choose-if: social_liberal_coalition_waldeck >= 50 and ddp_relation >= 20
 on-arrival: ddp_relation += 3; waldeck_gov = "Social-Liberal"; rural_spd += 1; rural_other -= 2; rural_dnvp -= 1; pro_republic += 1
 
 @right_coalition_waldeck
 title: The right forms a <span style="color: #567098;">**Reich List**</span> government led by the <span style="color: #006400;">**Agricultural League**</span>.
-subtitle: This came as expected...
+subtitle: This was expected.
 choose-if: right_coalition_waldeck >= 50
 on-arrival: waldeck_gov = "Right"; rural_spd -= 1; rural_other += 2; rural_dnvp -= 1
 
+Expected, but a shame nonetheless. 
+
 @popular_front_in_waldeck
-title: A Popular Front for Waldeck?????.
+title: A Popular Front for Waldeck?
+unavailable-subtitle: No.
 choose-if: social_liberal_coalition_waldeck + uspd_r_waldeck >= 50 and ddp_relation >= 60 and uspd_relation >= 70 or uspd_leader == "Crispien"
 on-arrival: ddp_relation += 3; uspd_relation += 2; waldeck_gov = "Popular-Front"; rural_spd += 1; rural_other -= 4; rural_dnvp -= 1; pro_republic += 2
 
 @spd_only_waldeck
-title: THE <span style="color: #c00000;">**SPD**</span> WILL GOVERN ALONE IN WALDECK?!?!?!?
+title: The <span style="color: #c00000;">**SPD**</span> has gained a majority, and thus can govern alone.
+subtitle: It is a time for celebration.
 choose-if: spd_r_waldeck >= 50
 view-if: spd_r_waldeck >= 50
 on-arrival: waldeck_gov = "SPD"; rural_spd += 3; rural_other -= 2; rural_dnvp -= 2; dvp_relation -= 10; pro_republic += 2
