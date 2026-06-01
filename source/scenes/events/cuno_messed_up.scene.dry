@@ -5,11 +5,11 @@ view-if: ruhr_occupied == 1 and chancellor == "Cuno" and cuno_bitching_timer == 
 on-arrival: workers_spd *= 0.95 if spd_in_government == 1; workers_nsdap += 2 if spd_in_government; workers_kpd += 3 if spd_in_government; unemployed_nsdap += 3 if spd_in_government; unemployment += 0.3; inflation += 22
 tags: event
 max-visits: 4
-face-image: img/246w0updni1g1.jpg
+face-image: img/246w0updni1g1.jpeg
 
 = The Inflation Chancellor
 
-Inflation and unemployment keep growing, as the <span style="color: #000000;">**Re**</span><span style="color: #C00000;">**pub**</span><span style="color: #D3C24D;">**lic**</span> enters its worst crisis as of yet, as inflation has begun to rapidly rise. Now, 4.2 trillion marks is the least you need to buy atleast 1 <span style="color: #002654;">United States</span> dollar, and the price of simple bread has risen to 200 billion marks. Children are playing with worthless paper money; and we have been increasingly under pressure to [ if spd_toleration == 1 == break toleration ] [ if spd_toleration == 0 == vote agaisnt the government ] from the workers, and our own party.
+Inflation and unemployment keep growing, as the <span style="color: #000000;">**Re**</span><span style="color: #C00000;">**pub**</span><span style="color: #D3C24D;">**lic**</span> enters its worst crisis as of yet, as inflation has begun to rapidly rise. Now, 4.2 trillion marks is the least you need to buy atleast 1 <span style="color: #002654;">United States</span> dollar, and the price of simple bread has risen to 200 billion marks. Children are playing with worthless paper money; and we have been increasingly under pressure to [? if spd_toleration == 0 : vote agaisnt the government ?] from the workers, and our own party.
 
 [? if spd_toleration == 1 : As we are currently tolerating the [+ chancellor +] government, this could very well reflect badly on us. ?]
 
