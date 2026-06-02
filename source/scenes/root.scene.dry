@@ -130,8 +130,11 @@ Q.z_relation = 65;
 Q.kpd_relation = 20;
 Q.uspd_relation = 60;
 Q.ddp_relation = 80;
+Q.bb_relation = 55;
 Q.dvp_relation = 45;
+Q.wp_relation = 21;
 // DNVP and NSDAP are invariably hostile
+Q.rlb_relation = 5;
 Q.dnvp_relation = 5;
 Q.dvfp_relation = 0;
 Q.nsdap_relation = 0;
@@ -270,8 +273,8 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'dvfp', 'nsdap', 'other', 'nsfb'];
-Q.parties_graph = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'dvfp', 'nsdap', 'other', 'nsfb'];
+Q.parties = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'bb', 'dvp', 'wp', 'rlb', 'dnvp', 'dvfp', 'nsdap', 'other', 'nsfb'];
+Q.parties_graph = ['spd', 'uspd', 'kpd', 'z', 'ddp', 'bb', 'dvp', 'wp', 'rlb', 'dnvp', 'dvfp', 'nsdap', 'other', 'nsfb'];
 
 Q.sapd_formed = 0;
 Q.dnf_formed = 0;
@@ -287,7 +290,10 @@ Q.workers_uspd = 15;
 Q.workers_kpd = 14;
 Q.workers_z = 6;
 Q.workers_ddp = 0;
+Q.workers_bb = 0;
 Q.workers_dvp = 1;
+Q.workers_wp = 0;
+Q.workers_rlb = 0;
 Q.workers_dnvp = 6;
 Q.workers_nsdap = 3;
 Q.workers_dvfp = 0;
@@ -299,7 +305,10 @@ Q.new_middle_uspd = 1;
 Q.new_middle_kpd = 0;
 Q.new_middle_z = 8;
 Q.new_middle_ddp = 35;
+Q.new_middle_bb = 0;
 Q.new_middle_dvp = 31;
+Q.new_middle_wp = 8;
+Q.new_middle_rlb = 0;
 Q.new_middle_dnvp = 8;
 Q.new_middle_nsdap = 1;
 Q.new_middle_dvfp = 0;
@@ -311,7 +320,10 @@ Q.old_middle_uspd = 0;
 Q.old_middle_kpd = 0;
 Q.old_middle_z = 7;
 Q.old_middle_ddp = 28;
+Q.old_middle_bb = 0;
 Q.old_middle_dvp = 34;
+Q.old_middle_wp = 10;
+Q.old_middle_rlb = 0;
 Q.old_middle_dnvp = 15;
 Q.old_middle_nsdap = 1;
 Q.old_middle_dvfp = 0;
@@ -323,7 +335,10 @@ Q.rural_uspd = 0;
 Q.rural_kpd = 0;
 Q.rural_z = 11;
 Q.rural_ddp = 4;
+Q.rural_bb = 5;
 Q.rural_dvp = 21;
+Q.rural_wp = 0;
+Q.rural_rlb = 12;
 Q.rural_dnvp = 60;
 Q.rural_nsdap = 1;
 Q.rural_dvfp = 0;
@@ -335,7 +350,10 @@ Q.unemployed_uspd = 29;
 Q.unemployed_kpd = 26;
 Q.unemployed_z = 2;
 Q.unemployed_ddp = 2;
+Q.unemployed_bb = 0;
 Q.unemployed_dvp = 0;
+Q.unemployed_wp = 0;
+Q.unemployed_rlb = 0;
 Q.unemployed_dnvp = 8;
 Q.unemployed_nsdap = 4;
 Q.unemployed_dvfp = 0;
@@ -347,7 +365,10 @@ Q.catholics_uspd = 4;
 Q.catholics_kpd = 1;
 Q.catholics_z = 59;
 Q.catholics_ddp = 2;
+Q.catholics_bb = 0;
 Q.catholics_dvp = 7;
+Q.catholics_wp = 0;
+Q.catholics_rlb = 0;
 Q.catholics_dnvp = 4;
 Q.catholics_nsdap = 3;
 Q.catholics_dvfp = 0;
@@ -370,14 +391,17 @@ Q.kpd_r = 3.3;
 Q.kag_r = 2.4;
 Q.z_r = 18.3;
 Q.ddp_r = 8.5;
+Q.bb_r = 0.9;
 Q.dvp_r = 14.2;
+
+Q.rlb_r = 0;
 Q.dnvp_r = 15.2;
 Q.dvfp_r = 0;
 Q.nsdap_r = 0;
 Q.nsfb_r = 0;
 Q.other_r = 2.6;
 Q.bvp_r = 4.3;
-Q.wp_r = 0;
+Q.wp_r = 0.7;
 Q.cnblp_r = 0;
 Q.dhp_r = 1.6;
 Q.dbp_r = 1;
@@ -403,7 +427,10 @@ Q.previous_uspd_last_election_votes = 17.6;
 Q.previous_kpd_last_election_votes = 2.1;
 Q.previous_z_last_election_votes = 17.8;
 Q.previous_ddp_last_election_votes = 8.3;
+Q.previous_bb_last_election_votes = 0.8;
 Q.previous_dvp_last_election_votes = 13.9;
+Q.previous_wp_last_election_votes = 0;
+Q.previous_rlb_last_election_votes = 0;
 Q.previous_dnvp_last_election_votes = 25.1;
 Q.previous_dvfp_last_election_votes = 0;
 Q.previous_nsdap_last_election_votes = 0;
@@ -435,6 +462,7 @@ Q.kpd_r_prussia = 9.0;
 Q.z_r_prussia = 17.2;
 Q.ddp_r_prussia = 6.2;
 Q.dvp_r_prussia = 14.2;
+Q.wp_r_prussia = 1.18;
 Q.dnvp_r_prussia = 18.1;
 Q.dvfp_r_prussia = 0;
 Q.nsdap_r_prussia = 0;
@@ -448,6 +476,7 @@ Q.old_kpd_r_prussia = 9.0;
 Q.old_z_r_prussia = 17.2;
 Q.old_ddp_r_prussia = 6.2;
 Q.old_dvp_r_prussia = 14.2;
+Q.old_wp_r_prussia = 1.18;
 Q.old_dnvp_r_prussia = 18.1;
 Q.old_dvfp_r_prussia = 0;
 Q.old_nsdap_r_prussia = 0;
@@ -460,6 +489,7 @@ Q.previous_kpd_last_election_votes_prussia = 7.4;
 Q.previous_z_last_election_votes_prussia = 17.2;
 Q.previous_ddp_last_election_votes_prussia = 6.2;
 Q.previous_dvp_last_election_votes_prussia = 14.2;
+Q.previous_wp_last_election_votes_prussia = 1.18;
 Q.previous_dnvp_last_election_votes_prussia = 18.1;
 Q.previous_dvfp_election_votes_prussia = 0;
 Q.previous_nsdap_last_election_votes_prussia = 0;
@@ -471,6 +501,7 @@ Q.kpd_votes = 11.4;
 Q.z_votes = 15.1;
 Q.ddp_votes = 4.7;
 Q.dvp_votes = 8.6;
+Q.wp_votes = 1.1;
 Q.dnvp_votes = 15.2;
 Q.dvfp_votes = 0;
 Q.nsdap_votes = 2.6;
@@ -531,8 +562,11 @@ Q.adjustmentFactors_sapd = 1.0;
 Q.adjustmentFactors_kpd = 1.0;
 Q.adjustmentFactors_z = 1.0;
 Q.adjustmentFactors_ddp = 1.0;
+Q.adjustmentFactors_bb = 1.0;
 Q.adjustmentFactors_dvp = 1.0;
+Q.adjustmentFactors_wp = 1.0;
 Q.adjustmentFactors_lvp = 1.0;
+Q.adjustmentFactors_rlb = 1.0;
 Q.adjustmentFactors_dnvp = 1.0;
 Q.adjustmentFactors_dvfp = 1.0;
 Q.adjustmentFactors_nsdap = 1.0;
@@ -547,8 +581,11 @@ Q.adjustmentFactors_votes_sapd = 1.0;
 Q.adjustmentFactors_votes_kpd = 1.0;
 Q.adjustmentFactors_votes_z = 1.0;
 Q.adjustmentFactors_votes_ddp = 1.0;
+Q.adjustmentFactors_votes_bb = 1.0;
 Q.adjustmentFactors_votes_dvp = 1.0;
+Q.adjustmentFactors_votes_wp = 1.0;
 Q.adjustmentFactors_votes_lvp = 1.0;
+Q.adjustmentFactors_votes_rlb = 1.0;
 Q.adjustmentFactors_votes_dnvp = 1.0;
 Q.adjustmentFactors_votes_dvfp = 1.0;
 Q.adjustmentFactors_votes_nsdap = 1.0;
@@ -564,6 +601,7 @@ Q.adjustmentFactors_kpd_prussia = 1.0;
 Q.adjustmentFactors_z_prussia = 1.0;
 Q.adjustmentFactors_ddp_prussia = 1.0;
 Q.adjustmentFactors_dvp_prussia = 1.0;
+Q.adjustmentFactors_wp_prussia = 1.0;
 Q.adjustmentFactors_lvp_prussia = 1.0;
 Q.adjustmentFactors_dnvp_prussia = 1.0;
 Q.adjustmentFactors_dvfp_prussia = 1.1;
@@ -1362,9 +1400,9 @@ if (Q.percentComplete >= 100) {
 set-bg: img/map_2.jpg
 new-page: true
 
-> *"Such a general development cannot be attributed to the false tactics of any single party or to the mistakes of individual leaders. On the contrary, the conduct of individual leaders is determined largely by the sentiments of the people as a whole. It would be erroneous, however, to regard the sentiments of the moment as reflecting the natural make-up and character of the people. They are merely the consequence of the special circumstances which have brought about this profound degradation of the entire nation."*
+> *""There stands the enemy, dripping poison into a nation's wounds. There stands the enemy – and there is no question about it: the enemy stands on the right!”"*
 
- - Karl Kautsky, *Hitlerism and Social Democracy*, 1934
+ - Joseph Wirth, on the Reichstag floor.
 
 This is a game of alternate history. While historical accuracy is a major concern, keep in mind that this is a *game*, and that any divergence from actual events will necessarily have to involve some element of make-believe. Nevertheless, please let the author know if there are any glaring mistakes.
 
@@ -1380,7 +1418,7 @@ For more information on the politics and government of the German Republic, see 
 - @1928_challenge: Custom Modes
 
 @1928_easy
-on-arrival: difficulty = -1; resources = 4; dues = 5; base_dues = 5; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; ddp_relation = 65; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 5; base_dues = 5; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; ddp_relation = 65; bb_relation = 68; budget = 5;
 go-to: 1928_main
 
 @1928_hard
@@ -1402,6 +1440,7 @@ Q.labor_dissent = 25;
 Q.center_dissent = 25;
 Q.z_relation = 41;
 Q.kpd_relation = 16;
+Q.bb_relation = 26;
 Q.dvp_relation = 31;
 Q.ddp_relation = 55;
 Q.budget = 2;
