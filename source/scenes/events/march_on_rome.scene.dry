@@ -1,18 +1,21 @@
 title: March on Rome
-subtitle: Italy has fallen
+subtitle: <span style="color: #008C45;">**It**</span><span style="color: #F4F5F0;">**a**</span><span style="color: #CD212A;">**ly**</span> has fallen. 
 view-if: year == 1922 and month == 10
 new-page: true
 max-visits: 1
-on-arrival: new_middle_nsdap += 2; inflation += 5; old_middle_nsdap += 1; italy_relation -= 20
+on-arrival: new_middle_nsdap += 2; inflation += 2; old_middle_nsdap += 1; italy_relation -= 40; march_on_rome = 1
 face-image: img/March_on_Rome.jpg
 tags: event
 
 = March on Rome
 
-Mussolini leader of the PNF approached the capital on the 28th and was appointed Prime Minister two days later by Re Vittorio Emmanuele III to prevent bloodshed.
+Mussolini, leader of the <span style="color: #1a0a06;">**PNF**</span>,  marched along with his paramilitary, the <span style="color: #1a0a06;">**Fasci Italiani di Combattimento**</span> and was appointed Prime Minister two days later by R.E Vittorio Emmanuele III to prevent bloodshed. This does not bode well for <span style="color: #008C45;">**Ita**</span><span style="color: #F4F5F0;">**li**</span><span style="color: #CD212A;">**an**</span> democracy as inmediately, unfair electoral laws are passed that made the party with the largest vote share two thirds of the seats, effectively eliminating opposition.
 
-The 'Duce' as he calls himself is now a well known leader all over Europe lleaving a strong impression on people of different political convictions.
+The 'Duce' as he calls himself is now a well known leader all over Europe leaving a strong impression on people of different political convictions. Even some members of the <span style="color: e92854;">**PSI**</span> have begun joining the <span style="color: #1a0a06;">**PNF**</span>, seeing the <span style="color: e92854;">**PSI**</span> as a lost cause.
 
 - @oh_nonono: This won't end well...
 
 @oh_nonono
+
+The Kingdom has become a dictatorship in all but name.
+
