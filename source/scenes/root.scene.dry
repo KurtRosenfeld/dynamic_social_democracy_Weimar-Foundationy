@@ -709,6 +709,9 @@ Q.kpd_coalition_dissent = 0;
 Q.spd_toleration = 0;
 Q.spd_toleration_right = 0;
 
+// has the march on rome occurred?
+Q.march_on_rome = 0;
+
 // is the current government a presidential minority government?
 Q.minority_government = 0;
 
