@@ -43,6 +43,8 @@ if (Q.juchaz_advisor == 1) Q.n_advisors -= 1;
 if (Q.ebert_advisor == 1) Q.n_advisors -= 1; 
 Q.juchaz_advisor = 0; 
 Q.ebert_advisor = 0;
+Q.juchaz_in = "I"
+Q.ebert_in = "DDP";
 Q.reformists_resign = 1; 
 if (Q.centrists_resign == 1) {
     if (Q.wels_advisor == 1) Q.n_advisors -= 1;
