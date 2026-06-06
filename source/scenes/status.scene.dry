@@ -485,7 +485,7 @@ Current primary objective: elections
 
 <span style="color: #700000;">Communist media</span>: [+ communist_media +]%
 
-[? if editorial_line == "Left": <span style="color: #c00000;">Socialist media</span>: [+ socdem_media +]% ?]
+[? if editorial_line == "Left": <span style="color: [+ spd_colour +];">Socialist media</span>: [+ socdem_media +]% ?]
 
 <h4> <span style="color: #000000;">Rep</span><span style="color: #DD0000;">upli</span><span style="color: #FFCC00;">can</span>: [+ republican_media +]%
 
@@ -510,25 +510,27 @@ Current primary objective: elections
 
 = Workers Parties
 
-<span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_relation : relationships +]
+<span class="tooltip-text" title="Communist Party of Germany" style="color: [+ kpd_colour +];">**KPD**</span>: [+ kpd_relation : relationships +]
 
 support: [+ kpd_votes +]%
 
 Orientation: [+ kpd_ideology +] ([+ kpd_leader +])
 
-[? if not uspd_joined = 3: <span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: #D47B9B;">**USPD**</span>: [+ uspd_relation : relationships +] ?]
+Strategy: [+ kpd_strategy +]
+
+[? if not uspd_joined = 3: <span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: [+ uspd_colour +];">**USPD**</span>: [+ uspd_relation : relationships +] ?]
 
 [? if not uspd_joined = 3: support: [+ uspd_votes +]% ?]
 
 [? if not uspd_joined = 3: Orientation: [+ uspd_ideology +] ([+ uspd_leader +]) ?]
 
-[? if sapd_formed: <span class="tooltip-text" title="Socialist Worker's Party of Germany" style="color: #9B0000;">**SAPD**</span> ?]
+[? if sapd_formed: <span class="tooltip-text" title="Socialist Worker's Party of Germany" style="color: [+ sapd_colour +];">**SAPD**</span> ?]
 
 [? if sapd_formed: support: [+ sapd_votes +]% ?]
 
 [? if sapd_formed: Orientation: [+ sapd_ideology +] ([+ sapd_leader +]) ?]
 
-[? if aspd_r: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: #fe9e00;">**ASPD**</span>: cool ?]
+[? if aspd_r: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: [+ aspd_colour +];">**ASPD**</span>: cool ?]
 
 [? if aspd_r: support: [+ aspd_votes +]% ?]
 
@@ -536,7 +538,7 @@ Orientation: [+ kpd_ideology +] ([+ kpd_leader +])
 
 = Splinters
 
-[? if aspd_r_saxony and aspd_r == 0: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: #fe9e00;">**ASPD**</span>: cool ?]
+[? if aspd_r_saxony and aspd_r == 0: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: [+ aspd_colour +];">**ASPD**</span>: cool ?]
 
 [? if aspd_r_saxony and aspd_r == 0: influence: [+ aspd_saxony_votes +]% in Saxony ?]
 
@@ -554,7 +556,7 @@ Orientation: [+ kpd_ideology +] ([+ kpd_leader +])
 
 [? if leninbund_exists: Left Communism (Fischer) ?]
 
-[? if sb_exists: <span class="tooltip-text" title="Socialist League" style="color: #B4143D;">**SB**</span>: [+ sb_relation : relationships +] ?]
+[? if sb_exists: <span class="tooltip-text" title="Socialist League" style="color: [+ sb_colour +];">**SB**</span>: [+ sb_relation : relationships +] ?]
 
 [? if sb_exists: influence: marginal ?]
 
