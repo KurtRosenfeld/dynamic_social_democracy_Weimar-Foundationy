@@ -1,7 +1,7 @@
 title: <span style="color: #D47B9B;">**USPD**</span> split
 subtitle: The <span style="color: #D47B9B;">**USPD**</span> begins to desintegrate.
 new-page: true
-on-arrival: sb_exists = 1; unemployed_uspd -= 2 if unemployed_uspd >= 4; sb_relation = 40 if ideology == "left"; sb_relation = 10 if ideology == "centrist"; uspd_r = uspd_r*0.8; indep_left_r = uspd_r*0.2; rosenfeld_in = "SB"; levi_in = "SB"; ledebour_in = "SB"; liebknecht_in = "SB"
+on-arrival: sb_exists = 1; unemployed_uspd -= 2 if unemployed_uspd >= 4; sb_relation = 40 if ideology == "left"; sb_relation = 10 if ideology == "centrist"; uspd_r = uspd_r*0.8; indep_left_r = uspd_r*0.2; rosenfeld_in = "SB" if rosenfeld_in == "USPD"; levi_in = "SB" if levi_in == "USPD"; ledebour_in = "SB"; liebknecht_in = "SB"
 tags: event
 view-if: year <= 1925 and year >= 1923 and ((uspd_leader == "Crispien" and uspd_votes < 3.5 and not left_split and uspd_relation >= 55 and not ideology == "left") or (uspd_relation >= 65 and ideology == "reformist" and uspd_votes >= 5))
 max-visits: 1
