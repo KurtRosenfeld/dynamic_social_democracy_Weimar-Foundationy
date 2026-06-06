@@ -248,18 +248,60 @@ if (Q.unemployed <= 1) {
 if (Q.kpd_relation > 60) Q.uspd_relation += 2;
 if (Q.kpd_relation > 60) Q.sapd_relation += 3;
 
-// dynamic people colouring (test)
 
-if (Q.ebert_in == "SPD") Q.ebert_colour = "#c00000";
-else if (Q.ebert_in == "DDP") Q.ebert_colour = "#D3C24D";
-else if (Q.ebert_in == "ASPD") Q.ebert_colour = "#fe9e00";
-else if (Q.ebert_in == "I") Q.ebert_colour = "#808080";
+// danymic party colouring
 
-if (Q.year == "1923") Q.ebert_in = "I";
-if (Q.month == "12") Q.ebert_in = "DDP";
-if (Q.month == "6") Q.ebert_in = "SPD";
+if (Q.uspd_leader == "Crispien") Q.uspd_colour = "#D47B9B";
+if (Q.uspd_leader == "Breitscheid") Q.uspd_colour = "#D47B9B";
+if (Q.uspd_leader == "Ledebour") Q.uspd_colour = "#AA0000";
+if (Q.uspd_leader == "Liebknecht") Q.uspd_colour = "#AA0000";
 
-// hyperinflation removed because of weird time loops
+if (Q.dvp_ideology == "moderate") Q.dvp_colour = "#D5AC27";
+if (Q.dvp_ideology == "left") Q.dvp_colour = "#C0A054";
+if (Q.dvp_ideology == "moderate") Q.dvp_colour = "#A8B357";
+
+if (Q.dnvp_ideology == "radical") Q.dnvp_colour = "#3E88B3";
+
+
+// dynamic people colouring
+
+if (Q.ebert_in == "SPD") Q.ebert_colour = Q.spd_colour;
+else if (Q.ebert_in == "DDP") Q.ebert_colour = Q.ddp_colour;
+else if (Q.ebert_in == "ASPD") Q.ebert_colour = Q.aspd_colour;
+else if (Q.ebert_in == "I") Q.ebert_colour = Q.i_colour;
+
+if (Q.wirth_in == "Z") Q.wirth_colour = Q.z_colour;
+if (Q.wirth_in == "SPD") Q.wirth_colour = Q.spd_colour;
+
+if (Q.breitscheid_in == "SPD") Q.breitscheid_colour = Q.spd_colour;
+if (Q.breitscheid_in == "USPD") Q.breitscheid_colour = Q.uspd_colour;
+if (Q.breitscheid_in == "SAPD") Q.breitscheid_colour = Q.sapd_colour;
+
+if (Q.levi_in == "SPD") Q.levi_colour = Q.spd_colour;
+if (Q.levi_in == "USPD") Q.levi_colour = Q.uspd_colour;
+if (Q.levi_in == "KPD") Q.levi_colour = Q.kpd_colour;
+if (Q.levi_in == "SAPD") Q.levi_colour = Q.sapd_colour;
+if (Q.levi_in == "SB") Q.levi_colour = Q.sb_colour;
+
+if (Q.rosenfeld_in == "SPD") Q.rosenfeld_colour = Q.spd_colour;
+if (Q.rosenfeld_in == "USPD") Q.rosenfled_colour = Q.uspd_colour;
+if (Q.rosenfeld_in == "KPD") Q.rosenfeld_colour = Q.kpd_colour;
+if (Q.rosenfeld_in == "SAPD") Q.rosenfeld_colour = Q.sapd_colour;
+if (Q.rosenfeld_in == "SB") Q.rosenfeld_colour = Q.sb_colour;
+
+if (Q.ledebour_in == "SPD") Q.ledebour_colour = Q.spd_colour;
+if (Q.ledebour_in == "USPD") Q.ledebour_colour = Q.uspd_colour;
+if (Q.ledebour_in == "KPD") Q.ledebopur_colour = Q.kpd_colour;
+if (Q.ledebour_in == "SAPD") Q.ledebour_colour = Q.sapd_colour;
+if (Q.ledebour_in == "SB") Q.ledebour_colour = Q.sb_colour;
+
+if (Q.liebknecht_in == "SPD") Q.liebknecht_colour = Q.spd_colour;
+if (Q.liebknecht_in == "USPD") Q.liebknecht_colour = Q.uspd_colour;
+if (Q.liebknecht_in == "KPD") Q.liebknecht_colour = Q.kpd_colour;
+if (Q.liebknecht_in == "SAPD") Q.liebknecht_colour = Q.sapd_colour;
+if (Q.liebknecht_in == "SB") Q.liebknecht_colour = Q.sb_colour;
+
+// hyperinflation removed because of weird time loops - though it will be added again at some point
 
 
 // foreign relations I guess
