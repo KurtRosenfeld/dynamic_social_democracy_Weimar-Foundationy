@@ -436,7 +436,9 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 <span style="color: #F7F7F7;">**---------**</span>
 
 
-<span style="color: #750e0e;">**USSR**</span>: [+ soviet_relation : relationships +]
+[? if ussr_formed = 1: <span style="color: #750e0e;">**USSR**</span>: [+ soviet_relation : relationships +] ?]
+
+[? if ussr_formed = 0: <span style="color: #750e0e;">**RSFSR**</span>: [+ soviet_relation : relationships +] ?]
 
 <span style="color: #1C470C;">**Italy**</span>: [+ italy_relation : relationships +]
 
