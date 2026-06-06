@@ -7,7 +7,7 @@ new-page: true
 
 = Philipp Scheidemann
 
-Scheidmann used to be chancelor.
+After the death of legendary socialist August Bebel in 1913 Scheidemann became chairman of the <span style="color: [+ spd_colour +];">**SPD**</span>. He defended the approval of war credits - although he opposed annexations - during the Great War. On November 9th he proclaimed the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic of which he briefly became chancellor.
 
 - @against_right_and_left
 - @republican
@@ -55,11 +55,11 @@ on-arrival: advisor_action_timer = 6; left_dissent += 2; reformist_strength += 1
 The party is staunchly opposed to this.
 
 @dvp_cooperation_3
-title: Sway the party towards working with the nationalist DVP
+title: Sway the party towards working with the nationalist <span style="color: [+ dvp_colour +];">**DVP**</span>.
 view-if: reformist_strength >= 40
 subtitle: Their support will be inevitable in the future
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_dissent += 4; reformist_strength += 7; labor_dissent += 3; dvp_relation += 2; ddp_relation += 1; early_dvp_cooperation += 2; factional_bias += 5; factional_bias += 1 if ideology == "reformist"
 
-We are making process to working together with the DVP.
+We are making process to working together with the <span style="color: [+ dvp_colour +];">**DVP**</span>.
