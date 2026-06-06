@@ -116,7 +116,7 @@ The <span style="color: #700000;">**KPD**</span> profits a lot.
 
 @ new_swap
 
-[? if spd_party_leader_2 == "Muller": <span style="color: #AFAFAF;">**you can swap another advisor for Rudolf Breitscheid**</span> ?]
+[? if spd_party_leader_2 == "Müller": <span style="color: #AFAFAF;">**you can swap another advisor for Rudolf Breitscheid**</span> ?]
 
 [? if spd_party_leader_2 == "Breitscheid": <span style="color: #AFAFAF;">**now swap another advisor for Rudolf Breitscheid**</span> ?]
 
