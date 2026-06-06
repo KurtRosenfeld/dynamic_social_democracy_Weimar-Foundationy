@@ -1112,6 +1112,7 @@ Q.sapd_colour = '#9B0000';
 Q.uspd_colour = '#D47B9B';
 Q.aspd_colour = '#fe9e00';
 Q.ddp_colour = '#D3C24D';
+Q.lvp_colour = '#D3C24D';
 Q.z_colour = '#000000';
 Q.bvp_colour = '#A2D8E0';
 Q.dvp_colour = '#D5AC27';
