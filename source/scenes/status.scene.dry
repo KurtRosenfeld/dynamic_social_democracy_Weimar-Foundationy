@@ -162,7 +162,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if z_party_name != "CVP": <span class="tooltip-text" title="Center Party" style="color: #000000;">**[+ z_party_name +]**</span>?][? if z_party_name == "CVP": <span class="tooltip-text" title="Christian People's Party" style="color: #000000;">**[+ z_party_name +]**</span>?]: [+ z_relation : relationships +]
 
-[? if not lvp_formed or not ddp_name: [? if not ddp_name:<span class="tooltip-text" title="German Democratic Party" style="color: [+ ddp_colour +];">**DDP**</span>?][? if ddp_name = "DDP":<span class="tooltip-text" title="German Democratic Party" style="color: [+ ddp_relation +];">**[+ ddp_name +]**</span>?][? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?]: [+ ddp_relation : relationships +] ?]
+[? if not lvp_formed or not ddp_name: [? if not ddp_name:<span class="tooltip-text" title="German Democratic Party" style="color: [+ ddp_colour +];">**DDP**</span>?][? if ddp_name = "DDP":<span class="tooltip-text" title="German Democratic Party" style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if ddp_name = "DStP":<span class="tooltip-text" title="German State Party" style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?]: [+ ddp_relation : relationships +] ?]
 
 [? if lvp_formed: <span class="tooltip-text" title="Liberal People's Party" style="color: [+ lvp_colour +];">**LVP**</span>: [+ lvp_relation : relationships +]?]
 
