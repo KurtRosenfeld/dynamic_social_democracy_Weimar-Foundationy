@@ -260,7 +260,8 @@ if (Q.dvp_ideology == "moderate") Q.dvp_colour = "#D5AC27";
 if (Q.dvp_ideology == "left") Q.dvp_colour = "#C0A054";
 if (Q.dvp_ideology == "moderate") Q.dvp_colour = "#A8B357";
 
-if (Q.dnvp_ideology == "radical") Q.dnvp_colour = "#3E88B3";
+if (Q.dnvp_ideology == "moderate") Q.dnvp_colour = "#3E88B3";
+if (Q.dnvp_ideology == "radical") Q.dnvp_colour = "#0087DC";
 
 
 // dynamic people colouring
