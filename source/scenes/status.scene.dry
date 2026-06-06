@@ -204,11 +204,11 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if not ddp_name and not lvp_formed: UNINITIALIZED ?][? if not lvp_formed and dvp_exist and ddp_name != 0 and not dvp_dnef: [? if ddp_name != 0 and dvp_leader != "Thiel" and dvp_leader != "Glatzel": <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: [? if dvp_ideology = "Left": Classical Liberalism ?][? if dvp_ideology = "Moderate": Conservative Liberalism?][? if dvp_ideology = "Right" and (dvp_right - dvp_left < 10 or dvp_leader == "Stresemann"): National Liberalism?][? if dvp_ideology = "Right" and dvp_right - dvp_left >= 10 and dvp_leader != "Stresemann": National Capitalism?] ([+ dvp_leader +])?][? if ddp_name != 0 and (dvp_leader == "Thiel" or dvp_leader == "Glatzel"): <span class="tooltip-text" title="German People's Party" style="color: #C0A054;">**DVP**</span>: Paternalistic Liberalism ([+ dvp_leader +])?]?]
 
-[? if not lvp_formed and dvp_exist and ddp_name != 0 and dvp_dnef: <span class="tooltip-text" title="German People's Party" style="color: #D5AC27;">**DVP**</span>: National Liberalism ([+ dvp_leader +])?]
+[? if not lvp_formed and dvp_exist and ddp_name != 0 and dvp_dnef: <span class="tooltip-text" title="German People's Party" style="color: [+ dvp_colour +];">**DVP**</span>: National Liberalism ([+ dvp_leader +])?]
 
 [? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Germany" style="color: #700000;">**KPD**</span>: [+ kpd_ideology +] ([+ kpd_leader +]) ?]
 
-[? if not uspd_joined = 3: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: #D47B9B;">**USPD**</span>: [+ uspd_ideology +] ([+ uspd_leader +])?]
+[? if not uspd_joined = 3: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: [+ uspd_colour +];">**USPD**</span>: [+ uspd_ideology +] ([+ uspd_leader +])?]
 
 [? if kvp_formed and not dnvp_dvp_formed: <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [? if not kvp_dnef: Christian Conservatism?][? if kvp_dnef: National Conservatism?] ([+ kvp_leader +])?]
 
@@ -240,7 +240,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if lvp_formed: <span class="tooltip-text" title="Liberal People's Party" style="color: #FFCC00;">**LVP**</span>: [? if industrial_lvp_backing == 2: medium?][? if industrial_lvp_backing == 3: high?][? if industrial_lvp_backing == 4: highest?] ?]
 
-[? if not lvp_formed and dvp_exist: <span class="tooltip-text" title="German People's Party" style="color: #D5AC27;">**DVP**</span>: [? if industrial_dvp_backing == 1: low?][? if industrial_dvp_backing == 2: medium?][? if industrial_dvp_backing == 3: high?] ?]
+[? if not lvp_formed and dvp_exist: <span class="tooltip-text" title="German People's Party" style="color: [+ dvp_colour +];">**DVP**</span>: [? if industrial_dvp_backing == 1: low?][? if industrial_dvp_backing == 2: medium?][? if industrial_dvp_backing == 3: high?] ?]
 
 [? if not cvp_formed and not dnvp_defunct: <span class="tooltip-text" title="German National People's Party" style="color: #3E88B3;">**DNVP**</span>: [? if industrial_dnvp_backing == 4: highest?][? if industrial_dnvp_backing == 3: high?][? if industrial_dnvp_backing == 2: medium?][? if industrial_dnvp_backing == 1: low?][? if industrial_dnvp_backing == 0: [? if dnvp_ideology == "Moderate": none?][? if dnvp_ideology == "Radical": Hugenberg funded?]?]?]
 
@@ -346,9 +346,9 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
 [? if dnef_formed: <span style="color: #BFC8CC;">**DNEF**</span>: [+ dnef_votes +]% ?]
 
-<span style="color: #c00000;">**SPD**</span>: [+ spd_votes +]%
+<span style="color: [+ spd_colour +];">**SPD**</span>: [+ spd_votes +]%
 
-[? if not uspd_joined = 3: <span style="color: #D47B9B;">**USPD**</span>: [+ uspd_votes +]% ?]
+[? if not uspd_joined = 3: <span style="color: [+ uspd_colour +];">**USPD**</span>: [+ uspd_votes +]% ?]
 
 [? if sapd_formed: <span style="color: #9B0000;">**SAPD**</span>: [+ sapd_votes +]% ?]
 
@@ -360,25 +360,25 @@ Q.socialism_disp = Math.floor(Q.socialism);
 
 [? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>: [+ lvp_votes +]% ?]
 
-[? if not lvp_formed and dvp_exist: <span style="color: #D5AC27;">**DVP**</span>: [+ dvp_votes +]% ?]
+[? if not lvp_formed and dvp_exist: <span style="color: [+ dvp_colour +];">**DVP**</span>: [+ dvp_votes +]% ?]
 
 [? if kvp_formed and not dnvp_dvp_formed: <span style="color: #0087DC;">**KVP**</span>: [+ kvp_votes +]% ?]
 
 [? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: [+ kvp_votes +]% ?]
 
-[? if not cvp_formed and not dnvp_defunct: <span style="color: #3E88B3;">**DNVP**</span>: [+ dnvp_votes +]%?]
+[? if not cvp_formed and not dnvp_defunct: <span style="color: [+ dnvp_colour +];">**DNVP**</span>: [+ dnvp_votes +]%?]
 
 [? if dnf_formed: <span style="color: #003755;">**DNF**</span>: [+ dnf_votes +]% ?]
 
 [? if dvfp_formed = 1 and nsfb_exists == 0: <span style="color: #3D3D3D;">**DVFP**</span>: [+ dvfp_votes +]% ?]
 
-[? if nsfb_exists = 1: <span style="color: #7A3C00;">**NSFB**</span>: [+ nsfb_votes +]% ?]
+[? if nsfb_exists = 1: <span style="color: [+ nsdap_colour +];">**NSFB**</span>: [+ nsfb_votes +]% ?]
 
 [? if dsu_exist: <span style="color: #6A1E1E;">**DSU**</span>: [+ dsu_votes +]% ?]
 
-[? if not nsdap_split and nsfb_exists == 0: <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_votes +]% ?]
+[? if not nsdap_split and nsfb_exists == 0: <span style="color: [+ nsdap_colour +];">**NSDAP**</span>: [+ nsdap_votes +]% ?]
 
-[? if nsdap_split: <span style="color: #7A3C00;">**NSDAP**</span>: [+ nsdap_hitler_votes +]% ?]
+[? if nsdap_split: <span style="color: [+ nsdap_colour +];">**NSDAP**</span>: [+ nsdap_hitler_votes +]% ?]
 
 [? if nvf_exist: <span style="color: #142e20;">**NVF**</span>: [+ nvf_votes +]% ?]
 
@@ -479,11 +479,11 @@ Current primary objective: elections
 
 = Media Landscape
 
-<h4> <span style="color: #A00000;">Left</span>: [+ left_media +]%
+<h4> <span style="color: #AA0000;">Left</span>: [+ left_media +]%
 
 <span style="color: #00000f;">Anarchist media</span>: [+ anarchist_media +]%
 
-<span style="color: #700000;">Communist media</span>: [+ communist_media +]%
+<span style="color: [+ kpd_colour +];">Communist media</span>: [+ communist_media +]%
 
 [? if editorial_line == "Left": <span style="color: [+ spd_colour +];">Socialist media</span>: [+ socdem_media +]% ?]
 
@@ -499,11 +499,11 @@ Current primary objective: elections
 
 <h4> [? if year >= 1930: <span style="color: #000000;">Far</span> <span style="color: #D3D3D3;">Ri</span><span style="color: #A00000;">ght</span>?][? if year < 1929: <span style="color: #000000;">Ri</span><span style="color: #D3D3D3;">g</span><span style="color: #A00000;">ht</span>?]: [+ far_right_media +]%
 
-<span style="color: #C0A054;">Conservative media</span>: [+ conservative_media +]%
+<span style="color: [+ dvp_colour +];">Conservative media</span>: [+ conservative_media +]%
 
-<span style="color: #3E88B3;">Monarchist media</span>: [+ monarchist_media +]%
+<span style="color: [+ dnvp_colour +];">Monarchist media</span>: [+ monarchist_media +]%
 
-<span style="color: #7A3C00;">Völkisch media</span>: [+ volkisch_media +]%
+<span style="color: [+ nsdap_colour +];">Völkisch media</span>: [+ volkisch_media +]%
 
 
 @left
