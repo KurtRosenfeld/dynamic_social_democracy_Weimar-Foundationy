@@ -22,8 +22,8 @@ What will we offer them
 - @lowest_uspd: Let at least one former <span style="color: #D47B9B;">**USPD**</span> member into each important section of the executive commitee.
 - @middle_uspd: The above and, eventually, a new party programme.
 - @good_uspd: The above and a new party leadership
-- @high_uspd: The above and no coalitions with the bourgeois parties.
-- @highest_uspd: Dedicate ourselves to the revolutionary effort.
+- @high_uspd: The above and no coalitions with the <span style="color: #D5AC27;">**DVP**</span>.
+- @highest_uspd: The above and no coalitions with any of the bourgeois parties.
 - @no_uspd: Ok, we won't make concessions.
 
 @lowest_uspd
@@ -70,16 +70,16 @@ A new party programme is surely logical.
 
 @good_uspd
 subtitle: The <span style="color: #D47B9B;">**USPD**</span> will be pleased by this.
-unavailable-subtitle: No.
+unavailable-subtitle: Hermann Müller and Otto Wels are already a pivot to our center.
 choose-if: left_strength >= 10
-on-arrival: idk = 5
+on-arrival: spd_party_leader_2 = "Breitscheid"; reformist_dissent += 3
 go-to: lowest_uspd
 
-New leadership altogether, why not?
+Our new leadership election has decided on the ousting of Hermann Müller in favour of Rudolf Breitscheid, a pragmatic, yet principaled internationalist socialist democrat. Otto Wels on the other hand remains firm in his position.
 
 @high_uspd
-unavailable-subtitle: This is political suicide.
-subtitle: Our comrades in the <span style="color: #70000;">**KPD**</span> and <span style="color: #D47B9B;">**USPD**</span> are starting to warm up to us..
+unavailable-subtitle: We will likely need to work with them at some point.
+subtitle: Working with the <span style="color: #D5AC27;">**DVP**</span> is already unpoplular with our proper base.
 view-if: left_strength >= 10
 choose-if: left_strength > reformist_strength
 on-arrival: good_uspd_vspd_deal = 1
@@ -91,7 +91,7 @@ We don't know how this will end...
 subtitle: The reformists are outraged!
 view-if: left_strength >= 20
 choose-if: left_strength >= 40 and left_strength > reformist_strength
-unavailable-subtitle: The party would not accept this.
+unavailable-subtitle: The <span style="color: #D47B9B;">**USPD**</span> has actually agreed to work with the <span style="color: #000000;">**Center**</span> by now.
 on-arrival: second_kpd_essentially = 1; reformist_dissent += 25
 go-to: lowest_uspd
 
@@ -116,7 +116,9 @@ The <span style="color: #700000;">**KPD**</span> profits a lot.
 
 @ new_swap
 
-<span style="color: #AFAFAF;">**you can swap another advisor for Rudolf Breitscheid**</span>
+[? if spd_party_leader_2 == "Muller": <span style="color: #AFAFAF;">**you can swap another advisor for Rudolf Breitscheid**</span> ?]
+
+[? if spd_party_leader_2 == "Breitscheid": <span style="color: #AFAFAF;">**now swap another advisor for Rudolf Breitscheid**</span> ?]
 
 - @drop_ebert_2: Drop Ebert (reformist)
 - @drop_scheidemann_2: Drop Scheidemann (centrist)
@@ -153,6 +155,7 @@ go-to: sign_vspd
 Müller is more useful as Chancellor..
 
 @drop_none
+view-if: spd_party_leader_2 == "Muller"
 go-to: sign_vspd
 
 @sign_vspd
