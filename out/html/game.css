@@ -708,7 +708,7 @@ th {
 }
 
 .seat.uspd {
-  fill: #D47B9B;
+  fill: [+ uspd_colour +];
 }
 
 .seat.spd {
@@ -718,7 +718,7 @@ th {
 }
 
 .seat.ddp {
-  fill: #D3C24D;
+  fill: [+ ddp_colour +];
 }
 
 .seat.z {
@@ -730,7 +730,7 @@ th {
 }
 
 .seat.dvp {
-  fill: #D5AC27;
+  fill: [+ dvp_colour +];
 }
 
 .seat.bl {
@@ -746,7 +746,7 @@ th {
 }
 
 .seat.dnvp {
-  fill: #3E88B3;
+  fill: [+ dnvp_colour +];
 }
 
 .seat.dvfp {
