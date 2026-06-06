@@ -140,6 +140,7 @@ Q.nsfb_relation = 0;
 
 Q.kpd_leader = "Brandler";
 Q.kpd_ideology = "Sparticism";
+Q.kpd_strategy = "Await Orders from Moscow";
 Q.uspd_leader = "Crispien";
 Q.uspd_ideology = "Orthodox Marxism";
 Q.z_leader = "Marx";
@@ -591,7 +592,7 @@ Q.president = "Ebert";
 Q.president_party = "SPD";
 Q.president_ideology = "Moderate";
 Q.prussia_leader_party = "SPD";
-// starting chancellor: Wilhelm Marx
+// starting chancellor: Joseph Wirth
 Q.chancellor = "Wirth";
 Q.chancellor_party = 'Z';
 Q.spd_in_government = 1;
@@ -1112,7 +1113,7 @@ Q.sapd_colour = '#9B0000';
 Q.uspd_colour = '#D47B9B';
 Q.aspd_colour = '#fe9e00';
 Q.ddp_colour = '#D3C24D';
-Q.lvp_colour = '#D3C24D';
+Q.lvp_colour = '#FFCC00';
 Q.z_colour = '#000000';
 Q.bvp_colour = '#A2D8E0';
 Q.dvp_colour = '#D5AC27';
