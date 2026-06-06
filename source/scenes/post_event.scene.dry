@@ -250,11 +250,14 @@ if (Q.kpd_relation > 60) Q.sapd_relation += 3;
 
 // dynamic people colouring (test)
 
-Q.ebert_colour = "#c00000" if Q.ebert_in == "SPD"; Q.ebert_colour = "#D3C24D" if Q.ebert_in == "DDP"; Q.ebert_colour = "#fe9e00" if Q.ebert_in == "ASPD"; Q.ebert_colour = "#808080" if Q.ebert_in == "I"; 
+if (Q.ebert_in == "SPD") Q.ebert_colour = "#c00000";
+else if (Q.ebert_in == "DDP") Q.ebert_colour = "#D3C24D";
+else if (Q.ebert_in == "ASPD") Q.ebert_colour = "#fe9e00";
+else if (Q.ebert_in == "I") Q.ebert_colour = "#808080";
 
-Q.ebert_in = "I" if Q.year == "1923";
-Q.ebert_in = "DDP" if Q.month == "12";
-Q.ebert_in = "SPD" if Q.month == "6";
+if (Q.year == "1923") Q.ebert_in = "I";
+if (Q.month == "12") Q.ebert_in = "DDP";
+if (Q.month == "6") Q.ebert_in = "SPD";
 
 // hyperinflation removed because of weird time loops
 
