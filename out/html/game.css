@@ -713,12 +713,12 @@ th {
 }
 
 .seat.uspd {
-  fill: var(--uspd-color);
+  fill: var(--uspd-colour);
 }
 
 .seat.spd {
   fill: #E3000F;
-  stroke: var(--border-color);
+  stroke: var(--border-colour);
   stroke-width: 1.5px;
 }
 
@@ -739,7 +739,7 @@ th {
 }
 
 .seat.dvp {
-  fill: var(--dvp-color);
+fill: {{ Q.dvp_colour }};
 }
 
 .seat.bl {
@@ -755,7 +755,7 @@ th {
 }
 
 .seat.dnvp {
-  fill: var(--dnvp-color);
+  fill: {{ Q.dnvp_colour }};
 }
 
 .seat.dvfp {
