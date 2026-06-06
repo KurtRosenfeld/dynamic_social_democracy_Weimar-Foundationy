@@ -1,6 +1,6 @@
  :root {
-    --uspd-color: {{ Q.uspd_colour }};
-    --ddp-color: {{ Q.ddp_colour }};
+    --uspd-colour: {{ Q.uspd_colour }};
+    --ddp-colour: {{ Q.ddp_colour }};
   }
 
 body {
