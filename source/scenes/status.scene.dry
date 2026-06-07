@@ -170,6 +170,8 @@ Economic growth: [+ economic_growth_2 +]%
 
 <span class="tooltip-text" title="Communist Party of Germany" style="color: [+ kpd_colour +];">**KPD**</span>: [+ kpd_relation : relationships +]
 
+[? if sapd_formed: <span class="tooltip-text" title="Socialist Worker's Party of Germany" style="color: [+ sapd_colour +];">**SAPD**</span>: [+ sapd_relation : relationships +] ?]
+
 [? if not uspd_joined = 3: <span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: [+ uspd_colour +];">**USPD**</span>: [+ uspd_relation : relationships +] ?]
 
 [? if kvp_formed and not dnvp_dvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_relation : relationships +] ?]
@@ -207,6 +209,8 @@ Economic growth: [+ economic_growth_2 +]%
 [? if not lvp_formed and dvp_exist and ddp_name != 0 and dvp_dnef: <span class="tooltip-text" title="German People's Party" style="color: [+ dvp_colour +];">**DVP**</span>: National Liberalism ([+ dvp_leader +])?]
 
 [? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Communist Party of Germany" style="color: [+ kpd_colour +];">**KPD**</span>: [+ kpd_ideology +] ([+ kpd_leader +]) ?]
+
+[? if sapd_formed: <span class="tooltip-text" title="Socialist Worker's Party of Germany" style="color: [+ sapd_colour +];">**SAPD**</span>: [+ sapd_ideology +] ([+ sapd_leader +])?]
 
 [? if not uspd_joined = 3: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: [+ uspd_colour +];">**USPD**</span>: [+ uspd_ideology +] ([+ uspd_leader +])?]
 
@@ -388,21 +392,69 @@ Support for the Republic: [+ pro_republic_disp +]%
 
 **Detailed results for each demographic**
 
-Workers: [? if dnef_formed: DNEF: [+ workers_dnef_display +]%, ?]SPD: [+ workers_spd_display +]%, [+ z_party_name +]: [+ workers_z_display +]%, [? if not uspd_joined = 3: USPD: [+ workers_uspd_display +]%, ?]KPD: [+ workers_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ workers_ddp_display +]%, [? if dvp_exist: DVP: [+ workers_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ workers_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ workers_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ workers_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ workers_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ workers_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ workers_nsdap_display +]%, ?][? if nsfb_exists = 1: NSFB: [+ workers_nsfb_display +]%, ?]Others: [+ workers_other_display +]%
+Workers: [? if dnef_formed: DNEF: [+ workers_dnef_display +]%, ?]SPD: [+ workers_spd_display +]%, [+ z_party_name +]: [+ workers_z_display +]%, [? if not uspd_joined = 3: USPD: [+ workers_uspd_display +]%, ?][? if sapd_formed: SAPD: [+ workers_sapd_display +]%, ?]KPD: [+ workers_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ workers_ddp_display +]%, [? if dvp_exist: DVP: [+ workers_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ workers_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ workers_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ workers_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ workers_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ workers_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ workers_nsdap_display +]%, ?][? if nsfb_exists = 1: NSFB: [+ workers_nsfb_display +]%, ?]Others: [+ workers_other_display +]%
 
-New Middle Class: [? if dnef_formed: DNEF: [+ new_middle_dnef_display +]%, ?]SPD: [+ new_middle_spd_display +]%, [+ z_party_name +]: [+ new_middle_z_display +]%, [? if not uspd_joined = 3: USPD: [+ new_middle_uspd_display +]%, ?]KPD: [+ new_middle_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ new_middle_ddp_display +]%, [? if dvp_exist: DVP: [+ new_middle_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ new_middle_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ new_middle_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ new_middle_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ new_middle_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ new_middle_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ new_middle_nsdap_display +]%, ?][? if nsfb_exists = 1: NSFB: [+ new_middle_nsfb_display +]%, ?]Others: [+ new_middle_other_display +]%
+New Middle Class: [? if dnef_formed: DNEF: [+ new_middle_dnef_display +]%, ?]SPD: [+ new_middle_spd_display +]%, [+ z_party_name +]: [+ new_middle_z_display +]%, [? if not uspd_joined = 3: USPD: [+ new_middle_uspd_display +]%, ?][? if sapd_formed: SAPD: [+ new_middle_sapd_display +]%, ?]KPD: [+ new_middle_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ new_middle_ddp_display +]%, [? if dvp_exist: DVP: [+ new_middle_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ new_middle_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ new_middle_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ new_middle_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ new_middle_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ new_middle_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ new_middle_nsdap_display +]%, ?][? if nsfb_exists = 1: NSFB: [+ new_middle_nsfb_display +]%, ?]Others: [+ new_middle_other_display +]%
 
-Old Middle Class: [? if dnef_formed: DNEF: [+ old_middle_dnef_display +]%, ?]SPD: [+ old_middle_spd_display +]%, [+ z_party_name +]: [+ old_middle_z_display +]%, [? if not uspd_joined = 3: USPD: [+ old_middle_uspd_display +]%, ?]KPD: [+ old_middle_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ old_middle_ddp_display +]%, [? if dvp_exist: DVP: [+ old_middle_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ old_middle_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ old_middle_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ old_middle_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ old_middle_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ old_middle_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ old_middle_nsdap_display +]%,?][? if nsfb_exists = 1: NSFB: [+ old_middle_nsfb_display +]%,?] Others: [+ old_middle_other_display +]%
+Old Middle Class: [? if dnef_formed: DNEF: [+ old_middle_dnef_display +]%, ?]SPD: [+ old_middle_spd_display +]%, [+ z_party_name +]: [+ old_middle_z_display +]%, [? if not uspd_joined = 3: USPD: [+ old_middle_uspd_display +]%, ?][? if sapd_formed: SAPD: [+ old_middle_sapd_display +]%, ?]KPD: [+ old_middle_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ old_middle_ddp_display +]%, [? if dvp_exist: DVP: [+ old_middle_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ old_middle_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ old_middle_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ old_middle_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ old_middle_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ old_middle_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ old_middle_nsdap_display +]%,?][? if nsfb_exists = 1: NSFB: [+ old_middle_nsfb_display +]%,?] Others: [+ old_middle_other_display +]%
 
-Rural: [? if dnef_formed: DNEF: [+ rural_dnef_display +]%, ?]SPD: [+ rural_spd_display +]%, [+ z_party_name +]: [+ rural_z_display +]%, [? if not uspd_joined = 3: USPD: [+ rural_uspd_display +]%, ?]KPD: [+ rural_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ rural_ddp_display +]%, [? if dvp_exist: DVP: [+ rural_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ rural_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ rural_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ rural_dnf_display +]%  ?][? if kvp_formed: KVP: [+ rural_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ rural_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ rural_nsdap_display +]%, ?][? if nsfb_exists = 1: NSFB: [+ rural_nsfb_display +]%, ?]Others: [+ rural_other_display +]%
+Rural: [? if dnef_formed: DNEF: [+ rural_dnef_display +]%, ?]SPD: [+ rural_spd_display +]%, [+ z_party_name +]: [+ rural_z_display +]%, [? if not uspd_joined = 3: USPD: [+ rural_uspd_display +]%, ?][? if sapd_formed: SAPD: [+ rural_sapd_display +]%, ?]KPD: [+ rural_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ rural_ddp_display +]%, [? if dvp_exist: DVP: [+ rural_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ rural_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ rural_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ rural_dnf_display +]%  ?][? if kvp_formed: KVP: [+ rural_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ rural_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ rural_nsdap_display +]%, ?][? if nsfb_exists = 1: NSFB: [+ rural_nsfb_display +]%, ?]Others: [+ rural_other_display +]%
 
-Unemployed: [? if dnef_formed: DNEF: [+ unemployed_dnef_display +]%, ?]SPD: [+ unemployed_spd_display +]%, [+ z_party_name +]: [+ unemployed_z_display +]%, [? if not uspd_joined = 3: USPD: [+ unemployed_uspd_display +]%, ?]KPD: [+ unemployed_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ unemployed_ddp_display +]%, [? if dvp_exist: DVP: [+ unemployed_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ unemployed_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ unemployed_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ unemployed_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ unemployed_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ unemployed_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ unemployed_nsdap_display +]%, ?][? if nsfb_exists = 1: NSFB: [+ unemployed_nsfb_display +]%, ?]Others: [+ unemployed_other_display +]%
+Unemployed: [? if dnef_formed: DNEF: [+ unemployed_dnef_display +]%, ?]SPD: [+ unemployed_spd_display +]%, [+ z_party_name +]: [+ unemployed_z_display +]%, [? if not uspd_joined = 3: USPD: [+ unemployed_uspd_display +]%, ?][? if sapd_formed: SAPD: [+ unemployed_sapd_display +]%, ?]KPD: [+ unemployed_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ unemployed_ddp_display +]%, [? if dvp_exist: DVP: [+ unemployed_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ unemployed_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ unemployed_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ unemployed_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ unemployed_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ unemployed_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ unemployed_nsdap_display +]%, ?][? if nsfb_exists = 1: NSFB: [+ unemployed_nsfb_display +]%, ?]Others: [+ unemployed_other_display +]%
 
-Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ catholics_spd_display +]%, [+ z_party_name +]: [+ catholics_z_display +]%, [? if not uspd_joined = 3: USPD: [+ catholic_uspd_display +]%, ?]KPD: [+ catholics_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ catholics_ddp_display +]%, [? if dvp_exist: DVP: [+ catholics_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ catholics_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ catholics_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ catholics_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ catholics_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ catholics_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ catholics_nsdap_display +]%,?][? if nsfb_exists = 1: NSFB: [+ catholics_nsfb_display +]%,?] Others: [+ catholics_other_display +]%
+Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ catholics_spd_display +]%, [+ z_party_name +]: [+ catholics_z_display +]%, [? if not uspd_joined = 3: USPD: [+ catholic_uspd_display +]%, ?][? if sapd_formed: SAPD: [+ catholic_sapd_display +]%, ?]KPD: [+ catholics_kpd_display +]%, [? if not lvp_formed: [+ ddp_name +]: [+ catholics_ddp_display +]%, [? if dvp_exist: DVP: [+ catholics_dvp_display +]%,?]?][? if lvp_formed: LVP: [+ catholics_lvp_display +]%,?] [? if not cvp_formed: DNVP: [+ catholics_dnvp_display +]%,?] [? if dnf_formed: DNF: [+ catholics_dnf_display +]%,  ?][? if kvp_formed: KVP: [+ catholics_kvp_display +]%,  ?][? if dvfp_formed = 1 and nsfb_exists = 0: DVFP: [+ catholics_dvfp_display +]%, ?][? if nsfb_exists = 0: NSDAP: [+ catholics_nsdap_display +]%,?][? if nsfb_exists = 1: NSFB: [+ catholics_nsfb_display +]%,?] Others: [+ catholics_other_display +]%
 
 @state
 
-= State of the State (to be added)
+= State of the State (currently placeholders)
+
+Women's rights:
+
+Abortion status:
+
+Average Working Day:
+
+Railway status:
+
+Land Ownership: [State% Large Holders% Small Holders%]
+
+= Local Governments
+
+Prussia: [+ prussia_gov +] Coalition
+
+Bavaria: [+ bavaria_gov +] Coalition
+
+Saxony: [+ saxony_gov +] Coalition
+
+Thuringia: [+ thuringia_gov +] Coalition
+
+Hesse: [+ hesse_gov +] Coalition
+
+Wurttemberg: [+ wurttemberg_gov +] Coalition
+
+Baden: [+ baden_gov +] Coalition
+
+Mecklenburg-Schwerin: [+ meck_schwe_gov +] Coalition
+
+Mecklenburg-Strelitz: [+ meck_stre_gov +] Coalition
+
+Hamburg: [+ hamburg_gov +] Coalition
+
+Bremen: [+ bremen_gov +] Coalition
+
+Lübeck: [+ lubeck_gov +] Coalition
+
+Oldenburg: [+ oldenburg_gov +] Coalition 
+
+Anhalt: [+ anhalt_gov +] Coalition
+
+Brunswick: [+ brunswick_gov +] Coalition
+
+Lippe: [+ lippe_gov +] Coalition
+
+Schaumburg-Lippe: [+ schaum_lippe_gov +] Coalition
+
+Waldeck: [+ waldeck_gov +] Coalition
 
 @relations
 
