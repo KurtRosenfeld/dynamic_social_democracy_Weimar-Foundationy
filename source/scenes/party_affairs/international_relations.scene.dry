@@ -8,7 +8,7 @@ card-image: img/international.jpg
 max-visits: 4
 #subtitle: Building ties with our fraternal socialist parties.
 
-At the <span style="color: #D50032;">Labour and Socialist International</span>, we can forge contacts with our fraternal <span style="color: #c00000;">socialist</span> parties in <span style="color: #001489;">Europe</span> and across the world.
+At the [? if lsi_founded == 1 : <span style="color: #D50032;">Labour and Socialist International</span> ?] [? if lsi_founded == 0 : <span style="color: #D50032;">Berne International</span> and <span style="color: #D50032;">International Working Union of Socialist Parties</span> ?], we can forge contacts with our fraternal <span style="color: #c00000;">socialist</span> parties in <span style="color: #001489;">Europe</span> and across the world.
 
 - @fr_uk: Build relationships with the <span style="color: #002654;">French</span> <span style="color: #ff0000;">SFIO</span> and <span style="color: #C8102E;">British</span> <span style="color: #f0456a;">Labour Party</span> to move their governments in Germany's favor.
 - @austria: Learn organization and street fighting from the <span style="color: #EF3340;">Au</span><span style="color: #ffffff;"><span style="color: #ffffff;">str</span></span><span style="color: #EF3340;">ian</span> <span style="color: #A50034;">SDAPÖ</span>.
