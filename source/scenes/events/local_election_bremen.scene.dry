@@ -229,6 +229,8 @@ if (Q.total_r_bremen > 0) {
 }
 
 if (Q.in_toleration) spd_bremen_adjustment_factor -= 0.1
+if (Q.spd_votes >= 40) spd_bremen_adjustment_factor -= 0.1
+if (Q.spd_votes >= 50) spd_bremen_adjustment_factor -= 0.1
 
 let hb_share = 0.71;
 if (Q.president.party == "I") hb_share += 0.1
@@ -250,6 +252,7 @@ Q.wp_r_bremen = Q.other_r_bremen*wp_share;
 Q.hb_bremen_elections_vote = Q.other_bremen_elections_vote*hb_share;
 Q.hb_r_bremen = Q.other_r_bremen*hb_share;
 
+Q.true_other_bremen_elections_vote = Q.other_bremen_elections_vote*true_other_share;
 Q.true_other_r_bremen = Q.other_r_bremen*true_other_share;
 
 function allocateSeats(percentages, totalSeats = 120) {
