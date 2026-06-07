@@ -146,10 +146,16 @@ window.disableGrayMode = function() {
 // One-time color application
 function applyPartyColors() {
     const colors = {
+        kpd: '{{ Q.kpd_colour }}',
+        sapd: '{{ Q.sapd_colour }}',
         uspd: '{{ Q.uspd_colour }}',
+        spd: '{{ Q.spd_colour }}',
         ddp: '{{ Q.ddp_colour }}',
+        lvp: '{{ Q.lvp_colour }}',
         dvp: '{{ Q.dvp_colour }}',
         dnvp: '{{ Q.dnvp_colour }}',
+        z: '{{ Q.z_colour }}',
+        nsdap: '{{ Q.nsdap_colour }}',
     };
     
     for (const [party, color] of Object.entries(colors)) {
@@ -173,7 +179,8 @@ window.applyPartyColors = function() {
         dvp: qualities.dvp_colour,
         dnvp: qualities.dnvp_colour,
         lvp: qualities.lvp_colour,
-        // add any others you need
+        z: qualities.z_colour,
+        nsdap: qualities.nsdap_colour,
     };
     
     for (const [party, color] of Object.entries(colorMap)) {
