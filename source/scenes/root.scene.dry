@@ -1174,13 +1174,13 @@ Q.scheidemann_in = 'SPD';
 Q.crispien_in = 'USPD';
 Q.breitscheid_in = 'USPD';
 Q.hilferding_in = 'USPD';
+Q.kautsky_in = 'USPD';
 
 Q.ebert_in = 'SPD';
 Q.braun_in = 'SPD';
 Q.severing_in = 'SPD';
 Q.pfulf_in = 'SPD';
 Q.juchaz_in = 'SPD';
-Q.wirth_in = 'Z';
 
 Q.seydewitz_in = 'SPD';
 Q.rosenfeld_in = 'USPD';
@@ -1196,8 +1196,20 @@ Q.leipart_in = 'SPD';
 Q.aufhauser_in = 'USPD';
 Q.wissel_in = 'SPD';
 
+Q.mierendorff_in = 'SPD';
+Q.leber_in = 'SPD';
+Q.schumacher_in = 'SPD';
+Q.wirth_in = 'Z';
 
-Q.stresemann_in = 'DVP';
+Q.baade_in = 'SPD';
+Q.sollman_in = 'SPD';
+Q.schmidt_in = 'SPD';
+Q.stampfer_in = 'SPD';
+Q.radbruch_in = 'SPD';
+
+Q.thalheimer_in = 'KPD';
+Q.fischer_in = 'KPD';
+Q.brandler_in = 'KPD';
 
 Q.hugenberg_in = 'DNVP';
 
