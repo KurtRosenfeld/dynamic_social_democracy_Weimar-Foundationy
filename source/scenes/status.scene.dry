@@ -589,6 +589,11 @@ Strategy: [+ kpd_strategy +]
 [? if aspd_r: Orientation: [+ aspd_ideology +] ([+ aspd_leader +]) ?]
 
 = Splinters
+[? if kag_r > 0: <span class="tooltip-text" title="Communist Working Group" style="color: #81125B;">**KAG**</span> ?]
+
+[? if kag_r > 0: influence: [+ kag_seats +]% of Reichstag ?]
+
+[? if kag_r > 0: Orientation: Luxemburgism (Levi, Däumig) ?]
 
 [? if aspd_r_saxony and aspd_r == 0: <span class="tooltip-text" title="Old Social Democratic Party of Germany" style="color: [+ aspd_colour +];">**ASPD**</span>: cool ?]
 
