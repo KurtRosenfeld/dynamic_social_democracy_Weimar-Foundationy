@@ -372,73 +372,7 @@ if (document.readyState === 'loading') {
       button.style.backgroundColor = '#dddddd';
   };
 
-// Helper function to create choice buttons with images
-window.createChoiceWithImage = function(text, imagePath, onClickHandler, isUnavailable = false) {
-    var li = document.createElement('li');
-    li.className = 'choice-with-image';
-    if (isUnavailable) {
-        li.classList.add('unavailable');
-    }
-    
-    var img = document.createElement('img');
-    img.src = imagePath;
-    img.className = 'choice-image';
-    img.alt = '';
-    
-    var textNode = document.createTextNode(text);
-    
-    li.appendChild(img);
-    li.appendChild(textNode);
-    
-    if (!isUnavailable && onClickHandler) {
-        li.onclick = onClickHandler;
-    }
-    
-    return li;
-};
 
-// Helper to convert existing Dendry choices to include images
-window.decorateChoicesWithImages = function(choiceMap) {
-    // This would need to be integrated with Dendry's choice rendering
-    // You'd typically modify the content generation in your game's JSON
-    console.log('Choice images ready. Use createChoiceWithImage() to add images to choices.');
-};
-
-// Function to add images to buttons in scenes (to be called from Dendry actions)
-window.addButtonImages = function() {
-    // Find all buttons and add images based on their text/content
-    document.querySelectorAll('button, .choice').forEach(button => {
-        // Example: Add image based on button text
-        var buttonText = button.textContent.toLowerCase();
-        
-        if (buttonText.includes('socialist') || buttonText.includes('kpd')) {
-            addImageToButton(button, 'images/kpd_flag.png');
-        } else if (buttonText.includes('nazi') || buttonText.includes('nsdap')) {
-            addImageToButton(button, 'images/nsdap_flag.png');
-        } else if (buttonText.includes('democratic')) {
-            addImageToButton(button, 'images/uspd_flag.png');
-        }
-    });
-};
-
-function addImageToButton(button, imagePath) {
-    if (!button.classList.contains('button-with-image')) {
-        var originalText = button.innerHTML;
-        button.innerHTML = '';
-        button.classList.add('button-with-image');
-        
-        var img = document.createElement('img');
-        img.src = imagePath;
-        img.className = 'button-image';
-        
-        var span = document.createElement('span');
-        span.innerHTML = originalText;
-        
-        button.appendChild(img);
-        button.appendChild(span);
-    }
-}
-  
   /*
    * This function copied from the code for Infinite Space Battle Simulator
    *
