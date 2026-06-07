@@ -463,7 +463,7 @@ subtitle: Rudolf Hilferding is an economist and one of our chief Marxist theoret
 is-card: true
 card-image: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
-view-if: hilferding_advisor = 0 and n_advisors < 4 and centrists_resign = 0  and uspd_joined >= 1
+view-if: hilferding_advisor = 0 and n_advisors < 4 and hilferding_in == "SPD"
 on-arrival: hilferding_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 
@@ -475,7 +475,7 @@ subtitle: Otto Wels is a long-time party organizer and member of the leadership,
 is-card: true
 card-image: img/portraits/WelsRudolf.jpg
 tags: center_advisor
-view-if: wels_advisor = 0 and n_advisors < 4 and not (centrists_resign = 1 and reformists_resign = 1)
+view-if: wels_advisor = 0 and n_advisors < 4 and wels_in == "SPD"
 on-arrival: wels_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 
@@ -487,7 +487,7 @@ subtitle: Hermann Müller is the last <span style="color: #c00000;">Social Democ
 is-card: true
 card-image: img/portraits/MüllerHermann.jpg
 tags: center_advisor
-view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 4 and not (centrists_resign = 1 and reformists_resign = 1)
+view-if: muller_advisor = 0 and muller_dead = 0 and n_advisors < 4 and muller_in == "SPD"
 on-arrival: muller_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 
@@ -498,7 +498,7 @@ title: Philipp Scheidemann
 subtitle: tobeadded. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/ScheidemannPhilipp.jpg
-view-if: scheidemann_advisor = 0 and n_advisors < 4 and not (centrists_resign = 1 and reformists_resign = 1)
+view-if: scheidemann_advisor = 0 and n_advisors < 4 and scheidemann_in == "SPD"
 on-arrival: scheidemann_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 tags: center_advisor
@@ -510,7 +510,7 @@ title: Rudolf Breitscheid
 subtitle: Rudolf Breitscheid comes from a well-educated background and is one of our foreign policy leaders. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/BreitscheidRudolf.jpg
-view-if: breitscheid_advisor = 0 and uspd_joined >= 1 and n_advisors < 4 and not (centrists_resign = 1 and left_split = 1)
+view-if: breitscheid_advisor = 0 and uspd_joined >= 1 and n_advisors < 4 and breitscheid_in == "SDP"
 on-arrival: breitscheid_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 tags: center_advisor
@@ -522,7 +522,7 @@ title: Arthur Crispien
 subtitle: Crispien comes from the USPD. {!<br><br>!}[? if difficulty < 0 : Actions - International Relations, Foreign Policy, Party Discipline ?]
 is-card: true
 card-image: img/portraits/CrispienArthur.jpg
-view-if: crispien_advisor = 0 and uspd_joined >= 1 and n_advisors < 4 and not (centrists_resign = 1 and left_split = 1)
+view-if: crispien_advisor = 0 and uspd_joined >= 1 and n_advisors < 4 and crispien_in == "SPD"
 on-arrival: crispien_advisor = 1; n_advisors += 1; center_dissent -= 7; center_strength += 5
 go-to: advisor_menu
 tags: center_advisor
@@ -538,7 +538,7 @@ subtitle: Ebert is the President of the Reich, and one of the most recognizable 
 is-card: true
 card-image: img/portraits/EbertFriedrich.jpg
 tags: reformist_advisor
-view-if: ebert_advisor = 0 and n_advisors < 4 and ebert_dead = 0 and reformists_resign = 0
+view-if: ebert_advisor = 0 and n_advisors < 4 and ebert_dead = 0 and ebert_in == "SPD"
 on-arrival: ebert_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
 go-to: advisor_menu
 
@@ -550,7 +550,7 @@ subtitle: Carl Severing is a one-time Prussian interior minister and police refo
 is-card: true
 card-image: img/portraits/SeveringCarl.jpg
 tags: reformist_advisor
-view-if: severing_advisor = 0 and n_advisors < 4 and reformists_resign = 0
+view-if: severing_advisor = 0 and n_advisors < 4 and severing_in == "SPD"
 on-arrival: severing_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
 go-to: advisor_menu
 
@@ -562,7 +562,7 @@ subtitle: Otto Braun is the Minister-President of Prussia, and one of the most r
 is-card: true
 card-image: img/portraits/BraunOtto.jpg
 tags: reformist_advisor
-view-if: braun_advisor = 0 and n_advisors < 4 and reformists_resign = 0
+view-if: braun_advisor = 0 and n_advisors < 4 and braun_in == "SPD"
 on-arrival: braun_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
 go-to: advisor_menu
 
@@ -573,7 +573,7 @@ title: Marie Juchacz
 subtitle: Marie Juchacz is the founder of Worker's Welfare, a mutual-aid organization. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Worker's Welfare, Organizing Women ?]
 is-card: true
 card-image: img/portraits/JuchaczMarie.jpg
-view-if: juchacz_advisor = 0 and n_advisors < 4 and reformists_resign = 0
+view-if: juchacz_advisor = 0 and n_advisors < 4 and juchaz_in == "SPD"
 on-arrival: juchacz_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
 go-to: advisor_menu
 tags: reformist_advisor
@@ -585,7 +585,7 @@ title: Antonie Pfülf
 subtitle: Antonie Pfülf is a leader in social policy and women's rights. {!<br><br>!}[? if difficulty < 0 : Actions - Support a People's Party, Women's Rights ?]
 is-card: true
 card-image: img/portraits/PfülfAntonie.jpg
-view-if: pfulf_advisor = 0 and n_advisors < 4
+view-if: pfulf_advisor = 0 and n_advisors < 4 and pfluf_in == "SPD"
 on-arrival: pfulf_advisor = 1; n_advisors += 1; reformist_strength += 5; reformist_dissent -= 7
 go-to: advisor_menu
 tags: reformist_advisor
@@ -601,7 +601,7 @@ title: Paul Levi
 subtitle: Paul Levi is a former <span style="color: #700000;">**KPD**</span> leader who was purged for criticizing <span style="color: #700000;">**Communist**</span> policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the <span style="color: #700000;">**KPD**</span> ?]
 is-card: true
 card-image: img/portraits/LeviPaul.jpg
-view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 4 and left_split = 0 and uspd_joined >= 2
+view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 4 and levi_in == "SPD"
 on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 7
 go-to: advisor_menu
 tags: left_advisor
@@ -613,7 +613,7 @@ title: Toni Sender
 subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Center Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/SenderToni.jpg
-view-if: sender_advisor = 0 and uspd_joined >= 1  and n_advisors < 4
+view-if: sender_advisor = 0 and n_advisors < 4 and sender_in == "SPD"
 on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
 go-to: advisor_menu
 tags: left_advisor
@@ -625,7 +625,7 @@ title: Kurt Rosenfeld
 subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the <span style="color: #700000;">**KPD**</span>, Against Toleration ?]
 is-card: true
 card-image: img/portraits/RosenfeldKurt.jpg
-view-if: rosenfeld_advisor = 0 and uspd_joined >= 2 and n_advisors < 4 and left_split = 0
+view-if: rosenfeld_advisor = 0 and n_advisors < 4 and rosenfeld_in == "SPD"
 on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
 go-to: advisor_menu
 tags: left_advisor
@@ -637,7 +637,7 @@ title: Max Seydewitz
 subtitle: Max Seydewitz is a former leader of the youth wing, current supporter of the left wing of the <span style="color: #c00000;">**SPD**</span>, and advocates for class struggle. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Class Struggle, Socialist Youth, Against Toleration ?]
 is-card: true
 card-image: img/portraits/SeydewitzMax.jpg
-view-if: seydewitz_advisor = 0 and n_advisors < 4 and left_split = 0
+view-if: seydewitz_advisor = 0 and n_advisors < 4 and seydewitz_in == "SPD"
 on-arrival: seydewitz_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
 go-to: advisor_menu
 tags: left_advisor
@@ -649,7 +649,7 @@ title: Anna Siemsen
 subtitle: Anna Siemsen is an and educational reform advocate and pacifist, who was one of the few German women to receive a PhD in the pre-war period. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
 is-card: true
 card-image: img/portraits/SiemsenAnna.jpg
-view-if: siemsen_advisor = 0 and n_advisors < 4 and left_split = 0 and uspd_joined >= 1 
+view-if: siemsen_advisor = 0 and n_advisors < 4 and siemsen_in == "SPD"
 on-arrival: siemsen_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
 go-to: advisor_menu
 tags: left_advisor
@@ -661,7 +661,7 @@ title: Georg Ledebour
 subtitle: Georg Ledebour is tobeadded. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the <span style="color: #700000;">**KPD**</span>, Against Toleration ?]
 is-card: true
 card-image: img/portraits/LedebourGeorg.jpg
-view-if: ledebour_advisor = 0 and uspd_joined >= 3 and n_advisors < 4 and left_split = 0
+view-if: ledebour_advisor = 0 and n_advisors < 4 and ledebour_in == "SPD"
 on-arrival: ledebour_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
 go-to: advisor_menu
 tags: left_advisor
@@ -673,7 +673,7 @@ title: Theodor Liebknecht
 subtitle: Theodor Liebknecht is to be added {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the <span style="color: #700000;">**KPD**</span>, Against Toleration ?]
 is-card: true
 card-image: img/portraits/LiebknechtTheodor.jpg
-view-if: liebknecht_advisor = 0 and uspd_joined >= 3 and n_advisors < 4 and left_split = 0
+view-if: liebknecht_advisor = 0 and n_advisors < 4 and liebknecht_in == "SPD"
 on-arrival: liebknecht_advisor = 1; n_advisors += 1; left_strength += 5; left_dissent -= 4
 go-to: advisor_menu
 tags: left_advisor
@@ -690,7 +690,7 @@ subtitle: Theodor Leipart is the leader of the ADGB, the German Trade Union Fede
 is-card: true
 card-image: img/portraits/LeipartTheodor.jpg
 tags: labor_advisor
-view-if: leipart_advisor = 0 and n_advisors < 4 and unions_independent = 0
+view-if: leipart_advisor = 0 and n_advisors < 4 and leipart_in == "SPD"
 on-arrival: leipart_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 8
 go-to: advisor_menu
 
@@ -702,7 +702,7 @@ subtitle: Siegfried Aufhäuser is the leader of the AfA-Bund, the white-collar t
 is-card: true
 card-image: img/portraits/AufhäuserSiegfried.jpg
 tags: labor_advisor
-view-if: aufhauser_advisor = 0 and uspd_joined >= 1 and n_advisors < 4 and not (unions_independent = 1 and left_split = 1)
+view-if: aufhauser_advisor = 0 and n_advisors < 4 and aufhauser_in == "SPD"
 on-arrival: aufhauser_advisor = 1; n_advisors += 1; labor_strength += 5; labor_dissent -= 8
 go-to: advisor_menu
 
@@ -714,7 +714,7 @@ subtitle: Rudolf Wissell is an economist who has been the Labor Minister, and is
 is-card: true
 card-image: img/portraits/WissellRudolf.jpg
 tags: labor_advisor
-view-if: wissell_advisor = 0 and n_advisors < 4 and unions_independent = 0
+view-if: wissell_advisor = 0 and n_advisors < 4 and wissel_in == "SPD"
 on-arrival: wissell_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 4
 go-to: advisor_menu
 
@@ -727,7 +727,7 @@ subtitle: Wladimir Woytinsky is a former Russian Menshevik who is now the lead t
 is-card: true
 card-image: img/portraits/WoytinskyWladimir.jpg
 tags: labor_advisor
-view-if: woytinsky_advisor = 0 and n_advisors < 4 and unions_independent = 0
+view-if: woytinsky_advisor = 0 and n_advisors < 4 and woytinsky_in == "SPD"
 on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 4
 go-to: advisor_menu
 
@@ -740,7 +740,7 @@ subtitle: Fritz Tarnow is a trade union economist with an interest in Economic D
 is-card: true
 card-image: img/portraits/TarnowFritz.jpg
 tags: labor_advisor
-view-if: tarnow_advisor = 0 and n_advisors < 4 and unions_independent = 0
+view-if: tarnow_advisor = 0 and n_advisors < 4 and tarnow_in == "SPD"
 on-arrival: tarnow_advisor = 1; n_advisors += 1; labor_strength += 3; labor_dissent -= 4
 go-to: advisor_menu
 
