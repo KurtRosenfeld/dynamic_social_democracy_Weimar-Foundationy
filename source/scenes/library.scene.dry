@@ -1192,7 +1192,7 @@ Ebert: [+ ebert_in +]
 
 Severing: [+ severing_in +]
 
-Pflüf: [+ pfluf_in +]
+Plülf: [+ pfulf_in +]
 
 Juchaz: [+ juchaz_in +]
 
@@ -1224,6 +1224,10 @@ Leber: [+ leber_in +]
 
 Wirth: [+ wirth_in +]
 
-Stresemann: [+ stresemann_in +]
+Hugenberg: [+ hugenberg_in +]
 
-Koch-Weser: [+ koch-weser_in +]
+DVP: [? if dvp_exists: yes ?][? if lvp_formed: no ?]
+
+DDP: [+ ddp_name +]
+
+LVP: [? if lvp_formed: yes ?][? if dvp_exists: no ?]
