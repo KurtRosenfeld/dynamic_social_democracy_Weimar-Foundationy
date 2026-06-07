@@ -143,6 +143,29 @@ window.disableGrayMode = function() {
     window.dendryUI.saveSettings();
 };
 
+// One-time color application
+function applyPartyColors() {
+    const colors = {
+        uspd: '{{ Q.uspd_colour }}',
+        ddp: '{{ Q.ddp_colour }}',
+        dvp: '{{ Q.dvp_colour }}',
+        dnvp: '{{ Q.dnvp_colour }}',
+    };
+    
+    for (const [party, color] of Object.entries(colors)) {
+        const elements = document.querySelectorAll(`.seat.${party}`);
+        console.log(`Setting ${elements.length} ${party} seats to ${color}`);
+        elements.forEach(seat => seat.style.fill = color);
+    }
+}
+
+// Run when page is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyPartyColors);
+} else {
+    applyPartyColors();
+}
+  
   // populates the checkboxes in the options view
   window.populateOptions = function() {
     var disable_bg = window.dendryUI.disable_bg;
