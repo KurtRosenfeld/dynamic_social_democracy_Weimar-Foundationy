@@ -408,15 +408,15 @@ Catholics: [? if dnef_formed: DNEF: [+ catholics_dnef_display +]%, ?]SPD: [+ cat
 
 = State of the State (currently placeholders)
 
-Women's rights:
+Women's rights: [+ womens_rights +]
 
-Abortion status:
+Abortion status: [+ abortion +]
 
-Average Working Day:
+Average Working Day: 8.5-9 hours, I guess?
 
 Railway status:
 
-Land Ownership: [State% Large Holders% Small Holders%]
+Land Ownership: [State% Large Holders% Small Holders%] ([+ land_reform +])
 
 = Local Governments
 
