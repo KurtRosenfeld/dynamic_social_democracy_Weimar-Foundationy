@@ -54,7 +54,7 @@ on-arrival: ebert_in = "DDP"
 on-arrival: ebert_in = "I"
 
 @aspd
-on-arrvial: ebert_in = "ASPD"
+on-arrival: ebert_in = "ASPD"
 
 @stuulll
 title: Shuffle time
