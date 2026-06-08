@@ -308,7 +308,7 @@ unavailable-subtitle: Our partners don't even consider this option.
 on-arrival:{!
 if (Q.prussia_leader !== "Braun") { 
 Q.chancellor = 'Braun'; 
-Q.chancellor_party = braun_in; 
+Q.chancellor_party = Q.braun_in; 
 } 
 if (Q.prussia_leader == "Braun") { 
 Q.chancellor = 'Müller'; 
