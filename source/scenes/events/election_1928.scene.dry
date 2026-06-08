@@ -3981,7 +3981,7 @@ view-if: muller_dead = 0
 subtitle: Müller is popular within the party, and is the preferred candidate of the [? if not in_social_liberal_coalition: [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?]?][? if in_social_liberal_coalition: [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed:<span style="color: #FFCC00;">**LVP**</span>?]?] and other parties.
 choose-if: not cvp_chancellor_accepted
 unavailable-subtitle: We've promised to forfeit the Chancellorship to the <span style="color: #000000;">[+ z_party_name +]</span>.
-on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = "[+ muller_in +]"; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
+on-arrival: spd_in_government = 1; chancellor = "Müller"; chancellor_party = muller_in; in_grand_coalition = 1 if in_weimar_coalition == 0; leverage += 5 if (in_grand_coalition_prussia and in_grand_coalition)
 go-to: ministries
 
 Müller's appointment as chancellor is approved by all our potential allies.
