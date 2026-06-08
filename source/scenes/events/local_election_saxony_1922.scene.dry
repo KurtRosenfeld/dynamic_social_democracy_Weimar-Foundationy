@@ -28,14 +28,14 @@ The Saxon state elections are to be held now.
 on-arrival: {!
 
 var saxony_adjustment_factors = {
-    spd: 1.53,
+    spd: 1.48,
     uspd: 0.1,
-    kpd: 1.2,
-    ddp: 1.25,
+    kpd: 1.46,
+    ddp: 1.15,
     lvp: 1.28,
     z: 0.05,
-    dvp: 1.31,
-    dnvp: 1.06,
+    dvp: 1.5,
+    dnvp: 1.14,
     nsdap: 0.0,
     other: 0.1,
 };
