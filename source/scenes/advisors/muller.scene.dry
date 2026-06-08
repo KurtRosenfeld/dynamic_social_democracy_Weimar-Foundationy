@@ -18,6 +18,7 @@ Müller is a former [? if chancellor = "Müller": and current ?] Chancellor, and
 - @make_nsfb
 - @kill_nsfb
 - @stuulll
+- @new_prussia_leader
 - @root: Return to main
 
 @coalition
@@ -73,5 +74,21 @@ on-arrival: nsfb_exists = 0; workers_nsdap = workers_nsfb; unemployed_nsdap = un
 
 
 @stuulll
-title: Sfuffle
+title: Shuffle time
 on-arrival: shuffle_leadership_timer = 0
+
+@new_prussia_leader
+title: Choose Prussia Leader
+
+- @stegerwald: Stegerwald
+- @rosenfeld: Rosenfeld
+- @goering: Göring
+
+@stegerwald
+on-arrival: prussia_leader = "Stegerwald"; prussia_leader_party = [+ z_party_name +]
+
+@rosenfeld
+on-arrival: prussia_leader = "Rosenfeld"; prussia_leader_party = rosenfeld_in
+
+@goering
+on-arrival: prussia_leader = "Göring"; prussia_leader_party = NSDAP
