@@ -285,7 +285,7 @@ if (Q.levi_in == "SAPD") Q.levi_colour = Q.sapd_colour;
 if (Q.levi_in == "SB") Q.levi_colour = Q.sb_colour;
 
 if (Q.rosenfeld_in == "SPD") Q.rosenfeld_colour = Q.spd_colour;
-if (Q.rosenfeld_in == "USPD") Q.rosenfled_colour = Q.uspd_colour;
+if (Q.rosenfeld_in == "USPD") Q.rosenfeld_colour = Q.uspd_colour;
 if (Q.rosenfeld_in == "KPD") Q.rosenfeld_colour = Q.kpd_colour;
 if (Q.rosenfeld_in == "SAPD") Q.rosenfeld_colour = Q.sapd_colour;
 if (Q.rosenfeld_in == "SB") Q.rosenfeld_colour = Q.sb_colour;
