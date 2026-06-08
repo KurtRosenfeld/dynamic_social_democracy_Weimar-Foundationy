@@ -72,7 +72,7 @@ A new party programme is surely logical.
 subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> will be pleased by this.
 unavailable-subtitle: Hermann Müller and Otto Wels are already a pivot to our center.
 choose-if: left_strength >= 10
-on-arrival: spd_party_leader_2 = "Breitscheid"; reformist_dissent += 3
+on-arrival: spd_party_leader_2 = "Breitscheid"; reformist_dissent += 3; not_bad_vspd_deal = 1
 go-to: lowest_uspd
 
 Our new leadership election has decided on the ousting of Hermann Müller in favour of Rudolf Breitscheid, a pragmatic, yet principaled internationalist socialist democrat. Otto Wels on the other hand remains firm in his position.
@@ -162,12 +162,13 @@ go-to: sign_vspd
 
 - @low_vspd: The result of the congress...
 - @middle_vspd: The result of the congress...
+- @good_vspd: The result of the congress...
 - @high_vspd: The result of the congress...
 - @kpd_without_moscow: The result of the congress...
 
 @low_vspd
 view-if: new_party_programm == 0 and good_uspd_vspd_deal == 0 and second_kpd_essentially == 0
-on-arrival: uspd_relation -= 45; unemployed_uspd -= 13; unemployed_kpd += 11; workers_spd += 2; workers_uspd -= 4; spd_r = old_spd_r + uspd_r*0.9; uspd_r = uspd_r*0.1; uspd_joined = 2; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"; uspd_ideology = "Spartacism"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"
+on-arrival: uspd_relation -= 45; unemployed_uspd -= 13; unemployed_kpd += 11; workers_spd += 2; workers_uspd -= 4; spd_r = old_spd_r + uspd_r*0.9; uspd_r = uspd_r*0.1; uspd_joined = 2; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"; uspd_ideology = "Spartacism"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"; kautsky_in = "SPD"
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #AA0000;">**USPD**</span> but most can arrannge themselves with the state of how things are.
 
@@ -175,7 +176,17 @@ Many <span style="color: #D47B9B;">**USPD**</span> members are reluctant to join
 
 @middle_vspd
 view-if: new_party_programm == 1 and good_uspd_vspd_deal == 0 and second_kpd_essentially == 0
-on-arrival: left_strength += 5; center_strength += 5; labor_strength += 5; uspd_joined = 2; uspd_relation -= 30;  unemployed_uspd -= 12; unemployed_kpd += 13; workers_spd += 4; workers_uspd -= 5; spd_r = old_spd_r + uspd_r*0.95; uspd_r = uspd_r*0.05; unemployed_kpd = unemployed_kpd + unemployed_uspd*0.7; unemployed_uspd = unemployed_uspd*0.3; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"; uspd_ideology = "Spartacism"; rosenfeld_in = "SPD"; levi_in = "SPD"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"
+on-arrival: left_strength += 5; center_strength += 5; labor_strength += 5; uspd_joined = 2; uspd_relation -= 30;  unemployed_uspd -= 12; unemployed_kpd += 13; workers_spd += 4; workers_uspd -= 5; spd_r = old_spd_r + uspd_r*0.95; uspd_r = uspd_r*0.05; unemployed_kpd = unemployed_kpd + unemployed_uspd*0.7; unemployed_uspd = unemployed_uspd*0.3; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"; uspd_ideology = "Spartacism"; rosenfeld_in = "SPD"; levi_in = "SPD"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"; kautsky_in = "SPD"
+
+Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #D47B9B;">**USPD**</span> but most can settle themselves with the state of things as they are.
+
+Many <span style="color: #D47B9B;">**USPD**</span> members are reluctant to join but see no other alternatives. Many join the <span style="color: #700000;">**KPD**</span> instead with only a tiny rest remaining in the "Rest-<span style="color: #D47B9B;">**USPD**</span>".
+
+The promise of adopting a new programm eventually helps a lot with reconciliation, though we have yet to see how our bourgeois allies will react to that.
+
+@middle_vspd
+view-if: new_party_programm == 1 and not_bad_vspd_deal
+on-arrival: left_strength += 7; center_strength += 10; labor_strength += 6; uspd_joined = 2; uspd_relation -= 25; workers_spd += 5; workers_uspd -= 6; spd_r = old_spd_r + uspd_r*0.96; uspd_r = uspd_r*0.04; unemployed_kpd = unemployed_kpd + unemployed_uspd*0.8; unemployed_uspd = unemployed_uspd*0.2; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"; uspd_ideology = "Spartacism"; rosenfeld_in = "SPD"; levi_in = "SPD"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"; kautsky_in = "SPD"
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: #c00000;">**MSPD**</span> than the <span style="color: #D47B9B;">**USPD**</span> but most can settle themselves with the state of things as they are.
 
@@ -185,7 +196,7 @@ The promise of adopting a new programm eventually helps a lot with reconciliatio
 
 @high_vspd
 view-if: good_uspd_vspd_deal == 1
-on-arrival: coalition_dissent += 1; unemployed_spd += 2; old_middle_spd -= 3; new_middle_spd -= 3*(1-dissent); left_dissent -= 15; reformist_dissent += 25; kpd_relation += 10; left_strength += 20; new_party_programm += 1; center_relation -= 8; ddp_relation -= 5; dvp_relation -= 15; uspd_joined = 2; uspd_relation += 5; unemployed_uspd -= 15; unemployed_kpd += 2; unemployed_spd += 14; spd_r = old_spd_r + uspd_r*0.95; uspd_r = uspd_r*0.05; workers_spd = workers_spd + workers_uspd*0.9; workers_uspd = workers_uspd*0.1; unemployed_spd = unemployed_spd + unemployed_uspd*0.9; unemployed_uspd -= 4; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"; uspd_ideology = "Spartacism"; rosenfeld_in = "SPD"; levi_in = "SPD"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"
+on-arrival: coalition_dissent += 1; unemployed_spd += 2; old_middle_spd -= 3; new_middle_spd -= 3*(1-dissent); left_dissent -= 15; reformist_dissent += 25; kpd_relation += 10; left_strength += 20; new_party_programm += 1; center_relation -= 8; ddp_relation -= 5; dvp_relation -= 15; uspd_joined = 2; uspd_relation += 5; unemployed_uspd -= 15; unemployed_kpd += 2; unemployed_spd += 14; spd_r = old_spd_r + uspd_r*0.95; uspd_r = uspd_r*0.05; workers_spd = workers_spd + workers_uspd*0.9; workers_uspd = workers_uspd*0.1; unemployed_spd = unemployed_spd + unemployed_uspd*0.9; unemployed_uspd -= 4; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"; uspd_ideology = "Spartacism"; rosenfeld_in = "SPD"; levi_in = "SPD"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"; kautsky_in = "SPD"
 
 Our new <span style="color: #c00000;">**VSPD**</span> is signed into existance. It seems it is more of a continuation of the <span style="color: #D47B9B;">**USPD**</span> than the <span style="color: #c00000;">**MSPD**</span>. Let's hope it will survive longer than the last one.
 
@@ -195,7 +206,7 @@ We hope for the best.
 
 @kpd_without_moscow
 view-if: second_kpd_essentially == 1
-on-arrival: coalition_dissent += 5; unemployed_spd += 5; new_middle_spd -= 3*(1-dissent); old_middle_spd -= 5; left_dissent -= 55; reformist_dissent += 45; kpd_relation += 25; left_strength += 25; new_party_programm += 1; center_relation -= 20; ddp_relation -= 15; dvp_relation -= 45; uspd_joined = 3; spd_r = old_spd_r + uspd_r; uspd_r = 0; unemployed_spd = unemployed_spd + unemployed_uspd; unemployed_uspd = 0; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; new_middle_spd = new_middle_spd + new_middle_uspd; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "gone"; ledebour_in = "SPD"; liebknecht_in = "SPD"; rosenfeld_in = "SPD"; levi_in = "SPD"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"
+on-arrival: coalition_dissent += 5; unemployed_spd += 5; new_middle_spd -= 3*(1-dissent); old_middle_spd -= 5; left_dissent -= 55; reformist_dissent += 45; kpd_relation += 25; left_strength += 25; new_party_programm += 1; center_relation -= 20; ddp_relation -= 15; dvp_relation -= 45; uspd_joined = 3; spd_r = old_spd_r + uspd_r; uspd_r = 0; unemployed_spd = unemployed_spd + unemployed_uspd; unemployed_uspd = 0; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; new_middle_spd = new_middle_spd + new_middle_uspd; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "gone"; ledebour_in = "SPD"; liebknecht_in = "SPD"; rosenfeld_in = "SPD"; levi_in = "SPD"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"; kautsky_in = "SPD"
 
 Even the most radical members like Georg Ledebour have agreed to the merger!
 
