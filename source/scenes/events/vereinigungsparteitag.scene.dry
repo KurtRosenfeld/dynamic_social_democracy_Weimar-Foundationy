@@ -184,7 +184,7 @@ Many <span style="color: #D47B9B;">**USPD**</span> members are reluctant to join
 
 The promise of adopting a new programm eventually helps a lot with reconciliation, though we have yet to see how our bourgeois allies will react to that.
 
-@middle_vspd
+@good_vspd
 view-if: new_party_programm == 1 and not_bad_vspd_deal
 on-arrival: left_strength += 7; center_strength += 10; labor_strength += 6; uspd_joined = 2; uspd_relation -= 25; workers_spd += 5; workers_uspd -= 6; spd_r = old_spd_r + uspd_r*0.96; uspd_r = uspd_r*0.04; unemployed_kpd = unemployed_kpd + unemployed_uspd*0.8; unemployed_uspd = unemployed_uspd*0.2; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"; uspd_ideology = "Spartacism"; rosenfeld_in = "SPD"; levi_in = "SPD"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"; kautsky_in = "SPD"
 
