@@ -47,7 +47,7 @@ title: Choose Prussia Leader
 - @goering: Göring
 
 @stegerwald
-on-arrival: prussia_leader = "Stegerwald"; prussia_leader_party = [+ z_party_name +]
+on-arrival: prussia_leader = "Stegerwald"; prussia_leader_party = z_party_name
 
 @rosenfeld
 on-arrival: prussia_leader = "Rosenfeld"; prussia_leader_party = rosenfeld_in
