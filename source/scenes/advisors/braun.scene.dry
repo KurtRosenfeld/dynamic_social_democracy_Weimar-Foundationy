@@ -7,7 +7,7 @@ new-page: true
 
 = Otto Braun
 
-Braun [? if prussia_leader = "Braun": is ?][? if prussia_leader != "Braun" : was ?] the Minister-President of Prussia, the largest state in Germany. He is a reformist leader who seeks to work with the bourgeois parties.
+Originally an <span style="color: #000000;">Anarchist</span> Braun used to occupy a spot on the <span style="color: #700000;">far-left</span> of the <span style="color: #c00000;">**SPD**</span>. In his pragmatic search for ways to pass a landreform in Prussia, he became open towards parliamentary means preferring stable majorities. Braun [? if prussia_leader = "Braun": is ?][? if prussia_leader != "Braun" : was ?] the Minister-President of Prussia, the largest state in Germany. His life is not only marked by an obsession with constant work but also a patriotic love for Prussia and hunting in the forests.
 
 - @coalition
 - @coalition_president
