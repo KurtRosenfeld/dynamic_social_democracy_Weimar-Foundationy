@@ -678,7 +678,7 @@ go-to: achievement_check_1
 Otto Braun of the <span style="color: #c00000;">**SPD**</span> has won the presidency! This is a moment of celebration for our party, and his victory is able to bolster our support.
 
 @rosenfeld_wins
-on-arrival: president = "Rosenfeld"; president_party = "[+ rosenfeld_in +]; president_ideology = "Left"; center_dissent -= 5; labor_dissent -= 5; left_dissent -= 15; left_strength += 20; workers_spd += 9*(1-dissent); unemployed_spd += 6*(1-dissent); coup_progress += 4; capital_strike_progress += 4
+on-arrival: president = "Rosenfeld"; president_party = "[+ rosenfeld_in +]"; president_ideology = "Left"; center_dissent -= 5; labor_dissent -= 5; left_dissent -= 15; left_strength += 20; workers_spd += 9*(1-dissent); unemployed_spd += 6*(1-dissent); coup_progress += 4; capital_strike_progress += 4
 go-to: achievement_check_1
 
 Kurt Rosenfeld of the [? if not left_split: <span style="color: #c00000;">**SPD**</span>?][? if left_split: <span style="color: #9B0000;">**SAPD**</span>?] has won the presidency! This is a moment of celebration for our party, and his victory is able to bolster our support.
