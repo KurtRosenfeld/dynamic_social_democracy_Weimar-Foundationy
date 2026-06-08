@@ -53,14 +53,14 @@ on-arrival: prussia_leader = "Stegerwald"; prussia_leader_party = z_party_name
 on-arrival: prussia_leader = "Rosenfeld"; prussia_leader_party = rosenfeld_in
 
 @goering
-on-arrival: prussia_leader = "Göring"; prussia_leader_party = NSDAP
+on-arrival: prussia_leader = "Göring"; prussia_leader_party = "NSDAP"
 
 @new_chancellor
 title: Choose Chancellor
 
-- @breitscheid
-- @liebknecht
-- @stresemann
+- @breitscheid: Breitscheid
+- @liebknecht: Liebknecht
+- @stresemann: Stresemann
 
 @breitscheid
 on-arrival: chancellor = "Breitscheid"; chancellor_party = breitscheid_in
