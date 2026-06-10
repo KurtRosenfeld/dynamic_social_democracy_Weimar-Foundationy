@@ -345,7 +345,7 @@ Ordnungsbund (<span style="color: #000000;">**[+ z_party_name +]**</span> + [? i
 title: [? if uspd_r_thuringia >= 1: Maybe return to the <span style="color: [+ spd_colour +];">**Red**</span>-<span style="color: [+ uspd_colour +];">**Red**</span>-<span style="color: [+ kpd_colour +];">**Red**</span> Coalition?? ?][? if uspd_r_thuringia == 0: Maybe return to the <span style="color: #c00000;">**Red**</span>-<span style="color: #700000;">**Red**</span> Coalition? ?]
 subtitle: Are we sure want to do this again?
 unavailable-subtitle: This could not even work if we had the seats...
-choose-if: left_coalition_saxony >= 50 and kpd_relation >= 35
+choose-if: left_coalition_thuringia >= 50 and kpd_relation >= 35
 on-arrival: thuringia_gov = "Left"; ddp_relation -= 8; z_relation -= 10; dvp_relation -= 12; workers_kpd += 3; workers_spd += 1; kpd_relation += 10; uspd_relation += 5
 
 Against every expectation we were able to form a new coalition with the <span style="color: [+ kpd_colour +];">**KPD**</span>!
@@ -353,7 +353,7 @@ Against every expectation we were able to form a new coalition with the <span st
 @bourgeois_coalition_thuringia
 title: A Bourgeois Coalition of the <span style="color: #0D2AC9;">**Ordnungbund**</span>
 subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> will lead the coalition.
-view-if: bl_r_saxony >= 50
+view-if: bl_r_thuringia >= 50
 on-arrival: thuringia_gov = "Bourgeois-Right"; workers_other += 3; rural_other += 1; workers_spd -= 1
 
 The Bourgeois form a united front to keep us out of power.
@@ -361,7 +361,7 @@ The Bourgeois form a united front to keep us out of power.
 @far_right_abstention_thuringia
 title: A Bourgeois Coalition of the <span style="color: #0D2AC9;">**Ordnungbund**</span>
 subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> will lead the coalition.
-choose-if: far_right_abstention_thuringia >= 50 and bl_r_saxony < 50
+choose-if: far_right_abstention_thuringia >= 50 and bl_r_thuringia < 50
 on-arrival: thuringia_gov = "Bourgeois-Right"; workers_other += 3; rural_other += 1; workers_spd -= 1; new_middle_nsfb += 3; workers_nsfb += 1; unemployed_nsfb -= 1
 
 The Bourgeois form a united front to keep us out of power. Even the United Völkisch List abstains to prevent any chance for us form a government...
