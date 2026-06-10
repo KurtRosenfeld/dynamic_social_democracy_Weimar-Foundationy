@@ -184,12 +184,12 @@ Q.sh_strength = 500;
 Q.sh_militancy = 0.5;
 Q.sh_banned = 0;
 Q.sh_banned_prussia = 0;
-Q.sa_strength = 30;
-Q.sa_militancy = 0.8;
+Q.sa_strength = 20;
+Q.sa_militancy = 0.7;
 Q.sa_banned = 0;
 Q.sa_banned_prussia = 0;
-Q.rfb_strength = 130;
-Q.rfb_militancy = 0.5;
+Q.rfb_strength = 55;
+Q.rfb_militancy = 0.2;
 Q.rfb_banned = 0;
 Q.rfb_banned_prussia = 0;
 
