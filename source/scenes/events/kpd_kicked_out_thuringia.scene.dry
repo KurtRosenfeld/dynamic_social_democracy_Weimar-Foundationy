@@ -4,8 +4,8 @@ is-card: true
 priority: 1
 max-visits: 1
 face-image: img/portraits/FrölichAugust.jpg
-on-arrival: kpd_relation -= 4; unemployed_spd -= 2
-view-if: saxony_gov == "SPD" and freiberg_bloodbath_seen == 1 and month == 11
+on-arrival: kpd_relation -= 6; unemployed_spd -= 2; workers_uspd += 1
+view-if: german_october_seen == 1 and month == 11
 new-page: true
 
 = <span style="color: [+ kpd_colour +];">**KPD**</span> ministers removed from the coalition
