@@ -1,0 +1,14 @@
+title: Saxon Zeigner Cabinet formed
+subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> supports our new cabinet!
+tags: event
+is-card: true
+on-arrival: kpd_relation += 3; workers_kpd += 2; z_relation -= 3; ddp_relation -= 3; dvp_relation -= 3
+face-image: img/portraits/ZeignerErich.jpg
+view-if: (saxony_gov == "SPD" or saxony_gov == "Social Democratic") and year == 1923 and month == 3
+new-page: true
+
+= Saxon Zeigner Cabinet formed
+
+The former justice minister Erich Zeigner (<span style="color: [+ spd_colour +];">**SPD**</span>) - one of our most left-wing party members - has won the support of the <span style="color: [+ kpd_colour +];">**KPD**</span> for his new cabinet. Most ministers of Buck III have remained (exept Lipinski).
+
+It appears as if one of our delegates voted for the candidate of the <span style="color: [+ dvp_colour +];">**DVP**</span>... This is... alarming?
