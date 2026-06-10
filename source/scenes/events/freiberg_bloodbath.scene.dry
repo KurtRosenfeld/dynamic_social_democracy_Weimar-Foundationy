@@ -1,0 +1,15 @@
+title: Bloodbath of Freiberg
+subtitle: The Reichswehr has gone too far...
+tags: event
+is-card: true
+priority: 1
+on-arrival: workers_kpd += 1; freiberg_bloodbath_seen = 1
+face-image: img/Freiberg_Bloodbath.jpg
+view-if: german_october_seen == 1 and freiberg_bloodbath_seen = 0
+new-page: true
+
+= Bloodbath of Freiberg
+
+After a serious of violent encounters between Reichswehr and workers as well as mutual harrasment the local <span style="color: [+ spd_colour +];">**SPD**</span> decided to call for a general strike in the city.
+
+Around a thousand people have assembled in the city center to protest against the arrival of a new Reichswehr convoy. Workers threw rocks at soldiers and tried to block a postal station where a troup happened to be. The Reichswehr opened fire on the assemebled citizens citing self denfense - around thirty people have died, eighty were wounded.
