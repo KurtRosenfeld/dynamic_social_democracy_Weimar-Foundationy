@@ -2607,7 +2607,7 @@ is-deck: true
 @local_govt
 title: Local Government Affairs
 view-if: time >= 8
-card-image: img/map_2.jpg
+card-image: img/map_3.jpg
 is-deck: true
 
 - #local_govt_affairs
