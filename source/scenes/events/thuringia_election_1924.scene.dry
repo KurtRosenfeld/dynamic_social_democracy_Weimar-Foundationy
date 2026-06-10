@@ -336,7 +336,7 @@ Ordnungsbund (<span style="color: #000000;">**[+ z_party_name +]**</span> + [? i
 
 - @far_right_abstention_thuringia
 - @bourgeois_coalition_thuringia
-- @united_left_thuringia
+- @united_left_coalition_thuringia
 
 @united_left_coalition_thuringia
 title: [? if uspd_r_thuringia >= 1: Maybe return to the <span style="color: [+ spd_colour +];">**Red**</span>-<span style="color: [+ uspd_colour +];">**Red**</span>-<span style="color: [+ kpd_colour +];">**Red**</span> Coalition?? ?][? if uspd_r_thuringia == 0: Maybe return to the <span style="color: #c00000;">**Red**</span>-<span style="color: #700000;">**Red**</span> Coalition? ?]
