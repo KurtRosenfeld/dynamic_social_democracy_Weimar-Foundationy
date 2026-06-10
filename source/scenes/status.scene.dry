@@ -286,9 +286,13 @@ Q.sa_strength_2 = Q.sa_strength.toFixed(1);
 
 <span style="color: [+ spd_colour +];">**Reichsbanner**</span> Militarization: [+ rb_militancy : militancy +]
 
-<span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD." style="color: [+ kpd_colour +];">**RFB**</span> Strength: [+ rfb_strength_2 +] thousand
+[? if year <= 1924: <span class="tooltip-text" title="The Proletarische Hundertschaften are communist militias associated with the KPD." style="color: [+ kpd_colour +];">**PH**</span> Strength: [+ rfb_strength_2 +] thousand ?]
 
-<span style="color: [+ kpd_colour +];">**RFB**</span> Militarization: [+ rfb_militancy : militancy +]
+[? if year <= 1924: <span style="color: [+ kpd_colour +];">**PH**</span> Militarization: [+ rfb_militancy : militancy +] ?]
+
+[? if year >= 1924: <span class="tooltip-text" title="The RFB (Rotfrontkämpferbund) is a communist group associated with the KPD." style="color: [+ kpd_colour +];">**RFB**</span> Strength: [+ rfb_strength_2 +] thousand ?]
+
+[? if year >= 1924: <span style="color: [+ kpd_colour +];">**RFB**</span> Militarization: [+ rfb_militancy : militancy +] ?]
 
 <span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the DNVP." style="color: [+ dnvp_colour +];">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
 
