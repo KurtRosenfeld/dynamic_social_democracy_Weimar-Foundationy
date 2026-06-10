@@ -2,7 +2,8 @@ title: Saxon Zeigner Cabinet formed
 subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> supports our new cabinet!
 tags: event
 is-card: true
-on-arrival: kpd_relation += 3; workers_kpd += 2; z_relation -= 3; ddp_relation -= 3; dvp_relation -= 3
+max-visits: 1
+on-arrival: kpd_relation += 3; workers_kpd += 1; z_relation -= 2; ddp_relation -= 2; dvp_relation -= 2
 face-image: img/portraits/ZeignerErich.jpg
 view-if: (saxony_gov == "SPD" or saxony_gov == "Social Democratic") and year == 1923 and month == 3
 new-page: true
