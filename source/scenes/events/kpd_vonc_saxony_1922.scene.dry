@@ -2,6 +2,7 @@ title: Saxony cabinet ousted!
 subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> calls a vote of no confidence against our government in Saxony
 tags: event
 is-card: true
+max-visits: 1
 priority: 3
 face-image: img/portraits/BuckWilhelm.jpg
 view-if: (saxony_gov == "SPD" or saxony_gov == "Social Democratic") and year == 1923 and month == 1
