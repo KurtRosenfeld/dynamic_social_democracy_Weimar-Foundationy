@@ -1280,6 +1280,7 @@ max-cards: 3
 
 - @party
 - @govt
+- @local_govt
 - @eco
 - @time
 - @time_2
@@ -2580,6 +2581,7 @@ max-cards: 4
 
 - @party
 - @govt
+- @local_govt
 - @eco
 - @time
 - @time_2
@@ -2601,6 +2603,14 @@ card-image: img/reichstag_2.jpg
 is-deck: true
 
 - #govt_affairs
+
+@local_govt
+title: Local Government Affairs
+view-if: time >= 8
+card-image: img/map_2.jpg
+is-deck: true
+
+- #local_govt_affairs
 
 @time
 title: Bide our Time
