@@ -1,0 +1,11 @@
+title: Saxony
+new-page: true
+is-card: true
+view-if: saxony_action_timer = 0
+on-arrival: saxony_action_timer += 12; saxony_action_timer += 4 if saxony_gov == "Weimar"; month_actions += 1
+tags: local_govt_affairs
+card-image: img/land/Saxony.svg.webp
+
+= Saxony
+
+Whatever
