@@ -1,0 +1,14 @@
+title: Saxony cabinet ousted!
+subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> calls a vote of no confidence against our government in Saxony
+tags: event
+is-card: true
+priority: 3
+face-image: img/portraits/BuckWilhelm.jpg
+view-if: (saxony_gov == "SPD" or saxony_gov == "Social Democratic") and year == 1923 and month == 1
+new-page: true
+
+= Saxony cabinet ousted!
+
+The <span style="color: [+ kpd_colour +];">**KPD**</span> has withdrawn its support from our coalition in Saxony and decided to call a vote of no confidence to remove the interior minister Richard Lipinski ([? if uspd_joined >= 1: <span style="color: [+ spd_colour +];">**SPD**</span>?][? if uspd_joined <= 0: <span style="color: [+ uspd_colour +];">**USPD**</span>?]) becausse of his policies considered to be hostile to workers.
+
+With no support for Buck and no support for any other minister president. A new round of elections will be called soon.
