@@ -1,0 +1,52 @@
+title: Zeigner Cabinet on the line!
+subtitle: <span style="color: [+ ebert_colour +];">Ebert</span> calls on Zeigner to shuffle his cabinet in favour of the <span style="color: [+ ddp_colour +];">**DDP**</span> and ousting the <span style="color: [+ kpd_colour +];">**KPD**</span>
+tags: event
+is-card: true
+priority: 1
+face-image: img/portraits/ZeignerErich.jpg
+view-if: freiberg_bloodbath_seen = 1
+new-page: true
+
+= Zeigner Cabinet on the line!
+
+<span style="color: [+ ebert_colour +];">Ebert</span> calls on Zeigner to shuffle his cabinet in favour of the <span style="color: [+ ddp_colour +];">**DDP**</span> and ousting the <span style="color: [+ kpd_colour +];">**KPD**</span>. <span style="color: [+ ebert_colour +];">Ebert</span> shows himself ready to make use of any means to remove the <span style="color: [+ kpd_colour +];">**KPD**</span> from power.
+
+- @zeigner_refuses: Zeigner refuses.
+
+@zeigner_refuses
+
+Zeigner will not reshuffle his cabinet or betray the <span style="color: [+ kpd_colour +];">**KPD**</span>. The actions of the Reichswehr and by extention the national government and <span style="color: [+ spd_colour +];">**SPD**</span> that stand behind reactionaries but not their own party are outraging on their own, Zeigner shows no interest in any appeal made by <span style="color: [+ ebert_colour +];">Ebert</span>...
+
+- @killer_ebert: Then it will be a Reichsexekution...
+
+@killer_ebert
+on-arrival: thuringia_gov = "SPD"; saxony_gov = "SPD"
+
+The government of Saxony has been deposed. A new prime minister must be elected.
+
+- @spd_minority: Another <span style="color: [+ spd_colour +];">**SPD**</span> minority government?
+- @social_liberal: A coalition with the <span style="color: [+ ddp_colour +];">**DDP**</span>?
+- @bourgeois_cabinet: We will not play this game and vote against any proposal.
+
+@spd_minority
+choose-if: kpd_relation >= 10000000
+unavailable-subtitle: There is no faction that will tolerate us.
+
+@social_liberal
+subtitle: This is our only hope for maintaining our rule of Saxony...
+on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 3; workers_kpd += 2; ddp_relation += 2
+
+Alfred Fellisch (<span style="color: [+ spd_colour +];">**SPD**</span>) is elected to be the new prime minister. It appears the <span style="color: [+ kpd_colour +];">**KPD**</span> has abstained, the <span style="color: [+ dnvp_colour +];">**DNVP**</span> didn't attend the election at all.
+
+@bourgeois_cabinet
+subtitle: This will result in a coalition of the liberal parties.
+on-arrival: saxony_gov = "Bourgeois"; workers_spd -= 1; workers_kpd += 1; ddp_relation -= 2
+
+Friedrich Kaiser (<span style="color: [+ dvp_colour +];">**DVP**</span>) is elected to be the new prime minister. His coalition depends on the support of the <span style="color: [+ dnvp_colour +];">**DNVP**</span>.
+
+
+
+
+
+
+  
