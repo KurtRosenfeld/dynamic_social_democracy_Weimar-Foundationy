@@ -123,7 +123,7 @@ Q.dnvp_thuringia_elections_vote = (Q.dnvp_thuringia_elections_vote != undefined 
 Q.nsdap_thuringia_elections_vote = (Q.nsdap_thuringia_elections_vote != undefined ? parseFloat(Q.nsdap_thuringia_elections_vote.toFixed(1)) : 0);
 Q.nsfb_thuringia_elections_vote = (Q.nsfb_thuringia_elections_vote != undefined ? parseFloat(Q.nsfb_thuringia_elections_vote.toFixed(1)) : 0);
 Q.other_thuringia_elections_vote = (Q.other_thuringia_elections_vote != undefined ? parseFloat(Q.other_thuringia_elections_vote.toFixed(1)) : 0);
-
+Q.bl_thuringia_elections_vote = (Q.bl_thuringia_elections_vote != undefined ? parseFloat(Q.bl_thuringia_elections_vote.toFixed(1)) : 0);
 
 Q.bl_thuringia_elections_vote = Q.ddp_thuringia_elections_vote + Q.z_thuringia_elections_vote + Q.dvp_thuringia_elections_vote + Q.dnvp_thuringia_elections_vote;
              
@@ -221,6 +221,7 @@ for (const party in allocatedSeats) {
 
 Q.left_coalition_thuringia = parseFloat((Q.spd_r_thuringia + Q.kpd_r_thuringia + Q.uspd_r_thuringia).toFixed(1));
 Q.far_right_abstention_thuringia = parseFloat((Q.bl_r_thuringia + Q.nsfb_r_thuringia + Q.nsdap_r_thuringia).toFixed(1));
+Q.ordnungsbund = parseFloat((Q.bl_r_thuringia).toFixed(1));
 
 !}
 on-display: {!
@@ -327,7 +328,7 @@ Thuringia used to be ruled by left coalitions up to now.
 <hr id="read-marker">
 United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <span style="color: [+ kpd_colour +];">**KPD**</span>[? if uspd_r_thuringia >= 1: + <span style="color: [+ uspd_colour +];">**USPD**</span>?]): [+ left_coalition_thuringia +]% 
 
-Ordnungsbund (<span style="color: #000000;">**[+ z_party_name +]**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #006400;">**LB**</span>): [+ lb_r_thuringia +]%
+Ordnungsbund (<span style="color: #000000;">**[+ z_party_name +]**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #006400;">**LB**</span>): [+ ordnungsbund +]%
 
 @thuringia_coalition_menu
 
