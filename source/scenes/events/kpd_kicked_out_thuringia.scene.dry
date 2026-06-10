@@ -1,0 +1,13 @@
+title: <span style="color: [+ kpd_colour +];">**KPD**</span> ministers removed from the coalition
+subtitle: It has gotten too dangereous...
+is-card: true
+priority: 1
+max-visits: 1
+face-image: img/portraits/FrölichAugust.jpg
+on-arrival: kpd_relation -= 4; unemployed_spd -= 2
+view-if: saxony_gov == "SPD" and freiberg_bloodbath_seen == 1 an month == 11
+new-page: true
+
+= <span style="color: [+ kpd_colour +];">**KPD**</span> ministers removed from the coalition
+
+To prevent the Reichsexekution of Thuringia Fröhlich decided to expell the <span style="color: [+ kpd_colour +];">**KPD**</span> ministers from his coalition. Since the next election is scheudeld for Feburary of 1924 the government will remain in a caretaker position. We expect an electoral disaster...
