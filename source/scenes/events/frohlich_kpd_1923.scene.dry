@@ -3,7 +3,7 @@ tags: event
 is-card: true
 priority: 1
 on-arrival: kpd_relation += 3; unemployed_kpd += 2; z_relation -= 3; ddp_relation -= 2; dvp_relation -= 4; thuringia_gov = "Left"
-face-image: img/portraits/ZeignerErich.jpg
+face-image: img/portraits/FrölichAugust.jpg
 view-if: (thuringia_gov == "SPD" or thuringia_gov == "Social Democratic") and year == 1923 and month == 10
 new-page: true
 
