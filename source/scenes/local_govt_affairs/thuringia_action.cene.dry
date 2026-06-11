@@ -1,0 +1,30 @@
+title: Thuringia
+new-page: true
+is-card: true
+view-if: thuringia_action_timer = 0 and (thuringia_gov == "SPD" or thuringia_gov == "Social-Democratic" or thuringia_gov == "Left" or thuringia_gov == "Social-Liberal" or thuringia_gov == "Weimar" thuringia_gov == "Grand")
+on-arrival: thuringia_action_timer += 12; thuringia_action_timer += 2 if thuringia_gov == "Left"; thuringia_action_timer += 4 if thuringia_gov == "Weimar"; thuringia_action_timer += 5 if thuringia_gov == "Grand"; month_actions += 1
+tags: local_govt_affairs
+card-image: img/land/Thuringia.svg.webp
+
+= Saxony
+
+[? if not thuringia_gov == "SPD": We are part of the current cabinet in Thuringia ?][? if thuringia_gov == "SPD": We are the current government of Thuringia ?]
+
+- @reform_the_administration
+- @fund_workers_militias
+- @give_tax_breaks_to_local_buisnesses
+
+
+@reform_the_administration
+title: Reform the administration of Thuringia
+on-arrival: thuringia_reform += 1
+
+@fund_workers_militias
+title: Fund worker's militias
+on-arrival: rfb_strength += 1; kpd_relation += 5
+choose-if: thuringia_gov == "SPD" or thuringia_gov == "Social-Democratic" or thuringia_gov == "Left"
+
+@give_tax_breaks_to_local_buisnesses
+title: Give tax breaks to local buisnesses
+on-arrival: ddp_relation += 5; dvp_relation += 5; old_middle_spd += 3; workers_spd -= 2
+choose-if: not (thuringia_gov == "Social-Democratic" or thuringia_gov == "Left")
