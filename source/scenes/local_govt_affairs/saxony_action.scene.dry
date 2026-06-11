@@ -1,7 +1,7 @@
 title: Saxony
 new-page: true
 is-card: true
-view-if: saxony_action_timer = 0 and (saxony_gov == "SPD" or saxony_gov == "Social-Democratic" or saxony_gov == "Left" or saxony_gov == "Social-Liberal" or saxony_gov == "Weimar" saxony_gov == "Grand")
+view-if: saxony_action_timer = 0 and (saxony_gov == "SPD" or saxony_gov == "Social-Democratic" or saxony_gov == "Left" or saxony_gov == "Social-Liberal" or saxony_gov == "Weimar" or saxony_gov == "Grand")
 on-arrival: saxony_action_timer += 12; saxony_action_timer += 2 if saxony_gov == "Left"; saxony_action_timer += 4 if saxony_gov == "Weimar"; saxony_action_timer += 5 if saxony_gov == "Grand"; month_actions += 1
 tags: local_govt_affairs
 card-image: img/land/Saxony.svg.webp
