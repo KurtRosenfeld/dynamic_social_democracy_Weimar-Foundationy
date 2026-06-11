@@ -39,7 +39,7 @@ We have definitively broken with the [+ chancellor +] government, and have voted
 
 @support_cuno
 subtitle: There is no other option but to tolerate <span style="color: [+ i_colour +];">**Cuno**</span>.
-view-if: spd_toleration == 0 and spd_in_governemt == 0
+view-if: spd_toleration == 0 and spd_in_government == 0
 on-arrival: workers_dvfb += 1; workers_kpd += 2; unemployed_nsdap += 2; workers_spd -= 3; pro_republic -= 2; kpd_relation -= 4; unemployed_kpd += 2; cuno_bitching_timer = 3
 
 
@@ -48,7 +48,7 @@ Our policy of toleration continues.
 
 @slap_cuno
 subtitle: This is likely to result in a new government.
-view-if: spd_toleration == 0 and spd_in_governemt == 0
+view-if: spd_toleration == 0 and spd_in_government == 0
 on-arrival:  dvp_relation -= 5; z_relation -= 5; ddp_relation -= 3; dnvp_cuno_support -= 2
 on-departure: cuno_slapped = 1 if dnvp_cuno_support <= 0; chancellor = "vacant" if dnvp_cuno_support <= 0
 
@@ -64,7 +64,7 @@ The coalition continues.
 
 
 @leave_cuno
-view-if: spd_in_governemt == 1
+view-if: spd_in_government == 1
 on-arrival:  dvp_relation -= 7; z_relation -= 6; ddp_relation -= 5; dnvp_cuno_support -= 1; spd_in_government = 0
 on-departure: cuno_slapped = 1 if dnvp_cuno_support <= 0; chancellor = "vacant" if dnvp_cuno_support <= 0
 
