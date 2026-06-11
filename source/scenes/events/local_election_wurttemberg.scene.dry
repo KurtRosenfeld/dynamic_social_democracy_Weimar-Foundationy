@@ -211,7 +211,7 @@ if (Q.total_r_wurttemberg > 0) {
 
 let wbwb_share = 1.0;
 if (Q.csvd_exists) wbwb_share -= 0.15;
-if (Q.chancellor_party == "SPD") wp_share -= 0.01;
+if (Q.chancellor_party == "SPD") wbwb_share -= 0.01;
 let csvd_share = 0.0;
 if (Q.csvd_exists) csvd_share += 0.16;
 let vrp_share = 0.0;
@@ -225,7 +225,7 @@ vrp_share = (vrp_share /total_share);
 
 
 Q.wbwb_wurttemberg_elections_vote = Q.other_wurttemberg_elections_vote*wbwb_share;
-Q.wp_r_wurttemberg = Q.other_r_wurttemberg*wp_share;
+Q.wbwb_r_wurttemberg = Q.other_r_wurttemberg*wbwb_share;
 
 Q.csvd_wurttemberg_elections_vote = Q.other_wurttemberg_elections_vote*csvd_share;
 Q.csvd_r_wurttemberg = Q.other_r_wurttemberg*csvd_share;
@@ -286,10 +286,10 @@ for (const party in allocatedSeats) {
     Q[party] = parseFloat(((allocatedSeats[party] * 100) / 80).toFixed(1));
 }
 
-Q.other_r_wurttemberg = Q.wp_r_wurttemberg + Q.vrp_r_wurttemberg + Q.csvd_r_wurttemberg;
+Q.other_r_wurttemberg = Q.wbwb_r_wurttemberg + Q.vrp_r_wurttemberg + Q.csvd_r_wurttemberg;
 
 Q.left_coalition_wurttemberg = parseFloat((Q.spd_r_wurttemberg + Q.kpd_r_wurttemberg + Q.sapd_r_wurttemberg + Q.uspd_r_wurttemberg).toFixed(1));
-Q.grand_coalition_wurttemberg = parseFloat((Q.ddp_r_wurttemberg + Q.csvd_r_wurttemberg + Q.lvp_r_wurttemberg + Q.spd_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
+Q.grand_coalition_wurttemberg = parseFloat((Q.ddp_r_wurttemberg + Q.dvp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.spd_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
 Q.right_coalition_wurttemberg = parseFloat((Q.dnvp_r_wurttemberg + Q.nsdap_r_wurttemberg + Q.vrp_r_wurttemberg).toFixed(1));
 Q.true_bourgeois_coalition_wurttemberg = parseFloat((Q.ddp_r_wurttemberg + Q.dvp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.kvp_r_wurttemberg + Q.wbwb_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
 Q.weimar_coalition_wurttemberg = parseFloat((Q.spd_r_wurttemberg + Q.ddp_r_wurttemberg + Q.lvp_r_wurttemberg + Q.z_r_wurttemberg).toFixed(1));
@@ -382,7 +382,7 @@ if (Q.dvp_r_wurttemberg && !Q.lvp_formed && Q.dvp_exist) {
     });
 }
            
-if (Q.wpbwb_r_wurttemberg) {
+if (Q.wbwb_r_wurttemberg) {
     data.push({
         "id": "farm2",
         "legend": "WBWB",
