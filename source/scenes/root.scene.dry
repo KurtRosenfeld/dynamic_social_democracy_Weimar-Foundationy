@@ -237,7 +237,7 @@ Q.nsdap_banned = 0;
 Q.coup_progress = 0;
 Q.capital_strike_progress = 0;
 
-Q.budget = 4;
+Q.budget = 0;
 
 // Proportion of different social groups
 // source: https://surface.syr.edu/cgi/viewcontent.cgi?filename=3&article=1016&context=books&type=additional page 45, table 3.4 - using 1925 figures
@@ -722,6 +722,8 @@ Q.blutmai = 0;
 
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;
+Q.foreign_reform = 0;
+Q.foreign_ministy_aristocrization = 2;
 Q.bureaucratic_reform = 0;
 Q.military_reform = 0;
 Q.womens_rights = 0;
@@ -796,7 +798,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
     'education_science', 'curriculum',
     // local govt
     'saxony_action', 'thuringia_action', 'hamburg_action', 'bavaria_action', 'baden_action',
-    'wurttemberg_action', 'meck_schwe_action',
+    'wurttemberg_action', 'meck_schwe_action', 'hesse_action',
     // events
     'cuno_bitching', 'uspd_decline', 'emergency_cuts', 'unemployment_insurance',
     'sa_ban', 'sh_ban', 'papen_chancellor', 'schleicher_chancellor',
@@ -898,6 +900,7 @@ Q.bavaria_action_timer = 0;
 Q.baden_action_timer = 0;
 Q.wurttemberg_action_timer = 0;
 Q.meck_schwe_action_timer = 0;
+Q.hesse_action_timer = 0;
 // event timers
 Q.cuno_bitching_timer = 0;
 Q.uspd_decline_timer = 0;
@@ -1446,11 +1449,11 @@ For more information on the politics and government of the German Republic, see 
 - @1928_challenge: Custom Modes
 
 @1928_easy
-on-arrival: difficulty = -1; resources = 4; dues = 5; base_dues = 5; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; ddp_relation = 65; bb_relation = 68; budget = 5;
+on-arrival: difficulty = -1; resources = 4; dues = 5; base_dues = 5; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; ddp_relation = 65; bb_relation = 68; budget = 1;
 go-to: 1928_main
 
 @1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 3; base_dues = 3; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; ddp_relation = 50; budget = 3
+on-arrival: difficulty = 1; resources = 0; dues = 3; base_dues = 3; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; ddp_relation = 50; budget = -1
 go-to: 1928_main
 
 @1928_historical
@@ -1471,7 +1474,7 @@ Q.kpd_relation = 16;
 Q.bb_relation = 26;
 Q.dvp_relation = 31;
 Q.ddp_relation = 55;
-Q.budget = 2;
+Q.budget = - 1;
 this.state.disableSaves = true;
 !}
 go-to: 1928_main
@@ -1489,7 +1492,7 @@ Q.z_relation = 41;
 Q.kpd_relation = 21;
 Q.dvp_relation = 31;
 Q.ddp_relation = 55;
-Q.budget = 2;
+Q.budget = 0;
 !}
 go-to: 1928_main
 
@@ -1505,7 +1508,7 @@ Q.z_relation = 41;
 Q.kpd_relation = 21;
 Q.dvp_relation = 31;
 Q.ddp_relation = 55;
-Q.budget = 2;
+Q.budget = 0;
 !}
 go-to: 1928_main
 
