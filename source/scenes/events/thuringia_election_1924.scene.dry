@@ -1,5 +1,5 @@
 title: Thuringian Landtag Election
-view-if: year == 1924 and month == 2
+view-if: year == 1922 and month == 3
 new-page: true
 tags: event
 max-visits: 1
@@ -223,6 +223,7 @@ for (const party in allocatedSeats) {
     Q[party] = parseFloat(((allocatedSeats[party] * 100) / 72).toFixed(1));
 }
 
+Q.bl_thuringia_elections_vote = (Q.bl_thuringia_elections_vote != undefined ? parseFloat(Q.bl_thuringia_elections_vote.toFixed(1)) : 0);
 
 Q.left_coalition_thuringia = parseFloat((Q.spd_r_thuringia + Q.kpd_r_thuringia + Q.uspd_r_thuringia).toFixed(1));
 Q.far_right_abstention_thuringia = parseFloat((Q.bl_r_thuringia + Q.nsfb_r_thuringia + Q.nsdap_r_thuringia).toFixed(1));
@@ -289,6 +290,7 @@ data = data.concat([{
     "seats": Math.round(Q.nsdap_r_thuringia * 0.72),
 }, ]);
 
+
 if (window && d3) {
     var width = 500;
     var height = 500;
@@ -331,6 +333,7 @@ go-to: thuringia_coalition_menu
 <hr id="read-marker">
 Thuringia used to be ruled by left coalitions up to now.
 <hr id="read-marker">
+
 United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <span style="color: [+ kpd_colour +];">**KPD**</span>[? if uspd_r_thuringia >= 1: + <span style="color: [+ uspd_colour +];">**USPD**</span>?]): [+ left_coalition_thuringia +]% 
 
 Ordnungsbund (<span style="color: #000000;">**[+ z_party_name +]**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #006400;">**LB**</span>): [+ ordnungsbund +]%
