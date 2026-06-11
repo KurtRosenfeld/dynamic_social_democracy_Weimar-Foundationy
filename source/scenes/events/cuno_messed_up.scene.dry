@@ -30,7 +30,7 @@ Our policy of toleration continues.
 @break_toleration
 subtitle: This is likely to result in a new government.
 view-if: spd_toleration == 1
-on-arrival: dvp_relation -= 4; z_relation -= 3; ddp_relation -= 3; dnvp_cuno_support -= 2
+on-arrival: dvp_relation -= 4; z_relation -= 3; ddp_relation -= 3; dnvp_cuno_support -= 2; cuno_bitching_timer = 3
 on-departure: cuno_slapped = 1 if dnvp_cuno_support <= 0; chancellor = "vacant" if dnvp_cuno_support <= 0; spd_toleration = 0
 
 We have definitively broken with the [+ chancellor +] government, and have voted against them in a vote of no confidence.
@@ -49,7 +49,7 @@ Our policy of toleration continues.
 @slap_cuno
 subtitle: This is likely to result in a new government.
 view-if: spd_toleration == 0 and spd_in_government == 0
-on-arrival:  dvp_relation -= 5; z_relation -= 5; ddp_relation -= 3; dnvp_cuno_support -= 2
+on-arrival:  dvp_relation -= 5; z_relation -= 5; ddp_relation -= 3; dnvp_cuno_support -= 2; cuno_bitching_timer = 3
 on-departure: cuno_slapped = 1 if dnvp_cuno_support <= 0; chancellor = "vacant" if dnvp_cuno_support <= 0
 
 We will not support Cuno.
@@ -65,7 +65,7 @@ The coalition continues.
 
 @leave_cuno
 view-if: spd_in_government == 1
-on-arrival:  dvp_relation -= 7; z_relation -= 6; ddp_relation -= 5; dnvp_cuno_support -= 1; spd_in_government = 0
+on-arrival:  dvp_relation -= 7; z_relation -= 6; ddp_relation -= 5; dnvp_cuno_support -= 1; spd_in_government = 0; cuno_bitching_timer = 3
 on-departure: cuno_slapped = 1 if dnvp_cuno_support <= 0; chancellor = "vacant" if dnvp_cuno_support <= 0
 
 The <span style="color: [+ spd_colour +];">**SPD**</span> has officially broken with <span style="color: [+ i_colour +];">**Cuno**</span>. Joining was a bad idea in the first place.
