@@ -112,23 +112,6 @@ if (Q.total_votes_hamburg > 0) {
     Q.dnf_hamburg_elections_vote = (Q.dnf_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
     Q.z_hamburg_elections_vote = (Q.z_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
     Q.nsfb_hamburg_elections_vote = (Q.nsfb_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    let target = 34;
-    Q.spd_hamburg_elections_vote = Math.round((Q.spd_hamburg_elections_vote + (target - Q.spd_hamburg_elections_vote) * 0.35) * 10) / 10;
-    Q.total_votes_hamburg = Q.spd_hamburg_elections_vote + Q.sapd_hamburg_elections_vote + Q.kpd_hamburg_elections_vote + Q.ddp_hamburg_elections_vote + Q.lvp_hamburg_elections_vote + Q.dvp_hamburg_elections_vote + Q.dnvp_hamburg_elections_vote + Q.nsdap_hamburg_elections_vote + Q.other_hamburg_elections_vote + Q.kvp_hamburg_elections_vote + Q.dnf_hamburg_elections_vote + Q.uspd_hamburg_elections_vote + Q.z_hamburg_elections_vote + Q.nsfb_hamburg_elections_vote;
-    Q.spd_hamburg_elections_vote = (Q.spd_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.sapd_hamburg_elections_vote = (Q.sapd_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.uspd_hamburg_elections_vote = (Q.uspd_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.kpd_hamburg_elections_vote = (Q.kpd_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.ddp_hamburg_elections_vote = (Q.ddp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.lvp_hamburg_elections_vote = (Q.lvp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.dvp_hamburg_elections_vote = (Q.dvp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.dnvp_hamburg_elections_vote = (Q.dnvp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.nsdap_hamburg_elections_vote = (Q.nsdap_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.other_hamburg_elections_vote = (Q.other_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.kvp_hamburg_elections_vote = (Q.kvp_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.dnf_hamburg_elections_vote = (Q.dnf_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.z_hamburg_elections_vote = (Q.z_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
-    Q.nsfb_hamburg_elections_vote = (Q.nsfb_hamburg_elections_vote / Q.total_votes_hamburg) * 100;
 }
 
 Q.spd_hamburg_elections_vote = (Q.spd_hamburg_elections_vote != undefined ? parseFloat(Q.spd_hamburg_elections_vote.toFixed(1)) : 0);
