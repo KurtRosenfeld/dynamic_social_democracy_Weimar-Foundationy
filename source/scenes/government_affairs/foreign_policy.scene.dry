@@ -37,8 +37,8 @@ What should our foreign policy priority be?
 
 @hire_more_workers
 title: Let more advisors from working class backgrounds into the Foreign ministry.
-subtitle: [? if foreign_ministry_aristocratisation == 2: The requirements for working here are too much of a burden ?][? if foreign_ministry_aristocratisation == 1: We have made it easier for less wealthy experts to work here ?][? if foreign_ministry_aristocratisation == 0: We have made it possible for talented people from the poorest backgrounds to work here. ?]
-on-arrival: new_middle_spd += 1 if foreign_ministry_aristocratisation <= 1; kpd_relation += 2 if foreign_ministry_aristocratisation == 0; uspd_relation += 3 if foreign_ministry_aristocratisation == 0; sapd_relation += 3 if foreign_ministry_aristocratisation == 0; foreign_reform += 1 if foreign_ministry_aristocratisation <= 1; workers_spd += 3 if foreign_ministry_aristocratisation == 0
+subtitle: [? if foreign_ministy_aristocrization == 2: The requirements for working here are too much of a burden ?][? if foreign_ministy_aristocrization == 1: We have made it easier for less wealthy experts to work here ?][? if foreign_ministy_aristocrization == 0: We have made it possible for talented people from the poorest backgrounds to work here. ?]
+on-arrival: new_middle_spd += 1 if foreign_ministy_aristocrization <= 1; kpd_relation += 2 if foreign_ministy_aristocrization == 0; uspd_relation += 3 if foreign_ministy_aristocrization == 0; sapd_relation += 3 if foreign_ministy_aristocrization == 0; foreign_reform += 1 if foreign_ministy_aristocrization <= 1; workers_spd += 3 if foreign_ministry_aristocratisation == 0
 choose-if: foreign_reform <= 2
 unavailable-subtitle: There are no rich policy advisors left.
 
@@ -46,7 +46,7 @@ unavailable-subtitle: There are no rich policy advisors left.
 title: Lower financial requirements for working in the ministry
 subtitle: Remove hurdles, finance talented young people without the means. (-1 budget)
 on-arrival: ddp_relation += 1; coalition_dissent += 1; uspd_relation += 2; new_middle_spd += 3; budget -= 1
-choose-if: foreign_ministry_aristocratisation > 0
+choose-if: foreign_ministy_aristocrization > 0
 unavailable-subtitle: We could not make this ministry more accesible.
 
 @improve_west
