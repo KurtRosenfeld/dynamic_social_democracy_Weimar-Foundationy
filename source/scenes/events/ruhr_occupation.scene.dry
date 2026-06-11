@@ -1,22 +1,22 @@
-title: France occupies the Ruhr!
-subtitle: This won't end well
+title: <span style="color: #002654;">**France**</span> occupies the Ruhr!
+subtitle: This won't end well.
 view-if: year == 1923 and month == 1 and ruhr_occupation_imminent == 1
 max-visits: 1 
 tags: event 
 new-page: true 
-on-arrival: ruhr_occupied = 1; nationalism += 2; pacifism -= 1; old_middle_dvfp += 2; new_middle_nsdap += 1; inflation += 20; france_relation -= 5; cuno_bitching_timer = 2
-face-image: img/portraits/CunoWilhelm.jpg 
+on-arrival: ruhr_occupied = 1; nationalism += 2; pacifism -= 1; old_middle_dvfp += 2; new_middle_nsdap += 1; inflation += 14; france_relation -= 6; belgium_relation -= 6; cuno_bitching_timer = 2
+face-image: img/ruhr.jpeg
   
-= France occupies the Ruhr
+= <span style="color: #002654;">**France**</span> occupies the Ruhr!
 
-After months of mutual financial crisies in France and Germany and the stopping of reperation payments the Government of France (assisted by Belgium) has decided to march into the Rhineland trying to extract material by force.
-The US and UK denounce this assault on the Republic. Chancellor [+ chancellor +] has declared Germany to be inable to resist with military means but has called on passive resitance, a sentiment that has become fairly popular accross Germany seemingly disregarding class and political affiliation.
+After months of mutual financial crisis in <span style="color: #002654;">**France**</span>  and <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span> and the stopping of reperation payments, the Government of <span style="color: #002654;">**France**</span>, assisted by <span style="color: #FFCD00;">**Belgian**</span> troops, have decided to march into the Ruhr, to forcefully extract the reparations payments from the industrial heartland of <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span>.
+The <span style="color: #B31942;">Amer</span><span style="color: #0A3161;">icans</span> and the <span style="color: #C8102E;">**United Kingdom**</span> have, thankfully, denounced this attack on our Republic. Chancellor [+ chancellor +] has declared <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span> to be unable to resist with military means, but has called on passive resitance, a sentiment that has become fairly popular accross <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span> seemingly disregarding class and political affiliation.
 
-The mayor of Essen Hans Luther (I) has refused to welcome the occupying officers for hours turning him into a national icon.
-The politican Karl Jarres (DVP) refused to leave the area and was brought before a Belgian court of war.
+The mayor of Essen, <span style="color: [+ i_colour +];">Hans Luther</span>, has refused to welcome the occupying officers for hours turning him into a national icon.
+The politican, and mayor of Duisburg, <span style="color: [+ dvp_colour +];">Karl Jarres</span>, refused to leave the area and was brought before a <span style="color: #FFCD00;">**Belgian**</span> court of war, and he has been sentenced to 2 months in prison.
 
-The passive resistance strategy is in already common place. Workers begin to stike upon seeing French troops. Who knows how long this strategy will be possibly sustained...
+The passive resistance strategy is in already common place. Workers begin to strike upon seeing <span style="color: #002654;">**French**</span> troops. Some local trade unions have called general strikes. Who knows how long this strategy will be possibly sustained...
 
-- @continue: Continue
+- @continue: We stand in solidarity with our brothers in the Ruhr.
 
 @continue
