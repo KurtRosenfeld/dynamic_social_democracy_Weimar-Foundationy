@@ -257,8 +257,8 @@ data = data.concat([{
 if (Q.bl_r_thuringia) {
     data.push({
         "id": "bl",
-        "legend": OB,
-        "name": OB,
+        "legend": "OB",
+        "name": "OB",
         "seats": Math.round(Q.bl_r_thuringia * 0.72),
     });
 }
