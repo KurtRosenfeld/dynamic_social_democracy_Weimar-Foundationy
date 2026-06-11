@@ -1,5 +1,5 @@
 title: Wurttemberg Landtag Election
-view-if: (year == 1922 and month == 4 and not wurttemberg_election_seen) or (wurttemberg_election_2_trigger_time == time and wurttemberg_election_seen_time != time)
+view-if: (year == 1924 and month == 5 and not wurttemberg_election_seen) or (wurttemberg_election_2_trigger_time == time and wurttemberg_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: wurttemberg_election_seen += 1 if wurttemberg_election_seen; wurttemberg_election_seen = 1 if not wurttemberg_election_seen; wurttemberg_election_seen_time = time
@@ -29,7 +29,7 @@ on-arrival: {!
 var wurttemberg_adjustment_factors = {
     spd: 0.8,
     sapd: 0.2,
-    uspd: 0.6,
+    uspd: 0.55,
     kpd: 0.92,
     z: 1.4,
     ddp: 1.95,
