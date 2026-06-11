@@ -1,5 +1,5 @@
 title: Thuringian Landtag Election
-view-if: year == 1922 and month == 4
+view-if: year == 1924 and month == 2
 new-page: true
 tags: event
 max-visits: 1
@@ -22,7 +22,7 @@ on-display: {!
 
 The Thuringian state elections are to be held now.
 
-- @thuringia: May we do our best...
+- @thuringia: Should we be scared...?
 
 @thuringia
 on-arrival: {!
@@ -364,7 +364,8 @@ The Bourgeois form a united front to keep us out of power.
 @far_right_abstention_thuringia
 title: A Bourgeois Coalition of the <span style="color: #0D2AC9;">**Ordnungbund**</span>
 subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> will lead the coalition.
-choose-if: far_right_abstention_thuringia >= 50 and bl_r_thuringia < 50
+view-if: bl_r_thuringia < 50
+choose-if: far_right_abstention_thuringia >= 50
 on-arrival: thuringia_gov = "Bourgeois-Right"; workers_other += 3; rural_other += 1; workers_spd -= 1; new_middle_nsfb += 3; workers_nsfb += 1; unemployed_nsfb -= 1
 
 The Bourgeois form a united front to keep us out of power. Even the United Völkisch List abstains to prevent any chance for us form a government...
