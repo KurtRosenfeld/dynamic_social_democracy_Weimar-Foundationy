@@ -15,12 +15,12 @@ Inflation and unemployment keep growing, as the <span style="color: #000000;">**
 - @maintain_toleration: Maintain the current governing arrangement.
 - @break_toleration: Break toleration; vote against this government.
 - @support_cuno: We will vote alongside the government.
-- @slap_cuno: No one wants <span style="color: #808080;">**Cuno**</span>; we will vote agaisnt him!
+- @slap_cuno: No one wants <span style="color: [+ i_colour +];">**Cuno**</span>; we will vote agaisnt him!
 - @maintain_coalition: We can't withdraw from our coalition before we've resolved the crisis!
 - @leave_cuno: We will resign from our cabinet positions.
 
 @maintain_toleration
-subtitle: There is no other option but to tolerate <span style="color: [+ i_colour +;">**Cuno**</span>.
+subtitle: There is no other option but to tolerate <span style="color: [+ i_colour +];">**Cuno**</span>.
 view-if: spd_toleration == 1
 on-arrival: workers_dvfp += 1; workers_kpd += 1; unemployed_nsdap += 1; unemployed_spd -= 2; pro_republic -= 2; kpd_relation -= 2; unemployed_kpd += 2; cuno_bitching_timer = 3
 
