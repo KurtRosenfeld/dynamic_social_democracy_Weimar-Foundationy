@@ -1,0 +1,37 @@
+title: Baden
+new-page: true
+is-card: true
+view-if: baden_action_timer = 0 and (baden_gov == "SPD" or baden_gov == "Social-Catholic" or baden_gov == "Left" or baden_gov == "Social-Liberal" or saxony_gov == "Weimar" or baden_gov == "Grand")
+on-arrival: baden_action_timer += 12; saxony_action_timer += 4 if baden_gov == "Left"; baden_action_timer += 1 if baden_gov == "Weimar"; baden_action_timer += 4 if baden_gov == "Grand"; month_actions += 1
+tags: local_govt_affairs
+card-image: img/land/Baden.svg.webp
+
+= Baden
+
+[? if not baden_gov == "SPD": We are part of the current cabinet in Baden ?][? if baden_gov == "SPD": We are the current government of Baden ?]
+
+- @reform_the_administration
+- @negotiate_concordat
+- @sign_baden_concordat
+- @give_tax_breaks_to_local_buisnesses
+
+
+@reform_the_administration
+title: Reform the administration of Baden
+on-arrival: baden_reform += 1
+
+@negotiate_concordat
+title: Negotiate a concordat with the Holy See
+on-arrival: z_relation += 5; kpd_relation -= 3; baden_concordat_progress += 1*(1 -dissent); left_dissent += 2; center_dissent += 1
+choose-if: not baden_gov == "Left"
+view-if: baden_concordat_progress < 4
+
+@sign_baden_concordat
+title: Sign a concordat
+view-if: baden_concordat_progress >= 4
+on-arrival: z_relation += 5; vatican_relation += 10; left_dissent += 3; center_dissent += 1
+
+@give_tax_breaks_to_local_buisnesses
+title: Give tax breaks to local buisnesses
+on-arrival: ddp_relation += 5; dvp_relation += 5; old_middle_spd += 2; workers_spd -= 1
+choose-if: not (baden_gov == "Social-Democratic" or baden_gov == "Left")
