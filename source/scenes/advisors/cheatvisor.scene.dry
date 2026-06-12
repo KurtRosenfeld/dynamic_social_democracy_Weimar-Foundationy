@@ -31,7 +31,7 @@ on-arrival: rural_spd += 10; catholics_spd += 9; new_middle_spd += 2
 @go_to_thuringia
 title: Go to the Thuringia Action scene! (Added for my convenience, sorry.)
 subtitle: wow.
-go-to: thuringia_action.cene.dry
+go-to-scene: thuringia_action
 
 @make_nsfb
 title: Make NSFB
