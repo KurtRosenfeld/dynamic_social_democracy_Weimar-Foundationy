@@ -62,7 +62,7 @@ We open even more cases agaisnt prominent <span style="color: [+ nsdap_colour +]
 title: Land Reform
 subtitle: Break up the large aristocratic estates and give land to landless workers.
 choose-if: thuringia_reform >= 2
-unavailable-subtitle: [? if thuringia_reform <= 2 : Many entrenched interests oppose this policy. ?]
+unavailable-subtitle: Many entrenched interests oppose this policy.
 on-arrival: land_reform_thuringia += 1; coalition_dissent += 0.5; rural_spd += 2*(1-dissent); rural_nsdap -= 1*(1-dissent); rural_other -= 1*(1-dissent); unemployed -= 1 if unemployed >= 5; dvp_relation -= 1; z_relation -= 1; lvp_relation -= 1; left_strength += 3; left_dissent -= 5; rural_sol += 1; coup_progress += 0.2; dvp_right += 0.5; hindenburg_angry += 5
 choose-if: thuringia_gov == "Social-Democratic" or thuringia_gov == "Left" or thuringia_gov == "Weimar"
 
