@@ -18,6 +18,7 @@ This is not Einstein, lol
 - @new_prussia_leader
 - @new_chancellor
 - @new_president
+- @go_to_thuringia
 - @hide
 - @root: Return to main
 
@@ -26,6 +27,11 @@ This is not Einstein, lol
 title: Little Cheat
 subtitle: It has gotten so hard to test this stuff
 on-arrival: rural_spd += 10; catholics_spd += 9; new_middle_spd += 2
+
+@go_to_thuringia
+title: Go to the Thuringia Action scene! (Added for my convenience, sorry.)
+subtitle: wow.
+go-to: thuringia_action
 
 @make_nsfb
 title: Make NSFB
