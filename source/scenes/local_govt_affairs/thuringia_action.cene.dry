@@ -1,7 +1,7 @@
 title: Thuringian State Affairs
 new-page: true
 is-card: true
-view-if: thuringia_action_timer = 0 and if thuringia_gov == "SPD" or thuringia_gov == "Social-Democratic" or thuringia_gov == "Left" or thuringia_gov == "Social-Liberal" or thuringia_gov == "Weimar" thuringia_gov == "Grand"
+view-if: thuringia_action_timer = 0 and (thuringia_gov == "SPD" or thuringia_gov == "Social-Democratic" or thuringia_gov == "Left" or thuringia_gov == "Social-Liberal" or thuringia_gov == "Weimar" thuringia_gov == "Grand")
 on-arrival: thuringia_action_timer += 12; thuringia_action_timer += 2 if thuringia_gov == "Left"; thuringia_action_timer += 4 if thuringia_gov == "Weimar"; thuringia_action_timer += 5 if thuringia_gov == "Grand"; month_actions += 1
 tags: local_govt_affairs
 card-image: img/land/Thuringia.svg.webp
@@ -38,7 +38,7 @@ This policy is popular among the <span style="color: [+ kpd_colour +];">**KPD**<
 @give_tax_breaks_to_local_buisnesses
 title: Give tax breaks to local businesses.
 on-arrival: ddp_relation += 5; dvp_relation += 5; old_middle_spd += 3; workers_spd -= 2; left_dissent += 3; kpd_relation -= 3
-choose-if: not thuringia_gov == "Social-Democratic" or thuringia_gov == "Left"
+choose-if: not (thuringia_gov == "Social-Democratic" or thuringia_gov == "Left")
 
 This is a popular policy amongst the middle class, however our base, that is, the workers, are not that happy of us giving concessions to the bourgeois, and neither is our left faction.
 
