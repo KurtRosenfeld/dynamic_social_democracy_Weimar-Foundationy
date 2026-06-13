@@ -29,9 +29,83 @@ subtitle: It has gotten so hard to test this stuff
 on-arrival: rural_spd += 10; catholics_spd += 9; new_middle_spd += 2
 
 @go_to_thuringia
-title: Go to the Thuringia Action scene! (Added for my convenience, sorry.)
-subtitle: PLEASE WORK 
-view-if: thuringia_action
+title: Go to the Thuringian card (added for testing.)
+card-image: img/land/Thuringia.svg.webp
+face-image: img/redthuringia.png
+
+= Thuringian State Affairs
+
+[? if not thuringia_gov == "SPD": We are part of the current cabinet in Thuringia. ?][? if thuringia_gov == "SPD": We are the current government of Thuringia. ?]
+
+Thuringia by nature has always been a deeply proletarianized state, with much of its population being industrial and semi-proletarian worker's, we have always secured strong results in the Thuringian elections, usually, our coalitions here are either <span style="color: [+ z_colour +];">**We**</span><span style="color: [+ spd_colour +];">**im**</span><span style="color: [+ ddp_colour +];">**ar**</span> Coalition's, <span style="color: [+ uspd_colour +];">**Social**</span>-<span style="color: [+ spd_colour +];">**Democratic**</span> or a <span style="color: [+ spd_colour +];">**United**</span> <span style="color: [+ kpd_colour +];">**Front**</span> between the <span style="color: [+ kpd_colour +];">**KPD**</span> and <span style="color: [+ spd_colour +];">**SPD**</span>[? if nsdap_r_thuringia <= 13 :. ?][? if nsdap_r_thuringia >= 13 :, The rapid rise in <span style="color: [+ nsdap_colour +];">**NSDAP**</span> votes is extremely worrying. Many had believed that the party was <span style="color: #ff0000;">moribund</span>; now, some of us consider it to be the greatest threat to democracy in <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span>. ?]
+
+- @fund_workers_militias
+- @give_tax_breaks_to_local_buisnesses
+- @crackdown_on_nazis
+- @nazi_further_crackdown
+- @land_reform
+- @appease_farmers
+- @sponsor_arts
+
+@reform_the_administration
+title: Reform the administration of Thuringia
+subtitle: Despite our efforts in Thuringia, many <span style="color: [+ i_colour +];">**reactionaries**</span> still remain within the government, and we are doing our best efforts to root them out.
+on-arrival: thuringia_reform += 1; rural_others -= 1
+
+ Many abuse their power to favor the <span style="color: [+ dnvp_colour +];">**political right**</span>. By reforming the administration to be more fair and root out obstructionists, we can democratize it.
+
+@fund_workers_militias
+title: Fund worker's militias
+on-arrival: rfb_strength += 1; rb_strength += 1; kpd_relation += 10; 
+choose-if: thuringia_gov == "SPD" or thuringia_gov == "Social-Democratic" or thuringia_gov == "Left"
+
+This policy is popular among the <span style="color: [+ kpd_colour +];">**KPD**</span>, but our bourgeois partners are not happy.
+
+@give_tax_breaks_to_local_buisnesses
+title: Give tax breaks to local businesses.
+on-arrival: ddp_relation += 5; dvp_relation += 5; old_middle_spd += 3; workers_spd -= 2; left_dissent += 3; kpd_relation -= 3
+choose-if: not (thuringia_gov == "Social-Democratic" or thuringia_gov == "Left")
+
+This is a popular policy amongst the middle class, however our base, that is, the workers, are not that happy of us giving concessions to the bourgeois, and neither is our left faction.
+
+@crackdown_on_nazis
+title: Order the shuttering of the <span style="color: [+ nsdap_colour +];">**NSDAP**</span> - Gau Thüringen, which will significantly weaken the <span style="color: [+ nsdap_colour +];">**NSDAP**</span> in Thuringia.
+view-if: crackdown_nazis_thuringia = 0
+on-arrival: ddp_relation += 5; z_relation += 5;  kpd_relation += 3; dnvp_relation += 3; nsdap_relation -= 16; workers_nsdap -= 2
+subtitle: The <span style="color: [+ nsdap_colour +];">**Nazi**</span>'<span style="color: [+ nsdap_colour +];">**s**</span> rabblerousing has opened a opportunity for us to legally press charges, and with the help of the Thuringian police, shutter their local organization entirely. Almost every party in the Thuringian Landtag supports this policy, surprisingly including the <span style="color: [+ dnvp_colour +];">**DNVP**</span>. We should have no trouble convincing our coalition partners and the Landtag to support this policy.
+
+The police have investigated and found enough evidence to press charges agaisnt some members of the Thuringian <span style="color: [+ nsdap_colour +];">**NSDAP**</span>, weakening them.
+
+@nazi_further_crackdown
+title: Further crackdown on the Nazi's after we shuttered their local organization, further weakening them.
+view-if: crackdown_nazis_thuringia = 1
+on-arrival: ddp_relation += 5; z_relation += 5;  kpd_relation += 3; nsdap_relation -= 16; workers_nsdap -= 1
+subtitle: We have already shut down the <span style="color: [+ nsdap_colour +];">**NSDAP**</span> - Gau Thüringen, but another crackdown is needed to weaken the <span style="color: [+ nsdap_colour +];">**NSDAP**</span in Thuringia even further, and prevent them from rebuilding their strength.
+
+We open even more cases agaisnt prominent <span style="color: [+ nsdap_colour +];">**Nazi**</span> figures in Thuringia, but some, such as <span style="color: [+ frick_colour +];">**Wilhelm Frick**</span>, remain unreachable.
+
+@land_reform
+title: Land Reform
+subtitle: Break up the large aristocratic estates and give land to landless workers.
+unavailable-subtitle: Many entrenched interests oppose this policy.
+on-arrival: land_reform_thuringia += 1; coalition_dissent += 0.5; rural_spd += 2*(1-dissent); rural_nsdap -= 1*(1-dissent); rural_other -= 1*(1-dissent); unemployed -= 1 if unemployed >= 5; dvp_relation -= 1; z_relation -= 1; lvp_relation -= 1; left_strength += 3; left_dissent -= 5; rural_sol += 1; coup_progress += 0.2; dvp_right += 0.5; hindenburg_angry += 5
+choose-if: thuringia_gov == "Social-Democratic" or thuringia_gov == "Left" or thuringia_gov == "Weimar" and thuringia_reform >= 2
+
+With our policy of land reform, we are acquiring farmland from large estates, and giving the land to farmworkers' associations and small peasants. In essence, this brings class struggle to the countryside, breaking the semi-feudal property relations present in some parts of Thuringia and other areas with large estates caused by Junkers. The bourgeois parties and large farmers despise our intrusion into the sacredness of private property, while leftists are cautiously optimistic.
+
+@appease_farmers
+title: Appease the Thuringian agricultural interest groups by guaranteeing state-backed credit relief for indebted farmers.
+subtitle: The <span style="color: #38C538;">**rural peasants**</span> of Thuringia have long felt abandoned by the establishment parties.
+on-arrival: rural_spd += 2*(1-dissent); rural_nsdap -= 1*(1-dissent); rural_other -= 1*(1-dissent); unemployed -= 1 if unemployed >= 5
+
+The state government will appease Thuringian agricultural interest groups by guaranteeing state-backed credit relief for indebted farmers, and we will gain in popularity among the farmers.
+
+@sponsor_arts
+title: Sponsor the Bauhaus movement.
+subtitle: It is being increasingly popularized for spreading <span style="color: #000000;">**rep**</span><span style="color: #C00000;">**ubli**</span><span style="color: #D3C24D;">**can**</span> arts, mixing both fine arts and and craft, due to most of its founding artists being <span style="color: #005EB8;">**Jewish**</span>, it has come under harassment from the far-right, but the Thuringian state endorsing them could go a long way.
+on-arrival: ddp_relation += 3*(1-dissent); lvp_relation += 2*(1-dissent); new_middle_spd += 4*(1-dissent); education_science += 0.2; ddp_left += 1; ddp_cohesion -= 0.5; pro_republic += 1; nationalism -= 1; pacifism += 1
+
+Some criticize this as focusing too much on "useless" subjects, while others worry that the arts establishment is too closely tied to romantic nationalism, however <span style="color: #000000;">**rep**</span><span style="color: #C00000;">**ubli**</span><span style="color: #D3C24D;">**can**</span> sentiment in Thuringia has risen.
 
 @make_nsfb
 title: Make NSFB
