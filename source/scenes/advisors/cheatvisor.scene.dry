@@ -39,6 +39,7 @@ face-image: img/redthuringia.png
 
 Thuringia by nature has always been a deeply proletarianized state, with much of its population being industrial and semi-proletarian worker's, we have always secured strong results in the Thuringian elections, usually, our coalitions here are either <span style="color: [+ z_colour +];">**We**</span><span style="color: [+ spd_colour +];">**im**</span><span style="color: [+ ddp_colour +];">**ar**</span> Coalition's, <span style="color: [+ uspd_colour +];">**Social**</span>-<span style="color: [+ spd_colour +];">**Democratic**</span> or a <span style="color: [+ spd_colour +];">**United**</span> <span style="color: [+ kpd_colour +];">**Front**</span> between the <span style="color: [+ kpd_colour +];">**KPD**</span> and <span style="color: [+ spd_colour +];">**SPD**</span>[? if nsdap_r_thuringia <= 13 :. ?][? if nsdap_r_thuringia >= 13 :, The rapid rise in <span style="color: [+ nsdap_colour +];">**NSDAP**</span> votes is extremely worrying. Many had believed that the party was <span style="color: #ff0000;">moribund</span>; now, some of us consider it to be the greatest threat to democracy in <span style="color: #000000;">**Ger**</span><span style="color: #C00000;">**ma**</span><span style="color: #D3C24D;">**ny**</span>. ?]
 
+- @reform_the_administration
 - @fund_workers_militias
 - @give_tax_breaks_to_local_buisnesses
 - @crackdown_on_nazis
@@ -56,6 +57,8 @@ on-arrival: thuringia_reform += 1; rural_others -= 1
 
 @fund_workers_militias
 title: Fund worker's militias
+unavailable-subtitle: Our coalition will present a vote of no confidence if we do this.
+subtitle: In order to protect themselves from the <span style="color: [+ nsdap_colour +];">**far**</span>-<span style="color: [+ dnvp_colour +];">**right**</span>, many militias have been formed by worker's. While popular among the left, this does not help our relations with the bourgeois.
 on-arrival: rfb_strength += 1; rb_strength += 1; kpd_relation += 10; 
 choose-if: thuringia_gov == "SPD" or thuringia_gov == "Social-Democratic" or thuringia_gov == "Left"
 
@@ -63,6 +66,8 @@ This policy is popular among the <span style="color: [+ kpd_colour +];">**KPD**<
 
 @give_tax_breaks_to_local_buisnesses
 title: Give tax breaks to local businesses.
+subtitle: A necessary concession to the bourgeois, but our left wing is not happy.
+unavailable-subtitle: Our local organization, which is left wing, stops us from doing this.
 on-arrival: ddp_relation += 5; dvp_relation += 5; old_middle_spd += 3; workers_spd -= 2; left_dissent += 3; kpd_relation -= 3
 choose-if: not (thuringia_gov == "Social-Democratic" or thuringia_gov == "Left")
 
