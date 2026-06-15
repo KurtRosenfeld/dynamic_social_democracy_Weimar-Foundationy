@@ -236,7 +236,19 @@ if (Q.hesse_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 2);
 on-display: {!
 (function() {
     function renderReichsrat() {
-        // ALL your data construction and rendering code goes HERE
+        console.log("renderReichsrat called");
+        console.log("window.d3 exists?", typeof window.d3);
+        console.log("d3.parliament exists?", typeof (window.d3 && d3.parliament));
+        console.log("Q values:", {
+            left: Q.left_r_reichsrat,
+            socdem: Q.socdem_r_reichsrat,
+            spd: Q.spd_r_reichsrat,
+            weimar: Q.weimar_r_reichsrat,
+            grand: Q.grand_r_reichsrat,
+            bourgeois: Q.bourgeois_right_r_reichsrat,
+            nsdap: Q.nsdap_r_reichsrat
+        });
+
         var data = [{
             "id": "kpd",
             "legend": "KPD",
