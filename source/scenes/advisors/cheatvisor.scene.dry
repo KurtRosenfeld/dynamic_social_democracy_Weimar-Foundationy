@@ -209,8 +209,29 @@ on-arrival: cheatvisor_hidden = 1
 title: Reichsrat (Test)
 on-arrival: {!
 
+Q.kpd_r_reichsrat = 0;
+Q.left_r_reichsrat = 0;
+Q.socdem_r_reichsrat = 0;
+Q.spd_r_reichsrat = 0;
+Q.popular_front_r_reichsrat = 0;
+Q.weimar_r_reichsrat = 0;
+Q.soc_lib_r_reichsrat = 0;
+Q.soc_christ_r_reichsrat = 0;
+Q.grand_r_reichsrat = 0;
+Q.bourgeois_r_reichsrat = 0;
+Q.bourgeois_right_r_reichsrat = 0;
+Q.nsdap_r_reichsrat = 0;
+Q.bvp_r_reichsrat = 0;
+Q.anti_bvp_r_reichsrat = 0;
+
+  const parties = ['left', 'socdem', 'spd', 'weimar', 'grand', 'bourgeois', 'bourgeois_right', 'bvp', 'anti_bvp', 'popular_front', 'nsdap'];
+    parties.forEach(p => {
+        if (Q[`${p}_r_reichsrat`] === undefined) Q[`${p}_r_reichsrat`] = 0;
+    });
+
+
 if (Q.in_left_coalition_prussia) Q.left_r_reichsrat = (Q.left_r_reichsrat + 26);
-if (Q.in_left_socdem_coalition_prussia) Q.soc_dem_r_reichsrat = (Q.soc_dem_r_reichsrat + 26);
+if (Q.in_left_socdem_coalition_prussia) Q.socdem_r_reichsrat = (Q.soc_dem_r_reichsrat + 26);
 if (Q.in_spd_majority_prussia) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 26);
 if (Q.in_weimar_coalition_prussia) Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 26);
 if (Q.in_grand_coalition_prussia) Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 26);
@@ -274,7 +295,7 @@ data = [{
             });
         }
 
-        if (Q.popular_font_r_reichsrat) {
+        if (Q.popular_front_r_reichsrat) {
             data.push({
                 "id": "popfront",
                 "legend": "SPD",
@@ -385,13 +406,6 @@ data = [{
             d3.select("#reichsrat").datum(data).call(parliament);
         }
     }
-    
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', renderReichsrat);
-    } else {
-        renderReichsrat();
-    }
-})();
 !}
 
 The Reichsrat should appear here -->
