@@ -349,3 +349,8 @@ on-display: {!
 })();
 !}
 
+The Reichsrat should appear here -->
+
+{!<svg id="reichsrat" style="width: 500px; height: 250px;"> </svg>!}
+
+
