@@ -248,26 +248,26 @@ function renderReichsrat() {
 }
 
 data = [{
-    "id": "sfio",
+    "id": "kpd",
     "legend": "KPD",
     "name": "KPD",
-    "seats": Math.round(Q.kpd_r_ * 0),
+    "seats": 0,
 }];
 
 if (Q.left_r_reichsrat) {
     data.push({
-        "id": "kpd",
-        "legend": "SAPD",
-        "name": "SAPD",
+        "id": "pcf",
+        "legend": "Left",
+        "name": "Left",
         "seats": Q.left_r_reichsrat,
     });
 }
 
 if (Q.socdem_r_reichsrat) {
     data.push({
-        "id": "uspd",
-        "legend": "SAPD",
-        "name": "SAPD",
+        "id": "socdem",
+        "legend": "Socdem",
+        "name": "Socdem",
         "seats": Q.socdem_r_reichsrat,
     });
 }
@@ -275,17 +275,17 @@ if (Q.socdem_r_reichsrat) {
 if (Q.spd_r_reichsrat) {
     data.push({
         "id": "spd",
-        "legend": "SAPD",
-        "name": "SAPD",
+        "legend": "SPD",
+        "name": "SPD",
         "seats": Q.spd_r_reichsrat,
     });
 }
 
 if (Q.weimar_r_reichsrat) {
     data.push({
-        "id": "ddp",
-        "legend": "SAPD",
-        "name": "SAPD",
+        "id": "weimar",
+        "legend": "Weimar",
+        "name": "Weimar",
         "seats": Q.weimar_r_reichsrat,
     });
 }
@@ -293,18 +293,18 @@ if (Q.weimar_r_reichsrat) {
 if (Q.grand_r_reichsrat) {
     data.push({
         "id": "dvp",
-        "legend": "SAPD",
-        "name": "SAPD",
+        "legend": "Grand",
+        "name": "Grand",
         "seats": Q.grand_r_reichsrat,
     });
 }
 
-if (Q.right_bourgeois_r_reichsrat) {
+if (Q.bourgeois_right_r_reichsrat) {
     data.push({
-        "id": "kpd",
-        "legend": "SAPD",
-        "name": "SAPD",
-        "seats": Q.right_bourgeois_r_reichsrat,
+        "id": "dnvp",
+        "legend": "Right",
+        "name": "Right",
+        "seats": Q.bourgeois_right_r_reichsrat,
     });
 }
 
