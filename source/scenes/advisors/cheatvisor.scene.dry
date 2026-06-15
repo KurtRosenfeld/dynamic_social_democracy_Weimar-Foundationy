@@ -218,9 +218,18 @@ if (Q.in_bourgeois_right_coalition_prussia) Q.bourgeois_right_r_reichsrat = (Q.b
 
 if (Q.bavaria_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgoeis_right_r_reichsrat + 11);
 
+if (Q.saxony_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 7);
 if (Q.saxony_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 7);
+if (Q.saxony_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 7);
+
+if (Q.wurttmeberg_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 4);
+if (Q.wurttmeberg_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 4);
+
+if (Q.baden_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 3);
 
 if (Q.thuringia_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 2);
+
+if (Q.hesse_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 2);
 
 !}
 on-display: {!
