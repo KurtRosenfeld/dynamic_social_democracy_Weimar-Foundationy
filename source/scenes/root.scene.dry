@@ -345,13 +345,13 @@ Q.unemployed_dvfp = 0;
 Q.unemployed_other = 1;
 Q.unemployed_nsfb = 0;
 
-Q.catholics_spd = 15;
+Q.catholics_spd = 12;
 Q.catholics_uspd = 4;
 Q.catholics_kpd = 1;
-Q.catholics_z = 59;
+Q.catholics_z = 60;
 Q.catholics_ddp = 2;
 Q.catholics_dvp = 7;
-Q.catholics_dnvp = 4;
+Q.catholics_dnvp = 6;
 Q.catholics_nsdap = 3;
 Q.catholics_dvfp = 0;
 Q.catholics_other = 7;
@@ -362,7 +362,7 @@ Q.new_middle_spd_old = 7;
 Q.old_middle_spd_old = 3;
 Q.rural_spd_old = 7;
 Q.unemployed_spd_old = 21;
-Q.catholics_spd_old = 15;
+Q.catholics_spd_old = 12;
 
 // Current Reichstag composition
 // % of Reichstag in April 1922
