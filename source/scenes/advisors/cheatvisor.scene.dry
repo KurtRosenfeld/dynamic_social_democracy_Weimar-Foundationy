@@ -246,7 +246,6 @@ function renderReichsrat() {
         // Your existing rendering code...
     }
 }
-!}
 
 data = [{
     "id": "sfio",
