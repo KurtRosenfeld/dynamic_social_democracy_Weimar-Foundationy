@@ -1,0 +1,95 @@
+title: colour settings
+new-page: true
+is-special: true
+go-to: jimmy
+
+= Colour Settings
+
+Here colours for partys can be adapted (massively work in progress)
+
+@jimmy
+
+- @uspd_design: <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @dvp_desgin: <span style="color: [+ dvp_colour +];">**DVP**</span>
+- @dnvp_design: <span style="color: [+ dnvp_colour +];">**DNVP**</span>
+
+
+@uspd_design
+
+- @uspd_c_1: Choose primary colour
+- @uspd_c_2: Choose secondary colour
+- @disable_uspd_c_2: Disable secondary colour
+
+@uspd_c_1
+
+- @uspd_pink: <span style="color: #D47B9B;">**USPD**</span>
+- @uspd_lavender: <span style="color: #B790D3;">**USPD**</span>
+- @uspd_red: <span style="color: #AA0000;">**USPD**</span>
+- @uspd_other_red: <span style="color: #B3133A;">**USPD**</span>
+
+@uspd_pink
+on-arrival: uspd_colour_1 = "#D47B9B"
+go-to: jimmy
+
+@uspd_lavender
+on-arrival: uspd_colour_1 = "#B790D3"
+go-to: jimmy
+
+@uspd_red
+on-arrival: uspd_colour_1 = "#AA0000"
+go-to: jimmy
+  
+@uspd_other_red
+on-arrival: uspd_colour_1 = "#B3133A"
+go-to: jimmy
+  
+
+@uspd_c_2
+
+- @uspd_pink_2: <span style="color: #D47B9B;">**USPD**</span>
+- @uspd_lavender_2: <span style="color: #B790D3;">**USPD**</span>
+- @uspd_red_2: <span style="color: #AA0000;">**USPD**</span>
+- @uspd_other_red_2: <span style="color: #B3133A;">**USPD**</span>
+
+@uspd_pink_2
+on-arrival: uspd_colour_2 = "#D47B9B"
+go-to: jimmy
+
+@uspd_lavender_2
+on-arrival: uspd_colour_2 = "#B790D3"
+go-to: jimmy
+
+@uspd_red_2
+on-arrival: uspd_colour_2 = "#AA0000"
+go-to: jimmy
+  
+@uspd_other_red_2
+on-arrival: uspd_colour_2 = "#B3133A"
+go-to: jimmy
+  
+
+@disable_uspd_c_2
+on-arrival: uspd_colour_2 = uspd_colour_1
+view-if: not uspd_colour_2 == uspd_colour_1
+go-to: jimmy
+
+
+@dvp_desgin
+choose-if: giga_achievment_tier_2
+unavailable-subtitle: reserved for achievements (wip)
+
+
+@dnvp_desgin
+choose-if: giga_achievment_tier_2
+unavailable-subtitle: reserved for achievements (wip) 
+
+
+
+
+
+  
+
+
+
+
+  
