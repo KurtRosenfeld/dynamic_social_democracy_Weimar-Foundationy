@@ -251,10 +251,10 @@ if (Q.kpd_relation > 60) Q.sapd_relation += 3;
 
 // danymic party colouring
 
-if (Q.uspd_leader == "Crispien") Q.uspd_colour = "#D47B9B";
-if (Q.uspd_leader == "Breitscheid") Q.uspd_colour = "#D47B9B";
-if (Q.uspd_leader == "Ledebour") Q.uspd_colour = "#AA0000";
-if (Q.uspd_leader == "Liebknecht") Q.uspd_colour = "#AA0000";
+if (Q.uspd_leader == "Crispien") Q.uspd_colour = Q.uspd_colour_1
+if (Q.uspd_leader == "Breitscheid") Q.uspd_colour = Q.uspd_colour_1
+if (Q.uspd_leader == "Ledebour") Q.uspd_colour = Q.uspd_colour_2
+if (Q.uspd_leader == "Liebknecht") Q.uspd_colour = Q.uspd_colour_2
 
 if (Q.dvp_ideology == "moderate") Q.dvp_colour = "#D5AC27";
 if (Q.dvp_ideology == "left") Q.dvp_colour = "#C0A054";
