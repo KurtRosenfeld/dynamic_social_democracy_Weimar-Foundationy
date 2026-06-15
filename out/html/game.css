@@ -878,6 +878,22 @@ fill: #D5AC27;
   fill: #5E405A;
 }
 
+.seat.soclib {
+  fill: #DD8D1B;
+}
+
+.seat.grand {
+  fill: #A2B725;
+}
+
+.seat.bourgeois_right {
+  fill: #0F4989;
+}
+
+.seat.far_right {
+  fill: #563129;
+}
+  
 .seat.pcf {
   fill: #88001A;
 }
