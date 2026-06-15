@@ -10,7 +10,7 @@ Here colours for partys can be adapted (massively work in progress)
 @jimmy
 
 - @uspd_design: <span style="color: [+ uspd_colour +];">**USPD**</span>
-- @dvp_desgin: <span style="color: [+ dvp_colour +];">**DVP**</span>
+- @dvp_design: <span style="color: [+ dvp_colour +];">**DVP**</span>
 - @dnvp_design: <span style="color: [+ dnvp_colour +];">**DNVP**</span>
 
 
@@ -74,12 +74,12 @@ view-if: not uspd_colour_2 == uspd_colour_1
 go-to: jimmy
 
 
-@dvp_desgin
+@dvp_design
 choose-if: giga_achievment_tier_2
 unavailable-subtitle: reserved for achievements (wip)
 
 
-@dnvp_desgin
+@dnvp_design
 choose-if: giga_achievment_tier_2
 unavailable-subtitle: reserved for achievements (wip) 
 
