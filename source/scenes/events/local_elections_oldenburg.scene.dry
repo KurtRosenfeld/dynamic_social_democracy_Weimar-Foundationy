@@ -383,7 +383,7 @@ if (Q.true_other_r_oldenburg) {
         "id": "other",
         "legend": "Other",
         "name": "Others",
-        "seats": Math.round(Q.true_other_r_oldenburg * 1.2),
+        "seats": Math.round(Q.true_other_r_oldenburg * 0.48),
     });
 }
 
@@ -393,7 +393,7 @@ if (Q.dvp_r_oldenburg && !Q.lvp_formed && Q.dvp_exist) {
         "id": "dvp",
         "legend": "DVP",
         "name": "DVP",
-        "seats": Math.round(Q.dvp_r_oldenburg * 1.2),
+        "seats": Math.round(Q.dvp_r_oldenburg * 0.48),
     });
 }
 
