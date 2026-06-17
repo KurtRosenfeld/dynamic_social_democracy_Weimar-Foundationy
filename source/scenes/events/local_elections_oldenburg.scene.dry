@@ -1,5 +1,5 @@
 title: Oldenburg Landtag Election
-view-if: (year == 1922 and month == 4 and not oldenburg_election_seen) or (oldenburg_election_2_trigger_time == time and oldenburg_election_seen_time != time)
+view-if: (year == 1923 and month == 4 and not oldenburg_election_seen) or (oldenburg_election_2_trigger_time == time and oldenburg_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: oldenburg_election_seen += 1 if oldenburg_election_seen; oldenburg_election_seen = 1 if not oldenburg_election_seen; oldenburg_election_seen_time = time
