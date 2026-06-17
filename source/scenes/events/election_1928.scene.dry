@@ -4131,7 +4131,7 @@ choose-if: leverage >= 5
 view-if: interior_minister_party != "SPD"
 
 - @appoint_severing
-- @appoint_sollmann
+- @appoint_sollmann_interior
 - @cancel_interior
 
 @appoint_severing
@@ -4293,7 +4293,7 @@ unavailable-subtitle: We do not have enough leverage.
 on-arrival: foreign_minister = "Sollmann"; leverage -= 10; foreign_minister_party = "SPD"
 go-to: ministries
 
-Hermann Müller of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
+Wilhelm Sollmann of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
 
 @cancel_foreign
 title: Cancel & Go Back
