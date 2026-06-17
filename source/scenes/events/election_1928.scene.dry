@@ -4137,6 +4137,7 @@ view-if: interior_minister_party != "SPD"
 @appoint_severing
 title: Carl Severing
 subtitle: (reformist).
+view-if: severing_in == "SPD"
 choose-if: leverage >= 5
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: interior_minister = "Severing"; leverage -= 5; interior_minister_party = "SPD"
@@ -4144,7 +4145,7 @@ go-to: ministries
 
 Carl Severing of the <span style="color: #c00000;">**SPD**</span> has been appointed Interior Minister.
 
-@appoint_sollmann
+@appoint_sollmann_interior
 title: Wilhelm Sollmann
 subtitle: (non-factional).
 choose-if: leverage >= 5
@@ -4200,6 +4201,7 @@ Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appo
 @appoint_hilfdering
 title: Rudolf Hilferding
 subtitle: (centrist).
+view-if: hilferding_in == "SPD"
 choose-if: leverage >= 10
 view-if: uspd_joined > 0 and centrists_regin == 0
 unavailable-subtitle: We do not have enough leverage.
@@ -4211,6 +4213,7 @@ Rudolf Hilferding of the <span style="color: #c00000;">**SPD**</span> has been a
 @appoint_tarnow
 title: Fritz Tarnow
 subtitle: (labor).
+view-if: tarnow_in == "SPD"
 choose-if: leverage >= 10
 unavailable-subtitle: We do not have enough leverage.
 view-if: unions_independent == 0
@@ -4223,7 +4226,7 @@ Fritz Tarnow of the <span style="color: #c00000;">**SPD**</span> has been appoin
 title: Tony Sender
 subtitle: (left).
 choose-if: leverage >= 15
-view-if: uspd_joined > 0 and left_split == 0
+view-if: sender_in == "SPD"
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: leverage -= 15; economic_minister = "Sender"; economic_minister_party = "SPD"
 go-to: ministries
@@ -4259,11 +4262,13 @@ view-if: foreign_minister_party != "SPD"
 
 - @appoint_muller
 - @appoint_breitscheid
+- @appoint_sollmann_foreign
 - @cancel_foreign
 
 @appoint_muller
 title: Hermann Müller
 subtitle: (centrist).
+view_if: muller_in == "SPD" and not muller_dead
 choose-if: leverage >= 10
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: foreign_minister = "Müller"; leverage -= 10; foreign_minister_party = "SPD"
@@ -4275,12 +4280,22 @@ Hermann Müller of the <span style="color: #c00000;">**SPD**</span> has been app
 title: Rudolf Breitscheid
 subtitle: (centrist).
 choose-if: leverage >= 10
-view-if: uspd_joined >= 1
+view-if: breitscheid_in == "SPD"
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: leverage -= 10; foreign_minister = "Breitscheid"; foreign_minister_party = "SPD"
 go-to: ministries
 
 Rudolf Breitscheid of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
+
+@appoint_sollmann_foreign
+title: Wilhelm Sollmann
+subtitle: (non-factional).
+choose-if: leverage >= 10
+unavailable-subtitle: We do not have enough leverage.
+on-arrival: foreign_minister = "Sollmann"; leverage -= 10; foreign_minister_party = "SPD"
+go-to: ministries
+
+Hermann Müller of the <span style="color: #c00000;">**SPD**</span> has been appointed Foreign Minister.
 
 @cancel_foreign
 title: Cancel & Go Back
@@ -4325,6 +4340,7 @@ Robert Schmidt of the <span style="color: #c00000;">**SPD**</span> has been appo
 @appoint_braun
 title: Otto Braun
 subtitle: (reformist).
+view-if: braun_in == "SPD"
 choose-if: leverage >= 10
 unavailable-subtitle: We do not have enough leverage.
 on-arrival: agriculture_minister = "Braun"; leverage -= 10; agriculture_minister_party = "SPD"
