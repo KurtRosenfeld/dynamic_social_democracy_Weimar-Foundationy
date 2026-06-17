@@ -7,7 +7,7 @@ new-page: true
 
 = Friedrich Ebert
 
-Ebert is the President of Germany. He holds a lot of power but he doesn't consider himself a partisan of his party, more a president of all the people...
+Coming from a working class background Ebert appeared to be the most fitting candidtate to lead the <span style="color: [+ spd_colour +];">**SPD**</span> when Bebel died. When the Great War started he became one of the strongest defenders of the <span style="color: [+ i_colour +];">Burgfrieden</span> course and oponents of revolution. Ebert is the President of Germany. He holds a lot of power but he doesn't consider himself a partisan of his party, more a president of all the people...
 
 - @coalition_president
 - @reichsexekution
