@@ -222,10 +222,12 @@ if (Q.dnvp_ideology == "Moderate") farm_share -= 0.03;
 let wp_share = 0.1;
 if (Q.stolper_program_adopted) wp_share -= 0.05;
 let true_other_share = 0.7;
+if (Q.year >= 1925) true_other_share -= 0.4;
 if (!Q.president == "Ebert") true_other_share -= 0.4;
 let vrp_share = 0.1;
 if (Q.president == "Hindenburg") vrp_share += 0.15;
-let vhg_share = 0.45;
+let vhg_share = 0.0;
+if (Q.year >= 1925) vhg_share += 0.35;
 if (!Q.chancellor == "Brüning") vhg_share -= 0.8;
 
 let total_share = wp_share + farm_share + vrp_share + true_other_share + vhg_share;
