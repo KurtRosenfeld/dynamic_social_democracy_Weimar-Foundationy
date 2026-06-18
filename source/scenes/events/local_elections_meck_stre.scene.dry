@@ -74,6 +74,8 @@ Q.kvp_meck_stre_elections_vote = 0;
 Q.dnf_meck_stre_elections_vote = 0;
 
 if (Q.spd_votes >= 50) meck_stre_adjustment_factors.spd -= 0.3;
+if (Q.spd_votes >= 20) meck_stre_adjustment_factors.spd -= 0.1;
+if (Q.spd_votes >= 30) meck_stre_adjustment_factors.spd -= 0.05;
 if (Q.ideology == "reformist") meck_stre_adjustment_factors.kpd += 0.1;
 if (Q.rural_spd_normalized >= 50) meck_stre_adjustment_factors.spd += 0.05;
 Q.spd_meck_stre_elections_vote = Q.spd_votes*meck_stre_adjustment_factors.spd;
@@ -91,6 +93,7 @@ if (Q.dvp_votes >= 9) meck_stre_adjustment_factors.nsdap -= 0.2;
 if (Q.dnvp_votes >= 8) meck_stre_adjustment_factors.nsdap -= 0.1;             
 if (Q.chancellor_party == "SPD") meck_stre_adjustment_factors.nsdap -= 0.15;            
 Q.nsdap_meck_stre_elections_vote = Q.nsdap_votes*meck_stre_adjustment_factors.nsdap;
+if (Q.dvfp_votes <= 2) meck_stre_adjustment_factors.spd += 0.2;
 Q.dvfp_meck_stre_elections_vote = Q.dvfp_votes*meck_stre_adjustment_factors.dvfp;
 Q.nsfb_meck_stre_elections_vote = Q.nsfb_votes*meck_stre_adjustment_factors.nsfb;
 if (Q.chancellor_party == "SPD") meck_stre_adjustment_factors.other += 0.2;
