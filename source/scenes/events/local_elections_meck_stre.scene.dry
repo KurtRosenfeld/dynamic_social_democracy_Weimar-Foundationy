@@ -548,19 +548,13 @@ Bourgeois Coalition ([? if not lvp_formed: <span style="color: #D3C24D;">[+ ddp_
 
 Right-Wing Coalition (<span style="color: #3E88B3;">DNVP</span> + <span style="color: #C0A054;">DVP</span> + <span style="color: #3D3D3D;">DVFP</span> + <span style="color: #b8996f;">WP</span>): [+ right_coalition_meck_stre +]%
 
-@meck_stre_coalition_menu
-
-@social_liberal_coalition_meck_stre
-
-@bourgeois_coalition_meck_stre
-
-@left_coalition_meck_stre
-
-@spd_majority_meck_stre
-
-@right_wing_coalition_meck_stre
-
-@no_coalition_meck_stre
+- @meck_stre_coalition_menu
+- @social_liberal_coalition_meck_stre
+- @bourgeois_coalition_meck_stre
+- @left_coalition_meck_stre
+- @spd_majority_meck_stre
+- @right_wing_coalition_meck_stre
+- @no_coalition_meck_stre
 
 @social_liberal_coalition_meck_stre
 title: A Social-Liberal Coalition will be formed
