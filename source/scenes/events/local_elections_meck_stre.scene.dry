@@ -219,7 +219,8 @@ Q.nsfb_r_meck_stre = (Q.nsfb_r_meck_stre / Q.total_r_meck_stre) * 100;
 
 let farm_share = 0.3;
 if (Q.dnvp_ideology == "Moderate") farm_share -= 0.03;
-let wp_share = 0.1;
+let wp_share = 0.0;
+if (Q.year >= 1925) wp_share += 0.15;
 if (Q.stolper_program_adopted) wp_share -= 0.05;
 let true_other_share = 0.7;
 if (Q.year >= 1925) true_other_share -= 0.4;
