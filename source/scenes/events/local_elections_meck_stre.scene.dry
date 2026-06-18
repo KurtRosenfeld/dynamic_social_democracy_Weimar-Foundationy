@@ -73,16 +73,16 @@ Q.other_meck_stre_elections_vote = 0;
 Q.kvp_meck_stre_elections_vote = 0;
 Q.dnf_meck_stre_elections_vote = 0;
 
-if (Q.spd_voptes >= 50) meck_stre_adjustment_factors.spd -= 0.3;
+if (Q.spd_votes >= 50) meck_stre_adjustment_factors.spd -= 0.3;
 if (Q.ideology == "reformist") meck_stre_adjustment_factors.kpd += 0.1;
 if (Q.rural_spd_normalized >= 50) meck_stre_adjustment_factors.spd += 0.05;
-Q.spd_meck_stre_elections_vote = Q.spd_votesmeck_stre_adjustment_factors.spd;
-Q.sapd_meck_stre_elections_vote = Q.sapd_votesmeck_stre_adjustment_factors.sapd;
-Q.uspd_meck_stre_elections_vote = Q.uspd_votesmeck_stre_adjustment_factors.uspd;
-Q.kpd_meck_stre_elections_vote = Q.kpd_votesmeck_stre_adjustment_factors.kpd;
+Q.spd_meck_stre_elections_vote = Q.spd_votes*meck_stre_adjustment_factors.spd;
+Q.sapd_meck_stre_elections_vote = Q.sapd_votes*meck_stre_adjustment_factors.sapd;
+Q.uspd_meck_stre_elections_vote = Q.uspd_votes*meck_stre_adjustment_factors.uspd;
+Q.kpd_meck_stre_elections_vote = Q.kpd_votes*meck_stre_adjustment_factors.kpd;
 if (Q.stolper_program_adopted) meck_stre_adjustment_factors.ddp += 0.2;
-Q.ddp_meck_stre_elections_vote = Q.ddp_votesmeck_stre_adjustment_factors.ddp;
-Q.lvp_meck_stre_elections_vote = Q.lvp_votesmeck_stre_adjustment_factors.lvp;
+Q.ddp_meck_stre_elections_vote = Q.ddp_votes*meck_stre_adjustment_factors.ddp;
+Q.lvp_meck_stre_elections_vote = Q.lvp_votes*meck_stre_adjustment_factors.lvp;
 Q.dvp_meck_stre_elections_vote = Q.dvp_votes*meck_stre_adjustment_factors.dvp;
 if (Q.dnvp_ideology == "Moderate") meck_stre_adjustment_factors.dnvp -= 0.1;
 Q.dnvp_meck_stre_elections_vote = Q.dnvp_votes*meck_stre_adjustment_factors.dnvp;
@@ -90,13 +90,13 @@ if (Q.dnvp_votes >= 15) meck_stre_adjustment_factors.nsdap -= 0.25;
 if (Q.dvp_votes >= 9) meck_stre_adjustment_factors.nsdap -= 0.2;
 if (Q.dnvp_votes >= 8) meck_stre_adjustment_factors.nsdap -= 0.1;             
 if (Q.chancellor_party == "SPD") meck_stre_adjustment_factors.nsdap -= 0.15;            
-Q.nsdap_meck_stre_elections_vote = Q.nsdap_votesmeck_stre_adjustment_factors.nsdap;
-Q.dvfp_meck_stre_elections_vote = Q.dvfp_votesmeck_stre_adjustment_factors.dvfp;
+Q.nsdap_meck_stre_elections_vote = Q.nsdap_votes*meck_stre_adjustment_factors.nsdap;
+Q.dvfp_meck_stre_elections_vote = Q.dvfp_votes*meck_stre_adjustment_factors.dvfp;
 Q.nsfb_meck_stre_elections_vote = Q.nsfb_votes*meck_stre_adjustment_factors.nsfb;
 if (Q.chancellor_party == "SPD") meck_stre_adjustment_factors.other += 0.2;
 Q.other_meck_stre_elections_vote = Q.other_votes*meck_stre_adjustment_factors.other;
-Q.kvp_meck_stre_elections_vote = Q.kvp_votesmeck_stre_adjustment_factors.kvp;
-Q.dnf_meck_stre_elections_vote = Q.dnf_votesmeck_stre_adjustment_factors.dnf;
+Q.kvp_meck_stre_elections_vote = Q.kvp_votes*meck_stre_adjustment_factors.kvp;
+Q.dnf_meck_stre_elections_vote = Q.dnf_votes*meck_stre_adjustment_factors.dnf;
 
 Q.total_votes_meck_stre = Q.spd_meck_stre_elections_vote + Q.sapd_meck_stre_elections_vote + Q.kpd_meck_stre_elections_vote + Q.ddp_meck_stre_elections_vote + Q.lvp_meck_stre_elections_vote + Q.dvp_meck_stre_elections_vote + Q.dnvp_meck_stre_elections_vote + Q.nsdap_meck_stre_elections_vote + Q.other_meck_stre_elections_vote + Q.kvp_meck_stre_elections_vote + Q.dnf_meck_stre_elections_vote + Q.uspd_meck_stre_elections_vote + Q.dvfp_meck_stre_elections_vote + Q.nsfb_meck_stre_elections_vote;
 
@@ -233,20 +233,20 @@ vrp_share = (vrp_share / total_share);
 true_other_share = (true_other_share / total_share);
 vhg_share = (vhg_share / total_share);
 
-Q.farm_saxony_elections_vote = Q.other_saxony_elections_vote*farm_share;
-Q.farm_r_saxony = Q.other_r_saxony*farm_share;
+Q.farm_meck_stre_elections_vote = Q.other_meck_stre_elections_vote*farm_share;
+Q.farm_r_meck_stre = Q.other_r_meck_stre*farm_share;
 
-Q.wp_saxony_elections_vote = Q.other_saxony_elections_vote*wp_share;
-Q.wp_r_saxony = Q.other_r_saxony*wp_share;
+Q.wp_meck_stre_elections_vote = Q.other_meck_stre_elections_vote*wp_share;
+Q.wp_r_meck_stre = Q.other_r_meck_stre*wp_share;
 
-Q.vrp_saxony_elections_vote = Q.other_saxony_elections_vote*vrp_share;
-Q.vrp_r_saxony = Q.other_r_saxony*vrp_share;
+Q.vrp_meck_stre_elections_vote = Q.other_meck_stre_elections_vote*vrp_share;
+Q.vrp_r_meck_stre = Q.other_r_meck_stre*vrp_share;
 
-Q.true_other_saxony_elections_vote = Q.other_saxony_elections_vote*true_other_share;
-Q.true_other_r_saxony = Q.other_r_saxony*csvd_share;
+Q.true_other_meck_stre_elections_vote = Q.other_meck_stre_elections_vote*true_other_share;
+Q.true_other_r_meck_stre = Q.other_r_meck_stre*true_other_share;  // Fixed: changed tue_other_share to true_other_share
 
-Q.vhg_saxony_elections_vote = Q.other_saxony_elections_vote*vhg_share;
-Q.vhg_r_saxony = Q.other_r_saxony*vhg_share;
+Q.vhg_meck_stre_elections_vote = Q.other_meck_stre_elections_vote*vhg_share;
+Q.vhg_r_meck_stre = Q.other_r_meck_stre*vhg_share;
 
 function allocateSeats(percentages, totalSeats = 35) {
 const exactSeats = {};
