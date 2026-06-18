@@ -505,7 +505,7 @@ Mecklenburg-Strelitz results:
 
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div> !}SAPD: {!</td><td!} [+ sapd_meck_stre_elections_vote +]% {!</td><td!} [+ sapd_r_meck_stre +]% {!</td></tr>!} ?]
 
-[? if uspd_joined < 3: {!<tr><td><div class="box" style='background-color: Q.uspd_colour'> </div> !}USPD: {!</td><td!} [+ uspd_meck_stre_elections_vote +]% {!</td><td!} [+ uspd_r_meck_stre +]% {!</td></tr>!} ?]
+[? if uspd_joined < 3: {!<tr><td><div class="box" style='background-color: {{ Q.uspd_colour }}'> </div> !}USPD: {!</td><td!} [+ uspd_meck_stre_elections_vote +]% {!</td><td!} [+ uspd_r_meck_stre +]% {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td!} [+ kpd_meck_stre_elections_vote +]% {!</td><td!} [+ kpd_r_meck_stre +]% {!</td></tr>!}
 
