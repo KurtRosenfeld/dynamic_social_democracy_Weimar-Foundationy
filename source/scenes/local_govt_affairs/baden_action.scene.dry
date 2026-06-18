@@ -1,7 +1,7 @@
 title: Baden
 new-page: true
 is-card: true
-view-if: baden_action_timer = 0 and (baden_gov == "SPD" or baden_gov == "Social-Catholic" or baden_gov == "Left" or baden_gov == "Social-Liberal" or saxony_gov == "Weimar" or baden_gov == "Grand")
+view-if: baden_action_timer = 0 and (baden_gov == "SPD" or baden_gov == "Social-Catholic" or baden_gov == "Left" or baden_gov == "Social-Liberal" or baden_gov == "Weimar" or baden_gov == "Grand")
 on-arrival: baden_action_timer += 12; saxony_action_timer += 4 if baden_gov == "Left"; baden_action_timer += 1 if baden_gov == "Weimar"; baden_action_timer += 4 if baden_gov == "Grand"; month_actions += 1
 tags: local_govt_affairs
 card-image: img/land/Großherzugtum_Baden.svg.webp
