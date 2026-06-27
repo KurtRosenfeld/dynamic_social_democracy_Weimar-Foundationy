@@ -322,13 +322,13 @@ go-to: thuringia_coalition_menu
 
 {!<tr><td><div class="box" style='background-color:#700000'> </div> !}KPD: {!</td><td>!} [+ kpd_thuringia_elections_vote +]% {!</td><td>!} [+ kpd_r_thuringia +]%  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#0D2AC9'> </div> !} OB: {!</td><td>!} [+ bl_thuringia_elections_vote +]% {!</td><td>!} [+ bl_r_thuringia +]%  {!</td></tr>!}
-
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_thuringia_elections_vote +]% {!</td><td>!} 0%  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} VVL: {!</td><td>!} [+ nsfb_thuringia_elections_vote +]% {!</td><td>!} [+ nsfb_r_thuringia +]%  {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#0D2AC9'> </div> !} OB: {!</td><td>!} [+ bl_thuringia_elections_vote +]% {!</td><td>!} [+ bl_r_thuringia +]%  {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_thuringia_elections_vote +]% {!</td><td>!} [+ nsdap_r_thuringia +]%  {!</td></tr>!}
+[? if nsfb_exists: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} VVL: {!</td><td>!} [+ nsfb_thuringia_elections_vote +]% {!</td><td>!} [+ nsfb_r_thuringia +]%  {!</td></tr>!} ?]
+
+[? if not nsfb_exists: {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_thuringia_elections_vote +]% {!</td><td>!} [+ nsdap_r_thuringia +]%  {!</td></tr>!} ?]
 {!</table>!}
 <hr id="read-marker">
 Thuringia used to be ruled by left coalitions up to now.
@@ -336,22 +336,31 @@ Thuringia used to be ruled by left coalitions up to now.
 
 United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <span style="color: [+ kpd_colour +];">**KPD**</span>[? if uspd_r_thuringia >= 1: + <span style="color: [+ uspd_colour +];">**USPD**</span>?]): [+ left_coalition_thuringia +]% 
 
-Ordnungsbund (<span style="color: #000000;">**[+ z_party_name +]**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: #C0A054;">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] + <span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #006400;">**LB**</span>): [+ ordnungsbund +]%
+Ordnungsbund (<span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> + <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: [+ lvp_colour +];">**LVP**</span>?] + <span style="color: [+ dnvp_colour +];">**DNVP**</span> + <span style="color: #006400;">**LB**</span>): [+ ordnungsbund +]%
 
 @thuringia_coalition_menu
 
 - @united_left_coalition_thuringia
 - @far_right_abstention_thuringia
 - @bourgeois_coalition_thuringia
+- @spd_majority_thuringia
 
 @united_left_coalition_thuringia
 title: [? if uspd_r_thuringia >= 1: Maybe return to the <span style="color: [+ spd_colour +];">**Red**</span>-<span style="color: [+ uspd_colour +];">**Red**</span>-<span style="color: [+ kpd_colour +];">**Red**</span> Coalition?? ?][? if uspd_r_thuringia == 0: Maybe return to the <span style="color: #c00000;">**Red**</span>-<span style="color: #700000;">**Red**</span> Coalition? ?]
 subtitle: Are we sure want to do this again?
-unavailable-subtitle: This could not even work if we had the seats...
+unavailable-subtitle: [? if left_coalition_thuringia < 50: We don't have the parliamentary support. ?][? if kpd_relation < 35: This could not even work if we had the seats... ?]
 choose-if: left_coalition_thuringia >= 50 and kpd_relation >= 35
 on-arrival: thuringia_gov = "Left"; ddp_relation -= 8; z_relation -= 10; dvp_relation -= 12; workers_kpd += 3; workers_spd += 1; kpd_relation += 10; uspd_relation += 5
 
 Against every expectation we were able to form a new coalition with the <span style="color: [+ kpd_colour +];">**KPD**</span>!
+
+@spd_majority_thuringia
+title: The <span style="color: [+ spd_colour +];">**SPD**</span> wins the best Social Democratic margin in Thuringia yet
+view-if: spd_r_thuringia >= 50 or (spr_r_thuringia + uspd_r_thuringia) >= 50
+choose-if: spd_r_thuringia >= 50 or uspd_relation >= 40
+unavailable-subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> can't get behind this arrangement. We could never survive without their support.
+on-arrival: thuringia_gov = "SPD" if spd_r_thuringia >= 50; thuringia_gov = "Social-Democratic" if spd_r_thuringia < 50; z_relation -= 2; dvp_relation -= 5; workers_uspd += 1; workers_spd += 2; kpd_relation += 2; uspd_relation += 8
+
 
 @bourgeois_coalition_thuringia
 title: A Bourgeois Coalition of the <span style="color: #0D2AC9;">**Ordnungbund**</span>
@@ -368,4 +377,4 @@ view-if: bl_r_thuringia < 50
 choose-if: far_right_abstention_thuringia >= 50
 on-arrival: thuringia_gov = "Bourgeois-Right"; workers_other += 3; rural_other += 1; workers_spd -= 1; new_middle_nsfb += 3; workers_nsfb += 1; unemployed_nsfb -= 1
 
-The Bourgeois form a united front to keep us out of power. Even the United Völkisch List abstains to prevent any chance for us form a government...
+The Bourgeois form a united front to keep us out of power. Even the United Völkisch List abstains to prevent any chance for us to form a government...
