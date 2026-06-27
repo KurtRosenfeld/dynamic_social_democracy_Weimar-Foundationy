@@ -372,25 +372,14 @@ Q.poland_relation -= 0.4;
 
 Q.total_media = (Q.anarchist_media + Q.communist_media + Q.liberal_media + Q.catholic_media + Q.socdem_media + Q.volkisch_media + Q.monarchist_media + Q.conservative_media);
 
- // updating media
-
-Q.anarchist_media = Math.round((Q.anarchist_media/total_media)*100);
-Q.communist_media = Math.round((Q.communist_media/total_media)*100);
-Q.socdem_media = Math.round((Q.socdem_media/total_media)*100);
-Q.catholic_media = Math.round((Q.catholic_media/total_media)*100);
-Q.liberal_media = Math.round((Q.liberal_media/total_media)*100);
-Q.conservative_media = Math.round((Q.conservative_media/total_media)*100);
-Q.monarchist_media = Math.round((Q.monarchist_media/total_media)*100);
-Q.volkisch_media = Math.round((Q.volkisch_media/total_media)*100);
-
-
 Q.left_media = (Q.anarchist_media + Q.communist_media);
 if (Q.editorial_line == "Left") Q.left_media = (Q.anarchist_media + Q.communist_media + Q.socdem_media);
 
 Q.republican_media = (Q.liberal_media + Q.catholic_media + Q.socdem_media);
 if (Q.editorial_line == "Left") Q.republican_media = (Q.liberal_media + Q.catholic_media);
 
-Q.far_right_media = (Q.volkisch_media + Q.monarchist_media + Q.conservative_media);
+ // updating media (doesn't work)
+
 
 // re-calculate dissent.
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength;
