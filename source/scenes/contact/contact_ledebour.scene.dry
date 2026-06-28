@@ -1,0 +1,38 @@
+title: Georg Ledebour
+new-page: true
+
+= Georg Ledebour
+
+[? if not ledebour_in == "KPD": Ledebour is a member of the <span style="color: [+ ledebour_colour +];">**[+ ledebour_in +]**</span> where he advocates for closer cooperation with the <span style="color: [+ kpd_colour +];">**KPD**</span>. ?]
+
+[? if ledebour_in == "KPD": Ledebour is a member of the <span style="color: [+ kpd_colour +];">**KPD**</span> trying to establish a course of independent worker's politics. ?]
+  
+- @improve_relations_ledebour
+- @negotiate_unity_candidate_ledebour
+- @sign_unity_candidate_ledebour
+ 
+@improve_relations_ledebour
+title: Improve relations with the <span style="color: [+ ledebour_colour +];">**[+ ledebour_in +]**</span>
+subtitle: Ledebour can improve our relations his party making future cooperation way easier.
+on-arrival: uspd_relation += 6 if ledebour_in == "USPD"; uspd_relation += 4 if uspd_leader == "Ledebour"; sb_relation += 5 ledebour_in == "SB"; sb_relation += 5 if ideology == "left" and ledebour_in == "SB"; sapd_relation += 6 if ledebour_in == "SAPD"; sapd_relation += 4 if sapd_leader == "Ledebour"; kpd_relation += 3 if ledebour_in == "KPD"; kpd_relation += 2 if ledebour_in == "KPD" and kpd_leader == "Levi"; kpd_relation -= 3 if ideology == "reformist"
+
+We have improved our relations with the <span style="color: [+ ledebour_colour +];">**[+ ledebour_in +]**</span>.
+
+@negotiate_unity_candidate_ledebour
+title: Try to establish Ledebour as unity candidate for the next presidential election.
+choose-if: not ledebour_in == "KPD"
+unavailable-subtitle: A <span style="color: [+ kpd_colour +];">**KPD**</span> candidate is not really a compromise to begin with...
+view-if: ledebour_unity_support < 2
+on-arrival: ledebour_unity_support += 1 if left_strength > reformist_strength
+
+[? if left_strength > reformist_strength: We are making progress to establish Ledebour as unity candidate of the left. ?][? if left_strength <= reformist_strength: The reformist faction has made any progress on this issue impossible... ?]
+
+@sign_unity_candidate_ledebour
+title: Ledebour will do it!
+subtitle: We could convince both the <span style="color: [+ ledebour_colour +];">**[+ ledebour_in +]**</span> and the <span style="color: [+ spd_colour +];">**SPD**</span> of adopting Ledebour as presidential candidate.
+on-arrival: ledebour_unity_candidate = 1; uspd_relation += 4; sapd_relation += 4; sb_relation += 4; kpd_relation += 2; kpo_relation += 2
+
+Now we only have to get the <span style="color: [+ kpd_colour +];">**KPD**</span> behind this proposal...
+
+
+ 
