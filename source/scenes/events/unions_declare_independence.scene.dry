@@ -145,7 +145,7 @@ Q.workers_kpd -= 3;
 
 Q.right_spd_r = Q.right_spd_r + Q.labor_spd_r*0.65;
 Q.z_r = Q.z_r + Q.labor_spd_r*0.05;
-if not (Q.left_split) Q.uspd_r = Q.uspd_r + Q.labor_spd_r*0.3;
+if (!Q.left_split) Q.uspd_r = Q.uspd_r + Q.labor_spd_r*0.3;
 if (Q.left_split) { 
 Q.sapd_r = Q.sapd_r + Q.labor_spd_r*0.2;
 Q.ddp_r = Q.ddp_r + Q.labor_spd_r*0.02;
