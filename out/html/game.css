@@ -717,6 +717,12 @@ th {
   stroke-width: 1.5px;
 }
 
+.seat.right_spd {
+  fill: #DD9976;
+  stroke: #C10000;
+  stroke-width: 1.3px;
+}
+
 .seat.ddp {
   fill: #D3C24D;
 }
