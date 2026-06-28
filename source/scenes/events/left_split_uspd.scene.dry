@@ -1,0 +1,102 @@
+title: Left-wing Split
+new-page: true 
+subtitle: The Left's disagreements with our policies have grown too severe.
+tags: event
+view-if: left_dissent >= 60 and uspd_votes > 1
+on-arrival: {!
+Q.left_split = 1; 
+
+    if (Q.left_strength < 10) {
+        Q.workers_spd -= 3; 
+        Q.unemployed_spd -= 3; 
+        Q.workers_uspd += 3; 
+        Q.rb_strength -= 300; 
+        if (Q.rb_militancy >= 0.1) Q.rb_militancy -= 0.04; 
+    } else if (Q.left_strength < 25) {
+        Q.workers_spd -= 4; 
+        Q.unemployed_spd -= 4; 
+        Q.workers_uspd += 4; 
+        Q.unemployed_uspd += 2;
+        Q.rb_strength -= 350; 
+        if (Q.rb_militancy >= 0.1) Q.rb_militancy -= 0.05; 
+    } else if (Q.left_strength < 40) {
+        Q.workers_spd -= 5; 
+        Q.unemployed_spd -= 5; 
+        Q.workers_uspd += 5; 
+        Q.unemployed_uspd += 3;
+        Q.rb_strength -= 400; 
+        if (Q.rb_militancy >= 0.1) Q.rb_militancy -= 0.06; 
+    } else if (Q.left_strength < 60) {
+        Q.workers_spd -= 6; 
+        Q.unemployed_spd -= 6; 
+        Q.workers_uspd += 6; 
+        Q.unemployed_uspd += 3;
+        Q.rb_strength -= 500; 
+        if (Q.rb_militancy >= 0.1) Q.rb_militancy -= 0.08; 
+    } else {
+        Q.workers_spd -= 8; 
+        Q.unemployed_spd -= 8; 
+        Q.workers_uspd += 8; 
+        Q.unemployed_uspd += 4;
+        Q.rb_strength -= 600; 
+        if (Q.rb_militancy >= 0.1) Q.rb_militancy -= 0.1; 
+    }
+
+    Q.uspd_r += 2; 
+    Q.spd_r -= 2; 
+
+Q.left_strength = Q.left_strength / 2; 
+
+Q.z_relation += 5; 
+Q.ddp_relation += 5; 
+Q.dvp_relation += 5; 
+Q.lvp_relation += 5; 
+Q.ddp_left += 2; 
+Q.dvp_left += 1; 
+Q.lvp_left += 1; 
+
+Q.n_advisors_start = Q.n_advisors; 
+if (Q.levi_advisor == 1) Q.n_advisors -= 1; 
+Q.levi_advisor = 0; 
+Q.kpd_relation -= 8; 
+
+if (Q.centrists_resign == 1) {
+    if (Q.breitscheid_advisor == 1) Q.n_advisors -= 1;
+    if (Q.crispien_advisor == 1) Q.n_advisors -= 1;
+    if (Q.sender_advisor == 1) Q.n_advisors -= 1;
+
+    Q.breitscheid_advisor = 0;
+    Q.crispien_advisor = 0;
+    Q.sender_advisor = 0;
+
+    Q.breitscheid_in = "USPD";
+    Q.crispien_in = "USPD";
+    Q.sender_in = "USPD";
+}
+
+Q.seydewitz_in = "USPD";
+if (Q.rosenfeld_in == "SPD") Q.rosenfeld_in = "USPD";
+Q.siemsen_in = "USPD";
+if (Q.levi_in == "SPD") Q.levi_in = "USPD";
+if (Q.ledebour_in == "SPD") Q.ledbour_in = "SAPD";
+if (Q.liebknecht_in == "SPD") Q.liebknecht_in = "SAPD";
+
+if (Q.seydewitz_advisor == 1) Q.n_advisors -= 1; 
+Q.seydewitz_advisor = 0; 
+if (Q.rosenfeld_advisor == 1) Q.n_advisors -= 1; 
+Q.rosenfeld_advisor = 0; 
+if (Q.siemsen_advisor == 1) Q.n_advisors -= 1; 
+Q.siemsen_advisor = 0; 
+if (Q.levi_advisor == 1) Q.n_advisors -= 1; 
+Q.levi_advisor = 0; 
+if (Q.ledebour_advisor == 1) Q.n_advisors -= 1; 
+Q.ledebour_advisor = 0; 
+if (Q.liebknecht_advisor == 1) Q.n_advisors -= 1; 
+Q.liebknecht_advisor = 0; 
+if (Q.unions_independent == 1) { Q.aufhauser_in = "USPD";
+if (Q.aufhauser_advisor == 1) Q.n_advisors -= 1; 
+Q.aufhauser_advisor = 0;
+}
+if (Q.n_advisors < Q.n_advisors_start) Q.shuffle_leadership_timer = 0;
+!}
+max-visits: 1
