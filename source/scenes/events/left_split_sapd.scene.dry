@@ -45,7 +45,6 @@ Q.left_split = 1;
 
     Q.kpd_r += 1; 
     Q.spd_r -= 1; 
-}
 
 Q.left_strength = Q.left_strength / 2; 
 
