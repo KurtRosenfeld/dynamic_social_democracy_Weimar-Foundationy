@@ -1175,7 +1175,7 @@ if (Q.kvp_formed && Q.lvp_formed) {
 
 Q.hitler_right_coalition = parseFloat((Q.z_r + Q.nsdap_r).toFixed(1));
 
-Q.killer_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.dnvp_r + Q.others_r + Q.nsfb_r + Q.dvfp_r Q.nsdap_r).toFixed(1));
+Q.killer_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.dnvp_r + Q.others_r + Q.nsfb_r + Q.dvfp_r + Q.nsdap_r).toFixed(1));
 
 Q.goerdeler_right_coalition = parseFloat((Q.z_r + Q.dvp_r + Q.lvp_r + Q.other_r + Q.kvp_r + Q.dnvp_r + Q.dnf_r).toFixed(1));
 
