@@ -29,6 +29,7 @@ on-arrival: ledebour_unity_support += 1 if left_strength > reformist_strength
 
 @sign_unity_candidate_ledebour
 title: Ledebour will do it!
+view-if: ledebour_unity_support == 2
 subtitle: We could convince both the <span style="color: [+ ledebour_colour +];">**[+ ledebour_in +]**</span> and the <span style="color: [+ spd_colour +];">**SPD**</span> of adopting Ledebour as presidential candidate.
 on-arrival: ledebour_unity_candidate = 1; uspd_relation += 4; sapd_relation += 4; sb_relation += 4; kpd_relation += 2; kpo_relation += 2
 
