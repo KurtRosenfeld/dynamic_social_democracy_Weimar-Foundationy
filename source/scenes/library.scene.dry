@@ -1104,6 +1104,8 @@ if (d3 && window) {
 
 [? if dnef_formed: {!<tr><td><div class="box" style='background-color:#E3000F;'> </div></td><td>!} SPD: {!</td><td>!} [+ spd_r +]% {!</td></tr>!} ?]
 
+[? if right_spd_r: {!<tr><td><div class="box" style='background-color:#DD9976;'> </div></td><td>!} <span class="tooltip-text" title="Social Democratic Independets" style="color: #DD9976;">**I**</span>: {!</td><td>!} [+ right_spd_r +]% {!</td></tr>!} ?]
+
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#9B0000'> </div></td><td>!} SAPD: {!</td><td>!} [+ sapd_r +]% {!</td></tr>!} ?]
 
 [? if indep_left_r: {!<tr><td><div class="box" style='background-color:#B4143D'> </div></td><td>!} SI: {!</td><td>!} Math.round([+ indep_left_r +])% {!</td></tr>!} ?]
