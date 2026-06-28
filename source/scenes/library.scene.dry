@@ -772,6 +772,7 @@ if (Q.right_spd_r) {
         "name": "SPD Right",
         "seats": Math.round(Q.right_spd_r * Q.reichstag_size),
     });
+}
 
 if (Q.rdp_r) {
     data.push({
