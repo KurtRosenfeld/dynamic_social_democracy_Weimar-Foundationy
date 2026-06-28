@@ -24,7 +24,7 @@ on-arrival: no_pres_can_thalmann += 1 if (left_strength >= 45 and kpd_relation >
 
 @sign_thalmann_drop_out
 title: Thälmann won't run!
-view-if no_pres_can_thalmann == 3
+view-if: no_pres_can_thalmann == 3
 on-arrival: kpd_unity_support = 1
 
 Thälmann won't run in the next election. Should we decide to pull out of the agreement, we will deeply hurt our relations with the other worker's parties.
