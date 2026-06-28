@@ -18,9 +18,9 @@ on-arrival: kpd_relation += 5 if ideology == "left"; kpd_relation += 2 if left_s
 @negotiate_thalmann_dop_out
 title: Try to get Thälmann not to run in the next presidential elections.
 view-if: no_pres_can_thalmann < 3
-on-arrival: no_pres_can_thalmann += 1 if (left_strength >= 45 and kpd_relation >= 50 and (ledebour_unity_candidate = 1 or rosenfeld _unity_candidate = 1))
+on-arrival: no_pres_can_thalmann += 1 if (left_strength >= 45 and kpd_relation >= 50 and (ledebour_unity_candidate == 1 or rosenfeld_unity_candidate == 1))
 
-[? if kpd_relation < 50: We need better relations with the <span style="color: [+ kpd_colour +];">**KPD**</span>.?][? if left_strength < 45: Thälmann considers our party too reformist.?][? if not ledebour_unity_candidate = 1 and not rosenfeld _unity_candidate = 1: We need to propose a neutral alternative the <span style="color: [+ kpd_colour +];">**KPD**</span> could get behind.?]
+[? if kpd_relation < 50: We need better relations with the <span style="color: [+ kpd_colour +];">**KPD**</span>.?][? if left_strength < 45: Thälmann considers our party too reformist.?][? if ledebour_unity_candidate == 0 and rosenfeld_unity_candidate == 0: We need to propose a neutral alternative the <span style="color: [+ kpd_colour +];">**KPD**</span> could get behind.?]
 
 @sign_thalmann_drop_out
 title: Thälmann won't run!
