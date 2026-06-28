@@ -36,6 +36,12 @@ if (Q.reformist_strength < 10) {
     Q.rb_strength -= 400; 
 }
 
+
+Q.right_spd_r = Q.right_spd_r + Q.reformist_spd_r*0.95;
+Q.spd_r = Q.spd_r - Q.reformist_spd_r;
+Q.ddp_r = Q.ddp_r + Q.reformist_spd_r*0.05;
+
+
 Q.reformist_strength *= 0.3; 
 
 Q.n_advisors_start = Q.n_advisors; 
@@ -44,7 +50,7 @@ if (Q.ebert_advisor == 1) Q.n_advisors -= 1;
 Q.juchaz_advisor = 0; 
 Q.ebert_advisor = 0;
 Q.juchaz_in = "I"
-Q.ebert_in = "DDP";
+Q.ebert_in = "I";
 Q.reformists_resign = 1; 
 if (Q.centrists_resign == 1) {
     if (Q.wels_advisor == 1) Q.n_advisors -= 1;
