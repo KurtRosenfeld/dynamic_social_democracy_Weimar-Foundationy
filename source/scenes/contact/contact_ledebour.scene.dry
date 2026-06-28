@@ -14,7 +14,7 @@ new-page: true
 @improve_relations_ledebour
 title: Improve relations with the <span style="color: [+ ledebour_colour +];">**[+ ledebour_in +]**</span>
 subtitle: Ledebour can improve our relations his party making future cooperation way easier.
-on-arrival: uspd_relation += 6 if ledebour_in == "USPD"; uspd_relation += 4 if uspd_leader == "Ledebour"; sb_relation += 5 ledebour_in == "SB"; sb_relation += 5 if ideology == "left" and ledebour_in == "SB"; sapd_relation += 6 if ledebour_in == "SAPD"; sapd_relation += 4 if sapd_leader == "Ledebour"; kpd_relation += 3 if ledebour_in == "KPD"; kpd_relation += 2 if ledebour_in == "KPD" and kpd_leader == "Levi"; kpd_relation -= 3 if ideology == "reformist"
+on-arrival: uspd_relation += 6 if ledebour_in == "USPD"; uspd_relation += 4 if uspd_leader == "Ledebour"; sb_relation += 5 if ledebour_in == "SB"; sb_relation += 5 if ideology == "left" and ledebour_in == "SB"; sapd_relation += 6 if ledebour_in == "SAPD"; sapd_relation += 4 if sapd_leader == "Ledebour"; kpd_relation += 3 if ledebour_in == "KPD"; kpd_relation += 2 if ledebour_in == "KPD" and kpd_leader == "Levi"; kpd_relation -= 3 if ideology == "reformist"
 
 We have improved our relations with the <span style="color: [+ ledebour_colour +];">**[+ ledebour_in +]**</span>.
 
