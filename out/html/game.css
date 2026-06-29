@@ -965,6 +965,25 @@ fill: #D5AC27;
   height: 30px;
   display: flex;
   border: 2px solid #000;
+
+  .mytooltip {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 2px 0;
+}
+.mytooltip:hover { background-color: rgb(100, 140, 220); }
+
+.mytooltip .mytooltiptext {
+  position: fixed;
+  z-index: 999999;
+  width: 120px;
+  background: #fff4e6;
+  color: #3b1f0a;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
   border-radius: 5px;
   overflow: hidden;
   position: relative;
