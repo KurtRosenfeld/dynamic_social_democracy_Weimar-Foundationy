@@ -48,7 +48,6 @@ title: Contact former <span style="color: #AA0000;">USPD</span> members. (massiv
 subtitle: Crispien used to be head of the <span style="color: #AA0000;">USPD</span>, he can try to leverage his contacts.
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 choose-if: advisor_action_timer == 0
-on-arrival: advisor_action_timer = 6
 
 Who should be contacted?
 
@@ -57,3 +56,14 @@ Who should be contacted?
 - @contact_thalmann: Contact Ernst Thälmann of the <span style="color: [+ kpd_colour +];">**KPD**</span>
 - @root: Return to main
 
+@contact_rosenfeld
+view-if: not rosenfeld_in == "SPD"
+go-to: contact_rosenfeld
+
+@contact_ledebour
+view-if: not ledebour_in == "SPD"
+go-to: contact_ledebour
+
+@contact_thalmann
+view-if: not thalmann_in == "SPD"
+go-to: contact_thalmann
