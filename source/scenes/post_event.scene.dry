@@ -333,16 +333,20 @@ if (Q.economic_minister == "Tarnow") Q.economic_minister_party = Q.tarnow_in;
 
 // party leadership
 
-if (Q.spd_party_leader_3 == "vacant" and n_party_leaders >= 3) n_party_leaders -= 1;
-if (Q.spd_party_leader_2 == "vacant" and n_party_leaders >= 2) { 
-n_party_leaders -= 1;
-Q.spd_party_leader_2 = Q.spd_party_leader_3;
-Q.spd_party_leader_3 = "vacant";
+if (Q.spd_party_leader_3 == "vacant" && spd_party_leaders_n >= 3) {
+    spd_party_leaders_n -= 1;
 }
-if (Q.spd_party_leader_1 == "vacant" and n_party_leaders >= 1) { 
-n_party_leaders -= 1;
-Q.spd_party_leader_1 = Q.spd_party_leader_2;
-Q.spd_party_leader_2 = "vacant";
+
+if (Q.spd_party_leader_2 == "vacant" && spd_party_leaders_n >= 2) {
+    spd_party_leaders_n -= 1;
+    Q.spd_party_leader_2 = Q.spd_party_leader_3;
+    Q.spd_party_leader_3 = "vacant";
+}
+
+if (Q.spd_party_leader_1 == "vacant" && spd_party_leaders_n >= 1) {
+    spd_party_leaders_n -= 1;
+    Q.spd_party_leader_1 = Q.spd_party_leader_2;
+    Q.spd_party_leader_2 = "vacant";
 }
 
 // hyperinflation removed because of weird time loops - though it will be added again at some point
