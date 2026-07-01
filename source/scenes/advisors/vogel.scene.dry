@@ -1,0 +1,44 @@
+title: Hans Vogel
+is-pinned-card: true
+tags: advisor
+card-image: img/portraits/VogelHans.jpg
+view-if: vogel_advisor = 1
+new-page: true
+#face-image: img/portraits/VogelHans.jpg
+
+= Hans Vogel
+
+I think Hans Vogel was a stupid guy tbh...
+  
+- @party_discipline_vogel
+- @patriotic_rally
+- @nazi_urgency
+- @root: Return to main
+
+@party_discipline_vogel
+title: Party Discipline
+subtitle: Reduce dissent across parts of the party.
+choose-if: advisor_action_timer = 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; left_dissent += 3; labor_dissent -= 5; center_dissent -= 5; reformist_dissent -= 15; neorevisionist_dissent -= 20
+
+We have enforced party discipline to reduce dissent across the moderate factions.
+
+
+@patriotic_rally
+title: Patriotic Rally
+subtitle: Tap into a more nationalistic electorate
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; rural_spd += 3*(1-dissent); nationalism += 1 if nationalism >= 60; dvp_relation += 5 if reformist_strength >= 65; neorev_strength += 5; center_dissent += 5; catholic_spd += 2 if baden_gov == "Weimar"; catholic_spd += 2 if baden_gov == "SPD"; old_middle_spd += 2
+
+
+
+@nazi_urgency
+title: Warning about the <span style="color: #7A3C00;">Nazis</span>
+subtitle: By warning the party about the <span style="color: #7A3C00;">Nazis</span>, we can spur our members to action.
+choose-if: advisor_action_timer == 0
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+on-arrival: advisor_action_timer = 6; nazi_urgency += 1; rb_militancy += 0.01 if not rb_explode; nsdap_workers -= 4*(1-dissent);
+
+We have begun a propaganda campaign to warn our members away from the <span style="color: #7A3C00;">Nazis</span>.
