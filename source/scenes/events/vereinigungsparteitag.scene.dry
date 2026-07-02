@@ -155,7 +155,7 @@ go-to: sign_vspd
 Müller is more useful as Chancellor..
 
 @drop_none
-view-if: spd_party_leader_2 == "Muller"
+view-if: spd_party_leader_2 == "Müller"
 go-to: sign_vspd
 
 @sign_vspd
