@@ -14,4 +14,4 @@
 
 2. Run `dendrynexus make-html` in this folder.
 
-To update dendrynexus in `package-lock.json`, run `npm install --upgrade https://github.com/aucchen/dendrynexus`
+To update dendrynexus in `package-lock.json`, run `npm install --upgrade https://github.com/aucchen/dendrynexus`.
