@@ -559,7 +559,7 @@ on-arrival: oldenburg_election_2_trigger_time = time + 48; z_relation += 1; dvp_
 @bourgeois_coalition_oldenburg
 title: A bourgeois coalition must be formed
 choose-if: true_bourgeois_coalition_oldenburg >= 50
-view-if: weimar_coalition_oldenburg < 50 and right_coalition_oldenburg < 50
+view-if: (weimar_coalition_oldenburg < 50 or z_relation < 65) and right_coalition_oldenburg < 50
 on-arrival: oldenburg_election_2_trigger_time = time + 48; oldenburg_gov = "Bourgeois"
 
 @left_coalition_oldenburg
@@ -596,4 +596,4 @@ Why did this have to happen...?
 title: There is no possible government arrangement
 subtitle: A caretaker government keeps the buisness running for now.
 on-arrival: oldenburg_gov = "Bourgeois"; oldenburg_election_2_trigger_time = time + 25; rural_nsdap += 4; old_middle_nsdap += 1
-view-if: (weimar_coalition_oldenburg < 50 and right_coalition_oldenburg < 50) or (z_relation < 60 and dvp_relation < 67 and kpd_relation < 60)
+view-if: (weimar_coalition_oldenburg < 50 and right_coalition_oldenburg < 50 and true_bourgeois_coalition_oldenburg < 50) or (z_relation < 60 and dvp_relation < 67 and kpd_relation < 60 and true_bourgeois_coalition_oldenburg < 50)
