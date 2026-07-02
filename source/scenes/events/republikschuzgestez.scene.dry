@@ -1,0 +1,388 @@
+title: <span style="color: #000000;">**Republic**</span> <span style="color: #c10000;">**Protection**</span> <span style="color: #D3C24D;">**Act**</span>
+subtitle: Another <span style="color: #D3C24D;">**Rathenau**</span> won't happen.
+new-page: true
+tags: event
+view-if: year = 1922 and month = 6 and rathenau_dead
+max-visits: 1 
+priority: 1
+face-image: img/portraits/wirth.jpg
+
+= <span style="color: #000000;">**Republic**</span> <span style="color: #c10000;">**Protection**</span> <span style="color: #D3C24D;">**Act**</span>
+
+Our government has drafted a new law to protect the constitutional republican order. It allows for the banning of organizations, restrictions on the freedom of assembly and the creation of a new state court to punish treason. To erase doubts raised by the <span style="color: [+ uspd_colour +];">**USPD**</span> chancellor <span style="color: [+ z_colour +];">**Wirth**</span> and justice minister <span style="color: [+ spd_colour +];">**Radbruch**</span> have stated that it will only target the political <span style="color: [+ dnvp_colour +];">**right**</span> emideatly sparking controversy. Also the Free State of <span style="color: #00CCFF;">Bavaria</span> voiced opposition supported by <span style="color: #000000;">Wurtt</span><span style="color: #c00025;">emberg</span> - they see local states rights endagered and complain over the law targetting the <span style="color: #000000;">Wurtt</span><span style="color: [+ bvp_colour +];">conservative South</span>.
+
+- @let_it_be_the_reichsrat_than
+
+@let_it_be_the_reichsrat_than
+title: Ask the Reichsrat for approval
+subtitle: Since we are in control of Prussia we can easily get this through-
+on-arrival: {!
+
+// Initialize Reichsrat seat counts
+Q.kpd_r_reichsrat = 0;
+Q.left_r_reichsrat = 0;
+Q.socdem_r_reichsrat = 0;
+Q.spd_r_reichsrat = 0;
+Q.popular_front_r_reichsrat = 0;
+Q.weimar_r_reichsrat = 0;
+Q.soc_lib_r_reichsrat = 0;
+Q.soc_christ_r_reichsrat = 0;
+Q.grand_r_reichsrat = 0;
+Q.bourgeois_r_reichsrat = 0;
+Q.bourgeois_right_r_reichsrat = 0;
+Q.nsdap_r_reichsrat = 0;
+Q.bvp_r_reichsrat = 0;
+Q.anti_bvp_r_reichsrat = 0;
+
+// Prussia (26 seats)
+if (Q.in_left_coalition_prussia) Q.left_r_reichsrat = (Q.left_r_reichsrat + 26);
+if (Q.in_socdem_coalition_prussia) Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 26);
+if (Q.in_spd_majority_prussia) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 26);
+if (Q.in_weimar_coalition_prussia) Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 26);
+if (Q.in_grand_coalition_prussia) Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 26);
+if (Q.in_popular_front_coalition_prussia) Q.popular_front_r_reichsrat = (Q.popular_front_r_reichsrat + 26);
+if (Q.in_right_coalition_prussia) Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 26);
+if (Q.in_center_right_coalition_prussia) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 26);
+
+// Bavaria (11 seats)
+if (Q.bavaria_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 11);
+if (Q.bavaria_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 11);
+if (Q.bavaria_gov == "BVP") Q.bvp_r_reichsrat = (Q.bvp_r_reichsrat + 11);
+if (Q.bavaria_gov == "Anti-BVP") Q.anti_bvp_r_reichsrat = (Q.anti_bvp_r_reichsrat + 11);
+if (Q.bavaria_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 11);
+if (Q.bavaria_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 11);
+
+// Saxony (7 seats)
+if (Q.saxony_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 7);
+if (Q.saxony_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 7);
+if (Q.saxony_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 7);
+if (Q.saxony_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 7);
+if (Q.saxony_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 7);
+if (Q.saxony_gov == "Grand") Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 7);
+if (Q.saxony_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 7);
+if (Q.saxony_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 7);
+
+// Württemberg (4 seats)
+if (Q.wurttemberg_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 4);
+if (Q.wurttemberg_gov == "Social-Democraitc") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 4);
+if (Q.wurttemberg_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 4);
+if (Q.wurttemberg_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 4);
+if (Q.wurttemberg_gov == "Social-Catholicolic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 4);
+if (Q.wurttemberg_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 4);
+if (Q.wurttemberg_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 4);
+
+// Baden (3 seats)
+if (Q.baden_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 3);
+if (Q.baden_gov == "Social-Democraitc") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 3);
+if (Q.baden_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 3);
+if (Q.baden_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 3);
+if (Q.baden_gov == "Social-Catholicolic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
+if (Q.baden_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 3);
+if (Q.baden_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 3);
+
+// Thuringia (2 seats)
+if (Q.thuringia_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 2);
+if (Q.thuringia_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 2);
+if (Q.thuringia_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 2);
+if (Q.thuringia_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 2);
+if (Q.thuringia_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 2);
+if (Q.thuringia_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 2);
+if (Q.thuringia_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 2);
+
+// Hesse (2 seats)
+if (Q.hesse_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 2);
+if (Q.hesse_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 2);
+if (Q.hesse_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 2);
+if (Q.hesse_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 2);
+if (Q.hesse_gov == "Social-Catholicolic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 2);
+if (Q.hesse_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 2);
+if (Q.hesse_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 2);
+
+// Hamburg (2 seats)
+if (Q.hamburg_gov == "KPD") Q.kpd_r_reichsrat = (Q.kpd_r_reichsrat + 2);
+if (Q.hamburg_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 2);
+if (Q.hamburg_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 2);
+if (Q.hamburg_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 2);
+if (Q.hamburg_gov == "Grand") Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 2);
+if (Q.hamburg_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 2);
+
+// Bremen (1 seat)
+if (Q.bremen_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 1);
+if (Q.bremen_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 1);
+if (Q.bremen_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.bremen_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
+if (Q.bremen_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+
+// Anhalt
+if (Q.anhalt_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.anhalt_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
+if (Q.anhalt_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
+if (Q.anhalt_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+
+// Brunswick
+if (Q.brunswick_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.brunswick_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
+if (Q.brunswick_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
+if (Q.brunswick_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+
+// Lippe
+if (Q.lippe_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.lippe_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
+if (Q.lippe_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
+if (Q.lippe_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+
+// Lübeck
+if (Q.lubekc_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.lubekc_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
+if (Q.lubekc_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
+if (Q.lubekc_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+
+// Mecklenburg-Schwerin
+if (Q.meck_schwe_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.meck_schwe_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
+if (Q.meck_schwe_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
+if (Q.meck_schwe_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+
+// Mecklenburg-Strelitz
+if (Q.meck_stre_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.meck_stre_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
+if (Q.meck_stre_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
+if (Q.meck_stre_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+
+// Oldenburg
+if (Q.oldenburg_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.oldenburg_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
+if (Q.oldenburg_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
+if (Q.oldenburg_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+
+// Schaumburg-Lippe
+if (Q.schaum_lippe_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.schaum_lippe_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
+if (Q.schaum_lippe_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
+if (Q.schaum_lippe_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+
+// Waldeck
+if (Q.waldeck_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.waldeck_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
+if (Q.waldeck_gov == "Popular-Front") Q.popular_front_r_reichsrat = (Q.popular_front_r_reichsrat + 1);
+if (Q.waldeck_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+if (Q.waldeck_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 1);
+
+
+
+
+// Calculate total Reichsrat seats
+Q.total_reichsrat_seats = Q.kpd_r_reichsrat + Q.left_r_reichsrat + Q.socdem_r_reichsrat + 
+                          Q.spd_r_reichsrat + Q.popular_front_r_reichsrat + Q.weimar_r_reichsrat + 
+                          Q.soc_lib_r_reichsrat + Q.soc_christ_r_reichsrat + Q.grand_r_reichsrat + 
+                          Q.bourgeois_r_reichsrat + Q.bourgeois_right_r_reichsrat + Q.nsdap_r_reichsrat + 
+                          Q.bvp_r_reichsrat + Q.anti_bvp_r_reichsrat;
+
+// Coalition totals (for reference)
+Q.left_coalition_reichsrat = Q.left_r_reichsrat + Q.kpd_r_reichsrat;
+Q.socdem_coalition_reichsrat = Q.socdem_r_reichsrat + Q.spd_r_reichsrat;
+Q.weimar_coalition_reichsrat = Q.weimar_r_reichsrat;
+Q.grand_coalition_reichsrat = Q.grand_r_reichsrat;
+Q.popular_front_coalition_reichsrat = Q.popular_front_r_reichsrat;
+Q.bourgeois_coalition_reichsrat = Q.bourgeois_r_reichsrat + Q.bvp_r_reichsrat;
+Q.right_coalition_reichsrat = Q.bourgeois_right_r_reichsrat + Q.nsdap_r_reichsrat;
+
+!}
+on-display: {!
+// Prepare data for visualization
+data = [];
+
+if (Q.kpd_r_reichsrat > 0) {
+    data.push({
+        "id": "kpd",
+        "legend": "KPD",
+        "name": "KPD",
+        "seats": Q.kpd_r_reichsrat,
+    });
+}
+
+if (Q.left_r_reichsrat > 0) {
+    data.push({
+        "id": "pcf",
+        "legend": "Left",
+        "name": "Left",
+        "seats": Q.left_r_reichsrat,
+    });
+}
+
+if (Q.socdem_r_reichsrat > 0) {
+    data.push({
+        "id": "sfio",
+        "legend": "Socdem",
+        "name": "Socdem",
+        "seats": Q.socdem_r_reichsrat,
+    });
+}
+
+if (Q.spd_r_reichsrat > 0) {
+    data.push({
+        "id": "spd",
+        "legend": "SPD",
+        "name": "SPD",
+        "seats": Q.spd_r_reichsrat,
+    });
+}
+
+if (Q.popular_front_r_reichsrat > 0) {
+    data.push({
+        "id": "popfront",
+        "legend": "Popular Front",
+        "name": "Popular Front",
+        "seats": Q.popular_front_r_reichsrat,
+    });
+}
+
+if (Q.weimar_r_reichsrat > 0) {
+    data.push({
+        "id": "weimar",
+        "legend": "Weimar Coalition",
+        "name": "Weimar Coalition",
+        "seats": Q.weimar_r_reichsrat,
+    });
+}
+
+if (Q.soc_lib_r_reichsrat > 0) {
+    data.push({
+        "id": "soclib",
+        "legend": "Social-Liberal",
+        "name": "Social-Liberal",
+        "seats": Q.soc_lib_r_reichsrat,
+    });
+}
+
+if (Q.soc_christ_r_reichsrat > 0) {
+    data.push({
+        "id": "socath",
+        "legend": "Social-Christian",
+        "name": "Social-Christian",
+        "seats": Q.soc_christ_r_reichsrat,
+    });
+}
+
+if (Q.anti_bvp_r_reichsrat > 0) {
+    data.push({
+        "id": "notbvp",
+        "legend": "Anti-BVP",
+        "name": "Anti-BVP",
+        "seats": Q.anti_bvp_r_reichsrat,
+    });
+}
+
+if (Q.grand_r_reichsrat > 0) {
+    data.push({
+        "id": "grand",
+        "legend": "Grand Coalition",
+        "name": "Grand Coalition",
+        "seats": Q.grand_r_reichsrat,
+    });
+}
+
+if (Q.bourgeois_r_reichsrat > 0) {
+    data.push({
+        "id": "other",
+        "legend": "Bourgeois",
+        "name": "Bourgeois",
+        "seats": Q.bourgeois_r_reichsrat,
+    });
+}
+
+if (Q.bvp_r_reichsrat > 0) {
+    data.push({
+        "id": "bvp",
+        "legend": "BVP",
+        "name": "BVP",
+        "seats": Q.bvp_r_reichsrat,
+    });
+}
+
+if (Q.bourgeois_right_r_reichsrat > 0) {
+    data.push({
+        "id": "bourgeois_right",
+        "legend": "Right",
+        "name": "Right",
+        "seats": Q.bourgeois_right_r_reichsrat,
+    });
+}
+
+if (Q.nsdap_r_reichsrat > 0) {
+    data.push({
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Q.nsdap_r_reichsrat,
+    });
+}
+
+// Visualization setup
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("reichsrat_viz").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichsrat_viz").datum(data).call(parliament);
+}
+!}
+
+**Welcome to the Reichsrat!**
+
+This is the official organ that represents local state governments in the Reich-legislation. It can veto any law the government passes, so having them on ones side is always advisable.
+
+{!<svg id="reichsrat_viz" style="width: 500px; height: 250px;"> </svg>!}
+
+To appease the <span style="color: #00CCFF;">Bavarian</span> government and their allies the law was amended to make an interpretation of exclusive targeting of the <span style="color: [+ dnvp_colour +];">**right**</span> impossible.
+
+- @go_with_the_new_text
+- @make_a_lot_of_fuzz_about_the_wording
+
+@go_with_the_new_text
+title: We will pass the law with the new text.
+subtitle: We really don't want another Kapp Putsch...
+on-arrival: kpd_relation -= 2; uspd_relation -= 4; dvp_relation += 1; early_dvp_cooperation += 1*(1-dissent); reformist_strength += 3
+
+The law passes! But the delegation from <span style="color: #00CCFF;">Bavaria</span> voted against it anyways...
+
+Now we only have to adopt it in the Reichstag.
+
+- @wow_easy_sweap
+
+@make_a_lot_of_fuzz_about_the_wording
+title: Demand the origianl wording
+subtitle: This would not prevent attacks on worker's parties for certain. Furthermore the Bourgeois would be displeased.
+on-arrival: kpd_relation += 2; uspd_relation += 10; z_relation -= 2; dvp_relation -= 5; early_dvp_cooperation -= 2; coaltion_dissent += 1; left_strength += 3
+
+- @damn_close_race_ok_wow
+
+The law passes with a high abstention rate. Our coalition partners in the Reich and in Prussia accuse us of childish behavior and frightening closeness to the radical <span style="color: [+ kpd_colour +];">**KPD**</span>. Working with the <span style="color: [+ dvp_colour +];">**DVP**</span> will become way harder. Let's just hope we can get this law through the Reichstag.
+
+@wow_easy_sweap
+  
+title: The Reichstag will adopt the law.
+
+The <span style="color: [+ spd_colour +];">**SPD**</span>, <span style="color: [+ ddp_colour +];">**DDP**</span>, <span style="color: [+ z_colour +];">**Center**</span> and <span style="color: [+ uspd_colour +];">**USPD**</span> vote entirely in favour of the law, the <span style="color: [+ dnvp_colour +];">**DNVP**</span> and <span style="color: [+ bvp_colour +];">**Bavarian**</span> parties unite against it. The <span style="color: [+ dvp_colour +];">**DVP**</span> is split but most vote in favour as a sign of good will towards the Republic as part of their <span class="tooltip-text" title="The official doctrine of the DVP under Stresemann - support the republic strategically but keep the Monarchy in heart" <span style="color: [+ dvp_colour +];">**Vernunftrepublikanismus**</span>.
+
+The votes in favour outnumber those against by a factor of three. The <span style="color: #000000;">**Rep**</span><span style="color: #c10000;">**ub**</span><span style="color: #D3C24D;">**lic**</span> will be save for sure.
+
+@damn_close_race_ok_wow
+  
+title: Let's see if we can get it through the Reichstag as well...
+on-arrival: super_mad_bavaria += 1
+
+The <span style="color: [+ spd_colour +];">**SPD**</span>, <span style="color: [+ ddp_colour +];">**DDP**</span> and <span style="color: [+ uspd_colour +];">**USPD**</span> vote entirely in favour of the law, the <span style="color: [+ dnvp_colour +];">**DNVP**</span> and <span style="color: [+ bvp_colour +];">**Bavarian**</span> parties unite against it. Despite most members voting in favour, some in the <span style="color: [+ z_colour +];">**Center**</span> have abstained alongside the <span style="color: #ADE06E;">**DHP**</span> and <span style="color: [+ kpd_colour +];">**KPD**</span>. The <span style="color: [+ dvp_colour +];">**DVP**</span> is split but most abstain. Yet they shy away from voting against because of their <span class="tooltip-text" title="The official doctrine of the DVP under Stresemann - support the republic strategically but keep the Monarchy in heart" <span style="color: [+ dvp_colour +];">**Vernunftrepublikanismus**</span>.
+
+The 2/3 majority is secured but it took a lot of abstentions to pass a republican law in a republican parliament...
+
+
+
