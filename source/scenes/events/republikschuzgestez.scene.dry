@@ -368,7 +368,6 @@ The law passes with a high abstention rate. Our coalition partners in the Reich 
 - @damn_close_race_ok_wow
 
 @wow_easy_sweap
-  
 title: The Reichstag will adopt the law.
 
 The <span style="color: [+ spd_colour +];">**SPD**</span>, <span style="color: [+ ddp_colour +];">**DDP**</span>, <span style="color: [+ z_colour +];">**Center**</span> and <span style="color: [+ uspd_colour +];">**USPD**</span> vote entirely in favour of the law, the <span style="color: [+ dnvp_colour +];">**DNVP**</span> and <span style="color: [+ bvp_colour +];">**Bavarian**</span> parties unite against it. The <span style="color: [+ dvp_colour +];">**DVP**</span> is split but most vote in favour as a sign of good will towards the Republic as part of their <span class="tooltip-text" title="The official doctrine of the DVP under Stresemann - support the republic strategically but keep the Monarchy in heart" <span style="color: [+ dvp_colour +];">**Vernunftrepublikanismus**</span>.
@@ -376,7 +375,6 @@ The <span style="color: [+ spd_colour +];">**SPD**</span>, <span style="color: [
 The votes in favour outnumber those against by a factor of three. The <span style="color: #000000;">**Rep**</span><span style="color: #c10000;">**ub**</span><span style="color: #D3C24D;">**lic**</span> will be save for sure.
 
 @damn_close_race_ok_wow
-  
 title: Let's see if we can get it through the Reichstag as well...
 on-arrival: super_mad_bavaria += 1
 
