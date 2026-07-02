@@ -1,0 +1,26 @@
+title: <span style="color: #00CCFF;">Bavaria</span> suspends the <span style="color: #000000;">**Republic**</span> <span style="color: #c10000;">**Protection**</span> <span style="color: #D3C24D;">**Act**</span>
+subtitle: What is wrong with those people?!?
+new-page: true
+tags: event
+on-arrival: bavaria_gov = "Right"; catholic_dnvp += 1
+view-if: year = 1922 and month = 7
+max-visits: 1 
+priority: 0
+face-image: img/land/Bavaria.svg.webp
+
+= <span style="color: #00CCFF;">Bavaria</span> suspends the <span style="color: #000000;">**Republic**</span> <span style="color: #c10000;">**Protection**</span> <span style="color: #D3C24D;">**Act**</span>
+
+The government of <span style="color: #00CCFF;">Bavaria</span> has decided not to recognize the the new law with a similar law (closer aligned with regional interests and royal rights) taking it's place. The <span style="color: [+ ddp_colour +];">**DDP**</span> has pulled out of their coalition being replaced by the local <span style="color: [+ dnvp_colour +];">**DNVP**</span>-branch known as <span class="tooltip-text" title="Bavarian Middle (Center) Party" <span style="color: #0F2496;">**BMP**</span>.    
+
+- @compromise_monarchism
+- @easy_reichsexekution
+
+
+@compromise_monarchism
+title: We will find a compromise
+subtitle: [? if not super_mad_bavaria: At least they're not couping us... ?][? if super_mad_bavaria: This is going to be really hard. ?]
+on-arrival: protection_act_compromize_process += 1
+
+@easy_reichsexekution
+title: We will do nothing for now
+subtitle: We could force them to obey when we need to...
