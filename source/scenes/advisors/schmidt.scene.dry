@@ -21,7 +21,7 @@ Robert Schmidt sits at the intersection of Labour, Reformism and Centrism. He re
 @carry_out_policy
 title: Carry out the economic plan.
 subtitle: If we are in government, we can carry out a public works program such as the WTB-Plan.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if wtb_adopted == 0 : We have not yet adopted an economic plan. ?][? if works_program >= 2 : We have already started implementing the plan. ?][? if economic_minister_party != "SPD" and finance_minister_party != "SPD" or not spd_in_government : The <span style="color: #c00000;">**SPD**</span> doesn't occupy the Finance or Economic ministry. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if wtb_adopted == 0 : We have not yet adopted an economic plan. ?][? if works_program >= 2 : We have already started implementing the plan. ?][? if economic_minister_party != "SPD" and finance_minister_party != "SPD" or not spd_in_government : The <span style="color: [+ spd_colour +];">**SPD**</span> doesn't occupy the Finance or Economic ministry. ?]
 choose-if: advisor_action_timer <= 0 and wtb_adopted and wtb_implemented <= 1 and economic_minister_party == "SPD" or finance_minister_party == "SPD" and spd_in_government
 on-arrival: advisor_action_timer = 6; economic_policy_timer -= 12
 go-to: economic_policy
@@ -30,7 +30,7 @@ go-to: economic_policy
 title: Agricultural Policy
 subtitle: Schmidt is the Minister of Agriculture.
 choose-if: advisor_action_timer <= 0 and spd_in_government and agriculture_minister == "Schmidt"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: #c00000;">SPD</span> is not in government. ?][? if agriculture_minister != "Schmidt": Schmidt is not the Agriculture Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: [+ spd_colour +];">SPD</span> is not in government. ?][? if agriculture_minister != "Schmidt": Schmidt is not the Agriculture Minister. ?]
 on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
 go-to: agricultural_policy
 
@@ -38,20 +38,21 @@ go-to: agricultural_policy
 title: Postal Policy
 subtitle: Schmidt is the Postal Minister.
 choose-if: advisor_action_timer <= 0 and spd_in_government and postal_minister == "Schmidt"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: #c00000;">SPD</span> is not in government. ?][? if postal_minister != "Schmidt": Schmidt is not the Postal Minister. ?]
-on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: [+ spd_colour +];">SPD</span> is not in government. ?][? if postal_minister != "Schmidt": Schmidt is not the Postal Minister. ?]
+on-arrival: advisor_action_timer = 6; postal_policy_timer -= 6; last_advisor_action = 1
+go-to: postal_policy
 
 @transport
 title: Transport Policy
 subtitle: Schmidt is the Minister of Transport.
 choose-if: advisor_action_timer <= 0 and spd_in_government and transport_minister == "Schmidt"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: #c00000;">SPD</span> is not in government. ?][? if transport_minister != "Schmidt": Schmidt is not the Transport Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The <span style="color: [+ spd_colour +];">SPD</span> is not in government. ?][? if transport_minister != "Schmidt": Schmidt is not the Transport Minister. ?]
 on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
 
 @finance_ministry_
 title: Fiscal Policy
 subtitle: As Finance Minister, Schmidt can enact tax policies.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : <span style="color: #c00000;">SPD</span> not in government: ?] [? if finance_minister != "Schmidt" : Schmidt does not hold the finance ministry. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : <span style="color: [+ spd_colour +];">SPD</span> not in government: ?] [? if finance_minister != "Schmidt" : Schmidt does not hold the finance ministry. ?]
 choose-if: advisor_action_timer == 0 and spd_in_government == 1 and finance_minister == "Schmidt"
 on-arrival: advisor_action_timer = 6; fiscal_policy_timer -= 6; last_advisor_action = 1
 go-to: fiscal_policy
@@ -59,7 +60,7 @@ go-to: fiscal_policy
 @economic_democracy_
 title: Economic Democracy
 subtitle: Enact policies to build a more democratic economy.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : <span style="color: #c00000;">SPD</span> not in government: ?] [? if labor_minister_party != "SPD" or (finance_minister_party != "SPD" and economic_minister_party != "SPD") : We do not have the necessary government ministers. ?] [? if cvp_economy_accepted : Our coalition agreement stipulates against socialization. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : <span style="color: [+ spd_colour +];">SPD</span> not in government: ?] [? if labor_minister_party != "SPD" or (finance_minister_party != "SPD" and economic_minister_party != "SPD") : We do not have the necessary government ministers. ?] [? if cvp_economy_accepted : Our coalition agreement stipulates against socialization. ?]
 choose-if: advisor_action_timer == 0 and spd_in_government == 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and (labor_minister_party == "SPD")
 on-arrival: advisor_action_timer = 6; economic_democracy_timer -= 10; last_advisor_action = 1
 go-to: economic_democracy
