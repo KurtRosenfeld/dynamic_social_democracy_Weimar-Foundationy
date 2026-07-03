@@ -226,15 +226,42 @@ Q.nsdap_r_reichsrat = 0;
 Q.bvp_r_reichsrat = 0;
 Q.anti_bvp_r_reichsrat = 0;
 
-// Prussia (26 seats)
-if (Q.in_left_coalition_prussia) Q.left_r_reichsrat = (Q.left_r_reichsrat + 26);
-if (Q.in_socdem_coalition_prussia) Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 26);
-if (Q.in_spd_majority_prussia) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 26);
-if (Q.in_weimar_coalition_prussia) Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 26);
-if (Q.in_grand_coalition_prussia) Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 26);
-if (Q.in_popular_front_coalition_prussia) Q.popular_front_r_reichsrat = (Q.popular_front_r_reichsrat + 26);
-if (Q.in_right_coalition_prussia) Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 26);
-if (Q.in_center_right_coalition_prussia) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 26);
+// Prussia (26 seats) - 13 from the central government, 13 from local ones (but a few had roughly always the same arrangement)
+if (Q.in_left_coalition_prussia) Q.left_r_reichsrat = (Q.left_r_reichsrat + 16);
+if (Q.in_socdem_coalition_prussia) Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 16);
+if (Q.in_spd_majority_prussia) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 16);
+if (Q.in_weimar_coalition_prussia) Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 16);
+if (Q.in_grand_coalition_prussia) Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 16);
+if (Q.in_popular_front_coalition_prussia) Q.popular_front_r_reichsrat = (Q.popular_front_r_reichsrat + 16);
+if (Q.in_social_catholic_coalition_prussia) Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 16);
+if (Q.in_right_coalition_prussia) Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 16);
+if (Q.in_center_right_coalition_prussia) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 16);
+
+// Berlin
+if (Q.kpd_relation >= 55) Q.left_r_reichsrat = (Q.left_r_reichsrat + 1);
+if (Q.kpd_relation < 55)  Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 1);
+
+// East Prussia
+if (Q.dnvp_votes >= 16) Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 1);
+if (Q.dnvp_votes < 16 and Q.dnvp_votes >= 7)  Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+if (Q.dnvp_votes < 7 and Q.spd_votes >= 60) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+
+// Deaply Catholic Provinces
+if (Q.in_social_catholic_coalition_prussia) Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
+if (!Q.in_social_catholic_coalition_prussia and Q.z_relation < 55) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 3);
+if (!Q.in_social_catholic_coalition_prussia and Q.z_relation >= 55) Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
+
+// Prussian Saxony
+if (Q.spd_votes >= 40) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.spd_votes < 40 and Q.spd_votes >= 35 and Q.kpd_relation >= 55) Q.left_r_reichsrat = (Q.left_r_reichsrat + 1);
+if (Q.spd_votes < 40 and Q.dvp_relation >= 40) Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 1);
+if (Q.spd_votes < 40 and Q.dvp_relation < 40 and Q.kpd_relation < 55) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+
+// others
+if (Q.nsdap_votes < 15) Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 4);
+if (Q.nsdap_votes >= 15 and Q.nsdap_votes < 30) Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 4);
+if (Q.nsdap_votes >= 30) Q.nsdap_r_reichsrat = (Q.nsdap_r_reichsrat + 4);
+
 
 // Bavaria (11 seats)
 if (Q.bavaria_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 11);
@@ -256,19 +283,19 @@ if (Q.saxony_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_
 
 // Württemberg (4 seats)
 if (Q.wurttemberg_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 4);
-if (Q.wurttemberg_gov == "Social-Democraitc") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 4);
+if (Q.wurttemberg_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 4);
 if (Q.wurttemberg_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 4);
 if (Q.wurttemberg_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 4);
-if (Q.wurttemberg_gov == "Social-Catholicolic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 4);
+if (Q.wurttemberg_gov == "Social-Catholic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 4);
 if (Q.wurttemberg_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 4);
 if (Q.wurttemberg_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 4);
 
 // Baden (3 seats)
 if (Q.baden_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 3);
-if (Q.baden_gov == "Social-Democraitc") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 3);
+if (Q.baden_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 3);
 if (Q.baden_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 3);
 if (Q.baden_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 3);
-if (Q.baden_gov == "Social-Catholicolic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
+if (Q.baden_gov == "Social-Catholic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
 if (Q.baden_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 3);
 if (Q.baden_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 3);
 
@@ -286,7 +313,7 @@ if (Q.hesse_gov == "Left") Q.left_r_reichsrat = (Q.left_r_reichsrat + 2);
 if (Q.hesse_gov == "Social-Democratic") Q.socdem_r_reichsrat = (Q.socdem_r_reichsrat + 2);
 if (Q.hesse_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 2);
 if (Q.hesse_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 2);
-if (Q.hesse_gov == "Social-Catholicolic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 2);
+if (Q.hesse_gov == "Social-Catholic") Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 2);
 if (Q.hesse_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 2);
 if (Q.hesse_gov == "Right") Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 2);
 
@@ -324,10 +351,10 @@ if (Q.lippe_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
 if (Q.lippe_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
 
 // Lübeck
-if (Q.lubekc_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
-if (Q.lubekc_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
-if (Q.lubekc_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
-if (Q.lubekc_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+if (Q.luebekc_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.luebekc_gov == "Social-Liberal") Q.soc_lib_r_reichsrat = (Q.soc_lib_r_reichsrat + 1);
+if (Q.luebekc_gov == "Weimar") Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 1);
+if (Q.luebekc_gov == "Bourgeois") Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
 
 // Mecklenburg-Schwerin
 if (Q.meck_schwe_gov == "SPD") Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
@@ -404,7 +431,7 @@ if (Q.left_r_reichsrat > 0) {
 
 if (Q.socdem_r_reichsrat > 0) {
     data.push({
-        "id": "sfio",
+        "id": "socdem",
         "legend": "Socdem",
         "name": "Socdem",
         "seats": Q.socdem_r_reichsrat,
