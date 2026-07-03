@@ -56,8 +56,8 @@ if (Q.dnvp_votes < 7 and Q.spd_votes >= 60) Q.spd_r_reichsrat = (Q.spd_r_reichsr
 
 // Deaply Catholic Provinces
 if (Q.in_social_catholic_coalition_prussia) Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
-if (!Q.in_social_catholic_coalition_prussia and z_relation < 55) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 3);
-if (!Q.in_social_catholic_coalition_prussia and z_relation >= 55) Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
+if (!Q.in_social_catholic_coalition_prussia and Q.z_relation < 55) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 3);
+if (!Q.in_social_catholic_coalition_prussia and Q.z_relation >= 55) Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
 
 // Prussian Saxony
 if (Q.spd_votes >= 40) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
