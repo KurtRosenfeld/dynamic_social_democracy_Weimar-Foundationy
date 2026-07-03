@@ -284,7 +284,7 @@ if (Q.soc_lib_r_reichsrat > 0) {
 
 if (Q.soc_christ_r_reichsrat > 0) {
     data.push({
-        "id": "socath",
+        "id": "soccath",
         "legend": "Social-Christian",
         "name": "Social-Christian",
         "seats": Q.soc_christ_r_reichsrat,
