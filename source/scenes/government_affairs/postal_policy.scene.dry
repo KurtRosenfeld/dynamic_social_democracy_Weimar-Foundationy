@@ -1,0 +1,52 @@
+title: Postal Policy
+new-page: true
+is-card: true
+on-arrival: postal_policy_timer += 6; month_actions += 1
+view-if: spd_in_government = 1 and (postal_minister_party = "SPD") and postal_policy_timer == 0
+card-image: img/MinPostal.jpg
+tags: govt_affairs, cabinet
+
+= Postal Policy
+
+- @reform_postal_admin
+- @reduce_radio_dues
+- @increase_radio_dues
+- @push_state_publications_leftwards
+
+
+@reform_postal_admin
+title: Reform the Postal administration
+subtitle: A lot of employees still adhere to conservative ideas.
+on-arrival: postal_reform += 1
+
+We have sent a few old Bavarians into retirement.
+
+@reduce_radio_dues
+title: - 1 budget Reduce public radio dues
+subtitle: We should allow more people to listen to public news.
+unavailable-subtitle: [? if radio_dues == "free": We have already made the radio free. ?][? if radio_dues == "low" and (in_grand_colation or in_weimar_coalition): The liberals oppose this measure. ?]
+choose-if: not radio_dues == "free" and (not radio_dues == "low" and not in_grand_colation and not in_weimar_coalition)
+on-arrival: radio_dues = "free" if radio_dues = "low"; radio_dues = "low" if radio_dues = "medium"; radio_dues = "medium" if radio_dues = "high"; radio_dues = "high" if radio_dues = "pure luxury"; state_media_share += 2; new_middle_spd += 2; workers_spd += 1; budget -= 1
+
+@increase_radio_dues
+title: Increase public radio dues
+subtitle: We wouldn't actually make more money from this, most people would just stop paying...
+choose-if: not radio_dues == "pure luxury"
+unavailable-subtitle: [? if radio_dues == "pure luxury": Asking for more is realy not worth the service. ?]
+on-arrival: radio_dues = "low" if radio_dues = "medium"; radio_dues = "medium" if radio_dues = "low"; radio_dues = "high" if radio_dues = "medium"; radio_dues = "pure luxury" if radio_dues = "high"; state_media_share -= 4; new_middle_spd -= 3; workers_spd -= 2
+
+@push_state_publications_leftwards
+title: Push state publications to a leftist course (WIP)
+subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> would love this.
+choose-if: postal_reform >= 3 and not in_grand_coalition and not in_weimar_coalition
+unavailable-subtitle: [? if postal_reform < 3: The internal postal administration would revolt immediatly. ?][? if in_grand_coalition: The <span style="color: [+ dvp_colour +];">**DVP**</span> would kill us. ?][? if in_weimar_coalition: Our coalition partners are opposed to this. ?]
+on-arrival: postal_reform += 1; kpd_relation += 5; communist_state_media += 1
+
+
+
+
+
+  
+
+
+
