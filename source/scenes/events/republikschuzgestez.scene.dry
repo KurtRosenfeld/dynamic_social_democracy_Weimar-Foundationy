@@ -212,7 +212,7 @@ if (Q.left_r_reichsrat > 0) {
 
 if (Q.socdem_r_reichsrat > 0) {
     data.push({
-        "id": "sfio",
+        "id": "socdem",
         "legend": "Socdem",
         "name": "Socdem",
         "seats": Q.socdem_r_reichsrat,
