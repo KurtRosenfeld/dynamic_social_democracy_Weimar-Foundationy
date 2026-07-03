@@ -51,23 +51,23 @@ if (Q.kpd_relation < 55)  Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 1);
 
 // East Prussia
 if (Q.dnvp_votes >= 16) Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 1);
-if (Q.dnvp_votes < 16 and Q.dnvp_votes >= 7)  Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
-if (Q.dnvp_votes < 7 and Q.spd_votes >= 60) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
+if (Q.dnvp_votes < 16 && Q.dnvp_votes >= 7)  Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+if (Q.dnvp_votes < 7 && Q.spd_votes >= 60) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
 
 // Deaply Catholic Provinces
 if (Q.in_social_catholic_coalition_prussia) Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
-if (!Q.in_social_catholic_coalition_prussia and Q.z_relation < 55) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 3);
-if (!Q.in_social_catholic_coalition_prussia and Q.z_relation >= 55) Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
+if (!Q.in_social_catholic_coalition_prussia && Q.z_relation < 55) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 3);
+if (!Q.in_social_catholic_coalition_prussia && Q.z_relation >= 55) Q.soc_christ_r_reichsrat = (Q.soc_christ_r_reichsrat + 3);
 
 // Prussian Saxony
 if (Q.spd_votes >= 40) Q.spd_r_reichsrat = (Q.spd_r_reichsrat + 1);
-if (Q.spd_votes < 40 and Q.spd_votes >= 35 and Q.kpd_relation >= 55) Q.left_r_reichsrat = (Q.left_r_reichsrat + 1);
-if (Q.spd_votes < 40 and Q.dvp_relation >= 40) Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 1);
-if (Q.spd_votes < 40 and Q.dvp_relation < 40 and Q.kpd_relation < 55) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
+if (Q.spd_votes < 40 && Q.spd_votes >= 35 && Q.kpd_relation >= 55) Q.left_r_reichsrat = (Q.left_r_reichsrat + 1);
+if (Q.spd_votes < 40 && Q.dvp_relation >= 40) Q.grand_r_reichsrat = (Q.grand_r_reichsrat + 1);
+if (Q.spd_votes < 40 && Q.dvp_relation < 40 && Q.kpd_relation < 55) Q.bourgeois_r_reichsrat = (Q.bourgeois_r_reichsrat + 1);
 
 // others
 if (Q.nsdap_votes < 15) Q.weimar_r_reichsrat = (Q.weimar_r_reichsrat + 4);
-if (Q.nsdap_votes >= 15 and Q.nsdap_votes < 30) Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 4);
+if (Q.nsdap_votes >= 15 && Q.nsdap_votes < 30) Q.bourgeois_right_r_reichsrat = (Q.bourgeois_right_r_reichsrat + 4);
 if (Q.nsdap_votes >= 30) Q.nsdap_r_reichsrat = (Q.nsdap_r_reichsrat + 4);
 
 
