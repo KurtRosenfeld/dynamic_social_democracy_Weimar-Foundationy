@@ -367,6 +367,8 @@ if (window && d3) {
 
 This is the official organ that represents local state governments in the Reich-legislation. It can veto any law the government passes, so having them on ones side is always advisable.
 
+To avoid Prussian dominance the states seats are limited to 26 of which only half are occupied by the Prussian state government. The other half is delegated by the provincal parliaments of Prussia (including Berlin).
+
 {!<svg id="reichsrat_viz" style="width: 500px; height: 250px;"> </svg>!}
 
 To appease the <span style="color: #00CCFF;">Bavarian</span> government and their allies the law was amended to make an interpretation of exclusive targeting of the <span style="color: [+ dnvp_colour +];">**right**</span> impossible.
