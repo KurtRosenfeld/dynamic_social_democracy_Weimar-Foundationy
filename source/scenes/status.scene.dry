@@ -618,7 +618,7 @@ Strategy: [+ kpd_strategy +]
 
 [? if kpo_exists: <span class="tooltip-text" title="Communist Party Opposition" style="color: #C43988;">**KPO**</span>: [+ kpo_relation : relationships +] ?]
 
-[? if kpo_exists: influence: [+ kpo_influence : influence +]
+[? if kpo_exists: influence: [+ kpo_influence : influence +] ?]
 
 [? if kpo_exists: Orientation: Bolshevism-Spartacism (Thalheimer) ?]
 
