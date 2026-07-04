@@ -624,13 +624,13 @@ Strategy: [+ kpd_strategy +]
 
 [? if leninbund_exists: <span class="tooltip-text" title="Leninbund (Left Communists)" style="color: #D00B0B;">**Leninbund**</span>: [+ leninbund_relation : relationships +] ?]
 
-[? if leninbund_exists: [+ leninbund_influence : influence +] ?]
+[? if leninbund_exists: influence: [+ leninbund_influence : influence +] ?]
 
 [? if leninbund_exists: Left Leninism (Fischer) ?]
 
 [? if sb_exists: <span class="tooltip-text" title="Socialist League" style="color: [+ sb_colour +];">**SB**</span>: [+ sb_relation : relationships +] ?]
 
-[? if sb_exists: [+ sb_influence : influence +] ?]
+[? if sb_exists: influence: [+ sb_influence : influence +] ?]
 
 [? if sb_exists: Orientation: Spartacism (Ledebour) ?]
 
