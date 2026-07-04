@@ -14,9 +14,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       
+      - name: Debug - Show what files contain the text
+        run: |
+          echo "=== FILES CONTAINING SPD ==="
+          grep -l 'style="color: #[cC]00000;">\*\*SPD\*\*' . -r --include="*.dry" || echo "No SPD found"
+          
+          echo -e "\n=== FILES CONTAINING KPD ==="
+          grep -l 'style="color: #[78]00000;">\*\*KPD\*\*' . -r --include="*.dry" || echo "No KPD found"
+          
+          echo -e "\n=== FILES CONTAINING DVP ==="
+          grep -l 'style="color: #[CD][0-9A-F][0-9A-F][0-9A-F][0-9A-F];">\*\*DVP\*\*' . -r --include="*.dry" || echo "No DVP found"
+      
       - name: Replace ALL party color codes
         run: |
-          # Use Python for reliable replacement
           python3 << 'PYTHON_SCRIPT'
           import os
           import re
@@ -51,27 +61,38 @@ jobs:
                           with open(filepath, 'r', encoding='utf-8') as f:
                               content = f.read()
                           
-                          modified = False
-                          for old, new in replacements:
-                              if old in content:
-                                  content = content.replace(old, new)
-                                  modified = True
-                                  total_replacements += content.count(old)
+                          modified_content = content
+                          file_modified = False
                           
-                          if modified:
+                          for old, new in replacements:
+                              if old in modified_content:
+                                  count = modified_content.count(old)
+                                  modified_content = modified_content.replace(old, new)
+                                  file_modified = True
+                                  total_replacements += count
+                          
+                          if file_modified:
                               with open(filepath, 'w', encoding='utf-8') as f:
-                                  f.write(content)
+                                  f.write(modified_content)
                               files_modified.append(filepath)
-                              print(f"✅ Modified: {filepath}")
+                              print(f"✅ MODIFIED: {filepath}")
                       except Exception as e:
                           print(f"⚠️  Error with {filepath}: {e}")
           
-          print(f"\n📊 Summary:")
+          print(f"\n{'='*50}")
+          print(f"📊 SUMMARY:")
           print(f"   Files modified: {len(files_modified)}")
           print(f"   Total replacements: {total_replacements}")
+          print(f"{'='*50}")
+          
+          if len(files_modified) == 0:
+              print("\n⚠️  NO FILES WERE MODIFIED!")
+              print("   This means the exact text wasn't found in any .dry files.")
+              print("   Check the debug output above to see what was found.")
           PYTHON_SCRIPT
       
-      - name: Commit and push changes
+      - name: Commit changes if any were made
+        if: success()
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "Replace hardcoded party colors with dynamic variables"
