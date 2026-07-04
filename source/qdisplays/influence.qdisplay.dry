@@ -2,5 +2,5 @@
 (0..5) <span style="color: #d42f2f;">dead</span>
 (5..15) <span style="color: #FFB74D;">marginal</span>
 (15..30) <span style="color: #FFD54F;">weak</span>
-(30..45) <span style="color: #81C784;">humblw</span>
+(30..45) <span style="color: #81C784;">humble</span>
 (45..) <span style="color: #66BB6A;">moderate</span>
