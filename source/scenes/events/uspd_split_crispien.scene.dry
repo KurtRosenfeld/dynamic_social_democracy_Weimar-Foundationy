@@ -1,7 +1,7 @@
 title: <span style="color: [+ uspd_colour +];">**USPD**</span> split
 subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> looses its <span style="color: #8B0000;">**left-wing**</span> again...
 new-page: true
-on-arrival: sb_exists = 1; unemployed_uspd -= 2 if unemployed_uspd >= 4; sb_relation = 40 if ideology == "left"; sb_relation = 10 if ideology == "centrist"; uspd_r = uspd_r*0.8; indep_left_r = uspd_r*0.2; rosenfeld_in = "SB" if rosenfeld_in == "USPD"; levi_in = "SB" if levi_in == "USPD"; ledebour_in = "SB"; liebknecht_in = "SB"
+on-arrival: sb_exists = 1; unemployed_uspd -= 2 if unemployed_uspd >= 4; sb_relation = 40 if ideology == "left"; sb_relation = 10 if ideology == "centrist"; uspd_r = uspd_r*0.8; indep_left_r = uspd_r*0.2; rosenfeld_in = "SB" if rosenfeld_in == "USPD"; levi_in = "SB" if levi_in == "USPD"; ledebour_in = "SB"; liebknecht_in = "SB"; sb_strength += 5; sb_relation += 15 if kpd_relation >= 40
 tags: event
 view-if: year <= 1925 and year >= 1923 and ((uspd_leader == "Crispien" and uspd_votes < 3.5 and not left_split and uspd_relation >= 55 and not ideology == "left") or (uspd_relation >= 65 and ideology == "reformist" and uspd_votes >= 5))
 max-visits: 1
@@ -10,6 +10,6 @@ face-image: img/portraits/LedebourGeorg.jpg
 
 = <span style="color: [+ uspd_colour +];">**USPD**</span> split!
 
-The <span style="color: [+ uspd_colour +];">**USPD**</span> faces a lot of disagreement over tactical and ideological matters. The <span style="color: #8B0000;">**left-wing**</span> of the party around <span style="color: [+ ledebour_colour +];">**Georg Ledebour**</span>[? if rosenfeld_in == "SB": , <span style="color: [+ rosenfeld_colour +];">**Kurt Rosenfeld**</span>?][? if levi_in == "SB": , <span style="color: [+ levi_colour +];">**Paul Levi**</span>?] and <span class="tooltip-text" title="Brother of famous KPD co-founder Karl Liebknecht" <span style="color: [+ liebknecht_in +];">**Theodor Liebknecht**</span> have decided to split as they don't see the <span style="color: [+ uspd_colour +];">**USPD**</span> under Crispien as an honest opposition to the <span style="color: [+ spd_colour +];">**SPD**</span> and their increasingly bourgeois course anymore.
+The <span style="color: [+ uspd_colour +];">**USPD**</span> faces a lot of disagreement over tactical and ideological matters. The <span style="color: #8B0000;">**left-wing**</span> of the party around <span style="color: [+ ledebour_colour +];">**Georg Ledebour**</span>[? if rosenfeld_in == "SB": , <span style="color: [+ rosenfeld_colour +];">**Kurt Rosenfeld**</span>?][? if levi_in == "SB": , <span style="color: [+ levi_colour +];">**Paul Levi**</span>?] and <span class="tooltip-text" title="Brother of famous KPD co-founder Karl Liebknecht" <span style="color: [+ liebknecht_colour +];">**Theodor Liebknecht**</span> have decided to split as they don't see the <span style="color: [+ uspd_colour +];">**USPD**</span> under Crispien as an honest opposition to the <span style="color: [+ spd_colour +];">**SPD**</span> and their increasingly bourgeois course anymore.
 
 They see themselves as a catalyst for a new revolutionary culture among the proletariat. The <span style="color: [+ uspd_colour +];">**USPD**</span> is severely weakened because of this.
