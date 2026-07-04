@@ -172,6 +172,8 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if not uspd_joined = 3: <span class="tooltip-text" title="Independed Social Democratic Party of Germany" style="color: [+ uspd_colour +];">**USPD**</span>: [+ uspd_relation : relationships +] ?]
 
+<span class="tooltip-text" title="Bavarian People's Party" style="color: [+ bvp_colour +];">**BVP**</span>: [+ bvp_relation : relationships +]
+
 [? if kvp_formed and not dnvp_dvp_formed : <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [+ kvp_relation : relationships +] ?]
 
 [? if dnvp_dvp_formed: <span class="tooltip-text" title="Free Conserative Party" style="color: #00C0FF;">**FKP**</span>: [+ fkp_relation : relationships +]?]
@@ -213,6 +215,8 @@ Economic growth: [+ economic_growth_2 +]%
 [? if sapd_formed: <span class="tooltip-text" title="Socialist Worker's Party of Germany" style="color: [+ sapd_colour +];">**SAPD**</span>: [+ sapd_ideology +] ([+ sapd_leader +])?]
 
 [? if not uspd_joined = 3: <span class="tooltip-text" title="Independent Social Democratic Party of Germany" style="color: [+ uspd_colour +];">**USPD**</span>: [+ uspd_ideology +] ([+ uspd_leader +])?]
+
+[? if not ddp_name: UNINITIALIZED ?][? if ddp_name != 0: <span class="tooltip-text" title="Bavarian People's Party" style="color: [+ bvp_colour +];">**BVP**</span>: Bavarian Conservatism ([+ bvp_leader +]) ?]
 
 [? if kvp_formed and not dnvp_dvp_formed: <span class="tooltip-text" title="Conservative People's Party" style="color: #0087DC;">**KVP**</span>: [? if not kvp_dnef: Christian Conservatism?][? if kvp_dnef: National Conservatism?] ([+ kvp_leader +])?]
 
