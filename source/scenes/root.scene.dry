@@ -598,13 +598,13 @@ Q.party_support_records = [];
 Q.economic_records = [];
 
 // Splinter groups
-Q.kag_strength = 30;
-Q.kapd_b_strength = 20;
-Q.kapd_e_strength = 10;
-Q.kpo_strength = 0;
-Q.leninbund_strength = 0;
-Q.sb_strength = 25;
-Q.aspd_strength = 0;
+Q.kag_split_strength = 30;
+Q.kapd_b_split_strength = 20;
+Q.kapd_e_split_strength = 10;
+Q.kpo_split_strength = 0;
+Q.leninbund_ssplit_trength = 0;
+Q.sb_split_strength = 25;
+Q.aspd_split_strength = 0;
 
 
 // State of the government
