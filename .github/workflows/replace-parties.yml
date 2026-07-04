@@ -17,16 +17,16 @@ jobs:
       - name: Replace KPD color codes
         run: |
           # Replace both variations in ALL files
-          find . -type f -exec sed -i 's/<span style="color: #800000;">\*\*KPD\*\*<\/span>/<span style="color: [+ kpd_colour +];">**KPD**</span>/g' {} \;
-          find . -type f -exec sed -i 's/<span style="color: #700000;">\*\*KPD\*\*<\/span>/<span style="color: [+ kpd_colour +];">**KPD**</span>/g' {} \;
-
-       - name: Replace DVP color codes
+          find . -type f -exec sed -i 's/<span style="color: #800000;">\*\*KPD\*\*<\/span>/<span style="color: [+ kpd_colour +];">**KPD**<\/span>/g' {} \;
+          find . -type f -exec sed -i 's/<span style="color: #700000;">\*\*KPD\*\*<\/span>/<span style="color: [+ kpd_colour +];">**KPD**<\/span>/g' {} \;
+      
+      - name: Replace DVP color codes
         run: |
           # Replace both variations in ALL files
-          find . -type f -exec sed -i 's/<span style="color: #C0A054;">\*\*DVP\*\*<\/span>/<span style="color: [+ dvp_colour +];">**DVP**</span>/g' {} \;
-          find . -type f -exec sed -i 's/<span style="color: #D5AC27;">\*\*DVP\*\*<\/span>/<span style="color: [+ dvp_colour +];">**DVP**</span>/g' {} \;
+          find . -type f -exec sed -i 's/<span style="color: #C0A054;">\*\*DVP\*\*<\/span>/<span style="color: [+ dvp_colour +];">**DVP**<\/span>/g' {} \;
+          find . -type f -exec sed -i 's/<span style="color: #D5AC27;">\*\*DVP\*\*<\/span>/<span style="color: [+ dvp_colour +];">**DVP**<\/span>/g' {} \;
       
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Replace hardcoded SPD colors with dynamic spd_colour variable"
+          commit_message: "Replace hardcoded party colors with dynamic variables"
