@@ -9,9 +9,24 @@ Here colours for partys can be adapted (massively work in progress)
 
 @jimmy
 
+- @spd_design: <span style="color: [+ spd_colour +];">**SPD**</span>
 - @uspd_design: <span style="color: [+ uspd_colour +];">**USPD**</span>
 - @dvp_design: <span style="color: [+ dvp_colour +];">**DVP**</span>
 - @dnvp_design: <span style="color: [+ dnvp_colour +];">**DNVP**</span>
+
+
+@spd_design
+
+- @spd_uspd_red: <span style="color: #B3133A;">**SPD**</span>
+- @spd_whatever_idk: <span style="color: #670000;">**SPD**</span>
+
+@spd_uspd_red
+on-arrival: spd_colour = "#B3133A"
+go-to: jimmy
+
+@spd_whatever_idk
+on-arrival: spd_colour = "#670000"
+go-to: jimmy
 
 
 @uspd_design
