@@ -1,0 +1,17 @@
+title: Arthur Crispien
+is-pinned-card: true
+tags: leader
+card-image: img/portraits/CrispienArthur.jpg
+view-if: spd_party_leader_3 == "Crispien"
+new-page: true
+
+= Arthur Crispien
+
+**Active bonusses:**
+
+Left dissent reduction
+
+Center dissent reduction
+
+IDK WIP
+
