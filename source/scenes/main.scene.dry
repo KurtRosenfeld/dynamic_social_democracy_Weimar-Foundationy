@@ -1286,7 +1286,11 @@ max-cards: 3
 - @time_2
 - #advisor
 - @shuffle_leadership_pinned
+
+{!<div class="scrollable-box">!}
 - #leader
+{!</div>!}
+
 
 @main_easy
 is-hand: true
@@ -2588,7 +2592,12 @@ max-cards: 4
 - @time_2
 - #advisor
 - @shuffle_leadership_pinned
+
+{!<div class="scrollable-box">!}
 - #leader
+{!</div>!}
+
+
 
 
 @party
