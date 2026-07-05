@@ -1401,7 +1401,7 @@ go-to: map_menu
       <title
          id="title36">[+ z_party_name +]</title>
     </circle>
-    <circle
+[? if dnef_formed:  <circle
        style="fill:#c5d2e1;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-38-4"
        cx="309.88528"
@@ -1410,7 +1410,7 @@ go-to: map_menu
        r="7">
       <title
          id="title36-9">DNEF</title>
-    </circle>
+    </circle> ?]
     <circle
        style="fill:#147319;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-38-6"
