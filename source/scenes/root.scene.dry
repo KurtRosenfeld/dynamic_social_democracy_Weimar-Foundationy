@@ -1162,6 +1162,64 @@ Q.dvfb_colour = '#3D3D3D';
 Q.nsdap_colour = '#7A3C00';
 Q.i_colour = '#808080';
 
+// Political Compass
+// 30 social (x) is communist; 30 republican (y) is anti republican
+// 470 social (x) is Argentina; 470 republican (y) is Reichsbanner
+Q.soc_spd = 150;
+Q.rep_spd = 430;
+Q.soc_aspd = 230;
+Q.rep_aspd = 290;
+Q.soc_nsdap = 290;
+Q.rep_nsdap = 30;
+Q.soc_nvf = 250;
+Q.rep_nvf = 30;
+Q.soc_dtsp = 350;
+Q.rep_dtsp = 30;
+Q.soc_dsu = 170;
+Q.rep_dsu = 30;
+Q.soc_bvp = 410;
+Q.rep_bvp = 150;
+Q.soc_dhp = 390;
+Q.rep_dhp = 190;
+Q.soc_uspd = 70;
+Q.rep_uspd = 330;
+Q.soc_sb = 90;
+Q.rep_sb = 170;
+Q.soc_sapd = 70;
+Q.rep_sapd = 250;
+Q.soc_kag = 50;
+Q.rep_kag = 150;
+Q.soc_kpd = 50;
+Q.rep_kpd = 90;
+Q.soc_kpo = 70;
+Q.rep_kpo = 130;
+Q.soc_leninbund = 90;
+Q.rep_leninbund = 70;
+Q.soc_kapd = 50;
+Q.rep_kapd = 50;
+Q.soc_dnvp = 390;
+Q.rep_dnvp = 90;
+Q.soc_dvfp = 410;
+Q.rep_dvfp = 50;
+Q.soc_dnf = 470;
+Q.rep_dnf = 30;
+Q.soc_kvp = 330;
+Q.rep_kvp = 150;
+Q.soc_z = 310;
+Q.rep_z = 390;
+Q.soc_denf = 310;
+Q.rep_dnef = 90;
+Q.soc_dbp = 330;
+Q.rep_dbp = 310;
+Q.soc_cnbl = 350;
+Q.rep_cnbl = 110;
+Q.soc_csvd = 210;
+Q.rep_csbd = 130;
+Q.soc_dvp = 430;
+Q.rep_dvp = 270;
+Q.soc_ddp = 350;
+Q.rep_ddp = 450;
+
 
 // foreign relations
 Q.us_relation = 50;
