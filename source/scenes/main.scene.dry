@@ -1287,9 +1287,10 @@ max-cards: 3
 - #advisor
 - @shuffle_leadership_pinned
 
-{!<div class="scrollable-box">!}
+Maybe it'll work that way?
+
 - #leader
-{!</div>!}
+
 
 
 @main_easy
@@ -2593,9 +2594,9 @@ max-cards: 4
 - #advisor
 - @shuffle_leadership_pinned
 
-{!<div class="scrollable-box">!}
+That would be my best guess...
+
 - #leader
-{!</div>!}
 
 
 
