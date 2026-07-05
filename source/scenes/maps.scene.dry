@@ -1212,7 +1212,7 @@ go-to: map_menu
          id="title42-8">ASPD</title>
     </circle>
     <circle
-       style="fill:#521400;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="fill:[+ nsdap_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-0"
        cx="289.90454"
        cy="30.111443"
@@ -1252,7 +1252,7 @@ go-to: map_menu
          id="title41-3-8">DtSP</title>
     </circle>
     <circle
-       style="fill:#26e5dc;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="fill:[+ bvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-6"
        cx="410.90451"
        cy="150.76662"
@@ -1272,7 +1272,7 @@ go-to: map_menu
          id="title40-6">DHP</title>
     </circle>
     <circle
-       style="fill:#ff2e75;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="fill:[+ uspd_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-86"
        cx="69.697632"
        cy="330.1459"
@@ -1282,7 +1282,7 @@ go-to: map_menu
          id="title39">USPD</title>
     </circle>
     <circle
-       style="fill:#df00a7;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+[? if sb_exists:       style="fill:[+ sb_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" ?]
        id="path29-86-1"
        cx="89.297035"
        cy="169.94409"
@@ -1312,7 +1312,7 @@ go-to: map_menu
          id="title39-1">KAG</title>
     </circle>
     <circle
-       style="fill:#700000;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="fill:[+ kpd_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-8"
        cx="48.766605"
        cy="90.835579"
@@ -1352,7 +1352,7 @@ go-to: map_menu
          id="title38-6">KAPD</title>
     </circle>
     <circle
-       style="fill:#235b98;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="fill:[+ dnvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-7"
        cx="389.31833"
        cy="89.387306"
@@ -1362,7 +1362,7 @@ go-to: map_menu
          id="title37">DNVP</title>
     </circle>
     <circle
-       style="fill:#355271;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="fill:#3D3D3D;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-7-7"
        cx="408.59421"
        cy="50.559711"
@@ -1409,7 +1409,7 @@ go-to: map_menu
        inkscape:label="compass_party_dnef"
        r="7">
       <title
-         id="title36-9">[+ z_party_name +]</title>
+         id="title36-9">DNEF</title>
     </circle>
     <circle
        style="fill:#147319;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
@@ -1442,7 +1442,7 @@ go-to: map_menu
          id="title36-3-2">CSVD</title>
     </circle>
     <circle
-       style="fill:#e3b812;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="fill:[+ dvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-3"
        cx="429.49078"
        cy="269.939"
@@ -1451,10 +1451,10 @@ go-to: map_menu
        inkscape:transform-center-y="-0.68965517"
        r="7">
       <title
-         id="title35">dvp</title>
+         id="title35">DVP</title>
     </circle>
     <circle
-       style="fill:#fff400;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="fill:[+ ddp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-5"
        cx="349.11142"
        cy="451.24939"
