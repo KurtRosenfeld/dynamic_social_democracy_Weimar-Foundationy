@@ -1,0 +1,14 @@
+title: <span style="color: #00CCFF;">Bavaria</span> revolts!
+new-page: true
+max-visits: 1
+view-if: chancellor == "Stresemann" and ruhr_occupied == 1 and not dnvp_in_government
+on-arrival: bvp_relation -= 5; rep_bvp -= 40; bavaria_coup += 1
+priority: -1
+tags: event
+face-image: img/land/Bavaria.svg.webp
+
+= <span style="color: #00CCFF;">Bavaria</span> revolts!
+
+Former minister president Gustav Ritter von Kahr is appointed state commissioner general. He declared a state of emergency and suspends civil rights. <span style="color: [+ ebert_colour +];">**Ebert**</span> responds with declaring a national state of emergency and handing executive power to [+ reichswehr_minister +] who delegates power to local military district commanders.
+
+The <span style="color: #000000;">**Republic**</span> <span style="color: #c10000;">**Protection**</span> <span style="color: #D3C24D;">**Act**</span> is suspended as well. All kinds of <span style="color: [+ dnvp_colour +];">nationalists</span> are drawn to the <span style="color: #00CCFF;">Bavarian</span> project.
