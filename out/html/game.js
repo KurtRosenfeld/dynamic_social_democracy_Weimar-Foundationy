@@ -418,6 +418,7 @@ if (document.readyState === 'loading') {
   window.justLoaded = true;
   window.statusTab = "status";
   window.statusTabRight = "status_right";
+  window.bottomTab = "bottom_tab";
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
