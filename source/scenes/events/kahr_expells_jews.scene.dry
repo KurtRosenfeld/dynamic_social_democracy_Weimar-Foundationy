@@ -1,0 +1,32 @@
+title: <span style="color: #00CCFF;">Bavaria</span> Escalation
+subtitle: Kahr panders to the right.
+new-page: true
+max-visits: 1
+view-if: month >= 10 and bavaria_coup >= 1
+on-arrival: old_middle_nsdap += 2; soc_bvp += 20
+priority: -1
+tags: event
+face-image: img/portraits/KahrGustav.jpg
+
+= <span style="color: #00CCFF;">Bavaria</span> Escalation
+
+In order to win over support from the völkisch movement, now under the leadership of Adolf Hitler, hundreds of jewish families with an Eastern European background are expelled from <span style="color: #00CCFF;">Bavaria</span>. A ban of the main <span style="color: [+ nsdap_colour +];">nazi</span> newspaper <span style="color: [+ nsdap_colour +];">**Völischer Beobachter**</span> as ordered by Reichswehrminister [+ reichswehrminister +] has been refused by local commander Otto von Lossow. Furthermore Kahr has sworn in the 7th Reichswehr division to his government.
+
+- @reichsexekution_bavaria_1923: Call a Reichsexekution
+- @wait_bavaria_out: Wait it out
+
+
+@reichsexekution_bavaria_1923
+unavailable-subtitle: The Reichswehr will probably not execute that order just as during the Kapp Putsch. Truppe schießt nicht auf Truppe.
+choose-if: reichswehr-loyalty >= 0.41
+on-arrival: catholic_nsdap += 2; new_middle_nsdap += 1; rural_nsdap += 2
+
+Cool that your Reichswehr is somewhat loyal but this part is not coded yet...
+
+@wait_bavaria_out
+subtitle: We can't do anything but wait it out.
+on-arrival: catholic_nsdap += 3; new_middle_nsdap += 1; rural_nsdap += 2
+
+Apparently their are days when indeed something happens.
+
+
