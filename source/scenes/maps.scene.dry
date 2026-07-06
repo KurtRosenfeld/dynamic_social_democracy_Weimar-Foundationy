@@ -1204,8 +1204,8 @@ go-to: map_menu
 [? if aspd_r_saxony:  <circle
        style="fill:[+ aspd_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-9"
-       cx="228.83557"
-       cy="291.04245"
+       cx="[+ soc_aspd +]"
+       cy="[+ rep_aspd +]"
        inkscape:label="compass_party_aspd"
        r="7">
       <title
@@ -1214,8 +1214,8 @@ go-to: map_menu
 [? if not nsfb_exists:   <circle
        style="fill:[+ nsdap_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-0"
-       cx="289.90454"
-       cy="30.111443"
+       cx="[+ soc_nsdap +]"
+       cy="[+ rep_nsdap +]"
        inkscape:label="compass_party_nsdap"
        r="7">
       <title
@@ -1224,8 +1224,8 @@ go-to: map_menu
 [? if nvf_exist:   <circle
        style="fill:#426000;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-0-8"
-       cx="248.70882"
-       cy="30.002911"
+       cx="[+ soc_nvf +]"
+       cy="[+ rep_nvf +]"
        inkscape:label="compass_party_nvf"
        r="7">
       <title
@@ -1234,8 +1234,8 @@ go-to: map_menu
     <circle
        style="fill:#9c4f36;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-0-9"
-       cx="348.90454"
-       cy="29.21488"
+       cx="[+ soc_dtsp +]"
+       cy="[+ rep_dtsp +]"
        inkscape:label="compass_party_dtsp"
        r="7">
       <title
@@ -1244,8 +1244,8 @@ go-to: map_menu
 [? if dsu_exist:   <circle
        style="fill:#96561c;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-0-9-0"
-       cx="170.14998"
-       cy="49.355854"
+       cx="[+ soc_dsu +]"
+       cy="[+ rep_dsu +]"
        inkscape:label="compass_party_dsu"
        r="7">
       <title
@@ -1254,8 +1254,8 @@ go-to: map_menu
     <circle
        style="fill:[+ bvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-6"
-       cx="410.90451"
-       cy="150.76662"
+       cx="[+ soc_bvp +]"
+       cy="[+ rep_bvp +]"
        inkscape:label="compass_party_bvp"
        r="7">
       <title
@@ -1264,8 +1264,8 @@ go-to: map_menu
     <circle
        style="fill:#26e589;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-6-1"
-       cx="388.59418"
-       cy="189.28384"
+       cx="[+ soc_dhp +]"
+       cy="[+ rep_dhp +]"
        inkscape:label="compass_party_dhp"
        r="7">
       <title
@@ -1274,8 +1274,8 @@ go-to: map_menu
 [? if not uspd_dead:  <circle
        style="fill:[+ uspd_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-86"
-       cx="69.697632"
-       cy="330.1459"
+       cx="[+ soc_uspd +]"
+       cy="[+ rep_uspd +]"
        inkscape:label="compass_party_uspd"
        r="7">
       <title
@@ -1284,8 +1284,8 @@ go-to: map_menu
 [? if sb_exists:    <circle
        style="fill:[+ sb_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-86-1"
-       cx="89.297035"
-       cy="169.94409"
+       cx="[+ soc_sb +]"
+       cy="[+ rep_sb +]"
        inkscape:label="compass_party_sb"
        r="7">
       <title
@@ -1294,8 +1294,8 @@ go-to: map_menu
     <circle
 [? if sapd_formed:    style="fill:#ac0000;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-86-7"
-       cx="69.352798"
-       cy="250.07697"
+       cx="[+ soc_sapd +]"
+       cy="[+ rep_sapd +]"
        inkscape:label="compass_party_sapd"
        r="7">
       <title
@@ -1304,8 +1304,8 @@ go-to: map_menu
 [? if kag_r: <circle
        style="fill:#900031;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-86-9"
-       cx="48.07695"
-       cy="149.87006"
+       cx="[+ soc_kag +]"
+       cy="[+ rep_kag +]"
        inkscape:label="compass_party_kag"
        r="7">
       <title
@@ -1314,8 +1314,8 @@ go-to: map_menu
     <circle
        style="fill:[+ kpd_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-8"
-       cx="48.766605"
-       cy="90.835579"
+       cx="[+ soc_kpd +]"
+       cy="[+ rep_kpd +]"
        inkscape:label="compass_party_kpd"
        r="7">
       <title
@@ -1324,8 +1324,8 @@ go-to: map_menu
 [? if kpo_exists:   <circle
        style="fill:#a600ad;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-8-1"
-       cx="68.738213"
-       cy="130.06174"
+       cx="[+ soc_kpo +]"
+       cy="[+ rep_kpo +]"
        inkscape:label="compass_party_kpo"
        r="7">
       <title
@@ -1334,8 +1334,8 @@ go-to: map_menu
 [? if leninbund_exists:  <circle
        style="fill:#a70000;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-8-0"
-       cx="89.002922"
-       cy="70.973503"
+       cx="[+ soc_leninbund +]"
+       cy="[+ rep_leninbund +]"
        inkscape:label="compass_party_leninbund"
        r="7">
       <title
@@ -1344,8 +1344,8 @@ go-to: map_menu
     <circle
        style="fill:#1b0000;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-8-6"
-       cx="48.766605"
-       cy="50.042469"
+       cx="[+ soc_kapd +]"
+       cy="[+ rep_kapd +]"
        inkscape:label="compass_party_kapd"
        r="7">
       <title
@@ -1354,8 +1354,8 @@ go-to: map_menu
  [? if not cvp_formed and not dnvp_dnef and not dnvp_defunct:  <circle
        style="fill:[+ dnvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-7"
-       cx="389.31833"
-       cy="89.387306"
+       cx="[+ soc_dnvp +]"
+       cy="[+ rep_dnvp +]"
        inkscape:label="compass_party_dnvp"
        r="7">
       <title
@@ -1364,8 +1364,8 @@ go-to: map_menu
 [? if dvfp_formed = 1 and not nsfb_exists:  <circle
        style="fill:#3D3D3D;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-7-7"
-       cx="408.59421"
-       cy="50.559711"
+       cx="[+ soc_dvfp +]"
+       cy="[+ rep_dvfp +]"
        inkscape:label="compass_party_dvfp"
        r="7">
       <title
@@ -1374,8 +1374,8 @@ go-to: map_menu
 [? if dnf_formed :   <circle
        style="fill:[+ dnf_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-7-1"
-       cx="449.35281"
-       cy="49.766605"
+       cx="[+ soc_dnf +]"
+       cy="[+ rep_dnf +]"
        inkscape:label="compass_party_dnf"
        r="7">
       <title
@@ -1384,8 +1384,8 @@ go-to: map_menu
 [? if kvp_formed and not dnvp_dvp_formed:  <circle
        style="fill:[+ kvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-7-4"
-       cx="328.45627"
-       cy="150.21489"
+       cx="[+ soc_kvp +]"
+       cy="[+ rep_kvp +]"
        inkscape:label="compass_party_kvp"
        r="7">
       <title
@@ -1394,8 +1394,8 @@ go-to: map_menu
     <circle
        style="fill:#1a1a1a;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-38"
-       cx="308.59418"
-       cy="389.97351"
+       cx="[+ soc_z +]"
+       cy="[+ rep_z +]"
        inkscape:label="compass_party_z"
        r="7">
       <title
@@ -1404,8 +1404,8 @@ go-to: map_menu
 [? if dnef_formed:  <circle
        style="fill:#c5d2e1;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-38-4"
-       cx="309.88528"
-       cy="88.708801"
+       cx="[+ soc_dnef +]"
+       cy="[+ rep_dnef +]"
        inkscape:label="compass_party_dnef"
        r="7">
       <title
@@ -1414,18 +1414,18 @@ go-to: map_menu
     <circle
        style="fill:#147319;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-38-6"
-       cx="329.28384"
-       cy="311.21487"
+       cx="[+ soc_dbp +]"
+       cy="[+ rep_dbp +]"
        inkscape:label="compass_party_bb"
        r="7">
       <title
-         id="title36-3">DBP</title>
+         id="title36-3">[+ dbp_name +]</title>
     </circle>
 [? if cnbl_esxists:  <circle
        style="fill:#0b3c0d;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-38-6-6"
-       cx="348.7666"
-       cy="109.83558"
+       cx="[+ soc_cnbl +]"
+       cy="[+ rep_cnbl +]"
        inkscape:label="compass_party_cnbl"
        r="7">
       <title
@@ -1434,8 +1434,8 @@ go-to: map_menu
 [? if csvd_esxists:  <circle
        style="fill:#8011ff;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-38-6-1"
-       cx="209.21489"
-       cy="129.9735"
+       cx="[+ soc_csvd +]"
+       cy="[+ rep_csvd +]"
        inkscape:label="compass_party_csvd"
        r="7">
       <title
@@ -1444,8 +1444,8 @@ go-to: map_menu
 [? if not lvp_formed and dvp_exist and not dvp_dnef:  <circle
        style="fill:[+ dvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-3"
-       cx="429.49078"
-       cy="269.939"
+       cx="[+ soc_dvp +]"
+       cy="[+ rep_dvp +]"
        inkscape:label="compass_party_dvp"
        inkscape:transform-center-x="-0.6896551"
        inkscape:transform-center-y="-0.68965517"
@@ -1456,8 +1456,8 @@ go-to: map_menu
 [? if not lvp_formed:  <circle
        style="fill:[+ ddp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-5"
-       cx="349.11142"
-       cy="451.24939"
+       cx="[+ soc_ddp +]"
+       cy="[+ rep_ddp +]"
        inkscape:label="compass_party_ddp"
        r="7">
       <title
