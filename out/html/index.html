@@ -329,45 +329,48 @@
             </div>
         </header>
 
-        <div id="tools_wrapper">
-            <div id='stats_sidebar' class='tools left'>
-                <div class="tab_container">
-                    <button class="tab_button" id="emergency_tab" onclick="window.changeTab('status.emergency', 'emergency_tab');" style="display: none;">Emergency Status</button>
-                    <button class="tab_button active" id="main_tab" onclick="window.changeTab('status', 'main_tab');">Main</button>
-                    <button class="tab_button" id="politics_tab" onclick="window.changeTab('status.politics', 'politics_tab');">Politics</button>
-                    <button class="tab_button" id="paramilitary_tab" onclick="window.changeTab('status.paramilitaries', 'paramilitary_tab');">Defense</button>
-                    <button class="tab_button" id="poll_tab" onclick="window.changeTab('status.polls', 'poll_tab');">Polls</button>
-                    <button class="tab_button" id="state_tab" onclick="window.changeTab('status.state', 'state_tab');">State</button>
-                    <button class="tab_button" id="relations_tab" onclick="window.changeTab('status.relations', 'relations_tab');">Foreign</button>   
-                    <button class="tab_button" id="media_tab" onclick="window.changeTab('status.media', 'media_tab');">Media</button>
-                    <button class="tab_button" id="left_tab" onclick="window.changeTab('status.left', 'left_tab');">Splits</button>
+              <div id="tools_wrapper">
+                <div id='stats_sidebar' class='tools left'>
+                    <div class="tab_container">
+                        <button class="tab_button" id="emergency_tab" onclick="window.changeTab('status.emergency', 'emergency_tab');" style="display: none;">Emergency Status</button>
+                        <button class="tab_button active" id="main_tab" onclick="window.changeTab('status', 'main_tab');">Main</button>
+                        <button class="tab_button" id="politics_tab" onclick="window.changeTab('status.politics', 'politics_tab');">Politics</button>
+                        <button class="tab_button" id="paramilitary_tab" onclick="window.changeTab('status.paramilitaries', 'paramilitary_tab');">Defense</button>
+                        <button class="tab_button" id="poll_tab" onclick="window.changeTab('status.polls', 'poll_tab');">Polls</button>
+                        <button class="tab_button" id="state_tab" onclick="window.changeTab('status.state', 'state_tab');">State</button>
+                        <button class="tab_button" id="relations_tab" onclick="window.changeTab('status.relations', 'relations_tab');">Foreign</button>   
+                        <button class="tab_button" id="media_tab" onclick="window.changeTab('status.media', 'media_tab');">Media</button>
+                        <button class="tab_button" id="left_tab" onclick="window.changeTab('status.left', 'left_tab');">Splits</button>
+                    </div>
+                    <div id="qualities">
+                    </div>
                 </div>
-                <div id="qualities"></div>
-            </div>
-
-            <div id='stats_sidebar_right' class='tools right'>
-                <div class="tab_container">
-                    <button class="tab_button active" id="scheming_tab" onclick="window.changeTab('status_right', 'scheming_tab', true);">Scheming</button>
-                </div>
-                <div id="qualities_right"></div>
-            </div> 
-        </div>  
-
-
-        <div id='bottom_panel' class='tools bottom'>
-            <div class="tab_container">
-                <div id="bottom_tab">
-                    <p>Bottom panel content</p>
+                <div id='stats_sidebar_right' class='tools right'>
+                    <div class="tab_container">
+                        <button class="tab_button active" id="scheming_tab" onclick="window.changeTab('status_right', 'scheming_tab', true);">Scheming</button>
+                    </div>
+                    <div id="qualities_right">
+                    </div>
                 </div>
             </div>
-        </div> 
 
-        <div id='content'></div>
+            <div id='content'>
 
-        <footer>
+            </div>
 
-        </footer>
+            <footer>
+      <!--
+      <p>
+        <a onclick="window.showSaveSlots();" href="#">Save/Load</a>
+        <a onclick="window.quickSave();" href="#">Quick Save</a>
+        <a onclick="window.quickLoad();" href="#">Quick Load</a>
+      </p>
+
+      &copy; 2021 Autumn Chen.
+      Made with <a href="https://github.com/aucchen/dendry">Dendry</a>.
+      -->
+            </footer>
+        </div>
     </div>
-</div>
-</body>
+  </body>
 </html>
