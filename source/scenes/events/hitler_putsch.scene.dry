@@ -1,0 +1,84 @@
+title: Kahr lays out his plans
+subtitle: Let's see what his next move is going to be.
+new-page: true
+max-visits: 1
+view-if: month >= 11 and bavaria_coup == 1
+on-arrival: new_middle_nsdap += 2; soc_nsdap += 10; bavaria_coup += 2
+priority: 2
+tags: event
+face-image: img/Bürgerbräukeller.jpg
+
+
+=  Kahr lays out his plans
+
+Kahr, Lossow and Seißer or the <span style="color: [+ bvp_colour +];">Triumvirate</span>, as they call themselves by now, have assembeled in the Bürgerbräukeller in Munich. Despite banning many <span style="color: [+ ddp_colour +];">liberal</span> and <span style="color: [+ spd_colour +];">socialist</span> publications Kahr has not ordered his troops to march on Berlin. Many have accused him of pulling back from his plans out of fear.
+
+- @hitler_enter: <span style="color: [+ nsdap_colour +];">Hitler</span> enters the secene.
+
+
+@hitler_enter
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/portraits/Hitler_Ludendorff.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #left_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
+
+During Kahr speech Hitler arrives alongside a troop of <span style="color: [+ nsdap_colour +];">**SA**</span> fighters. Shooting into the roof he declares the start of his National Revolution. Hermann Göring adresses the crowd while Hitler and Ludendorff lead the <span style="color: [+ bvp_colour +];">Triumvirate</span> into another room where they try to persuade them to join their coup. They pledge their support.
+
+- @incoming_mail: What is that?
+
+@incoming_mail
+
+"Proclamation to the German People! The government of the November Criminals in Berlin has been decalred to be disposed today. A new German provisional national has been formed, which is comprised of General Ludendorff, Adolf Hitler, General von Lossow, Oberst von Seißer."
+
+- @cool: Interesting?
+
+@cool
+on-arrival: sa_strength += 5
+on-display: {!  
+    var cardEl = document.createElement('div');  
+    cardEl.className = "face-figure2";  
+
+    var image = new Image();  
+    image.className = "face-img";  
+    image.src = "img/hitler_truppe.jpg";  
+
+    cardEl.appendChild(image);  
+    var contentDiv = document.querySelector("#page #middle_panel #content");
+    contentDiv.appendChild(cardEl);
+!}
+
+It appears Munich is now under <span style="color: [+ nsdap_colour +];">völkisch</span> control. Jews are being harrased, Synagoges are attacked, <span style="color: [+ spd_colour +];">our</span> local politicians are being arrested just as ministers of the <span style="color: [+ bvp_colour +];">von Knillig</span> cabinet. The insurgents are on their way to march on Berlin.
+
+- @plot_twist: This is disturbing!
+
+@plot_twist
+
+In a nightly radio speech Kahr takes back his support for the coup claiming that he only agreed to it under threat of being shot. It appears Hitler had put too much trust in Ludendorff who let the <span style="color: [+ bvp_colour +];">Triumvirate</span> go after they've made loyalty promisses.
+
+At the same time Ebert transfers the executive power from [+ reichswehr_minister +] General Hans von Seeckt, head of the army.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
