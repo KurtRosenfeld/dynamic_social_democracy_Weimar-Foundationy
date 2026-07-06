@@ -415,14 +415,14 @@ if (document.readyState === 'loading') {
   };
 
 
-  window.justLoaded = true;
-  window.statusTab = "status";
-  window.statusTabRight = "status_right";
-  window.bottomTab = "bottom_tab";
-  window.dendryModifyUI = main;
-  console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
+  indow.justLoaded = true;
+window.statusTab = "status";
+window.statusTabRight = "status_right";
+window.bottomTab = "bottom_tab";
+window.dendryModifyUI = main;
+console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
-  window.onload = function() {
+window.onload = function() {
     window.dendryUI.loadSettings({show_portraits: true});
     if (window.dendryUI.dark_mode) {
         document.body.classList.add('dark-mode');
@@ -435,6 +435,5 @@ if (document.readyState === 'loading') {
     window.updateSidebar();
     window.statusTabRight = "status_right";
     window.updateSidebarRight();
-  };
-
-}());
+    
+};
