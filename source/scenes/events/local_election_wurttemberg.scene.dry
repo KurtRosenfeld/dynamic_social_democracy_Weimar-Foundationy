@@ -540,7 +540,7 @@ on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "
 title: Another Bourgeois Coalition
 view-if: z_relation < 80 and dvp_relation <= 50
 choose-if: right_bourgeois_coalition_wurttemberg >= 50
-on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "Right Bourgeois"
+on-arrival: wurttemberg_election_2_trigger_time = time + 48; wurttemberg_gov = "Right"
 
 @left_coalition_wurttemberg
 title: A Coalition of the Left will be formed
