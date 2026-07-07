@@ -1441,6 +1441,18 @@ A political compass usually isn't a sensible way to characterize a political lan
       <title
          id="title36-3-2">CSVD</title>
     </circle> ?]
+<circle
+       style="fill:#b8996f;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       id="path29-3"
+       cx="[+ soc_wp +]"
+       cy="[+ rep_wp +]"
+       inkscape:label="compass_party_dvp"
+       inkscape:transform-center-x="-0.6896551"
+       inkscape:transform-center-y="-0.68965517"
+       r="7">
+      <title
+         id="title35">WP</title>
+    </circle>
 [? if not lvp_formed and dvp_exist and not dvp_dnef:  <circle
        style="fill:[+ dvp_colour +];fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-3"
