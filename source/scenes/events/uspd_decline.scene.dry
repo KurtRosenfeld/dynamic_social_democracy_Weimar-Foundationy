@@ -1,9 +1,9 @@
 title: The <span style="color: [+ uspd_colour +];">**USPD**</span> in <span style="color: #FF2C2C;">**decline**</span>.
 subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> can't see a future for itself.
 new-page: true
-on-arrival: workers_uspd -= 3; unemployed_uspd -= 2; unemployed_kpd += 2; workers_spd += 1; uspd_decline_timer = 5
+on-arrival: (workers_uspd -= 3; unemployed_uspd -= 2; unemployed_kpd += 2; workers_spd += 1; uspd_decline_timer = 5) if not uspd_joined
 tags: event
-view-if: uspd_joined < 3 and uspd_decline_timer = 0
+view-if: uspd_joined < 3 and uspd_decline_timer = 0 and not uspd_dead
 max-visits: 3
 priority: 1
 face-image: img/USPD (1).jpg
