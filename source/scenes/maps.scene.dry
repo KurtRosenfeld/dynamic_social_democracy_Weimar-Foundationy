@@ -994,7 +994,7 @@ go-to: map_menu
 @political_compass
 go-to: map_menu
 
-
+A political compass usually isn't a sensible way to characterize a political landscape because it can only sort by two parameters. But since the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Republic's divide often revolved around <span style="color: #000000;">Repu</span><span style="color: #DD0000;">plica</span><span style="color: #FFCC00;">nism</span> and social matters those are displayed here.
 <svg
    version="1.1"
    id="svg1"
