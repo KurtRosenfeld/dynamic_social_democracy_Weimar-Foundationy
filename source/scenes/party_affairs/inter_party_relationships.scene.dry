@@ -9,7 +9,7 @@ card-image: img/weimar_coalition_2.jpg
 
 = Inter-Party Relationships
 
-The <span style="color: [+ spd_colour +];">**SPD**</span> cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition of the <span style="color: [+ spd_colour +];">**SPD**</span>, <span style="color: #000000;">Center</span>, and [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] parties. [? if cvp_formed: However the formation of the <span style="color: #000000;">**[+ z_party_name +]**</span> has only really made cooperation with the <span style="color: #D3C24D;">liberals</span> possible. ?] We can reach out and build additional connections with these parties, or perhaps we can stand alone.
+The <span style="color: [+ spd_colour +];">**SPD**</span> cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition of the <span style="color: [+ spd_colour +];">**SPD**</span>, <span style="color: #000000;">Center</span>, and [? if ddp_name == "DDP" and not lvp_formed: <span style="color: #D3C24D;">**Democratic**</span>?][? if ddp_name == "DStP" and not lvp_formed: <span style="color: #D3C24D;">**State**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**Liberal People's**</span>?] parties. [? if cvp_formed: However the formation of the <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> has only really made cooperation with the <span style="color: #D3C24D;">liberals</span> possible. ?] We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
 - @left: Strengthen and repair our bonds with the other worker's parties -- the <span style="color: #700000;">Communist Party</span> [? if not uspd_leader == "gone": and <span style="color: [+ uspd_colour +];">Independent Social Democratic Party</span>.?]
 - @neighbours: Strengthen our bonds with our ideological neighbours: the [? if ddp_name == "DDP": <span style="color: [+ ddp_colour +];">German Democratic Party</span>?][? if ddp_name == "DStP": <span style="color: [+ ddp_colour +];">German State Party</span>?][? if lvp_formed: <span style="color: #FFCC00;">Liberal People's Party</span> ?][? if not uspd_leader == "gone": and <span style="color: [+ uspd_colour +];">Independent Social Democratic Party</span>?][? if sapd_formed: and <span style="color: #9B0000;">**Socialist Worker's Party**</span?]
@@ -146,7 +146,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; ddp_relation += 8*(1 - dissent); ddp_left += 1; ddp_cohesion += 0.5
 
-The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has been one of our closest allies throughout the course of the Republic. Now, as they are the only remaining liberal party, strengthening ties with them should be our top priority.
+The <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> has been one of our closest allies throughout the course of the Republic. Now, as they are the only remaining liberal party, strengthening ties with them should be our top priority.
 
 @liberals
 view-if: not lvp_formed and dvp_exist
@@ -156,7 +156,7 @@ unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; ddp_relation += 5*(1 - dissent); ddp_left += 0.5; ddp_cohesion += 0.25; dvp_relation += 2 if in_grand_coalition_prussia
 go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and dvp_votes >= 5; dvp_moribund if stresemann_dead = 1 and dvp_votes < 5
 
-The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has been one of our closest allies through the course of the Republic. [? if year >= 1929: Although the national shift to the right is having them question our cooperation. ?]
+The <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> has been one of our closest allies through the course of the Republic. [? if year >= 1929: Although the national shift to the right is having them question our cooperation. ?]
 
 @dvp_stresemann
 on-arrival: dvp_relation += 6*(1 - dissent); dvp_left += 1; dvp_left += 1 if in_grand_coalition_prussia
@@ -173,7 +173,7 @@ However, given the influence of the <span style="color: [+ dvp_colour +];">**DVP
 @dvp_moribund
 on-arrival: dvp_relation += 4*(1 - dissent); dvp_left += 1; dvp_left += 1 if in_grand_coalition_prussia
 
-The <span style="color: #D3C24D;">liberal</span> parties (both the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: [+ dvp_colour +];">**DVP**</span>) are electorally <span style="color: #ff0000;">moribund</span>, so perhaps our efforts are best spent elsewhere.
+The <span style="color: #D3C24D;">liberal</span> parties (both the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> and <span style="color: [+ dvp_colour +];">**DVP**</span>) are electorally <span style="color: #ff0000;">moribund</span>, so perhaps our efforts are best spent elsewhere.
 
 However, given the influence of the <span style="color: [+ dvp_colour +];">**DVP**</span> among the other <span style="color: #808080;">right</span>-leaning parties[? if president == "Hindenburg" or president_ideology == "Moderate": and with President [+ president +] ?], it can still be helpful to influence them. [? if in_grand_coalition_prussia: Their inclusion in the Prussian government has also fostered a more conciliatory attitude toward us. ?]
 

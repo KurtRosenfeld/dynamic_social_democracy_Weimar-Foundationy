@@ -7,7 +7,7 @@ new-page: true
 
 = Theodor Liebknecht
 
-Liebknecht is a former <span style="color: #AA0000;">**USPD**</span> leader and one of our most <span style="color: #700000;">**far-left**</span> members and brother of Karl Liebknecht.
+Liebknecht is a former <span style="color: [+ uspd_colour +];">**USPD**</span> leader and one of our most <span style="color: #700000;">**far-left**</span> members and brother of Karl Liebknecht.
 
 - @class_struggle
 - @root: Return to main

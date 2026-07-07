@@ -8,7 +8,7 @@ new-page: true
 
 = Panzerkreuzer
 
-The Reichswehr Ministry is lobbying for a naval modernization program centered on the construction of a new battlecruiser, Panzerschiff A. The bourgeois parties are united in support, and the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is likely to yield to right-wing pressure. A vote on the project is expected once a new government is formed after the May elections.
+The Reichswehr Ministry is lobbying for a naval modernization program centered on the construction of a new battlecruiser, Panzerschiff A. The bourgeois parties are united in support, and the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> is likely to yield to right-wing pressure. A vote on the project is expected once a new government is formed after the May elections.
 
 This presents us with an opportunity: we could campaign against the ship’s construction and demand its cancellation in favor of greater social spending. The workers have rallied behind our slogan, "Children's Meals Instead of Armored Cruisers", but the mire of coalition politics may yet force us to backtrack—should we enter government.
 

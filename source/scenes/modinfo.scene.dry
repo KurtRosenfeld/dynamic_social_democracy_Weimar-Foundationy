@@ -49,7 +49,7 @@ A main problem with newer players is that, they overestimate the negative effect
 
 **How do I impact a party's ideologies and get certain paths? Is it RNG?**
 
-Nothing in Dynamic relies on RNG, aside from card draws. The Support for the Republic value plays a crucial role in determining party congress outcomes, particularly within the <span style="color: #3E88B3;">**DNVP**</span>. The liberal parties, on the other hand, are primarily influenced by governmental actions—moving toward economic democracy and left-wing policies will push them rightward, while maintaining good relations and avoiding major socialist policies will bring them closer. Relations also matter significantly, making the negotiation skills of Müller and Braun highly valuable.
+Nothing in Dynamic relies on RNG, aside from card draws. The Support for the Republic value plays a crucial role in determining party congress outcomes, particularly within the <span style="color: [+ dnvp_colour +];">**DNVP**</span>. The liberal parties, on the other hand, are primarily influenced by governmental actions—moving toward economic democracy and left-wing policies will push them rightward, while maintaining good relations and avoiding major socialist policies will bring them closer. Relations also matter significantly, making the negotiation skills of Müller and Braun highly valuable.
 
 **What happened to the WTB Plan?**
 
@@ -65,7 +65,7 @@ You will have to get Stegerwald as the leader of Prussia, either through Braun r
 
 **How do I cross the rubicon?**
 
-Hindenburg needs to dismiss Chancellor Brüning following the 1932 Presidential elections. This unlocks Rubicon Mode, which remains active for the rest of the game. Since this is the historical sequence of events, you'll need to follow a similar political path, such as securing a Hugenberg-led <span style="color: #3E88B3;">**DNVP**</span>, to have a better chance of unlocking it.
+Hindenburg needs to dismiss Chancellor Brüning following the 1932 Presidential elections. This unlocks Rubicon Mode, which remains active for the rest of the game. Since this is the historical sequence of events, you'll need to follow a similar political path, such as securing a Hugenberg-led <span style="color: [+ dnvp_colour +];">**DNVP**</span>, to have a better chance of unlocking it.
 
 **Why is the left path so hard?**
 
@@ -238,7 +238,7 @@ on-arrival: {!
 - @dvp_paths: <span style="color: [+ dvp_colour +];">**DVP**</span> Paths!
 - @lvp_paths: <span style="color: #FFCC00;">**LVP**</span> Paths!
 - @zentrum_paths: <span style="color: #000000;">**Center**</span> Paths!
-- @dnvp_paths: <span style="color: #3E88B3;">**DNVP**</span> Paths!
+- @dnvp_paths: <span style="color: [+ dnvp_colour +];">**DNVP**</span> Paths!
 - @full_paths: Ultimate Dynamic Flowchart!
 - @back: Back
 - @back2: Back

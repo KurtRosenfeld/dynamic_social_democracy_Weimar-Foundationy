@@ -13,7 +13,7 @@ The non-industrialist and Stresemannite elements of the <span style="color: [+ d
 
 Led by Wilhelm Kunz, a Berlin lawyer, and Count Alexander zu Dohna, a legal expert and widely respected figure on the party’s left wing, they aim to publicly challenge Dingeldey and the industrialist faction that has effectively puppeteered him.
 
-They both advocate for cooperation with the minor bourgeois parties and the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, and firmly reject what they call the “psychosis of <span style="color: #7A3C00;">National Socialism</span>.”
+They both advocate for cooperation with the minor bourgeois parties and the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>, and firmly reject what they call the “psychosis of <span style="color: #7A3C00;">National Socialism</span>.”
 
 - @dingeldey_explode
 

@@ -1,27 +1,27 @@
-title: <span style="color: #D47B9B;">**USPD**</span> Unification
+title: <span style="color: [+ uspd_colour +];">**USPD**</span> Unification
 view-if: vspd_parliament == 1 and uspd_relation >= 65
 max-visits: 1
 tags: event
 new-page: true
 face-image: img/MHG-Objekte-Prio-II_01-Alfred-Dunkel-Wahlplakat-der-USPD-1919-Lithografie-Foto-SHMH-MHG_2023 (1).jpg
 
-= The <span style="color: #D47B9B;">**USPD**</span> would like to return to our party
+= The <span style="color: [+ uspd_colour +];">**USPD**</span> would like to return to our party
 
-Their poor performance, poor financial situation, the political turmoil and our previous cooperation in the parliament have driven most of the <span style="color: #D47B9B;">**USPD**</span> members left to ask to join our party.
+Their poor performance, poor financial situation, the political turmoil and our previous cooperation in the parliament have driven most of the <span style="color: [+ uspd_colour +];">**USPD**</span> members left to ask to join our party.
   
-- @join: The <span style="color: #D47B9B;">**USPD**</span> can join, ofcourse..
+- @join: The <span style="color: [+ uspd_colour +];">**USPD**</span> can join, ofcourse..
 - @dont: We would like to keep our parties separate.
 - @hyper: We will form a united party of all workers.
 
 @join
 on-arrival: uspd_joining_proces = 1
-subtitle: Some of the <span style="color: #D47B9B;">**USPD**</span> will go to the <span style="color: [+ kpd_colour +];">**KPD**</span>, but we expect the majority to go to us.
+subtitle: Some of the <span style="color: [+ uspd_colour +];">**USPD**</span> will go to the <span style="color: [+ kpd_colour +];">**KPD**</span>, but we expect the majority to go to us.
 
 We will welcome them.
 
 @dont
 on-arrival: reformist_strength += 5; left_dissent += 2
-subtitle: This will most definitely alienate the <span style="color: #D47B9B;">**USPD**</span>, and only reinforce the <span style="color: #700000;">**left-wing**</span> talking points about us being traitors.
+subtitle: This will most definitely alienate the <span style="color: [+ uspd_colour +];">**USPD**</span>, and only reinforce the <span style="color: #700000;">**left-wing**</span> talking points about us being traitors.
 
 We will not unite with a party that brings <span style="color: #700000;">**Spartacists**</span> into our ranks
 

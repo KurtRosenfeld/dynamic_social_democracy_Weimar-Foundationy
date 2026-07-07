@@ -360,7 +360,7 @@ go-to: reactionary_candidates if reactionary_candidate_1932_count_2 > 0
 
 Hans Luther, former Chancellor of the first federal right-wing coalition and key figure in addressing the hyperinflationary crisis, is certainly not lacking in the experience required to assume the presidency of the Reich. Among his peers, he stands out as relatively open to constructive cooperation with the <span style="color: [+ spd_colour +];">**SPD**</span>, though it is clear that he favors a presidential bourgeois government over continued <span style="color: #c00000;">socialist</span> participation in power. Despite his party affiliation, he is widely viewed as a non-partisan candidate.
 
-His candidacy is supported by the [? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]. [? if not lvp_formed: He is also nominally supported by the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>. ?]
+His candidacy is supported by the [? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]. [? if not lvp_formed: He is also nominally supported by the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>. ?]
 
 - @harzburg: We await the decision of the Harzburg Front.
 
@@ -374,7 +374,7 @@ go-to: reactionary_candidates if reactionary_candidate_1932_count_2 > 0
 
 Otto Gessler, who served as Defense Minister for eight years following Noske’s departure and preceding Groener, is a conservative and a <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> by reason rather than conviction—often at odds with his colleagues in the <span style="color: #D3C24D;">**DDP**</span> throughout his tenure. He made little effort to reform the Reichswehr and played an active role in the <i>Reichsexekution</i> against our United Left governments in Saxony and Thuringia during the German October. Now, after stepping away from politics in early 1928, he seeks a return to the national stage.
 
-His candidacy is supported by the [? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]. [? if not lvp_formed: He is also nominally supported by the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>, which has grown more right-wing and more accepting over the years. ?]
+His candidacy is supported by the [? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]. [? if not lvp_formed: He is also nominally supported by the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>, which has grown more right-wing and more accepting over the years. ?]
 
 - @harzburg: We await the decision of the Harzburg Front.
 
@@ -423,7 +423,7 @@ His candidacy is supported by the [? if z_party_name != "CVP": <span style="colo
 - @harzburg: We await the decision of the Harzburg Front.
 
 @vorbeck
-title: Paul von Lettow-Vorbeck, war hero of the Great War and [? if not cvp_formed: [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?]?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] member.
+title: Paul von Lettow-Vorbeck, war hero of the Great War and [? if not cvp_formed: [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: [+ dnvp_colour +];">**DNVP**</span>?]?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?] member.
 view-if: vorbeck_unlock_pres
 on-arrival: reactionary_candidate_1932_count_2 -= 1
 unavailable-subtitle: Lettow-Vorbeck is reluctant to lead, and prefers his unglamorous life away from the public. Unless he is convinced, of course.
@@ -435,23 +435,23 @@ By some miracle for the German Right, they have managed to persuade Paul von Let
 
 How Lettow-Vorbeck would govern remains uncertain. It is highly likely that, much like Hindenburg, a camarilla of close advisors would shape his decisions from behind the scenes.
 
-His candidacy is backed by the [? if not vorbeck_fallback: [? if not cvp_formed: [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?]?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?], along with a disparate coalition of minor bourgeois parties. ?][? if vorbeck_fallback: entirety of the Bürgerblock parties, who view him as their collective last hope at retaining power. ?]
+His candidacy is backed by the [? if not vorbeck_fallback: [? if not cvp_formed: [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: [+ dnvp_colour +];">**DNVP**</span>?]?][? if cvp_formed: <span style="color: #000000;">**CVP**</span>?], along with a disparate coalition of minor bourgeois parties. ?][? if vorbeck_fallback: entirety of the Bürgerblock parties, who view him as their collective last hope at retaining power. ?]
 
 - @harzburg: We await the decision of the Harzburg Front.
 
 @westarp
-title: Kuno von Westarp, [? if dnvp_leader != "Westarp": former?] leader of the <span style="color: #3E88B3;">**DNVP**</span>, and an old friend of Hindenburg.
+title: Kuno von Westarp, [? if dnvp_leader != "Westarp": former?] leader of the <span style="color: [+ dnvp_colour +];">**DNVP**</span>, and an old friend of Hindenburg.
 view-if: westarp_unlock_pres
 on-arrival: reactionary_candidate_1932_count_2 -= 1
 face-image: img/portraits/Kuno_von_Westarp.jpg
 max-visits: 1
 go-to: reactionary_candidates if reactionary_candidate_1932_count_2 > 0
 
-Kuno von Westarp, a familiar figure in German politics, has long been a stalwart of the <span style="color: #3E88B3;">**DNVP**</span>, once serving as both party leader and head of its parliamentary group. While not entirely opposed to his party’s participation in a <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> system, he has made no secret of his monarchist aspirations. His rigid partisanship and staunchly anti-<span style="color: #c00000;">socialist</span> convictions are likely to define his rule—perhaps even making him a more hostile figure than Hindenburg.
+Kuno von Westarp, a familiar figure in German politics, has long been a stalwart of the <span style="color: [+ dnvp_colour +];">**DNVP**</span>, once serving as both party leader and head of its parliamentary group. While not entirely opposed to his party’s participation in a <span style="color: #000000;">rep</span><span style="color: #DD0000;">ubl</span><span style="color: #FFCC00;">ican</span> system, he has made no secret of his monarchist aspirations. His rigid partisanship and staunchly anti-<span style="color: #c00000;">socialist</span> convictions are likely to define his rule—perhaps even making him a more hostile figure than Hindenburg.
 
 It is imperative that we prevail over these forces of reaction if we are to have any hope of returning to government.
 
-His candidacy is backed by the [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?], along with a disparate coalition of minor bourgeois parties.
+His candidacy is backed by the [? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: [+ dnvp_colour +];">**DNVP**</span>?], along with a disparate coalition of minor bourgeois parties.
 
 - @harzburg: We await the decision of the Harzburg Front.
 
@@ -472,7 +472,7 @@ go-to: duesterberg if dnvp_votes < 8 and dnvp_ideology == "Radical"; hugenberg i
 @duesterberg
 face-image: img/portraits/duesterberg.jpg
 
-The Harzburg Front has fractured, with the <span style="color: #3E88B3;">**DNVP**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span> nominating a separate candidate than the <span style="color: #7A3C00;">**NSDAP**</span>, who rather run their own candidate. In a deal between the leadership of the <span style="color: #3E88B3;">**Stahlhelm**</span> and Hugenberg, the <span style="color: #3E88B3;">**DNVP**</span> is to support and campaign for whoever the <span style="color: #3E88B3;">**Stahlhelm**</span> nominates, in exchange for the <span style="color: #3E88B3;">**Stahlhelm**</span>'s full support for the <span style="color: #3E88B3;">**DNVP**</span> in the upcoming local elections. The <span style="color: #3E88B3;">**Stahlhelm**</span> have decided to nominate its deputy leader, Theodor Duesterberg.
+The Harzburg Front has fractured, with the <span style="color: [+ dnvp_colour +];">**DNVP**</span> and <span style="color: #3E88B3;">**Stahlhelm**</span> nominating a separate candidate than the <span style="color: #7A3C00;">**NSDAP**</span>, who rather run their own candidate. In a deal between the leadership of the <span style="color: #3E88B3;">**Stahlhelm**</span> and Hugenberg, the <span style="color: [+ dnvp_colour +];">**DNVP**</span> is to support and campaign for whoever the <span style="color: #3E88B3;">**Stahlhelm**</span> nominates, in exchange for the <span style="color: #3E88B3;">**Stahlhelm**</span>'s full support for the <span style="color: [+ dnvp_colour +];">**DNVP**</span> in the upcoming local elections. The <span style="color: #3E88B3;">**Stahlhelm**</span> have decided to nominate its deputy leader, Theodor Duesterberg.
 
 - @nsdap_selection: Who will the <span style="color: #7A3C00;">**NSDAP**</span> run?
 
@@ -483,7 +483,7 @@ Q.dnvp_candidate_1932_disp = "Alfred Hugenberg";
 !}
 face-image: img/portraits/AlfredHugenberg.jpg
 
-The Harzburg Front has fractured, with the [? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">**DNVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #003755;">**DNF**</span>?] choosing to nominate its unpopular leader, Alfred Hugenberg, rather than support the <span style="color: #7A3C00;">**NSDAP**</span>'s candidate. Hugenberg's decision is driven by ego; his well-known flaws—an absence of charisma, an aloof detachment from ordinary Germans, and a reputation for obstruction—render his campaign almost certainly doomed.
+The Harzburg Front has fractured, with the [? if dnvp_ideology == "Radical": <span style="color: [+ dnvp_colour +];">**DNVP**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #003755;">**DNF**</span>?] choosing to nominate its unpopular leader, Alfred Hugenberg, rather than support the <span style="color: #7A3C00;">**NSDAP**</span>'s candidate. Hugenberg's decision is driven by ego; his well-known flaws—an absence of charisma, an aloof detachment from ordinary Germans, and a reputation for obstruction—render his campaign almost certainly doomed.
 
 [? if dnvp_ideology == "Radical": The <span style="color: #3E88B3;">**Stahlhelm**</span>, infuriated by Hugenberg's abandonment of negotiations for a united front, have reverted to their traditional stance of non-partisanship, a position long favored by many in their ranks. Nonetheless, their supporters are expected to divide roughly evenly among the right-wing candidates. ?][? if dnvp_ideology == "Moderate": If there was ever a chance of the <span style="color: #3E88B3;">**Stahlhelm**</span> supporting a candidate of the <span style="color: #7A3C00;">national</span> <span style="color: #003755;">opposition</span>, it has vanished with the hated Hugenberg entering the race. ?]
 
@@ -576,7 +576,7 @@ go-to: endorsements_braun if braun_campaign; endorsements_eckener if eckener_cam
 
 [? if bvp_support_spd and spd_campaign: - <span style="color: #A2D8E0;">**BVP**</span> ?]
 
-[? if ddp_support_spd == 1 and spd_campaign: - <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
+[? if ddp_support_spd == 1 and spd_campaign: - <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> ?]
 
 [? if lvp_support_spd == 1 and spd_campaign: - <span style="color: #FFCC00;">**LVP**</span> ?]
 
@@ -592,13 +592,13 @@ go-to: endorsements_braun if braun_campaign; endorsements_eckener if eckener_cam
 
 [? if (lvp_choice == reactionary_candidate_1932 or hindenburg_run) and lvp_support_spd != 1 and lvp_formed and reactionary_candidate_1932: - <span style="color: #FFCC00;">**LVP**</span> ?]
 
-[? if (ddp_choice == reactionary_candidate_1932 or hindenburg_run) and ddp_support_spd != 1 and not lvp_formed and reactionary_candidate_1932: - <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
+[? if (ddp_choice == reactionary_candidate_1932 or hindenburg_run) and ddp_support_spd != 1 and not lvp_formed and reactionary_candidate_1932: - <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> ?]
 
 [? if (dvp_choice == reactionary_candidate_1932 or hindenburg_run) and dvp_support_spd != 1 and not lvp_formed and reactionary_candidate_1932: - <span style="color: [+ dvp_colour +];">**DVP**</span> ?]
 
 [? if (kvp_choice == reactionary_candidate_1932 or hindenburg_run) and kvp_formed and reactionary_candidate_1932: - <span style="color: #0087DC;">**KVP**</span> ?]
 
-[? if (dnvp_choice == reactionary_candidate_1932 or hindenburg_run) and dnvp_ideology == "Moderate" and not cvp_formed: - <span style="color: #3E88B3;">**DNVP**</span> ?]
+[? if (dnvp_choice == reactionary_candidate_1932 or hindenburg_run) and dnvp_ideology == "Moderate" and not cvp_formed: - <span style="color: [+ dnvp_colour +];">**DNVP**</span> ?]
 
 [? if (other_choice == reactionary_candidate_1932 or hindenburg_run) and reactionary_candidate_1932: - **Others** ?]
 
@@ -612,13 +612,13 @@ go-to: endorsements_braun if braun_campaign; endorsements_eckener if eckener_cam
 
 [? if (lvp_choice == secondary_reactionary_candidate_1932 or hindenburg_run) and lvp_support_spd != 1 and lvp_formed and secondary_reactionary_candidate_1932: - <span style="color: #FFCC00;">**LVP**</span> ?]
 
-[? if (ddp_choice == secondary_reactionary_candidate_1932 or hindenburg_run) and ddp_support_spd != 1 and not lvp_formed and secondary_reactionary_candidate_1932: - <span style="color: #D3C24D;">**[+ ddp_name +]**</span> ?]
+[? if (ddp_choice == secondary_reactionary_candidate_1932 or hindenburg_run) and ddp_support_spd != 1 and not lvp_formed and secondary_reactionary_candidate_1932: - <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> ?]
 
 [? if (dvp_choice == secondary_reactionary_candidate_1932 or hindenburg_run) and dvp_support_spd != 1 and not lvp_formed and secondary_reactionary_candidate_1932: - <span style="color: [+ dvp_colour +];">**DVP**</span> ?]
 
 [? if (kvp_choice == secondary_reactionary_candidate_1932 or hindenburg_run) and kvp_formed and secondary_reactionary_candidate_1932: - <span style="color: #0087DC;">**KVP**</span> ?]
 
-[? if (dnvp_choice == secondary_reactionary_candidate_1932 or hindenburg_run) and dnvp_ideology == "Moderate" and not cvp_formed and secondary_reactionary_candidate_1932: - <span style="color: #3E88B3;">**DNVP**</span> ?]
+[? if (dnvp_choice == secondary_reactionary_candidate_1932 or hindenburg_run) and dnvp_ideology == "Moderate" and not cvp_formed and secondary_reactionary_candidate_1932: - <span style="color: [+ dnvp_colour +];">**DNVP**</span> ?]
 
 [? if (other_choice == secondary_reactionary_candidate_1932 or hindenburg_run) and secondary_reactionary_candidate_1932: - **Others** ?]
 
@@ -636,7 +636,7 @@ go-to: endorsements_braun if braun_campaign; endorsements_eckener if eckener_cam
 
 [? if dnvp_candidate_1932: [? if dnvp_ideology == "Radical": <span style="color: #3E88B3;">**[+ dnvp_candidate_1932_disp +]**</span>?][? if dnvp_ideology == "Moderate": <span style="color: #003755;">**[+ dnvp_candidate_1932_disp +]**</span>?] - supported by: ?]
 
-[? if dnvp_candidate_1932 and dnvp_ideology == "Radical": - <span style="color: #3E88B3;">**DNVP**</span> ?]
+[? if dnvp_candidate_1932 and dnvp_ideology == "Radical": - <span style="color: [+ dnvp_colour +];">**DNVP**</span> ?]
 
 [? if dnvp_candidate_1932 and dnvp_ideology == "Moderate": - <span style="color: #003755;">**DNF**</span> ?]
 
@@ -834,7 +834,7 @@ on-arrival: resources -= 1; spd_campaign = 1; eckener_campaign = 1; reformist_di
 
 It takes effort to launch a somewhat unexpected campaign. First, Eckener must be convinced to run. He isn't particularly eager to be the candidate of the <span style="color: #c00000;">socialists</span>, as it would invite slander from the German Right—whom he feels a greater affinity with.
 
-With his status as a non-<span style="color: #c00000;">socialist</span>—and even conservative—unity candidate, and his non-partisanship, Eckener is positioned to attract endorsements from a wide range of parties. However, much of this depends on their relationship with us, as our backing alone is enough to disgust many otherwise eager supporters. The [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> and <span style="color: [+ dvp_colour +];">**DVP**</span> are likely to back Eckener, although the <span style="color: [+ dvp_colour +];">**DVP**</span> requires convincing. ?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span> is likely to back Eckener, although their industrial-right elements object to the arrangement. ?] The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is nominally supportive, although the <span style="color: #A2D8E0;">**BVP**</span> remains another problem. Finally, the <span style="color: #700000;">**Communists**</span>[? if left_split:&nbsp;and <span style="color: #9B0000;">**SAPD**</span>?] are firmly opposed to supporting a bourgeois conservative—for obvious reasons.
+With his status as a non-<span style="color: #c00000;">socialist</span>—and even conservative—unity candidate, and his non-partisanship, Eckener is positioned to attract endorsements from a wide range of parties. However, much of this depends on their relationship with us, as our backing alone is enough to disgust many otherwise eager supporters. The [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> and <span style="color: [+ dvp_colour +];">**DVP**</span> are likely to back Eckener, although the <span style="color: [+ dvp_colour +];">**DVP**</span> requires convincing. ?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span> is likely to back Eckener, although their industrial-right elements object to the arrangement. ?] The [? if z_party_name != "CVP": <span style="color: #000000;">Center</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] is nominally supportive, although the <span style="color: #A2D8E0;">**BVP**</span> remains another problem. Finally, the <span style="color: #700000;">**Communists**</span>[? if left_split:&nbsp;and <span style="color: #9B0000;">**SAPD**</span>?] are firmly opposed to supporting a bourgeois conservative—for obvious reasons.
 
 - @endorsements_eckener: Scout out potential endorsements. 
 
@@ -884,7 +884,7 @@ We can't win this election alone, we need support from other parties. [? if spd_
 
 - @convince_z: Convince the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to back <span style="color: #c00000;">Braun</span>[? if center_reactionary_candidate_1932:&nbsp;and withdraw support from [+ center_reactionary_candidate_1932_name +]?].
 - @convince_kpd: Convince the <span style="color: #700000;">**Communists**</span> to back <span style="color: #c00000;">Braun</span>.
-- @convince_ddp: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to back <span style="color: #c00000;">Braun</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
+- @convince_ddp: Convince the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> to back <span style="color: #c00000;">Braun</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
 - @convince_lvp: Convince the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #c00000;">Braun</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
 - @view_candidates: View party endorsements.
 - @hope: We have concluded negotiations with other parties.
@@ -1016,13 +1016,13 @@ The <span style="color: #FFCC00;">liberal</span> vote has been falling over time
 on-arrival: ddp_support_spd = 1; ddp_left += 3; ddp_cohesion -= 2; ddp_relation += 5
 go-to: endorsements_braun
 
-Thanks to our friendly relations and connections with their left wing, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is now campaigning for Braun in the election.
+Thanks to our friendly relations and connections with their left wing, the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> is now campaigning for Braun in the election.
 
 @convince_ddp_fail
 on-arrival: ddp_support_spd = 0; ddp_right += 3; ddp_cohesion -= 2; ddp_relation -= 5
 go-to: endorsements_braun
 
-Unfortunately, under the influence of their business wing, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has refused to support a <span style="color: #c00000;">socialist</span> for the presidency. 
+Unfortunately, under the influence of their business wing, the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> has refused to support a <span style="color: #c00000;">socialist</span> for the presidency. 
 
 @convince_lvp
 view-if: lvp_formed
@@ -1182,7 +1182,7 @@ It's a long shot, but some in our party believed we could convince the <span sty
 Eckener can't win this election alone, he needs support from other parties.
 
 - @convince_z_eckener: Convince the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] to back <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span>[? if center_reactionary_candidate_1932:&nbsp;and withdraw support from [+ center_reactionary_candidate_1932_name +]?].
-- @convince_ddp_eckener: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to back <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
+- @convince_ddp_eckener: Convince the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> to back <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
 - @convince_lvp_eckener: Convince the <span style="color: #FFCC00;">**LVP**</span> to back <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
 - @convince_dvp_eckener: Convince the <span style="color: [+ dvp_colour +];">**DVP**</span> to back <span style="color: #000000;">**Ec**</span><span style="color: #DD0000;">**ken**</span><span style="color: #FFCC00;">**er**</span>[? if liberal_reactionary_candidate_1932:&nbsp;and withdraw support from [+ liberal_reactionary_candidate_1932_name +]?].
 - @view_candidates: View party endorsements.
@@ -1199,13 +1199,13 @@ The <span style="color: #FFCC00;">liberal</span> vote has been falling over time
 on-arrival: ddp_support_spd = 1; ddp_left += 1; ddp_cohesion -= 1; ddp_relation += 3
 go-to: endorsements_eckener
 
-Thanks to our friendly relations, connections with their left wing, and Eckener's non-partisanship, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is now campaigning for Eckener in the election.
+Thanks to our friendly relations, connections with their left wing, and Eckener's non-partisanship, the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> is now campaigning for Eckener in the election.
 
 @convince_ddp_fail_eckener
 on-arrival: ddp_support_spd = 0; ddp_right += 1; ddp_cohesion -= 1; ddp_relation -= 3
 go-to: endorsements_eckener
 
-Unfortunately, under the influence of its business wing, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> has refused to support a <span style="color: #c00000;">socialist</span>-backed candidate for the presidency. This is a major blow—Eckener was meant to be a unity candidate, and we've clearly failed in that objective.
+Unfortunately, under the influence of its business wing, the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> has refused to support a <span style="color: #c00000;">socialist</span>-backed candidate for the presidency. This is a major blow—Eckener was meant to be a unity candidate, and we've clearly failed in that objective.
 
 @convince_lvp_eckener
 view-if: lvp_formed

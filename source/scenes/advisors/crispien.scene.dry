@@ -7,7 +7,7 @@ view-if: crispien_advisor = 1
 
 = Arthur Crispien
 
-Crispien used to be leader of the anti-war <span style="color: #AA0000;">**USPD**</span>.
+Crispien used to be leader of the anti-war <span style="color: [+ uspd_colour +];">**USPD**</span>.
 
 - @international
 - @campaign_cris

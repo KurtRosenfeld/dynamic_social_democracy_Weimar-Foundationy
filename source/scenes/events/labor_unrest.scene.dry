@@ -18,7 +18,7 @@ The mining and metals industry of the Ruhr region is beset by a wave of strikes 
 subtitle: We don't own the Labor Ministry.
 on-arrival: labor_dissent += 5; left_dissent += 5; workers_spd -= 4; coalition_dissent += 1; dvp_relation -= 4; ddp_relation -= 2; lvp_relation -= 3; kpd_relation -= 4; workers_kpd += 3; capital_strike_progress += 1 if unemployed > 15; capital_strike_progress += 1 if unemployed > 24; dvp_right += 1; ddp_left += 0.5; ddp_cohesion -= 1; lvp_right += 1; goal_spd_cancel += 1; pro_labor -= 1; economic_growth -= 0.2
 
-Unfortunately, Labor Minister [+ labor_minister +] (**<span style="color: #000000;">**[+ z_party_name +]**</span>**) overrules our decision and sided with the employers instead.
+Unfortunately, Labor Minister [+ labor_minister +] (**<span style="color: [+ z_colour +];">**[+ z_party_name +]**</span>**) overrules our decision and sided with the employers instead.
 
 Many workers are unhappy at the government's decision, and our concession of the Labor Ministry to the bourgeois parties. There is deep bitterness developing against the <span style="color: [+ spd_colour +];">**SPD**</span>, especially among the more radical workers. The <span style="color: #700000;">**Communists**</span> stand to gain.
 
@@ -32,6 +32,6 @@ Even though most workers grudgingly accept the our intervention, there is deep b
 subtitle: Both sides need to share the pain in the current crisis.
 on-arrival: labor_dissent += 4; workers_spd -= 1; kpd_coalition_dissent += 1; kpd_relation -= 5; workers_kpd += 1; ddp_cohesion += 1; ddp_relation += 4; labor_goal_spd_peoples += 1
 
-We manage to convince Labor Minister [+ labor_minister +] (**<span style="color: #000000;">**[+ z_party_name +]**</span>**) to strike a compromise between both sides.
+We manage to convince Labor Minister [+ labor_minister +] (**<span style="color: [+ z_colour +];">**[+ z_party_name +]**</span>**) to strike a compromise between both sides.
 
 Many workers are unhappy at our compromises, but they will learn to accept that we are all in a shared struggle against economic forces. This is perhaps the best we could do given the present circumstances.

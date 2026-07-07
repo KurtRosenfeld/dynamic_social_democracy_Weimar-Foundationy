@@ -9,7 +9,7 @@ tags: govt_affairs
 
 = Dealing with Toleration
 
-We are currently providing external support to the government of Chancellor [+ chancellor +], but our influence has been severely weakened due to the formation of the <span style="color: #000000;">**[+ z_party_name +]**</span> by former <span style="color: #3E88B3;">**DNVP**</span> members. Furthermore, the <span style="color: #000000;">**[+ z_party_name +]**</span> is actively trying to distance itself from our support. How should we use our position?
+We are currently providing external support to the government of Chancellor [+ chancellor +], but our influence has been severely weakened due to the formation of the <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> by former <span style="color: [+ dnvp_colour +];">**DNVP**</span> members. Furthermore, the <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> is actively trying to distance itself from our support. How should we use our position?
 
 - @break_toleration
 - @urge_against_austerity_limited
@@ -58,7 +58,7 @@ Unfortunately, the historically strict party discipline of the <span style="colo
 
 @urge_against_austerity_limited
 title: Put forth a proposal to increase welfare spending and reverse austerity cuts.
-subtitle: This move will drive a wedge between the <span style="color: #000000;">**[+ z_party_name +]**</span> and their Labor and <span style="color: #FF7F00;">Christian Left</span> factions.
+subtitle: This move will drive a wedge between the <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> and their Labor and <span style="color: #FF7F00;">Christian Left</span> factions.
 go-to: urge_success_limited if z_relation >= 40; urge_failure if z_relation < 40
 
 @urge_success_limited

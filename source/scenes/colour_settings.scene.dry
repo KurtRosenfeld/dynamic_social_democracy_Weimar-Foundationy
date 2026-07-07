@@ -17,7 +17,7 @@ Here colours for partys can be adapted (massively work in progress)
 
 @spd_design
 
-- @boring_ass_spd: <span style="color: #c00000;">**SPD**</span>
+- @boring_ass_spd: <span style="color: [+ spd_colour +];">**SPD**</span>
 - @spd_uspd_red: <span style="color: #B3133A;">**SPD**</span>
 - @spd_whatever_idk: <span style="color: #670000;">**SPD**</span>
 
@@ -42,9 +42,9 @@ go-to: jimmy
 
 @uspd_c_1
 
-- @uspd_pink: <span style="color: #D47B9B;">**USPD**</span>
+- @uspd_pink: <span style="color: [+ uspd_colour +];">**USPD**</span>
 - @uspd_lavender: <span style="color: #B790D3;">**USPD**</span>
-- @uspd_red: <span style="color: #AA0000;">**USPD**</span>
+- @uspd_red: <span style="color: [+ uspd_colour +];">**USPD**</span>
 - @uspd_other_red: <span style="color: #B3133A;">**USPD**</span>
 
 @uspd_pink
@@ -66,9 +66,9 @@ go-to: jimmy
 
 @uspd_c_2
 
-- @uspd_pink_2: <span style="color: #D47B9B;">**USPD**</span>
+- @uspd_pink_2: <span style="color: [+ uspd_colour +];">**USPD**</span>
 - @uspd_lavender_2: <span style="color: #B790D3;">**USPD**</span>
-- @uspd_red_2: <span style="color: #AA0000;">**USPD**</span>
+- @uspd_red_2: <span style="color: [+ uspd_colour +];">**USPD**</span>
 - @uspd_other_red_2: <span style="color: #B3133A;">**USPD**</span>
 
 @uspd_pink_2

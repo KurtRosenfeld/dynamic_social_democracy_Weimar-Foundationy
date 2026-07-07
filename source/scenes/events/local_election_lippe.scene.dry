@@ -525,7 +525,7 @@ Vote % changes are compared to the last *Reichstag* election. <br> Seat % change
 {!<tr><td><div class="box" style='background-color:#7A3C00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_lippe_elections_vote +]% {!</td><td>!} [+ str_votes_change_nsdap_lippe +] {!</td><td>!} [+ nsdap_r_lippe +]% {!</td><td>!} [+ str_change_nsdap_lippe +] {! </td></tr>!}
 {!</table>!}
 <hr id="read-marker">
-Lippe has been governed for the past four years by a coalition of the <span style="color: [+ spd_colour +];">**SPD**</span>, [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], and <span style="color: #0075EB;">**VRP**</span>, with the local <span style="color: [+ spd_colour +];">**SPD**</span> maintaining a more moderate image.
+Lippe has been governed for the past four years by a coalition of the <span style="color: [+ spd_colour +];">**SPD**</span>, [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], and <span style="color: #0075EB;">**VRP**</span>, with the local <span style="color: [+ spd_colour +];">**SPD**</span> maintaining a more moderate image.
 <hr id="read-marker">
 But the real question isn’t the future of Lippe—it’s what the election says about the nation. A <span style="color: #7A3C00;">Nazi</span> victory could prove the party still has life. But a defeat, even after throwing everything into their campaign, would be a crushing blow. With no local elections until the fall, the <span style="color: #7A3C00;">Nazis</span> won’t get another moment like this to remotivate their party.
 

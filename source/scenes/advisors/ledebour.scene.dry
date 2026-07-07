@@ -7,7 +7,7 @@ new-page: true
 
 = Georg Ledebour
 
-Ledebour is a former <span style="color: #AA0000;">**USPD**</span> leader and one of our most <span style="color: #700000;">**far-left**</span> members.
+Ledebour is a former <span style="color: [+ uspd_colour +];">**USPD**</span> leader and one of our most <span style="color: #700000;">**far-left**</span> members.
 
 - @class_struggle
 - @snap_election

@@ -32,7 +32,7 @@ We show that we stand firmly behind the <span style="color: #000000;">**Re**</sp
 
 @improve_left
 
-- @contact_uspd: Contact the <span style="color: #D47B9B;">**USPD**</span>.
+- @contact_uspd: Contact the <span style="color: [+ uspd_colour +];">**USPD**</span>.
 - @contact_kpd: Contact the <span style="color: [+ kpd_colour +];">**KPD**</span>.
 - @contact_both: Contact both
 
@@ -40,7 +40,7 @@ We show that we stand firmly behind the <span style="color: #000000;">**Re**</sp
 on-arrival: uspd_relation += 7; left_dissent -= 2; left_strength += 2
 subtitle: We are on the way to reunification, so why not?
 
-The <span style="color: #D47B9B;">**USPD**</span> is largely open towards cooperation with us, given their falling vote share.
+The <span style="color: [+ uspd_colour +];">**USPD**</span> is largely open towards cooperation with us, given their falling vote share.
 
 @contact_kpd
 on-arrival: kpd_relation += 2; left_dissent -= 2; left_strength += 4; reformist_dissent += 3; ddp_relation -= 4
@@ -52,7 +52,7 @@ The <span style="color: [+ kpd_colour +];">**KPD**</span> is reluctant to cooper
 on-arrival: uspd_relation += 5; kpd_relation += 1; left_dissent -= 2; left_strength += 3; reformist_dissent += 6
 subtitle: The reformist faction will be outraged by this, maybe permanently.
 
-The <span style="color: #D47B9B;">**USPD**</span> is largely open towards cooperation with us, the span style="color: #700000;">**KPD**</span> is more reluctant. Our reformist faction is outraged, maybe permanently.
+The <span style="color: [+ uspd_colour +];">**USPD**</span> is largely open towards cooperation with us, the span style="color: #700000;">**KPD**</span> is more reluctant. Our reformist faction is outraged, maybe permanently.
 
 @mourn
 on-arrival: ddp_relation += 3; z_relation += 3; pro_republic += 1

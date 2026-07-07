@@ -520,15 +520,15 @@ go-to: bremen_coalition_menu
 {!</tr>!}
 <hr id="read-marker">
 
-United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <span style="color: #A10000;">**USPD**</span> + <span style="color: [+ kpd_colour +];">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_bremen +]% 
+United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <span style="color: [+ uspd_colour +];">**USPD**</span> + <span style="color: [+ kpd_colour +];">**KPD**</span>[? if sapd_formed:&nbsp;+ <span style="color: #9B0000;">**SAPD**</span>?]): [+ left_coalition_bremen +]% 
 
-Weimar Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span>): [+ weimar_coalition_bremen +]% 
+Weimar Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span>): [+ weimar_coalition_bremen +]% 
 
-Grand Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span> + <span style="color: #AFAFAF;">**Others**</span>): [+ grand_coalition_bremen +]%
+Grand Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> + <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]<span style="color: #000000;"> + **Z**</span> + <span style="color: #AFAFAF;">**Others**</span>): [+ grand_coalition_bremen +]%
 
-Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span> + <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] [? if kvp_formed :+ <span style="color: #0087DC;">**KVP**</span> ?]+ <span style="color: #0087DC;">**VRP**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #AFAFAF;">**Others**</span> + [? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?]): [+ true_bourgeois_coalition_bremen +]%
+Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> + <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] [? if kvp_formed :+ <span style="color: #0087DC;">**KVP**</span> ?]+ <span style="color: #0087DC;">**VRP**</span> + <span style="color: #b8996f;">**WP**</span> + <span style="color: #AFAFAF;">**Others**</span> + [? if kvp_formed:&nbsp;+ <span style="color: #0087DC;">**KVP**</span> ?]): [+ true_bourgeois_coalition_bremen +]%
 
-Right-Wing Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span> + <span style="color: [+ dvp_colour +];">**DVP**</span> + <span style="color: #b8996f;">**WP**</span>): [+ right_coalition_bremen +]%
+Right-Wing Coalition (<span style="color: [+ dnvp_colour +];">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span> + <span style="color: [+ dvp_colour +];">**DVP**</span> + <span style="color: #b8996f;">**WP**</span>): [+ right_coalition_bremen +]%
 
 @bremen_coalition_menu
 

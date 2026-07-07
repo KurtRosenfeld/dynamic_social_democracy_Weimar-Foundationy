@@ -46,7 +46,7 @@ new-page: true
 
 = Collapse of the Saxon Cabinet
 
-The [+ saxony_leader +] Cabinet's days are numbered following a dispute over the Saxon Reichsrat delegation's support for the Young Plan, which has led to a loss of confidence from the <span style="color: #3E88B3;">**DNVP**</span>, <span style="color: #11DD11;">**SLV**</span>, and <span style="color: #7A3C00;">**NSDAP**</span>.
+The [+ saxony_leader +] Cabinet's days are numbered following a dispute over the Saxon Reichsrat delegation's support for the Young Plan, which has led to a loss of confidence from the <span style="color: [+ dnvp_colour +];">**DNVP**</span>, <span style="color: #11DD11;">**SLV**</span>, and <span style="color: #7A3C00;">**NSDAP**</span>.
 
 We can either exit the opposition and prop up the cabinet to avoid new elections, or maintain our role in opposition-supporting all votes of no confidences. [? if spd_coalition_possible_saxony >= 50: While a [? if lvp_formed and stegerwald_path: <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span>?][? if not lvp_formed or not stegerwald_path: Grand?] Coalition with the liberals could be an option, the strong leftist leanings of the Saxon <span style="color: [+ spd_colour +];">**SPD**</span> make such an alliance unlikely. ?]
 

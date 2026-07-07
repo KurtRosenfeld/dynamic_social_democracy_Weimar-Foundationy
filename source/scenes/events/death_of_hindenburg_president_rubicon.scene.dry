@@ -193,7 +193,7 @@ Kurt Schumacher is an ambitious rising star in the party, and would be all too w
 
 - @hammerstein_r1: Support the <span style="color: #BFC8CC;">**DNEF**</span>'s [+ dnef_candidate +].
 - @adenauer_r1: Support Konrad Adenauer of the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?].
-- @heuss_r1: Support Theodor Heuss of the [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?].
+- @heuss_r1: Support Theodor Heuss of the [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?].
 - @schumacher_r1: Run Kurt Schumacher.
 - @abstain: Do nothing.
 
@@ -230,7 +230,7 @@ view-if: heuss_run
 on-arrival: spd_candidate = "Heuss"; kpd_candidate = "Boycott"; sapd_candidate = "Boycott"; ddp_relation += 8; lvp_relation += 5; dvp_candidate = dnef_candidate if dvp_relation < 60 and dvp_candidate == spd_candidate and dvp_exist and not lvp_formed; is_unity_candidate = 1
 go-to: r1_menu
 
-We have endorsed Theodor Heuss, journalist of the [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: 
+We have endorsed Theodor Heuss, journalist of the [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: 
 <span style="color: #FFCC00;">**LVP**</span>?]. Perhaps we can form a <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Bloc against Schleicher.
 
 [? if dvp_relation < 60 and dvp_candidate == spd_candidate and dvp_exist and not lvp_formed: With our support of Heuss, the <span style="color: [+ dvp_colour +];">**DVP**</span> components supporting him have broken away and are now supporting [+ dnef_candidate +] if they haven't already. ?]
@@ -333,25 +333,25 @@ With our resources, the [? if z_party_name != "CVP": <span style="color: #000000
 
 
 @convince_ddp_unity
-title: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to support [+ spd_candidate +].
+title: Convince the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> to support [+ spd_candidate +].
 view-if: spd_candidate = "Adenauer" and ddp_candidate != spd_candidate and not lvp_formed
 on-arrival: ddp_candidate = spd_candidate if ddp_relation >= 40 and not dstp_dnef
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 max-visits: 1
 
-[? if ddp_candidate = spd_candidate: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is easily persuaded to support [+ spd_candidate +]! This is largely because [+ spd_candidate +] is the candidate of the <span style="color: #000000;">Center Party</span>, not of the <span style="color: [+ spd_colour +];">**SPD**</span>. ?]
-[? if ddp_candidate != spd_candidate: Unfortunately, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is unwilling to support [+ spd_candidate +]. The <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition seems to be fracturing with Schleicher undoubtedly playing a role. ?]
+[? if ddp_candidate = spd_candidate: The <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> is easily persuaded to support [+ spd_candidate +]! This is largely because [+ spd_candidate +] is the candidate of the <span style="color: #000000;">Center Party</span>, not of the <span style="color: [+ spd_colour +];">**SPD**</span>. ?]
+[? if ddp_candidate != spd_candidate: Unfortunately, the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> is unwilling to support [+ spd_candidate +]. The <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> Coalition seems to be fracturing with Schleicher undoubtedly playing a role. ?]
 
 
 @convince_ddp_spd
-title: Convince the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> to support [+ spd_candidate +].
+title: Convince the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> to support [+ spd_candidate +].
 view-if: spd_candidate = "Schumacher" and ddp_candidate != spd_candidate and not lvp_formed
 on-arrival: ddp_candidate = spd_candidate if ((ddp_relation >= 50 and z_relation >= 60) or (ddp_relation >= 60 and z_relation < 60)) and not dstp_dnef
 go-to: r1_menu if round = 0; r2_campaigning if round > 0
 max-visits: 1
 
-[? if ddp_candidate = spd_candidate: The <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is easily persuaded to support [+ spd_candidate +], convinced by our argument that his election is the last line of defense for democracy against Schleicher. ?]
-[? if ddp_candidate != spd_candidate: Unfortunately, the <span style="color: #D3C24D;">**[+ ddp_name +]**</span> is unwilling to support [+ spd_candidate +]. Somewhat expectedly considering he's a <span style="color: #c00000;">socialist</span>. ?]
+[? if ddp_candidate = spd_candidate: The <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> is easily persuaded to support [+ spd_candidate +], convinced by our argument that his election is the last line of defense for democracy against Schleicher. ?]
+[? if ddp_candidate != spd_candidate: Unfortunately, the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> is unwilling to support [+ spd_candidate +]. Somewhat expectedly considering he's a <span style="color: #c00000;">socialist</span>. ?]
 
 @convince_lvp_spd
 title: Convince the <span style="color: #FFCC00;">**LVP**</span> to support [+ spd_candidate +].
@@ -563,7 +563,7 @@ view-if: (ddp_candidate = "Heuss" or lvp_candidate == "Heuss" or dvp_candidate =
 on-departure: kpd_candidate = "Boycott"; sapd_candidate = "Boycott"; spd_candidate = "Heuss"; ddp_relation += 8; lvp_relation += 5; dvp_candidate = dnef_candidate if dvp_relation < 60 and dvp_candidate == spd_candidate and dvp_exist and not lvp_formed; is_unity_candidate = 1
 go-to: r2_campaigning
 
-We have endorsed Theodor Heuss of the [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?].
+We have endorsed Theodor Heuss of the [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?].
 
 [? if dvp_relation < 60 and dvp_candidate == spd_candidate and dvp_exist and not lvp_formed: With our support of Heuss, the <span style="color: [+ dvp_colour +];">**DVP**</span> components supporting him have broken away and are now supporting [+ dnef_candidate +] if they haven't already. ?]
 

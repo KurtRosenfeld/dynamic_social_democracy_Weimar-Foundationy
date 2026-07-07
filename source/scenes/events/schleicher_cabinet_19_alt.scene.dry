@@ -15,8 +15,8 @@ With his faith in the Reichswehr shattered, he has turned back to his old allies
 - @treviranus
 
 @treviranus
-title: Kuno von Westarp -[? if dnvp_ideology == "Radical":&nbsp;Former?] <span style="color: #3E88B3;">**DNVP**</span>
-subtitle: Hindenburg's preferred choice once again, and [? if dnvp_leader != "Westarp":former?] <span style="color: #3E88B3;">**DNVP**</span> party leader.
+title: Kuno von Westarp -[? if dnvp_ideology == "Radical":&nbsp;Former?] <span style="color: [+ dnvp_colour +];">**DNVP**</span>
+subtitle: Hindenburg's preferred choice once again, and [? if dnvp_leader != "Westarp":former?] <span style="color: [+ dnvp_colour +];">**DNVP**</span> party leader.
 face-image: img/portraits/Treviranus.jpg
 on-arrival: {!
 Q.chancellor = "Treviranus";

@@ -27,12 +27,12 @@ Wirth helps us to rally the people in defense of the <span style="color: #000000
 
 @catholics_rally
 title: Organizing Catholics
-subtitle: Being a devoted Catholic and former <span style="color: #000000;">Center</span> member, he's particularly effective in winning votes from the <span style="color: #000000;">**[+ z_party_name +]**</span>.
+subtitle: Being a devoted Catholic and former <span style="color: #000000;">Center</span> member, he's particularly effective in winning votes from the <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span>.
 choose-if: advisor_action_timer == 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; pro_republic += 4; catholics_spd += 8*(1-dissent)
 
-Wirth helps us rally the Catholic demographic back from the conservative <span style="color: #000000;">**[+ z_party_name +]**</span>.
+Wirth helps us rally the Catholic demographic back from the conservative <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span>.
 
 @support_peoples_party
 title: Build support for a People's Party

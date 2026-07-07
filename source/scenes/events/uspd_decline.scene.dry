@@ -18,7 +18,7 @@ After losing their <span style="color: #8B0000;">**left-wing**</span> to the <sp
 - @celebrate_uspd: Celebrate their decline hoping to gain some of their vote share.
 - @bruderhand: Extend our brotherly hand to them.
 - @form_par_union: Offer to merge our parliamentary factions.
-- @uspd_concession: Make concessions to the former <span style="color: #D47B9B;">**USPD**</span> members in our party.
+- @uspd_concession: Make concessions to the former <span style="color: [+ uspd_colour +];">**USPD**</span> members in our party.
 - @ignore: Ignore...
 
 @uspd_relation_1

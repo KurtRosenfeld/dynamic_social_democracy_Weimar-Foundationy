@@ -9,7 +9,7 @@ tags: govt_affairs
 
 = Dealing with Toleration
 
-We are currently acting as external support to the government of Chancellor [+ chancellor +], although our influence is weakened by his inclusion of [? if not cvp_formed: the?][? if cvp_formed: former?] <span style="color: #3E88B3;">**DNVP**</span>[? if cvp_formed:&nbsp;members?]. How should we use our position?
+We are currently acting as external support to the government of Chancellor [+ chancellor +], although our influence is weakened by his inclusion of [? if not cvp_formed: the?][? if cvp_formed: former?] <span style="color: [+ dnvp_colour +];">**DNVP**</span>[? if cvp_formed:&nbsp;members?]. How should we use our position?
 
 - @break_toleration
 - @urge_against_austerity
@@ -96,7 +96,7 @@ As a result, several <span style="color: #7A3C00;">Nazi</span> and <span style="
 title: Improve relations with the parties of the coalition.
 on-arrival: z_relation += 4*(1-dissent); dvp_relation += 3*(1-dissent); ddp_relation += 3*(1-dissent); lvp_relation += 3*(1-dissent); left_dissent += 5; dvp_left += 1; ddp_left += 0.5; ddp_cohesion -= 0.5; lvp_left += 1; dnvp_angry += 1 if spd_toleration_right
 
-We have increased our level of contact and discussions with the parties of the coalition, primarily the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] [? if not lvp_formed and dvp_exist:and <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed:and <span style="color: #FFCC00;">**LVP**</span>?]. The <span style="color: #3E88B3;">**DNVP**</span> does its best to obstruct our efforts at constructive cooperation with Brüning.
+We have increased our level of contact and discussions with the parties of the coalition, primarily the [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] [? if not lvp_formed and dvp_exist:and <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed:and <span style="color: #FFCC00;">**LVP**</span>?]. The <span style="color: [+ dnvp_colour +];">**DNVP**</span> does its best to obstruct our efforts at constructive cooperation with Brüning.
 
 Our attempts to reach out to the center-right are met with disdain by leftists within our party.
 

@@ -192,7 +192,7 @@ Q.pro_republic -= 5;
 
 !}
 
-Unfortunately, Heuss has lost the vote of no confidence and must step down as leader, paving the way for a right-wing successor. With strong backing from the industrial-right faction of the <span style="color: #FFCC00;">**LVP**</span>, Dingeldey is now the frontrunner in the upcoming leadership election. [? if not curtius_resign_lvp and not (curtius_banking_crisis and banking_crisis_seen): The Pragmatic Center has put forward Curtius as their candidate, leading Dietrich to withdraw and endorse him. ?][? if curtius_resign_lvp or (curtius_banking_crisis and banking_crisis_seen): The Pragmatic Center has nominated Dietrich as their candidate, though there is hesitation about electing yet another former <span style="color: #D3C24D;">**[+ ddp_name +]**</span> member. ?]
+Unfortunately, Heuss has lost the vote of no confidence and must step down as leader, paving the way for a right-wing successor. With strong backing from the industrial-right faction of the <span style="color: #FFCC00;">**LVP**</span>, Dingeldey is now the frontrunner in the upcoming leadership election. [? if not curtius_resign_lvp and not (curtius_banking_crisis and banking_crisis_seen): The Pragmatic Center has put forward Curtius as their candidate, leading Dietrich to withdraw and endorse him. ?][? if curtius_resign_lvp or (curtius_banking_crisis and banking_crisis_seen): The Pragmatic Center has nominated Dietrich as their candidate, though there is hesitation about electing yet another former <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> member. ?]
 
 - @dingeldey
 - @dietrich
@@ -206,20 +206,20 @@ choose-if: dingeldey_lead
 on-arrival: lvp_relation -= 15; lvp_right += 8; lvp_leader = "Dingeldey"; new_middle_lvp -= 8; workers_lvp -= 4; old_middle_lvp += 6; coalition_dissent += 1; dingeldey_explode_time = time + 8; dingeldey_election_time = time
 face-image: img/portraits/dingeldey.jpg
 
-Eduard Dingeldey, previously part of the movement for bourgeois unity, has now been elected chairman of the <span style="color: #FFCC00;">**LVP**</span>. Dingeldey is backed by the industrial forces on the right of the party, alongside former <span style="color: [+ dvp_colour +];">**DVP**</span> members. He appears to be focused on fostering closer cooperation with the array of parties between the <span style="color: #FFCC00;">**LVP**</span> and the <span style="color: #3E88B3;">**DNVP**</span>.
+Eduard Dingeldey, previously part of the movement for bourgeois unity, has now been elected chairman of the <span style="color: #FFCC00;">**LVP**</span>. Dingeldey is backed by the industrial forces on the right of the party, alongside former <span style="color: [+ dvp_colour +];">**DVP**</span> members. He appears to be focused on fostering closer cooperation with the array of parties between the <span style="color: #FFCC00;">**LVP**</span> and the <span style="color: [+ dnvp_colour +];">**DNVP**</span>.
 
 However, Dingeldey has thus far proven to be an ineffectual leader, often capitulating to the right wing of the <span style="color: #FFCC00;">**LVP**</span>. Recently, we’ve observed a deterioration in relations with his party, alongside a noticeable rightward shift in the <span style="color: #FFCC00;">**LVP**</span>'s internal politics.
 
 @dietrich
 title: Hermann Dietrich is elected!
-subtitle: Dietrich was the former leader of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>'s business wing, and is somewhat skeptical of cooperation with us.
+subtitle: Dietrich was the former leader of the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>'s business wing, and is somewhat skeptical of cooperation with us.
 unavailable-subtitle: The wider <span style="color: #FFCC00;">LVP</span> perceive him as too left-wing, despite his previous affiliation with the <span style="color: #D3C24D;">[+ ddp_name +]</span>'s business wing.
 view-if: curtius_resign_lvp or (curtius_banking_crisis and banking_crisis_seen)
 choose-if: dietrich_lead
 on-arrival: lvp_relation += 3; lvp_left += 1; lvp_leader = "Dietrich"; pro_republic += 3; old_middle_lvp += 4; rural_lvp += 4; new_middle_lvp -= 2; dietrich_lvp_explode_time = time + 8; dietrich_election_time = time
 face-image: img/portraits/dietrich.jpg
 
-Hermann Dietrich, [? if not dietrich_resign_lvp: formerly affiliated with the business wing of the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if dietrich_resign_lvp: former chairman of the <span style="color: #FFCC00;">**LVP**</span>?], has been [? if not dietrich_resign_lvp: elected chairman of the <span style="color: #FFCC00;">**LVP**</span>?][? if dietrich_resign_lvp: reelected to the leadership?]. Dietrich is mainly supported by smaller businesses and ruralites, and [? if chancellor == "Brüning" and not spd_in_government: is known for formulating Brüning's emergency decrees during his tenure as Finance Minister.?][? if not (chancellor == "Brüning" and not spd_in_government): is known for his fiscal conservatism.?]
+Hermann Dietrich, [? if not dietrich_resign_lvp: formerly affiliated with the business wing of the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if dietrich_resign_lvp: former chairman of the <span style="color: #FFCC00;">**LVP**</span>?], has been [? if not dietrich_resign_lvp: elected chairman of the <span style="color: #FFCC00;">**LVP**</span>?][? if dietrich_resign_lvp: reelected to the leadership?]. Dietrich is mainly supported by smaller businesses and ruralites, and [? if chancellor == "Brüning" and not spd_in_government: is known for formulating Brüning's emergency decrees during his tenure as Finance Minister.?][? if not (chancellor == "Brüning" and not spd_in_government): is known for his fiscal conservatism.?]
 
 Despite this, Dietrich is a huge step up from Dingeldey's leadership, and is open to cooperation. However, his leadership has been quite uninspiring, to say the least. [? if agriculture_minister_party == "LVP" or economic_minister_party == "LVP": The responsibilities of his ministry prevent him from being involved in the day-to-day running of his party, which is now delegated to a group of his associates in the business wing. ?]
 

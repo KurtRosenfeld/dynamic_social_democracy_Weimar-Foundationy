@@ -11,7 +11,7 @@ face-image: img/portraits/goerdeler.jpg
 
 The country still needs to be governed, and Goerdeler is forced to announce new cabinet picks, who he stresses as purely caretaker until an agreement can be struck with the <span style="color: #7A3C00;">national</span> <span style="color: #3E88B3;">opposition</span>. This has resulted in a cabinet dominated by independents, who sit in the seats of posts that Goerdeler intends to give up in a potential future government.
 
-The <span style="color: #D3C24D;">left-liberal</span> ministers are sacked, signalling a break by Goerdeler. The <span style="color: #3E88B3;">**DNVP**</span> is given a sizable role in the government, with Wilhelm von Gayl holding the Interior Ministry, and Treviranus taking the Transport Ministry. Martin Schiele, who served under Marx, will serve as Agricultural minister once more. 
+The <span style="color: #D3C24D;">left-liberal</span> ministers are sacked, signalling a break by Goerdeler. The <span style="color: [+ dnvp_colour +];">**DNVP**</span> is given a sizable role in the government, with Wilhelm von Gayl holding the Interior Ministry, and Treviranus taking the Transport Ministry. Martin Schiele, who served under Marx, will serve as Agricultural minister once more. 
 
 The [? if z_party_name != "CVP": <span style="color: #000000;">Center Party</span>?][? if z_party_name == "CVP": <span style="color: #000000;">**CVP**</span>?] has grown increasingly apprehensive about its role in the Goerdeler cabinet, refusing to commit ministers like Adam Stegerwald and Brüning to the Labor and Foreign Ministries, respectively. Their refusal to serve alongside the anti-social Hugenberg has thrown a wrench into ongoing negotiations.
 

@@ -7,7 +7,7 @@ new-page: true
 
 = Toni Sender
 
-Toni Sender is an organizer and writer who came from a bourgeois family, but was radicalized into <span style="color: #c00000;">socialism</span> after her experiences in the workforce. She was a member of the anti-war <span style="color: #D47B9B;">**USPD**</span>, but did not support armed revolution.
+Toni Sender is an organizer and writer who came from a bourgeois family, but was radicalized into <span style="color: #c00000;">socialism</span> after her experiences in the workforce. She was a member of the anti-war <span style="color: [+ uspd_colour +];">**USPD**</span>, but did not support armed revolution.
 
 - @left_unity
 - @organizing_women

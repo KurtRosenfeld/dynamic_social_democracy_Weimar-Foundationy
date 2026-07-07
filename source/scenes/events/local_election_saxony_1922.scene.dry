@@ -420,9 +420,9 @@ United Left Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + <
 
 Social-Liberal Coalition (<span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> + <span style="color: [+ spd_colour +];">**SPD**</span>): [+ spd_ddp_coalition_saxony +]%
 
-[? if z_r_saxony >= 1: Weimar Coalition (<span style="color: #000000;">**[+ z_party_name +]**</span> + <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> + <span style="color: [+ spd_colour +];">**SPD**</span>): [+ weimar_coalition_saxony +]% ?]
+[? if z_r_saxony >= 1: Weimar Coalition (<span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> + <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> + <span style="color: [+ spd_colour +];">**SPD**</span>): [+ weimar_coalition_saxony +]% ?]
 
-Bourgeois Coalition ([? if z_r_saxony: <span style="color: #000000;">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span> + <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: [+ lvp_colour +];">**LVP**</span>?][? if wp_r_saxony: + <span style="color: #b8996f;">**WP**</span>?]+ <span style="color:[+ dnvp_colour +];">**DNVP**</span>): [+ bourgeois_coalition_saxony +]%
+Bourgeois Coalition ([? if z_r_saxony: <span style="color: [+ z_colour +];">**[+ z_party_name +]**</span> + ?][? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span> + <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: [+ lvp_colour +];">**LVP**</span>?][? if wp_r_saxony: + <span style="color: #b8996f;">**WP**</span>?]+ <span style="color:[+ dnvp_colour +];">**DNVP**</span>): [+ bourgeois_coalition_saxony +]%
 
 Right Coalition (<span style="color: [+ dvp_colour +];">**DVP**</span>[? if wp_r_saxony: + <span style="color: #b8996f;">**WP**</span> ?]+ <span style="color: [+ dnvp_colour +];">**DNVP**</span>): [+ right_coalition_saxony +]%
           

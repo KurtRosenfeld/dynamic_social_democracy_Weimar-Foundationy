@@ -26,7 +26,7 @@ The organization’s main effort is to steer people away from the allure of the 
 @rally
 on-arrival: workers_spd += (pro_republic / 15); new_middle_spd += (pro_republic / 15); old_middle_spd += (pro_republic / 20); rural_spd += (pro_republic / 20); workers_ddp += (pro_republic / 40); new_middle_ddp += (pro_republic / 20); old_middle_ddp += (pro_republic / 20); rural_ddp += (pro_republic / 30); workers_lvp += (pro_republic / 30); new_middle_lvp += (pro_republic / 15); old_middle_lvp += (pro_republic / 15); rural_lvp += (pro_republic / 25); workers_z += (pro_republic / 50); new_middle_z += (pro_republic / 40); old_middle_z += (pro_republic / 40); rural_z += (pro_republic / 40); catholics_z += (pro_republic / 15); peoples_party_support += 1; neorevisionist_strength += 5; left_dissent += 3; kpd_relation -= 5
 
-We rally alongside politicians from the <span style="color: #000000;">Center</span> and [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], united in our commitment to the Republic.
+We rally alongside politicians from the <span style="color: #000000;">Center</span> and [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?], united in our commitment to the Republic.
 
 @republic
 on-arrival: pro_republic += 6
@@ -36,4 +36,4 @@ The <span style="color: #7A3C00;">Nazi</span> and <span style="color: #700000;">
 @relation
 on-arrival: z_relation += 5*(1-dissent); ddp_relation += 5*(1-dissent); lvp_relation += 5*(1-dissent); ddp_left += 1; lvp_left += 1
 
-We’ve been able to strengthen our relations with the involved parties through the participation of figures like Heuss and Wirth—members of the [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] and the <span style="color: #000000;">Center Party</span>, respectively.
+We’ve been able to strengthen our relations with the involved parties through the participation of figures like Heuss and Wirth—members of the [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] and the <span style="color: #000000;">Center Party</span>, respectively.

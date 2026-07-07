@@ -501,7 +501,7 @@ Grand Coalition (<span style="color: [+ spd_colour +];">**SPD**</span> + [? if n
 
 Bourgeois Coalition (<span style="color: #000000;">**Z**</span> + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> + <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?] [? if kvp_formed :+ <span style="color: #0087DC;">**KVP**</span> ?]+ <span style="color: #006400;">**WbWB**</span>): [+ true_bourgeois_coalition_wurttemberg +]%
 
-Right-Wing Coalition (<span style="color: #3E88B3;">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ right_coalition_wurttemberg +]%
+Right-Wing Coalition (<span style="color: [+ dnvp_colour +];">**DNVP**</span> + <span style="color: #7A3C00;">**NSDAP**</span>): [+ right_coalition_wurttemberg +]%
 
 @wurttemberg_coalition_menu
 

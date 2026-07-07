@@ -33,7 +33,7 @@ It’s a shame that Schleicher would fall for [+ nsdap_leader +]’s lies. But t
 
 @goerdeler
 title: Carl Friedrich Goerdeler?
-subtitle: The Reich Price Commissioner and the Mayor of Leipzig. [? if dnvp_ideology == "Radical": Former?] <span style="color: #3E88B3;">**DNVP**</span> member.
+subtitle: The Reich Price Commissioner and the Mayor of Leipzig. [? if dnvp_ideology == "Radical": Former?] <span style="color: [+ dnvp_colour +];">**DNVP**</span> member.
 max-visits: 1
 on-arrival: goerdeler_seen = 1
 face-image: img/portraits/goerdeler.jpg
@@ -45,13 +45,13 @@ However, his demands for authorization of sweeping fiscal reforms is too similar
 
 @westarp
 title: Kuno von Westarp?
-subtitle: Hindenburg's preferred choice, and [? if dnvp_leader != "Westarp":former?] <span style="color: #3E88B3;">**DNVP**</span> party leader.
+subtitle: Hindenburg's preferred choice, and [? if dnvp_leader != "Westarp":former?] <span style="color: [+ dnvp_colour +];">**DNVP**</span> party leader.
 max-visits: 1
 on-arrival: westarp_seen = 1
 face-image: img/portraits/Kuno_von_Westarp.jpg
 go-to: successor_menu
 
-Hindenburg's personal preference is the [? if dnvp_leader != "Westarp":former?] <span style="color: #3E88B3;">**DNVP**</span> leader that played a critical role in securing Hindenburg's reelection. The two has maintained contact over the past years, and share a hatred of Hugenberg. Despite this, in a meeting with Hindenburg, Westarp has declined the chancellorship and argued against dismissing Brüning, and against new elections that would destroy the German middle parties.
+Hindenburg's personal preference is the [? if dnvp_leader != "Westarp":former?] <span style="color: [+ dnvp_colour +];">**DNVP**</span> leader that played a critical role in securing Hindenburg's reelection. The two has maintained contact over the past years, and share a hatred of Hugenberg. Despite this, in a meeting with Hindenburg, Westarp has declined the chancellorship and argued against dismissing Brüning, and against new elections that would destroy the German middle parties.
 
 Even when Hindenburg was reduced to tears, a strategy that had worked on Brüning before, Westarp remains firm in his refusal. Westarp will not be the new chancellor.
 

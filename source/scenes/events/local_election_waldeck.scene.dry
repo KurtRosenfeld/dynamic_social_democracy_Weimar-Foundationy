@@ -385,11 +385,11 @@ go-to: waldeck_coalition_menu
 {!</tr>!}
 <hr id="read-marker">
 
-Worker Coalition (<span style="color: [+ spd_colour +];">**SPD**</span>[? if uspd_r_waldeck: + <span style="color: #D47B9B;">**USPD**</span>?][? if hb_r_waldeck: + <span style="color: #CB7F00;">**Craftsmen**</span>?]): [+ worker_coalition_waldeck +]% 
+Worker Coalition (<span style="color: [+ spd_colour +];">**SPD**</span>[? if uspd_r_waldeck: + <span style="color: [+ uspd_colour +];">**USPD**</span>?][? if hb_r_waldeck: + <span style="color: #CB7F00;">**Craftsmen**</span>?]): [+ worker_coalition_waldeck +]% 
 
-Social Liberal Coalition (<span style="color: [+ spd_colour +];">**SPD**</span>[? if hb_r_waldeck: + <span style="color: #CB7F00;">**Craftsmen**</span>?] + [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]): [+ social_liberal_coalition_waldeck +]%
+Social Liberal Coalition (<span style="color: [+ spd_colour +];">**SPD**</span>[? if hb_r_waldeck: + <span style="color: #CB7F00;">**Craftsmen**</span>?] + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]): [+ social_liberal_coalition_waldeck +]%
 
-Right-Wing Coalition (<span style="color: #006400;">**LB**</span> + <span style="color: #3E88B3;">**DNVP**</span> + [? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]): [+ right_coalition_waldeck +]%
+Right-Wing Coalition (<span style="color: #006400;">**LB**</span> + <span style="color: [+ dnvp_colour +];">**DNVP**</span> + [? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]): [+ right_coalition_waldeck +]%
 
 @waldeck_coalition_menu
 

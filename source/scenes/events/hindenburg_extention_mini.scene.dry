@@ -27,7 +27,7 @@ Of course, we will oppose this undemocratic act—the people should decide wheth
 @hindenburg_extended
 on-arrival: hindenburg_term_extended = 1
 
-Despite opposition from the <span style="color: #c00000;">left-wing</span> parties, the resolution passes with the support of all parties to our right[? if not lvp_formed:, except for the <span style="color: #D3C24D;">**[+ ddp_name +]**</span>[? if not z_in_gov_mini: and <span style="color: #000000;">Center Party</span>?]?][? if lvp_formed and not z_in_gov_mini: except for the <span style="color: #000000;">Center Party</span>?].
+Despite opposition from the <span style="color: #c00000;">left-wing</span> parties, the resolution passes with the support of all parties to our right[? if not lvp_formed:, except for the <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>[? if not z_in_gov_mini: and <span style="color: #000000;">Center Party</span>?]?][? if lvp_formed and not z_in_gov_mini: except for the <span style="color: #000000;">Center Party</span>?].
 
 @hindenburg_failed
 on-arrival: hindenburg_term_extended = 0

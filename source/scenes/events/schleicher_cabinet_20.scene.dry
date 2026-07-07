@@ -565,7 +565,7 @@ The German people had only briefly united behind their so-called savior, General
 
 With Schleicher nearing the end—both politically and personally—he is in no position to stop the unraveling of his own creation. Perhaps this will be remembered as his greatest blunder: that everything he built ends in anticlimax. Yet the <span style="color: #000000;">We</span><span style="color: #DD0000;">im</span><span style="color: #FFCC00;">ar</span> system has already been gutted over the past few years.
 
-The Blocparteis will return to their independent status, and it is primarily the [? if dnvp_ideology == "Moderate": <span style="color: #3E88B3;">**DNVP**</span>?][? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?] that will absorb the right wing. Meanwhile, the left wing has formed a new national party—the <span style="color: #fe9e00;">Old Social Democratic Party</span> (<span style="color: #fe9e00;">**ASPD**</span>)—anchored in class collaboration, nationalism, and laborism. They champion something they call “Volksocialism,” whatever that’s supposed to mean.
+The Blocparteis will return to their independent status, and it is primarily the [? if dnvp_ideology == "Moderate": <span style="color: [+ dnvp_colour +];">**DNVP**</span>?][? if dnvp_ideology == "Radical": <span style="color: #0087DC;">**KVP**</span>?] that will absorb the right wing. Meanwhile, the left wing has formed a new national party—the <span style="color: #fe9e00;">Old Social Democratic Party</span> (<span style="color: #fe9e00;">**ASPD**</span>)—anchored in class collaboration, nationalism, and laborism. They champion something they call “Volksocialism,” whatever that’s supposed to mean.
 
 - @dnef_collapse_2
 
@@ -607,8 +607,8 @@ Following the collapse of the <span style="color: #BFC8CC;">**DNEF**</span>, a v
 - @dnef_collapse_3
 
 @dnef_collapse_3
-title: Kuno von Westarp -[? if dnvp_ideology == "Radical":&nbsp;Former?] <span style="color: #3E88B3;">**DNVP**</span>
-subtitle: Hindenburg's preferred choice once again, and [? if dnvp_leader != "Westarp":former?] <span style="color: #3E88B3;">**DNVP**</span> party leader.
+title: Kuno von Westarp -[? if dnvp_ideology == "Radical":&nbsp;Former?] <span style="color: [+ dnvp_colour +];">**DNVP**</span>
+subtitle: Hindenburg's preferred choice once again, and [? if dnvp_leader != "Westarp":former?] <span style="color: [+ dnvp_colour +];">**DNVP**</span> party leader.
 face-image: img/portraits/Treviranus.jpg
 on-arrival: {!
 Q.chancellor = "Treviranus";

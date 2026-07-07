@@ -26,4 +26,4 @@ on-arrival: coalition_dissent += 1; reichswehr_loyalty -= 0.05; left_dissent -= 
 
 Military leaders are upset at the Ministry's decision to not construct the battlecruiser, and they have taken the complaints to our coalition partners and President Hindenburg. However, there is not much they can do to force the construction, as we have control over the Reichswehr ministry.
 
-No matter what, the battlecruiser will not be built. We have fulfilled one of our campaign promises, and our supporters are pleased. Pacifism is starting to find support in the [? if not lvp_formed: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?].
+No matter what, the battlecruiser will not be built. We have fulfilled one of our campaign promises, and our supporters are pleased. Pacifism is starting to find support in the [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?].
