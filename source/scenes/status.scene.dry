@@ -478,11 +478,11 @@ Waldeck: [+ waldeck_gov +] Coalition
 
 <span style="color: #650C23;">**UK**</span>: [+ uk_relation : relationships +]
 
-<span style="color: #1334A8;">**France**</span>: [+ france_relation : relationships +]
+<span style="color: #1334A8;">**France**</span><span style="color: #D3D3D3;">**an**</span><span style="color: #E50000;">**ce**</span>: [+ france_relation : relationships +]
 
-<span style="color: #D39E1C;">**Belgium**</span>: [+ belgium_relation : relationships +]
+<span style="color: #000000;">**Bel**</span><span style="color: #D39E1C;">**gi***</span><span style="color: #DC143C;">**um**</span>: [+ belgium_relation : relationships +]
 
-<span style="color: #DD6B22;">**Netherlands**</span>: [+ netherlands_relation : relationships +]
+<span style="color: #E50000;">**Neth**</span><span style="color: #D3D3D3;">**erla**</span><span style="color: #325CAA;">**nds**</span>: [+ netherlands_relation : relationships +]
 
 
 <span style="color: #F7F7F7;">**----------**</span>
@@ -496,7 +496,7 @@ Waldeck: [+ waldeck_gov +] Coalition
 
 <span style="color: #E5C517;">**Lit**</span><span style="color: #14810D;">**hua**</span><span style="color: #A50F0F;">**nia**</span>: [+ lithuania_relation : relationships +]
 
-<span style="color: #DDBAC3;">**Austria**</span>: [+ austria_relation : relationships +]
+<span style="color: #DC143C;">**Au**</span><span style="color: #D3D3D3;">**str**</span><span style="color: #DC143C;">**ia**</span>: [+ austria_relation : relationships +]
 
 
 <span style="color: #F7F7F7;">**---------**</span>
@@ -508,7 +508,7 @@ Waldeck: [+ waldeck_gov +] Coalition
 
 [? if vatican_independent: <span style="color: #FCF700;">**Vatican**</span><span style="color: #D3D3D3;">**City State**</span> [+ vatican_relation : relationships +] ?]
 
-<span style="color: #1C470C;">**Italy**</span>: [+ italy_relation : relationships +]
+<span style="color: #1C470C;">**It**</span><span style="color: #D3D3D3;">**a**</span><span style="color: #DC143C;">**ly**</span>: [+ italy_relation : relationships +]
 
 <span style="color: #EAD90C;">**Spain**</span>: [+ spain_relation : relationships +]
 
