@@ -4,7 +4,6 @@ new-page: true
 tags: event
 on-arrival: bremen_election_seen += 1 if bremen_election_seen; bremen_election_seen = 1 if not bremen_election_seen; bremen_election_seen_time = time; bremen_spd = "opposition"; bremen_kpd = "opposition"; bremen_sapd = "opposition"; bremen_uspd = "opposition"; bremen_ddp = "opposition"; bremen_z = "opposition"; bremen_true_others = "opposition"; bremen_wp = "opposition"; bremen_lvp = "opposition"; bremen_hb = "opposition"
 priority: 3
-priority: 2
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  
