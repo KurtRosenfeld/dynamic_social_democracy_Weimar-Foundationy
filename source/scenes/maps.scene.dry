@@ -823,7 +823,8 @@ style="display:inline;fill:[? if waldeck_gov == "Grand": #A2B725 ?][? if waldeck
          d="m 85.043018,137.06155 1.191264,0.72799 0.06618,0.92654 -0.330906,1.7869 0.264725,0.66181 0.529451,0.33091 0.52945,0.92654 -0.52945,0.59563 -0.46327,0.46327 0.330907,0.79417 0.132363,1.25745 0.52945,0.39709 0.848055,0.55873 0.918908,-0.62366 -0.377155,1.98419 -0.860357,0.3309 -0.330907,0.86036 h -1.98544 l -0.661813,-0.92654 -0.727995,-0.46327 -0.227818,-2.06563 -0.433994,-1.1637 -1.046599,1.28843 -0.210847,1.27909 -0.52945,0.86036 -0.860358,-0.86036 -1.52217,0.19854 -0.595632,-0.39708 0.661813,-0.59564 0.727995,-0.13236 0.06618,-0.92654 0.264725,-0.92654 -0.397088,-0.86035 -0.661813,-0.39709 -0.926539,0.0662 -0.661813,-0.33091 -0.06618,-0.72799 2.051622,-0.59563 0.661813,-0.728 0.794176,-0.13236 0.99272,-0.33091 0.595632,-0.66181 -0.06618,-1.0589 0.661813,-0.59564 z"
          id="path44"
          sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccc" />
-<g class="tooltip-group" transform="translate(200, 40)">
+    </g>
+<g class="tooltip-group" transform="translate(420, 80)">
     <rect class="tooltip-bg" width="220" height="160" rx="12" ry="12"/>
 
     <text x="110" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#2C3E50">
@@ -837,7 +838,6 @@ style="display:inline;fill:[? if waldeck_gov == "Grand": #A2B725 ?][? if waldeck
     </text>
     <polygon points="0,80 -14,70 0,60" fill="white" stroke="#ddd" stroke-width="1"/>
   </g>
-    </g>
     <g
        id="g72"
 style="display:inline;fill:[? if lippe_gov == "Grand": #A2B725 ?][? if lippe_gov == "Bourgeois": #818181 ?][? if lippe_gov == "Social-Democratic": #A51E5A ?][? if lippe_gov == "Popular-Front": #6C168E ?][? if lippe_gov == "SPD": [+ spd_colour +] ?][? if lippe_gov == "Social-Liberal": #DD8D1B ?][? if lippe_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
