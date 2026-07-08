@@ -28,15 +28,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Protect Rosa Luxemburg
         uses: actions/checkout@v4
-      - name: setup node
+      - name: Dem Karl Liebknecht haben wirs geschworen
         uses: actions/setup-node@v4
         with:
           node-version: 16
-      - name: Install
+      - name: Der Rosa Luxemburg reichen wir die Hand
         run: npm install
-      - name: Build game
+      - name: Vote for USPD
         run: npm run dendrynexus make-html -- --pretty
       - name: Copy game.json to output
         run: cp out/game.json out/html/
@@ -44,6 +44,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'out/html'
-      - name: Deploy to GitHub Pages
+      - name: Spit in Eberts face
         id: deployment
         uses: actions/deploy-pages@v4
