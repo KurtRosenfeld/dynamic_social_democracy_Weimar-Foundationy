@@ -1180,7 +1180,7 @@ A political compass usually isn't a sensible way to characterize a political lan
            x="212.23799"
            y="-485.36813"><tspan
              id="tspan44"
-             style="fill:#a1cb29;fill-opacity:1;stroke:#b9da6e;stroke-opacity:1">ANTI</tspan><tspan
+             style="fill:#a1cb29;fill-opacity:1;stroke:[+ dvp_colour +];stroke-opacity:1">ANTI</tspan><tspan
              style="stroke:#000000;stroke-opacity:1"
              id="tspan25">-</tspan><tspan
              id="tspan45"
