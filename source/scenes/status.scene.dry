@@ -518,15 +518,15 @@ Waldeck: [+ waldeck_gov +] Coalition
 
 <span style="color: #0CA0DD;">**Nordic**</span> <span style="color: #913232;">**Countries**</span>: [+ north_relation : relationships +]
 
-<span style="color: #FF1F1F;">**Denmark**</span>: [+ denmark_relation : relationships +]
+<span style="color: #FF1F1F;">**D**</span><span style="color: #D3D3D3;">****</span><span style="color: #FF1F1F;">**nmark**</span>: [+ denmark_relation : relationships +]
 
-<span style="color: #913232;">**Norway**</span>: [+ norway_relation : relationships +]
+<span style="color: #913232;">**N**</span><span style="color: #002654;">**o**</span><span style="color: #913232;">**rway**</span>: [+ norway_relation : relationships +]
 
-<span style="color: #0CA0DD;">**Sweden**</span>: [+ sweden_relation : relationships +]
+<span style="color: #0CA0DD;">**S**</span><span style="color: #E5C517;">**w**</span><span style="color: #0CA0DD;">**eden**</span>: [+ sweden_relation : relationships +]
 
-<span style="color: #BCE2E2;">**Finland**</span>: [+ finland_relation : relationships +]
+<span style="color: #D3D3D3;">**F**</span><span style="color: #1334A8;">**in**</span><span style="color: #D3D3D3;">**land**</span>: [+ finland_relation : relationships +]
 
-<span style="color: #2B3B70;">**Iceland**</span>: [+ iceland_relation : relationships +]
+<span style="color: #2B3B70;">**I**</span><span style="color: #A50F0F;">**c**</span><span style="color: #2B3B70;">**eland**</span>: [+ iceland_relation : relationships +]
 
 
 @media
