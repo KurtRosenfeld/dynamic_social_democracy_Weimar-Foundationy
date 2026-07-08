@@ -613,8 +613,7 @@ Current support: [+ baden_coalition_r +]%
 
 @baden_invite_kpd
 view-if: kpd_r_baden > 0 and not baden_kpd = "government"
-choose-if: kpd_relation >= 65 and baden_dvp == "opposition" and baden_wp == "opposition"
-subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> will demand radical policies.
+choose-if: kpd_relation >= 65 and baden_dvp == "opposition" and baden_wp == "opposition" and (not baden_z == "government" or z_leader == "Joos" or z_leader == "Kaiser")
 on-arrival: baden_coalition_r = baden_coalition_r + kpd_r_baden; baden_kpd = "government"
 go-to: baden_coalition_creator
 
@@ -634,14 +633,14 @@ go-to: baden_coalition_creator
 
 @baden_invite_ddp
 view-if: ddp_r_baden > 0 and not baden_ddp = "government"
-choose-if: ddp_relation >= 45
+choose-if: ddp_relation >= 45 and (not baden_kpd == "government" or kpd_leader == "Conciliators")
 subtitle: [? if ddp_relation >= 65: The <span style="color: [+ ddp_colour +];">**DDP**</span> loves you! ?]
 on-arrival: baden_coalition_r = baden_coalition_r + ddp_r_baden; baden_ddp = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_z
 view-if: z_r_baden > 0 and not baden_z = "government"
-choose-if: z_relation >= 30 and not kpd == "government" if not kpd_leader == "Conciliators"
+choose-if: z_relation >= 30 and (not baden_kpd == "government" or kpd_leader == "Conciliators")
 subtitle: [? if z_r_baden >= spd_r_baden: The <span style="color: [+ z_colour +];">Center Party</span> demands the minister-president. ?]
 on-arrival: baden_coalition_r = baden_coalition_r + z_r_baden; baden_z = "government"
 go-to: baden_coalition_creator
