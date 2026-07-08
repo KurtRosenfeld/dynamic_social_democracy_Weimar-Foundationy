@@ -2,7 +2,7 @@ title: Baden Landtag Election
 view-if: (year == 1922 and month == 4 and not baden_election_seen) or (baden_election_2_trigger_time == time and baden_election_seen_time != time)
 new-page: true
 tags: event
-on-arrival: baden_election_seen += 1 if baden_election_seen; baden_election_seen = 1 if not baden_election_seen; baden_election_seen_time = time
+on-arrival: baden_election_seen += 1 if baden_election_seen; baden_election_seen = 1 if not baden_election_seen; baden_election_seen_time = time; baden_spd = "opposition"; baden_kpd = "opposition"; baden_sapd = "opposition"; baden_uspd = "opposition"; baden_ddp = "opposition"; baden_z = "opposition"; baden_true_others = "opposition"; baden_wp = "opposition"
 priority: 3
 on-display: {!  
     var cardEl = document.createElement('div');  
@@ -529,7 +529,7 @@ Right-Wing Coalition (<span style="color: [+ dnvp_colour +];">**DNVP**</span> + 
 - @left_coalition_baden
 - @social_catholic_coalition_baden
 - @no_coalition_baden
-- @baden_coalition_creator
+- @baden_coalition_creator_option
 
 @spd_majority_baden
 title: SPD majority
@@ -586,10 +586,11 @@ view-if: (grand_coalition_baden < 50 or z_relation < 30) and right_coalition_bad
 @baden_coalition_creator_option
 title: Custom Coalition Creator (Test)
 subtitle: It seems to work in GTS, doesn't it?
-on-arrival: baden_coalition_r = spr_r_baden; baden_kpd = "opposition"; baden_sapd = "opposition"; baden_uspd = "opposition"; baden_ddp = "opposition"; baden_z = "opposition"; baden_true_others = "opposition"; baden_wp = "opposition"
+on-arrival: baden_coalition_r = spr_r_baden; baden_spd = "government"
 go-to: baden_coalition_creator
 
 @baden_coalition_creator
+title: Coalition Creator
 
 Current support: [+ baden_coalition_r +]%
 
@@ -734,4 +735,5 @@ It is better that way.
 // move back to year 1925 and month 10
 
 @return_to_baden
+on-arrival: baden_spd = "opposition"
 go-to: baden_coalition_menu
