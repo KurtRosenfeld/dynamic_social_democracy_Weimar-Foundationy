@@ -184,7 +184,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 [? if dvfp_formed = 1 and not nsfb_exists: <span class="tooltip-text" title="German Völkisch Freedom Party" style="color: #3D3D3D;">**DVFP**</span>: [+ dvfp_relation : relationships +] ?] 
 
-[? if not dsp_dead: <span class="tooltip-text" title="German Social Party" style="color: #AA6E4F;">**DtSP**</span>: hostile ?] 
+[? if not dsp_dead: <span class="tooltip-text" title="German Social Party" style="color: #AA6E4F;">**DtSP**</span>: [+ dstp_relation +] ?] 
 
 [? if not nsfb_exists: <span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: [+ nsdap_colour +];">**NSDAP**</span>[? if nsdap_split: (and its splinters)?]: [+ nsdap_relation : relationships +] ?]
 
@@ -494,7 +494,7 @@ Waldeck: [+ waldeck_gov +] Coalition
 
 <span style="color: #11457E;">**Czech**</span><span style="color: #D3D3D3;">**oslo**</span><span style="color: #D7141A;">**vakia**</span>: [+ czech_relation : relationships +]
 
-<span style="color: #8CB73F;">**Hungary**</span>: [+ hungary_relation : relationships +]
+<span style="color: #E5C517;">**Lit**</span><span style="color: #14810D;">**hua**</span><span style="color: #A50F0F;">**nia**</span>: [+ lithuania_relation : relationships +]
 
 <span style="color: #DDBAC3;">**Austria**</span>: [+ austria_relation : relationships +]
 
