@@ -678,7 +678,7 @@ Why are you so desperate?
 choose-if: baden_coalition_r >= 50
 subtitle: We can form a coalition!
 unavailable-subtitle: We need more partners
-on-arrival: baden_gov = "Social Catholic" if baden_spd == "government" and baden_z == "government"; baden_gov = "Weimar" if baden_spd == "government" and baden_z == "government" and and baden_ddp == "government"; baden_gov = "Grand" if baden_spd == "government" and baden_z == "government" and and baden_dvp == "government"; baden_gov = "Left" if baden_spd == "government" and baden_kpd == "government"; baden_gov = "Popular Front" if baden_spd == "government" and baden_z == "government" and and baden_kpd == "government"
+on-arrival: baden_gov = "Social Catholic" if baden_spd == "government" and baden_z == "government"; baden_gov = "Weimar" if baden_spd == "government" and baden_z == "government" and and baden_ddp == "government"; baden_gov = "Grand" if baden_spd == "government" and baden_z == "government" and and baden_dvp == "government"; baden_gov = "Left" if baden_spd == "government" and baden_kpd == "government"; baden_gov = "Popular Front" if baden_spd == "government" and baden_z == "government" and baden_kpd == "government"
 
 @baden_drop_kpd
 view-if: baden_kpd = "government"
