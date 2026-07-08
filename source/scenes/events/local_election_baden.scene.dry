@@ -611,65 +611,65 @@ Current support: [+ baden_coalition_r +]%
 
 
 @baden_invite_kpd
-view-if: kpd_r > 0 and not baden_kpd = "government"
+view-if: kpd_r_baden > 0 and not baden_kpd = "government"
 choose-if: kpd_relation >= 65 and baden_dvp == "opposition" and baden_wp == "opposition"
 subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> will demand radical policies.
-on-arrival: baden_coalition_r += kpd_r_baden; baden_kpd = "government"
+on-arrival: baden_coalition_r = baden_coalition_r += kpd_r_baden; baden_kpd = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_sapd
-view-if: sapd_r > 0 and not baden_sapd = "government"
+view-if: sapd_r_baden > 0 and not baden_sapd = "government"
 choose-if: sapd_relation >= 60
 subtitle: The <span style="color: [+ sapd_colour +];">**SAPD**</span> will demand radical policies.
-on-arrival: baden_coalition_r += sapd_r_baden; baden_sapd = "government"
+on-arrival: baden_coalition_r = baden_coalition_r += sapd_r_baden; baden_sapd = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_uspd
-view-if: uspd_r > 0 and not baden_uspd = "government"
+view-if: uspd_r_baden > 0 and not baden_uspd = "government"
 choose-if: uspd_relation >= 50
 subtitle: [? if not uspd_ideology == "Orthodox Marxism": The <span style="color: [+ uspd_colour +];">**USPD**</span> will demand radical policies. ?][? if uspd_ideology == "Orthodox Marxism": Center Marxists are flexible. ?]
-on-arrival: baden_coalition_r += uspd_r_baden; baden_uspd = "government"
+on-arrival: baden_coalition_r = baden_coalition_r += uspd_r_baden; baden_uspd = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_ddp
-view-if: ddp_r > 0 and not baden_ddp = "government"
+view-if: ddp_r_baden > 0 and not baden_ddp = "government"
 choose-if: ddp_relation >= 45
 subtitle: [? if ddp_relation >= 65: The <span style="color: [+ ddp_colour +];">**DDP**</span> loves you! ?]
-on-arrival: baden_coalition_r += ddp_r_baden; baden_ddp = "government"
+on-arrival: baden_coalition_r = baden_coalition_r += ddp_r_baden; baden_ddp = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_z
-view-if: z_r > 0 and not baden_z = "government"
+view-if: z_r_baden > 0 and not baden_z = "government"
 choose-if: z_relation >= 30 and not kpd == "government" if not kpd_leader == "Conciliators"
 subtitle: [? if z_r_baden >= spd_r_baden: The <span style="color: [+ z_colour +];">Center Party</span> demands the minister-president. ?]
-on-arrival: baden_coalition_r += z_r_baden; baden_z = "government"
+on-arrival: baden_coalition_r = baden_coalition_r += z_r_baden; baden_z = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_dvp
-view-if: dvp_r > 0 and not baden_dvp = "government"
+view-if: dvp_r_baden > 0 and not baden_dvp = "government"
 choose-if: dvp_relation >= 40 and baden_kpd == "opposition" and baden_sapd == "opposition"
 subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> demands tax cuts.
-on-arrival: baden_coalition_r += dvp_r_baden; baden_dvp = "government"
+on-arrival: baden_coalition_r = baden_coalition_r += dvp_r_baden; baden_dvp = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_others
-view-if: true_other_r > 0 and not baden_true_others = "government"
+view-if: true_other_r_baden > 0 and not baden_true_others = "government"
 choose-if: dvp_relation >= 40 and z_relation >= 67
 subtitle: The <span style="color: [+ other_colour +];">**Others**</span> are a little conservative
-on-arrival: baden_coalition_r += true_other_r_baden; baden_true_others = "government"
+on-arrival: baden_coalition_r = baden_coalition_r += true_other_r_baden; baden_true_others = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_wp
-view-if: wp_r > 0 and not baden_wp = "government"
+view-if: wp_r_baden > 0 and not baden_wp = "government"
 choose-if: dvp_relation >= 80 and baden_kpd == "opposition" and baden_sapd == "opposition" and baden_uspd == "opposition"
 subtitle: The <span style="color: #b8996f;">**WP**</span> are a little conservative
-on-arrival: baden_coalition_r += wp_r_baden; baden_wp = "government"
+on-arrival: baden_coalition_r = baden_coalition_r += wp_r_baden; baden_wp = "government"
 go-to: baden_coalition_creator
 
 Why did you do this?
 
 @baden_invite_dnvp
-view-if: dnvp_r > 0
+view-if: dnvp_r_baden > 0
 choose-if: dnvp_relation >= 900
 subtitle: This won't happen.
 go-to: baden_coalition_creator
@@ -682,44 +682,46 @@ subtitle: We can form a coalition!
 unavailable-subtitle: We need more partners
 on-arrival: baden_gov = "Social Catholic" if baden_spd == "government" and baden_z == "government"; baden_gov = "Weimar" if baden_spd == "government" and baden_z == "government" and baden_ddp == "government"; baden_gov = "Grand" if baden_spd == "government" and baden_z == "government" and baden_dvp == "government"; baden_gov = "Left" if baden_spd == "government" and baden_kpd == "government"; baden_gov = "Popular Front" if baden_spd == "government" and baden_z == "government" and baden_kpd == "government";
 
+Congrats you have formed a [+ baden_gov +] Coalition with [+ baden_coalition_r +]% parliamentary support!
+
 @baden_drop_kpd
 view-if: baden_kpd = "government"
-on-arrival: baden_coalition_r -= kpd_r_baden; baden_kpd = "opposition"
+on-arrival: baden_coalition_r = baden_coalition_r -= kpd_r_baden; baden_kpd = "opposition"
 go-to: baden_coalition_creator
 
 @baden_drop_sapd
 view-if: baden_sapd = "government"
-on-arrival: baden_coalition_r -= sapd_r_baden; baden_sapd = "opposition"
+on-arrival: baden_coalition_r = baden_coalition_r -= sapd_r_baden; baden_sapd = "opposition"
 go-to: baden_coalition_creator
 
 @baden_drop_uspd
-view-if: baden_usd = "government"
-on-arrival: baden_coalition_r -= uspd_r_baden; baden_uspd = "opposition"
+view-if: baden_uspd = "government"
+on-arrival: baden_coalition_r = baden_coalition_r -= uspd_r_baden; baden_uspd = "opposition"
 go-to: baden_coalition_creator
 
 @baden_drop_ddp
 view-if: baden_ddp = "government"
-on-arrival: baden_coalition_r -= ddp_r_baden; baden_ddp = "opposition"
+on-arrival: baden_coalition_r = baden_coalition_r -= ddp_r_baden; baden_ddp = "opposition"
 go-to: baden_coalition_creator
 
 @baden_drop_z
 view-if: baden_z = "government"
-on-arrival: baden_coalition_r -= z_r_baden; baden_z = "opposition"
+on-arrival: baden_coalition_r = baden_coalition_r -= z_r_baden; baden_z = "opposition"
 go-to: baden_coalition_creator
 
 @baden_drop_dvp
 view-if: baden_dvp = "government"
-on-arrival: baden_coalition_r -= dvp_r_baden; baden_dvp = "opposition"
+on-arrival: baden_coalition_r = baden_coalition_r -= dvp_r_baden; baden_dvp = "opposition"
 go-to: baden_coalition_creator
 
 @baden_drop_others
 view-if: baden_true_others = "government"
-on-arrival: baden_coalition_r -= true_other_r_baden; baden_true_others = "opposition"
+on-arrival: baden_coalition_r = baden_coalition_r -= true_other_r_baden; baden_true_others = "opposition"
 go-to: baden_coalition_creator
 
 @baden_drop_wp
 view-if: baden_wp = "government"
-on-arrival: baden_coalition_r -= wp_r_baden; baden_wp = "opposition"
+on-arrival: baden_coalition_r = baden_coalition_r -= wp_r_baden; baden_wp = "opposition"
 go-to: baden_coalition_creator
 
 It is better that way.
