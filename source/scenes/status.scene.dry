@@ -478,9 +478,9 @@ Waldeck: [+ waldeck_gov +] Coalition
 
 <span style="color: #650C23;">**UK**</span>: [+ uk_relation : relationships +]
 
-<span style="color: #1334A8;">**France**</span><span style="color: #D3D3D3;">**an**</span><span style="color: #E50000;">**ce**</span>: [+ france_relation : relationships +]
+<span style="color: #1334A8;">**Fr**</span><span style="color: #D3D3D3;">**an**</span><span style="color: #E50000;">**ce**</span>: [+ france_relation : relationships +]
 
-<span style="color: #000000;">**Bel**</span><span style="color: #D39E1C;">**gi***</span><span style="color: #DC143C;">**um**</span>: [+ belgium_relation : relationships +]
+<span style="color: #000000;">**Bel**</span><span style="color: #D39E1C;">**gi**</span><span style="color: #DC143C;">**um**</span>: [+ belgium_relation : relationships +]
 
 <span style="color: #E50000;">**Neth**</span><span style="color: #D3D3D3;">**erla**</span><span style="color: #325CAA;">**nds**</span>: [+ netherlands_relation : relationships +]
 
