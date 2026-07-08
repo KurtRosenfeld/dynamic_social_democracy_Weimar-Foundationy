@@ -145,6 +145,7 @@ Q.dvfp_relation = 0;
 Q.nsdap_relation = 0;
 Q.lvp_relation = 0;
 Q.nsfb_relation = 0;
+Q.dtsp_relation = 0;
 
 Q.kpd_leader = "Brandler";
 Q.kpd_ideology = "Sparticism";
