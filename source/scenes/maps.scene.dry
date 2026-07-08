@@ -1477,3 +1477,133 @@ A political compass usually isn't a sensible way to characterize a political lan
     </circle> ?]
   </g>
 </svg>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// 1. The tooltip element (creates one floating tooltip)
+const tooltip = document.createElement('div');
+tooltip.className = 'tooltip';
+tooltip.id = 'generic-tooltip';
+document.body.appendChild(tooltip);
+
+// 2. Configuration - Define what each element should show
+const tooltipConfig = {
+    // Each key is a selector or ID
+    'Waldeck': {
+        title: 'Free State of Waldeck',
+        image: 'img/land/Waldeck.webp',
+        fields: [
+            { label: 'Capital', value: 'Arolsen' },
+            { label: 'Area', value: '1,055 km²' },
+            { label: 'Population', value: '~55,000' },
+        ],
+        customHTML: null // or function returning HTML
+    },
+    'Bavaria': {
+        title: 'Free State of Bavaria',
+        badge: 'BY',
+        image: 'img/land/Bavaria.webp',
+        fields: [
+            { label: 'Capital', value: 'Munich' },
+            { label: 'Area', value: '75,865 km²' },
+            { label: 'Population', value: '~7,400,000' },
+        ]
+    }
+};
+
+// 3. Helper: Generate tooltip HTML from config
+function buildTooltipHTML(data) {
+    if (data.customHTML) {
+        return typeof data.customHTML === 'function' 
+            ? data.customHTML() 
+            : data.customHTML;
+    }
+    
+    let fieldsHTML = data.fields.map(f => 
+        `<dt>${f.label}</dt><dd>${f.value}</dd>`
+    ).join('');
+    
+    return `
+        <div class="tooltip-header">
+            <h3 class="state-name">${data.title}</h3>
+            ${data.badge ? `<span class="state-abbr">${data.badge}</span>` : ''}
+        </div>
+        <div class="tooltip-body">
+            ${data.image ? `<img src="${data.image}" alt="${data.title}" class="state-flag" loading="lazy">` : ''}
+            <dl class="state-stats">${fieldsHTML}</dl>
+        </div>
+    `;
+}
+
+// 4. Attach tooltips to SVG elements
+function attachTooltips(selector, config) {
+    // Find all elements matching the selector
+    document.querySelectorAll(selector).forEach(element => {
+        // Determine which config key to use
+        let key = null;
+        
+        // Try: data-tooltip attribute first
+        if (element.dataset.tooltip) {
+            key = element.dataset.tooltip;
+        }
+        // Then: title tag inside parent
+        else {
+            const parent = element.closest('g');
+            const titleEl = parent?.querySelector('title');
+            if (titleEl) {
+                key = titleEl.textContent.trim();
+            }
+        }
+        
+        if (!key || !config[key]) return;
+        
+        const data = config[key];
+        
+        element.addEventListener('mouseenter', (e) => {
+            tooltip.innerHTML = buildTooltipHTML(data);
+            tooltip.style.display = 'block';
+            positionTooltip(e);
+        });
+        
+        element.addEventListener('mousemove', positionTooltip);
+        
+        element.addEventListener('mouseleave', () => {
+            tooltip.style.display = 'none';
+        });
+    });
+}
+
+function positionTooltip(e) {
+    const offset = 15;
+    let x = e.clientX + offset;
+    let y = e.clientY + offset;
+    
+    // Prevent tooltip from going off-screen
+    const rect = tooltip.getBoundingClientRect();
+    if (x + rect.width > window.innerWidth) {
+        x = e.clientX - rect.width - offset;
+    }
+    if (y + rect.height > window.innerHeight) {
+        y = e.clientY - rect.height - offset;
+    }
+    
+    tooltip.style.left = x + 'px';
+    tooltip.style.top = y + 'px';
+}
+
+// 5. Initialize: Attach to all paths in your SVG
+document.addEventListener('DOMContentLoaded', () => {
+    // Target all paths inside your SVG's state groups
+    attachTooltips('#g1 path', tooltipConfig);
+});
+<script/>
