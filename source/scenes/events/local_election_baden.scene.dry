@@ -1,5 +1,5 @@
 title: Baden Landtag Election
-view-if: (year == 1922 and month == 4 and not baden_election_seen) or (baden_election_2_trigger_time == time and baden_election_seen_time != time)
+view-if: (year == 1925 and month == 10 and not baden_election_seen) or (baden_election_2_trigger_time == time and baden_election_seen_time != time)
 new-page: true
 tags: event
 on-arrival: baden_election_seen += 1 if baden_election_seen; baden_election_seen = 1 if not baden_election_seen; baden_election_seen_time = time; baden_spd = "opposition"; baden_kpd = "opposition"; baden_sapd = "opposition"; baden_uspd = "opposition"; baden_ddp = "opposition"; baden_z = "opposition"; baden_true_others = "opposition"; baden_wp = "opposition"
@@ -585,7 +585,7 @@ view-if: (grand_coalition_baden < 50 or z_relation < 30) and right_coalition_bad
 
 @baden_coalition_creator_option
 title: Custom Coalition Creator (Test)
-subtitle: It seems to work in GTS, doesn't it?
+subtitle: Dear Test Players, if you see this, please tell me what you think
 on-arrival: baden_coalition_r = spd_r_baden; baden_spd = "government"
 go-to: baden_coalition_creator
 
@@ -619,6 +619,7 @@ Current support: [+ baden_coalition_r +]%
 view-if: kpd_r_baden > 0 and not baden_kpd = "government"
 choose-if: kpd_relation >= 65 and baden_dvp == "opposition" and baden_wp == "opposition" and (not baden_z == "government" or z_leader == "Joos" or z_leader == "Kaiser")
 subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> will demand radical policies.
+unavailable-subtitle: [? if  kpd_relation < 65: We need better relations. ?][? if not baden_dvp == "opposition": They are not really pleased about our partners. ?]
 on-arrival: baden_coalition_r = baden_coalition_r + kpd_r_baden; baden_kpd = "government"
 go-to: baden_coalition_creator
 
@@ -626,12 +627,13 @@ go-to: baden_coalition_creator
 view-if: sapd_r_baden > 0 and not baden_sapd = "government"
 choose-if: sapd_relation >= 60 and baden_dvp == "opposition" and baden_wp == "opposition" and (not baden_z == "government" or z_leader == "Joos" or z_leader == "Kaiser")
 subtitle: The <span style="color: [+ sapd_colour +];">**SAPD**</span> will demand radical policies.
+unavailable-subtitle: [? if  sapd_relation < 60: We need better relations. ?][? if not baden_dvp == "opposition": They are not really pleased about our partners. ?]
 on-arrival: baden_coalition_r = baden_coalition_r + sapd_r_baden; baden_sapd = "government"
 go-to: baden_coalition_creator
 
 @baden_invite_uspd
 view-if: uspd_r_baden > 0 and not baden_uspd = "government"
-choose-if: uspd_relation >= 50 and baden_dvp == "opposition" and baden_wp == "opposition" and (not baden_z == "government" or z_leader == "Joos" or z_leader == "Kaiser")
+choose-if: uspd_relation >= 50 and baden_wp == "opposition" and (not baden_z == "government" or z_leader == "Joos" or z_leader == "Kaiser" or uspd_ideology == "Orthodox Marxism")
 subtitle: [? if not uspd_ideology == "Orthodox Marxism": The <span style="color: [+ uspd_colour +];">**USPD**</span> will demand radical policies. ?][? if uspd_ideology == "Orthodox Marxism": Center Marxists are flexible. ?]
 on-arrival: baden_coalition_r = baden_coalition_r + uspd_r_baden; baden_uspd = "government"
 go-to: baden_coalition_creator
@@ -646,7 +648,7 @@ go-to: baden_coalition_creator
 @baden_invite_z
 view-if: z_r_baden > 0 and not baden_z = "government"
 choose-if: z_relation >= 30 and (not baden_kpd == "government" or kpd_leader == "Conciliators")
-subtitle: [? if z_r_baden >= spd_r_baden: The <span style="color: [+ z_colour +];">Center Party</span> demands the minister-president. ?]
+subtitle: [? if z_r_baden >= spd_r_baden: The <span style="color: [+ z_colour +];">Center Party</span> demands the minister-president. ?] They would love to sign a concordat
 on-arrival: baden_coalition_r = baden_coalition_r + z_r_baden; baden_z = "government"
 go-to: baden_coalition_creator
 
@@ -685,7 +687,7 @@ Why are you so desperate?
 choose-if: baden_coalition_r >= 50
 subtitle: We can form a coalition!
 unavailable-subtitle: We need more partners
-on-arrival: baden_gov = "Social Catholic" if baden_spd == "government" and baden_z == "government"; baden_gov = "Weimar" if baden_spd == "government" and baden_z == "government" and baden_ddp == "government"; baden_gov = "Grand" if baden_spd == "government" and baden_z == "government" and baden_dvp == "government"; baden_gov = "Left" if baden_spd == "government" and baden_kpd == "government"; baden_gov = "Popular Front" if baden_spd == "government" and baden_z == "government" and baden_kpd == "government";
+on-arrival: baden_gov = "Social-Catholic" if baden_spd == "government" and baden_z == "government"; baden_gov = "Weimar" if baden_spd == "government" and baden_z == "government" and baden_ddp == "government"; baden_gov = "Grand" if baden_spd == "government" and baden_z == "government" and baden_dvp == "government"; baden_gov = "Left" if baden_spd == "government" and baden_kpd == "government"; baden_gov = "Popular-Front" if baden_spd == "government" and baden_z == "government" and baden_kpd == "government"; baden_gov = "Social-Democratic" if baden_uspd == "government" and not baden_kpd == "government" and not baden_z == "government"; baden_gov = "Social-Liberal" if baden_ddp == "government" and not baden_z == "government" and baden_spd == "government"  
 
 Congrats you have formed a [+ baden_gov +] Coalition with [+ baden_coalition_r +]% parliamentary support!
 
@@ -731,8 +733,6 @@ go-to: baden_coalition_creator
 
 It is better that way.
 
-
-// move back to year 1925 and month 10
 
 @return_to_baden
 on-arrival: baden_spd = "opposition"
