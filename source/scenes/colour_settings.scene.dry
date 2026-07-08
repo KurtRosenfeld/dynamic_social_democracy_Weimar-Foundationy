@@ -42,9 +42,9 @@ go-to: jimmy
 
 @uspd_c_1
 
-- @uspd_pink: <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @uspd_pink: <span style="color: #D47B9B;">**USPD**</span>
 - @uspd_lavender: <span style="color: #B790D3;">**USPD**</span>
-- @uspd_red: <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @uspd_red: <span style="color: #AA0000;">**USPD**</span>
 - @uspd_other_red: <span style="color: #B3133A;">**USPD**</span>
 
 @uspd_pink
@@ -66,9 +66,9 @@ go-to: jimmy
 
 @uspd_c_2
 
-- @uspd_pink_2: <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @uspd_pink_2: <span style="color: #D47B9B;">**USPD**</span>
 - @uspd_lavender_2: <span style="color: #B790D3;">**USPD**</span>
-- @uspd_red_2: <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @uspd_red_2: <span style="color: #AA0000;">**USPD**</span>
 - @uspd_other_red_2: <span style="color: #B3133A;">**USPD**</span>
 
 @uspd_pink_2
