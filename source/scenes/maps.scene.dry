@@ -1486,9 +1486,6 @@ A political compass usually isn't a sensible way to characterize a political lan
 
 
 
-
-
-
 <script>
 // 1. The tooltip element (creates one floating tooltip)
 const tooltip = document.createElement('div');
@@ -1498,7 +1495,7 @@ document.body.appendChild(tooltip);
 
 // 2. Configuration - Define what each element should show
 const tooltipConfig = {
-    // Each key is a selector or ID
+    // === STATES ===
     'Waldeck': {
         title: 'Free State of Waldeck',
         image: 'img/land/Waldeck.webp',
@@ -1506,17 +1503,219 @@ const tooltipConfig = {
             { label: 'Capital', value: 'Arolsen' },
             { label: 'Area', value: '1,055 km²' },
             { label: 'Population', value: '~55,000' },
-        ],
-        customHTML: null // or function returning HTML
+        ]
     },
     'Bavaria': {
         title: 'Free State of Bavaria',
         badge: 'BY',
-        image: 'img/land/Bavaria.webp',
+        image: 'img/land/Bavaria.svg.webp',
         fields: [
             { label: 'Capital', value: 'Munich' },
             { label: 'Area', value: '75,865 km²' },
             { label: 'Population', value: '~7,400,000' },
+        ]
+    },
+    'Hesse': {
+        title: 'People\'s State of Hesse',
+        badge: 'HE',
+        image: 'img/land/Hesse.webp',
+        fields: [
+            { label: 'Capital', value: 'Darmstadt' },
+            { label: 'Area', value: '7,692 km²' },
+            { label: 'Population', value: '~1,300,000' },
+        ]
+    },
+    'Baden': {
+        title: 'Republic of Baden',
+        badge: 'BD',
+        image: 'img/land/Baden.webp',
+        fields: [
+            { label: 'Capital', value: 'Karlsruhe' },
+            { label: 'Area', value: '15,070 km²' },
+            { label: 'Population', value: '~2,300,000' },
+        ]
+    },
+    'Wurttemberg': {
+        title: 'Free People\'s State of Württemberg',
+        badge: 'WÜ',
+        image: 'img/land/Wurttemberg.webp',
+        fields: [
+            { label: 'Capital', value: 'Stuttgart' },
+            { label: 'Area', value: '19,508 km²' },
+            { label: 'Population', value: '~2,600,000' },
+        ]
+    },
+    'Saar Territory (LON)': {
+        title: 'Saar Territory (League of Nations)',
+        badge: 'SA',
+        image: 'img/land/Saar.webp',
+        fields: [
+            { label: 'Capital', value: 'Saarbrücken' },
+            { label: 'Area', value: '1,910 km²' },
+            { label: 'Population', value: '~770,000' },
+            { label: 'Status', value: 'League Mandate' },
+        ]
+    },
+    'Hamburg': {
+        title: 'Free Hanseatic City of Hamburg',
+        badge: 'HH',
+        image: 'img/land/Hamburg.webp',
+        fields: [
+            { label: 'Area', value: '755 km²' },
+            { label: 'Population', value: '~1,200,000' },
+            { label: 'Status', value: 'City-State' },
+        ]
+    },
+    'Thuringia': {
+        title: 'State of Thuringia',
+        badge: 'TH',
+        image: 'img/land/Thuringia.webp',
+        fields: [
+            { label: 'Capital', value: 'Weimar' },
+            { label: 'Area', value: '11,763 km²' },
+            { label: 'Population', value: '~1,600,000' },
+        ]
+    },
+    'Saxony': {
+        title: 'Free State of Saxony',
+        badge: 'SN',
+        image: 'img/land/Saxony.webp',
+        fields: [
+            { label: 'Capital', value: 'Dresden' },
+            { label: 'Area', value: '14,993 km²' },
+            { label: 'Population', value: '~5,000,000' },
+        ]
+    },
+    'Lübeck': {
+        title: 'Free Hanseatic City of Lübeck',
+        badge: 'HL',
+        image: 'img/land/Lubeck.webp',
+        fields: [
+            { label: 'Area', value: '214 km²' },
+            { label: 'Population', value: '~130,000' },
+            { label: 'Status', value: 'City-State' },
+        ]
+    },
+    'Lippe': {
+        title: 'Principality of Lippe',
+        badge: 'LP',
+        image: 'img/land/Lippe.webp',
+        fields: [
+            { label: 'Capital', value: 'Detmold' },
+            { label: 'Area', value: '1,215 km²' },
+            { label: 'Population', value: '~175,000' },
+        ]
+    },
+    'Schaumburg-Lippe': {
+        title: 'Principality of Schaumburg-Lippe',
+        badge: 'SL',
+        image: 'img/land/Schaumburg-Lippe.webp',
+        fields: [
+            { label: 'Capital', value: 'Bückeburg' },
+            { label: 'Area', value: '340 km²' },
+            { label: 'Population', value: '~50,000' },
+        ]
+    },
+    'Brunswick': {
+        title: 'State of Brunswick',
+        badge: 'BS',
+        image: 'img/land/Brunswick.webp',
+        fields: [
+            { label: 'Capital', value: 'Braunschweig' },
+            { label: 'Area', value: '3,672 km²' },
+            { label: 'Population', value: '~600,000' },
+        ]
+    },
+    'Bremen': {
+        title: 'Free Hanseatic City of Bremen',
+        badge: 'HB',
+        image: 'img/land/Bremen.webp',
+        fields: [
+            { label: 'Area', value: '325 km²' },
+            { label: 'Population', value: '~340,000' },
+            { label: 'Status', value: 'City-State' },
+        ]
+    },
+    'Oldenburg': {
+        title: 'Free State of Oldenburg',
+        badge: 'OL',
+        image: 'img/land/Oldenburg.webp',
+        fields: [
+            { label: 'Capital', value: 'Oldenburg' },
+            { label: 'Area', value: '5,429 km²' },
+            { label: 'Population', value: '~600,000' },
+        ]
+    },
+    'Anhalt': {
+        title: 'Free State of Anhalt',
+        badge: 'AN',
+        image: 'img/land/Anhalt.webp',
+        fields: [
+            { label: 'Capital', value: 'Dessau' },
+            { label: 'Area', value: '2,299 km²' },
+            { label: 'Population', value: '~350,000' },
+        ]
+    },
+    'Mecklenburg-Strelitz': {
+        title: 'Free State of Mecklenburg-Strelitz',
+        badge: 'MS',
+        image: 'img/land/Mecklenburg-Strelitz.webp',
+        fields: [
+            { label: 'Capital', value: 'Neustrelitz' },
+            { label: 'Area', value: '2,929 km²' },
+            { label: 'Population', value: '~110,000' },
+        ]
+    },
+    'Mecklenburg-Schwerin': {
+        title: 'Free State of Mecklenburg-Schwerin',
+        badge: 'MV',
+        image: 'img/land/Mecklenburg-Schwerin.webp',
+        fields: [
+            { label: 'Capital', value: 'Schwerin' },
+            { label: 'Area', value: '13,127 km²' },
+            { label: 'Population', value: '~670,000' },
+        ]
+    },
+    'Upper-Silesia (LON)': {
+        title: 'Upper Silesia (League Mandate)',
+        badge: 'OS',
+        image: 'img/land/Upper-Silesia.webp',
+        fields: [
+            { label: 'Capital', value: 'Opole' },
+            { label: 'Area', value: '~3,000 km²' },
+            { label: 'Status', value: 'League Mandate' },
+        ]
+    },
+    'Danzig (LON)': {
+        title: 'Free City of Danzig (League Mandate)',
+        badge: 'DA',
+        image: 'img/land/Danzig.webp',
+        fields: [
+            { label: 'Area', value: '1,966 km²' },
+            { label: 'Population', value: '~400,000' },
+            { label: 'Status', value: 'League Mandate' },
+        ]
+    },
+    'Memel-Territory (LON)': {
+        title: 'Memel Territory (League Mandate)',
+        badge: 'MT',
+        image: 'img/land/Memel.webp',
+        fields: [
+            { label: 'Capital', value: 'Memel' },
+            { label: 'Area', value: '2,657 km²' },
+            { label: 'Population', value: '~140,000' },
+            { label: 'Status', value: 'League Mandate' },
+        ]
+    },
+    'Prussia': {
+        title: 'Free State of Prussia',
+        badge: 'PR',
+        image: 'img/land/Prussia.webp',
+        fields: [
+            { label: 'Capital', value: 'Berlin' },
+            { label: 'Area', value: '~300,000 km²' },
+            { label: 'Population', value: '~38,000,000' },
+            { label: 'Status', value: 'Largest State' },
         ]
     }
 };
@@ -1547,9 +1746,7 @@ function buildTooltipHTML(data) {
 
 // 4. Attach tooltips to SVG elements
 function attachTooltips(selector, config) {
-    // Find all elements matching the selector
     document.querySelectorAll(selector).forEach(element => {
-        // Determine which config key to use
         let key = null;
         
         // Try: data-tooltip attribute first
@@ -1565,7 +1762,11 @@ function attachTooltips(selector, config) {
             }
         }
         
-        if (!key || !config[key]) return;
+        if (!key || !config[key]) {
+            // Debug: log if no config found
+            if (key) console.log('No config for:', key);
+            return;
+        }
         
         const data = config[key];
         
@@ -1588,7 +1789,6 @@ function positionTooltip(e) {
     let x = e.clientX + offset;
     let y = e.clientY + offset;
     
-    // Prevent tooltip from going off-screen
     const rect = tooltip.getBoundingClientRect();
     if (x + rect.width > window.innerWidth) {
         x = e.clientX - rect.width - offset;
@@ -1603,7 +1803,7 @@ function positionTooltip(e) {
 
 // 5. Initialize: Attach to all paths in your SVG
 document.addEventListener('DOMContentLoaded', () => {
-    // Target all paths inside your SVG's state groups
+    // Target all paths inside your SVG's state layer
     attachTooltips('#g1 path', tooltipConfig);
 });
-<script/>
+</script>
