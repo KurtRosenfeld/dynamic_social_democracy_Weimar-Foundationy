@@ -835,6 +835,8 @@ style="display:inline;fill:[? if waldeck_gov == "Grand": #A2B725 ?][? if waldeck
     <text x="110" y="72" text-anchor="middle" font-size="13" fill="#7F8C8D">
       I will display the parliament here and the coalition.
     </text>
+    <polygon points="0,80 -14,70 0,60" fill="white" stroke="#ddd" stroke-width="1"/>
+  </g>
     </g>
     <g
        id="g72"
