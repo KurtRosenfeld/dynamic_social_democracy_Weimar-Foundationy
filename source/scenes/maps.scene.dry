@@ -6,30 +6,6 @@ go-to: map_menu
 = Menu of the maps
 
 
-<style>
-  .tooltip-group {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none; 
-  }
-
-  .trigger:hover ~ .tooltip-group {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .trigger {
-    cursor: pointer;
-  }
-
-  .tooltip-bg {
-    fill: white;
-    stroke: #ccc;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
-  }
-</style>
-
-
 @map_menu
 
 - @provinces_regular: Map of the Republic 
@@ -824,7 +800,7 @@ style="display:inline;fill:[? if waldeck_gov == "Grand": #A2B725 ?][? if waldeck
          id="path44" 
          class="trigger"
          sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccc" />
-
+    </g>
       <g class="tooltip-group" transform="translate(420, 80)">
         <rect class="tooltip-bg" width="220" height="160" rx="12" ry="12"/>
         <text x="110" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#2C3E50">
@@ -836,7 +812,6 @@ style="display:inline;fill:[? if waldeck_gov == "Grand": #A2B725 ?][? if waldeck
         </text>
         <polygon points="0,80 -14,70 0,60" fill="white" stroke="#ddd" stroke-width="1"/>
       </g>
-    </g>
     <g
        id="g72"
 style="display:inline;fill:[? if lippe_gov == "Grand": #A2B725 ?][? if lippe_gov == "Bourgeois": #818181 ?][? if lippe_gov == "Social-Democratic": #A51E5A ?][? if lippe_gov == "Popular-Front": #6C168E ?][? if lippe_gov == "SPD": [+ spd_colour +] ?][? if lippe_gov == "Social-Liberal": #DD8D1B ?][? if lippe_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
