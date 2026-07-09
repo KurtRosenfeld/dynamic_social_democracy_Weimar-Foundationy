@@ -1041,3 +1041,23 @@ fill: #D5AC27;
   margin-top: 10px;
 }
 
+   .tooltip-group {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; 
+  }
+
+  .trigger:hover ~ .tooltip-group {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .trigger {
+    cursor: pointer;
+  }
+
+  .tooltip-bg {
+    fill: white;
+    stroke: #ccc;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+  }
