@@ -560,6 +560,7 @@ go-to: map_menu
 <div class="box" style='background-color:#0F4989'> </div> Bourgeois Right Coalition
 [? if nsdap_votes >= 25: <div class="box" style='background-color:#563129'> </div> Far-Right Coalition ?]
 
+<div style="position: relative; display: inline-block;">
 <svg
    version="1.1"
    id="svg1"
@@ -643,6 +644,7 @@ go-to: map_menu
     </g>
     <g
        id="g69"
+       class="trigger-group" data-tooltip="bavaria-tooltip"
 style="display:inline;fill:[? if bavaria_gov == "Bourgeois": #818181 ?][? if bavaria_gov == "BVP": #11EDEA ?][? if bavaria_gov == "SPD": [+ spd_colour +] ?][? if bavaria_gov == "Right": #0F4989 ?][? if bavaria_gov == "Far-Right": #563129 ?][? if bavaria_gov == "Anti-BVP": #DD6F9C ?][? if bavaria_gov == "Traffic": #DD6F9C ?][? if bavaria_gov == "Social-Democratic": #A10000 ?][? if bavaria_gov == "Left": #8E0000 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -790,7 +792,7 @@ style="display:inline;fill:[? if luebeck_gov == "Grand": #A2B725 ?][? if luebeck
     </g>
    <g
        id="g6"
-       class="trigger-group"
+       class="trigger-group" data-tooltip="waldeck-tooltip"
 style="display:inline;fill:[? if waldeck_gov == "Grand": #A2B725 ?][? if waldeck_gov == "Bourgeois": #818181 ?][? if waldeck_gov == "Social-Democratic": #A51E5A ?][? if waldeck_gov == "Popular-Front": #6C168E ?][? if waldeck_gov == "SPD": [+ spd_colour +] ?][? if waldeck_gov == "Social-Liberal": #DD8D1B ?][? if waldeck_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -802,13 +804,6 @@ style="display:inline;fill:[? if waldeck_gov == "Grand": #A2B725 ?][? if waldeck
          d="m 85.043018,137.06155 1.191264,0.72799 0.06618,0.92654 -0.330906,1.7869 0.264725,0.66181 0.529451,0.33091 0.52945,0.92654 -0.52945,0.59563 -0.46327,0.46327 0.330907,0.79417 0.132363,1.25745 0.52945,0.39709 0.848055,0.55873 0.918908,-0.62366 -0.377155,1.98419 -0.860357,0.3309 -0.330907,0.86036 h -1.98544 l -0.661813,-0.92654 -0.727995,-0.46327 -0.227818,-2.06563 -0.433994,-1.1637 -1.046599,1.28843 -0.210847,1.27909 -0.52945,0.86036 -0.860358,-0.86036 -1.52217,0.19854 -0.595632,-0.39708 0.661813,-0.59564 0.727995,-0.13236 0.06618,-0.92654 0.264725,-0.92654 -0.397088,-0.86035 -0.661813,-0.39709 -0.926539,0.0662 -0.661813,-0.33091 -0.06618,-0.72799 2.051622,-0.59563 0.661813,-0.728 0.794176,-0.13236 0.99272,-0.33091 0.595632,-0.66181 -0.06618,-1.0589 0.661813,-0.59564 z"
          id="path44" 
          sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccc" />
-
-     <foreignObject class="tooltip-group" x="0" y="0" width="220" height="100">
-    <div xmlns="http://www.w3.org/1999/xhtml" style="background:white; padding:10px;">
-      <strong>Waldeck Politics</strong>
-      <p>I won't put anything in here before I know it'll work dammit</p>
-    </div>
-  </foreignObject>
     </g>
     <g
        id="g72"
@@ -991,6 +986,17 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
          id="path89" />
     </g>
 </svg>
+
+<div id="waldeck-tooltip" class="tooltip-group">
+    <strong>Waldeck Politics</strong>
+    <p>I am sooooooo tired of this</p>
+  </div>
+  <div id="bavaria-tooltip" class="tooltip-group">
+    <strong>Bavaria LLL</strong>
+    <p>Twice</p>
+  </div>
+
+</div>
 
 @europe 
 go-to: map_menu
