@@ -765,7 +765,7 @@ fill: #D5AC27;
 }
 
 .seat.nsdap {
-  fill: #7A3C00);
+  fill: #7A3C00;
 }
 
 .seat.nsfb {
@@ -1049,21 +1049,17 @@ fill: #D5AC27;
 
 .tooltip-group {
   opacity: 0;
-  transition: opacity 0.2s ease;
   pointer-events: none;
   position: fixed;
   z-index: 9999;
   width: 220px;
   transform: scale(0.95);
   transition: opacity 0.2s ease, transform 0.2s ease;
+  transition-delay: 0.1s;
 }
 
 .tooltip-group.visible {
   opacity: 1;
   pointer-events: auto;
   transform: scale(1);
-}
-
-.tooltip-group {
-  transition-delay: 0.1s;
 }
