@@ -282,6 +282,8 @@ if (document.readyState === 'loading') {
     if (window.justLoaded) {
         window.justLoaded = false;
     }
+    // Re-initialize tooltips after page changes
+    setTimeout(initTooltips, 200);
   };
 
   window.updateSidebar = function() {
@@ -324,6 +326,8 @@ if (document.readyState === 'loading') {
   window.onDisplayContent = function() {
       window.updateSidebar();
       window.updateSidebarRight();
+      // Re-initialize tooltips after content updates
+      setTimeout(initTooltips, 200);
   };
 
   window.toggleDem = function toggleDemographicTable() {
@@ -421,22 +425,22 @@ if (document.readyState === 'loading') {
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
- window.onload = function() {
-  window.dendryUI.loadSettings({show_portraits: true});
-  if (window.dendryUI.dark_mode) {
-    document.body.classList.add('dark-mode');
-  }
-  if (window.dendryUI.gray_mode) {
-    document.body.classList.add('gray-mode');
-  }
-  window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
-  window.statusTab = "status";
-  window.updateSidebar();
-  window.statusTabRight = "status_right";
-  window.updateSidebarRight();
-  // Initialize tooltips after page loads
-  setTimeout(initTooltips, 100);
-};
+  window.onload = function() {
+    window.dendryUI.loadSettings({show_portraits: true});
+    if (window.dendryUI.dark_mode) {
+        document.body.classList.add('dark-mode');
+    }
+    if (window.dendryUI.gray_mode) {
+        document.body.classList.add('gray-mode');
+    }
+    window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
+    window.statusTab = "status";
+    window.updateSidebar();
+    window.statusTabRight = "status_right";
+    window.updateSidebarRight();
+    // Initialize tooltips after page loads
+    setTimeout(initTooltips, 100);
+  };
 
 // Initialize tooltips
 function initTooltips() {
@@ -509,3 +513,5 @@ if (document.readyState === 'loading') {
 } else {
   setTimeout(initTooltips, 100);
 }
+
+}());
