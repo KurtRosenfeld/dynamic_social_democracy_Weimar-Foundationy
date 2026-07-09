@@ -421,22 +421,22 @@ if (document.readyState === 'loading') {
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
 
-  window.onload = function() {
-    window.dendryUI.loadSettings({show_portraits: true});
-    if (window.dendryUI.dark_mode) {
-        document.body.classList.add('dark-mode');
-    }
-    if (window.dendryUI.gray_mode) {
-        document.body.classList.add('gray-mode');
-    }
-    window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
-    window.statusTab = "status";
-    window.updateSidebar();
-    window.statusTabRight = "status_right";
-    window.updateSidebarRight();
-  };
-
-}());
+ window.onload = function() {
+  window.dendryUI.loadSettings({show_portraits: true});
+  if (window.dendryUI.dark_mode) {
+    document.body.classList.add('dark-mode');
+  }
+  if (window.dendryUI.gray_mode) {
+    document.body.classList.add('gray-mode');
+  }
+  window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
+  window.statusTab = "status";
+  window.updateSidebar();
+  window.statusTabRight = "status_right";
+  window.updateSidebarRight();
+  // Initialize tooltips after page loads
+  setTimeout(initTooltips, 100);
+};
 
 // Initialize tooltips
 function initTooltips() {
@@ -501,7 +501,7 @@ function updateTooltipPosition(e, tooltip) {
   tooltip.style.top = top + 'px';
 }
 
-// Initialize on DOM ready
+// Initialize on DOM ready if not already loaded
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', function() {
     setTimeout(initTooltips, 100);
@@ -509,16 +509,3 @@ if (document.readyState === 'loading') {
 } else {
   setTimeout(initTooltips, 100);
 }
-
-// Re-initialize after page changes
-window.onNewPage = function() {
-  var scene = window.dendryUI.dendryEngine.state.sceneId;
-  if (scene != 'root' && !window.justLoaded) {
-    window.dendryUI.autosave();
-  }
-  if (window.justLoaded) {
-    window.justLoaded = false;
-  }
-  // Re-initialize tooltips
-  setTimeout(initTooltips, 200);
-};
