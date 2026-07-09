@@ -707,7 +707,7 @@ Why are you so desperate?
 choose-if: bremen_coalition_r >= 50
 subtitle: We can form a coalition!
 unavailable-subtitle: We need more partners
-on-arrival: bremen_gov = "Social-Catholic" if bremen_spd == "government" and bremen_z == "government"; bremen_gov = "Weimar" if bremen_spd == "government" and bremen_z == "government" and bremen_ddp == "government"; bremen_gov = "Grand" if bremen_spd == "government" and bremen_z == "government" and bremen_dvp == "government"; bremen_gov = "Left" if bremen_spd == "government" and bremen_kpd == "government"; bremen_gov = "Popular-Front" if bremen_spd == "government" and bremen_z == "government" and bremen_kpd == "government"; bremen_gov = "Social-Democratic" if bremen_uspd == "government" and not bremen_kpd == "government" and not bremen_z == "government"; bremen_gov = "Social-Liberal" if bremen_ddp == "government" and not bremen_z == "government" and bremen_spd == "government"  
+on-arrival: bremen_gov = "Social-Catholic" if bremen_spd == "government" and bremen_z == "government"; bremen_gov = "Weimar" if bremen_spd == "government" and bremen_z == "government" and (bremen_ddp == "government" or bremen_lvp == "government"); bremen_gov = "Grand" if bremen_spd == "government" and bremen_z == "government" and bremen_dvp == "government"; bremen_gov = "Left" if bremen_spd == "government" and bremen_kpd == "government"; bremen_gov = "Popular-Front" if bremen_spd == "government" and bremen_z == "government" and bremen_kpd == "government"; bremen_gov = "Social-Democratic" if bremen_uspd == "government" and not bremen_kpd == "government" and not bremen_z == "government"; bremen_gov = "Social-Liberal" if (bremen_ddp == "government" or bremen_lvp == "government") and not bremen_z == "government" and bremen_spd == "government"  
 
 Congrats you have formed a [+ bremen_gov +] Coalition with [+ bremen_coalition_r +]% parliamentary support!
 
@@ -765,5 +765,5 @@ It is better that way.
 
 
 @return_to_bremen
-on-arrival: bremen_spd = "opposition"
+on-arrival: bremen_spd = "opposition"; bremen_kpd = "opposition"; bremen_sapd = "opposition"; bremen_uspd = "opposition"; bremen_ddp = "opposition"; bremen_lvp = "opposition"; bremen_dvp = "opposition"; bremen_hb = "opposition"; bremen_true_others = "opposition"; bremen_wp = "opposition"
 go-to: bremen_coalition_menu
