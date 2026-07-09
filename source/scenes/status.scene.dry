@@ -518,7 +518,7 @@ Waldeck: [+ waldeck_gov +] Coalition
 
 <span style="color: #0CA0DD;">**Nordic**</span> <span style="color: #913232;">**Countries**</span>: [+ north_relation : relationships +]
 
-<span style="color: #FF1F1F;">**D**</span><span style="color: #D3D3D3;">****</span><span style="color: #FF1F1F;">**nmark**</span>: [+ denmark_relation : relationships +]
+<span style="color: #FF1F1F;">**D**</span><span style="color: #D3D3D3;">**e**</span><span style="color: #FF1F1F;">**nmark**</span>: [+ denmark_relation : relationships +]
 
 <span style="color: #913232;">**N**</span><span style="color: #002654;">**o**</span><span style="color: #913232;">**rway**</span>: [+ norway_relation : relationships +]
 
