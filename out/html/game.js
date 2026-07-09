@@ -28,8 +28,8 @@
     }
   };
 
-window.showMap = function() {
-   if (window.dendryUI.dendryEngine.state.sceneId.startsWith('maps')) {
+  window.showMap = function() {
+    if (window.dendryUI.dendryEngine.state.sceneId.startsWith('maps')) {
         window.dendryUI.dendryEngine.goToScene('backSpecialScene');
     } else {
         window.dendryUI.dendryEngine.goToScene('maps');
@@ -149,7 +149,6 @@ window.showMap = function() {
     window.dendryUI.saveSettings();
   };
 
-  // One-time color application
   function applyPartyColors() {
     const colors = {
         kpd: '{{ Q.kpd_colour }}',
@@ -161,12 +160,12 @@ window.showMap = function() {
         dvp: '{{ Q.dvp_colour }}',
         dnvp: '{{ Q.dnvp_colour }}',
         z: '{{ Q.z_colour }}',
-        nsdap: '{{ Q.nsdap_colour }}',
+        nsdap: '{{ Q.nsdap_colour }}'
     };
     
     for (const [party, color] of Object.entries(colors)) {
-        const elements = document.querySelectorAll(`.seat.${party}`);
-        elements.forEach(seat => seat.style.fill = color);
+        const elements = document.querySelectorAll('.seat.' + party);
+        elements.forEach(function(seat) { seat.style.fill = color; });
     }
   }
 
@@ -184,12 +183,12 @@ window.showMap = function() {
         dnvp: qualities.dnvp_colour,
         lvp: qualities.lvp_colour,
         z: qualities.z_colour,
-        nsdap: qualities.nsdap_colour,
+        nsdap: qualities.nsdap_colour
     };
     
     for (const [party, color] of Object.entries(colorMap)) {
         if (color) {
-            document.querySelectorAll(`.seat.${party}`).forEach(seat => {
+            document.querySelectorAll('.seat.' + party).forEach(function(seat) {
                 seat.style.fill = color;
             });
         }
@@ -198,11 +197,11 @@ window.showMap = function() {
 
   window.setupColorObserver = function() {
     const observer = new MutationObserver(function(mutations) {
-        const hasNewSeats = mutations.some(mutation => 
-            mutation.addedNodes.length > 0 && 
-            mutation.target.querySelector && 
-            mutation.target.querySelector('.seat')
-        );
+        const hasNewSeats = mutations.some(function(mutation) {
+            return mutation.addedNodes.length > 0 && 
+                   mutation.target.querySelector && 
+                   mutation.target.querySelector('.seat');
+        });
         if (hasNewSeats) {
             window.applyPartyColors();
         }
@@ -223,34 +222,34 @@ window.showMap = function() {
     var disable_audio = window.dendryUI.disable_audio;
     var show_portraits = window.dendryUI.show_portraits;
     if (disable_bg) {
-        $('#backgrounds_no')[0].checked = true;
+        document.getElementById('backgrounds_no').checked = true;
     } else {
-        $('#backgrounds_yes')[0].checked = true;
+        document.getElementById('backgrounds_yes').checked = true;
     }
     if (animate) {
-        $('#animate_yes')[0].checked = true;
+        document.getElementById('animate_yes').checked = true;
     } else {
-        $('#animate_no')[0].checked = true;
+        document.getElementById('animate_no').checked = true;
     }
     if (disable_audio) {
-        $('#audio_no')[0].checked = true;
+        document.getElementById('audio_no').checked = true;
     } else {
-        $('#audio_yes')[0].checked = true;
+        document.getElementById('audio_yes').checked = true;
     }
     if (show_portraits) {
-        $('#images_yes')[0].checked = true;
+        document.getElementById('images_yes').checked = true;
     } else {
-        $('#images_no')[0].checked = true;
+        document.getElementById('images_no').checked = true;
     }
     if (window.dendryUI.dark_mode) {
-        $('#dark_mode')[0].checked = true;
+        document.getElementById('dark_mode').checked = true;
     } else {
-        $('#light_mode')[0].checked = true;
+        document.getElementById('light_mode').checked = true;
     }
     if (window.dendryUI.gray_mode) {
-        $('#gray_on')[0].checked = true;
+        document.getElementById('gray_on').checked = true;
     } else {
-        $('#gray_no')[0].checked = true;
+        document.getElementById('gray_no').checked = true;
     }
   };
 
@@ -273,19 +272,19 @@ window.showMap = function() {
   };
 
   window.updateSidebar = function() {
-      $('#qualities').empty();
+      document.getElementById('qualities').innerHTML = '';
       var scene = dendryUI.game.scenes[window.statusTab];
       dendryUI.dendryEngine._runActions(scene.onArrival);
       var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-      $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
+      document.getElementById('qualities').appendChild(dendryUI.contentToHTML.convert(displayContent));
   };
 
   window.updateSidebarRight = function() {
-    $('#qualities_right').empty();
+    document.getElementById('qualities_right').innerHTML = '';
     var scene = dendryUI.game.scenes[window.statusTabRight];
     dendryUI.dendryEngine._runActions(scene.onArrival);
     var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-    $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
+    document.getElementById('qualities_right').appendChild(dendryUI.contentToHTML.convert(displayContent));
   };
 
   window.changeTab = function(newTab, tabId, isRight) {
@@ -296,7 +295,7 @@ window.showMap = function() {
       }
       var tabButton = document.getElementById(tabId);
       var tabButtons = document.getElementsByClassName('tab_button');
-      for (i = 0; i < tabButtons.length; i++) {
+      for (var i = 0; i < tabButtons.length; i++) {
         tabButtons[i].className = tabButtons[i].className.replace(' active', '');
       }
       tabButton.className += ' active';
@@ -315,7 +314,7 @@ window.showMap = function() {
       setTimeout(window.initTooltips, 500);
   };
 
-  window.toggleDem = function toggleDemographicTable() {
+  window.toggleDem = function() {
       const resultsDiv = document.getElementById('results');
       if (resultsDiv.style.display === 'none' || resultsDiv.style.display === '') {
           resultsDiv.style.display = 'block';
@@ -324,7 +323,7 @@ window.showMap = function() {
       }
   };
   
-  window.toggleGraph = function toggleGraph() {
+  window.toggleGraph = function() {
       const svgElement = document.getElementById('party_support_history');
       if (svgElement.style.display === 'none' || svgElement.style.display === '') {
           svgElement.style.display = 'block';
@@ -333,7 +332,7 @@ window.showMap = function() {
       }
   };
   
-  window.toggleElectionGraph = function toggleElectionGraph() {
+  window.toggleElectionGraph = function() {
       const svgElement = document.getElementById('election_history');
       if (svgElement.style.display === 'none' || svgElement.style.display === '') {
           svgElement.style.display = 'block';
@@ -342,7 +341,7 @@ window.showMap = function() {
       }
   };
   
-  window.toggleNews = function toggleNews() {
+  window.toggleNews = function() {
       const elements = document.querySelectorAll('.dnvp');
       const elements2 = document.querySelectorAll('.other');
       const button = document.getElementById('news_tab');
@@ -352,7 +351,7 @@ window.showMap = function() {
           return;
       }
 
-      elements.forEach(function (element) {
+      elements.forEach(function(element) {
           if (element.style.display !== 'block') {
               element.style.display = 'block';
               button.innerHTML = "View Other News";
@@ -362,7 +361,7 @@ window.showMap = function() {
           }
       });
 
-      elements2.forEach(function (element) {
+      elements2.forEach(function(element) {
           if (element.style.display !== 'none') {
               element.style.display = 'none';
           } else {
@@ -396,110 +395,105 @@ window.showMap = function() {
       return bar;
   };
 
+  // ============================================
+  // TOOLTIP SYSTEM
+  // ============================================
+  
+  window.initTooltips = function() {
+    console.log('initTooltips called');
+    
+    if (window._tooltipsInitialized) {
+      console.log('Already initialized');
+      return;
+    }
+    window._tooltipsInitialized = true;
+    
+    document.body.addEventListener('mouseover', function(e) {
+      const trigger = e.target.closest('.trigger-group');
+      if (!trigger) return;
+      
+      const tooltipId = trigger.getAttribute('data-tooltip');
+      if (!tooltipId) return;
+      
+      const tooltip = document.getElementById(tooltipId);
+      if (!tooltip) return;
+      
+      tooltip.classList.add('show-tooltip');
+      updateTooltipPos(e, tooltip);
+    });
+    
+    document.body.addEventListener('mousemove', function(e) {
+      const visibleTooltips = document.querySelectorAll('.tooltip-group.show-tooltip');
+      visibleTooltips.forEach(function(tooltip) {
+        updateTooltipPos(e, tooltip);
+      });
+    });
+    
+    document.body.addEventListener('mouseout', function(e) {
+      const trigger = e.target.closest('.trigger-group');
+      if (!trigger) return;
+      
+      const tooltipId = trigger.getAttribute('data-tooltip');
+      if (!tooltipId) return;
+      
+      const tooltip = document.getElementById(tooltipId);
+      if (!tooltip) return;
+      
+      setTimeout(function() {
+        const hoveredTrigger = document.querySelector('.trigger-group:hover');
+        const hoveredTooltip = document.querySelector('.tooltip-group:hover');
+        
+        if (!hoveredTrigger && !hoveredTooltip) {
+          tooltip.classList.remove('show-tooltip');
+        }
+      }, 100);
+    });
+  };
+  
+  function updateTooltipPos(e, tooltip) {
+    const x = e.clientX + 15;
+    const y = e.clientY - 10;
+    
+    let left = x;
+    let top = y;
+    
+    const width = tooltip.offsetWidth || 220;
+    const height = tooltip.offsetHeight || 100;
+    
+    if (left + width > window.innerWidth) {
+      left = e.clientX - width - 15;
+    }
+    if (top + height > window.innerHeight) {
+      top = window.innerHeight - height - 10;
+    }
+    if (left < 0) left = 10;
+    if (top < 0) top = 10;
+    
+    tooltip.style.left = left + 'px';
+    tooltip.style.top = top + 'px';
+  }
+
+  // ============================================
+
   window.justLoaded = true;
   window.statusTab = "status";
   window.statusTabRight = "status_right";
   window.dendryModifyUI = main;
 
-  // Tooltip stuff, I guess
-  
-  window.initTooltips = function() {
-  console.log('🔧 initTooltips called');
-  
-  if (window._tooltipsInitialized) {
-    console.log('Already initialized, skipping');
-    return;
-  }
-  window._tooltipsInitialized = true;
-  
-  document.body.addEventListener('mouseover', function(e) {
-    const trigger = e.target.closest('.trigger-group');
-    if (!trigger) return;
-    
-    // Get tooltip ID from data attribute
-    const tooltipId = trigger.getAttribute('data-tooltip');
-    if (!tooltipId) return;
-    
-    const tooltip = document.getElementById(tooltipId);
-    if (!tooltip) return;
-    
-    console.log('Showing tooltip:', tooltipId);
-    tooltip.classList.add('show-tooltip');
-    positionTooltip(e, tooltip);
-  });
-  
-  document.body.addEventListener('mousemove', function(e) {
-    // Find all visible tooltips and position them
-    const visibleTooltips = document.querySelectorAll('.tooltip-group.show-tooltip');
-    visibleTooltips.forEach(function(tooltip) {
-      positionTooltip(e, tooltip);
-    });
-  });
-  
-  document.body.addEventListener('mouseout', function(e) {
-    const trigger = e.target.closest('.trigger-group');
-    if (!trigger) return;
-    
-    const tooltipId = trigger.getAttribute('data-tooltip');
-    if (!tooltipId) return;
-    
-    const tooltip = document.getElementById(tooltipId);
-    if (!tooltip) return;
-    
-    // Small delay to prevent flickering
-    setTimeout(function() {
-      // Check if mouse is still over the trigger or tooltip
-      const hoveredTrigger = document.querySelector('.trigger-group:hover');
-      const hoveredTooltip = document.querySelector('.tooltip-group:hover');
-      
-      if (!hoveredTrigger && !hoveredTooltip) {
-        console.log('Hiding tooltip:', tooltipId);
-        tooltip.classList.remove('show-tooltip');
-      }
-    }, 100);
-  });
-  
-  // Keep tooltip visible when hovering over it
-  document.body.addEventListener('mouseover', function(e) {
-    const tooltip = e.target.closest('.tooltip-group');
-    if (tooltip) {
-      tooltip.classList.add('show-tooltip');
+  window.onload = function() {
+    window.dendryUI.loadSettings({show_portraits: true});
+    if (window.dendryUI.dark_mode) {
+        document.body.classList.add('dark-mode');
     }
-  });
-  
-  document.body.addEventListener('mouseout', function(e) {
-    const tooltip = e.target.closest('.tooltip-group');
-    if (tooltip) {
-      const relatedTarget = e.relatedTarget;
-      // Don't hide if moving to the trigger
-      if (relatedTarget && relatedTarget.closest('.trigger-group')) return;
-      
-      tooltip.classList.remove('show-tooltip');
+    if (window.dendryUI.gray_mode) {
+        document.body.classList.add('gray-mode');
     }
-  });
-  
-  console.log('✅ Tooltips ready');
-};
+    window.pinnedCardsDescription = "Advisor cards - actions are only usable once per 6 months.";
+    window.statusTab = "status";
+    window.updateSidebar();
+    window.statusTabRight = "status_right";
+    window.updateSidebarRight();
+    setTimeout(window.initTooltips, 500);
+  };
 
-function positionTooltip(e, tooltip) {
-  const x = e.clientX + 15;
-  const y = e.clientY - 10;
-  
-  let left = x;
-  let top = y;
-  
-  const width = tooltip.offsetWidth || 220;
-  const height = tooltip.offsetHeight || 100;
-  
-  if (left + width > window.innerWidth) {
-    left = e.clientX - width - 15;
-  }
-  if (top + height > window.innerHeight) {
-    top = window.innerHeight - height - 10;
-  }
-  if (left < 0) left = 10;
-  if (top < 0) top = 10;
-  
-  tooltip.style.left = left + 'px';
-  tooltip.style.top = top + 'px';
-}
+})();
