@@ -1044,18 +1044,22 @@ fill: #D5AC27;
 .trigger-group {
   position: relative;
   cursor: pointer;
-  z-index: 99999 !important;
 }
 
 .tooltip-group {
   opacity: 0;
   pointer-events: none;
   position: fixed;
-  z-index: 9999;
+  z-index: 100000 !important;
   width: 220px;
   transform: scale(0.95);
   transition: opacity 0.2s ease, transform 0.2s ease;
   transition-delay: 0.1s;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .tooltip-group.visible {
