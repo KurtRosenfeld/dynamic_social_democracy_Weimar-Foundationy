@@ -1044,6 +1044,7 @@ fill: #D5AC27;
 .trigger-group {
   position: relative;
   cursor: pointer;
+  z-index: 99999 !important;
 }
 
 .tooltip-group {
