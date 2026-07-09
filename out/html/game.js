@@ -262,6 +262,68 @@ if (document.readyState === 'loading') {
     }
   };
 
+
+ document.addEventListener('DOMContentLoaded', function() {
+  const triggerGroup = document.querySelector('.trigger-group');
+  const tooltip = document.querySelector('.tooltip-group');
+  let tooltipTimeout;
+  
+  if (triggerGroup && tooltip) {
+    triggerGroup.addEventListener('mouseenter', function(e) {
+      clearTimeout(tooltipTimeout);
+      tooltip.classList.add('visible');
+      updateTooltipPosition(e);
+    });
+    
+    triggerGroup.addEventListener('mousemove', function(e) {
+      updateTooltipPosition(e);
+    });
+    
+    triggerGroup.addEventListener('mouseleave', function() {
+      // Small delay before hiding to prevent flicker
+      tooltipTimeout = setTimeout(() => {
+        tooltip.classList.remove('visible');
+      }, 200);
+    });
+    
+    function updateTooltipPosition(e) {
+      const cursorX = e.clientX;
+      const cursorY = e.clientY;
+      const tooltipWidth = 220;
+      const tooltipHeight = 160;
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+      const offset = 15;
+      
+      let left = cursorX + offset;
+      let top = cursorY - (tooltipHeight / 2);
+      
+      // Check and adjust for right edge
+      if (left + tooltipWidth > viewportWidth - 10) {
+        left = cursorX - tooltipWidth - offset;
+      }
+      
+      // Check and adjust for bottom edge
+      if (top + tooltipHeight > viewportHeight - 10) {
+        top = viewportHeight - tooltipHeight - 10;
+      }
+      
+      // Check and adjust for top edge
+      if (top < 10) {
+        top = 10;
+      }
+      
+      // Check and adjust for left edge
+      if (left < 10) {
+        left = 10;
+      }
+      
+      tooltip.style.left = left + 'px';
+      tooltip.style.top = top + 'px';
+    }
+  }
+});
+  
   
   // This function allows you to modify the text before it's displayed.
   // E.g. wrapping chat-like messages in spans.
