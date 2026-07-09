@@ -262,68 +262,6 @@ if (document.readyState === 'loading') {
     }
   };
 
-
- document.addEventListener('DOMContentLoaded', function() {
-  const triggerGroup = document.querySelector('.trigger-group');
-  const tooltip = document.querySelector('.tooltip-group');
-  let tooltipTimeout;
-  
-  if (triggerGroup && tooltip) {
-    triggerGroup.addEventListener('mouseenter', function(e) {
-      clearTimeout(tooltipTimeout);
-      tooltip.classList.add('visible');
-      updateTooltipPosition(e);
-    });
-    
-    triggerGroup.addEventListener('mousemove', function(e) {
-      updateTooltipPosition(e);
-    });
-    
-    triggerGroup.addEventListener('mouseleave', function() {
-      // Small delay before hiding to prevent flicker
-      tooltipTimeout = setTimeout(() => {
-        tooltip.classList.remove('visible');
-      }, 200);
-    });
-    
-    function updateTooltipPosition(e) {
-      const cursorX = e.clientX;
-      const cursorY = e.clientY;
-      const tooltipWidth = 220;
-      const tooltipHeight = 160;
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
-      const offset = 15;
-      
-      let left = cursorX + offset;
-      let top = cursorY - (tooltipHeight / 2);
-      
-      // Check and adjust for right edge
-      if (left + tooltipWidth > viewportWidth - 10) {
-        left = cursorX - tooltipWidth - offset;
-      }
-      
-      // Check and adjust for bottom edge
-      if (top + tooltipHeight > viewportHeight - 10) {
-        top = viewportHeight - tooltipHeight - 10;
-      }
-      
-      // Check and adjust for top edge
-      if (top < 10) {
-        top = 10;
-      }
-      
-      // Check and adjust for left edge
-      if (left < 10) {
-        left = 10;
-      }
-      
-      tooltip.style.left = left + 'px';
-      tooltip.style.top = top + 'px';
-    }
-  }
-});
-  
   
   // This function allows you to modify the text before it's displayed.
   // E.g. wrapping chat-like messages in spans.
@@ -499,3 +437,88 @@ if (document.readyState === 'loading') {
   };
 
 }());
+
+// Initialize tooltips
+function initTooltips() {
+  console.log('Initializing tooltips...');
+  const triggerGroups = document.querySelectorAll('.trigger-group');
+  
+  triggerGroups.forEach((group, index) => {
+    const tooltip = group.querySelector('.tooltip-group');
+    if (!tooltip) {
+      console.log(`No tooltip found for group ${index}`);
+      return;
+    }
+    
+    let tooltipTimeout;
+    
+    group.addEventListener('mouseenter', function(e) {
+      clearTimeout(tooltipTimeout);
+      tooltip.classList.add('visible');
+      updateTooltipPosition(e, tooltip);
+    });
+    
+    group.addEventListener('mousemove', function(e) {
+      updateTooltipPosition(e, tooltip);
+    });
+    
+    group.addEventListener('mouseleave', function() {
+      tooltipTimeout = setTimeout(() => {
+        tooltip.classList.remove('visible');
+      }, 200);
+    });
+    
+    console.log(`Tooltip initialized for group ${index}`);
+  });
+}
+
+function updateTooltipPosition(e, tooltip) {
+  const cursorX = e.clientX;
+  const cursorY = e.clientY;
+  const tooltipWidth = 220;
+  const tooltipHeight = 160;
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+  const offset = 15;
+  
+  let left = cursorX + offset;
+  let top = cursorY - (tooltipHeight / 2);
+  
+  if (left + tooltipWidth > viewportWidth - 10) {
+    left = cursorX - tooltipWidth - offset;
+  }
+  if (top + tooltipHeight > viewportHeight - 10) {
+    top = viewportHeight - tooltipHeight - 10;
+  }
+  if (top < 10) {
+    top = 10;
+  }
+  if (left < 10) {
+    left = 10;
+  }
+  
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = top + 'px';
+}
+
+// Initialize on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(initTooltips, 100);
+  });
+} else {
+  setTimeout(initTooltips, 100);
+}
+
+// Re-initialize after page changes
+window.onNewPage = function() {
+  var scene = window.dendryUI.dendryEngine.state.sceneId;
+  if (scene != 'root' && !window.justLoaded) {
+    window.dendryUI.autosave();
+  }
+  if (window.justLoaded) {
+    window.justLoaded = false;
+  }
+  // Re-initialize tooltips
+  setTimeout(initTooltips, 200);
+};
