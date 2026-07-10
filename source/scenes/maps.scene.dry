@@ -989,7 +989,10 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
 
 <div id="waldeck-tooltip" class="tooltip-group">
     <strong>Waldeck Politics</strong>
-    <p>To whoever might read this now this was soooooo hard to get going</p>
+    <p>I don't think this is going to work
+{!<svg id="waldeck_landtag" style="width: 100px; height: 50px;"> </svg>!}
+[+ waldeck_gov +]
+</p>
   </div>
   <div id="bavaria-tooltip" class="tooltip-group">
     <strong>Bavaria Politics</strong>
