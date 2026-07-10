@@ -515,7 +515,7 @@ function updateTooltipPos(e, tooltip) {
   let left = x;
   let top = y;
   
-  const width = tooltip.offsetWidth || 220;
+  const width = tooltip.offsetWidth || 350;
   const height = tooltip.offsetHeight || 100;
   
   if (left + width > window.innerWidth) {
