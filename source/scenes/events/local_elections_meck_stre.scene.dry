@@ -603,8 +603,8 @@ This can't end well...
 @no_coalition_meck_stre
 title: There is no possible government arrangement
 subtitle: New elections will be called...
-on-arrival: meck_stre_election_2_trigger_time = time + 3; new_middle_dnvp += 1
-view-if: social_liberal_coalition_meck_stre < 50 and right_coalition_meck_stre < 50 and right_coalition_meck_stre < 50
+on-arrival: meck_stre_election_2_trigger_time = time + 3; new_middle_dnvp += 2; new_middle_ddp -= 1
+view-if: social_liberal_coalition_meck_stre < 50 and right_coalition_meck_stre < 50 and true_bourgeois_coalition_meck_stre < 50
 
 
 @meck_stre_coalition_creator_option
@@ -640,6 +640,7 @@ Current support: [+ meck_stre_coalition_r +]%
 - @meck_stre_drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
 - @meck_stre_drop_kvp: Drop the <span style="color: [+ kvp_colour +];">**KVP**</span>
 - @meck_stre_drop_wp: Drop the <span style="color: #b8996f;">**WP**</span>
+- @call_new_election: We need new elections
 - @return_to_meck_stre: Return
 
 
@@ -703,8 +704,8 @@ go-to: meck_stre_coalition_creator
 
 @meck_stre_invite_others
 view-if: true_other_r_meck_stre > 0 and not meck_stre_true_others = "government"
-choose-if: ddp_relation >= 100 and dvp_relation >= 80
-subtitle: The <span style="color: [+ i_colour +];">**Others**</span> are conservative.
+choose-if: ddp_relation >= 70 and dvp_relation >= 20
+subtitle: The <span style="color: [+ i_colour +];">**Others**</span> are quite conservative.
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + true_other_r_meck_stre; meck_stre_true_others = "government"
 go-to: meck_stre_coalition_creator
 
@@ -785,6 +786,9 @@ go-to: meck_stre_coalition_creator
 
 It is better that way.
 
+@meck_stre_call_new_elections
+view-if: true_bourgeois_coalition_meck_stre < 50
+on-arrival: meck_stre_election_2_trigger_time = time + 3; new_middle_dnvp += 2; new_middle_ddp -= 1; meck_stre_spd = "opposition"
 
 @return_to_meck_stre
 on-arrival: meck_stre_spd = "opposition"; meck_stre_kpd = "opposition"; meck_stre_sapd = "opposition"; meck_stre_uspd = "opposition"; meck_stre_ddp = "opposition"; meck_stre_lvp = "opposition"; meck_stre_dvp = "opposition"; meck_stre_kvp = "opposition"; meck_stre_vhg = "opposition"; meck_stre_true_others = "opposition"; meck_stre_wp = "opposition"
