@@ -1,7 +1,7 @@
 title: The <span style="color: [+ uspd_colour +];">**USPD**</span> in <span style="color: #FF2C2C;">**decline**</span>.
 subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> can't see a future for itself.
 new-page: true
-on-arrival: workers_uspd -= 3 if not uspd_joined; unemployed_uspd -= 2 if not uspd_joined; unemployed_kpd += 2 if not uspd_joined; workers_spd += 1 if not uspd_joined; uspd_decline_timer = 5 if not uspd_joined
+on-arrival: workers_uspd -= 3 if (not uspd_joined or uspd_votes >= 1.6); unemployed_uspd -= 2 if (not uspd_joined or uspd_votes >= 1); unemployed_kpd += 2 if (not uspd_joined or uspd_votes >= 1.1); workers_spd += 1 if (not uspd_joined or uspd_votes >= 2); uspd_decline_timer = 5 if not uspd_joined
 tags: event
 view-if: uspd_joined < 3 and uspd_decline_timer = 0 and not uspd_dead
 max-visits: 3
@@ -58,7 +58,7 @@ The murder of Rathenau shows how we need to stick together.
 @uspd_concession
 subtitle: 
 view-if: uspd_joined >= 1
-on-arrival: unemployed_spd += 1; left_dissent -= 4; center_dissent -= 3; labor_dissent -= 2; reformist_dissent += 3; left_strength += 2; center_strength += 2; uspd_concession += 1
+on-arrival: unemployed_spd += 2; left_dissent -= 6; center_dissent -= 3; labor_dissent -= 2; reformist_dissent += 3; left_strength += 2; center_strength += 2; uspd_concession += 1; workers_uspd -= 2 if uspd_votes >= 1.6; unemployed_uspd -= 2 if uspd_votes >= 1.4
 
 We make some concession to the former <span style="color: [+ uspd_colour +];">**USPD**</span> members in our party in order to prevent them from possibly going to the <span style="color: [+ kpd_colour +];">**KPD**</span>.
 
