@@ -786,7 +786,7 @@ go-to: meck_stre_coalition_creator
 
 It is better that way.
 
-@meck_stre_call_new_elections
+@meck_stre_call_new_election
 view-if: true_bourgeois_coalition_meck_stre < 50
 on-arrival: meck_stre_election_2_trigger_time = time + 3; new_middle_dnvp += 2; new_middle_ddp -= 1; meck_stre_spd = "opposition"
 
