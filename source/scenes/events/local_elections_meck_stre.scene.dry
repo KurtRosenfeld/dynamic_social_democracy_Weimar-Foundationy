@@ -640,7 +640,7 @@ Current support: [+ meck_stre_coalition_r +]%
 - @meck_stre_drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
 - @meck_stre_drop_kvp: Drop the <span style="color: [+ kvp_colour +];">**KVP**</span>
 - @meck_stre_drop_wp: Drop the <span style="color: #b8996f;">**WP**</span>
-- @call_new_election: We need new elections
+- @meck_stre_call_new_election: We need new elections
 - @return_to_meck_stre: Return
 
 
