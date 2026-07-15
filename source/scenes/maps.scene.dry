@@ -1494,7 +1494,7 @@ A political compass usually isn't a sensible way to characterize a political lan
          id="title39-7">SAPD</title>
     </circle> ?]
 [? if kag_r: <circle
-       style="fill:#900031;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="fill:#81125B;fill-opacity:1;stroke:#000000;stroke-width:1.947;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path29-86-9"
        cx="[+ soc_kag +]"
        cy="[+ rep_kag +]"
