@@ -379,7 +379,7 @@ To appease the <span style="color: #00CCFF;">Bavarian</span> government and thei
 @go_with_the_new_text
 title: We will pass the law with the new text.
 subtitle: We really don't want another Kapp Putsch...
-on-arrival: kpd_relation -= 2; uspd_relation -= 4; dvp_relation += 1; early_dvp_cooperation += 1*(1-dissent); reformist_strength += 3
+on-arrival: kpd_relation -= 10; uspd_relation -= 3; dvp_relation += 1; early_dvp_cooperation += 1*(1-dissent); reformist_strength += 3; left_dissent += 5
 
 The law passes! But the delegation from <span style="color: #00CCFF;">Bavaria</span> voted against it anyways...
 
@@ -390,7 +390,7 @@ Now we only have to adopt it in the Reichstag.
 @make_a_lot_of_fuzz_about_the_wording
 title: Demand the origianl wording
 subtitle: This would not prevent attacks on worker's parties for certain. Furthermore the Bourgeois would be displeased.
-on-arrival: kpd_relation += 2; uspd_relation += 10; z_relation -= 2; dvp_relation -= 5; early_dvp_cooperation -= 2; coaltion_dissent += 1; left_strength += 3
+on-arrival: kpd_relation += 5; uspd_relation += 6; ddp_relation -= 2; z_relation -= 5; dvp_relation -= 7; early_dvp_cooperation -= 3; coaltion_dissent += 1; left_strength += 5; reformist_dissent += 5
 
 The law passes with a high abstention rate. Our coalition partners in the Reich and in Prussia accuse us of childish behavior and frightening closeness to the radical <span style="color: [+ kpd_colour +];">**KPD**</span>. Working with the <span style="color: [+ dvp_colour +];">**DVP**</span> will become way harder. Let's just hope we can get this law through the Reichstag.
 
@@ -398,6 +398,7 @@ The law passes with a high abstention rate. Our coalition partners in the Reich 
 
 @wow_easy_sweap
 title: The Reichstag will adopt the law.
+on-arrival: mad_kpd_ohno += 1
 
 The <span style="color: [+ spd_colour +];">**SPD**</span>, <span style="color: [+ ddp_colour +];">**DDP**</span>, <span style="color: [+ z_colour +];">**Center**</span> and <span style="color: [+ uspd_colour +];">**USPD**</span> vote entirely in favour of the law, the <span style="color: [+ dnvp_colour +];">**DNVP**</span> and <span style="color: [+ bvp_colour +];">**Bavarian**</span> parties unite against it. The <span style="color: [+ dvp_colour +];">**DVP**</span> is split but most vote in favour as a sign of good will towards the Republic as part of their <span class="tooltip-text" title="The official doctrine of the DVP under Stresemann - support the republic strategically but keep the Monarchy in heart" <span style="color: [+ dvp_colour +];">**Vernunftrepublikanismus**</span>.
 
