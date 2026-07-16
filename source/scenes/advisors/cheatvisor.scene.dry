@@ -20,6 +20,7 @@ The Cheatvisor is just a tool to make testing the mod easier, nothing special
 - @new_president
 - @go_to_thuringia
 - @assemble_reichsrat
+- @give_absurd_other
 - @hide
 - @root: Return to main
 
@@ -557,6 +558,10 @@ if (window && d3) {
 
 {!<svg id="reichsrat_viz" style="width: 500px; height: 250px;"> </svg>!}
 
+
+@give_absurd_other
+title: give absurd support to others
+on-arrival: rural_other += 7; new_middle_other += 7; old_middle_other += 8; catholic_other += 6; workers_other += 4
 
 
 
