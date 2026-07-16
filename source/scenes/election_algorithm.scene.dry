@@ -35,8 +35,8 @@ for (var party of Q.parties) {
     Q[party + '_support'] = party_support;
     total_support += party_support;
     if (party == "other") {
-        if (Q.cnblp_exists) Q.cnblp_normalized = (Q.rural_other_normalized*Q.rural)*0.5;
-        Q.wp_normalized = (Q.new_middle_other_normalized*Q.new_middle)*0.5 + (Q.old_middle_other_normalized*Q.old_middle);
+        if (Q.cnblp_exists) Q.cnblp_normalized = (Q.rural_other_normalized*Q.rural*0.5);
+        Q.wp_normalized = (Q.new_middle_other_normalized*Q.new_middle*0.5) + (Q.old_middle_other_normalized*Q.old_middle*0.5);
         if (Q.csvd_formed && !Q.aspd_other) Q.csvd_normalized = Q.workers_other_normalized*Q.workers;
         Q.dbp_normalized = (Q.rural_other_normalized*Q.rural)*0.5 + (Q.catholic_other_normalized*Q.catholic);
         Q.dhp_normalized = (Q.new_middle_other_normalized*Q.new_middle)*0.5 + (Q.workers_other_normalized*Q.workers_middle)*0.5 + (Q.rural_other_normalized*Q.rural)*0.5;
