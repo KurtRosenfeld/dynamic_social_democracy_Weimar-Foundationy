@@ -566,6 +566,7 @@ Right-Wing Coalition (<span style="color: [+ dnvp_colour +];">**DNVP**</span> + 
 - @right_wing_coalition_meck_stre
 - @no_coalition_meck_stre
 - @meck_stre_coalition_creator_option
+- @meck_stre_toleration_option
 
 @social_liberal_coalition_meck_stre
 title: A Social-Liberal Coalition will be formed
@@ -610,7 +611,7 @@ view-if: social_liberal_coalition_meck_stre < 50 and right_coalition_meck_stre <
 @meck_stre_coalition_creator_option
 title: Custom Coalition Creator (Test)
 subtitle: Dear Test Players, if you see this, please tell me what you think
-on-arrival: meck_stre_coalition_r = spd_r_meck_stre; meck_stre_spd = "government"
+on-arrival: meck_stre_coalition_r = spd_r_meck_stre; meck_stre_spd = 1
 go-to: meck_stre_coalition_creator
 
 @meck_stre_coalition_creator
@@ -654,7 +655,7 @@ go-to: meck_stre_coalition_creator
 
 @meck_stre_invite_sapd
 view-if: sapd_r_meck_stre > 0 and not meck_stre_sapd == 1
-choose-if: sapd_relation >= 50 and meck_stre_dvp == 0 and meck_stre_wp == 0 and (not meck_stre_z == "government" or z_leader == "Joos" or z_leader == "Kaiser")
+choose-if: sapd_relation >= 50 and meck_stre_dvp == 0 and meck_stre_wp == 0 and (not meck_stre_z == 1 or z_leader == "Joos" or z_leader == "Kaiser")
 subtitle: The <span style="color: [+ sapd_colour +];">**SAPD**</span> will demand radical policies.
 unavailable-subtitle: [? if  sapd_relation < 50: We need better relations. ?][? if not meck_stre_dvp == 0: They are not really pleased about our partners. ?]
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + sapd_r_meck_stre; meck_stre_sapd = 1
@@ -735,52 +736,52 @@ on-arrival: meck_stre_gov = "Social-Catholic" if meck_stre_spd == 1 and meck_str
 Congrats you have formed a [+ meck_stre_gov +] Coalition with [+ meck_stre_coalition_r +]% parliamentary support!
 
 @meck_stre_drop_kpd
-view-if: meck_stre_kpd = 1
+view-if: meck_stre_kpd == 1
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - kpd_r_meck_stre; meck_stre_kpd = 0
 go-to: meck_stre_coalition_creator
 
 @meck_stre_drop_sapd
-view-if: meck_stre_sapd = 1
+view-if: meck_stre_sapd == 1
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - sapd_r_meck_stre; meck_stre_sapd = 0
 go-to: meck_stre_coalition_creator
 
 @meck_stre_drop_uspd
-view-if: meck_stre_uspd = 1
+view-if: meck_stre_uspd == 1
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - uspd_r_meck_stre; meck_stre_uspd = 0
 go-to: meck_stre_coalition_creator
 
 @meck_stre_drop_ddp
-view-if: meck_stre_ddp = 1
+view-if: meck_stre_ddp == 1
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - ddp_r_meck_stre; meck_stre_ddp = 0
 go-to: meck_stre_coalition_creator
 
 @meck_stre_drop_lvp
-view-if: meck_stre_lvp = 1
+view-if: meck_stre_lvp == 1
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - lvp_r_meck_stre; meck_stre_lvp = 0
 go-to: meck_stre_coalition_creator
 
 @meck_stre_drop_dvp
-view-if: meck_stre_dvp = 1
+view-if: meck_stre_dvp == 1
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - dvp_r_meck_stre; meck_stre_dvp = 0
 go-to: meck_stre_coalition_creator
 
 @meck_stre_drop_kvp
-view-if: meck_stre_kvp = 1
+view-if: meck_stre_kvp == 1
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - kvp_r_meck_stre; meck_stre_kvp = 0
 go-to: meck_stre_coalition_creator
 
 @meck_stre_drop_vhg
-view-if: meck_stre_vhg = 1
+view-if: meck_stre_vhg == 1
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - vhg_r_meck_stre; meck_stre_vhg = 0
 go-to: meck_stre_coalition_creator
 
 @meck_stre_drop_others
-view-if: meck_stre_true_others = 1
+view-if: meck_stre_true_others == 1
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - true_other_r_meck_stre; meck_stre_true_others = 0
 go-to: meck_stre_coalition_creator
 
 @meck_stre_drop_wp
-view-if: meck_stre_wp = 1
+view-if: meck_stre_wp == 1
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - wp_r_meck_stre; meck_stre_wp = 0
 go-to: meck_stre_coalition_creator
 
@@ -793,3 +794,106 @@ on-arrival: meck_stre_election_2_trigger_time = time + 3; new_middle_dnvp += 2; 
 @return_to_meck_stre
 on-arrival: meck_stre_spd = 0; meck_stre_kpd = 0; meck_stre_sapd = 0; meck_stre_uspd = 0; meck_stre_ddp = 0; meck_stre_lvp = 0; meck_stre_dvp = 0; meck_stre_kvp = 0; meck_stre_vhg = 0; meck_stre_true_others = 0; meck_stre_wp = 0
 go-to: meck_stre_coalition_menu
+
+@meck_stre_toleration_option
+title: Reach a toleration agreement
+
+- @meck_stre_tolerate_bourgeois: Tolerate a moderate bourgeois government
+- @meck_stre_get_toleration: Get other parties to tolerate us
+
+@meck_stre_tolerate_bourgeois
+on-arrival:  meck_stre_spd = 2; meck_stre_ddp = 1; meck_stre_dvp = 1; meck_stre_true_others = 1; meck_stre_farmers = 1; meck_stre_lvp = 1; unemployed_spd -= 2; rural_spd -= 1; meck_stre_election_2_trigger_time = time + 25
+
+@meck_stre_get_toleration
+on-arrival: meck_stre_coalition_r = spd_r_meck_stre; meck_stre_spd = 1; meck_stre_election_2_trigger_time = time + 29
+go-to: meck_stre_toleration_menu
+
+If you rely on too many parties you won't be able to maintain your government for that long.
+
+@meck_stre_toleration_menu
+title: Toleration Menu
+
+Current support: [+ meck_stre_coalition_r +]%
+
+- @meck_stre_beg_kpd: Ask the <span style="color: [+ kpd_colour +];">**KPD**</span>
+- @meck_stre_beg_sapd: Ask the <span style="color: [+ sapd_colour +];">**SAPD**</span>
+- @meck_stre_beg_uspd: Ask the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @meck_stre_beg_ddp: Ask the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @meck_stre_beg_lvp: Ask the <span style="color: [+ lvp_colour +];">**LVP**</span>
+- @meck_stre_check_out_toleration: Check out.
+- @meck_stre_fuck_kpd: Drop the <span style="color: [+ kpd_colour +];">**KPD**</span>
+- @meck_stre_fuck_sapd: Drop the <span style="color: [+ sapd_colour +];">**SAPD**</span>
+- @meck_stre_fuck_uspd: Drop the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @meck_stre_fuck_ddp: Drop the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @meck_stre_fuck_lvp: Drop the <span style="color: [+ lvp_colour +];">**LVP**</span>
+- @return_to_meck_stre: Return
+
+@meck_stre_beg_kpd
+view-if: kpd_r_meck_stre > 0 and not meck_stre_kpd == 2
+choose-if: kpd_relation >= 40 or kpd_relation >= 25 if ideology == "left"
+subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> will demand radical policies.
+unavailable-subtitle: [? if  kpd_relation < 40: We need better relations. ?]
+on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + kpd_r_meck_stre; meck_stre_kpd = 2; meck_stre_election_2_trigger_time -= 5
+go-to: meck_stre_toleration_menu
+
+@meck_stre_invite_sapd
+view-if: sapd_r_meck_stre > 0 and not meck_stre_sapd == 2
+choose-if: sapd_relation >= 35 or sapd_relation >= 30 if ideology == "left"
+subtitle: The <span style="color: [+ sapd_colour +];">**SAPD**</span> will demand radical policies.
+unavailable-subtitle: [? if  sapd_relation < 35: We need better relations. ?]
+on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + sapd_r_meck_stre; meck_stre_sapd = 2; meck_stre_election_2_trigger_time -= 3
+go-to: meck_stre_toleration_menu
+
+@meck_stre_invite_uspd
+view-if: uspd_r_meck_stre > 0 and not meck_stre_uspd == 2
+choose-if: uspd_relation >= 40 or uspd_relation >= 30 if (uspd_ideology == "Orthodox Marxism" and not ideology == "reformist")
+subtitle: [? if not uspd_ideology == "Orthodox Marxism": The <span style="color: [+ uspd_colour +];">**USPD**</span> will demand radical policies. ?][? if uspd_ideology == "Orthodox Marxism": Center Marxists are flexible. ?]
+on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + uspd_r_meck_stre; meck_stre_uspd = 2; meck_stre_election_2_trigger_time -= 1
+go-to: meck_stre_toleration_menu
+
+@meck_stre_invite_ddp
+view-if: ddp_r_meck_stre > 0 and not meck_stre_ddp == 2
+choose-if: ddp_relation >= 30 or ddp_relation >= 45 if ideology == "left"
+subtitle: [? if ddp_relation >= 65: The <span style="color: [+ ddp_colour +];">**DDP**</span> loves you! ?]
+on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + ddp_r_meck_stre; meck_stre_ddp = 2; meck_stre_election_2_trigger_time -= 2
+go-to: meck_stre_toleration_menu
+
+@meck_stre_invite_lvp
+view-if: lvp_r_meck_stre > 0 and not meck_stre_lvp == 1
+choose-if: lvp_relation >= 45 or ddp_relation >= 55 if ideology == "left"
+subtitle: [? if lvp_relation >= 75: The <span style="color: [+ lvp_colour +];">**LVP**</span> loves you! ?]
+on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + lvp_r_meck_stre; meck_stre_lvp = 2; meck_stre_election_2_trigger_time -= 4
+go-to: meck_stre_toleration_menu
+
+@meck_stre_check_out_toleration
+choose-if: meck_stre_coalition_r >= 50
+subtitle: We can reach an agreement!
+unavailable-subtitle: We need more partners.
+on-arrival: meck_stre_gov = "SPD"
+
+@meck_stre_fuck_kpd
+view-if: meck_stre_kpd == 2
+on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - kpd_r_meck_stre; meck_stre_kpd = 0; meck_stre_election_2_trigger_time -= 5
+go-to: meck_stre_toleration_menu
+
+@meck_stre_fuck_sapd
+view-if: meck_stre_sapd == 2
+on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - sapd_r_meck_stre; meck_stre_sapd = 0; meck_stre_election_2_trigger_time -= 3
+go-to: meck_stre_toleration_menu
+
+@meck_stre_fuck_uspd
+view-if: meck_stre_uspd == 2
+on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - uspd_r_meck_stre; meck_stre_uspd = 0; meck_stre_election_2_trigger_time -= 1
+go-to: meck_stre_toleration_menu
+
+@meck_stre_fuck_ddp
+view-if: meck_stre_ddp == 2
+on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - ddp_r_meck_stre; meck_stre_ddp = 0; meck_stre_election_2_trigger_time -= 2
+go-to: meck_stre_toleration_menu
+
+@meck_stre_fuck_lvp
+view-if: meck_stre_lvp == 2
+on-arrival: meck_stre_coalition_r = meck_stre_coalition_r - lvp_r_meck_stre; meck_stre_lvp = 0; meck_stre_election_2_trigger_time -= 4
+go-to: meck_stre_toleration_menu
+
+
