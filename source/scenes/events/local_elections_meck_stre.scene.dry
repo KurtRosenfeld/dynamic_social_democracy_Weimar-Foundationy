@@ -802,7 +802,7 @@ title: Reach a toleration agreement
 - @meck_stre_get_toleration: Get other parties to tolerate us
 
 @meck_stre_tolerate_bourgeois
-on-arrival: meck_stre_gov == "Bourgeois"; meck_stre_spd = 2; meck_stre_ddp = 1; meck_stre_dvp = 1; meck_stre_true_others = 1; meck_stre_farmers = 1; meck_stre_lvp = 1; unemployed_spd -= 2; rural_spd -= 1; meck_stre_election_2_trigger_time = time + 25
+on-arrival: meck_stre_gov = "Bourgeois"; meck_stre_spd = 2; meck_stre_ddp = 1; meck_stre_dvp = 1; meck_stre_true_others = 1; meck_stre_farmers = 1; meck_stre_lvp = 1; unemployed_spd -= 2; rural_spd -= 1; meck_stre_election_2_trigger_time = time + 25
 
 @meck_stre_get_toleration
 on-arrival: meck_stre_coalition_r = spd_r_meck_stre; meck_stre_spd = 1; meck_stre_election_2_trigger_time = time + 29
