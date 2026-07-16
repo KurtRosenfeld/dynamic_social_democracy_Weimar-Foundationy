@@ -1186,7 +1186,26 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   </div>
   <div id="bavaria-tooltip" class="tooltip-group">
     <strong>Bavaria Politics</strong>
-    <p>This is just a bit exhauting</p>
+    <p>This is al tba</p>
+  </div>
+  <div id="meck_stre-tooltip" class="tooltip-group">
+    <strong>Mecklenburg-Strelitz Politics</strong>
+    <p>placeholder for MP</p>
+    <p>placeholder for Parliament (I wish I could just do this</p>
+    <p>SPD: [+ meck_stre_spd : government +]</p>
+[? if kpd_r_meck_stre:     <p>KPD: [+ meck_stre_kpd : government +]</p>  ?]
+[? if sapd_r_meck_stre:    <p>SAPD: [+ meck_stre_uspd : government +]</p> ?]
+[? if uspd_r_meck_stre:    <p>USPD: [+ meck_stre_uspd : government +]</p> ?]
+[? if ddp_r_meck_stre:    <p>DDP: [+ meck_stre_ddp : government +]</p> ?]
+[? if true_other_r_meck_stre:    <p>Others: [+ meck_stre_true_others : government +]</p> ?]
+[? if vhb_r_meck_stre:    <p>VHB: [+ meck_stre_vhb : government +]</p> ?]
+[? if dvp_r_meck_stre:    <p>DVP: [+ meck_stre_dvp : government +]</p> ?]
+[? if farm_r_meck_stre:    <p>Farm: [+ meck_stre_farm : government +]</p> ?]
+[? if kvp_r_meck_stre:    <p>KVP: [+ meck_stre_kvp : government +]</p> ?]
+[? if wp_r_meck_stre:    <p>WP: [+ meck_stre_wp : government +]</p> ?]
+[? if dnvp_r_meck_stre:    <p>DNVP: [+ meck_stre_dnvp : government +]</p> ?]
+[? if dvfp_r_meck_stre:    <p>DVFP: [+ meck_stre_dvfp : government +]</p> ?]
+[? if nsdap_r_meck_stre:    <p>NSDAP: [+ meck_stre_nsdap : government +]</p> ?]
   </div>
 
 </div>
