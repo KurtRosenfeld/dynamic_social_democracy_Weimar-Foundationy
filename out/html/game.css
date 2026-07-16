@@ -1046,18 +1046,19 @@ fill: #D5AC27;
 }
 
 .tooltip-group {
-  display: none;
+  visibility: hidden;
   position: fixed;
   z-index: 99999;
   background: white;
   border: 2px solid #333;
   border-radius: 5px;
   padding: 10px;
-  width: 360px;
+  width: 280px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 .tooltip-group.show-tooltip {
-  display: block;
+  visibility: visible;
+  pointer-events: auto;
 }
