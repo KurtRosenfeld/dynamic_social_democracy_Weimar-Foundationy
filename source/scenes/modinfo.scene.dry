@@ -337,8 +337,10 @@ elements.forEach(el => {
 
 = Changelog
 
-7.15.2026
+**7.15.2026**
+
 - updated plain tooltips for base map
+
 - updated KPD relations to historical standards
 
 - @back3: Back
