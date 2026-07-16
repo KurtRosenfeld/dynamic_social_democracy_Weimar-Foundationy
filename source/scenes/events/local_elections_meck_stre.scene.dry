@@ -830,7 +830,7 @@ Current support: [+ meck_stre_coalition_r +]%
 
 @meck_stre_beg_kpd
 view-if: kpd_r_meck_stre > 0 and not meck_stre_kpd == 2
-choose-if: kpd_relation >= 40 or kpd_relation >= 25 if ideology == "left"
+choose-if: kpd_relation >= 40 or (kpd_relation >= 25 if ideology == "left")
 subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> will demand radical policies.
 unavailable-subtitle: [? if  kpd_relation < 40: We need better relations. ?]
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + kpd_r_meck_stre; meck_stre_kpd = 2; meck_stre_election_2_trigger_time -= 5
@@ -838,7 +838,7 @@ go-to: meck_stre_toleration_menu
 
 @meck_stre_beg_sapd
 view-if: sapd_r_meck_stre > 0 and not meck_stre_sapd == 2
-choose-if: sapd_relation >= 35 or sapd_relation >= 30 if ideology == "left"
+choose-if: sapd_relation >= 35 or (sapd_relation >= 30 if ideology == "left")
 subtitle: The <span style="color: [+ sapd_colour +];">**SAPD**</span> will demand radical policies.
 unavailable-subtitle: [? if  sapd_relation < 35: We need better relations. ?]
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + sapd_r_meck_stre; meck_stre_sapd = 2; meck_stre_election_2_trigger_time -= 3
@@ -846,21 +846,21 @@ go-to: meck_stre_toleration_menu
 
 @meck_stre_beg_uspd
 view-if: uspd_r_meck_stre > 0 and not meck_stre_uspd == 2
-choose-if: uspd_relation >= 40 or uspd_relation >= 30 if (uspd_ideology == "Orthodox Marxism" and not ideology == "reformist")
+choose-if: uspd_relation >= 40 or (uspd_relation >= 30 if (uspd_ideology == "Orthodox Marxism" and not ideology == "reformist"))
 subtitle: [? if not uspd_ideology == "Orthodox Marxism": The <span style="color: [+ uspd_colour +];">**USPD**</span> will demand radical policies. ?][? if uspd_ideology == "Orthodox Marxism": Center Marxists are flexible. ?]
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + uspd_r_meck_stre; meck_stre_uspd = 2; meck_stre_election_2_trigger_time -= 1
 go-to: meck_stre_toleration_menu
 
 @meck_stre_beg_ddp
 view-if: ddp_r_meck_stre > 0 and not meck_stre_ddp == 2
-choose-if: ddp_relation >= 30 or ddp_relation >= 45 if ideology == "left"
+choose-if: ddp_relation >= 30 or (ddp_relation >= 45 if ideology == "left")
 subtitle: [? if ddp_relation >= 65: The <span style="color: [+ ddp_colour +];">**DDP**</span> loves you! ?]
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + ddp_r_meck_stre; meck_stre_ddp = 2; meck_stre_election_2_trigger_time -= 2
 go-to: meck_stre_toleration_menu
 
 @meck_stre_beg_lvp
 view-if: lvp_r_meck_stre > 0 and not meck_stre_lvp == 1
-choose-if: lvp_relation >= 45 or ddp_relation >= 55 if ideology == "left"
+choose-if: lvp_relation >= 45 (or ddp_relation >= 55 if ideology == "left")
 subtitle: [? if lvp_relation >= 75: The <span style="color: [+ lvp_colour +];">**LVP**</span> loves you! ?]
 on-arrival: meck_stre_coalition_r = meck_stre_coalition_r + lvp_r_meck_stre; meck_stre_lvp = 2; meck_stre_election_2_trigger_time -= 4
 go-to: meck_stre_toleration_menu
