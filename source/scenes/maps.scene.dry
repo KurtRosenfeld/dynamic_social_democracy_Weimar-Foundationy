@@ -530,8 +530,8 @@ The current territorial state of the German Reich (Weimar Republic)
   </div>
   <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Prussia</strong>
   <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    <h>Population: ~38.120.000</h>
-    <h>Area: 291.700 km²</h>
+    <p>Population: ~38.120.000</p>
+    <p>Area: 291.700 km²</p>
   </div>
   </div>
   <div id="plbavaria-tooltip" class="tooltip-group">
