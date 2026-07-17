@@ -431,8 +431,10 @@ window.initTooltips = function() {
     
     // Use the shared parliament renderer from parliaments.js
     if (window.ParliamentData) {
-      window.ParliamentData.renderParliament(stateId, chartContainer);
-    }
+  var totalSeats = window.ParliamentData.getTotalSeats(stateId);
+  var seatSpan = tooltip.querySelector('.total-seats');
+  if (seatSpan) seatSpan.textContent = totalSeats;
+}
   }
   
   document.body.addEventListener('mouseover', function(e) {
