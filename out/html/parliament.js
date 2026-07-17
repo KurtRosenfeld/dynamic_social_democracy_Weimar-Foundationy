@@ -338,7 +338,7 @@
           {
             id: 'dnvp', legend: 'DNVP', name: 'DNVP',
             qualityKey: 'dnvp_r_waldeck',
-            condition: function(Q) { return Q.dnvp_r_waldeck && Q.year == 1925; }
+            condition: function(Q) { return Q.dnvp_r_waldeck }
           },
           {
             id: 'rl', legend: 'RL', name: 'RL',
