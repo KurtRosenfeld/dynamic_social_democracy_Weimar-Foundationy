@@ -398,7 +398,7 @@ window.updateSidebarRight = function() {
   // ============================================
   // TOOLTIP SYSTEM
   // ============================================
-  
+
 window.initTooltips = function() {
   console.log('initTooltips called');
   
@@ -416,25 +416,24 @@ window.initTooltips = function() {
       t.classList.remove('show-tooltip');
     });
   }
-
-  // tooltip parliament rendering
- function renderTooltipChart(tooltip) {
-  var chartContainer = tooltip.querySelector('.parliament-chart');
-  if (!chartContainer) return;
   
-  var stateId = chartContainer.getAttribute('data-state');
-  if (!stateId) return;
-  
-  // Only render once
-  if (chartContainer.getAttribute('data-rendered') === 'true') return;
-  chartContainer.setAttribute('data-rendered', 'true');
-  
-  // Use the shared parliament renderer
-  if (window.ParliamentData) {
-    window.ParliamentData.renderParliament(stateId, chartContainer);
+  // Render parliament chart inside tooltip
+  function renderTooltipChart(tooltip) {
+    var chartContainer = tooltip.querySelector('.parliament-chart');
+    if (!chartContainer) return;
+    
+    var stateId = chartContainer.getAttribute('data-state');
+    if (!stateId) return;
+    
+    // Only render once
+    if (chartContainer.getAttribute('data-rendered') === 'true') return;
+    chartContainer.setAttribute('data-rendered', 'true');
+    
+    // Use the shared parliament renderer
+    if (window.ParliamentData) {
+      window.ParliamentData.renderParliament(stateId, chartContainer);
+    }
   }
-}
-
   
   document.body.addEventListener('mouseover', function(e) {
     const trigger = e.target.closest('.trigger-group');
@@ -458,7 +457,7 @@ window.initTooltips = function() {
     currentTooltip = tooltip;
     tooltip.classList.add('show-tooltip');
     
-    // Render charts inside tooltip
+    // Render parliament chart if this tooltip has one
     renderTooltipChart(tooltip);
     
     updateTooltipPos(e, tooltip);
@@ -529,7 +528,7 @@ function updateTooltipPos(e, tooltip) {
   let left = x;
   let top = y;
   
-  const width = tooltip.offsetWidth || 360;
+  const width = tooltip.offsetWidth || 280;
   const height = tooltip.offsetHeight || 200;
   
   if (left + width > window.innerWidth) {
