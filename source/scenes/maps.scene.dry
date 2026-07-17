@@ -1170,11 +1170,10 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
     </g>
 </svg>
 
-<div id="waldeck-tooltip" class="tooltip-group" style="width: 280px; max-height: 400px; overflow-y: auto;">
+<div id="waldeck-tooltip" class="tooltip-group">
   <div style="text-align: center;">
-    <img src="Waldeck.webp" alt="Waldeck" style="width: 100%; max-width: 200px; border-radius: 4px; margin-bottom: 8px;">
   </div>
-  <strong style="display: block; text-align: center; margin-bottom: 8px;">Free State of Waldeck</strong>
+  <strong style="display: block; text-align: center;">Waldeck Politics</strong>
   <div style="font-size: 0.9em; margin-bottom: 8px;">
     <strong>Landtag (17 seats)</strong>
   </div>
@@ -1194,7 +1193,7 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
     <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
     Landtag (<span class="total-seats">35</span> seats)
   </div>
-  <div class="parliament-chart" data-state="meck_stre" style="width: 260px; height: 130px;"></div>
+  <div class="parliament-chart" data-state="meck_stre" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: Reibnitz (SPD)</p>
     <p>SPD: [+ meck_stre_spd : government +]</p>
 [? if kpd_r_meck_stre:     <p>KPD: [+ meck_stre_kpd : government +]</p>  ?]
