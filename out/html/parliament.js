@@ -421,6 +421,17 @@ buildData: function(stateId) {
       
       svg.datum(data).call(parliament);
     },
+
+getTotalSeats: function(stateId) { 
+      var Q = window.dendryUI.dendryEngine.state.qualities;
+      var config = this.configs[stateId];
+      if (!config) return 0;
+      if (config.totalSeatsKey && typeof Q[config.totalSeatsKey] === 'number') {
+        return Q[config.totalSeatsKey];
+      }
+      return config.totalSeats || 0;
+    },
+
     
     getData: function(stateId) {
       if (!this.computedData[stateId]) {
