@@ -1172,18 +1172,20 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
 </svg>
 
 <div id="waldeck-tooltip" class="tooltip-group">
-  <div style="text-align: center;">
+    <strong style="display: block; text-align: center;">Waldeck Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ waldeck_seats +]</span> seats)
   </div>
-  <strong style="display: block; text-align: center;">Waldeck Politics</strong>
-  <div style="font-size: 0.9em; margin-bottom: 8px;">
-    <strong>Landtag ([+ waldeck_seats +] seats)</strong>
-  </div>
-  <div id="waldeck_landtag" style="width: 260px; height: 130px; margin: 0 auto;">
-    <!-- Parliament chart will render here -->
-  </div>
-  <div style="font-size: 0.8em; margin-top: 8px; color: #666;">
-    <!-- Optional: text summary -->
-  </div>
+  <div class="parliament-chart" data-state="waldeck" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ waldeck_spd : government +]</p>
+[? if uspd_r_waldeck:     <p>USPD: [+ waldeck_uspd : government +]</p>  ?]
+[? if ddp_r_waldeck:     <p>DDP: [+ waldeck_ddp : government +]</p>  ?]
+[? if hb_r_waldeck:     <p>Craftsmen: [+ waldeck_hb : government +]</p>  ?]
+[? if wv_r_waldeck:     <p>WV: [+ waldeck_wv : government +]</p>  ?]
+[? if dvp_r_waldeck:     <p>DVP: [+ waldeck_dvp : government +]</p>  ?]
+[? if dnvp_r_waldeck:     <p>DNVP: [+ waldeck_dnvp : government +]</p>  ?]
+[? if other_r_waldeck:     <p>LB: [+ waldeck_uspd : government +]</p>  ?]
   </div>
   <div id="bavaria-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Bavaria Politics</strong>
@@ -1198,7 +1200,7 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
 [? if uspd_r_bavaria:     <p>USPD: [+ bavaria_uspd : government +]</p>  ?]
 [? if csp_r_bavaria:     <p>CSP: [+ bavaria_csp : government +]</p>  ?]
 [? if ddp_r_bavaria:     <p>DDP: [+ bavaria_ddp : government +]</p>  ?]
-[? if z_r_bavaria:     <p>Z: [+ bavaria_z : government +]</p>  ?]
+[? if true_z_r_bavaria:     <p>Z: [+ bavaria_z : government +]</p>  ?]
 [? if farm_r_bavaria:     <p>Farmers: [+ bavaria_farm : government +]</p>  ?]
 [? if true_other_r_bavaria:     <p>Others: [+ bavaria_true_other : government +]</p>  ?]
 [? if bvp_r_bavaria:     <p>BVP: [+ bavaria_bvp : government +]</p>  ?]
