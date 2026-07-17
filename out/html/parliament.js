@@ -6,7 +6,7 @@
   window.ParliamentData = {
     configs: {
       meck_stre: {
-        totalSeats: 35,
+        totalSeatsKey: 'meck_stre_seats',
         conditionalParties: [
           {
             id: 'kpd', legend: 'KPD', name: 'KPD', 
@@ -71,6 +71,11 @@
             condition: function(Q) { return Q.wp_r_meck_stre; }
           },
           {
+            id: 'rl', legend: 'RL', name: 'RL',
+            qualityKey: 'rl_r_meck_stre',
+            condition: function(Q) { return Q.rl_r_meck_stre; }
+          },
+          {
             id: 'vrp', legend: 'VRP', name: 'VRP',
             qualityKey: 'vrp_r_meck_stre',
             condition: function(Q) { return Q.vrp_r_meck_stre; }
@@ -104,7 +109,7 @@
       },
 
       meck_schwe: {
-        totalSeats: 62,
+        totalSeatsKey: 'meck_schwe_seats',
         conditionalParties: [
           {
             id: 'kpd', legend: 'KPD', name: 'KPD', 
@@ -185,9 +190,108 @@
           }
         ]
       },
+
+      bavaria: {
+        totalSeatsKey: 'seats_bavaria',
+        conditionalParties: [
+          {
+            id: 'kpd', legend: 'KPD', name: 'KPD', 
+            qualityKey: 'kpd_r_meck_stre',
+            condition: function(Q) { return Q.kpd_r_meck_stre; }
+          },
+          {
+            id: 'sapd', legend: 'SAPD', name: 'SAPD', 
+            qualityKey: 'sapd_r_meck_stre',
+            condition: function(Q) { return Q.sapd_formed && Q.sapd_r_meck_stre; }
+          },
+          {
+            id: 'uspd', legend: 'USPD', name: 'USPD',
+            qualityKey: 'uspd_r_meck_stre',
+            condition: function(Q) { return Q.uspd_r_meck_stre; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_meck_stre',
+            condition: function(Q) { return Q.spd_r_meck_stre; }
+          },
+          {
+            id: 'kag', legend: 'CSP', name: 'CSP',
+            qualityKey: 'csp_r_meck_stre',
+            condition: function(Q) { return Q.csp_r_meck_stre; }
+          },
+          {
+            id: 'ddp', 
+            legend: function(Q) { return Q.ddp_name; },
+            name: function(Q) { return Q.ddp_name; },
+            qualityKey: 'ddp_r_meck_stre',
+            condition: function(Q) { return Q.ddp_r_meck_stre && !Q.lvp_formed; }
+          },
+          {
+            id: 'lvp', legend: 'LVP', name: 'LVP',
+            qualityKey: 'lvp_r_meck_stre',
+            condition: function(Q) { return Q.lvp_r_meck_stre && Q.lvp_formed; }
+          },
+          {
+            id: 'z', legend: 'Z', name: 'Z',
+            qualityKey: 'true_z_r_meck_stre',
+            condition: function(Q) { return Q.true_z_r_meck_stre; }
+          },
+          {
+            id: 'farm', legend: 'Farm', name: 'Farm',
+            qualityKey: 'farm_r_meck_stre',
+            condition: function(Q) { return Q.farm_r_meck_stre; }
+          },
+          {
+            id: 'other', legend: 'Other', name: 'Others',
+            qualityKey: 'true_other_r_meck_stre',
+            condition: function(Q) { return Q.true_other_r_meck_stre; }
+          },
+          {
+            id: 'bvp', legend: 'BVP', name: 'BVP',
+            qualityKey: 'bvp_r_meck_stre',
+            condition: function(Q) { return Q.bvp_r_meck_stre; }
+          },
+          {
+            id: 'dvp', legend: 'DVP', name: 'DVP',
+            qualityKey: 'dvp_r_meck_stre',
+            condition: function(Q) { return Q.dvp_r_meck_stre && !Q.lvp_formed && Q.dvp_exist; }
+          },
+          {
+            id: 'kvp', legend: 'KVP', name: 'KVP',
+            qualityKey: 'kvp_r_meck_stre',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_meck_stre; }
+          },
+          {
+            id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
+            qualityKey: 'dnvp_r_meck_stre',
+            condition: function(Q) { return Q.dnvp_r_meck_stre; }
+          },
+          {
+            id: 'dnf', legend: 'DNF', name: 'DNF',
+            qualityKey: 'dnf_r_meck_stre',
+            condition: function(Q) { return Q.dnf_formed && Q.dnf_r_meck_stre; }
+          },
+          {
+            id: 'dvfp', legend: 'DVFP', name: 'DVFP', 
+            qualityKey: 'dvfp_r_meck_stre',
+            condition: function(Q) { return Q.dvfp_r_meck_stre; }
+          },
+          {
+            id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
+            qualityKey: 'nsfb_r_meck_stre',
+            condition: function(Q) { return Q.nsfb_r_meck_stre; }
+          },
+          {
+            id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
+            qualityKey: 'nsdap_r_meck_stre',
+            condition: function(Q) { return Q.nsdap_r_meck_stre; }
+          }
+        ]
+      },
+         
       
       waldeck: {
-        totalSeats: 17,
+        totalSeatsKey: 'waldeck_seats',
         conditionalParties: [
           {
             id: 'kpd', legend: 'KPD', name: 'KPD', 
@@ -257,29 +361,35 @@
     
     computedData: {},
     
-    buildData: function(stateId) {
-      var Q = window.dendryUI.dendryEngine.state.qualities;
-      var config = this.configs[stateId];
-      if (!config) return [];
-      
-      var data = [];
-      
-      if (config.conditionalParties) {
-        config.conditionalParties.forEach(function(party) {
-          if (party.condition(Q)) {
-            data.push({
-              id: party.id,
-              legend: typeof party.legend === 'function' ? party.legend(Q) : party.legend,
-              name: typeof party.name === 'function' ? party.name(Q) : party.name,
-              seats: Math.round(Q[party.qualityKey] * config.totalSeats),
-              color: party.color
-            });
-          }
+buildData: function(stateId) {
+  var Q = window.dendryUI.dendryEngine.state.qualities;
+  var config = this.configs[stateId];
+  if (!config) return [];
+
+  
+  var totalSeats = config.totalSeats;
+  if (config.totalSeatsKey && typeof Q[config.totalSeatsKey] === 'number') {
+    totalSeats = Q[config.totalSeatsKey];
+  }
+  
+  var data = [];
+  
+  if (config.conditionalParties) {
+    config.conditionalParties.forEach(function(party) {
+      if (party.condition(Q)) {
+        data.push({
+          id: party.id,
+          legend: typeof party.legend === 'function' ? party.legend(Q) : party.legend,
+          name: typeof party.name === 'function' ? party.name(Q) : party.name,
+          seats: Math.round(Q[party.qualityKey] * totalSeats),
+          color: party.color
         });
       }
-      
-      return data;
-    },
+    });
+  }
+  
+  return data;
+},
     
     renderParliament: function(stateId, container) {
       if (!container || typeof d3 === 'undefined') return;
