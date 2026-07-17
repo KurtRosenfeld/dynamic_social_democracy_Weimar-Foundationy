@@ -482,18 +482,18 @@ Q.previous_nsdap_last_election_votes_prussia = 0;
 Q.previous_other_last_election_votes_prussia = 4.0;
 
 // Local parliament makeup
-//Waldeck
+//Waldeck Q.waldeck_seats = 21;
 Q.spd_r_waldeck = 0.33;
 Q.dnvp_r_waldeck = 0.29;
 Q.ddp_r_waldeck = 0.19;
 Q.hb_r_waldeck = 0.14; // creative solution there, will change later
 Q.dvp_r_waldeck = 0.05; Q.waldeck_dvp = 1;
-// Mecklenburg-Strelitz
+// Mecklenburg-Strelitz Q.meck_stre_seats = 36;
 Q.spd_r_meck_stre = 0.44; Q.meck_stre_spd = 1;
 Q.uspd_r_meck_stre = 0.03;
 Q.ddp_r_meck_stre = 0.14; Q.meck_stre_ddp = 1;
 Q.true_other_r_meck_stre = 0.39;
-// Mecklenburg-Schwerin
+// Mecklenburg-Schwerin Q.meck_schwe_seats = 67;
 Q.kpd_r_meck_schwe = 0.04;
 Q.spd_r_meck_schwe = 0.42; Q.meck_schwe_spd = 1;
 Q.ddp_r_meck_schwe = 0.04; Q.meck_schwe_ddp = 1;
@@ -501,7 +501,7 @@ Q.dvp_r_meck_schwe = 0.18; Q.meck_schwe_dvp = 1;
 Q.wp_r_meck_schwe = 0.03;
 Q.true_other_meck_schwe = 0.06;
 Q.dnvp_r_meck_schwe = 0.22;
-// Saxony
+// Saxony Q.saxony_seats = 96;
 Q.kpd_r_saxony = 0.09; Q.saxony_kpd = 2;
 Q.uspd_r_saxony = 0.14; Q.saxony_uspd = 1;
 Q.spd_r_saxony = 0.28; Q.saxony_spd = 1;
@@ -509,7 +509,7 @@ Q.ddp_r_saxony = 0.8;
 Q.z_r_saxony = 0.01;
 Q.dvp_r_saxony = 0.19;
 Q.dnvp_r_saxony = 0.21;
-// Thuringia
+// Thuringia Q.thuringia_seats = 54;
 Q.kpd_r_thuringia = 0.11; Q.thuringia_kpd = 2;
 Q.uspd_r_thuringia = 0.17; Q.thuringia_uspd = 1;
 Q.spd_r_thuringia = 0.24; Q.thuringia_spd = 1;
@@ -517,7 +517,7 @@ Q.ddp_r_thuringia = 0.05;
 Q.dvp_r_thuringia = 0.17;
 Q.farm_r_thuringia = 0.18;
 Q.dnvp_r_thuringia = 0.07;
-// Bavaria
+// Bavaria Q.bavaria_seats = 155;
 Q.kpd_r_bavaria = 0.05;
 Q.uspd_r_bavaria = 0.09;
 Q.spd_r_bavaria = 0.16;
@@ -530,7 +530,7 @@ Q.prussia_spd = 1;
 Q.prussia_z = 1;
 Q.prussia_ddp = 1;
 Q.prussia_dvp = 1;
-// Baden
+// Baden Q.baden_seats = 86;
 Q.kpd_r_baden = 0.03;
 Q.uspd_r_baden = 0.02;
 Q.spd_r_baden = 0.23; Q.baden_spd = 1;
@@ -540,7 +540,7 @@ Q.dvp_r_baden = 0.06;
 Q.wp_r_baden = 0.01;
 Q.farm_r_baden = 0.08;
 Q.dnvp_r_baden = 0.08;
-// Württemberg
+// Württemberg Q.wurttemberg_seats = 101;
 Q.kpd_r_wurttemberg = 0.05;
 Q.uspd_r_wurttemberg = 0.09;
 Q.spd_r_wurttemberg = 0.17;
@@ -549,7 +549,7 @@ Q.z_r_wurttemberg = 0.23; Q.wurttemberg_z = 1;
 Q.dvp_r_wurttemberg = 0.04;
 Q.wbwb_r_wurttemberg = 0.18;
 Q.dnvp_r_wurttemberg = 0.10;
-// Hamburg
+// Hamburg Q.hamburg_seats = 160;
 Q.kpd_r_hamburg = 0.11;
 Q.uspd_r_hamburg = 0.01;
 Q.spd_r_hamburg = 0.42; Q.hamburg_spd = 1;
@@ -558,7 +558,7 @@ Q.z_r_hamburg = 0.006;
 Q.dvp_r_hamburg = 0.14;
 Q.dnvp_r_hamburg = 0.11;
 Q.true_other_r_hamburg = 0.05;
-// Bremen
+// Bremen Q.bremen_seats = 120;
 Q.kpd_r_bremen = 0.05;
 Q.uspd_r_bremen = 0.19;
 Q.spd_r_bremen = 0.23;
