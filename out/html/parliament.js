@@ -175,16 +175,18 @@
     
     computedData: {},
     
-    // Build data array from config and game qualities
-    buildData: function(stateId) {
-      var Q = window.dendryUI.dendryEngine.state.qualities;
-      var config = this.configs[stateId];
-      if (!config) return [];
-      
-      var data = [];
-      
-      // Add required parties
-      config.parties.forEach(function(party) {
+// Build data array from config and game qualities
+buildData: function(stateId) {
+  var Q = window.dendryUI.dendryEngine.state.qualities;
+  var config = this.configs[stateId];
+  if (!config) return [];
+  
+  var data = [];
+  
+  // Process conditional parties
+  if (config.conditionalParties) {
+    config.conditionalParties.forEach(function(party) {
+      if (party.condition(Q)) {
         data.push({
           id: party.id,
           legend: typeof party.legend === 'function' ? party.legend(Q) : party.legend,
@@ -192,38 +194,12 @@
           seats: Math.round(Q[party.qualityKey] * config.totalSeats),
           color: party.color
         });
-      });
-      
-      // Add conditional parties
-      if (config.conditionalParties) {
-        config.conditionalParties.forEach(function(party) {
-          if (party.condition(Q)) {
-            data.push({
-              id: party.id,
-              legend: typeof party.legend === 'function' ? party.legend(Q) : party.legend,
-              name: typeof party.name === 'function' ? party.name(Q) : party.name,
-              seats: Math.round(Q[party.qualityKey] * config.totalSeats),
-              color: party.color
-            });
-          }
-        });
       }
-      
-      // Add always-included parties
-      if (config.alwaysInclude) {
-        config.alwaysInclude.forEach(function(party) {
-          data.push({
-            id: party.id,
-            legend: typeof party.legend === 'function' ? party.legend(Q) : party.legend,
-            name: typeof party.name === 'function' ? party.name(Q) : party.name,
-            seats: Math.round(Q[party.qualityKey] * config.totalSeats),
-            color: party.color
-          });
-        });
-      }
-      
-      return data;
-    },
+    });
+  }
+  
+  return data;
+},
     
     // Render a parliament chart using d3-parliament
     renderParliament: function(stateId, container) {
