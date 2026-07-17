@@ -1195,7 +1195,6 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
     Landtag (<span class="total-seats">35</span> seats)
   </div>
   <div class="parliament-chart" data-state="meck_stre" style="width: 260px; height: 130px;"></div>
-<div id="meck_stre_landtag" style="width: 500px; height: 250px;"></div>
 <p>Minister-President: Reibnitz (SPD)</p>
     <p>SPD: [+ meck_stre_spd : government +]</p>
 [? if kpd_r_meck_stre:     <p>KPD: [+ meck_stre_kpd : government +]</p>  ?]
