@@ -196,95 +196,95 @@
         conditionalParties: [
           {
             id: 'kpd', legend: 'KPD', name: 'KPD', 
-            qualityKey: 'kpd_r_meck_stre',
-            condition: function(Q) { return Q.kpd_r_meck_stre; }
+            qualityKey: 'kpd_r_bavaria',
+            condition: function(Q) { return Q.kpd_r_bavaria; }
           },
           {
             id: 'sapd', legend: 'SAPD', name: 'SAPD', 
-            qualityKey: 'sapd_r_meck_stre',
-            condition: function(Q) { return Q.sapd_formed && Q.sapd_r_meck_stre; }
+            qualityKey: 'sapd_r_bavaria',
+            condition: function(Q) { return Q.sapd_formed && Q.sapd_r_bavaria; }
           },
           {
             id: 'uspd', legend: 'USPD', name: 'USPD',
-            qualityKey: 'uspd_r_meck_stre',
-            condition: function(Q) { return Q.uspd_r_meck_stre; }
+            qualityKey: 'uspd_r_bavaria',
+            condition: function(Q) { return Q.uspd_r_bavaria; }
           },
           {
             id: 'spd', legend: 'SPD', name: 'SPD', 
-            qualityKey: 'spd_r_meck_stre',
-            condition: function(Q) { return Q.spd_r_meck_stre; }
+            qualityKey: 'spd_r_bavaria',
+            condition: function(Q) { return Q.spd_r_bavaria; }
           },
           {
             id: 'kag', legend: 'CSP', name: 'CSP',
-            qualityKey: 'csp_r_meck_stre',
-            condition: function(Q) { return Q.csp_r_meck_stre; }
+            qualityKey: 'csp_r_bavaria',
+            condition: function(Q) { return Q.csp_r_bavaria; }
           },
           {
             id: 'ddp', 
             legend: function(Q) { return Q.ddp_name; },
             name: function(Q) { return Q.ddp_name; },
-            qualityKey: 'ddp_r_meck_stre',
-            condition: function(Q) { return Q.ddp_r_meck_stre && !Q.lvp_formed; }
+            qualityKey: 'ddp_r_bavaria',
+            condition: function(Q) { return Q.ddp_r_bavaria && !Q.lvp_formed; }
           },
           {
             id: 'lvp', legend: 'LVP', name: 'LVP',
-            qualityKey: 'lvp_r_meck_stre',
-            condition: function(Q) { return Q.lvp_r_meck_stre && Q.lvp_formed; }
+            qualityKey: 'lvp_r_bavaria',
+            condition: function(Q) { return Q.lvp_r_bavaria && Q.lvp_formed; }
           },
           {
             id: 'z', legend: 'Z', name: 'Z',
-            qualityKey: 'true_z_r_meck_stre',
-            condition: function(Q) { return Q.true_z_r_meck_stre; }
+            qualityKey: 'true_z_r_bavaria',
+            condition: function(Q) { return Q.true_z_r_bavaria; }
           },
           {
             id: 'farm', legend: 'Farm', name: 'Farm',
-            qualityKey: 'farm_r_meck_stre',
-            condition: function(Q) { return Q.farm_r_meck_stre; }
+            qualityKey: 'farm_r_bavaria',
+            condition: function(Q) { return Q.farm_r_bavaria; }
           },
           {
             id: 'other', legend: 'Other', name: 'Others',
-            qualityKey: 'true_other_r_meck_stre',
-            condition: function(Q) { return Q.true_other_r_meck_stre; }
+            qualityKey: 'true_other_r_bavaria',
+            condition: function(Q) { return Q.true_other_r_bavaria; }
           },
           {
             id: 'bvp', legend: 'BVP', name: 'BVP',
-            qualityKey: 'bvp_r_meck_stre',
-            condition: function(Q) { return Q.bvp_r_meck_stre; }
+            qualityKey: 'bvp_r_bavaria',
+            condition: function(Q) { return Q.bvp_r_bavaria; }
           },
           {
             id: 'dvp', legend: 'DVP', name: 'DVP',
-            qualityKey: 'dvp_r_meck_stre',
-            condition: function(Q) { return Q.dvp_r_meck_stre && !Q.lvp_formed && Q.dvp_exist; }
+            qualityKey: 'dvp_r_bavaria',
+            condition: function(Q) { return Q.dvp_r_bavaria && !Q.lvp_formed && Q.dvp_exist; }
           },
           {
             id: 'kvp', legend: 'KVP', name: 'KVP',
-            qualityKey: 'kvp_r_meck_stre',
-            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_meck_stre; }
+            qualityKey: 'kvp_r_bavaria',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_bavaria; }
           },
           {
             id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
-            qualityKey: 'dnvp_r_meck_stre',
-            condition: function(Q) { return Q.dnvp_r_meck_stre; }
+            qualityKey: 'dnvp_r_bavaria',
+            condition: function(Q) { return Q.dnvp_r_bavaria; }
           },
           {
             id: 'dnf', legend: 'DNF', name: 'DNF',
-            qualityKey: 'dnf_r_meck_stre',
-            condition: function(Q) { return Q.dnf_formed && Q.dnf_r_meck_stre; }
+            qualityKey: 'dnf_r_bavaria',
+            condition: function(Q) { return Q.dnf_formed && Q.dnf_r_bavaria; }
           },
           {
             id: 'dvfp', legend: 'DVFP', name: 'DVFP', 
-            qualityKey: 'dvfp_r_meck_stre',
-            condition: function(Q) { return Q.dvfp_r_meck_stre; }
+            qualityKey: 'dvfp_r_bavaria',
+            condition: function(Q) { return Q.dvfp_r_bavaria; }
           },
           {
             id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
-            qualityKey: 'nsfb_r_meck_stre',
-            condition: function(Q) { return Q.nsfb_r_meck_stre; }
+            qualityKey: 'nsfb_r_bavaria',
+            condition: function(Q) { return Q.nsfb_r_bavaria; }
           },
           {
             id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
-            qualityKey: 'nsdap_r_meck_stre',
-            condition: function(Q) { return Q.nsdap_r_meck_stre; }
+            qualityKey: 'nsdap_r_bavaria',
+            condition: function(Q) { return Q.nsdap_r_bavaria; }
           }
         ]
       },
