@@ -416,20 +416,25 @@ window.initTooltips = function() {
       t.classList.remove('show-tooltip');
     });
   }
+
+  // tooltip parliament rendering
+ function renderTooltipChart(tooltip) {
+  var chartContainer = tooltip.querySelector('.parliament-chart');
+  if (!chartContainer) return;
   
-  // Render chart for a specific tooltip if needed
-  function renderTooltipChart(tooltip) {
-    var chartContainer = tooltip.querySelector('#waldeck_landtag');
-    if (chartContainer && chartContainer.getAttribute('data-rendered') !== 'true') {
-      // Mark as rendered so we don't render twice
-      chartContainer.setAttribute('data-rendered', 'true');
-      
-      // Call your parliament rendering code here
-      if (window.renderWaldeckLandtag) {
-        window.renderWaldeckLandtag(chartContainer);
-      }
-    }
+  var stateId = chartContainer.getAttribute('data-state');
+  if (!stateId) return;
+  
+  // Only render once
+  if (chartContainer.getAttribute('data-rendered') === 'true') return;
+  chartContainer.setAttribute('data-rendered', 'true');
+  
+  // Use the shared parliament renderer
+  if (window.ParliamentData) {
+    window.ParliamentData.renderParliament(stateId, chartContainer);
   }
+}
+
   
   document.body.addEventListener('mouseover', function(e) {
     const trigger = e.target.closest('.trigger-group');
