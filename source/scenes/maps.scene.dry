@@ -1190,7 +1190,7 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
     <p>This is all tba</p>
   </div>
   <div id="meck_stre-tooltip" class="tooltip-group">
-    <strong> style="display: block; text-align: center;"Mecklenburg-Strelitz Politics</strong>
+    <strong style="display: block; text-align: center;">Mecklenburg-Strelitz Politics</strong>
     <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
     Landtag (<span class="total-seats">35</span> seats)
   </div>
