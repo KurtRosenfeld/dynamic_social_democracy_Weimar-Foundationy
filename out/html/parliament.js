@@ -7,13 +7,17 @@
     configs: {
       meck_stre: {
         totalSeats: 35,
-        parties: [
-          { id: 'kpd', legend: 'KPD', name: 'KPD', qualityKey: 'kpd_r_meck_stre' },
-          { id: 'spd', legend: 'SPD', name: 'SPD', qualityKey: 'spd_r_meck_stre' },
-          { id: 'dnvp', legend: 'DNVP', name: 'DNVP', qualityKey: 'dnvp_r_meck_stre' },
-          { id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', qualityKey: 'nsdap_r_meck_stre' }
-        ],
         conditionalParties: [
+          {
+            id: 'kpd', legend: 'KPD', name: 'KPD', 
+            qualityKey: 'kpd_r_meck_stre',
+            condition: function(Q) { return Q.kpd_r_meck_stre; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_meck_stre',
+            condition: function(Q) { return Q.spd_r_meck_stre; }
+          },
           {
             id: 'sapd', legend: 'SAPD', name: 'SAPD', 
             qualityKey: 'sapd_r_meck_stre',
@@ -72,26 +76,46 @@
             condition: function(Q) { return Q.vrp_r_meck_stre; }
           },
           {
+            id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
+            qualityKey: 'dnvp_r_meck_stre',
+            condition: function(Q) { return Q.dnvp_r_meck_stre; }
+          },
+          {
             id: 'dnf', legend: 'DNF', name: 'DNF',
             qualityKey: 'dnf_r_meck_stre',
             condition: function(Q) { return Q.dnf_formed && Q.dnf_r_meck_stre; }
+          },
+          {
+            id: 'dvfp', legend: 'DVFP', name: 'DVFP', 
+            qualityKey: 'dvfp_r_meck_stre',
+            condition: function(Q) { return Q.dvfp_r_meck_stre; }
+          },
+          {
+            id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
+            qualityKey: 'nsfb_r_meck_stre',
+            condition: function(Q) { return Q.nsfb_r_meck_stre; }
+          },
+          {
+            id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
+            qualityKey: 'nsdap_r_meck_stre',
+            condition: function(Q) { return Q.nsdap_r_meck_stre; }
           }
         ],
-        // Always-included parties with potentially zero seats
-        alwaysInclude: [
-          { id: 'dvfp', legend: 'DVFP', name: 'DVFP', qualityKey: 'dvfp_r_meck_stre', color: '#3D3D3D' },
-          { id: 'nsfb', legend: 'NSFB', name: 'NSFB', qualityKey: 'nsfb_r_meck_stre' }
-        ]
-      },
+
       
       waldeck: {
         totalSeats: 17,
-        parties: [
-          { id: 'kpd', legend: 'KPD', name: 'KPD', qualityKey: 'kpd_r_waldeck' },
-          { id: 'spd', legend: 'SPD', name: 'SPD', qualityKey: 'spd_r_waldeck' },
-          { id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', qualityKey: 'nsdap_r_waldeck' }
-        ],
         conditionalParties: [
+          {
+            id: 'kpd', legend: 'KPD', name: 'KPD', 
+            qualityKey: 'kpd_r_waldeck',
+            condition: function(Q) { return Q.kpd_r_waldeck; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_waldeck',
+            condition: function(Q) { return Q.spd_r_waldeck; }
+          },
           {
             id: 'uspd', legend: 'USPD', name: 'USPD',
             qualityKey: 'uspd_r_waldeck',
@@ -138,6 +162,11 @@
             id: 'farm2', legend: 'LB', name: 'LB',
             qualityKey: 'other_r_waldeck',
             condition: function(Q) { return Q.other_r_waldeck; }
+          },
+         {
+            id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
+            qualityKey: 'nsdap_r_waldeck',
+            condition: function(Q) { return Q.nsdap_r_waldeck; }
           }
         ]
       }
