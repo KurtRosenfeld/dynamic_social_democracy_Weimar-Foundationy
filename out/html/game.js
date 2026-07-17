@@ -417,42 +417,23 @@ window.initTooltips = function() {
     });
   }
   
-// Render a parliament chart using d3-parliament
-renderParliament: function(stateId, container) {
-  if (!container || typeof d3 === 'undefined') return;
-  
-  var data = this.buildData(stateId);
-  this.computedData[stateId] = data;
-  
-  if (data.length === 0) return;
-  
-  // Clear previous content
-  container.innerHTML = '';
-  
-  // Set explicit dimensions on the container
-  var width = 260;
-  if (container.offsetWidth && container.offsetWidth > 10) {
-    width = container.offsetWidth;
+  // Render parliament chart inside tooltip
+  function renderTooltipChart(tooltip) {
+    var chartContainer = tooltip.querySelector('.parliament-chart');
+    if (!chartContainer) return;
+    
+    var stateId = chartContainer.getAttribute('data-state');
+    if (!stateId) return;
+    
+    // Only render once
+    if (chartContainer.getAttribute('data-rendered') === 'true') return;
+    chartContainer.setAttribute('data-rendered', 'true');
+    
+    // Use the shared parliament renderer from parliaments.js
+    if (window.ParliamentData) {
+      window.ParliamentData.renderParliament(stateId, chartContainer);
+    }
   }
-  
-  var height = width / 2;
-  container.style.width = width + 'px';
-  container.style.height = height + 'px';
-  
-  // Create SVG explicitly instead of letting d3-parliament create it
-  var svg = d3.select(container).append('svg')
-    .attr('width', width)
-    .attr('height', height);
-  
-  // Configure and render parliament
-  var parliament = d3.parliament();
-  parliament.width(width).innerRadiusCoef(0.4);
-  parliament.enter.fromCenter(true).smallToBig(true);
-  parliament.exit.toCenter(false).bigToSmall(true);
-  
-  svg.datum(data).call(parliament);
-},
-
   
   document.body.addEventListener('mouseover', function(e) {
     const trigger = e.target.closest('.trigger-group');
@@ -563,7 +544,6 @@ function updateTooltipPos(e, tooltip) {
   tooltip.style.top = top + 'px';
 }
 
-  
   // ============================================
 
   window.justLoaded = true;
