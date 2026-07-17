@@ -418,24 +418,33 @@ window.initTooltips = function() {
   }
   
   // Render parliament chart inside tooltip
-  function renderTooltipChart(tooltip) {
-    var chartContainer = tooltip.querySelector('.parliament-chart');
-    if (!chartContainer) return;
-    
-    var stateId = chartContainer.getAttribute('data-state');
-    if (!stateId) return;
-    
-    // Only render once
-    if (chartContainer.getAttribute('data-rendered') === 'true') return;
-    chartContainer.setAttribute('data-rendered', 'true');
-    
-    // Use the shared parliament renderer from parliaments.js
-    if (window.ParliamentData) {
-  var totalSeats = window.ParliamentData.getTotalSeats(stateId);
-  var seatSpan = tooltip.querySelector('.total-seats');
-  if (seatSpan) seatSpan.textContent = totalSeats;
-}
+ function renderTooltipChart(tooltip) {
+  console.log('renderTooltipChart called for tooltip:', tooltip.id);
+  
+  var chartContainer = tooltip.querySelector('.parliament-chart');
+  console.log('chartContainer found:', !!chartContainer);
+  
+  if (!chartContainer) return;
+  
+  var stateId = chartContainer.getAttribute('data-state');
+  console.log('stateId:', stateId);
+  
+  if (!stateId) return;
+  
+  if (chartContainer.getAttribute('data-rendered') === 'true') {
+    console.log('Already rendered, skipping');
+    return;
   }
+  chartContainer.setAttribute('data-rendered', 'true');
+  
+  console.log('Calling ParliamentData.renderParliament for', stateId);
+  
+  if (window.ParliamentData) {
+    window.ParliamentData.renderParliament(stateId, chartContainer);
+  } else {
+    console.log('ParliamentData not found!');
+  }
+}
   
   document.body.addEventListener('mouseover', function(e) {
     const trigger = e.target.closest('.trigger-group');
