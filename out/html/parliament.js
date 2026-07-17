@@ -170,57 +170,66 @@
           }
         ]
       }
-      // Add more states here...
+      // Add more states later...
     },
     
     computedData: {},
     
 // Build data array from config and game qualities
-buildData: function(stateId) {
-  var Q = window.dendryUI.dendryEngine.state.qualities;
-  var config = this.configs[stateId];
-  if (!config) return [];
-  
-  var data = [];
-  
-  // Process conditional parties
-  if (config.conditionalParties) {
-    config.conditionalParties.forEach(function(party) {
-      if (party.condition(Q)) {
-        data.push({
-          id: party.id,
-          legend: typeof party.legend === 'function' ? party.legend(Q) : party.legend,
-          name: typeof party.name === 'function' ? party.name(Q) : party.name,
-          seats: Math.round(Q[party.qualityKey] * config.totalSeats),
-          color: party.color
+ buildData: function(stateId) {
+      var Q = window.dendryUI.dendryEngine.state.qualities;
+      var config = this.configs[stateId];
+      if (!config) return [];
+      
+      var data = [];
+      
+      if (config.conditionalParties) {
+        config.conditionalParties.forEach(function(party) {
+          if (party.condition(Q)) {
+            data.push({
+              id: party.id,
+              legend: typeof party.legend === 'function' ? party.legend(Q) : party.legend,
+              name: typeof party.name === 'function' ? party.name(Q) : party.name,
+              seats: Math.round(Q[party.qualityKey] * config.totalSeats),
+              color: party.color
+            });
+          }
         });
       }
-    });
-  }
-  
-  return data;
-},
+      
+      return data;
+    },
     
-    // Render a parliament chart using d3-parliament
+    // THIS is where renderParliament lives - inside ParliamentData
     renderParliament: function(stateId, container) {
       if (!container || typeof d3 === 'undefined') return;
       
       var data = this.buildData(stateId);
       this.computedData[stateId] = data;
       
-      // Clear previous content
+      if (data.length === 0) return;
+      
       container.innerHTML = '';
       
-      // Use d3-parliament (your existing library)
-      var width = container.offsetWidth || 500;
+      var width = 260;
+      if (container.offsetWidth && container.offsetWidth > 10) {
+        width = container.offsetWidth;
+      }
+      
       var height = width / 2;
+      container.style.width = width + 'px';
+      container.style.height = height + 'px';
+      
+      var svg = d3.select(container).append('svg')
+        .attr('width', width)
+        .attr('height', height);
       
       var parliament = d3.parliament();
-      parliament.width(width).height(height).innerRadiusCoef(0.4);
+      parliament.width(width).innerRadiusCoef(0.4);
       parliament.enter.fromCenter(true).smallToBig(true);
       parliament.exit.toCenter(false).bigToSmall(true);
       
-      d3.select(container).datum(data).call(parliament);
+      svg.datum(data).call(parliament);
     },
     
     getData: function(stateId) {
