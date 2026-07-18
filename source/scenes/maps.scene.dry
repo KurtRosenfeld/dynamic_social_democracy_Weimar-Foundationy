@@ -850,6 +850,7 @@ style="display:inline;fill:[? if hesse_gov == "Bourgeois": #818181 ?][? if hesse
     </g>
     <g
        id="g4"
+       class="trigger-group" data-tooltip="baden-tooltip"
 style="display:inline;fill:[? if baden_gov == "Bourgeois": #818181 ?][? if baden_gov == "Weimar": #FC6D6D ?][? if baden_gov == "Popular-Front": #6C168E ?][? if baden_gov == "SPD": [+ spd_colour +] ?][? if baden_gov == "Social-Catholic": #5E405A ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -867,6 +868,7 @@ style="display:inline;fill:[? if baden_gov == "Bourgeois": #818181 ?][? if baden
     </g>
     <g
        id="g81"
+       class="trigger-group" data-tooltip="wurttemberg-tooltip"
 style="display:inline;fill:[? if wurttemberg_gov == "Grand": #A2B725 ?][? if wurttemberg_gov == "Bourgeois": #818181 ?][? if wurttemberg_gov == "Right": #0F4989 ?][? if wurttemberg_gov == "Weimar": #FC6D6D ?][? if wurttemberg_gov == "Popular-Front": #6C168E ?][? if wurttemberg_gov == "SPD": [+ spd_colour +] ?][? if wurttemberg_gov == "Left": #8E0000 ?][? if wurttemberg_gov == "Social-Catholic": #5E405A ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -934,6 +936,7 @@ style="display:inline;fill:[? if thuringia_gov == "Grand": #A2B725 ?][? if thuri
     </g>
     <g
        id="g80"
+       class="trigger-group" data-tooltip="saxony-tooltip"
 style="display:inline;fill:[? if saxony_gov == "Grand": #A2B725 ?][? if saxony_gov == "Bourgeois": #818181 ?][? if saxony_gov == "Bourgeois-Right": #0F4989 ?][? if saxony_gov == "Social-Democratic": #A51E5A ?][? if saxony_gov == "Popular-Front": #6C168E ?][? if saxony_gov == "SPD": [+ spd_colour +] ?][? if saxony_gov == "Left": #8E0000 ?][? if saxony_gov == "Weimar": #FC6D6D ?][? if saxony_gov == "Social-Liberal": #DD8D1B ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -1251,6 +1254,65 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
 [? if dvfp_r_meck_schwe:    <p>DVFP: [+ meck_schwe_dvfp : government +]</p> ?]
 [? if nsdap_r_meck_schwe:    <p>NSDAP: [+ meck_schwe_nsdap : government +]</p> ?]
   </div>
+<div id="baden-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Baden Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ baden_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="baden" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ baden_spd : government +]</p>
+[? if kpd_r_baden:     <p>KPD: [+ baden_kpd : government +]</p>  ?]
+[? if sapd_r_baden:     <p>SAPD: [+ baden_sapd : government +]</p>  ?]
+[? if uspd_r_baden:     <p>USPD: [+ baden_uspd : government +]</p>  ?]
+[? if ddp_r_baden:     <p>DDP: [+ baden_ddp : government +]</p>  ?]
+[? if lvp_r_baden:     <p>LVP: [+ baden_lvp : government +]</p>  ?]
+[? if z_r_baden:     <p>Z: [+ baden_z : government +]</p>  ?]
+[? if true_other_r_baden:     <p>Others: [+ baden_true_other : government +]</p>  ?]
+[? if dvp_r_baden:     <p>DVP: [+ baden_dvp : government +]</p>  ?]
+[? if wp_r_baden:     <p>WP: [+ baden_wp : government +]</p>  ?]
+[? if kvp_r_baden:     <p>KVP: [+ baden_kvp : government +]</p>  ?]
+[? if farm_r_baden:     <p>Farmers: [+ baden_farm : government +]</p>  ?]
+[? if csvd_r_baden:     <p>CSVD: [+ baden_csvd : government +]</p>  ?]
+[? if cnbl_r_baden:     <p>CNBL: [+ baden_cnbl : government +]</p>  ?]
+[? if dnvp_r_baden:     <p>DNVP: [+ baden_dnvp : government +]</p>  ?]
+[? if dnf_r_baden:     <p>DNF: [+ baden_dnf : government +]</p>  ?]
+[? if nsfb_r_baden:     <p>NSFB: [+ baden_nsfb : government +]</p>  ?]
+[? if nsdap_r_baden:     <p>NSDAP: [+ baden_nsdap : government +]</p>  ?]
+  </div>
+<div id="wurttemberg-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Wurttemberg Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ wurttemberg_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="wurttemberg" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ wurttemberg_spd : government +]</p>
+[? if kpd_r_wurttemberg:     <p>KPD: [+ wurttemberg_kpd : government +]</p>  ?]
+[? if sapd_r_wurttemberg:     <p>SAPD: [+ wurttemberg_sapd : government +]</p>  ?]
+[? if uspd_r_wurttemberg:     <p>USPD: [+ wurttemberg_uspd : government +]</p>  ?]
+[? if ddp_r_wurttemberg:     <p>DDP: [+ wurttemberg_ddp : government +]</p>  ?]
+[? if lvp_r_wurttemberg:     <p>LVP: [+ wurttemberg_lvp : government +]</p>  ?]
+[? if z_r_wurttemberg:     <p>Z: [+ wurttemberg_z : government +]</p>  ?]
+[? if csvd_r_wurttemberg:     <p>CSVD: [+ wurttemberg_csvd : government +]</p>  ?]
+[? if dvp_r_wurttemberg:     <p>DVP: [+ wurttemberg_dvp : government +]</p>  ?]
+[? if wbwb_r_wurttemberg:     <p>WBWB: [+ wurttemberg_wbwb : government +]</p>  ?]
+[? if kvp_r_wurttemberg:     <p>KVP: [+ wurttemberg_kvp : government +]</p>  ?]
+[? if vrp_r_wurttemberg:     <p>VRP: [+ wurttemberg_vrp : government +]</p>  ?]
+[? if dnvp_r_wurttemberg:     <p>DNVP: [+ wurttemberg_dnvp : government +]</p>  ?]
+[? if dnf_r_wurttemberg:     <p>DNF: [+ wurttemberg_dnf : government +]</p>  ?]
+[? if nsfb_r_wurttemberg:     <p>NSFB: [+ wurttemberg_nsfb : government +]</p>  ?]
+[? if nsdap_r_wurttemberg:     <p>NSDAP: [+ wurttemberg_nsdap : government +]</p>  ?]
+  </div>
+<div id="saxony-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Saxony Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ saxony_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="saxony" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ saxony_spd : government +]</p>
+</div>
 
 </div>
 
