@@ -721,7 +721,7 @@ buildData: function(stateId) {
     container.removeChild(container.firstChild);
   }
   
-  var width = 260;
+  var width = 340;
   if (container.offsetWidth && container.offsetWidth > 10) {
     width = container.offsetWidth;
   }
