@@ -450,13 +450,13 @@ baden: {
           },
           {
             id: 'kvp', legend: 'KVP', name: 'KVP',
-            qualityKey: 'kvp_r_baden',
-            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_baden; }
+            qualityKey: 'kvp_r_wurttemberg',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_wurttemberg; }
           },
           {
             id: 'farm3', legend: 'Farmers', name: 'Farmers',
-            qualityKey: 'farm_r_baden',
-            condition: function(Q) { return Q.farm_r_baden; }
+            qualityKey: 'farm_r_wurttemberg',
+            condition: function(Q) { return Q.farm_r_wurttemberg; }
           },
           {
             id: 'vrp', legend: 'VRP', name: 'VRP',
@@ -549,8 +549,8 @@ baden: {
           },
           {
             id: 'wp', legend: 'WP', name: 'WP',
-            qualityKey: 'wp_r_baden',
-            condition: function(Q) { return Q.wp_r_baden; }
+            qualityKey: 'wp_r_saxony',
+            condition: function(Q) { return Q.wp_r_saxony; }
           },
           {
             id: 'vrp', legend: 'VRP', name: 'VRP',
@@ -568,8 +568,8 @@ baden: {
           },
           {
             id: 'kvp', legend: 'KVP', name: 'KVP',
-            qualityKey: 'kvp_r_baden',
-            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_baden; }
+            qualityKey: 'kvp_r_saxony',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_saxony; }
           },
           {
             id: 'farm4', legend: 'Farmers', name: 'Farmers',
