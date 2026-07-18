@@ -299,14 +299,14 @@
             condition: function(Q) { return Q.kpd_r_waldeck; }
           },
           {
-            id: 'spd', legend: 'SPD', name: 'SPD', 
-            qualityKey: 'spd_r_waldeck',
-            condition: function(Q) { return Q.spd_r_waldeck; }
-          },
-          {
             id: 'uspd', legend: 'USPD', name: 'USPD',
             qualityKey: 'uspd_r_waldeck',
             condition: function(Q) { return Q.uspd_r_waldeck; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_waldeck',
+            condition: function(Q) { return Q.spd_r_waldeck; }
           },
           {
             id: 'ddp',
