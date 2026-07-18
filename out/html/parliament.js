@@ -710,36 +710,37 @@ buildData: function(stateId) {
 },
     
     renderParliament: function(stateId, container) {
-      if (!container || typeof d3 === 'undefined') return;
-      
-      var data = this.buildData(stateId);
-      this.computedData[stateId] = data;
-      
-      if (data.length === 0) return;
-      
-      container.innerHTML = '';
-      
-      var width = 260;
-      if (container.offsetWidth && container.offsetWidth > 10) {
-        width = container.offsetWidth;
-      }
-      
-      var height = width / 2;
-      container.style.width = width + 'px';
-      container.style.height = height + 'px';
-      
-      var svg = d3.select(container).append('svg')
-        .attr('width', width)
-        .attr('height', height);
-      
-      var parliament = d3.parliament();
-      parliament.width(width).innerRadiusCoef(0.4);
-      parliament.enter.fromCenter(true).smallToBig(true);
-      parliament.exit.toCenter(false).bigToSmall(true);
-      
-      svg.datum(data).call(parliament);
-    },
+  if (!container || typeof d3 === 'undefined') return;
+  
+  var data = this.buildData(stateId);
+  this.computedData[stateId] = data;
+  
+  if (data.length === 0) return;
+  
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+  
+  var width = 260;
+  if (container.offsetWidth && container.offsetWidth > 10) {
+    width = container.offsetWidth;
+  }
+  
+  var height = width / 2;
+  
+  var svg = d3.select(container).append('svg')
+    .attr('width', width)
+    .attr('height', height);
+  
+  var parliament = d3.parliament();
+  parliament.width(width).innerRadiusCoef(0.4);
+  parliament.enter.fromCenter(true).smallToBig(true);
+  parliament.exit.toCenter(false).bigToSmall(true);
+  
+  svg.datum(data).call(parliament);
+},
 
+    
 getTotalSeats: function(stateId) { 
       var Q = window.dendryUI.dendryEngine.state.qualities;
       var config = this.configs[stateId];
