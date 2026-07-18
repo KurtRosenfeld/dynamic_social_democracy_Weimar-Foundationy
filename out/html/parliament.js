@@ -709,8 +709,12 @@ buildData: function(stateId) {
   return data;
 },
     
-    renderParliament: function(stateId, container) {
+ renderParliament: function(stateId, container) {
   if (!container || typeof d3 === 'undefined') return;
+  
+  // Don't re-render if this container already has this state's chart
+  if (container.getAttribute('data-parliament') === stateId) return;
+  container.setAttribute('data-parliament', stateId);
   
   var data = this.buildData(stateId);
   this.computedData[stateId] = data;
@@ -721,7 +725,7 @@ buildData: function(stateId) {
     container.removeChild(container.firstChild);
   }
   
-  var width = 340;
+  var width = 260;
   if (container.offsetWidth && container.offsetWidth > 10) {
     width = container.offsetWidth;
   }
