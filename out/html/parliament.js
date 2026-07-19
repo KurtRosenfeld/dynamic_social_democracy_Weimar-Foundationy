@@ -624,6 +624,11 @@ baden: {
             condition: function(Q) { return Q.spd_r_waldeck; }
           },
           {
+            id: 'bl', legend: 'WV', name: 'WV', 
+            qualityKey: 'wv_r_waldeck',
+            condition: function(Q) { return Q.wv_spd_r_waldeck; }
+          },
+          {
             id: 'ddp',
             legend: function(Q) { return Q.ddp_name; },
             name: function(Q) { return Q.ddp_name; },
