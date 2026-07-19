@@ -37,6 +37,7 @@ var waldeck_adjustment_factors = {
     other: 4.6,
 };
 
+ Q['old_' + party + '_r_waldeck'] = Q[party + '_r_waldeck'];
 
 Q.spd_r_waldeck = 0;
 Q.uspd_r_waldeck = 0;
@@ -235,6 +236,8 @@ if (Q.year == 1922) Q.dvp_r_waldeck = 0;
 if (Q.year == 1922) Q.rl_r_waldeck = Q.other_r_waldeck;
 if (Q.year == 1922) Q.other_r_waldeck = 0;
 
+Q['change_' + party + '_r_waldeck'] = Q[party + '_r_waldeck'] - Q['old_' + party + '_r_waldeck'];
+
 !}
 on-display: {!
 data = [{
@@ -390,6 +393,8 @@ Worker Coalition (<span style="color: [+ spd_colour +];">**SPD**</span>[? if usp
 Social Liberal Coalition (<span style="color: [+ spd_colour +];">**SPD**</span>[? if hb_r_waldeck: + <span style="color: #CB7F00;">**Craftsmen**</span>?] + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]): [+ social_liberal_coalition_waldeck +]%
 
 Right-Wing Coalition (<span style="color: #006400;">**LB**</span> + <span style="color: [+ dnvp_colour +];">**DNVP**</span> + [? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]): [+ right_coalition_waldeck +]%
+
+Test: SPD change: [+ change_spd_r_waldeck +]
 
 @waldeck_coalition_menu
 
