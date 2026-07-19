@@ -685,12 +685,8 @@ buildData: function(stateId) {
   var Q = window.dendryUI.dendryEngine.state.qualities;
   var config = this.configs[stateId];
   if (!config) return [];
-
-    console.log('State:', stateId);
-  console.log('totalSeatsKey:', config.totalSeatsKey);
-  console.log('Q[totalSeatsKey]:', Q[config.totalSeatsKey], 'fallback totalSeats:', config.totalSeats);
   
-  var totalSeats = config.totalSeats;
+  var totalSeats = config.totalSeats || 0;
   if (config.totalSeatsKey && typeof Q[config.totalSeatsKey] === 'number') {
     totalSeats = Q[config.totalSeatsKey];
   }
@@ -700,11 +696,22 @@ buildData: function(stateId) {
   if (config.conditionalParties) {
     config.conditionalParties.forEach(function(party) {
       if (party.condition(Q)) {
+        var rawValue = Q[party.qualityKey];
+        // If value is on 0-100 scale (percentage), convert it
+        var seats;
+        if (rawValue > 1) {
+          // It's a percentage (like 35.2 for 35.2%)
+          seats = Math.round((rawValue / 100) * totalSeats);
+        } else {
+          // It's already a fraction (like 0.352)
+          seats = Math.round(rawValue * totalSeats);
+        }
+        
         data.push({
           id: party.id,
           legend: typeof party.legend === 'function' ? party.legend(Q) : party.legend,
           name: typeof party.name === 'function' ? party.name(Q) : party.name,
-          seats: Math.round(Q[party.qualityKey] * totalSeats),
+          seats: seats,
           color: party.color
         });
       }
