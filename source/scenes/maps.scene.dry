@@ -1188,7 +1188,7 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
 [? if wv_r_waldeck:     <p>WV: [+ waldeck_wv : government +]</p>  ?]
 [? if dvp_r_waldeck:     <p>DVP: [+ waldeck_dvp : government +]</p>  ?]
 [? if dnvp_r_waldeck:     <p>DNVP: [+ waldeck_dnvp : government +]</p>  ?]
-[? if other_r_waldeck:     <p>LB: [+ waldeck_uspd : government +]</p>  ?]
+[? if other_r_waldeck:     <p>LB: [+ waldeck_lb : government +]</p>  ?]
   </div>
   <div id="bavaria-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Bavaria Politics</strong>
@@ -1210,7 +1210,7 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
 [? if dvp_r_bavaria:     <p>DVP: [+ bavaria_dvp : government +]</p>  ?]
 [? if dnvp_r_bavaria:     <p>DNVP: [+ bavaria_dnvp : government +]</p>  ?]
 [? if nsfb_r_bavaria:     <p>NSFB: [+ bavaria_nsfb : government +]</p>  ?]
-[? if nsdap_r_bavaria:     <p>KPD: [+ bavaria_nsdap : government +]</p>  ?]
+[? if nsdap_r_bavaria:     <p>NSDAP: [+ bavaria_nsdap : government +]</p>  ?]
   </div>
   <div id="meck_stre-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Mecklenburg-Strelitz Politics</strong>
