@@ -2,7 +2,7 @@ title: Waldeck Landtag Election
 view-if: (year == 1922 and month == 5 and not waldeck_election_seen) or (year == 1925 and month == 5 and waldeck_election_seen == 1)
 new-page: true
 tags: event
-on-arrival: waldeck_election_seen += 1 if waldeck_election_seen; waldeck_election_seen = 1 if not waldeck_election_seen; waldeck_seats = 17; Q.waldeck_seats = 17
+on-arrival: waldeck_election_seen += 1 if waldeck_election_seen; waldeck_election_seen = 1 if not waldeck_election_seen; waldeck_seats = 17
 priority: 2
 on-display: {!  
     var cardEl = document.createElement('div');  
@@ -36,8 +36,6 @@ var waldeck_adjustment_factors = {
     dnvp: 0.76,
     other: 4.6,
 };
-
- Q['old_' + party + '_r_waldeck'] = Q[party + '_r_waldeck'];
 
 Q.spd_r_waldeck = 0;
 Q.uspd_r_waldeck = 0;
@@ -238,8 +236,6 @@ Q.spd_waldeck_elections_vote = (Q.spd_waldeck_elections_vote != undefined ? pars
 Q.hb_r_waldeck = (Q.hb_r_waldeck != undefined ? parseFloat(Q.hb_r_waldeck.toFixed(1)) : 0);
 Q.spd_r_waldeck = (Q.spd_r_waldeck != undefined ? parseFloat(Q.spd_r_waldeck.toFixed(1)) : 0);
 
-Q['change_' + party + '_r_waldeck'] = Q[party + '_r_waldeck'] - Q['old_' + party + '_r_waldeck'];
-
 !}
 on-display: {!
 data = [{
@@ -395,8 +391,6 @@ Worker Coalition (<span style="color: [+ spd_colour +];">**SPD**</span>[? if usp
 Social Liberal Coalition (<span style="color: [+ spd_colour +];">**SPD**</span>[? if hb_r_waldeck: + <span style="color: #CB7F00;">**Craftsmen**</span>?] + [? if not lvp_formed: <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]): [+ social_liberal_coalition_waldeck +]%
 
 Right-Wing Coalition (<span style="color: #006400;">**LB**</span> + <span style="color: [+ dnvp_colour +];">**DNVP**</span> + [? if not lvp_formed: <span style="color: [+ dvp_colour +];">**DVP**</span>?][? if lvp_formed: <span style="color: #FFCC00;">**LVP**</span>?]): [+ right_coalition_waldeck +]%
-
-Test: SPD change: [+ change_spd_r_waldeck +]
 
 @waldeck_coalition_menu
 
