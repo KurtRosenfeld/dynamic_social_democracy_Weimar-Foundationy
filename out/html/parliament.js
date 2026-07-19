@@ -304,7 +304,7 @@ baden: {
           },
           {
             id: 'uspd', legend: 'USPD', name: 'USPD',
-            qualityKey: 'uspd_r_bavaria',
+            qualityKey: 'uspd_r_baden',
             condition: function(Q) { return Q.uspd_r_baden; }
           },
           {
@@ -626,7 +626,7 @@ baden: {
           {
             id: 'bl', legend: 'rWV', name: 'rWV', 
             qualityKey: 'rwv_r_waldeck',
-            condition: function(Q) { return Q.rwv_spd_r_waldeck; }
+            condition: function(Q) { return Q.rwv_r_waldeck; }
           },
           {
             id: 'ddp',
