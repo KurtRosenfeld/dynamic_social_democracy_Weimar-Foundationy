@@ -486,7 +486,7 @@ Q.waldeck_seats = 21; //Waldeck
 Q.spd_r_waldeck = 0.33;
 Q.dnvp_r_waldeck = 0.29;
 Q.ddp_r_waldeck = 0.19;
-Q.wv_r_waldeck = 0.14;
+Q.rwv_r_waldeck = 0.14;
 Q.dvp_r_waldeck = 0.05; Q.waldeck_dvp = 1;
 Q.meck_stre_seats = 36; // Mecklenburg-Strelitz 
 Q.spd_r_meck_stre = 0.44; Q.meck_stre_spd = 1;
