@@ -518,7 +518,7 @@ on-arrival: meck_schwe_election_2_trigger_time = time + 48; dvp_relation += 2; d
 
 @bourgeois_coalition_meck_schwe
 title: A bourgeois coalition must be formed
-choose-if: bourgeois_coalition_meck_schwe >= 50 if ideology == "left" else true_bourgeois_coalition_meck_schwe >= 50
+choose-if: (bourgeois_coalition_meck_schwe >= 50 and ideology == "left") or true_bourgeois_coalition_meck_schwe >= 50
 view-if: social_liberal_coalition_meck_schwe < 50 and right_coalition_meck_schwe < 50
 on-arrival: meck_schwe_election_2_trigger_time = time + 48; meck_schwe_gov = "Bourgeois"; meck_schwe_ddp = 1; meck_schwe_dvp = 1; meck_schwe_wp = 1; meck_schwe_true_other = 1; meck_schwe_kvp = 1; meck_schwe_dnvp = 2 if ideology == "left"
 
