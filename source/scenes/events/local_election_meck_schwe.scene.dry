@@ -538,7 +538,7 @@ title: The DNVP and DVP are tolerated by the DVFP?
 subtitle: WTF!!!!!!!!!!!!!!!!!!
 choose-if: right_coalition_meck_schwe >= 50
 view-if: right_coalition_meck_schwe >= 50
-on-arrival: meck_schwe_election_2_trigger_time = time + 48; rural_nsdap += 1; dvp_relation -= 3; meck_schwe_gov = "Right"; meck_schwe_dnvp = 1; meck_schwe_dvp; = 1; meck_schwe_dvfp = 2; meck_schwe_nsdap = 2 if nasdap_r_meck_schwe; meck_schwe_wp = 1 if ((nsdap_r_meck_schwe + dvfp_r_meck_schwe + dnvp_r_meck_schwe + dvp_r_meck_schwe) < 50); meck_schwe_true_other = 2  if ((nsdap_r_meck_schwe + dvfp_r_meck_schwe + dnvp_r_meck_schwe + dvp_r_meck_schwe + wp_r_meck_schwe) < 50) 
+on-arrival: meck_schwe_election_2_trigger_time = time + 48; rural_nsdap += 1; dvp_relation -= 3; meck_schwe_gov = "Right"; meck_schwe_dnvp = 1; meck_schwe_dvp = 1; meck_schwe_dvfp = 2; meck_schwe_nsdap = 2 if nsdap_r_meck_schwe; meck_schwe_wp = 1 if ((nsdap_r_meck_schwe + dvfp_r_meck_schwe + dnvp_r_meck_schwe + dvp_r_meck_schwe) < 50); meck_schwe_true_other = 2  if ((nsdap_r_meck_schwe + dvfp_r_meck_schwe + dnvp_r_meck_schwe + dvp_r_meck_schwe + wp_r_meck_schwe) < 50) 
 
 This can't end well...
 
