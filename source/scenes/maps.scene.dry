@@ -728,19 +728,34 @@ The current territorial state of the German Reich (Weimar Republic)
 @provinces_political 
 go-to: map_menu
 
-[? if kpd_relation >= 25: <div class="box" style='background-color:#8E0000'> </div> Left Coalition ?]
-<div class="box" style='background-color:#A51E5A'> </div> Social-Democratic Coalition
-<div class="box" style='background-color:#c10000'> </div> SPD-only
-[? if year >= 1929: <div class="box" style='background-color:#6C168E'> </div> Popular Front Coalition ?]
-<div class="box" style='background-color:#FC6D6D'> </div> Weimar Coalition
-[? if bavaria_gov == "Anti-BVP" or bavaria_gov == "Traffic": <div class="box" style='background-color:#DD6F9C'> </div> Bavaria Coaliation including the SPD ?]
-<div class="box" style='background-color:#5E405A'> </div> Social-Catholic Coalition
-<div class="box" style='background-color:#DD8D1B'> </div> Social-Liberal Coalition (including DVP)
-<div class="box" style='background-color:#A2B725'> </div> Grand Coalition
-<div class="box" style='background-color:#818181'> </div> Bourgeois Coalition
-[? if bavaria_gov == "BVP": <div class="box" style='background-color:#11EDEA'> </div> BVP-only ?]
-<div class="box" style='background-color:#0F4989'> </div> Bourgeois Right Coalition
-[? if nsdap_votes >= 25: <div class="box" style='background-color:#563129'> </div> Far-Right Coalition ?]
+{!<table>!} 
+[? if kpd_relation >= 25: {!<tr><td><div class="box" style='background-color:#8E0000'> </div> Left Coalition {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#A51E5A'> </div> Social-Democratic Coalition {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#c10000'> </div> SPD-only {!</td></tr>!}
+
+[? if year >= 1929: {!<tr><td><div class="box" style='background-color:#6C168E'> </div> Popular Front Coalition {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#FC6D6D'> </div> Weimar Coalition {!</td></tr>!}
+
+[? if bavaria_gov == "Anti-BVP" or bavaria_gov == "Traffic": {!<tr><td><div class="box" style='background-color:#DD6F9C'> </div> Bavaria Coaliation including the SPD {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#5E405A'> </div> Social-Catholic Coalition {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#DD8D1B'> </div> Social-Liberal Coalition (including DVP) {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#A2B725'> </div> Grand Coalition {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#818181'> </div> Bourgeois Coalition {!</td></tr>!}
+
+[? if bavaria_gov == "BVP": {!<tr><td><div class="box" style='background-color:#11EDEA'> </div> BVP-only {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#0F4989'> </div> Bourgeois Right Coalition {!</td></tr>!}
+
+[? if nsdap_votes >= 22: {!<tr><td><div class="box" style='background-color:#563129'> </div> Far-Right Coalition {!</td></tr>!} ?]
+
+{!</table>!}
 
 <div style="position: relative; display: inline-block;">
 <svg
@@ -893,6 +908,7 @@ style="display:inline;fill:[? if wurttemberg_gov == "Grand": #A2B725 ?][? if wur
     </g>
     <g
        id="g5"
+       class="trigger-group" data-tooltip="hamburg-tooltip"
 style="display:inline;fill:[? if hamburg_gov == "Grand": #A2B725 ?][? if hamburg_gov == "Bourgeois": #818181 ?][? if hamburg_gov == "Weimar": #FC6D6D ?][? if hamburg_gov == "Popular-Front": #6C168E ?][? if hamburg_gov == "SPD": [+ spd_colour +] ?][? if hamburg_gov == "Left": #8E0000 ?][? if hamburg_gov == "Social-Liberal": #DD8D1B ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -907,6 +923,7 @@ style="display:inline;fill:[? if hamburg_gov == "Grand": #A2B725 ?][? if hamburg
     </g>
     <g
        id="g2"
+       class="trigger-group" data-tooltip="thuringia-tooltip"
 style="display:inline;fill:[? if thuringia_gov == "Grand": #A2B725 ?][? if thuringia_gov == "Bourgeois": #818181 ?][? if thuringia_gov == "Bourgeois-Right": #0F4989 ?][? if thuringia_gov == "Weimar": #FC6D6D ?][? if thuringia_gov == "Popular-Front": #6C168E ?][? if thuringia_gov == "SPD": [+ spd_colour +] ?][? if thuringia_gov == "Left": #8E0000 ?][? if thuringia_gov == "Social-Democratic": #A51E5A ?][? if thuringia_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -1003,7 +1020,7 @@ style="display:inline;fill:[? if lippe_gov == "Grand": #A2B725 ?][? if lippe_gov
     </g>
     <g
        id="g73"
-style="display:inline;fill: [? if scheum_lippe_gov == "Grand": #A2B725 ?][? if schaum_lippe_gov == "Bourgeois": #818181 ?][? if schaum_lippe_gov == "Weimar": #FC6D6D ?][? if schaum-lippe_gov == "Popular-Front": #6C168E ?][? if schaum_lippe_gov == "Social-Democratic": #A51E5A ?][? if schaum_lippe_gov == "SPD": [+ spd_colour +] ?][? if schaum_lippe_gov == "Social-Liberal": #DD8D1B ?][? if schaum_lippe_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
+style="display:inline;fill: [? if schaum_lippe_gov == "Grand": #A2B725 ?][? if schaum_lippe_gov == "Bourgeois": #818181 ?][? if schaum_lippe_gov == "Weimar": #FC6D6D ?][? if schaum-lippe_gov == "Popular-Front": #6C168E ?][? if schaum_lippe_gov == "Social-Democratic": #A51E5A ?][? if schaum_lippe_gov == "SPD": [+ spd_colour +] ?][? if schaum_lippe_gov == "Social-Liberal": #DD8D1B ?][? if schaum_lippe_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
          d="m 87.293183,115.08934 1.323627,-0.19854 0.330907,-1.25744 0.860357,-0.19855 v 0.728 l 0.06618,0.46327 h 0.661814 l 0.661813,-0.728 0.529451,-0.59563 0.132363,-0.79418 -0.132363,-1.12508 v -0.46327 l 0.727995,-0.19854 1.191264,-0.66182 0.661813,-0.39708 -0.529451,-0.728 -0.794176,0.13236 -0.926538,0.52945 -0.99272,0.26473 -0.397088,0.79418 -0.46327,0.59563 -1.058901,0.13236 -0.860358,0.66181 -0.264725,0.33091 -0.727995,0.26473 -0.132362,0.46326 -0.529451,0.66182 z"
@@ -1034,6 +1051,7 @@ style="display:inline;fill:[? if brunswick_gov == "Grand": #A2B725 ?][? if bruns
     </g>
     <g
        id="g8"
+       class="trigger-group" data-tooltip="bremen-tooltip"
 style="display:inline;fill:[? if bremen_gov == "Grand": #A2B725 ?][? if bremen_gov == "Bourgeois": #818181 ?][? if bremen_gov == "Popular-Front": #6C168E ?][? if bremen_gov == "Weimar": #FC6D6D ?][? if bremen_gov == "Social-Democratic": #A51E5A ?][? if bremen_gov == "SPD": [+ spd_colour +] ?][? if bremen_gov == "Left": #8E0000 ?][? if bremen_gov == "Social-Liberal": #DD8D1B ?][? if bremen_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -1186,9 +1204,10 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
 [? if ddp_r_waldeck:     <p>DDP: [+ waldeck_ddp : government +]</p>  ?]
 [? if hb_r_waldeck:     <p>Craftsmen: [+ waldeck_hb : government +]</p>  ?]
 [? if wv_r_waldeck:     <p>WV: [+ waldeck_wv : government +]</p>  ?]
-[? if dvp_r_waldeck:     <p>DVP: [+ waldeck_dvp : government +]</p>  ?]
-[? if dnvp_r_waldeck:     <p>DNVP: [+ waldeck_dnvp : government +]</p>  ?]
-[? if other_r_waldeck:     <p>LB: [+ waldeck_lb : government +]</p>  ?]
+[? if rwv_r_waldeck:     <p>Locals: [+ waldeck_wv : government +]</p>  ?]
+[? if dvp_r_waldeck or rl_r_waldeck:     <p>DVP: [+ waldeck_dvp : government +]</p>  ?]
+[? if dnvp_r_waldeck or rl_r_waldeck:     <p>DNVP: [+ waldeck_dnvp : government +]</p>  ?]
+[? if other_r_waldeck or rl_r_waldeck:     <p>LB: [+ waldeck_lb : government +]</p>  ?]
   </div>
   <div id="bavaria-tooltip" class="tooltip-group">
     <strong style="display: block; text-align: center;">Bavaria Politics</strong>
@@ -1333,6 +1352,34 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
 [? if nsfb_r_saxony:     <p>NSFB: [+ saxony_nsfb : government +]</p>  ?]
 [? if nsdap_r_saxony:     <p>NSDAP: [+ saxony_nsdap : government +]</p>  ?]
 </div>
+<div id="thuringia-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Thuringia Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ thuringia_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="thuringia" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ thuringia_spd : government +]</p>
+</div>
+<div id="hamburg-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Hamburg Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ hamburg_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="hamburg" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ hamburg_spd : government +]</p>
+</div>
+<div id="bremen-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Bremen Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ bremen_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="bremen" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ bremen_spd : government +]</p>
+</div>
+
 
 </div>
 
