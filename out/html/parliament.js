@@ -603,6 +603,317 @@ baden: {
           }
         ]
       },
+
+      thuringia: {
+        totalSeatsKey: 'thuringia_seats',
+        conditionalParties: [
+          {
+            id: 'kpd', legend: 'KPD', name: 'KPD', 
+            qualityKey: 'kpd_r_thuringia',
+            condition: function(Q) { return Q.kpd_r_thuringia; }
+          },
+          {
+            id: 'sapd', legend: 'SAPD', name: 'SAPD', 
+            qualityKey: 'sapd_r_thuringia',
+            condition: function(Q) { return Q.sapd_formed && Q.sapd_r_thuringia; }
+          },
+          {
+            id: 'uspd', legend: 'USPD', name: 'USPD',
+            qualityKey: 'uspd_r_thuringia',
+            condition: function(Q) { return Q.uspd_r_thuringia; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_thuringia',
+            condition: function(Q) { return Q.spd_r_thuringia; }
+          },
+          {
+            id: 'aspd', legend: 'ASPD', name: 'ASPD', 
+            qualityKey: 'aspd_r_thuringia',
+            condition: function(Q) { return Q.aspd_r_thuringia; }
+          },
+          {
+            id: 'ddp', 
+            legend: function(Q) { return Q.ddp_name; },
+            name: function(Q) { return Q.ddp_name; },
+            qualityKey: 'ddp_r_thuringia',
+            condition: function(Q) { return Q.ddp_r_thuringia && !Q.lvp_formed; }
+          },
+          {
+            id: 'lvp', legend: 'LVP', name: 'LVP',
+            qualityKey: 'lvp_r_thuringia',
+            condition: function(Q) { return Q.lvp_r_thuringia && Q.lvp_formed; }
+          },
+          {
+            id: 'z', legend: 'Z', name: 'Z',
+            qualityKey: 'z_r_thuringia',
+            condition: function(Q) { return Q.z_r_thuringia; }
+          },
+          {
+            id: 'other', legend: 'Other', name: 'Others',
+            qualityKey: 'true_other_r_thuringia',
+            condition: function(Q) { return Q.true_other_r_thuringia; }
+          },
+          {
+            id: 'dvp', legend: 'DVP', name: 'DVP',
+            qualityKey: 'dvp_r_thuringia',
+            condition: function(Q) { return Q.dvp_r_thuringia && !Q.lvp_formed && Q.dvp_exist; }
+          },
+          {
+            id: 'wp', legend: 'WP', name: 'WP',
+            qualityKey: 'wp_r_thuringia',
+            condition: function(Q) { return Q.wp_r_thuringia; }
+          },
+          {
+            id: 'vrp', legend: 'VRP', name: 'VRP',
+            qualityKey: 'vrp_r_thuringia',
+            condition: function(Q) { return Q.vrp_r_thuringia; }
+          },
+          {
+            id: 'csvd', legend: 'CSVD', name: 'CSVD',
+            qualityKey: 'csvd_r_thuringia',
+            condition: function(Q) { return Q.csvd_exists && Q.csvd_r_thuringia; }
+          },
+          {
+            id: 'kvp', legend: 'KVP', name: 'KVP',
+            qualityKey: 'kvp_r_thuringia',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_thuringia; }
+          },
+          {
+            id: 'farm4', legend: 'Farmers', name: 'Farmers',
+            qualityKey: 'farm_r_thuringia',
+            condition: function(Q) { return Q.farm_r_thuringia; }
+          },
+          {
+            id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
+            qualityKey: 'dnvp_r_thuringia',
+            condition: function(Q) { return Q.dnvp_r_thuringia; }
+          },
+          {
+            id: 'dnf', legend: 'DNF', name: 'DNF',
+            qualityKey: 'dnf_r_thuringia',
+            condition: function(Q) { return Q.dnf_formed && Q.dnf_r_thuringia; }
+          },
+          {
+            id: 'dvfp', legend: 'DVFP', name: 'DVFP', 
+            qualityKey: 'dvfp_r_thuringia',
+            condition: function(Q) { return Q.dvfp_r_thuringia; }
+          },
+          {
+            id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
+            qualityKey: 'nsfb_r_thuringia',
+            condition: function(Q) { return Q.nsfb_r_thuringia; }
+          },
+          {
+            id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
+            qualityKey: 'nsdap_r_thuringia',
+            condition: function(Q) { return Q.nsdap_r_thuringia; }
+          }
+        ]
+      },
+
+
+       hamburg: {
+        totalSeatsKey: 'hamburg_seats',
+        conditionalParties: [
+          {
+            id: 'kpd', legend: 'KPD', name: 'KPD', 
+            qualityKey: 'kpd_r_hamburg',
+            condition: function(Q) { return Q.kpd_r_hamburg; }
+          },
+          {
+            id: 'sapd', legend: 'SAPD', name: 'SAPD', 
+            qualityKey: 'sapd_r_hamburg',
+            condition: function(Q) { return Q.sapd_formed && Q.sapd_r_hamburg; }
+          },
+          {
+            id: 'uspd', legend: 'USPD', name: 'USPD',
+            qualityKey: 'uspd_r_hamburg',
+            condition: function(Q) { return Q.uspd_r_hamburg; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_hamburg',
+            condition: function(Q) { return Q.spd_r_hamburg; }
+          },
+          {
+            id: 'aspd', legend: 'ASPD', name: 'ASPD', 
+            qualityKey: 'aspd_r_hamburg',
+            condition: function(Q) { return Q.aspd_r_hamburg; }
+          },
+          {
+            id: 'ddp', 
+            legend: function(Q) { return Q.ddp_name; },
+            name: function(Q) { return Q.ddp_name; },
+            qualityKey: 'ddp_r_hamburg',
+            condition: function(Q) { return Q.ddp_r_hamburg && !Q.lvp_formed; }
+          },
+          {
+            id: 'lvp', legend: 'LVP', name: 'LVP',
+            qualityKey: 'lvp_r_hamburg',
+            condition: function(Q) { return Q.lvp_r_hamburg && Q.lvp_formed; }
+          },
+          {
+            id: 'other', legend: 'Other', name: 'Others',
+            qualityKey: 'true_other_r_hamburg',
+            condition: function(Q) { return Q.true_other_r_hamburg; }
+          },
+          {
+            id: 'z', legend: 'Z', name: 'Z',
+            qualityKey: 'z_r_hamburg',
+            condition: function(Q) { return Q.z_r_hamburg; }
+          },
+          {
+            id: 'wp', legend: 'WP', name: 'WP',
+            qualityKey: 'wp_r_hamburg',
+            condition: function(Q) { return Q.wp_r_hamburg; }
+          },
+          {
+            id: 'dvp', legend: 'DVP', name: 'DVP',
+            qualityKey: 'dvp_r_hamburg',
+            condition: function(Q) { return Q.dvp_r_hamburg && !Q.lvp_formed && Q.dvp_exist; }
+          },
+          {
+            id: 'csvd', legend: 'CSVD', name: 'CSVD',
+            qualityKey: 'csvd_r_hamburg',
+            condition: function(Q) { return Q.csvd_exists && Q.csvd_r_hamburg; }
+          },
+          {
+            id: 'kvp', legend: 'KVP', name: 'KVP',
+            qualityKey: 'kvp_r_thuringia',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_thuringia; }
+          },
+          {
+            id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
+            qualityKey: 'dnvp_r_hamburg',
+            condition: function(Q) { return Q.dnvp_r_hamburg; }
+          },
+          {
+            id: 'vrp', legend: 'VRP', name: 'VRP',
+            qualityKey: 'vrp_r_hamburg',
+            condition: function(Q) { return Q.vrp_r_hamburg; }
+          },
+          {
+            id: 'dnf', legend: 'DNF', name: 'DNF',
+            qualityKey: 'dnf_r_hamburg',
+            condition: function(Q) { return Q.dnf_formed && Q.dnf_r_hamburg; }
+          },
+          {
+            id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
+            qualityKey: 'nsfb_r_hamburg',
+            condition: function(Q) { return Q.nsfb_r_hamburg; }
+          },
+          {
+            id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
+            qualityKey: 'nsdap_r_hamburg',
+            condition: function(Q) { return Q.nsdap_r_hamburg; }
+          }
+        ]
+      },
+
+      
+       bremen: {
+        totalSeatsKey: 'bremen_seats',
+        conditionalParties: [
+          {
+            id: 'kpd', legend: 'KPD', name: 'KPD', 
+            qualityKey: 'kpd_r_bremen',
+            condition: function(Q) { return Q.kpd_r_bremen; }
+          },
+          {
+            id: 'sapd', legend: 'SAPD', name: 'SAPD', 
+            qualityKey: 'sapd_r_bremen',
+            condition: function(Q) { return Q.sapd_formed && Q.sapd_r_bremen; }
+          },
+          {
+            id: 'uspd', legend: 'USPD', name: 'USPD',
+            qualityKey: 'uspd_r_bremen',
+            condition: function(Q) { return Q.uspd_r_bremen; }
+          },
+          {
+            id: 'spd', legend: 'SPD', name: 'SPD', 
+            qualityKey: 'spd_r_bremen',
+            condition: function(Q) { return Q.spd_r_bremen; }
+          },
+          {
+            id: 'aspd', legend: 'ASPD', name: 'ASPD', 
+            qualityKey: 'aspd_r_bremen',
+            condition: function(Q) { return Q.aspd_r_bremen; }
+          },
+          {
+            id: 'ddp', 
+            legend: function(Q) { return Q.ddp_name; },
+            name: function(Q) { return Q.ddp_name; },
+            qualityKey: 'ddp_r_bremen',
+            condition: function(Q) { return Q.ddp_r_bremen && !Q.lvp_formed; }
+          },
+          {
+            id: 'lvp', legend: 'LVP', name: 'LVP',
+            qualityKey: 'lvp_r_bremen',
+            condition: function(Q) { return Q.lvp_r_bremen && Q.lvp_formed; }
+          },
+          {
+            id: 'z', legend: 'Z', name: 'Z',
+            qualityKey: 'z_r_bremen',
+            condition: function(Q) { return Q.z_r_bremen; }
+          },
+          {
+            id: 'hb', legend: 'HB', name: 'HB',
+            qualityKey: 'hb_r_bremen',
+            condition: function(Q) { return Q.hb_r_bremen; }
+          },
+          {
+            id: 'other', legend: 'Other', name: 'Others',
+            qualityKey: 'true_other_r_bremen',
+            condition: function(Q) { return Q.true_other_r_bremen; }
+          },
+          {
+            id: 'wp', legend: 'WP', name: 'WP',
+            qualityKey: 'wp_r_bremen',
+            condition: function(Q) { return Q.wp_r_bremen; }
+          },
+          {
+            id: 'dvp', legend: 'DVP', name: 'DVP',
+            qualityKey: 'dvp_r_bremen',
+            condition: function(Q) { return Q.dvp_r_bremen && !Q.lvp_formed && Q.dvp_exist; }
+          },
+          {
+            id: 'csvd', legend: 'CSVD', name: 'CSVD',
+            qualityKey: 'csvd_r_bremen',
+            condition: function(Q) { return Q.csvd_exists && Q.csvd_r_bremen }
+          },
+          {
+            id: 'vrp', legend: 'VRP', name: 'VRP',
+            qualityKey: 'vrp_r_bremen',
+            condition: function(Q) { return Q.vrp_r_bremen; }
+          },
+          {
+            id: 'kvp', legend: 'KVP', name: 'KVP',
+            qualityKey: 'kvp_r_bremen',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_bremen; }
+          },
+          {
+            id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
+            qualityKey: 'dnvp_r_bremen',
+            condition: function(Q) { return Q.dnvp_r_bremen; }
+          },
+          {
+            id: 'dnf', legend: 'DNF', name: 'DNF',
+            qualityKey: 'dnf_r_bremen',
+            condition: function(Q) { return Q.dnf_formed && Q.dnf_r_bremen; }
+          },
+          {
+            id: 'nsfb', legend: 'NSFB', name: 'NSFB', 
+            qualityKey: 'nsfb_r_bremen',
+            condition: function(Q) { return Q.nsfb_r_bremen; }
+          },
+          {
+            id: 'nsdap', legend: 'NSDAP', name: 'NSDAP', 
+            qualityKey: 'nsdap_r_bremen',
+            condition: function(Q) { return Q.nsdap_r_bremen; }
+          }
+        ]
+      },
          
       
       waldeck: {
