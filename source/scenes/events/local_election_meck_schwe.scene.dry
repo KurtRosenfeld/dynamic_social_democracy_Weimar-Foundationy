@@ -2,7 +2,7 @@ title: Mecklenburg-Schwerin Landtag Election
 view-if: (year == 1924 and month == 2 and not meck_schwe_election_seen) or (meck_schwe_election_2_trigger_time == time and meck_schwe_election_seen_time != time)
 new-page: true
 tags: event
-on-arrival: meck_schwe_election_seen += 1 if meck_schwe_election_seen; meck_schwe_election_seen = 1 if not meck_schwe_election_seen; meck_schwe_election_seen_time = time; meck_schwe_seats = 62
+on-arrival: meck_schwe_election_seen += 1 if meck_schwe_election_seen; meck_schwe_election_seen = 1 if not meck_schwe_election_seen; meck_schwe_election_seen_time = time; meck_schwe_seats = 62; meck_stre_spd = 0; meck_stre_kpd = 0; meck_stre_sapd = 0; meck_stre_uspd = 0; meck_stre_ddp = 0; meck_stre_kvp = 0; meck_stre_true_others = 0; meck_stre_wp = 0; meck_stre_lvp = 0
 priority: 2
 on-display: {!  
     var cardEl = document.createElement('div');  
@@ -509,6 +509,8 @@ Right-Wing Coalition (<span style="color: [+ dnvp_colour +];">**DNVP**</span> + 
 - @left_coalition_meck_schwe
 - @spd_majority_meck_schwe
 - @right_wing_coalition_meck_schwe
+- @meck_schwe_coalition_creator_option
+- @meck_schwe_get_toleration
 - @no_coalition_meck_schwe
 
 @social_liberal_coalition_meck_schwe
@@ -547,6 +549,283 @@ title: There is no possible government arrangement
 subtitle: New elections will be called...
 on-arrival: meck_schwe_election_2_trigger_time = time + 3; new_middle_dnvp += 1
 view-if: social_liberal_coalition_meck_schwe < 50 and right_coalition_meck_schwe < 50 and right_coalition_meck_schwe < 50
+
+
+
+@meck_schwe_coalition_creator_option
+title: Custom Coalition Creator (Test)
+subtitle: Dear Test Players, if you see this, please tell me what you think
+on-arrival: meck_schwe_coalition_r = spd_r_meck_schwe; meck_schwe_spd = 1
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_coalition_creator
+title: Coalition Creator
+
+Current support: [+ meck_schwe_coalition_r +]%
+
+- @meck_schwe_invite_kpd: Invite the <span style="color: [+ kpd_colour +];">**KPD**</span>
+- @meck_schwe_invite_sapd: Invite the <span style="color: [+ sapd_colour +];">**SAPD**</span>
+- @meck_schwe_invite_uspd: Invite the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @meck_schwe_invite_ddp: Invite the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @meck_schwe_invite_lvp: Invite the <span style="color: [+ lvp_colour +];">**LVP**</span>
+- @meck_schwe_invite_others: Invite the <span style="color: [+ i_colour +];">**Others**</span>
+- @meck_schwe_invite_dvp: Invite the <span style="color: [+ dvp_colour +];">**DVP**</span>
+- @meck_schwe_invite_kvp: Invite the <span style="color: [+ kvp_colour +];">**KVP**</span>
+- @meck_schwe_invite_wp: Invite the <span style="color: #b8996f;">**WP**</span>
+- @meck_schwe_invite_dnvp: Invite the <span style="color: [+ dnvp_colour +];">**DNVP**</span>
+- @meck_schwe_check_out: Check out.
+- @meck_schwe_drop_kpd: Drop the <span style="color: [+ kpd_colour +];">**KPD**</span>
+- @meck_schwe_drop_sapd: Drop the <span style="color: [+ sapd_colour +];">**SAPD**</span>
+- @meck_schwe_drop_uspd: Drop the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @meck_schwe_drop_ddp: Drop the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @meck_schwe_drop_lvp: Drop the <span style="color: [+ lvp_colour +];">**LVP**</span>
+- @meck_schwe_drop_others: Drop the <span style="color: [+ other_colour +];">**Others**</span>
+- @meck_schwe_drop_dvp: Drop the <span style="color: [+ dvp_colour +];">**DVP**</span>
+- @meck_schwe_drop_kvp: Drop the <span style="color: [+ kvp_colour +];">**KVP**</span>
+- @meck_schwe_drop_wp: Drop the <span style="color: #b8996f;">**WP**</span>
+- @meck_schwe_call_new_election: We need new elections
+- @return_to_meck_schwe: Return
+
+
+@meck_schwe_invite_kpd
+view-if: kpd_r_meck_schwe > 0 and not meck_schwe_kpd == 1
+choose-if: kpd_relation >= 40 and meck_schwe_dvp == 0 and meck_schwe_wp == 0 and (not meck_schwe_z == 1 or z_leader == "Joos" or z_leader == "Kaiser")
+subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> will demand radical policies.
+unavailable-subtitle: [? if  kpd_relation < 40: We need better relations. ?][? if not meck_schwe_dvp == 0: They are not really pleased about our partners. ?]
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + kpd_r_meck_schwe; meck_schwe_kpd = 1
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_invite_sapd
+view-if: sapd_r_meck_schwe > 0 and not meck_schwe_sapd == 1
+choose-if: sapd_relation >= 40 and meck_schwe_dvp == 0 and meck_schwe_wp == 0 and (not meck_schwe_z == 1 or z_leader == "Joos" or z_leader == "Kaiser")
+subtitle: The <span style="color: [+ sapd_colour +];">**SAPD**</span> will demand radical policies.
+unavailable-subtitle: [? if  sapd_relation < 40: We need better relations. ?][? if not meck_schwe_dvp == 0: They are not really pleased about our partners. ?]
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + sapd_r_meck_schwe; meck_schwe_sapd = 1
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_invite_uspd
+view-if: uspd_r_meck_schwe > 0 and not meck_schwe_uspd == 1
+choose-if: uspd_relation >= 35 and meck_schwe_wp == 0 and (not meck_schwe_z == 1 or z_leader == "Joos" or z_leader == "Kaiser" or uspd_ideology == "Orthodox Marxism")
+subtitle: [? if not uspd_ideology == "Orthodox Marxism": The <span style="color: [+ uspd_colour +];">**USPD**</span> will demand radical policies. ?][? if uspd_ideology == "Orthodox Marxism": Center Marxists are flexible. ?]
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + uspd_r_meck_schwe; meck_schwe_uspd = 1
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_invite_ddp
+view-if: ddp_r_meck_schwe > 0 and not meck_schwe_ddp == 1
+choose-if: ddp_relation >= 20 and (not meck_schwe_kpd == 1 or kpd_leader == "Conciliators")
+subtitle: [? if ddp_relation >= 65: The <span style="color: [+ ddp_colour +];">**DDP**</span> loves you! ?][? if ddp_relation < 65: The <span style="color: [+ ddp_colour +];">**DDP**</span> is sort of flexible ?]
+unavailable-subtitle: Not even the <span style="color: [+ ddp_colour +];">**DDP**</span> considers a coalition with you.
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + ddp_r_meck_schwe; meck_schwe_ddp = 1
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_invite_lvp
+view-if: lvp_r_meck_schwe > 0 and not meck_schwe_lvp == 1
+choose-if: lvp_relation >= 25 and (not meck_schwe_kpd == 1 or kpd_leader == "Conciliators")
+subtitle: [? if lvp_relation >= 70: The <span style="color: [+ lvp_colour +];">**LVP**</span> loves you! ?]
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + lvp_r_meck_schwe; meck_schwe_lvp = 1
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_invite_dvp
+view-if: dvp_r_meck_schwe > 0 and not meck_schwe_dvp == 1
+choose-if: dvp_relation >= 25 and meck_schwe_kpd == 0 and meck_schwe_sapd == 0
+subtitle: The <span style="color: [+ dvp_colour +];">**DVP**</span> demands tax cuts.
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + dvp_r_meck_schwe; meck_schwe_dvp = 1
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_invite_kvp
+view-if: kvp_r_meck_schwe > 0 and not meck_schwe_kvp == 1
+choose-if: kvp_relation >= 65 and meck_schwe_kpd == 0 and meck_schwe_sapd == 0
+subtitle: The <span style="color: [+ kvp_colour +];">**KVP**</span> demands opposition to progressive policies.
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + kvp_r_meck_schwe; meck_schwe_kvp = 1
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_invite_others
+view-if: true_other_r_meck_schwe > 0 and not meck_schwe_true_others == 1
+choose-if: ddp_relation >= 70 and dvp_relation >= 70
+subtitle: The <span style="color: [+ i_colour +];">**Others**</span> are quite conservative.
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + true_other_r_meck_schwe; meck_schwe_true_others = 1
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_invite_wp
+view-if: wp_r_meck_schwe > 0 and not meck_schwe_wp == 1
+choose-if: dvp_relation >= 85 and meck_schwe_kpd == 0 and meck_schwe_sapd == 0 and meck_schwe_uspd == 0
+subtitle: The <span style="color: #b8996f;">**WP**</span> is a little conservative and will demand tax cuts.
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + wp_r_meck_schwe; meck_schwe_wp = 1
+go-to: meck_schwe_coalition_creator
+
+Why did you do this?
+
+@meck_schwe_invite_dnvp
+view-if: dnvp_r_meck_schwe > 0
+choose-if: dnvp_relation >= 900
+subtitle: This won't happen.
+go-to: meck_schwe_coalition_creator
+
+Why are you so desperate?
+
+@meck_schwe_check_out
+choose-if: meck_schwe_coalition_r >= 50
+subtitle: We can form a coalition!
+unavailable-subtitle: We need more partners
+on-arrival: meck_schwe_gov = "Grand" if meck_schwe_spd == 1 and meck_schwe_wp == 1 and meck_schwe_dvp == 1; meck_schwe_gov = "Left" if meck_schwe_spd == 1 and meck_schwe_kpd == 1; meck_schwe_gov = "Popular-Front" if meck_schwe_spd == 1 and meck_schwe_z == 1 and meck_schwe_kpd == 1; meck_schwe_gov = "Social-Democratic" if meck_schwe_uspd == 1 and not meck_schwe_kpd == 1 and not meck_schwe_z == 1; meck_schwe_gov = "Social-Liberal" if (meck_schwe_ddp == 1 or meck_schwe_lvp == 1) and not meck_schwe_z == 1 and meck_schwe_spd == 1; meck_schwe_gov = "Grand" if meck_schwe_gov == "Bourgeois"  
+
+Congrats you have formed a [+ meck_schwe_gov +] Coalition with [+ meck_schwe_coalition_r +]% parliamentary support!
+
+@meck_schwe_drop_kpd
+view-if: meck_schwe_kpd == 1
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - kpd_r_meck_schwe; meck_schwe_kpd = 0
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_drop_sapd
+view-if: meck_schwe_sapd == 1
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - sapd_r_meck_schwe; meck_schwe_sapd = 0
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_drop_uspd
+view-if: meck_schwe_uspd == 1
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - uspd_r_meck_schwe; meck_schwe_uspd = 0
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_drop_ddp
+view-if: meck_schwe_ddp == 1
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - ddp_r_meck_schwe; meck_schwe_ddp = 0
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_drop_lvp
+view-if: meck_schwe_lvp == 1
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - lvp_r_meck_schwe; meck_schwe_lvp = 0
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_drop_dvp
+view-if: meck_schwe_dvp == 1
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - dvp_r_meck_schwe; meck_schwe_dvp = 0
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_drop_kvp
+view-if: meck_schwe_kvp == 1
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - kvp_r_meck_schwe; meck_schwe_kvp = 0
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_drop_others
+view-if: meck_schwe_true_others == 1
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - true_other_r_meck_schwe; meck_schwe_true_others = 0
+go-to: meck_schwe_coalition_creator
+
+@meck_schwe_drop_wp
+view-if: meck_schwe_wp == 1
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - wp_r_meck_schwe; meck_schwe_wp = 0
+go-to: meck_schwe_coalition_creator
+
+It is better that way.
+
+@meck_schwe_call_new_election
+view-if: true_bourgeois_coalition_meck_schwe < 50
+on-arrival: meck_schwe_election_2_trigger_time = time + 3; rural_dnvp += 2; rural_spd -= 1; meck_schwe_spd = 0
+
+@return_to_meck_schwe
+on-arrival: meck_schwe_spd = 0; meck_schwe_kpd = 0; meck_schwe_sapd = 0; meck_schwe_uspd = 0; meck_schwe_ddp = 0; meck_schwe_lvp = 0; meck_schwe_dvp = 0; meck_schwe_kvp = 0; meck_schwe_true_others = 0; meck_schwe_wp = 0
+go-to: meck_schwe_coalition_menu
+
+@meck_schwe_toleration_option
+title: Reach a toleration agreement
+
+- @meck_schwe_tolerate_bourgeois: Tolerate a moderate bourgeois government
+- @meck_schwe_get_toleration: Get other parties to tolerate us
+
+@meck_schwe_tolerate_bourgeois
+on-arrival: meck_schwe_gov = "Bourgeois"; meck_schwe_spd = 2; meck_schwe_ddp = 1; meck_schwe_dvp = 1; meck_schwe_true_others = 2; meck_schwe_wp = 2; meck_schwe_lvp = 1; unemployed_spd -= 2; rural_spd -= 1; meck_schwe_election_2_trigger_time = time + 25
+
+@meck_schwe_get_toleration
+on-arrival: meck_schwe_coalition_r = spd_r_meck_schwe; meck_schwe_spd = 1; meck_schwe_election_2_trigger_time = time + 29
+go-to: meck_schwe_toleration_menu
+
+If you rely on too many parties you won't be able to maintain your government for that long.
+
+@meck_schwe_toleration_menu
+title: Toleration Menu
+
+Current support: [+ meck_schwe_coalition_r +]%
+
+- @meck_schwe_beg_kpd: Ask the <span style="color: [+ kpd_colour +];">**KPD**</span>
+- @meck_schwe_beg_sapd: Ask the <span style="color: [+ sapd_colour +];">**SAPD**</span>
+- @meck_schwe_beg_uspd: Ask the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @meck_schwe_beg_ddp: Ask the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @meck_schwe_beg_lvp: Ask the <span style="color: [+ lvp_colour +];">**LVP**</span>
+- @meck_schwe_check_out_toleration: Check out.
+- @meck_schwe_fuck_kpd: Drop the <span style="color: [+ kpd_colour +];">**KPD**</span>
+- @meck_schwe_fuck_sapd: Drop the <span style="color: [+ sapd_colour +];">**SAPD**</span>
+- @meck_schwe_fuck_uspd: Drop the <span style="color: [+ uspd_colour +];">**USPD**</span>
+- @meck_schwe_fuck_ddp: Drop the <span style="color: [+ ddp_colour +];">**DDP**</span>
+- @meck_schwe_fuck_lvp: Drop the <span style="color: [+ lvp_colour +];">**LVP**</span>
+- @return_to_meck_schwe: Return
+
+@meck_schwe_beg_kpd
+view-if: kpd_r_meck_schwe > 0 and not meck_schwe_kpd == 2
+choose-if: kpd_relation >= 40 or (kpd_relation >= 25 and ideology == "left")
+subtitle: The <span style="color: [+ kpd_colour +];">**KPD**</span> will demand radical policies.
+unavailable-subtitle: [? if  kpd_relation < 40: We need better relations. ?]
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + kpd_r_meck_schwe; meck_schwe_kpd = 2; meck_schwe_election_2_trigger_time -= 5
+go-to: meck_schwe_toleration_menu
+
+@meck_schwe_beg_sapd
+view-if: sapd_r_meck_schwe > 0 and not meck_schwe_sapd == 2
+choose-if: sapd_relation >= 30 or ideology == "left"
+subtitle: The <span style="color: [+ sapd_colour +];">**SAPD**</span> will demand radical policies.
+unavailable-subtitle: [? if  sapd_relation < 35: We need better relations. ?]
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + sapd_r_meck_schwe; meck_schwe_sapd = 2; meck_schwe_election_2_trigger_time -= 3
+go-to: meck_schwe_toleration_menu
+
+@meck_schwe_beg_uspd
+view-if: uspd_r_meck_schwe > 0 and not meck_schwe_uspd == 2
+choose-if: uspd_relation >= 30 or (uspd_relation >= 15 and (uspd_ideology == "Orthodox Marxism" and not ideology == "reformist"))
+subtitle: [? if not uspd_ideology == "Orthodox Marxism": The <span style="color: [+ uspd_colour +];">**USPD**</span> will demand radical policies. ?][? if uspd_ideology == "Orthodox Marxism": Center Marxists are flexible. ?]
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + uspd_r_meck_schwe; meck_schwe_uspd = 2; meck_schwe_election_2_trigger_time -= 1
+go-to: meck_schwe_toleration_menu
+
+@meck_schwe_beg_ddp
+view-if: ddp_r_meck_schwe > 0 and not meck_schwe_ddp == 2
+choose-if: ddp_relation >= 30 or (ddp_relation >= 45 and ideology == "left")
+subtitle: [? if ddp_relation >= 65: The <span style="color: [+ ddp_colour +];">**DDP**</span> loves you! ?]
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + ddp_r_meck_schwe; meck_schwe_ddp = 2; meck_schwe_election_2_trigger_time -= 2
+go-to: meck_schwe_toleration_menu
+
+@meck_schwe_beg_lvp
+view-if: lvp_r_meck_schwe > 0 and not meck_schwe_lvp == 1
+choose-if: lvp_relation >= 45 or (lvp_relation >= 55 and ideology == "left")
+subtitle: [? if lvp_relation >= 75: The <span style="color: [+ lvp_colour +];">**LVP**</span> loves you! ?]
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r + lvp_r_meck_schwe; meck_schwe_lvp = 2; meck_schwe_election_2_trigger_time -= 4
+go-to: meck_schwe_toleration_menu
+
+@meck_schwe_check_out_toleration
+choose-if: meck_schwe_coalition_r >= 50
+subtitle: We can reach an agreement!
+unavailable-subtitle: We need more partners.
+on-arrival: meck_schwe_gov = "SPD"
+
+@meck_schwe_fuck_kpd
+view-if: meck_schwe_kpd == 2
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - kpd_r_meck_schwe; meck_schwe_kpd = 0; meck_schwe_election_2_trigger_time -= 5
+go-to: meck_schwe_toleration_menu
+
+@meck_schwe_fuck_sapd
+view-if: meck_schwe_sapd == 2
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - sapd_r_meck_schwe; meck_schwe_sapd = 0; meck_schwe_election_2_trigger_time -= 3
+go-to: meck_schwe_toleration_menu
+
+@meck_schwe_fuck_uspd
+view-if: meck_schwe_uspd == 2
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - uspd_r_meck_schwe; meck_schwe_uspd = 0; meck_schwe_election_2_trigger_time -= 1
+go-to: meck_schwe_toleration_menu
+
+@meck_schwe_fuck_ddp
+view-if: meck_schwe_ddp == 2
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - ddp_r_meck_schwe; meck_schwe_ddp = 0; meck_schwe_election_2_trigger_time -= 2
+go-to: meck_schwe_toleration_menu
+
+@meck_schwe_fuck_lvp
+view-if: meck_schwe_lvp == 2
+on-arrival: meck_schwe_coalition_r = meck_schwe_coalition_r - lvp_r_meck_schwe; meck_schwe_lvp = 0; meck_schwe_election_2_trigger_time -= 4
+go-to: meck_schwe_toleration_menu
 
 
 
