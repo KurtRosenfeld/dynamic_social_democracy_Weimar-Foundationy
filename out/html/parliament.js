@@ -780,8 +780,8 @@ baden: {
           },
           {
             id: 'kvp', legend: 'KVP', name: 'KVP',
-            qualityKey: 'kvp_r_thuringia',
-            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_thuringia; }
+            qualityKey: 'kvp_r_hamburg',
+            condition: function(Q) { return Q.kvp_formed && Q.kvp_r_hamburg; }
           },
           {
             id: 'dnvp', legend: 'DNVP', name: 'DNVP', 
