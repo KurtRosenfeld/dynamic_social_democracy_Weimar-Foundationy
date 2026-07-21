@@ -733,9 +733,9 @@ go-to: map_menu
 
 {!<tr><td><div class="box" style='background-color:#A51E5A'> </div> Social-Democratic Coalition {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#c10000'> </div> SPD-only {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#c10000'> </div> SPD-only </td></tr>!}
 
-[? if year >= 1929: {!<tr><td><div class="box" style='background-color:#6C168E'> </div> Popular Front Coalition {!</td></tr>!} ?]
+[? if year >= 1929: {!<tr><td><div class="box" style='background-color:#6C168E'> </div> Popular Front Coalition </td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#FC6D6D'> </div> Weimar Coalition {!</td></tr>!}
 
@@ -797,6 +797,7 @@ go-to: map_menu
      style="display:inline">
     <g
        id="g3"
+       class="trigger-group" data-tooltip="prussia-tooltip"
        style="display:inline;fill:[? if in_grand_coalition_prussia: #A2B725 ?][? if in_weimar_coalition_prussia: #FC6D6D ?][? if in_popular_front_coalition_prussia: #6C168E ?][? if in_left_coalition_prussia: #8E0000 ?][? if in_spd_majority_prussia: [+ spd_colour +] ?][? if in_center_right_coalition_prussia: #0F4989 ?][? if in_right_coalition_prussia: #818181 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -853,6 +854,7 @@ style="display:inline;fill:[? if bavaria_gov == "Bourgeois": #818181 ?][? if bav
     </g>
     <g
        id="g68"
+       class="trigger-group" data-tooltip="hesse-tooltip"
 style="display:inline;fill:[? if hesse_gov == "Bourgeois": #818181 ?][? if hesse_gov == "Weimar": #FC6D6D ?][? if hesse_gov == "Popular-Front": #6C168E ?][? if hesse_gov == "SPD": [+ spd_colour +] ?][? if hesse_gov == "Left": #8E0000 ?][? if hesse_gov == "Right": #0F4989 ?];fill-opacity:1;stroke-width:20.0315"
        transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -942,6 +944,7 @@ style="display:inline;fill:[? if thuringia_gov == "Grand": #A2B725 ?][? if thuri
     </g>
     <g
        id="g12"
+       class="trigger-group" data-tooltip="prussia-tooltip"
        style="display:inline;fill:[? if in_grand_coalition_prussia: #A2B725 ?][? if in_weimar_coalition_prussia: #FC6D6D ?][? if in_popular_front_coalition_prussia: #6C168E ?][? if in_left_coalition_prussia: #8E0000 ?][? if in_spd_majority_prussia: [+ spd_colour +] ?][? if in_center_right_coalition_prussia: #0F4989 ?][? if in_right_coalition_prussia: #818181 ?];fill-opacity:1;stroke-width:20.0315"
              transform="matrix(1.4769703,0,0,1.5660186,-13.671779,-6.2030639)">
       <path
@@ -1378,6 +1381,24 @@ style="display:inline;fill:[? if meck_schwe_gov == "Bourgeois": #818181 ?][? if 
   <div class="parliament-chart" data-state="bremen" style="width: 340px; height: 170px;"></div>
 <p>Minister-President: plhl</p>
     <p>SPD: [+ bremen_spd : government +]</p>
+</div>
+<div id="prussia-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Prussia Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag of Prussia
+  </div>
+  <div class="parliament-chart" data-state="prussia" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ spd_prussia : government +]</p>
+</div>
+<div id="hesse-tooltip" class="tooltip-group">
+    <strong style="display: block; text-align: center;">Hesse Politics</strong>
+ <div style="font-size: 0.9em; text-align: center; margin-bottom: 4px;">
+    Landtag (<span class="total-seats">[+ hesse_seats +]</span> seats)
+  </div>
+  <div class="parliament-chart" data-state="hesse" style="width: 340px; height: 170px;"></div>
+<p>Minister-President: plhl</p>
+    <p>SPD: [+ hesse_spd : government +] (this is not true)</p>
 </div>
 
 
