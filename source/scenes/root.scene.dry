@@ -396,7 +396,7 @@ Q.dhp_r = 1.6;
 Q.dbp_r = 1;
 Q.true_other_r = 0;
 Q.reichstag_size = 4.59;
-Q.landtag_size = 4.5;
+Q.landtag_size = 4.28;
 
 // diff from prev
 Q.old_spd_r = 22.4;
@@ -534,7 +534,7 @@ Q.farm_r_bavaria = 0.08; Q.bavaria_farm = 1;
 Q.ddp_r_bavaria = 0.08; Q.bavaria_ddp = 1;
 Q.bvp_r_bavaria = 0.42; Q.bavaria_bvp = 1;
 Q.dnvp_r_bavaria = 0.12; // maybe revert to rl later
-Q.landtag_size = 4.28; // Prussia
+Q.prussia_seats = 428; // Prussia
 Q.prussia_spd = 1;
 Q.prussia_z = 1;
 Q.prussia_ddp = 1;
