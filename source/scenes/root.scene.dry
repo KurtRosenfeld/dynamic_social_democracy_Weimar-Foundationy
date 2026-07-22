@@ -168,6 +168,7 @@ Q.spd_party_leader_1 = "Wels";
 Q.spd_party_leader_2 = "Müller";
 Q.spd_party_leader_3 = "vacant";
 Q.spd_party_leader_n = 2;
+Q.spd_programme = "Görlitz";
 Q.ideology = "reformist";
 Q.editorial_line = "center";
 Q.factional_bias = 20;
