@@ -520,9 +520,9 @@ Q.dnvp_r_thuringia = 0.07;
 Q.hesse_seats = 70; // Hesse
 Q.kpd_r_hesse = 0.03;
 Q.uspd_r_hesse = 0.03;
-Q.spd_r_hesse = 0.34;
-Q.ddp_r_hesse = 0.07;
-Q.z_r_hesse = 0.19;
+Q.spd_r_hesse = 0.34; Q.hesse_spd = 1;
+Q.ddp_r_hesse = 0.07; Q.hesse_ddp = 1;
+Q.z_r_hesse = 0.19; Q.hesse_z = 1;
 Q.farm_r_hesse = 0.16;
 Q.dvp_r_hesse = 0.14;
 Q.dnvp_r_hesse = 0.04;
