@@ -1,5 +1,5 @@
 title: Otto Wels
-is-leader: false
+is-pinned-card: true
 tags: leader
 card-image: img/portraits/WelsOtto.jpg
 view-if: spd_party_leader_1 == "Wels"
