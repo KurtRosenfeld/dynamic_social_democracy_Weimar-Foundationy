@@ -82,7 +82,7 @@ unavailable-subtitle: We will likely need to work with them at some point.
 subtitle: Working with the <span style="color: [+ dvp_colour +];">**DVP**</span> is already unpoplular with our proper base.
 view-if: left_strength >= 10
 choose-if: left_strength > reformist_strength
-on-arrival: good_uspd_vspd_deal = 1
+on-arrival: good_uspd_vspd_deal = 1; spd_party_leader_2 = "Breitscheid"
 go-to: lowest_uspd
 
 We don't know how this will end...
@@ -92,7 +92,7 @@ subtitle: The reformists are outraged!
 view-if: left_strength >= 20
 choose-if: left_strength >= 40 and left_strength > reformist_strength
 unavailable-subtitle: The <span style="color: [+ uspd_colour +];">**USPD**</span> has actually agreed to work with the <span style="color: [+ z_colour +];">**Center**</span> by now.
-on-arrival: second_kpd_essentially = 1; reformist_dissent += 25
+on-arrival: second_kpd_essentially = 1; reformist_dissent += 25; spd_party_leader_2 = "Breitscheid"
 go-to: lowest_uspd
 
 The <span style="color: [+ spd_colour +];">**SPD**</span> will dedicate itself to the proletarian revolution!
@@ -167,7 +167,7 @@ go-to: sign_vspd
 - @kpd_without_moscow: The result of the congress...
 
 @low_vspd
-view-if: new_party_programm == 0 and good_uspd_vspd_deal == 0 and second_kpd_essentially == 0
+view-if: new_party_programm == 0 and good_uspd_vspd_deal == 0 and second_kpd_essentially == 0 and not_bad_vspd_deal == 0
 on-arrival: uspd_relation -= 45; unemployed_uspd -= 13; unemployed_kpd += 11; workers_spd += 2; workers_uspd -= 4; spd_r = old_spd_r + uspd_r*0.9; uspd_r = uspd_r*0.1; uspd_joined = 2; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"; uspd_ideology = "Spartacism"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"; kautsky_in = "SPD"; soc_spd -= 10; rep_uspd -= 50; soc_uspd -= 10
 
 Our new <span style="color: [+ spd_colour +];">**VSPD**</span> is signed into existance. Everyone knows it is more a continuation of the <span style="color: [+ spd_colour +];">**MSPD**</span> than the <span style="color: [+ uspd_colour +];">**USPD**</span> but most can arrannge themselves with the state of how things are.
@@ -185,7 +185,7 @@ Many <span style="color: [+ uspd_colour +];">**USPD**</span> members are relucta
 The promise of adopting a new programm eventually helps a lot with reconciliation, though we have yet to see how our bourgeois allies will react to that.
 
 @good_vspd
-view-if: new_party_programm == 1 and not_bad_vspd_deal == 1
+view-if: not_bad_vspd_deal == 1
 on-arrival: left_strength += 7; center_strength += 10; labor_strength += 6; uspd_joined = 2; uspd_relation -= 25; workers_spd += 5; workers_uspd -= 6; spd_r = old_spd_r + uspd_r*0.96; uspd_r = uspd_r*0.04; unemployed_kpd = unemployed_kpd + unemployed_uspd*0.8; unemployed_uspd = unemployed_uspd*0.2; catholics_spd = catholics_spd + catholics_uspd; catholics_uspd = 0; thuringia_gov = "SPD"; saxony_gov = "SPD"; uspd_leader = "Ledebour"; uspd_ideology = "Spartacism"; rosenfeld_in = "SPD"; levi_in = "SPD"; sender_in = "SPD"; siemsen_in = "SPD"; breitscheid_in = "SPD"; aufhauser_in = "SPD"; crispien_in = "SPD"; hilferding_in = "SPD"; kautsky_in = "SPD"; soc_spd -= 20; rep_spd -= 5; rep_uspd -= 50; soc_uspd -= 10
 
 Our new <span style="color: [+ spd_colour +];">**VSPD**</span> is signed into existance. It seems it is a decent compromise between the <span style="color: [+ spd_colour +];">**MSPD**</span> and the <span style="color: [+ uspd_colour +];">**USPD**</span>. All in all most can settle themselves with the state of things as they are.
