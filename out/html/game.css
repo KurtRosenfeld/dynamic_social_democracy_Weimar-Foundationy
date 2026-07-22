@@ -452,6 +452,7 @@ div.blank-card {
 
 .card-in-hand,
 .pinned-card,
+.leader,
 .deck {
   display: inline-block;
   position: relative;
@@ -687,6 +688,7 @@ img {
 
   .card-in-hand,
   .pinned-card,
+  .leader,
   .deck {
     max-width: 120px;
     margin-right: 1em;
