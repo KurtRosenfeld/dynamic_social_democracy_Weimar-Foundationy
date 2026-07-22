@@ -2021,7 +2021,7 @@ setTimeout(function() {
         var header = document.createElement('div');
         header.style.fontStyle = 'italic';
         header.style.marginBottom = '0.5em';
-        header.textContent = '▼ Leaders';
+        header.textContent = 'Party leaders give minor passive bonusses';
         divider.appendChild(header);
         
         var leadersList = document.createElement('ul');
