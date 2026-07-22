@@ -753,7 +753,9 @@ go-to: map_menu
 
 {!<tr><td><div class="box" style='background-color:#0F4989'> </div> Bourgeois Right Coalition </td></tr>!}
 
-[? if nsdap_votes >= 22: {!<tr><td><div class="box" style='background-color:#563129'> </div> Far-Right Coalition </td></tr>!} ?]
+[? if year >= 1924: {!<tr><td><div class="box" style='background-color:#162D51'> </div> Far-Right Coalition </td></tr>!} ?]
+
+[? if nsdap_votes >= 15: {!<tr><td><div class="box" style='background-color:#563129'> </div> NSDAP-only </td></tr>!} ?]
 
 {!</table>!}
 
