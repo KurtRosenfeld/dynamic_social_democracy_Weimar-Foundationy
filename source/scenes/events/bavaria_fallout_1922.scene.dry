@@ -2,7 +2,7 @@ title: <span style="color: #00CCFF;">Bavaria</span> suspends the <span style="co
 subtitle: What is wrong with those people?!?
 new-page: true
 tags: event
-on-arrival: bavaria_gov = "Right"; catholic_dnvp += 1
+on-arrival: bavaria_gov = "Right"; catholic_dnvp += 1; bavaria_ddp = 0; bavaria_dnvp = 1
 view-if: year = 1922 and month = 7
 max-visits: 1 
 priority: 0
