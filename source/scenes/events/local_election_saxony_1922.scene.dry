@@ -4,7 +4,7 @@ new-page: true
 tags: event
 max-visits: 1
 priority: 2
-on-arrival: unemployed_uspd -= 4; workers_uspd -= 3
+on-arrival: unemployed_uspd -= 4; workers_uspd -= 3; saxony_spd = 0; saxony_uspd = 0; saxony_kpd = 0
 on-display: {!  
     var cardEl = document.createElement('div');  
     cardEl.className = "face-figure2";  
@@ -439,39 +439,39 @@ Right Coalition (<span style="color: [+ dvp_colour +];">**DVP**</span>[? if wp_r
 title: [? if uspd_r_saxony >= 1: A <span style="color: [+ spd_colour +];">**Red**</span>-<span style="color: #A10000;">**Red**</span>-<span style="color: [+ kpd_colour +];">**Red**</span> Coalition?? ?][? if uspd_r_saxony == 0: A new kind of <span style="color: #c00000;">**Red**</span>-<span style="color: #700000;">**Red**</span> Coalition? ?]
 subtitle: We will work alongside the KPD for the first time ever.
 choose-if: left_coalition_saxony >= 50 and kpd_relation >= 35 and uspd_relation >= 30 and ddp_relation <= 50
-on-arrival: saxony_gov = "Left"; ddp_relation -= 8; z_relation -= 10; dvp_relation -= 12; workers_kpd += 5; workers_spd += 1; kpd_relation += 10; uspd_relation += 5
+on-arrival: saxony_gov = "Left"; ddp_relation -= 8; z_relation -= 10; dvp_relation -= 12; workers_kpd += 5; workers_spd += 1; kpd_relation += 10; uspd_relation += 5; saxony_spd = 1; saxony_uspd = 1; saxony_kpd = 1
 
 @social_democratic_coalition_saxony
 title:  Another Social-Democratic Coalition
 subtitle: The KPD will tolerate our coalition.
 choose-if: left_coalition_saxony >= 50 and kpd_relation >= 15 and uspd_relation >= 20
 view-if: uspd_r_saxony > 0
-on-arrival: saxony_gov = "Social-Democratic"; z_relation -= 2; dvp_relation -= 3; workers_uspd += 2; workers_spd += 1; kpd_relation += 1; uspd_relation += 8
+on-arrival: saxony_gov = "Social-Democratic"; z_relation -= 2; dvp_relation -= 3; workers_uspd += 2; workers_spd += 1; kpd_relation += 1; uspd_relation += 8; saxony_spd = 1; saxony_uspd = 1; saxony_kpd = 2
 
 @spd_alone_saxony
 title: An SPD only government?
 subtitle: The KPD will tolerate us.
 choose-if: left_coalition_saxony >= 50 and kpd_relation >= 15
 view-if: uspd_r_saxony = 0
-on-arrival: saxony_gov = "SPD"; workers_spd += 2; kpd_relation += 1
+on-arrival: saxony_gov = "SPD"; workers_spd += 2; kpd_relation += 1; saxony_spd = 1; saxony_kpd = 2
 
 @spd_ddp_coalition_saxony
 title: A Social-Liberal Coalition???
 subtitle: It wouldn't be the first time...
 choose-if: spd_ddp_coalition_saxony >= 50 and ddp_relation >= 65 and (left_coalition_saxony <= 49 or (kpd_relation < 30 and uspd_relation < 45))
-on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 5; ddp_realtion += 10; dvp_relation += 2; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; workers_uspd += 3; wirth_concession += 1
+on-arrival: saxony_gov = "Social-Liberal"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 5; ddp_realtion += 10; dvp_relation += 2; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; workers_uspd += 3; wirth_concession += 1; saxony_spd = 1; saxony_ddp = 1
 
 @weimar_coalition_saxony
 title: A Weimar Coalition in Saxony.
 subtitle: Wirth would surely like this
 view-if: z_r_saxony >= 1
 choose-if: weimar_coalition_saxony >= 50 and ddp_relation >= 60 and (left_coalition_saxony <= 49 or (kpd_relation < 30 and uspd_relation < 45)) and z_relation >= 40
-on-arrival: saxony_gov = "Weimar"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 7; ddp_realtion += 10; dvp_relation += 2; z_relation += 6; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; workers_z += 2; workers_uspd += 3; wirth_concession += 1
+on-arrival: saxony_gov = "Weimar"; workers_spd -= 2; kpd_relation -= 5; uspd_relation -= 7; ddp_realtion += 10; dvp_relation += 2; z_relation += 6; new_middle_ddp += 2; old_middle_ddp += 3; unemployed_spd -= 2; workers_z += 2; workers_uspd += 3; wirth_concession += 1; saxony_spd = 1; saxony_ddp = 1; saxony_z = 1
 
 @bourgeois_coalition_saxony
 title: A Bourgeois Coalition
 subtitle: This is unprecedented!
 choose-if: bourgeois_coalition_saxony >= 50
-on-arrival: saxony_gov = "Bourgeois"; workers_spd -= 3; rural_dvp += 2; unemployed_kpd += 4; kpd_relation += 5; uspd_relation += 10; new_middle_ddp += 3; old_middle_dnvp += 2; workers_other += 4; workers_uspd += 1
+on-arrival: saxony_gov = "Bourgeois"; workers_spd -= 3; rural_dvp += 2; unemployed_kpd += 4; kpd_relation += 5; uspd_relation += 10; new_middle_ddp += 3; old_middle_dnvp += 2; workers_other += 4; workers_uspd += 1; saxony_ddp = 1; saxony_z = 2; saxony_dvp = 1; saxony_dnvp = 2
 
 The <span style="color: [+ dnvp_colour +];">**DNVP**</span> has agreed on tolerating a cabinet consisting of <span style="color: [+ dvp_colour +];">**DVP**</span> and <span style="color: [+ ddp_colour +];">**[+ ddp_name +]**</span> members. This cooperation marks a milestone in bourgoies cooperation directed purely against Worker's Parties.
